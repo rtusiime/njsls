@@ -117,7 +117,9 @@ $ grep -oE '"code": "(MS|5|3-5)-[A-Z]+[0-9]+-[0-9]+"' science.html | sort -u | w
 
 ### Commits produced
 
-To be backfilled on commit.
+| Hash | Time (EDT) | Message |
+|---|---|---|
+| `494e54c` | 14:38:23 | Science: add Grade 5 PEs; flip hub status to Ready |
 
 ### Notes / flags
 
