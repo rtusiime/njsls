@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Jersey Student Learning Standards — Forge Curriculum Reference</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #FAF6EE;
+  --surface: #FFFFFF;
+  --ink: #1A1814;
+  --ink-soft: #3A352D;
+  --muted: #6B645A;
+  --faint: #9A9384;
+  --divider: #E5DCC8;
+  --rule: #D9D1BD;
+  --ela: #8B3A1F;
+  --ela-pale: #F4E4DC;
+  --math: #1F5A6E;
+  --math-pale: #DCEAF0;
+  --science: #3F6B47;
+  --science-pale: #DFEADF;
+  --shadow: 0 1px 0 rgba(26,24,20,0.04), 0 8px 24px -12px rgba(26,24,20,0.08);
+  --shadow-lift: 0 2px 0 rgba(26,24,20,0.06), 0 18px 36px -16px rgba(26,24,20,0.16);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Manrope', -apple-system, system-ui, sans-serif;
+  font-size: 16px; line-height: 1.5; min-height: 100vh;
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(139,58,31,0.03) 0%, transparent 42%),
+    radial-gradient(circle at 88% 28%, rgba(31,90,110,0.025) 0%, transparent 45%),
+    radial-gradient(circle at 50% 92%, rgba(63,107,71,0.025) 0%, transparent 50%);
+}
+header.masthead {
+  max-width: 1100px; margin: 0 auto;
+  padding: 64px 48px 32px; border-bottom: 1px solid var(--rule);
+}
+.eyebrow {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--ela); margin-bottom: 18px;
+}
+h1.title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 144, 'SOFT' 30;
+  font-weight: 500; font-size: clamp(34px, 5vw, 56px);
+  line-height: 1.04; letter-spacing: -0.02em; margin-bottom: 18px;
+  max-width: 900px;
+}
+h1.title em {
+  font-style: italic;
+  font-variation-settings: 'opsz' 144, 'SOFT' 100;
+  color: var(--ela);
+}
+.subtitle {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 24;
+  font-style: italic; font-size: 19px; color: var(--ink-soft);
+  max-width: 720px; line-height: 1.45;
+}
+.source-line { margin-top: 26px; font-size: 13px; color: var(--muted); max-width: 720px; }
+.source-line strong { color: var(--ink); font-weight: 600; }
+
+main { max-width: 1100px; margin: 0 auto; padding: 56px 48px 80px; }
+
+.section-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 20px;
+}
+
+.subject-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 22px;
+}
+
+.subject-card {
+  position: relative; display: flex; flex-direction: column;
+  background: var(--surface); border: 1px solid var(--divider);
+  border-radius: 4px; padding: 32px 32px 28px;
+  box-shadow: var(--shadow);
+  text-decoration: none; color: inherit;
+  overflow: hidden; min-height: 280px;
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+.subject-card::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+  width: 4px; background: var(--accent); opacity: 0.7;
+  transition: width 200ms ease, opacity 200ms ease;
+}
+.subject-card.ela { --accent: var(--ela); --accent-pale: var(--ela-pale); }
+.subject-card.math { --accent: var(--math); --accent-pale: var(--math-pale); }
+.subject-card.science { --accent: var(--science); --accent-pale: var(--science-pale); }
+
+.subject-card.ready:hover,
+.subject-card.ready:focus-visible {
+  transform: translateY(-2px); box-shadow: var(--shadow-lift);
+  border-color: var(--accent); outline: none;
+}
+.subject-card.ready:hover::before,
+.subject-card.ready:focus-visible::before {
+  width: 6px; opacity: 1;
+}
+
+.subject-card.coming-soon { opacity: 0.92; }
+.subject-card.coming-soon:hover,
+.subject-card.coming-soon:focus-visible {
+  border-color: var(--accent); opacity: 1; outline: none;
+}
+
+.card-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  gap: 16px; margin-bottom: 18px;
+}
+.card-eyebrow {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--accent);
+}
+.card-status {
+  font-size: 9px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; padding: 4px 9px; border-radius: 3px;
+  background: var(--accent-pale); color: var(--accent);
+  white-space: nowrap;
+}
+.subject-card.coming-soon .card-status {
+  background: transparent; color: var(--faint);
+  border: 1px solid var(--rule);
+}
+
+.card-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 96, 'SOFT' 50;
+  font-weight: 500; font-size: 36px; line-height: 1.05;
+  letter-spacing: -0.015em; margin-bottom: 10px;
+}
+.card-title em {
+  font-style: italic;
+  font-variation-settings: 'opsz' 96, 'SOFT' 100;
+  color: var(--accent);
+}
+.card-grade-band {
+  font-size: 12px; font-weight: 500; color: var(--muted);
+  letter-spacing: 0.04em; margin-bottom: 18px;
+}
+.card-description {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 18;
+  font-style: italic; font-size: 15.5px; line-height: 1.5;
+  color: var(--ink-soft); margin-bottom: 22px;
+}
+.card-footer {
+  margin-top: auto; padding-top: 18px;
+  border-top: 1px dashed var(--rule);
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 12px;
+}
+.card-source {
+  font-size: 11px; color: var(--faint); letter-spacing: 0.02em;
+}
+.card-cta {
+  font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--accent);
+  display: inline-flex; align-items: center; gap: 6px;
+  white-space: nowrap;
+}
+.card-cta .arrow { transition: transform 200ms ease; }
+.subject-card.ready:hover .card-cta .arrow,
+.subject-card.ready:focus-visible .card-cta .arrow { transform: translateX(4px); }
+.subject-card.coming-soon .card-cta { color: var(--faint); }
+
+.about-strip {
+  margin-top: 72px; padding-top: 36px; border-top: 1px solid var(--rule);
+  display: grid; grid-template-columns: 1fr 2fr; gap: 48px;
+  max-width: 900px;
+}
+.about-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--muted);
+}
+.about-body {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 18;
+  font-size: 16px; line-height: 1.6; color: var(--ink-soft);
+}
+.about-body p + p { margin-top: 14px; }
+.about-body a { color: var(--ela); text-decoration: underline;
+  text-decoration-color: var(--ela-pale); text-underline-offset: 3px; }
+.about-body a:hover { text-decoration-color: var(--ela); }
+
+footer {
+  max-width: 1100px; margin: 0 auto;
+  padding: 40px 48px 60px; border-top: 1px solid var(--rule);
+  font-size: 12px; color: var(--muted); line-height: 1.6;
+}
+
+@media (max-width: 720px) {
+  header.masthead { padding: 48px 28px 24px; }
+  main { padding: 36px 28px 60px; }
+  footer { padding: 32px 28px 48px; }
+  .subject-card { padding: 26px 26px 24px; min-height: 0; }
+  .card-title { font-size: 30px; }
+  .about-strip { grid-template-columns: 1fr; gap: 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="eyebrow">Forge Curriculum Reference</div>
+  <h1 class="title">New Jersey Student Learning<br>Standards, by <em>subject</em></h1>
+  <p class="subtitle">A teacher-readable index of the operative learning standards for any New Jersey public, charter, or registered nonpublic school. Filter by domain and grade. One page per subject.</p>
+  <div class="source-line"><strong>Source:</strong> New Jersey Department of Education, Office of Standards, Division of Teaching and Learning Services. Standards are quoted verbatim from their respective adopted frameworks.</div>
+</header>
+
+<main>
+  <div class="section-label">Subjects</div>
+  <div class="subject-grid">
+
+    <a class="subject-card ela ready" href="ela.html" aria-label="Open English Language Arts standards, grades 5 through 8">
+      <div class="card-header">
+        <div class="card-eyebrow">English Language Arts</div>
+        <span class="card-status">Ready</span>
+      </div>
+      <h2 class="card-title">Language, Reading,<br><em>Writing</em>, Speaking</h2>
+      <div class="card-grade-band">Grades 5 – 8 · Adopted 2023</div>
+      <p class="card-description">Four domains organized by anchor standard, with Literature and Informational reading distinguished where the source draws the line.</p>
+      <div class="card-footer">
+        <span class="card-source">NJSLS · ELA · 2023</span>
+        <span class="card-cta">Open <span class="arrow">→</span></span>
+      </div>
+    </a>
+
+    <a class="subject-card math coming-soon" href="math.html" aria-label="View Mathematics standards status, grades 5 through 8">
+      <div class="card-header">
+        <div class="card-eyebrow">Mathematics</div>
+        <span class="card-status">In progress</span>
+      </div>
+      <h2 class="card-title">Number, <em>Ratio</em>,<br>Algebra, Geometry</h2>
+      <div class="card-grade-band">Grades 5 – 8 · Adopted 2023</div>
+      <p class="card-description">Domains shift across the grade band: fractions and place value give way to ratios, expressions, equations, and functions by grade eight.</p>
+      <div class="card-footer">
+        <span class="card-source">NJSLS · Math · 2023</span>
+        <span class="card-cta">View status <span class="arrow">→</span></span>
+      </div>
+    </a>
+
+    <a class="subject-card science coming-soon" href="science.html" aria-label="View Science standards status, grades 6 through 8">
+      <div class="card-header">
+        <div class="card-eyebrow">Science</div>
+        <span class="card-status">In progress</span>
+      </div>
+      <h2 class="card-title">Physical, Life,<br><em>Earth</em> &amp; Space</h2>
+      <div class="card-grade-band">Grades 6 – 8 · Adopted 2020 (NGSS)</div>
+      <p class="card-description">Three-dimensional standards combining disciplinary core ideas with science and engineering practices and cross-cutting concepts.</p>
+      <div class="card-footer">
+        <span class="card-source">NJSLS · Science · 2020</span>
+        <span class="card-cta">View status <span class="arrow">→</span></span>
+      </div>
+    </a>
+
+  </div>
+
+  <section class="about-strip">
+    <div class="about-label">About this reference</div>
+    <div class="about-body">
+      <p>This is a curriculum reference for the team designing learning at <strong>Douglass Leadership Academy</strong>. It is not an official publication — for the authoritative versions, consult the New Jersey Department of Education.</p>
+      <p>Each subject page presents the standards in their adopted form, with light filtering by domain and grade so a teacher can focus on what's relevant without rereading the entire framework.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  Built as an internal curriculum reference for Forge Prep. Standards quoted verbatim from their adopted New Jersey Department of Education frameworks. The operative standards for any New Jersey public, charter, or registered nonpublic school.
+</footer>
+
+</body>
+</html>
