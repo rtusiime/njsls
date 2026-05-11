@@ -7,6 +7,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
 <style>
 :root {
   --bg: #FAF6EE;
@@ -18,6 +21,7 @@
   --accent: #1F5A6E;
   --accent-soft: #4F8294;
   --accent-pale: #DCEAF0;
+  --accent-deep: #163E4D;
   --divider: #E5DCC8;
   --rule: #D9D1BD;
   --shadow: 0 1px 0 rgba(26,24,20,0.04), 0 8px 24px -12px rgba(26,24,20,0.08);
@@ -34,7 +38,7 @@ body {
 }
 header.masthead {
   max-width: 1100px; margin: 0 auto;
-  padding: 40px 48px 32px; border-bottom: 1px solid var(--rule);
+  padding: 40px 48px 24px; border-bottom: 1px solid var(--rule);
 }
 .back-link {
   display: inline-flex; align-items: center; gap: 6px;
@@ -70,93 +74,189 @@ h1.title em {
 .source-line { margin-top: 24px; font-size: 13px; color: var(--muted); }
 .source-line strong { color: var(--ink); font-weight: 600; }
 
+.filter-bar {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(250,246,238,0.94);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--rule);
+}
+.filter-inner {
+  max-width: 1100px; margin: 0 auto; padding: 16px 48px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.filter-row {
+  display: flex; flex-wrap: wrap; gap: 14px; align-items: baseline;
+}
+.filter-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--muted);
+  min-width: 78px; padding-top: 4px;
+}
+.pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.pill {
+  font-size: 13px; font-weight: 500; padding: 7px 14px;
+  border: 1px solid var(--rule); background: var(--surface);
+  color: var(--ink-soft); border-radius: 999px; cursor: pointer;
+  transition: all 160ms ease; user-select: none; white-space: nowrap;
+  font-family: inherit;
+}
+.pill:hover { border-color: var(--accent-soft); color: var(--accent); }
+.pill.active { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.pill.accent.active { background: var(--accent); border-color: var(--accent); }
+
+.search-wrap {
+  display: flex; align-items: center; gap: 8px; flex: 1; min-width: 220px;
+  border: 1px solid var(--rule); background: var(--surface);
+  border-radius: 999px; padding: 6px 14px;
+  transition: border-color 160ms ease;
+}
+.search-wrap:focus-within { border-color: var(--accent); }
+.search-wrap input {
+  flex: 1; border: none; outline: none; background: transparent;
+  font-family: inherit; font-size: 14px; color: var(--ink);
+  padding: 4px 0;
+}
+.search-wrap input::placeholder { color: var(--faint); }
+.search-icon { color: var(--faint); font-size: 13px; }
+.search-clear {
+  background: none; border: none; color: var(--faint); cursor: pointer;
+  font-size: 16px; line-height: 1; padding: 2px 4px;
+  display: none;
+}
+.search-clear.visible { display: inline-block; }
+.search-clear:hover { color: var(--accent); }
+
+.meta-counter {
+  font-size: 12px; color: var(--muted); margin-left: auto;
+  padding-top: 4px; white-space: nowrap;
+}
+.meta-counter strong { color: var(--ink); font-weight: 600; }
+
 main { max-width: 1100px; margin: 0 auto; padding: 48px 48px 80px; }
 
-.status-callout {
-  background: var(--surface); border: 1px solid var(--divider);
-  border-left: 4px solid var(--accent);
-  border-radius: 4px; padding: 28px 32px;
-  box-shadow: var(--shadow); margin-bottom: 56px;
-  max-width: 820px;
+.grade-section { margin-bottom: 72px; scroll-margin-top: 160px; }
+.grade-section.hidden { display: none; }
+.grade-header {
+  margin-bottom: 28px; padding-bottom: 18px; border-bottom: 2px solid var(--ink);
 }
-.status-callout .status-tag {
-  display: inline-block;
-  font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
-  text-transform: uppercase; padding: 4px 10px; border-radius: 3px;
-  background: var(--accent-pale); color: var(--accent);
-  margin-bottom: 14px;
+.grade-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
 }
-.status-callout h2 {
+.grade-title {
   font-family: 'Fraunces', Georgia, serif;
-  font-variation-settings: 'opsz' 24;
-  font-weight: 500; font-size: 22px; line-height: 1.3;
-  margin-bottom: 10px;
+  font-variation-settings: 'opsz' 96, 'SOFT' 50;
+  font-weight: 500; font-size: 36px; line-height: 1.1;
+  letter-spacing: -0.015em; margin-bottom: 6px;
 }
-.status-callout p {
-  font-size: 14.5px; line-height: 1.6; color: var(--ink-soft);
-  max-width: 680px;
-}
-.status-callout p + p { margin-top: 10px; }
-.status-callout .source-doc {
-  margin-top: 16px; padding-top: 14px; border-top: 1px dashed var(--rule);
-  font-size: 12.5px; color: var(--muted);
-}
-.status-callout .source-doc strong { color: var(--ink-soft); font-weight: 600; }
-.status-callout code {
-  font-family: 'Manrope', monospace; font-size: 12px;
-  background: var(--accent-pale); color: var(--accent);
-  padding: 1px 6px; border-radius: 3px;
-}
-
-.section-label {
-  font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
-}
-.section-note {
+.grade-note {
   font-family: 'Fraunces', Georgia, serif;
   font-variation-settings: 'opsz' 18;
-  font-style: italic; font-size: 15px; color: var(--muted);
-  margin-bottom: 24px; max-width: 680px;
+  font-style: italic; font-size: 16px; color: var(--muted); max-width: 720px;
 }
 
-.domain-preview {
+.domain-card {
   background: var(--surface); border: 1px solid var(--divider);
-  border-radius: 4px; padding: 22px 26px; margin-bottom: 14px;
-  position: relative; overflow: hidden;
+  border-radius: 4px; padding: 26px 30px;
+  margin-bottom: 18px;
+  box-shadow: var(--shadow); position: relative; overflow: hidden;
 }
-.domain-preview::before {
+.domain-card.hidden { display: none; }
+.domain-card::before {
   content: ''; position: absolute; left: 0; top: 0; bottom: 0;
-  width: 3px; background: var(--accent); opacity: 0.5;
+  width: 3px; background: var(--accent); opacity: 0.6;
 }
-.domain-preview .row1 {
-  display: flex; justify-content: space-between; align-items: baseline;
-  gap: 16px; margin-bottom: 6px; flex-wrap: wrap;
+
+.domain-header {
+  margin-bottom: 18px; padding-bottom: 14px;
+  border-bottom: 1px dashed var(--rule);
+  display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
 }
-.domain-preview .domain-code {
+.domain-code {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 96, 'SOFT' 30;
+  font-weight: 600; font-style: italic; font-size: 22px;
+  color: var(--accent); line-height: 1; letter-spacing: -0.01em;
+}
+.domain-name {
   font-family: 'Fraunces', Georgia, serif;
   font-variation-settings: 'opsz' 24;
-  font-weight: 600; font-style: italic; font-size: 14px;
-  color: var(--accent); letter-spacing: 0.04em;
+  font-weight: 500; font-size: 18px; color: var(--ink);
+  line-height: 1.25; flex: 1;
 }
-.domain-preview .domain-name {
+
+.clusters-list { display: flex; flex-direction: column; gap: 22px; }
+.cluster-block {}
+.cluster-block.hidden { display: none; }
+
+.cluster-header {
+  display: grid; grid-template-columns: 28px 1fr;
+  gap: 10px; align-items: baseline;
+  margin-bottom: 10px; padding-bottom: 6px;
+  border-bottom: 1px solid var(--divider);
+}
+.cluster-letter {
   font-family: 'Fraunces', Georgia, serif;
   font-variation-settings: 'opsz' 24;
-  font-weight: 500; font-size: 19px; line-height: 1.3;
-  flex: 1;
+  font-weight: 600; font-style: italic; font-size: 16px;
+  color: var(--accent); text-align: center;
 }
-.domain-preview .grade-chips {
-  display: flex; gap: 4px;
+.cluster-heading {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 18;
+  font-style: italic; font-size: 15px; color: var(--ink-soft);
+  line-height: 1.35;
 }
-.grade-chip {
-  font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
-  padding: 3px 8px; border-radius: 999px;
-  background: var(--accent-pale); color: var(--accent);
-  white-space: nowrap;
+
+.standards-list { display: flex; flex-direction: column; gap: 12px; padding-left: 38px; }
+
+.std-entry {
+  border-left: 3px solid var(--rule); padding: 4px 0 4px 14px;
 }
-.domain-preview .domain-detail {
-  font-size: 13.5px; color: var(--muted); line-height: 1.5;
-  margin-top: 6px; max-width: 700px;
+.std-entry.hidden { display: none; }
+.std-header { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.std-code {
+  font-family: 'Manrope', sans-serif;
+  font-size: 10.5px; font-weight: 700; letter-spacing: 0.04em;
+  color: var(--accent); white-space: nowrap;
+  background: var(--accent-pale); padding: 2px 7px; border-radius: 3px;
 }
+.std-main {
+  font-size: 14.5px; line-height: 1.6; color: var(--ink-soft);
+}
+.std-subs {
+  margin-top: 8px; padding-left: 8px;
+}
+.std-subs li {
+  font-size: 13.5px; line-height: 1.55; color: var(--muted);
+  list-style: none; padding: 4px 0 4px 18px; position: relative;
+}
+.std-subs li::before {
+  content: '·'; position: absolute; left: 6px; color: var(--accent);
+  font-weight: 700; font-size: 14px;
+}
+
+.std-main .katex,
+.std-subs .katex {
+  font-size: 1.02em;
+}
+
+.toc-nav {
+  position: fixed; right: 24px; top: 50%;
+  transform: translateY(-50%); z-index: 30;
+  display: flex; flex-direction: column; gap: 8px;
+  padding: 18px 16px; border-left: 2px solid var(--rule);
+}
+.toc-nav-label {
+  font-size: 9px; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--faint); margin-bottom: 6px;
+}
+.toc-nav a {
+  font-size: 12px; color: var(--muted); text-decoration: none;
+  transition: color 160ms ease; line-height: 1.3;
+}
+.toc-nav a:hover { color: var(--accent); }
+.toc-nav a.hidden { display: none; }
 
 footer {
   max-width: 1100px; margin: 0 auto;
@@ -164,13 +264,28 @@ footer {
   font-size: 12px; color: var(--muted); line-height: 1.6;
 }
 
+.empty-state {
+  padding: 60px 30px; text-align: center; color: var(--muted);
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 24;
+  font-style: italic; font-size: 18px;
+  display: none;
+}
+.empty-state.visible { display: block; }
+
+@media (max-width: 980px) {
+  .toc-nav { display: none; }
+}
 @media (max-width: 720px) {
   header.masthead { padding: 32px 24px 24px; }
+  .filter-inner { padding: 14px 24px; }
+  .filter-label { min-width: 0; }
   main { padding: 36px 24px 60px; }
   footer { padding: 32px 24px 48px; }
-  .status-callout { padding: 22px 22px; }
-  .domain-preview { padding: 18px 20px; }
-  .domain-preview .row1 { flex-direction: column; gap: 8px; }
+  .domain-card { padding: 22px 22px; }
+  .grade-title { font-size: 28px; }
+  .standards-list { padding-left: 0; }
+  .meta-counter { margin-left: 0; }
 }
 </style>
 </head>
@@ -180,139 +295,1224 @@ footer {
   <a href="index.html" class="back-link"><span class="arrow">←</span> All standards</a>
   <div class="eyebrow">Reference Document · Forge Prep</div>
   <h1 class="title">New Jersey Student Learning<br>Standards for <em>Mathematics</em></h1>
-  <p class="subtitle">Grades 5 through 8. Adopted 2023 by the New Jersey Department of Education. This page is a placeholder while the standards are being prepared.</p>
-  <div class="source-line"><strong>Source:</strong> 2023 New Jersey Student Learning Standards for Mathematics, Office of Standards, Division of Teaching and Learning Services, New Jersey Department of Education</div>
+  <p class="subtitle">Grades 5 through 8. Adopted 2023 by the New Jersey Department of Education. Filter by grade or search the full text — formulas render as typeset math.</p>
+  <div class="source-line"><strong>Source:</strong> 2023 New Jersey Student Learning Standards Mathematics, Office of Standards, Division of Teaching and Learning Services, New Jersey Department of Education. Math expressions reconstructed from Word vector formulas in the source document.</div>
 </header>
 
-<main>
-
-  <section class="status-callout">
-    <div class="status-tag">In progress</div>
-    <h2>This subject is being prepared from the source document.</h2>
-    <p>The full filtered standards browser — the same one the English Language Arts page uses — will arrive here once the source has been transcribed and reviewed. The list below is the structure being adapted, so you can see what to expect.</p>
-    <div class="source-doc">
-      <strong>Working from:</strong> <code>2023_NJSLS_Mathematics.docx</code> · NJ Department of Education, Office of Standards
-    </div>
-  </section>
-
-  <div class="section-label">Domains in scope</div>
-  <p class="section-note">Mathematics shifts character across the 5–8 band: arithmetic and fractions give way to ratio reasoning, expressions and equations, and — by grade eight — formal functions.</p>
-
-  <div class="domain-preview">
-    <div class="row1">
-      <div>
-        <span class="domain-code">OA</span>
-        <span class="domain-name">Operations and Algebraic Thinking</span>
+<nav class="filter-bar">
+  <div class="filter-inner">
+    <div class="filter-row">
+      <span class="filter-label">Grade</span>
+      <div class="pills" id="grade-pills">
+        <button class="pill accent active" data-grade="all">All grades</button>
+        <button class="pill accent" data-grade="5">Grade 5</button>
+        <button class="pill accent" data-grade="6">Grade 6</button>
+        <button class="pill accent" data-grade="7">Grade 7</button>
+        <button class="pill accent" data-grade="8">Grade 8</button>
       </div>
-      <div class="grade-chips"><span class="grade-chip">5</span></div>
     </div>
-    <div class="domain-detail">Writing and interpreting numerical expressions; analyzing patterns and relationships.</div>
-  </div>
-
-  <div class="domain-preview">
-    <div class="row1">
-      <div>
-        <span class="domain-code">NBT</span>
-        <span class="domain-name">Number and Operations in Base Ten</span>
+    <div class="filter-row">
+      <span class="filter-label">Search</span>
+      <div class="search-wrap">
+        <span class="search-icon">⌕</span>
+        <input id="search-input" type="text" placeholder="Filter by keyword — e.g., fractions, equations, volume" autocomplete="off">
+        <button class="search-clear" id="search-clear" aria-label="Clear search">×</button>
       </div>
-      <div class="grade-chips"><span class="grade-chip">5</span></div>
+      <span class="meta-counter" id="counter"></span>
     </div>
-    <div class="domain-detail">Place-value system, multi-digit operations including decimals to the hundredths.</div>
   </div>
+</nav>
 
-  <div class="domain-preview">
-    <div class="row1">
-      <div>
-        <span class="domain-code">NF</span>
-        <span class="domain-name">Number and Operations — Fractions</span>
-      </div>
-      <div class="grade-chips"><span class="grade-chip">5</span></div>
-    </div>
-    <div class="domain-detail">Equivalence, addition and subtraction with unlike denominators, multiplication and division of fractions.</div>
-  </div>
+<aside class="toc-nav" id="toc">
+  <div class="toc-nav-label">Jump to</div>
+  <a href="#grade-5" data-grade="5">Grade 5</a>
+  <a href="#grade-6" data-grade="6">Grade 6</a>
+  <a href="#grade-7" data-grade="7">Grade 7</a>
+  <a href="#grade-8" data-grade="8">Grade 8</a>
+</aside>
 
-  <div class="domain-preview">
-    <div class="row1">
-      <div>
-        <span class="domain-code">MD</span>
-        <span class="domain-name">Measurement and Data</span>
-      </div>
-      <div class="grade-chips"><span class="grade-chip">5</span></div>
-    </div>
-    <div class="domain-detail">Converting measurement units; representing and interpreting data; geometric measurement of volume.</div>
-  </div>
-
-  <div class="domain-preview">
-    <div class="row1">
-      <div>
-        <span class="domain-code">RP</span>
-        <span class="domain-name">Ratios and Proportional Relationships</span>
-      </div>
-      <div class="grade-chips"><span class="grade-chip">6</span><span class="grade-chip">7</span></div>
-    </div>
-    <div class="domain-detail">Understanding ratio concepts and using ratio reasoning to solve problems; analyzing proportional relationships.</div>
-  </div>
-
-  <div class="domain-preview">
-    <div class="row1">
-      <div>
-        <span class="domain-code">NS</span>
-        <span class="domain-name">The Number System</span>
-      </div>
-      <div class="grade-chips"><span class="grade-chip">6</span><span class="grade-chip">7</span><span class="grade-chip">8</span></div>
-    </div>
-    <div class="domain-detail">Extension to negative numbers, rational numbers, and — at grade 8 — irrational numbers.</div>
-  </div>
-
-  <div class="domain-preview">
-    <div class="row1">
-      <div>
-        <span class="domain-code">EE</span>
-        <span class="domain-name">Expressions and Equations</span>
-      </div>
-      <div class="grade-chips"><span class="grade-chip">6</span><span class="grade-chip">7</span><span class="grade-chip">8</span></div>
-    </div>
-    <div class="domain-detail">Variables, equivalent expressions, one- and two-variable equations and inequalities, systems by grade 8.</div>
-  </div>
-
-  <div class="domain-preview">
-    <div class="row1">
-      <div>
-        <span class="domain-code">F</span>
-        <span class="domain-name">Functions</span>
-      </div>
-      <div class="grade-chips"><span class="grade-chip">8</span></div>
-    </div>
-    <div class="domain-detail">Defining, evaluating, and comparing functions; using functions to model relationships between quantities.</div>
-  </div>
-
-  <div class="domain-preview">
-    <div class="row1">
-      <div>
-        <span class="domain-code">G</span>
-        <span class="domain-name">Geometry</span>
-      </div>
-      <div class="grade-chips"><span class="grade-chip">5</span><span class="grade-chip">6</span><span class="grade-chip">7</span><span class="grade-chip">8</span></div>
-    </div>
-    <div class="domain-detail">Plane figures, area and volume, congruence and similarity, the Pythagorean theorem at grade 8.</div>
-  </div>
-
-  <div class="domain-preview">
-    <div class="row1">
-      <div>
-        <span class="domain-code">SP</span>
-        <span class="domain-name">Statistics and Probability</span>
-      </div>
-      <div class="grade-chips"><span class="grade-chip">6</span><span class="grade-chip">7</span><span class="grade-chip">8</span></div>
-    </div>
-    <div class="domain-detail">Summarizing and describing distributions; sampling, inference, and bivariate data through grade 8.</div>
-  </div>
-
-</main>
+<main id="content"></main>
+<div class="empty-state" id="empty">No standards match the current filters.</div>
 
 <footer>
-  Standards quoted verbatim from the 2023 New Jersey Student Learning Standards for Mathematics, the operative standards for any New Jersey public, charter, or registered nonpublic school. Domain summaries on this status page are paraphrased for navigation only.
+  Built as an internal curriculum reference for Forge Prep. Standards quoted verbatim from the 2023 New Jersey Student Learning Standards for Mathematics, the operative standards for any New Jersey public, charter, or registered nonpublic school. Inline math expressions were reconstructed from vector-image formulas in the source document; spot-check against the source PDF if exact symbolic notation matters.
 </footer>
 
+<script>
+const MATH = {
+  "5": {
+    "grade": "5",
+    "note": "Three critical areas in Grade 5: fraction addition/subtraction and multiplication/division; decimal operations; understanding of volume.",
+    "domains": [
+      {
+        "code": "5.OA",
+        "name": "Operations and Algebraic Thinking",
+        "clusters": [
+          {
+            "letter": "A",
+            "heading": "Write and interpret numerical expressions",
+            "standards": [
+              {
+                "code": "5.OA.A.1",
+                "main": "Use parentheses, brackets, or braces in numerical expressions, and evaluate expressions with these symbols.",
+                "subs": []
+              },
+              {
+                "code": "5.OA.A.2",
+                "main": "Write simple expressions that record calculations with numbers, and interpret numerical expressions without evaluating them. For example, express the calculation \"add 8 and 7, then multiply by 2\" as \\(2 \\times (8 + 7)\\) . Recognize that \\(3 \\times (18932 + 921)\\) is three times as large as \\(18932 + 921\\) without having to calculate the indicated sum or product.",
+                "subs": []
+              }
+            ]
+          },
+          {
+            "letter": "B",
+            "heading": "Analyze patterns and relationships",
+            "standards": [
+              {
+                "code": "5.OA.B.3",
+                "main": "Generate two numerical patterns using two given rules. Identify apparent relationships between corresponding terms. Form ordered pairs consisting of corresponding terms from the two patterns, and graph the ordered pairs on a coordinate plane. For example, given the rule \"Add 3\" and the starting number 0, and given the rule \"Add 6\" and the starting number 0, generate terms in the resulting sequences, and observe that the terms in one sequence are twice the corresponding terms in the other sequence. Explain informally why this is so.",
+                "subs": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "5.NBT",
+        "name": "Number and Operations in Base Ten",
+        "clusters": [
+          {
+            "letter": "A",
+            "heading": "Understand the place value system",
+            "standards": [
+              {
+                "code": "5.NBT.A.1",
+                "main": "Recognize that in a multi-digit number, a digit in one place represents 10 times as much as it represents in the place to its right and \\(\\frac{1}{10}\\)of what it represents in the place to its left.",
+                "subs": []
+              },
+              {
+                "code": "5.NBT.A.2",
+                "main": "Explain patterns in the number of zeros of the product when multiplying a number by powers of 10, and explain patterns in the placement of the decimal point when a decimal is multiplied or divided by a power of 10. Use whole-number exponents to denote powers of 10.",
+                "subs": []
+              },
+              {
+                "code": "5.NBT.A.3",
+                "main": "Read, write, and compare decimals to thousandths.",
+                "subs": [
+                  "Read and write decimals to thousandths using base-ten numerals, number names, and expanded form, e.g., \\(347.392 = 3 \\times 100 + 4 \\times 10 + 7 \\times 1 + 3 \\times (\\frac{1}{10)} + 9 \\times (\\frac{1}{100)} + 2 \\times (\\frac{1}{1000)}\\).",
+                  "Compare two decimals to thousandths based on meanings of the digits in each place, using \\>, =, and \\< symbols to record the results of comparisons."
+                ]
+              },
+              {
+                "code": "5.NBT.A.4",
+                "main": "Use place value understanding to round decimals to any place.",
+                "subs": []
+              }
+            ]
+          },
+          {
+            "letter": "B",
+            "heading": "Perform operations with multi-digit whole numbers & with decimals to hundredths",
+            "standards": [
+              {
+                "code": "5.NBT.B.5",
+                "main": "With accuracy and efficiency, multiply multi-digit whole numbers using the standard algorithm.",
+                "subs": []
+              },
+              {
+                "code": "5.NBT.B.6",
+                "main": "Find whole-number quotients of whole numbers with up to four-digit dividends and two-digit divisors, using strategies based on place value, the properties of operations, and/or the relationship between multiplication and division. Illustrate and explain the calculation by using equations, rectangular arrays, and/or area models.",
+                "subs": []
+              },
+              {
+                "code": "5.NBT.B.7",
+                "main": "Add, subtract, multiply, and divide decimals to hundredths, using concrete models or drawings and strategies based on place value, properties of operations, and/or the relationship between addition and subtraction; relate the strategy to a written method and explain the reasoning used.",
+                "subs": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "5.NF",
+        "name": "Number and Operations --- Fractions",
+        "clusters": [
+          {
+            "letter": "A",
+            "heading": "Use equivalent fractions as a strategy to add and subtract fractions",
+            "standards": [
+              {
+                "code": "5.NF.A.1",
+                "main": "Add and subtract fractions with unlike denominators (including mixed numbers) by replacing given fractions with equivalent fractions in such a way as to produce an equivalent sum or difference of fractions with like denominators. For example, \\(\\frac{2}{3} + \\frac{5}{4} = \\frac{8}{12} + \\frac{15}{12} = \\frac{23}{12}\\). (In general, \\(\\frac{a}{b} + \\frac{c}{d} = \\frac{(ad + bc)}{bd}\\)).",
+                "subs": []
+              },
+              {
+                "code": "5.NF.A.2",
+                "main": "Solve word problems involving addition and subtraction of fractions referring to the same whole, including cases of unlike denominators, e.g., by using visual fraction models or equations to represent the problem. Use benchmark fractions and number sense of fractions to estimate mentally and assess the reasonableness of answers. For example, recognize an incorrect result \\(\\frac{2}{5} + \\frac{1}{2} = \\frac{3}{7}\\) , by observing that \\(\\frac{3}{7} < \\frac{1}{2}\\) .",
+                "subs": []
+              }
+            ]
+          },
+          {
+            "letter": "B",
+            "heading": "Apply and extend previous understandings of multiplication and division to multiply and divide fractions",
+            "standards": [
+              {
+                "code": "5.NF.B.3",
+                "main": "Interpret a fraction as division of the numerator by the denominator (i.e., \\(\\frac{a}{b} = a \\div b\\)). Solve word problems involving division of whole numbers leading to answers in the form of fractions or mixed numbers, e.g., by using visual fraction models or equations to represent the problem. For example, interpret \\(\\frac{3}{4}\\) as the result of dividing 3 by 4, noting that \\(\\frac{3}{4}\\) multiplied by 4 equals 3, and that when 3 wholes are shared equally among 4 people each person has a share of size \\(\\frac{3}{4}\\) . If 9 people want to share a 50-pound sack of rice equally by weight, how many pounds of rice should each person get? Between what two whole numbers does your answer lie?",
+                "subs": []
+              },
+              {
+                "code": "5.NF.B.4",
+                "main": "Apply and extend previous understandings of multiplication to multiply a fraction or whole number by a fraction.",
+                "subs": [
+                  "Interpret the product \\(\\frac{a}{b} \\times q\\) as *a* parts of a partition of *q* into *b* equal parts; equivalently, as the result of a sequence of operations \\(a \\times q \\div b\\). For example, use a visual fraction model to show \\(\\frac{2}{3} \\times 4 = \\frac{8}{3}\\) , and create a story context for this equation. Do the same with \\(\\frac{2}{3} \\times \\frac{4}{5} = \\frac{8}{15}\\). (In general, \\(\\frac{a}{b} \\times \\frac{c}{d} = \\frac{ab}{bd}\\)).",
+                  "Find the area of a rectangle with fractional side lengths by tiling it with unit squares of the appropriate unit fraction side lengths, and show that the area is the same as would be found by multiplying the side lengths. Multiply fractional side lengths to find areas of rectangles, and represent fraction products as rectangular areas."
+                ]
+              },
+              {
+                "code": "5.NF.B.5",
+                "main": "Interpret multiplication as scaling (resizing), by:",
+                "subs": [
+                  "Comparing the size of a product to the size of one factor on the basis of the size of the other factor, without performing the indicated multiplication.",
+                  "Explaining why multiplying a given number by a fraction greater than 1 results in a product greater than the given number (recognizing multiplication by whole numbers greater than 1 as a familiar case); explaining why multiplying a given number by a fraction less than 1 results in a product smaller than the given number; and relating the principle of fraction equivalence \\(\\frac{a}{b} = \\frac{(n \\times a)}{(n \\times b)}\\) to the effect of multiplying \\(\\frac{a}{b}\\) by 1."
+                ]
+              },
+              {
+                "code": "5.NF.B.6",
+                "main": "Solve real world problems involving multiplication of fractions and mixed numbers, e.g., by using visual fraction models or equations to represent the problem.",
+                "subs": []
+              },
+              {
+                "code": "5.NF.B.7",
+                "main": "Apply and extend previous understandings of division to divide unit fractions by whole numbers and whole numbers by unit fractions.",
+                "subs": [
+                  "Interpret division of a unit fraction by a non-zero whole number, and compute such quotients. For example, create a story context for \\(\\frac{1}{3} \\div 4\\) , and use a visual fraction model to show the quotient. Use the relationship between multiplication and division to explain that \\(\\frac{1}{3} \\div 4 = 1\\frac{1}{2}\\) because \\(1\\frac{1}{2} \\times 4 = \\frac{1}{3}\\).",
+                  "Interpret division of a whole number by a unit fraction, and compute such quotients. For example, create a story context for \\(4 \\div \\frac{1}{5}\\) , and use a visual fraction model to show the quotient. Use the relationship between multiplication and division to explain that \\(4 \\div \\frac{1}{5} = 20\\) because \\(20 \\times \\frac{1}{5} = 4\\).",
+                  "Solve real world problems involving division of unit fractions by non-zero whole numbers and division of whole numbers by unit fractions, e.g., by using visual fraction models and equations to represent the problem. For example, how much chocolate will each person get if 3 people share \\(\\frac{1}{2}\\) lb. of chocolate equally? How many \\(\\frac{1}{3}\\)-cup servings are in 2 cups of raisins?"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "5.M",
+        "name": "Measurement",
+        "clusters": [
+          {
+            "letter": "A",
+            "heading": "Convert like measurement units within a given measurement system",
+            "standards": [
+              {
+                "code": "5.M.A.1",
+                "main": "Convert among different-sized standard measurement units within a given measurement system (e.g., convert 5 cm to 0.05 m), and use these conversions in solving multi-step, real world problems.",
+                "subs": []
+              }
+            ]
+          },
+          {
+            "letter": "B",
+            "heading": "Geometric measurement: understand concepts of volume and relate volume to multiplication and to addition",
+            "standards": [
+              {
+                "code": "5.M.B.2",
+                "main": "Recognize volume as an attribute of solid figures and understand concepts of volume measurement.",
+                "subs": [
+                  "A cube with side length 1 unit, called a \"unit cube,\" is said to have \"one cubic unit\" of volume, and can be used to measure volume.",
+                  "A solid figure which can be packed without gaps or overlaps using *n* unit cubes is said to have a volume of *n* cubic units."
+                ]
+              },
+              {
+                "code": "5.M.B.3",
+                "main": "Measure volumes by counting unit cubes, using cubic cm, cubic in, cubic ft, and non-standard units.",
+                "subs": []
+              },
+              {
+                "code": "5.M.B.4",
+                "main": "Relate volume to the operations of multiplication and addition and solve real world and mathematical problems involving volume.",
+                "subs": [
+                  "Find the volume of a right rectangular prism with whole-number side lengths by packing it with unit cubes, and show that the volume is the same as would be found by multiplying the edge lengths, equivalently by multiplying the height by the area of the base. Represent threefold whole-number products as volumes, e.g., to represent the associative property of multiplication.",
+                  "Apply the formulas \\(V = l \\times w \\times h\\)and \\(V = B \\times h\\) for rectangular prisms to find volumes of right rectangular prisms with whole number edge lengths in the context of solving real world and mathematical problems.",
+                  "Recognize volume as additive. Find volumes of solid figures composed of two non-overlapping right rectangular prisms by adding the volumes of the non-overlapping parts, applying this technique to solve real world problems."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "5.DL",
+        "name": "Data Literacy",
+        "clusters": [
+          {
+            "letter": "A",
+            "heading": "Understand and analyze data visualizations",
+            "standards": [
+              {
+                "code": "5.DL.A.1",
+                "main": "Understand how different visualizations can highlight different aspects of data. Ask questions and interpret data visualizations to describe and analyze patterns.",
+                "subs": []
+              },
+              {
+                "code": "5.DL.A.2",
+                "main": "Develop strategies to collect, organize and represent data of various types and from various sources. Communicate results digitally through a data visual (e.g. chart, storyboard, video presentation).",
+                "subs": []
+              },
+              {
+                "code": "5.DL.A.3",
+                "main": "Collect and clean data to be analyzable (e.g., make sure each entry is formatted correctly, deal with missing or incomplete data).",
+                "subs": []
+              },
+              {
+                "code": "5.DL.A.4",
+                "main": "Using appropriate visualizations (i.e. double line plot, double bar graph), analyze data across samples.",
+                "subs": []
+              }
+            ]
+          },
+          {
+            "letter": "B",
+            "heading": "Represent and interpret data",
+            "standards": [
+              {
+                "code": "5.DL.B.5",
+                "main": "Make a line plot to display a data set of measurements in fractions of a unit (½, ¼, ⅛). Use operations on fractions for this grade to solve problems involving information presented in line plots. For example, given different measurements of liquid in identical beakers, find the amount of liquid each beaker would contain if the total amount in all the beakers were redistributed equally.",
+                "subs": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "5.G",
+        "name": "Geometry",
+        "clusters": [
+          {
+            "letter": "A",
+            "heading": "Graph points on the coordinate plane to solve real-world and mathematical problems",
+            "standards": [
+              {
+                "code": "5.G.A.1",
+                "main": "Use a pair of perpendicular number lines, called axes, to define a coordinate system, with the intersection of the lines (the origin) arranged to coincide with the 0 on each line and a given point in the plane located by using an ordered pair of numbers, called its coordinates. Understand that the first number indicates how far to travel from the origin in the direction of one axis, and the second number indicates how far to travel in the direction of the second axis, with the convention that the names of the two axes and the coordinates correspond (e.g., *x*-axis and *x*-coordinate, *y*-axis and *y*-coordinate).",
+                "subs": []
+              },
+              {
+                "code": "5.G.A.2",
+                "main": "Represent real world and mathematical problems by graphing points in the first quadrant of the coordinate plane, and interpret coordinate values of points in the context of the situation.",
+                "subs": []
+              }
+            ]
+          },
+          {
+            "letter": "B",
+            "heading": "Classify two-dimensional figures into categories based on their properties",
+            "standards": [
+              {
+                "code": "5.G.B.3",
+                "main": "Understand that attributes belonging to a category of two-dimensional figures also belong to all subcategories of that category. For example, all rectangles have four right angles and squares are rectangles, so all squares have four right angles.",
+                "subs": []
+              },
+              {
+                "code": "5.G.B.4",
+                "main": "Classify two-dimensional figures in a hierarchy based on properties.",
+                "subs": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "6": {
+    "grade": "6",
+    "note": "Four critical areas in Grade 6: ratios and rates; division of fractions and rational numbers; expressions and equations; statistical.",
+    "domains": [
+      {
+        "code": "6.RP",
+        "name": "Ratios and Proportional Relationships",
+        "clusters": [
+          {
+            "letter": "A",
+            "heading": "Understand ratio concepts and use ratio reasoning to solve problems",
+            "standards": [
+              {
+                "code": "6.RP.A.1",
+                "main": "Understand the concept of a ratio and use ratio language to describe a ratio relationship between two quantities. For example, \"The ratio of wings to beaks in the bird house at the zoo was 2:1, because for every 2 wings there was 1 beak.\" \"For every vote candidate A received, candidate C received nearly three votes.\"",
+                "subs": []
+              },
+              {
+                "code": "6.RP.A.2",
+                "main": "Understand the concept of a unit rate *a*/*b* associated with a ratio *a*:*b* with *b* ≠0, and use rate language in the context of a ratio relationship. For example, \"This recipe has a ratio of 3 cups of flour to 4 cups of sugar, so there is ¾-cup of flour for each cup of sugar.\" \"We paid \\$75 for 15 hamburgers, which is a rate of \\$5 per hamburger.\" (Clarification: Expectations for unit rates in this grade are limited to non-complex fractions.)",
+                "subs": []
+              },
+              {
+                "code": "6.RP.A.3",
+                "main": "Use ratio and rate reasoning to solve real-world and mathematical problems, e.g., by reasoning about tables of equivalent ratios, tape diagrams, double number line diagrams, or equations.",
+                "subs": [
+                  "Make tables of equivalent ratios relating quantities with whole number measurements, find missing values in the tables, and plot the pairs of values on the coordinate plane. Use tables to compare ratios.",
+                  "Solve unit rate problems including those involving unit pricing and constant speed. For example, if it took 7 hours to mow 4 lawns, then at that rate, how many lawns could be mowed in 35 hours? At what rate were lawns being mowed?",
+                  "Find a percent of a quantity as a rate per 100 (e.g., 30% of a quantity means \\(1\\frac{30}{00}\\)times the quantity); solve problems involving finding the whole, given a part and the percent.",
+                  "Use ratio reasoning to convert measurement units; manipulate and transform units appropriately when multiplying or dividing quantities."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "6.NS",
+        "name": "The Number System",
+        "clusters": [
+          {
+            "letter": "A",
+            "heading": "Apply and extend previous understandings of multiplication and division to divide fractions by fractions",
+            "standards": [
+              {
+                "code": "6.NS.A.1",
+                "main": "Interpret and compute quotients of fractions, and solve word problems involving division of fractions by fractions, e.g., by using visual fraction models and equations to represent the problem. For example, create a story context for \\(\\frac{2}{3} \\div \\frac{3}{4}\\) and use a visual fraction model to show the quotient; use the relationship between multiplication and division to explain that \\(\\frac{2}{3} \\div \\frac{3}{4} = \\frac{8}{9}\\) because \\(\\frac{3}{4}\\) of \\(\\frac{8}{9}\\) is \\(\\frac{2}{3}\\). (In general, \\(\\frac{a}{b} \\div \\frac{c}{d} = \\frac{ad}{bc}\\) ). How much chocolate will each person get if 3 people share\\(\\frac{1}{2}\\) lb. of chocolate equally? How many \\(\\frac{3}{4}\\) cup servings are in \\(\\frac{2}{3}\\) of a cup of yogurt? How wide is a rectangular strip of land with length\\(\\frac{3}{4}\\) mi and area \\(\\frac{1}{2}\\) square mi?",
+                "subs": []
+              }
+            ]
+          },
+          {
+            "letter": "B",
+            "heading": "Compute fluently with multi-digit numbers & find common factors & multiples",
+            "standards": [
+              {
+                "code": "6.NS.B.2",
+                "main": "With accuracy and efficiency**,** divide multi-digit numbers using the standard algorithm.",
+                "subs": []
+              },
+              {
+                "code": "6.NS.B.3",
+                "main": "With accuracy and efficiency**,** add, subtract, multiply, and divide multi-digit decimals using the standard algorithm for each operation.",
+                "subs": []
+              },
+              {
+                "code": "6.NS.B.4",
+                "main": "Find the greatest common factor of two whole numbers less than or equal to 100 and the least common multiple of two whole numbers less than or equal to 12. Use the distributive property to express a sum of two whole numbers 1--100 with a common factor as a multiple of a sum of two whole numbers with no common factor. For example, express \\(36 + 8\\) as \\(4(9 + 2)\\).",
+                "subs": []
+              }
+            ]
+          },
+          {
+            "letter": "C",
+            "heading": "Apply and extend previous understandings of numbers to the system of rational numbers",
+            "standards": [
+              {
+                "code": "6.NS.C.5",
+                "main": "Understand that positive and negative numbers are used together to describe quantities having opposite directions or values (e.g., temperature above/below zero, elevation above/below sea level, credits/debits, positive/negative electric charge); use positive and negative numbers to represent quantities in real-world contexts, explaining the meaning of 0 in each situation.",
+                "subs": []
+              },
+              {
+                "code": "6.NS.C.6",
+                "main": "Understand a rational number as a point on the number line. Extend number line diagrams and coordinate axes familiar from previous grades to represent points on the line and in the plane with negative number coordinates.",
+                "subs": [
+                  "Recognize opposite signs of numbers as indicating locations on opposite sides of 0 on the number line; recognize that the opposite of the opposite of a number is the number itself, e.g., \\(- ( - 3) = 3\\), and that 0 is its own opposite.",
+                  "Understand signs of numbers in ordered pairs as indicating locations in quadrants of the coordinate plane; recognize that when two ordered pairs differ only by signs, the locations of the points are related by reflections across one or both axes.",
+                  "Find and position integers and other rational numbers on a horizontal or vertical number line diagram; find and position pairs of integers and other rational numbers on a coordinate plane."
+                ]
+              },
+              {
+                "code": "6.NS.C.7",
+                "main": "Understand ordering and absolute value of rational numbers.",
+                "subs": [
+                  "Interpret statements of inequality as statements about the relative position of two numbers on a number line diagram. For example, interpret \\(- 3 > - 7\\) as a statement that\\ \\(- 3\\) is located to the right of \\(- 7\\) on a number line oriented from left to right.",
+                  "Write, interpret, and explain statements of order for rational numbers in real-world contexts. For example, write \\(- 3^{\\circ}C > - 7^{\\circ}C\\) to express the fact that \\(- 3^{\\circ}C\\) is warmer than \\(- 7^{\\circ}C\\) .",
+                  "Understand the absolute value of a rational number as its distance from 0 on the number line; interpret absolute value as magnitude for a positive or negative quantity in a real-world situation. For example, for an account balance of \\(- 30\\)dollars, write \\(- 30 = 30\\) to describe the size of the debt in dollars.",
+                  "Distinguish comparisons of absolute value from statements about order. For example, recognize that an account balance less than \\(- 30\\)dollars represents a debt greater than 30 dollars."
+                ]
+              },
+              {
+                "code": "6.NS.C.8",
+                "main": "Solve real-world and mathematical problems by graphing points in all four quadrants of the coordinate plane. Include use of coordinates and absolute value to find distances between points with the same first coordinate or the same second coordinate.",
+                "subs": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "6.EE",
+        "name": "Expressions and Equations",
+        "clusters": [
+          {
+            "letter": "A",
+            "heading": "Apply and extend previous understandings of arithmetic to algebraic expressions",
+            "standards": [
+              {
+                "code": "6.EE.A.1",
+                "main": "Write and evaluate numerical expressions involving whole-number exponents.",
+                "subs": []
+              },
+              {
+                "code": "6.EE.A.2",
+                "main": "Write, read, and evaluate expressions in which letters stand for numbers.",
+                "subs": [
+                  "Write expressions that record operations with numbers and with letters standing for numbers. For example, express the calculation \"Subtract \\(y\\) from 5\" as \\(5 - y\\).",
+                  "Identify parts of an expression using mathematical terms (sum, term, product, factor, quotient, coefficient); view one or more parts of an expression as a single entity. For example, describe the expression \\(2(8 + 7)\\) as a product of two factors; view \\((8 + 7)\\) as both a single entity and a sum of two terms.",
+                  "Evaluate expressions at specific values of their variables. Include expressions that arise from formulas used in real-world problems. Perform arithmetic operations, including those involving whole number exponents, in the conventional order when there are no parentheses to specify a particular order (Order of Operations). For example, use the formulas \\(V = 6s3\\) and \\(A = 6s2\\) to find the volume and surface area of a cube with sides of length \\(s = \\frac{1}{2}\\)."
+                ]
+              },
+              {
+                "code": "6.EE.A.3",
+                "main": "Apply the properties of operations to generate equivalent expressions. For example, apply the distributive property to the expression \\(3(2 + x)\\) to produce the equivalent expression\\(6 + 3x\\) apply the distributive property to the expression \\(24x + 18y\\)to produce the equivalent expression \\(6(4x + 3y)\\) ; apply properties of operations to \\(y + y + y\\) to produce the equivalent expression \\(3y\\).",
+                "subs": []
+              },
+              {
+                "code": "6.EE.A.4",
+                "main": "Identify when two expressions are equivalent (i.e., when the two expressions name the same number regardless of which value is substituted into them). For example, the expressions \\(y + y + y\\) and \\(3y\\)are equivalent because they name the same number regardless of which number \\(y\\) stands for.",
+                "subs": []
+              }
+            ]
+          },
+          {
+            "letter": "B",
+            "heading": "Reason about and solve one-variable equations and inequalities",
+            "standards": [
+              {
+                "code": "6.EE.B.5",
+                "main": "Understand solving an equation or inequality as a process of answering a question: which values from a specified set, if any, make the equation or inequality true? Use substitution to determine whether a given number in a specified set makes an equation or inequality true.",
+                "subs": []
+              },
+              {
+                "code": "6.EE.B.6",
+                "main": "Use variables to represent numbers and write expressions when solving a real-world or mathematical problem; understand that a variable can represent an unknown number, or, depending on the purpose at hand, any number in a specified set.",
+                "subs": []
+              },
+              {
+                "code": "6.EE.B.7",
+                "main": "Solve real-world and mathematical problems by writing and solving equations of the form\\ \\(x + p\\) and \\(px = q\\)for cases in which \\(p\\), \\(q\\) and \\(x\\) are all nonnegative rational numbers.",
+                "subs": []
+              },
+              {
+                "code": "6.EE.B.8",
+                "main": "Write an inequality of the form \\(x > c\\) or \\(x < c\\) to represent a constraint or condition in a real-world or mathematical problem. Recognize that inequalities of the form \\(x > c\\)or \\(x < c\\)have infinitely many solutions; represent solutions of such inequalities on number line diagrams.",
+                "subs": []
+              }
+            ]
+          },
+          {
+            "letter": "C",
+            "heading": "Represent and analyze quantitative relationships between dependent and independent variables",
+            "standards": [
+              {
+                "code": "6.EE.C.9",
+                "main": "Use variables to represent two quantities in a real-world problem that change in relationship to one another; write an equation to express one quantity, thought of as the dependent variable, in terms of the other quantity, thought of as the independent variable. Analyze the relationship between the dependent and independent variables using graphs and tables, and relate these to the equation. For example, in a problem involving motion at constant speed, list and graph ordered pairs of distances and times, and write the equation \\(d = 65t\\) to represent the relationship between distance and time.",
+                "subs": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "6.G",
+        "name": "Geometry",
+        "clusters": [
+          {
+            "letter": "A",
+            "heading": "Solve real-world and mathematical problems involving area, surface area, and volume",
+            "standards": [
+              {
+                "code": "6.G.A.1",
+                "main": "Find the area of right triangles, other triangles, special quadrilaterals, and polygons by composing into rectangles or decomposing into triangles and other shapes; apply these techniques in the context of solving real-world and mathematical problems.",
+                "subs": []
+              },
+              {
+                "code": "6.G.A.2",
+                "main": "Find the volume of a right rectangular prism with fractional edge lengths by packing it with unit cubes of the appropriate unit fraction edge lengths, and show that the volume is the same as would be found by multiplying the edge lengths of the prism. Apply the formulas \\(V = lwh\\)and \\(V = Bh\\)to find volumes of right rectangular prisms with fractional edge lengths in the context of solving real-world and mathematical problems.",
+                "subs": []
+              },
+              {
+                "code": "6.G.A.3",
+                "main": "Draw polygons in the coordinate plane given coordinates for the vertices; use coordinates to find the length of a side joining points with the same first coordinate or the same second coordinate. Apply these techniques in the context of solving real-world and mathematical problems.",
+                "subs": []
+              },
+              {
+                "code": "6.G.A.4",
+                "main": "Represent three-dimensional figures (e.g., pyramid, triangular prism, rectangular prism) using nets made up of rectangles and triangles, and use the nets to find the surface area of these figures. Apply these techniques in the context of solving real-world and mathematical problems.",
+                "subs": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "6.SP",
+        "name": "Statistics and Probability",
+        "clusters": [
+          {
+            "letter": "A",
+            "heading": "Develop understanding of statistical variability",
+            "standards": [
+              {
+                "code": "6.SP.A.1",
+                "main": "Recognize a statistical question as one that anticipates variability in the data related to the question and accounts for it in the answers. For example, \"How old am I?\" is not a statistical question, but \"How old are the students in my school?\" is a statistical question because one anticipates variability in students' ages.",
+                "subs": []
+              },
+              {
+                "code": "6.SP.A.2",
+                "main": "Understand that a set of data collected to answer a statistical question has a distribution which can be described by its center, spread, and overall shape.",
+                "subs": []
+              },
+              {
+                "code": "6.SP.A.3",
+                "main": "Recognize that a measure of center for a numerical data set summarizes all of its values with a single number, while a measure of variation describes how its values vary with a single number.",
+                "subs": []
+              }
+            ]
+          },
+          {
+            "letter": "B",
+            "heading": "Summarize and describe distributions",
+            "standards": [
+              {
+                "code": "6.SP.B.4",
+                "main": "Display numerical data in plots on a number line, including dot plots, histograms, and box plots.",
+                "subs": []
+              },
+              {
+                "code": "6.SP.B.5",
+                "main": "Summarize numerical data sets in relation to their context, such as by:",
+                "subs": [
+                  "Reporting the number of observations.",
+                  "Describing the nature of the attribute under investigation, including how it was measured and its units of measurement.",
+                  "Giving quantitative measures of center (median and/or mean) and variability (interquartile range and/or mean absolute deviation), as well as describing any overall pattern and any striking deviations from the overall pattern with reference to the context in which the data were gathered.",
+                  "Relating the choice of measures of center and variability to the shape of the data distribution and the context in which the data were gathered."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "7": {
+    "grade": "7",
+    "note": "Four critical areas in Grade 7: proportional relationships; operations with rational numbers; expressions, equations, and inequalities.",
+    "domains": [
+      {
+        "code": "7.RP",
+        "name": "Ratios and Proportional Relationships",
+        "clusters": [
+          {
+            "letter": "A",
+            "heading": "Analyze proportional relationships and use them to solve real-world and mathematical problems",
+            "standards": [
+              {
+                "code": "7.RP.A.1",
+                "main": "Compute unit rates associated with ratios of fractions, including ratios of lengths, areas and other quantities measured in like or different units. For example, if a person walks \\(\\frac{1}{2}\\) mile in each \\(\\frac{1}{4}\\) hour, compute the unit rate as the complex fraction \\((\\frac{1}{2})(\\frac{1}{4})\\) miles per hour, equivalently 2 miles per hour.",
+                "subs": []
+              },
+              {
+                "code": "7.RP.A.2",
+                "main": "Recognize and represent proportional relationships between quantities.",
+                "subs": [
+                  "Decide whether two quantities are in a proportional relationship, e.g., by testing for equivalent ratios in a table or graphing on a coordinate plane and observing whether the graph is a straight line through the origin.",
+                  "Identify the constant of proportionality (unit rate) in tables, graphs, equations, diagrams, and verbal descriptions of proportional relationships.",
+                  "Represent proportional relationships by equations. For example, if total cost t is proportional to the number n of items purchased at a constant price p, the relationship between the total cost and the number of items can be expressed as \\(t = pn\\).",
+                  "Explain what a point \\((x,y)\\) on the graph of a proportional relationship means in terms of the situation, with special attention to the points (0, 0) and \\((1,r)\\)where \\(r\\)is the unit rate."
+                ]
+              },
+              {
+                "code": "7.RP.A.3",
+                "main": "Use proportional relationships to solve multistep ratio and percent problems. Examples: simple interest, tax, markups and markdowns, gratuities and commissions, fees, percent increase and decrease, percent error.",
+                "subs": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "7.NS",
+        "name": "The Number System",
+        "clusters": [
+          {
+            "letter": "A",
+            "heading": "Apply and extend previous understandings of operations with fractions to add, subtract, multiply, and divide rational numbers",
+            "standards": [
+              {
+                "code": "7.NS.A.1",
+                "main": "Apply and extend previous understandings of addition and subtraction to add and subtract rational numbers; represent addition and subtraction on a horizontal or vertical number line diagram.",
+                "subs": [
+                  "Describe situations in which opposite quantities combine to make 0. For example, in the first round of a game, Maria scored 20 points. In the second round of the same game, she lost 20 points. What is her score at the end of the second round?",
+                  "Understand \\(p + q\\)as the number located a distance \\(q\\)from\\(p\\), in the positive or negative direction depending on whether *q* is positive or negative. Show that a number and its opposite have a sum of 0 (are additive inverses). Interpret sums of rational numbers by describing real-world contexts.",
+                  "Understand subtraction of rational numbers as adding the additive inverse, \\(p - q = p + ( - q)\\). Show that the distance between two rational numbers on the number line is the absolute value of their difference, and apply this principle in real-world contexts.",
+                  "Apply properties of operations as strategies to add and subtract rational numbers."
+                ]
+              },
+              {
+                "code": "7.NS.A.2",
+                "main": "Apply and extend previous understandings of multiplication and division and of fractions to multiply and divide rational numbers.",
+                "subs": [
+                  "Understand that multiplication is extended from fractions to rational numbers by requiring that operations continue to satisfy the properties of operations, particularly the distributive property, leading to products such as \\(( - 1)( - 1) = 1\\) and the rules for multiplying signed numbers. Interpret products of rational numbers by describing real-world contexts.",
+                  "Understand that integers can be divided, provided that the divisor is not zero, and every quotient of integers (with non-zero divisor) is a rational number. If \\(q\\) and \\(q\\) are integers, then \\(- \\frac{p}{q} = \\frac{( - p)}{q} = \\frac{p}{( - q)}\\) . Interpret quotients of rational numbers by describing real world contexts.",
+                  "Apply properties of operations as strategies to multiply and divide rational numbers.",
+                  "Convert a rational number to a decimal using long division; know that the decimal form of a rational number terminates in 0s or eventually repeats."
+                ]
+              },
+              {
+                "code": "7.NS.A.3",
+                "main": "Solve real-world and mathematical problems involving the four operations with rational numbers. (Clarification: Computations with rational numbers extend the rules for manipulating fractions to complex fractions.)",
+                "subs": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "7.EE",
+        "name": "Expressions and Equations",
+        "clusters": [
+          {
+            "letter": "A",
+            "heading": "Use properties of operations to generate equivalent expressions",
+            "standards": [
+              {
+                "code": "7.EE.A.1",
+                "main": "Apply properties of operations as strategies to add, subtract, factor, and expand linear expressions with rational coefficients.",
+                "subs": []
+              },
+              {
+                "code": "7.EE.A.2",
+                "main": "Understand that rewriting an expression in different forms in a problem context can shed light on the problem and how the quantities in it are related. For example, \\(a + 0.05a = 1.05a\\) means that \"increase by 5%\" is the same as \"multiply by 1.05.\"",
+                "subs": []
+              }
+            ]
+          },
+          {
+            "letter": "B",
+            "heading": "Solve real-life and mathematical problems using numerical and algebraic expressions and equations",
+            "standards": [
+              {
+                "code": "7.EE.B.3",
+                "main": "Solve multi-step real-life and mathematical problems posed with positive and negative rational numbers in any form (whole numbers, fractions, and decimals), using tools strategically. Apply properties of operations to calculate with numbers in any form; convert between forms as appropriate; and assess the reasonableness of answers using mental computation and estimation strategies. For example: If a woman making \\$25 an hour gets a 10% raise, she will make an additional \\(\\frac{1}{10}\\) of her salary an hour, or \\$2.50, for a new salary of \\$27.50. If you want to place a towel bar \\(9\\frac{3}{4}\\) inches long in the center of a door that is \\(27\\frac{1}{2}\\) inches wide, you will need to place the bar about 9 inches from each edge; this estimate can be used as a check on the exact computation.",
+                "subs": []
+              },
+              {
+                "code": "7.EE.B.4",
+                "main": "Use variables to represent quantities in a real-world or mathematical problem, and construct simple equations and inequalities to solve problems by reasoning about the quantities.",
+                "subs": [
+                  "Solve word problems leading to equations of the form\\(px + q = r\\)and \\(p(x + q) = r\\), where\\(p\\), \\(q\\), and \\(r\\) are specific rational numbers. Solve equations of these forms with accuracy and efficiency. Compare an algebraic solution to an arithmetic solution, identifying the sequence of the operations used in each approach. For example, the perimeter of a rectangle is 54 cm. Its length is 6 cm. What is its width?",
+                  "Solve word problems leading to inequalities of the form\\(px + q > r\\)or \\(px + q < r\\), where \\(p\\), \\(q\\), and \\(r\\) are specific rational numbers. Graph the solution set of the inequality and interpret it in the context of the problem. For example: As a salesperson, you are paid \\$50 per week plus \\$3 per sale. This week you want your pay to be at least \\$100. Write an inequality for the number of sales you need to make, and describe the solutions."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "7.G",
+        "name": "Geometry",
+        "clusters": [
+          {
+            "letter": "A",
+            "heading": "Draw, construct, and describe geometrical figures and describe the relationships between them",
+            "standards": [
+              {
+                "code": "7.G.A.1",
+                "main": "Solve problems involving scale drawings of geometric figures, including computing actual lengths and areas from a scale drawing and reproducing a scale drawing at a different scale.",
+                "subs": []
+              },
+              {
+                "code": "7.G.A.2",
+                "main": "Draw (with technology, with ruler and protractor, as well as freehand) geometric shapes with given conditions. Focus on constructing triangles from three measures of angles or sides, noticing when the conditions determine a unique triangle, more than one triangle, or no triangle.",
+                "subs": []
+              },
+              {
+                "code": "7.G.A.3",
+                "main": "Describe the two-dimensional figures that result from slicing three-dimensional figures, as in plane sections of right rectangular prisms and right rectangular pyramids.",
+                "subs": []
+              }
+            ]
+          },
+          {
+            "letter": "B",
+            "heading": "Solve real-life and mathematical problems involving angle measure, area, surface area, and volume",
+            "standards": [
+              {
+                "code": "7.G.B.4",
+                "main": "Know the formulas for the area and circumference of a circle and use them to solve problems; give an informal derivation of the relationship between the circumference and area of a circle.",
+                "subs": []
+              },
+              {
+                "code": "7.G.B.5",
+                "main": "Use facts about supplementary, complementary, vertical, and adjacent angles in a multi-step problem to write and solve simple equations for an unknown angle in a figure.",
+                "subs": []
+              },
+              {
+                "code": "7.G.B.6",
+                "main": "Solve real-world and mathematical problems involving area, volume and surface area of two- and three-dimensional objects composed of triangles, quadrilaterals, polygons, cubes, and right prisms.",
+                "subs": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "7.SP",
+        "name": "Statistics and Probability",
+        "clusters": [
+          {
+            "letter": "A",
+            "heading": "Use random sampling to draw inferences about a population",
+            "standards": [
+              {
+                "code": "7.SP.A.1",
+                "main": "Understand that statistics can be used to gain information about a population by examining a sample of the population; generalizations about a population from a sample are valid only if the sample is representative of that population. Understand that random sampling tends to produce representative samples and support valid inferences.",
+                "subs": []
+              },
+              {
+                "code": "7.SP.A.2",
+                "main": "Use data from a random sample to draw inferences about a population with an unknown characteristic of interest. Generate multiple samples (or simulated samples) of the same size to gauge the variation in estimates or predictions. For example, estimate the mean word length in a book by randomly sampling words from the book; predict the winner of a school election based on randomly sampled survey data. Gauge how far off the estimate or prediction might be.",
+                "subs": []
+              }
+            ]
+          },
+          {
+            "letter": "B",
+            "heading": "Draw informal comparative inferences about two populations",
+            "standards": [
+              {
+                "code": "7.SP.B.3",
+                "main": "Informally assess the degree of visual overlap of two numerical data distributions with similar variabilities, measuring the difference between the centers by expressing it as a multiple of a measure of variability. For example, the mean height of players on the basketball team is 10 cm greater than the mean height of players on the soccer team, about twice the variability (mean absolute deviation) on either team; on a dot plot, the separation between the two distributions of heights is noticeable.",
+                "subs": []
+              },
+              {
+                "code": "7.SP.B.4",
+                "main": "Use measures of center and measures of variability for numerical data from random samples to draw informal comparative inferences about two populations. For example, decide whether the words in a chapter of a seventh-grade science book are generally longer than the words in a chapter of a fourth-grade science book.",
+                "subs": []
+              }
+            ]
+          },
+          {
+            "letter": "C",
+            "heading": "Investigate chance processes and develop, use, & evaluate probability models",
+            "standards": [
+              {
+                "code": "7.SP.C.5",
+                "main": "Understand that the probability of a chance event is a number between 0 and 1 that expresses the likelihood of the event occurring. Larger numbers indicate greater likelihood. A probability near 0 indicates an unlikely event, a probability around ½ indicates an event that is neither unlikely nor likely, and a probability near 1 indicates a likely event.",
+                "subs": []
+              },
+              {
+                "code": "7.SP.C.6",
+                "main": "Approximate the probability of a chance event by collecting data on the chance process that produces it and observing its long-run relative frequency, and predict the approximate relative frequency given the probability. For example, when rolling a number cube 600 times, predict that a 3 or 6 would be rolled roughly 200 times, but probably not exactly 200 times.",
+                "subs": []
+              },
+              {
+                "code": "7.SP.C.7",
+                "main": "Develop a probability model and use it to find probabilities of events. Compare probabilities from a model to observed frequencies; if the agreement is not good, explain possible sources of the discrepancy.",
+                "subs": [
+                  "Develop a uniform probability model by assigning equal probability to all outcomes and use the model to determine probabilities of events. For example, if a student is selected at random from a class, find the probability that Jane will be selected and the probability that a girl will be selected.",
+                  "Develop a probability model (which may not be uniform) by observing frequencies in data generated from a chance process. For example, find the approximate probability that a spinning penny will land heads up or that a tossed paper cup will land open-end down. Do the outcomes for the spinning penny appear to be equally likely based on the observed frequencies?"
+                ]
+              },
+              {
+                "code": "7.SP.C.8",
+                "main": "Find probabilities of compound events using organized lists, tables, tree diagrams, and simulation.",
+                "subs": [
+                  "Understand that, just as with simple events, the probability of a compound event is the fraction of outcomes in the sample space for which the compound event occurs.",
+                  "Represent sample spaces for compound events using methods such as organized lists, tables and tree diagrams. For an event described in everyday language (e.g., \"rolling double sixes\"), identify the outcomes in the sample space which compose the event.",
+                  "Design and use a simulation to generate frequencies for compound events. For example, use random digits as a simulation tool to approximate the answer to the question: If 40% of donors have type A blood, what is the probability that it will take at least 4 donors to find one with type A blood?"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "8": {
+    "grade": "8",
+    "note": "Three critical areas in Grade 8: linear equations and systems; functions to describe quantitative relationships; analyzing space and.",
+    "domains": [
+      {
+        "code": "8.NS",
+        "name": "The Number System",
+        "clusters": [
+          {
+            "letter": "A",
+            "heading": "Know that there are numbers that are not rational and approximate them by rational numbers",
+            "standards": [
+              {
+                "code": "8.NS.A.1",
+                "main": "Know that numbers that are not rational are called irrational. Understand informally that every number has a decimal expansion; for rational numbers show that the decimal expansion repeats eventually and convert a decimal expansion which repeats eventually into a rational number.",
+                "subs": []
+              },
+              {
+                "code": "8.NS.A.2",
+                "main": "Use rational approximations of irrational numbers to compare the size of irrational numbers, locate them approximately on a number line diagram, and estimate the value of expressions (e.g., $\\pi^{2}$). For example, by truncating the decimal expansion of \\(\\frac{}{2}\\), show that \\(\\frac{}{2}\\)is between 1 and 2, then between 1.4 and 1.5, and explain how to continue on to get better approximations.",
+                "subs": []
+              },
+              {
+                "code": "8.NS.A.3",
+                "main": "Understand that the sum or product of two rational numbers is rational; that the sum of a rational number and an irrational number is irrational; and that the product of a nonzero rational number and an irrational number is irrational.",
+                "subs": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "8.EE",
+        "name": "Expressions and Equations",
+        "clusters": [
+          {
+            "letter": "A",
+            "heading": "Work with radicals and integer exponents",
+            "standards": [
+              {
+                "code": "8.EE.A.1",
+                "main": "Know and apply the properties of integer exponents to generate equivalent numerical expressions. For example, \\(32 \\times 3 - 5 = 3 - 3 = \\frac{1}{33} = \\frac{1}{27}\\).",
+                "subs": []
+              },
+              {
+                "code": "8.EE.A.2",
+                "main": "Use square root and cube root symbols to represent solutions to equations of the form \\(x2 = p\\)and \\(x3 = p\\) where \\(p\\) is a positive rational number.",
+                "subs": [
+                  "Evaluate square roots of small perfect squares and cube roots of small perfect cubes. Know that \\(\\frac{}{2}\\) is irrational.",
+                  "Simplify numerical radicals, limiting to square roots (i.e. nonperfect squares). For example, simplify \\(\\frac{}{8}\\) to \\(2\\frac{}{2}\\)."
+                ]
+              },
+              {
+                "code": "8.EE.A.3",
+                "main": "Use numbers expressed in the form of a single digit times an integer power of 10 to estimate very large or very small quantities, and to express how many times as much one is than the other. For example, estimate the population of the United States as \\(3 \\times 108\\) and the population of the world as \\(7 \\times 109\\) and determine that the world population is more than 20 times larger.",
+                "subs": []
+              },
+              {
+                "code": "8.EE.A.4",
+                "main": "Perform operations with numbers expressed in scientific notation, including problems where both decimal and scientific notation are used. Use scientific notation and choose units of appropriate size for measurements of very large or very small quantities (e.g., use millimeters per year for seafloor spreading). Interpret scientific notation that has been generated by technology.",
+                "subs": []
+              }
+            ]
+          },
+          {
+            "letter": "B",
+            "heading": "Understand the connections between proportional relationships, lines, and linear equations",
+            "standards": [
+              {
+                "code": "8.EE.B.5",
+                "main": "Graph proportional relationships, interpreting the unit rate as the slope of the graph. Compare two different proportional relationships represented in different ways. For example, compare a distance-time graph to a distance-time equation to determine which of two moving objects has greater speed.",
+                "subs": []
+              },
+              {
+                "code": "8.EE.B.6",
+                "main": "Use similar triangles to explain why the slope \\(m\\) is the same between any two distinct points on a non-vertical line in the coordinate plane; derive the equation \\(y = mx\\) for a line through the origin and the equation \\(y = mx + b\\) for a line intercepting the vertical axis at \\(b\\).",
+                "subs": []
+              }
+            ]
+          },
+          {
+            "letter": "C",
+            "heading": "Analyze and solve linear equations and pairs of simultaneous linear equations",
+            "standards": [
+              {
+                "code": "8.EE.C.7",
+                "main": "Solve linear equations in one variable.",
+                "subs": [
+                  "Give examples of linear equations in one variable with one solution, infinitely many solutions, or no solutions. Show which of these possibilities is the case by successively transforming the given equation into simpler forms, until an equivalent equation of the form \\(x = a\\), \\(a = a\\), or \\(a = b\\)results (where \\(a\\)and \\(b\\)are different numbers).",
+                  "Solve linear equations with rational number coefficients, including equations whose solutions require expanding expressions using the distributive property and collecting like terms."
+                ]
+              },
+              {
+                "code": "8.EE.C.8",
+                "main": "Analyze and solve pairs of simultaneous linear equations.",
+                "subs": [
+                  "Understand that solutions to a system of two linear equations in two variables correspond to points of intersection of their graphs, because points of intersection satisfy both equations simultaneously.",
+                  "Solve systems of two linear equations in two variables using the substitution method and estimate solutions by graphing the equations. Solve simple cases by inspection. For example: by inspection, conclude that \\(3x + 2y = 5\\) and \\(3x + 2y = 6\\)have no solution because \\(3x + 2y\\) cannot simultaneously be 5 and 6. Solve \\(3x + y = 30\\) and \\(y = 2x\\)using the substitution method; Solve \\(y = 3x + 1\\) and \\(y = - 2x + 7\\)using the substitution method.",
+                  "Solve real-world and mathematical problems leading to two linear equations in two variables. For example, given coordinates for two pairs of points, determine whether the line through the first pair of points intersects the line through the second pair."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "8.F",
+        "name": "Functions",
+        "clusters": [
+          {
+            "letter": "A",
+            "heading": "Define, evaluate and compare functions",
+            "standards": [
+              {
+                "code": "8.F.A.1",
+                "main": "Understand that a function is a rule that assigns to each input exactly one output. The graph of a function is the set of ordered pairs consisting of an input and the corresponding output.\\ (Clarification: Function notation is not required in Grade 8)",
+                "subs": []
+              },
+              {
+                "code": "8.F.A.2",
+                "main": "Compare properties (e.g. rate of change, intercepts, domain and range) of two functions each represented in a different way (algebraically, graphically, numerically in tables, or by verbal descriptions). For example, given a linear function represented by a table of values and a linear function represented by an algebraic expression, determine which function has the greater rate of change.",
+                "subs": []
+              },
+              {
+                "code": "8.F.A.3",
+                "main": "Interpret the equation \\(y = mx + b\\)as defining a linear function, whose graph is a straight line; give examples of functions that are not linear. For example, the function \\(A = s2\\) giving the area of a square as a function of its side length is not linear because its graph contains the points (1,1), (2,4) and (3,9), which are not on a straight line.",
+                "subs": []
+              }
+            ]
+          },
+          {
+            "letter": "B",
+            "heading": "Use functions to model relationships between quantities",
+            "standards": []
+          }
+        ]
+      },
+      {
+        "code": "8.G",
+        "name": "Geometry",
+        "clusters": [
+          {
+            "letter": "A",
+            "heading": "Understand congruence and similarity using physical models, transparencies, or geometry software",
+            "standards": [
+              {
+                "code": "8.G.A.1",
+                "main": "Verify experimentally the properties of rotations, reflections, and translations:",
+                "subs": [
+                  "Lines are transformed to lines, and line segments to line segments of the same length.",
+                  "Angles are transformed to angles of the same measure.",
+                  "Parallel lines are transformed to parallel lines."
+                ]
+              },
+              {
+                "code": "8.G.A.2",
+                "main": "Understand that a two-dimensional figure is congruent to another if the second can be obtained from the first by a sequence of rotations, reflections, and translations; given two congruent figures, describe a sequence that exhibits the congruence between them.",
+                "subs": []
+              },
+              {
+                "code": "8.G.A.3",
+                "main": "Describe the effect of dilations, translations, rotations, and reflections on two-dimensional figures using coordinates.",
+                "subs": []
+              },
+              {
+                "code": "8.G.A.4",
+                "main": "Understand that a two-dimensional figure is similar to another if the second can be obtained from the first by a sequence of rotations, reflections, translations, and dilations; given two similar two-dimensional figures, describe a sequence that exhibits the similarity between them.",
+                "subs": []
+              },
+              {
+                "code": "8.G.A.5",
+                "main": "Use informal arguments to establish facts about the angle sum and exterior angle of triangles, about the angles created when parallel lines are cut by a transversal, and the angle-angle criterion for similarity of triangles. For example, arrange three copies of the same triangle so that the sum of the three angles appears to form a line, and give an argument in terms of transversals why this is so.",
+                "subs": []
+              }
+            ]
+          },
+          {
+            "letter": "B",
+            "heading": "Understand and apply the Pythagorean Theorem",
+            "standards": [
+              {
+                "code": "8.G.B.6",
+                "main": "Explain a proof of the Pythagorean Theorem and its converse.",
+                "subs": []
+              },
+              {
+                "code": "8.G.B.7",
+                "main": "Apply the Pythagorean Theorem to determine unknown side lengths in right triangles in real-world and mathematical problems in two and three dimensions.",
+                "subs": []
+              },
+              {
+                "code": "8.G.B.8",
+                "main": "Apply the Pythagorean Theorem to find the distance between two points in a coordinate system.",
+                "subs": []
+              }
+            ]
+          },
+          {
+            "letter": "C",
+            "heading": "Solve real-world and mathematical problems involving volume of cylinders, cones, and spheres",
+            "standards": [
+              {
+                "code": "8.G.C.9",
+                "main": "Know the formulas for the volumes of cones, cylinders, and spheres and use them to solve real-world and mathematical problems.",
+                "subs": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "8.SP",
+        "name": "Statistics and Probability",
+        "clusters": [
+          {
+            "letter": "A",
+            "heading": "Investigate patterns of association in bivariate data",
+            "standards": [
+              {
+                "code": "8.SP.A.1",
+                "main": "Construct and interpret scatter plots for bivariate measurement data to investigate patterns of association between two quantities. Describe patterns such as clustering, outliers, positive or negative association, linear association, and nonlinear association.",
+                "subs": []
+              },
+              {
+                "code": "8.SP.A.2",
+                "main": "Know that straight lines are widely used to model relationships between two quantitative variables. For scatter plots that suggest a linear association, informally fit a straight line, and informally assess the model fit (e.g. line of best fit) by judging the closeness of the data points to the line.",
+                "subs": []
+              },
+              {
+                "code": "8.SP.A.3",
+                "main": "Use the equation of a linear model to solve problems in the context of bivariate measurement data, interpreting the slope and intercept. For example, in a linear model for a biology experiment, interpret a slope of 1.5 cm/hr as meaning that an additional hour of sunlight each day is associated with an additional 1.5 cm in mature plant height.",
+                "subs": []
+              },
+              {
+                "code": "8.SP.A.4",
+                "main": "Understand that patterns of association can also be seen in bivariate categorical data by displaying frequencies and relative frequencies in a two-way table. Construct and interpret a two-way table summarizing data on two categorical variables collected from the same subjects. Use relative frequencies calculated for rows or columns to describe possible association between the two variables. For example, collect data from students in your class on whether or not they have a curfew on school nights and whether or not they have assigned chores at home. Is there evidence that those who have a curfew also tend to have chores?",
+                "subs": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+};
+
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function render() {
+  let html = '';
+  for (const g of ['5','6','7','8']) {
+    const grade = MATH[g];
+    if (!grade) continue;
+    html += `<section class="grade-section" id="grade-${g}" data-grade="${g}">`;
+    html += `<div class="grade-header">`;
+    html += `<div class="grade-eyebrow">Grade ${g}</div>`;
+    html += `<h2 class="grade-title">Mathematics — Grade ${esc(g)}</h2>`;
+    html += `<div class="grade-note">${esc(grade.note)}</div>`;
+    html += `</div>`;
+    for (const dm of grade.domains) {
+      html += `<div class="domain-card" data-domain="${esc(dm.code)}">`;
+      html += `<div class="domain-header">`;
+      html += `<span class="domain-code">${esc(dm.code)}</span>`;
+      html += `<span class="domain-name">${esc(dm.name)}</span>`;
+      html += `</div>`;
+      html += `<div class="clusters-list">`;
+      for (const c of dm.clusters) {
+        html += `<div class="cluster-block">`;
+        html += `<div class="cluster-header">`;
+        html += `<span class="cluster-letter">${esc(c.letter)}</span>`;
+        html += `<span class="cluster-heading">${esc(c.heading)}</span>`;
+        html += `</div>`;
+        html += `<div class="standards-list">`;
+        for (const s of c.standards) {
+          const searchText = (s.main + ' ' + (s.subs || []).join(' ')).toLowerCase();
+          html += `<div class="std-entry" data-code="${esc(s.code)}" data-search="${esc(searchText)}">`;
+          html += `<div class="std-header">`;
+          html += `<span class="std-code">${esc(s.code)}</span>`;
+          html += `<span class="std-main">${esc(s.main)}</span>`;
+          html += `</div>`;
+          if (s.subs && s.subs.length > 0) {
+            html += `<ul class="std-subs">`;
+            for (const sub of s.subs) {
+              html += `<li>${esc(sub)}</li>`;
+            }
+            html += `</ul>`;
+          }
+          html += `</div>`;
+        }
+        html += `</div>`;
+        html += `</div>`;
+      }
+      html += `</div>`;
+      html += `</div>`;
+    }
+    html += `</section>`;
+  }
+  document.getElementById('content').innerHTML = html;
+}
+
+let activeGrade = 'all';
+let activeQuery = '';
+
+function applyFilters() {
+  const q = activeQuery.trim().toLowerCase();
+
+  document.querySelectorAll('.std-entry').forEach(s => {
+    let visible = true;
+    if (q) {
+      visible = (s.dataset.search || '').includes(q);
+    }
+    s.classList.toggle('hidden', !visible);
+  });
+
+  document.querySelectorAll('.domain-card').forEach(card => {
+    const visible = card.querySelectorAll('.std-entry:not(.hidden)').length > 0;
+    card.classList.toggle('hidden', !visible);
+  });
+
+  document.querySelectorAll('.grade-section').forEach(sec => {
+    const matchGrade = activeGrade === 'all' || sec.dataset.grade === activeGrade;
+    const hasVisibleDomain = sec.querySelectorAll('.domain-card:not(.hidden)').length > 0;
+    sec.classList.toggle('hidden', !(matchGrade && hasVisibleDomain));
+  });
+
+  document.querySelectorAll('.toc-nav a').forEach(a => {
+    const match = activeGrade === 'all' || a.dataset.grade === activeGrade;
+    a.classList.toggle('hidden', !match);
+  });
+
+  updateCounter();
+}
+
+function updateCounter() {
+  let count = 0;
+  document.querySelectorAll('.grade-section:not(.hidden) .domain-card:not(.hidden) .std-entry:not(.hidden)').forEach(() => count++);
+  document.getElementById('counter').innerHTML =
+    `Showing <strong>${count}</strong> standard${count === 1 ? '' : 's'}`;
+  document.getElementById('empty').classList.toggle('visible', count === 0);
+}
+
+document.getElementById('grade-pills').addEventListener('click', (e) => {
+  if (e.target.tagName !== 'BUTTON') return;
+  document.querySelectorAll('#grade-pills .pill').forEach(p => p.classList.remove('active'));
+  e.target.classList.add('active');
+  activeGrade = e.target.dataset.grade;
+  applyFilters();
+});
+
+const searchInput = document.getElementById('search-input');
+const searchClear = document.getElementById('search-clear');
+searchInput.addEventListener('input', (e) => {
+  activeQuery = e.target.value;
+  searchClear.classList.toggle('visible', !!activeQuery);
+  applyFilters();
+});
+searchClear.addEventListener('click', () => {
+  searchInput.value = '';
+  activeQuery = '';
+  searchClear.classList.remove('visible');
+  applyFilters();
+  searchInput.focus();
+});
+searchInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && activeQuery) {
+    searchClear.click();
+  }
+});
+
+render();
+applyFilters();
+
+// Render LaTeX math once content is in the DOM
+function renderMath() {
+  if (typeof renderMathInElement === 'function') {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: '\\(', right: '\\)', display: false },
+        { left: '\\[', right: '\\]', display: true }
+      ],
+      throwOnError: false
+    });
+  } else {
+    // auto-render still loading — try again shortly
+    setTimeout(renderMath, 50);
+  }
+}
+renderMath();
+</script>
 </body>
 </html>

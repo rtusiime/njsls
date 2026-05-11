@@ -6,6 +6,152 @@ Entries are intentionally verbose. The point is full visibility: open the file a
 
 ---
 
+## Session 3 — 2026-05-11, 12:50 PM EDT
+*Architecture doc; Math populated end-to-end with LaTeX-rendered formulas.*
+
+### User requests (in order through the session)
+
+> how are you storing the database schema? is there a doc where I can see the architectural decisions you made, especially around how well it will work when we add other subject areas (social studies, math, etc)
+
+> I'd suggest that you write whatever will help you make sense of this code whenever I open the claude terminal. so let's do that. then let's set up the math/Users/ktusiime/Desktop/DLA/Forge/curriculum/2023_NJSLS_Mathematics.docx
+
+> I hope you're installing these tools like pandoc, pdf extractor in some kind of global path so you're not downloading them in every single folder
+
+> btw, is markdown the file format you understand best? if you could give me a ranking of which file formats you work best with, that'd be extremely helpful.
+
+> remember the idea is that you're converting these to latex that you can embed into the html
+
+### Reasoning and plan
+
+Three threads through this session:
+
+1. **Architecture doc.** I admitted there was no architectural doc and the per-subject schemas were inline JS consts in each subject HTML. Wrote `CLAUDE.md` (auto-loaded when Claude opens this directory) instead of `ARCHITECTURE.md` — same content, but the right *format* to actually help future sessions, since it loads into context automatically. Covers file map, per-subject schema shapes side-by-side, accent palette, source-doc locations, common operations, refactor trigger.
+2. **Tool install hygiene.** Confirmed to user that all `brew install` packages (poppler, pandoc, libwmf) land in `/opt/homebrew/`, the machine-wide Homebrew prefix. Persists across sessions; no per-folder reinstall.
+3. **Math standards.** Big one. The 2023 NJSLS Mathematics docx has 524 inline formula images (`.wmf`), 149 of them in grades 5–8. Initially I proposed shipping with `[·]` placeholders. User chose "install libwmf + try OCR" instead — much higher fidelity. After probing, found the WMF→SVG pipeline preserves text characters with positions + fraction bars as `<line>` elements — better than OCR could ever do. Then user pivoted: *"remember the idea is that you're converting these to latex that you can embed into the html"* — re-ran the formula reconstruction to emit LaTeX, dropped KaTeX into `math.html` for typeset rendering.
+
+### Schema (Math, locked)
+
+```js
+MATH = {
+  "<grade>": {                                   // "5" | "6" | "7" | "8"
+    grade, note,
+    domains: [{
+      code,                                      // "5.OA", "6.RP", etc.
+      name,
+      clusters: [{
+        letter,                                  // "A", "B", "C"
+        heading,                                 // "Write and interpret numerical expressions"
+        standards: [{
+          code,                                  // "5.OA.A.2"
+          main,                                  // verbatim text with inline LaTeX in \(...\)
+          subs: [string]                         // optional lettered sub-items
+        }]
+      }]
+    }]
+  }
+}
+```
+
+Filters: Grade pills + live search. Less aggressive filter UX than Science (no separate domain-code pills) because per-grade domains differ — TOC sidebar lets users jump between grades. Documented in `CLAUDE.md`.
+
+### Tool / command transcript — the formula pipeline
+
+**1. Install poppler (already there from Session 2), pandoc, libwmf.**
+```
+$ brew install pandoc libwmf
+```
+All three land in `/opt/homebrew/bin/`. One-time machine cost.
+
+**2. Convert docx → markdown.**
+```
+$ pandoc -f docx -t markdown 2023_NJSLS_Mathematics.docx -o /tmp/math.md
+$ wc -l /tmp/math.md
+    6369 /tmp/math.md
+```
+Document is K–12; grades 5–8 span lines 1925–3494. Formulas appear in the markdown as `![](media/imageNNN.wmf)`.
+
+**3. Extract media + survey.**
+```
+$ pandoc -f docx --extract-media=/tmp/math_media [...] /dev/null
+$ unzip -l 2023_NJSLS_Mathematics.docx | grep -E "media/image[0-9]+" | sort | uniq -c
+   1 jpeg, 6 png, 3 svg, 524 wmf
+```
+524 vector formula images. `magick` delegates `.wmf` → `libreoffice` (not installed) and failed.
+
+**4. Probe a single WMF→SVG conversion to test feasibility.**
+```
+$ wmf2svg image115.wmf > /tmp/img115.svg
+```
+Discovery: the SVG **preserves text characters with x/y positions** and uses `<line>` elements for fraction bars. *Far* better than I expected; no OCR needed.
+
+Hand-reconstructed image115 in Python in a few lines:
+```
+image115 reconstructed: 2×(8+7)
+```
+Then expanded to 10-image sample. 8/10 reconstructed perfectly, 2 needed: (a) better x-ordering for nested fractions, (b) one more Symbol-font byte mapping (`<` at 0x3C).
+
+**5. First subagent: reconstruct all 524 formulas as plain Unicode text.**
+- Input: `/tmp/math_media/media/*.wmf`
+- Algorithm: SVG → parse text + line elements → group fractions by x-range → Symbol-font byte mapping → reconstruct as ordered segments
+- Output: `/tmp/math_formulas.json` mapping `imageNNN → "1/10"`-style strings
+- Result: 524/524 reconstructed, 20 had unmapped bytes (Adobe Symbol bracket-assembly pieces — large stacked parens around tall fractions). All 8 sanity-check expectations matched verbatim.
+
+**6. User pivot: LaTeX.**
+Re-tasked with a fresh subagent (no SendMessage available in this harness; spawned new agent pointing at the existing script as a starting reference). Same algorithm; emit LaTeX instead. Key changes:
+- Fractions: `NUM/DEN` → `\frac{NUM}{DEN}`
+- Operators: `×` → `\times`, `÷` → `\div`, `≤` → `\le`, etc.
+- Greek letters: `π` → `\pi`, etc.
+- Drop the bracket-assembly bytes entirely — KaTeX auto-sizes parens with `\left(`/`\right)` anyway.
+- Subagent also discovered + added: `\sqrt` (one occurrence in image400), `^{\circ}` degree sign (5 occurrences), `\angle` (one occurrence).
+- Result: 524/524, **zero unmapped bytes**. All 8 sanity checks pass exactly.
+
+**7. Substitute LaTeX into the markdown.**
+```
+Image refs in grades 5-8 (pre): 149
+Unresolved [missing:] markers after substitution: 0
+```
+Each `![](media/imageNNN.wmf)` became `\(<latex>\)` ready for KaTeX auto-render.
+
+**8. Second extraction subagent: standards into JSON.**
+- Schema: `grade → domain → cluster → standard with optional subs`
+- Output: `/tmp/math_pes.json`
+- Counts: G5: 30 std, G6: 29, G7: 24, G8: 27 → **110 standards** total (171 with subs)
+- Spot-checks (5.OA.A.2 contains three LaTeX expressions, 5.NBT.A.1 contains `\(\frac{1}{10}\)`) — both pass
+- Two source-quirk fallbacks documented: one cluster missing its `#####` prefix in the source, and pandoc `<!-- -->` list-reset markers that orphan lettered sub-items at column 0
+
+**9. Build `math.html`.**
+Modeled on ELA + Science: deep-teal accent (`#1F5A6E`), grade pills, search input, TOC sidebar, render function with `data-search` attribute on each standard so search hits raw LaTeX source (not the post-KaTeX rendered form). Embedded KaTeX 0.16.9 + auto-render extension via jsDelivr CDN with SRI hashes. After `render()` populates the DOM, `renderMathInElement(document.body, {delimiters: [\(\), \[\]]})` typesets all the math in one pass.
+
+```
+$ grep -oE '"[5-8]\.[A-Z]+\.[A-Z]\.[0-9]+[a-z]?"' math.html | sort -u | wc -l
+110
+```
+
+**10. Flip hub status, append SESSIONS, commit, push, verify.**
+
+### File format ranking (from the in-session aside)
+
+For future reference — what I work with best:
+- **Tier 1 (native):** Markdown, plain text, JSON/YAML, HTML/CSS/JS, CSV, mainstream source code.
+- **Tier 2 (workable but lossy):** born-digital PDF (via `pdftotext`), DOCX (via `pandoc`).
+- **Tier 3 (needs rendering pipeline):** scanned PDFs, screenshots, WMF/EMF vector graphics — case-by-case.
+- **Tier 4 (opaque):** xlsx with merged cells, pptx layouts, proprietary binaries.
+
+Special note for math: **LaTeX/TeX source or MathML** is the gold standard — preserves formulas perfectly. The CCSS Math standards are published as HTML with typed formulas; if we ever need to refresh, that's the cleanest source.
+
+### Commits produced
+
+To be backfilled on commit.
+
+### Notes / flags
+
+- KaTeX auto-render runs once after `render()`. Subsequent filter changes use show/hide classes only; no need to re-render math.
+- `data-search` on each `.std-entry` stores the lowercased raw text (statement + subs, *with* LaTeX commands). Search matches against the source LaTeX, not the post-render visual form. Users searching for `frac` will find every fraction-containing standard, which is *useful* but probably surprising. Acceptable.
+- 20 standards still have the source's tight-spacing quirk: `\(\frac{1}{10}\)of what` (no space before `of`). KaTeX renders the math then HTML continues — looks slightly tight but readable. Not worth a cleanup pass.
+- For Social Studies / other future subjects, see `CLAUDE.md` "Adding a new subject" section.
+
+---
+
 ## Session 2 — 2026-05-11, 12:25 PM EDT
 *Flesh out Science from the source PDF; start this transcript log.*
 
