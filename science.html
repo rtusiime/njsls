@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>New Jersey Student Learning Standards — Science — Grades 6 through 8</title>
+<title>New Jersey Student Learning Standards — Science — Grades 5 through 8</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -206,6 +206,12 @@ main { max-width: 1100px; margin: 0 auto; padding: 48px 48px 80px; }
   font-size: 11px; color: var(--faint); font-weight: 500;
   letter-spacing: 0.04em; white-space: nowrap;
 }
+.topic-band-chip {
+  font-size: 9px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; padding: 3px 8px; border-radius: 3px;
+  background: var(--accent-pale); color: var(--accent);
+  white-space: nowrap;
+}
 
 .pe-list { display: flex; flex-direction: column; gap: 18px; }
 
@@ -300,7 +306,7 @@ footer {
   <a href="index.html" class="back-link"><span class="arrow">←</span> All standards</a>
   <div class="eyebrow">Reference Document · Forge Prep</div>
   <h1 class="title">New Jersey Student Learning<br>Standards for <em>Science</em></h1>
-  <p class="subtitle">Grades 6 through 8 (Middle School). Adopted 2020 by the New Jersey Department of Education. Performance expectations are grade-banded across middle school rather than written per-grade.</p>
+  <p class="subtitle">Grades 5 through 8. Adopted 2020 by the New Jersey Department of Education. Grade 5 is written per-grade; Grades 6–8 are banded across middle school. Engineering at Grade 5 is the 3–5-banded ETS1 topic.</p>
   <div class="source-line"><strong>Source:</strong> 2020 New Jersey Student Learning Standards — Science, Office of Standards, Division of Teaching and Learning Services, New Jersey Department of Education. Performance-expectation statements quoted verbatim; the three-dimensional foundation box (practices, core ideas, crosscutting concepts) is in the source PDF.</div>
   <div class="legend">
     <span><span class="legend-swatch clarif"></span>Clarification statement</span>
@@ -321,21 +327,38 @@ footer {
       </div>
     </div>
     <div class="filter-row">
+      <span class="filter-label">Grade band</span>
+      <div class="pills" id="gradeband-pills">
+        <button class="pill active" data-gradeband="all">All grade bands</button>
+        <button class="pill" data-gradeband="5">Grade 5</button>
+        <button class="pill" data-gradeband="MS">Grades 6–8</button>
+      </div>
+    </div>
+    <div class="filter-row">
       <span class="filter-label">Topic</span>
       <div class="pills" id="topic-pills">
         <button class="pill accent active" data-topic="all">All topics</button>
-        <button class="pill accent code-pill" data-topic="MS-PS1" data-parent="physical">MS-PS1</button>
-        <button class="pill accent code-pill" data-topic="MS-PS2" data-parent="physical">MS-PS2</button>
-        <button class="pill accent code-pill" data-topic="MS-PS3" data-parent="physical">MS-PS3</button>
-        <button class="pill accent code-pill" data-topic="MS-PS4" data-parent="physical">MS-PS4</button>
-        <button class="pill accent code-pill" data-topic="MS-LS1" data-parent="life">MS-LS1</button>
-        <button class="pill accent code-pill" data-topic="MS-LS2" data-parent="life">MS-LS2</button>
-        <button class="pill accent code-pill" data-topic="MS-LS3" data-parent="life">MS-LS3</button>
-        <button class="pill accent code-pill" data-topic="MS-LS4" data-parent="life">MS-LS4</button>
-        <button class="pill accent code-pill" data-topic="MS-ESS1" data-parent="earth_space">MS-ESS1</button>
-        <button class="pill accent code-pill" data-topic="MS-ESS2" data-parent="earth_space">MS-ESS2</button>
-        <button class="pill accent code-pill" data-topic="MS-ESS3" data-parent="earth_space">MS-ESS3</button>
-        <button class="pill accent code-pill" data-topic="MS-ETS1" data-parent="engineering">MS-ETS1</button>
+        <button class="pill accent code-pill" data-topic="5-PS1" data-parent="physical" data-gradeband="5">5-PS1</button>
+        <button class="pill accent code-pill" data-topic="5-PS2" data-parent="physical" data-gradeband="5">5-PS2</button>
+        <button class="pill accent code-pill" data-topic="5-PS3" data-parent="physical" data-gradeband="5">5-PS3</button>
+        <button class="pill accent code-pill" data-topic="5-LS1" data-parent="life" data-gradeband="5">5-LS1</button>
+        <button class="pill accent code-pill" data-topic="5-LS2" data-parent="life" data-gradeband="5">5-LS2</button>
+        <button class="pill accent code-pill" data-topic="5-ESS1" data-parent="earth_space" data-gradeband="5">5-ESS1</button>
+        <button class="pill accent code-pill" data-topic="5-ESS2" data-parent="earth_space" data-gradeband="5">5-ESS2</button>
+        <button class="pill accent code-pill" data-topic="5-ESS3" data-parent="earth_space" data-gradeband="5">5-ESS3</button>
+        <button class="pill accent code-pill" data-topic="3-5-ETS1" data-parent="engineering" data-gradeband="5">3-5-ETS1</button>
+        <button class="pill accent code-pill" data-topic="MS-PS1" data-parent="physical" data-gradeband="MS">MS-PS1</button>
+        <button class="pill accent code-pill" data-topic="MS-PS2" data-parent="physical" data-gradeband="MS">MS-PS2</button>
+        <button class="pill accent code-pill" data-topic="MS-PS3" data-parent="physical" data-gradeband="MS">MS-PS3</button>
+        <button class="pill accent code-pill" data-topic="MS-PS4" data-parent="physical" data-gradeband="MS">MS-PS4</button>
+        <button class="pill accent code-pill" data-topic="MS-LS1" data-parent="life" data-gradeband="MS">MS-LS1</button>
+        <button class="pill accent code-pill" data-topic="MS-LS2" data-parent="life" data-gradeband="MS">MS-LS2</button>
+        <button class="pill accent code-pill" data-topic="MS-LS3" data-parent="life" data-gradeband="MS">MS-LS3</button>
+        <button class="pill accent code-pill" data-topic="MS-LS4" data-parent="life" data-gradeband="MS">MS-LS4</button>
+        <button class="pill accent code-pill" data-topic="MS-ESS1" data-parent="earth_space" data-gradeband="MS">MS-ESS1</button>
+        <button class="pill accent code-pill" data-topic="MS-ESS2" data-parent="earth_space" data-gradeband="MS">MS-ESS2</button>
+        <button class="pill accent code-pill" data-topic="MS-ESS3" data-parent="earth_space" data-gradeband="MS">MS-ESS3</button>
+        <button class="pill accent code-pill" data-topic="MS-ETS1" data-parent="engineering" data-gradeband="MS">MS-ETS1</button>
       </div>
     </div>
     <div class="filter-row">
@@ -371,6 +394,60 @@ const SCIENCE = {
     "name": "Physical Sciences",
     "note": "Four topics covering matter, motion and forces, energy, and waves.",
     "topics": [
+      {
+        "code": "5-PS1",
+        "name": "Matter and its Interactions",
+        "pes": [
+          {
+            "code": "5-PS1-1",
+            "statement": "Develop a model to describe that matter is made of particles too small to be seen.",
+            "clarification": "Examples of evidence supporting a model could include adding air to expand a basketball, compressing air in a syringe, dissolving sugar in water, and evaporating salt water.",
+            "assessment_boundary": "Assessment does not include the atomic-scale mechanism of evaporation and condensation or defining the unseen particles."
+          },
+          {
+            "code": "5-PS1-2",
+            "statement": "Measure and graph quantities to provide evidence that regardless of the type of change that occurs when heating, cooling, or mixing substances, the total weight of matter is conserved.",
+            "clarification": "Examples of reactions or changes could include phase changes, dissolving, and mixing that form new substances.",
+            "assessment_boundary": "Assessment does not include distinguishing mass and weight."
+          },
+          {
+            "code": "5-PS1-3",
+            "statement": "Make observations and measurements to identify materials based on their properties.",
+            "clarification": "Examples of materials to be identified could include baking soda and other powders, metals, minerals, and liquids. Examples of properties could include color, hardness, reflectivity, electrical conductivity, thermal conductivity, response to magnetic forces, and solubility; density is not intended as an identifiable property.",
+            "assessment_boundary": "Assessment does not include density or distinguishing mass and weight."
+          },
+          {
+            "code": "5-PS1-4",
+            "statement": "Conduct an investigation to determine whether the mixing of two or more substances results in new substances."
+          }
+        ],
+        "grade_band": "5"
+      },
+      {
+        "code": "5-PS2",
+        "name": "Motion and Stability: Forces and Interactions",
+        "pes": [
+          {
+            "code": "5-PS2-1",
+            "statement": "Support an argument that the gravitational force exerted by Earth on objects is directed down.",
+            "clarification": "“Down” is a local description of the direction that points toward the center of the spherical Earth.",
+            "assessment_boundary": "Assessment does not include mathematical representation of gravitational force."
+          }
+        ],
+        "grade_band": "5"
+      },
+      {
+        "code": "5-PS3",
+        "name": "Energy",
+        "pes": [
+          {
+            "code": "5-PS3-1",
+            "statement": "Use models to describe that energy in animals’ food (used for body repair, growth, motion, and to maintain body warmth) was once energy from the sun.",
+            "clarification": "Examples of models could include diagrams, and flow charts."
+          }
+        ],
+        "grade_band": "5"
+      },
       {
         "code": "MS-PS1",
         "name": "Matter and its Interactions",
@@ -410,7 +487,8 @@ const SCIENCE = {
             "clarification": "Emphasis is on the design, controlling the transfer of energy to the environment, and modification of a device using factors such as type and concentration of a substance. Examples of designs could involve chemical reactions such as dissolving ammonium chloride or calcium chloride.",
             "assessment_boundary": "Assessment is limited to the criteria of amount, time, and temperature of substance in testing the device."
           }
-        ]
+        ],
+        "grade_band": "MS"
       },
       {
         "code": "MS-PS2",
@@ -446,7 +524,8 @@ const SCIENCE = {
             "clarification": "Examples of this phenomenon could include the interactions of magnets, electrically-charged strips of tape, and electrically-charged pith balls. Examples of investigations could include first-hand experiences or simulations.",
             "assessment_boundary": "Assessment is limited to electric and magnetic fields and limited to qualitative evidence for the existence of fields."
           }
-        ]
+        ],
+        "grade_band": "MS"
       },
       {
         "code": "MS-PS3",
@@ -481,7 +560,8 @@ const SCIENCE = {
             "clarification": "Examples of empirical evidence used in arguments could include an inventory or other representation of the energy before and after the transfer in the form of temperature changes or motion of object.",
             "assessment_boundary": "Assessment does not include calculations of energy."
           }
-        ]
+        ],
+        "grade_band": "MS"
       },
       {
         "code": "MS-PS4",
@@ -505,7 +585,8 @@ const SCIENCE = {
             "clarification": "Emphasis is on a basic understanding that waves can be used for communication purposes. Examples could include using fiber optic cable to transmit light pulses, radio wave pulses in wifi devices, and conversion of stored binary patterns to make sound or text on a computer screen.",
             "assessment_boundary": "Assessment does not include binary counting. Assessment does not include the specific mechanism of any given device."
           }
-        ]
+        ],
+        "grade_band": "MS"
       }
     ]
   },
@@ -513,6 +594,31 @@ const SCIENCE = {
     "name": "Life Sciences",
     "note": "Four topics on cell-to-organism structures, ecosystems, heredity, and evolution.",
     "topics": [
+      {
+        "code": "5-LS1",
+        "name": "From Molecules to Organisms: Structures and Processes",
+        "pes": [
+          {
+            "code": "5-LS1-1",
+            "statement": "Support an argument that plants get the materials they need for growth chiefly from air and water.",
+            "clarification": "Emphasis is on the idea that plant matter comes mostly from air and water, not from the soil."
+          }
+        ],
+        "grade_band": "5"
+      },
+      {
+        "code": "5-LS2",
+        "name": "Ecosystems: Interactions, Energy, and Dynamics",
+        "pes": [
+          {
+            "code": "5-LS2-1",
+            "statement": "Develop a model to describe the movement of matter among plants, animals, decomposers, and the environment.",
+            "clarification": "Emphasis is on the idea that matter that is not food (air, water, decomposed materials in soil) is changed by plants into matter that is food. Examples of systems could include organisms, ecosystems, and the Earth.",
+            "assessment_boundary": "Assessment does not include molecular explanations."
+          }
+        ],
+        "grade_band": "5"
+      },
       {
         "code": "MS-LS1",
         "name": "From Molecules to Organisms: Structures and Processes",
@@ -562,7 +668,8 @@ const SCIENCE = {
             "statement": "Gather and synthesize information that sensory receptors respond to stimuli by sending messages to the brain for immediate behavior or storage as memories.",
             "assessment_boundary": "Assessment does not include mechanisms for the transmission of this information."
           }
-        ]
+        ],
+        "grade_band": "MS"
       },
       {
         "code": "MS-LS2",
@@ -594,7 +701,8 @@ const SCIENCE = {
             "statement": "Evaluate competing design solutions for maintaining biodiversity and ecosystem services.",
             "clarification": "Examples of ecosystem services could include water purification, nutrient recycling, and prevention of soil erosion. Examples of design solution constraints could include scientific, economic, and social considerations."
           }
-        ]
+        ],
+        "grade_band": "MS"
       },
       {
         "code": "MS-LS3",
@@ -611,7 +719,8 @@ const SCIENCE = {
             "statement": "Develop and use a model to describe why asexual reproduction results in offspring with identical genetic information and sexual reproduction results in offspring with genetic variation.",
             "clarification": "Emphasis is on using models such as Punnett squares, diagrams, and simulations to describe the cause and effect relationship of gene transmission from parent(s) to offspring and resulting genetic variation."
           }
-        ]
+        ],
+        "grade_band": "MS"
       },
       {
         "code": "MS-LS4",
@@ -650,7 +759,8 @@ const SCIENCE = {
             "clarification": "Emphasis is on using mathematical models, probability statements, and proportional reasoning to support explanations of trends in changes to populations over time.",
             "assessment_boundary": "Assessment does not include Hardy Weinberg calculations."
           }
-        ]
+        ],
+        "grade_band": "MS"
       }
     ]
   },
@@ -658,6 +768,53 @@ const SCIENCE = {
     "name": "Earth and Space Sciences",
     "note": "Three topics on Earth's place in the universe, Earth's systems, and human activity.",
     "topics": [
+      {
+        "code": "5-ESS1",
+        "name": "Earth’s Place in the Universe",
+        "pes": [
+          {
+            "code": "5-ESS1-1",
+            "statement": "Support an argument that differences in the apparent brightness of the sun compared to other stars is due to their relative distances from Earth.",
+            "assessment_boundary": "Assessment is limited to relative distances, not sizes, of stars. Assessment does not include other factors that affect apparent brightness (such as stellar masses, age, stage)."
+          },
+          {
+            "code": "5-ESS1-2",
+            "statement": "Represent data in graphical displays to reveal patterns of daily changes in length and direction of shadows, day and night, and the seasonal appearance of some stars in the night sky.",
+            "clarification": "Examples of patterns could include the position and motion of Earth with respect to the sun and selected stars that are visible only in particular months.",
+            "assessment_boundary": "Assessment does not include causes of seasons."
+          }
+        ],
+        "grade_band": "5"
+      },
+      {
+        "code": "5-ESS2",
+        "name": "Earth’s Systems",
+        "pes": [
+          {
+            "code": "5-ESS2-1",
+            "statement": "Develop a model using an example to describe ways the geosphere, biosphere, hydrosphere, and/or atmosphere interact.",
+            "clarification": "Examples could include the influence of the ocean on ecosystems, landform shape, and climate; the influence of the atmosphere on landforms and ecosystems through weather and climate; and the influence of mountain ranges on winds and clouds in the atmosphere. The geosphere, hydrosphere, atmosphere, and biosphere are each a system.",
+            "assessment_boundary": "Assessment is limited to the interactions of two systems at a time."
+          },
+          {
+            "code": "5-ESS2-2",
+            "statement": "Describe and graph the amounts of salt water and fresh water in various reservoirs to provide evidence about the distribution of water on Earth.",
+            "assessment_boundary": "Assessment is limited to oceans, lakes, rivers, glaciers, ground water, and polar ice caps, and does not include the atmosphere."
+          }
+        ],
+        "grade_band": "5"
+      },
+      {
+        "code": "5-ESS3",
+        "name": "Earth and Human Activity",
+        "pes": [
+          {
+            "code": "5-ESS3-1",
+            "statement": "Obtain and combine information about ways individual communities use science ideas to protect the Earth’s resources, environment, and address climate change issues."
+          }
+        ],
+        "grade_band": "5"
+      },
       {
         "code": "MS-ESS1",
         "name": "Earth's Place in the Universe",
@@ -685,7 +842,8 @@ const SCIENCE = {
             "clarification": "Emphasis is on how analyses of rock formations and the fossils they contain are used to establish relative ages of major events in Earth’s history. Examples of Earth’s major events could range from being very recent (such as the last Ice Age or the earliest fossils of homo sapiens) to very old (such as the formation of Earth or the earliest evidence of life). Examples can include the formation of mountain chains and ocean basins, the evolution or extinction of particular living organisms, or significant volcanic eruptions.",
             "assessment_boundary": "Assessment does not include recalling the names of specific periods or epochs and events within them."
           }
-        ]
+        ],
+        "grade_band": "MS"
       },
       {
         "code": "MS-ESS2",
@@ -726,7 +884,8 @@ const SCIENCE = {
             "clarification": "Emphasis is on how patterns vary by latitude, altitude, and geographic land distribution. Emphasis of atmospheric circulation is on the sunlight-driven latitudinal banding, the Coriolis effect, and resulting prevailing winds; emphasis of ocean circulation is on the transfer of heat by the global ocean convection cycle, which is constrained by the Coriolis effect and the outlines of continents. Examples of models can be diagrams, maps and globes, or digital representations.",
             "assessment_boundary": "Assessment does not include the dynamics of the Coriolis effect."
           }
-        ]
+        ],
+        "grade_band": "MS"
       },
       {
         "code": "MS-ESS3",
@@ -752,7 +911,8 @@ const SCIENCE = {
             "statement": "Construct an argument supported by evidence for how increases in human population and per-capita consumption of natural resources impact Earth’s systems.",
             "clarification": "Examples of evidence include grade-appropriate databases on human populations and the rates of consumption of food and natural resources (such as freshwater, mineral, and energy). Examples of impacts can include changes to the appearance, composition, and structure of Earth’s systems as well as the rates at which they change. The consequences of increases in human populations and consumption of natural resources are described by science, but science does not make the decisions for the actions society takes."
           }
-        ]
+        ],
+        "grade_band": "MS"
       }
     ]
   },
@@ -760,6 +920,25 @@ const SCIENCE = {
     "name": "Engineering, Technology, and Applications of Science",
     "note": "One topic on engineering design: defining problems, developing solutions, and optimizing.",
     "topics": [
+      {
+        "code": "3-5-ETS1",
+        "name": "Engineering Design",
+        "pes": [
+          {
+            "code": "3-5-ETS1-1",
+            "statement": "Define a simple design problem reflecting a need or a want that includes specified criteria for success and constraints on materials, time, or cost."
+          },
+          {
+            "code": "3-5-ETS1-2",
+            "statement": "Generate and compare multiple possible solutions to a problem based on how well each is likely to meet the criteria and constraints of the problem."
+          },
+          {
+            "code": "3-5-ETS1-3",
+            "statement": "Plan and carry out fair tests in which variables are controlled and failure points are considered to identify aspects of a model or prototype that can be improved."
+          }
+        ],
+        "grade_band": "5"
+      },
       {
         "code": "MS-ETS1",
         "name": "Engineering Design",
@@ -780,7 +959,8 @@ const SCIENCE = {
             "code": "MS-ETS1-4",
             "statement": "Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process such that an optimal design can be achieved."
           }
-        ]
+        ],
+        "grade_band": "MS"
       }
     ]
   }
@@ -802,10 +982,13 @@ function render() {
     html += `<div class="discipline-note">${esc(disc.note)}</div>`;
     html += `</div>`;
     for (const topic of disc.topics) {
-      html += `<div class="topic-card" data-topic="${topic.code}" data-discipline="${discKey}">`;
+      html += `<div class="topic-card" data-topic="${topic.code}" data-discipline="${discKey}" data-gradeband="${topic.grade_band || 'MS'}">`;
       html += `<div class="topic-header">`;
       html += `<span class="topic-code">${esc(topic.code)}</span>`;
       html += `<span class="topic-name">${esc(topic.name)}</span>`;
+      if (topic.grade_band === '5') {
+        html += `<span class="topic-band-chip">Grade 5</span>`;
+      }
       html += `<span class="topic-count">${topic.pes.length} performance expectation${topic.pes.length === 1 ? '' : 's'}</span>`;
       html += `</div>`;
       html += `<div class="pe-list">`;
@@ -838,6 +1021,7 @@ function render() {
 }
 
 let activeDiscipline = 'all';
+let activeGradeBand = 'all';
 let activeTopic = 'all';
 let activeQuery = '';
 
@@ -855,9 +1039,10 @@ function applyFilters() {
 
   document.querySelectorAll('.topic-card').forEach(card => {
     const matchDisc = activeDiscipline === 'all' || card.dataset.discipline === activeDiscipline;
+    const matchGrade = activeGradeBand === 'all' || card.dataset.gradeband === activeGradeBand;
     const matchTopic = activeTopic === 'all' || card.dataset.topic === activeTopic;
     const visiblePEs = card.querySelectorAll('.pe-entry:not(.hidden)').length;
-    const shouldShow = matchDisc && matchTopic && visiblePEs > 0;
+    const shouldShow = matchDisc && matchGrade && matchTopic && visiblePEs > 0;
     card.classList.toggle('hidden', !shouldShow);
   });
 
@@ -873,7 +1058,8 @@ function applyFilters() {
 
   document.querySelectorAll('#topic-pills .code-pill').forEach(p => {
     const inDisc = activeDiscipline === 'all' || p.dataset.parent === activeDiscipline;
-    p.classList.toggle('dimmed', !inDisc);
+    const inBand = activeGradeBand === 'all' || p.dataset.gradeband === activeGradeBand;
+    p.classList.toggle('dimmed', !(inDisc && inBand));
   });
 
   updateCounter();
@@ -895,6 +1081,14 @@ document.getElementById('discipline-pills').addEventListener('click', (e) => {
   applyFilters();
 });
 
+document.getElementById('gradeband-pills').addEventListener('click', (e) => {
+  if (e.target.tagName !== 'BUTTON') return;
+  document.querySelectorAll('#gradeband-pills .pill').forEach(p => p.classList.remove('active'));
+  e.target.classList.add('active');
+  activeGradeBand = e.target.dataset.gradeband;
+  applyFilters();
+});
+
 document.getElementById('topic-pills').addEventListener('click', (e) => {
   if (e.target.tagName !== 'BUTTON') return;
   document.querySelectorAll('#topic-pills .pill').forEach(p => p.classList.remove('active'));
@@ -902,10 +1096,16 @@ document.getElementById('topic-pills').addEventListener('click', (e) => {
   activeTopic = e.target.dataset.topic;
   if (activeTopic !== 'all') {
     const parent = e.target.dataset.parent;
+    const band = e.target.dataset.gradeband;
     if (parent && parent !== activeDiscipline && activeDiscipline !== 'all') {
       activeDiscipline = 'all';
       document.querySelectorAll('#discipline-pills .pill').forEach(p => p.classList.remove('active'));
       document.querySelector('#discipline-pills .pill[data-discipline="all"]').classList.add('active');
+    }
+    if (band && band !== activeGradeBand && activeGradeBand !== 'all') {
+      activeGradeBand = 'all';
+      document.querySelectorAll('#gradeband-pills .pill').forEach(p => p.classList.remove('active'));
+      document.querySelector('#gradeband-pills .pill[data-gradeband="all"]').classList.add('active');
     }
   }
   applyFilters();

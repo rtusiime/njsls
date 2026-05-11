@@ -6,6 +6,128 @@ Entries are intentionally verbose. The point is full visibility: open the file a
 
 ---
 
+## Session 4 — 2026-05-11, 02:15 PM EDT
+*LaTeX retrospective; Science hub-status bug fix; Grade 5 added.*
+
+### User request
+> do you agree with the decision to change SVG to latex? also, yeah I checked. it worked. But science is still showing in progress? I guess we're missing the 5th grade standards? /Users/ktusiime/Downloads/NJSLS-Science_K-12.docx
+
+Two threads: an honest reflection on the LaTeX-vs-alternatives decision, plus fixing two science bugs (hub-status pill still saying "In progress", and Grade 5 PEs missing from the science browser).
+
+### Reasoning and plan
+
+**On the LaTeX call (reply to user):** I agreed it was right, with one genuine shortcoming: search ergonomics. Typing `1/2` in the math search box doesn't find `\frac{1}{2}` in the data. Fixable with a search-time normalization (`\frac{X}{Y}` → `X/Y` for the search index, keeping LaTeX intact for display). Flagged but didn't implement — waiting for user direction. Also flagged inline SVG as a viable alternative we didn't pursue: ~1MB of inline SVG, zero JS dependency, pixel-perfect to source, but harder to search/restyle.
+
+**On the Science bugs:**
+1. *Hub-status pill.* Real mistake on my part — I populated `science.html` in Session 2 but forgot to flip the hub card from `coming-soon` to `ready`. One-line edit, no excuse.
+2. *Grade 5 missing.* The source PDF used in Session 2 (`NJSLS-Science_6-8.pdf`) only covers middle school. The user shared `NJSLS-Science_K-12.docx` from `~/Downloads/`. Probed it: turns out **the docx is truncated** — content ends at Grade 4 despite the filename. Found a better source in the curriculum tree: `curriculum/Challenges/NJSLS_Standards/NJSLS-Science_5-8.pdf` covers exactly the right range.
+
+### Schema decision
+
+Added a `grade_band` field on each topic (`"5"` or `"MS"`). Filter pill row inserted between Discipline and Topic.
+
+```js
+SCIENCE = {
+  "<discipline>": {
+    name, note,
+    topics: [{
+      code, name,
+      grade_band: "5" | "MS",   // ← new
+      pes: [...]
+    }]
+  }
+}
+```
+
+Rendered topic cards now carry a small "Grade 5" chip in their header so users can tell grade-5 cards apart at a glance from MS cards. (MS cards stay unlabeled — `MS-PS1` is self-evident to anyone familiar with NGSS, and labeling both would add visual noise.)
+
+### Tool / command transcript
+
+**1. Hub fix** — one-line `Edit` flipping Science card from `coming-soon`/"In progress"/"View status" to `ready`/"Ready"/"Open". Same pattern as Session 3 for the Math card.
+
+**2. Probe the K-12 docx.**
+```
+$ pandoc -f docx -t markdown ~/Downloads/NJSLS-Science_K-12.docx -o /tmp/sci_k12.md
+$ wc -l /tmp/sci_k12.md
+    4920
+$ grep -nE "^Grade [0-9]+|^Kindergarten" /tmp/sci_k12.md
+812:Kindergarten
+1564:Grade 1
+2234:Grade 2
+3025:Grade 3
+4127:Grade 4
+# (no Grade 5; ends at Grade 4 — docx is truncated)
+```
+The TOC inside the docx still references Grade 5 → Grade 12 page numbers, but the actual content stops mid-document. Looks like an incomplete export. Told the user, pivoted to alternate source.
+
+**3. Find a working source.**
+```
+$ find ~/Desktop/DLA/Forge/curriculum -iname "*science*"
+.../Digestive_System/NJSLS-Science_K-12.pdf      # full K-12 PDF
+.../Challenges/NJSLS_Standards/NJSLS-Science_5-8.pdf  # 5-8 only — chose this
+```
+
+**4. Extract grade-5 PEs.**
+```
+$ pdftotext -layout NJSLS-Science_5-8.pdf /tmp/sci_58.txt
+$ grep -nE "(5-\s*|3-5-)(PS|LS|ESS|ETS)[0-9]+\s*:" /tmp/sci_58.txt
+# 9 grade-5 topic headers at lines 2, 137, 183, 234, 282, 358, 451, 540, 592
+# (Note: 5-LS2 has a space after the dash — PDF extraction artifact)
+```
+Delegated extraction to a subagent with the topic-by-topic line offsets and the same extraction pattern from Session 2. Subagent reported **16 PEs** across 9 topics — fewer than my estimate but accurate to the source (NGSS for grade 5 is genuinely sparser than MS).
+
+Per-discipline breakdown:
+- physical: 3 topics, 6 PEs (5-PS1×4, 5-PS2×1, 5-PS3×1)
+- life: 2 topics, 2 PEs (5-LS1×1, 5-LS2×1)
+- earth_space: 3 topics, 5 PEs (5-ESS1×2, 5-ESS2×2, 5-ESS3×1)
+- engineering: 1 topic, 3 PEs (3-5-ETS1×3)
+
+**5. Merge into the existing schema.**
+
+```
+$ python3  # script visible in /tmp/, executed inline
+physical    : G5=3 topics/6 PEs, MS=4 topics/19 PEs
+life        : G5=2 topics/2 PEs, MS=4 topics/21 PEs
+earth_space : G5=3 topics/5 PEs, MS=3 topics/14 PEs
+engineering : G5=1 topics/3 PEs, MS=1 topics/4 PEs
+Total PEs: 74
+Total topics: 21
+```
+
+**6. Update `science.html`.** Targeted edits rather than full rewrite:
+- Title + subtitle: "Grades 6 through 8" → "Grades 5 through 8".
+- Filter bar: inserted new "Grade band" pill row (All / Grade 5 / Grades 6–8); expanded topic-pill row from 12 to 21 buttons with `data-gradeband` on each.
+- CSS: new `.topic-band-chip` class for the per-card "Grade 5" label.
+- JS render(): added `data-gradeband` on `topic-card`; conditional `<span class="topic-band-chip">Grade 5</span>` in topic header.
+- JS applyFilters(): added `matchGrade` predicate; dimming logic for topic pills now considers both discipline AND grade band.
+- JS topic-pill handler: clicking a topic now auto-resets BOTH discipline AND grade band if either conflicts with the topic's parent.
+- New event listener for `#gradeband-pills`.
+
+Then a Python script swapped the inline `const SCIENCE = {...}` block with the merged data.
+
+**7. Hub card.** Updated "Grades 6 – 8" → "Grades 5 – 8".
+
+**8. Validation.**
+```
+$ node --check /tmp/sci_inline.js  ⇒ JS OK
+$ grep -oE '"(MS|5|3-5)-(PS|LS|ESS|ETS)[0-9]+"' science.html | sort -u | wc -l   ⇒ 21 topic codes
+$ grep -oE 'data-topic="..."' science.html | sort -u | wc -l                      ⇒ 21 pill buttons
+$ grep -oE '"code": "(MS|5|3-5)-[A-Z]+[0-9]+-[0-9]+"' science.html | sort -u | wc -l  ⇒ 74 PE codes
+```
+
+### Commits produced
+
+To be backfilled on commit.
+
+### Notes / flags
+
+- The user's K-12 docx (~520KB) was a truncated download. Don't trust filenames; always check content. The full K-12 PDF lives at `curriculum/Digestive_System/NJSLS-Science_K-12.pdf` if we ever need K-4 or HS.
+- Engineering at Grade 5 uses the 3–5 grade-banded topic code `3-5-ETS1` (vs `5-ETS1`) — this is how NGSS organizes it. Mapped to `engineering` discipline with `grade_band: "5"` since this is what 5th-graders do.
+- Grade-5 source PDF had `5- LS2` with a space (extraction artifact); cleaned to `5-LS2` in the JSON.
+- The math-search-ergonomics issue (`1/2` not finding `\frac{1}{2}`) is *not yet fixed*. If the user prioritizes it, the change is: pre-compute a `searchText` field per standard that strips LaTeX, write that into `data-search`, then the filter uses `data-search` instead of `textContent`.
+
+---
+
 ## Session 3 — 2026-05-11, 12:50 PM EDT
 *Architecture doc; Math populated end-to-end with LaTeX-rendered formulas.*
 
