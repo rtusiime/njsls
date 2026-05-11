@@ -4,24 +4,32 @@ Static site presenting the New Jersey Student Learning Standards as a teacher-re
 
 ## File map
 
-| File | Role | Has data? |
-|---|---|---|
-| `index.html` | Hub: three subject cards with per-subject accent colors and Ready / In-progress status. | no |
-| `ela.html` | English Language Arts, Grades 5–8. Full filtered browser. | yes — inline `const STANDARDS` |
-| `math.html` | Mathematics, Grades 5–8. *(status page until populated)* | (eventually inline `const MATH`) |
-| `science.html` | Science, Grades 6–8 (MS). Full filtered browser. | yes — inline `const SCIENCE` |
-| `SESSIONS.md` | Reverse-chronological transcript log per work session. Append at top before each session's final commit. | n/a |
-| `CLAUDE.md` | This file. Auto-loaded into Claude Code context. | n/a |
+| File / Path | Role |
+|---|---|
+| `index.html` | Hub: subject cards with per-subject accent colors and Ready status. No data dependency. |
+| `ela.html` | English Language Arts, Grades 5–8. Filtered browser. Fetches `data/ela.json` at load. |
+| `math.html` | Mathematics, Grades 5–8. Filtered browser with KaTeX rendering. Fetches `data/math.json`. |
+| `science.html` | Science, Grades 5–8 (Grade 5 + MS 6–8). Filtered browser. Fetches `data/science.json`. |
+| `data/ela.json` | Subject-specific hierarchical schema (domains → anchors → grades → entries). |
+| `data/math.json` | Subject-specific hierarchical schema (grade → domains → clusters → standards). |
+| `data/science.json` | Subject-specific hierarchical schema (discipline → topics → PEs), per-topic `grade_band`. |
+| `data/all.json` | **Flat denormalized 314-record array of every standard** — `{subject, code, grade, domain, statement, …}`. LLM/API consumption layer. |
+| `SESSIONS.md` | Reverse-chronological transcript log per work session. Append at top before each session's final commit. |
+| `CLAUDE.md` | This file. Auto-loaded into Claude Code context. |
 
-Every HTML file is **fully self-contained**: inline CSS, inline `<script>`, inline data. Drop any file on any static server and it works. No build step.
+**Architecture as of Session 5:** HTML pages are presentation; data lives in `/data/*.json`; pages `fetch()` at load time. The de-facto API is `https://rtusiime.github.io/njsls/data/all.json` (and per-subject equivalents). No backend.
+
+**To edit data:** edit the relevant `data/*.json` directly, then run `python3 scripts/build_all.py` to regenerate `data/all.json`. Commit both files together so the flat index stays in sync with the per-subject sources.
+
+**To preview locally:** `python3 -m http.server` from the repo root (NOT `file://` — fetch() won't load JSON over the file protocol).
 
 ## Per-subject schemas
 
 The schemas are intentionally **different shapes per subject** because NJDOE organizes each subject differently. Don't force a unified shape — adapters per subject is the point.
 
-### ELA (`ela.html`)
+### ELA — `data/ela.json`
 ```
-STANDARDS = {
+{
   "<domain>": {                                 // language, reading, writing, speaking_listening
     name, note,
     anchors: [{
@@ -41,16 +49,40 @@ STANDARDS = {
 ```
 Filters in UI: Domain pills + Grade pills.
 
-### Science (`science.html`)
+### Math — `data/math.json`
 ```
-SCIENCE = {
+{
+  "<grade>": {                                  // "5" | "6" | "7" | "8"
+    grade, note,
+    domains: [{
+      code,                                     // "5.OA", "6.RP", etc.
+      name,
+      clusters: [{
+        letter,                                 // "A", "B", "C"
+        heading,
+        standards: [{
+          code,                                 // "5.OA.A.2"
+          main,                                 // verbatim text with inline LaTeX in \(...\)
+          subs: [string]                        // optional lettered sub-items
+        }]
+      }]
+    }]
+  }
+}
+```
+Filters in UI: Grade pills + live search input. Math has inline LaTeX expressions (e.g., `\frac{1}{10}`); rendered client-side via KaTeX auto-render. Search is normalised so plain-text queries like `1/2` find `\frac{1}{2}` — see `stripLatex()` in `math.html`.
+
+### Science — `data/science.json`
+```
+{
   "<discipline>": {                             // physical, life, earth_space, engineering
     name, note,
     topics: [{
-      code,                                     // "MS-PS1", "MS-LS3", etc.
+      code,                                     // "5-PS1", "MS-PS1", "3-5-ETS1", etc.
       name,
+      grade_band: "5" | "MS",                   // per-grade for elementary, MS for 6-8
       pes: [{
-        code,                                   // "MS-PS1-1", etc.
+        code,                                   // "5-PS1-1", "MS-PS1-1", etc.
         statement,
         clarification,                          // optional
         assessment_boundary                     // optional
@@ -59,13 +91,15 @@ SCIENCE = {
   }
 }
 ```
-Filters in UI: Discipline pills + Topic-code pills + live search input.
+Filters in UI: Discipline pills + Grade-band pills + Topic-code pills + live search.
 
-### Math (`math.html`) — *schema to be locked when populated*
-Likely: `domain → cluster → grade → standard with subs`. Will document here once committed.
+### `data/all.json` — flat consumption layer
+Each standard is an entry in `standards: [...]` with denormalised fields: `{subject, code, grade, statement, …}` plus subject-specific extras (domain/anchor for ELA, domain/cluster for Math, discipline/topic for Science). 314 entries total as of Session 5.
+
+This is the format to feed an LLM / Claude project / external script. Don't put hierarchical schemas in front of consumers when they want to scan all 314 standards.
 
 ### Other subjects, when added
-Pick a schema that matches the source document's natural organization. The site can carry totally different shapes — the only contract is the JS render function inside each file, which produces the same visual card pattern.
+Pick a schema that matches the source document's natural organization. Add a new `data/<subject>.json`. Update `scripts/build_all.py` to include it in `all.json`. The HTML view layer can have totally different shapes per subject — the only contract is each subject page fetches its own JSON.
 
 ## Visual design system
 

@@ -1,0 +1,1519 @@
+{
+  "language": {
+    "name": "Language Domain",
+    "note": "Six anchors. Foundational Skills for Reading and Writing apply only at Grade 5; System and Structure begins at Grade 6.",
+    "anchors": [
+      {
+        "code": "RF",
+        "name": "Foundational Skills: Reading Language",
+        "statement": "By the end of grade 5, develop understanding and conceptual knowledge of phonics, syllabication patterns, letter-sound correspondences, word analysis, morphology, and other basic conventions of written English.",
+        "grades": {
+          "5": [
+            {
+              "prefix": "L",
+              "code": "L.RF.5.3",
+              "main": "Know and apply grade-level phonics and word analysis skills in decoding and encoding words; use combined knowledge of all letter-sound correspondences, syllabication patterns, and morphology (e.g., roots and affixes) to read accurately unfamiliar multisyllabic words in context and out of context.",
+              "subs": [],
+              "subgroup": "phonics"
+            },
+            {
+              "prefix": "L",
+              "code": "L.RF.5.4",
+              "main": "Read with sufficient accuracy and fluency to support comprehension.",
+              "subs": [
+                "Read grade-level text with purpose and understanding.",
+                "Read grade-level text orally with accuracy, appropriate rate, and expression.",
+                "Use context to confirm or self-correct word recognition and understanding, rereading as necessary."
+              ],
+              "subgroup": "fluency"
+            }
+          ]
+        }
+      },
+      {
+        "code": "WF",
+        "name": "Foundational Skills: Writing Language",
+        "statement": "By the end of grade 5, develop understanding and conceptual knowledge of print, phonological processing, letter formation and handwriting, and other basic conventions of the English writing system.",
+        "grades": {
+          "5": [
+            {
+              "prefix": "L",
+              "code": "L.WF.5.2",
+              "main": "Demonstrate command of the conventions of writing, including those listed under grade four foundational skills.",
+              "subs": [
+                "Avoid fragments, run-ons and rambling sentences, and comma splices.",
+                "Maintain consistency in verb tense; place phrases and clauses; choose between adjectives and adverbs.",
+                "Ensure agreement between subject and verb and between pronoun and antecedent.",
+                "Distinguish between frequently confused words.",
+                "Use idiomatic language and choose words for effect; use punctuating for meaning and effect.",
+                "Use punctuation to separate items in a series; use commas in a series of phrases or clauses.",
+                "Use a comma to separate an introductory element from the rest of the sentence; use a comma to set off the words yes and no (e.g., Yes, thank you), to set off a tag question from the rest of the sentence (e.g., It’s true, isn’t it?), and to indicate direct address (e.g., Is that you, Emma?).",
+                "Spell grade appropriate words correctly, consulting references as needed."
+              ],
+              "subgroup": "sentence_composition"
+            }
+          ]
+        }
+      },
+      {
+        "code": "SS",
+        "name": "System and Structure of Language",
+        "statement": "By the end of grade 12, demonstrate command of grammar and usage, capitalization, punctuation, and spelling.",
+        "grades": {
+          "6": [
+            {
+              "prefix": "L",
+              "code": "L.SS.6.1",
+              "main": "Demonstrate command of the system and structure of the English language when writing or speaking.",
+              "subs": [
+                "Ensure that pronouns are in the proper case (subjective, objective, possessive).",
+                "Use intensive pronouns (e.g., myself, ourselves).",
+                "Recognize and correct inappropriate shifts in pronoun number and person.",
+                "Recognize and correct vague pronouns (i.e., ones with unclear or ambiguous antecedents).",
+                "Use punctuation (commas, parentheses, dashes) to set off nonrestrictive and parenthetical elements.",
+                "Recognize spelling conventions."
+              ],
+              "subgroup": null
+            }
+          ],
+          "7": [
+            {
+              "prefix": "L",
+              "code": "L.SS.7.1",
+              "main": "Demonstrate command of the system and structure of the English language when writing or speaking.",
+              "subs": [
+                "Explain the function of phrases and clauses in general and their function in specific sentences.",
+                "Choose among simple, compound, complex, and compound-complex sentences to signal differing relationships among ideas.",
+                "Place phrases and clauses within a sentence, recognizing and correcting misplaced and dangling modifiers.",
+                "Use a comma to separate coordinate adjectives (e.g., It was a fascinating, enjoyable movie but not He wore an old green shirt).",
+                "Recognize spelling conventions."
+              ],
+              "subgroup": null
+            }
+          ],
+          "8": [
+            {
+              "prefix": "L",
+              "code": "L.SS.8.1",
+              "main": "Demonstrate command of the system and structure of the English language when writing or speaking.",
+              "subs": [
+                "Explain the function of verbals (gerunds, participles, infinitives) in general and their function in particular sentences.",
+                "Form and use verbs in the active and passive voice.",
+                "Form and use verbs in the indicative, imperative, interrogative, conditional, and subjunctive mood.",
+                "Recognize and correct inappropriate shifts in verb voice and mood.",
+                "Use punctuation (comma, ellipsis, dash) to indicate a pause or break.",
+                "Use an ellipsis to indicate an omission.",
+                "Recognize spelling conventions."
+              ],
+              "subgroup": null
+            }
+          ]
+        }
+      },
+      {
+        "code": "KL",
+        "name": "Knowledge of Language",
+        "statement": "By the end of grade 12, apply knowledge of language and command of vocabulary to understand how language functions in different contexts, to make effective choices for meaning or style, and to comprehend more fully when reading or listening.",
+        "grades": {
+          "5": [
+            {
+              "prefix": "L",
+              "code": "L.KL.5.1",
+              "main": "Use knowledge of language and its conventions when writing, speaking, reading, or listening.",
+              "subs": [
+                "Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases.",
+                "Expand, combine, and reduce sentences for meaning, reader/listener interest, and style.",
+                "Compare and contrast the varieties of English (e.g., dialects, registers) used in stories, dramas, or poems."
+              ],
+              "subgroup": "sentence_composition"
+            }
+          ],
+          "6": [
+            {
+              "prefix": "L",
+              "code": "L.KL.6.2",
+              "main": "Use knowledge of language and its conventions when writing, speaking, reading, or listening.",
+              "subs": [
+                "Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases.",
+                "Gather vocabulary knowledge when considering a word or phrase important to comprehension or expression.",
+                "Vary sentence patterns for meaning (syntax), reader/listener interest, and style/voice.",
+                "Maintain consistency in style and tone."
+              ],
+              "subgroup": null
+            }
+          ],
+          "7": [
+            {
+              "prefix": "L",
+              "code": "L.KL.7.2",
+              "main": "Use knowledge of language and its conventions when writing, speaking, reading, or listening.",
+              "subs": [
+                "Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases.",
+                "Gather vocabulary knowledge when selecting a word or phrase important to comprehension or expression.",
+                "Choose language that expresses ideas precisely and concisely, recognizing and eliminating wordiness and redundancy."
+              ],
+              "subgroup": null
+            }
+          ],
+          "8": [
+            {
+              "prefix": "L",
+              "code": "L.KL.8.2",
+              "main": "Use knowledge of language and its conventions when writing, speaking, reading, or listening.",
+              "subs": [
+                "Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases.",
+                "Gather vocabulary knowledge when selecting a word or phrase important to comprehension or expression.",
+                "Use verbs in the active and passive voice and in the conditional and subjunctive mood to achieve particular effects (e.g., emphasizing the actor or the action; expressing uncertainty or describing a state contrary to fact)."
+              ],
+              "subgroup": null
+            }
+          ]
+        }
+      },
+      {
+        "code": "VL",
+        "name": "Vocabulary Acquisition, Use and Literal Meaning",
+        "statement": "By the end of grade 12, determine the meaning of unknown and multiple-meaning words using analysis of word parts (morphemes), word solving strategies, and consulting general and specialized reference materials, as appropriate.",
+        "grades": {
+          "5": [
+            {
+              "prefix": "L",
+              "code": "L.VL.5.2",
+              "main": "Determine or clarify the meaning of unknown and multiple-meaning academic and domain-specific words and phrases based on grade 5 reading and content, choosing flexibly from a range of strategies.",
+              "subs": [
+                "Use context (e.g., cause/effect relationships and comparisons in text) as a clue to the meaning of a word or phrase.",
+                "Use common, grade-appropriate Greek and Latin affixes and roots as clues to the meaning of a word (e.g., photograph, photosynthesis).",
+                "Consult reference materials (e.g., dictionaries, glossaries, thesauruses), both print and digital, to find the pronunciation and determine or clarify the precise meaning of key words and phrases."
+              ],
+              "subgroup": "sentence_composition"
+            }
+          ],
+          "6": [
+            {
+              "prefix": "L",
+              "code": "L.VL.6.3",
+              "main": "Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 6 reading and content, including technical meanings, choosing flexibly from a range of strategies.",
+              "subs": [
+                "Use context (e.g., the overall meaning of a sentence or paragraph; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase.",
+                "Determine the meaning of words and phrases as they are used, including figurative, connotative, and technical meanings.",
+                "Use common, grade-appropriate Greek or Latin affixes and roots as clues to the meaning of a word (e.g., audience, auditory, audible).",
+                "Consult reference materials (e.g., dictionaries, glossaries, thesauruses), both print and digital, to find the pronunciation of a word or determine or clarify its precise meaning or its part of speech.",
+                "Verify the preliminary determination of the meaning of a word or phrase (e.g., by checking the inferred meaning in context or in a dictionary)."
+              ],
+              "subgroup": null
+            }
+          ],
+          "7": [
+            {
+              "prefix": "L",
+              "code": "L.VL.7.3",
+              "main": "Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 7 reading and content, including technical meanings, choosing flexibly from a range of strategies.",
+              "subs": [
+                "Use context (e.g., the overall meaning of a sentence or paragraph; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase.",
+                "Use common, grade-appropriate Greek or Latin affixes and roots as clues to the meaning of a word (e.g., belligerent, bellicose, rebel).",
+                "Analyze the impact of a specific word choice on meaning and tone.",
+                "Consult reference materials (e.g., dictionaries, glossaries, thesauruses), both print and digital, to find the pronunciation of a word or determine or clarify its precise meaning or its part of speech.",
+                "Verify the preliminary determination of the meaning of a word or phrase (e.g., by checking the inferred meaning in context or in a dictionary)."
+              ],
+              "subgroup": null
+            }
+          ],
+          "8": [
+            {
+              "prefix": "L",
+              "code": "L.VL.8.3",
+              "main": "Determine or clarify the meaning of unknown and multiple-meaning words or phrases based on grade 8 reading and content, including technical meanings, choosing flexibly from a range of strategies.",
+              "subs": [
+                "Use context (e.g., the overall meaning of a sentence or paragraph; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase.",
+                "Analyze the impact of specific word choices on meaning and tone.",
+                "Use common, grade-appropriate Greek or Latin affixes and roots as clues to the meaning of a word (e.g., precede, recede, secede).",
+                "Consult reference materials (e.g., dictionaries, glossaries, thesauruses), both print and digital, to find the pronunciation of a word or determine or clarify its precise meaning or its part of speech.",
+                "Verify the preliminary determination of the meaning of a word or phrase (e.g., by checking the inferred meaning in context or in a dictionary)."
+              ],
+              "subgroup": null
+            }
+          ]
+        }
+      },
+      {
+        "code": "VI",
+        "name": "Vocabulary Acquisition, Use and Interpretive Meaning",
+        "statement": "By the end of grade 12, interpret figurative and connotative word meanings, including shades of meaning based on word relationships and context.",
+        "grades": {
+          "5": [
+            {
+              "prefix": "L",
+              "code": "L.VI.5.3",
+              "main": "Demonstrate understanding of figurative language, word relationships, and nuances in word meanings.",
+              "subs": [
+                "Interpret figurative language, including similes and metaphors, in context.",
+                "Recognize and explain the meaning of common idioms, adages, and proverbs.",
+                "Use the relationship between particular words (e.g., synonyms, antonyms, homographs) to better understand each of the words."
+              ],
+              "subgroup": "sentence_composition"
+            }
+          ],
+          "6": [
+            {
+              "prefix": "L",
+              "code": "L.VI.6.4",
+              "main": "Demonstrate understanding of figurative language, word relationships, and nuances in word meanings.",
+              "subs": [
+                "Interpret figures of speech (e.g., personification) in context.",
+                "Use the relationship between particular words (e.g., cause/effect, part/whole, item/category) to better understand each of the words.",
+                "Analyze the impact of a specific word choice on meaning and tone.",
+                "Distinguish among the connotations (associations) of words with similar denotations (definitions) (e.g., stingy, scrimping, economical, unwasteful, thrifty)."
+              ],
+              "subgroup": null
+            }
+          ],
+          "7": [
+            {
+              "prefix": "L",
+              "code": "L.VI.7.4",
+              "main": "Demonstrate understanding of figurative language, word relationships, and nuances in word meanings.",
+              "subs": [
+                "Interpret figures of speech (e.g., literary, biblical, and mythological allusions) in context.",
+                "Use the relationship between particular words (e.g., synonym/antonym, analogy) to better understand each of the words.",
+                "Analyze the impact of rhymes and other repetitions of sound (e.g., alliteration) on a specific verse or stanza or a poem or section of a story or drama.",
+                "Distinguish among the connotations (associations) of words with similar denotations (definitions) (e.g., refined, respectful, polite, diplomatic, condescending)."
+              ],
+              "subgroup": null
+            }
+          ],
+          "8": [
+            {
+              "prefix": "L",
+              "code": "L.VI.8.4",
+              "main": "Demonstrate understanding of figurative language, word relationships, and nuances in word meanings.",
+              "subs": [
+                "Interpret figures of speech (e.g., verbal irony, puns) in context.",
+                "Use the relationship between particular words to better understand each of the words.",
+                "Analyze the impact of specific word choices on meaning and tone, including analogies or allusions to other texts.",
+                "Distinguish among the connotations (associations) of words with similar denotations (definitions) (e.g., bullheaded, willful, firm, persistent, resolute)."
+              ],
+              "subgroup": null
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "reading": {
+    "name": "Reading Domain",
+    "note": "Eight anchors. Each anchor applies to both literary (RL) and informational (RI) texts, except Analysis of an Argument which is informational-only.",
+    "anchors": [
+      {
+        "code": "CR",
+        "name": "Close Reading of Text",
+        "statement": "By the end of grade 12, read closely to determine what the text says explicitly and to make logical inferences and relevant connections from it; cite specific textual evidence when writing or speaking to support conclusions drawn from the text.",
+        "grades": {
+          "5": [
+            {
+              "prefix": "RL",
+              "code": "RL.CR.5.1",
+              "main": "Quote accurately from a literary text when explaining what the text says explicitly and make relevant connections when drawing inferences from the text.",
+              "subs": [],
+              "subgroup": null
+            },
+            {
+              "prefix": "RI",
+              "code": "RI.CR.5.1",
+              "main": "Quote accurately from an informational text when explaining what the text says explicitly and make relevant connections when drawing inferences from the text.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "6": [
+            {
+              "prefix": "RL",
+              "code": "RL.CR.6.1",
+              "main": "Cite textual evidence and make relevant connections to support analysis of what a literary text says explicitly as well as inferences drawn from the text.",
+              "subs": [],
+              "subgroup": null
+            },
+            {
+              "prefix": "RI",
+              "code": "RI.CR.6.1",
+              "main": "Cite textual evidence and make relevant connections to support analysis of what an informational text says explicitly as well as inferences drawn from the text.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "7": [
+            {
+              "prefix": "RL",
+              "code": "RL.CR.7.1",
+              "main": "Cite several pieces of textual evidence and make relevant connections to support analysis of what a literary text says explicitly as well as inferences drawn from the text.",
+              "subs": [],
+              "subgroup": null
+            },
+            {
+              "prefix": "RI",
+              "code": "RI.CR.7.1",
+              "main": "Cite several pieces of textual evidence and make relevant connections to support analysis of what an informational text says explicitly as well as inferences drawn from the text.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "8": [
+            {
+              "prefix": "RL",
+              "code": "RL.CR.8.1",
+              "main": "Cite a range of textual evidence and make clear and relevant connections to strongly support an analysis of multiple aspects of what a literary text says explicitly as well as inferences drawn from the text.",
+              "subs": [],
+              "subgroup": null
+            },
+            {
+              "prefix": "RI",
+              "code": "RI.CR.8.1",
+              "main": "Cite a range of textual evidence and make clear and relevant connections (including informational text features such as charts, graphs, and diagrams) that strongly support an analysis of multiple aspects of what an informational text says explicitly, as well as inferences drawn from the text.",
+              "subs": [],
+              "subgroup": null
+            }
+          ]
+        }
+      },
+      {
+        "code": "CI",
+        "name": "Central Ideas and Themes of Texts",
+        "statement": "By the end of grade 12, determine central ideas or themes of a text and analyze their development; summarize the key supporting details and ideas.",
+        "grades": {
+          "5": [
+            {
+              "prefix": "RL",
+              "code": "RL.CI.5.2",
+              "main": "Determine the theme of a literary text (e.g., stories, plays or poetry) and explain how it is supported by key details; summarize the text.",
+              "subs": [],
+              "subgroup": null
+            },
+            {
+              "prefix": "RI",
+              "code": "RI.CI.5.2",
+              "main": "Determine the central idea of an informational text and explain how it is supported by key details; summarize the text.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "6": [
+            {
+              "prefix": "RL",
+              "code": "RL.CI.6.2",
+              "main": "Determine the theme of a literary text (e.g., stories, plays or poetry) and explain how it is supported by key details; provide a summary of the text distinct from personal opinions or judgments.",
+              "subs": [],
+              "subgroup": null
+            },
+            {
+              "prefix": "RI",
+              "code": "RI.CI.6.2",
+              "main": "Determine the central idea of an informational text and explain how it is supported by key details; provide a summary of the text distinct from personal opinions or judgments.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "7": [
+            {
+              "prefix": "RL",
+              "code": "RL.CI.7.2",
+              "main": "Determine a theme in a literary text (e.g., stories, plays or poetry) and explain how it is conveyed through particular details; provide a summary of the text distinct from personal opinions or judgments.",
+              "subs": [],
+              "subgroup": null
+            },
+            {
+              "prefix": "RI",
+              "code": "RI.CI.7.2",
+              "main": "Determine a central idea in an informational text and explain how it is conveyed through particular details; provide a summary of the text distinct from personal opinions or judgments.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "8": [
+            {
+              "prefix": "RL",
+              "code": "RL.CI.8.2",
+              "main": "Determine a theme of a literary text and how it is conveyed through particular details; provide a summary of the text distinct from personal opinions or judgments.",
+              "subs": [],
+              "subgroup": null
+            },
+            {
+              "prefix": "RI",
+              "code": "RI.CI.8.2",
+              "main": "Determine a central idea of an informational text and how it is conveyed through particular details; provide a summary of the text distinct from personal opinions or judgments.",
+              "subs": [],
+              "subgroup": null
+            }
+          ]
+        }
+      },
+      {
+        "code": "IT",
+        "name": "Interactions Among Text Elements",
+        "statement": "By the end of grade 12, analyze how and why individuals, events, and ideas develop and interact over the course of a text.",
+        "grades": {
+          "5": [
+            {
+              "prefix": "RL",
+              "code": "RL.IT.5.3",
+              "main": "Analyze the impact of two or more individuals and events throughout the course of a text, comparing and contrasting two or more characters, settings, or events in a story or drama, drawing on specific textual evidence (e.g., how characters interact).",
+              "subs": [],
+              "subgroup": null
+            },
+            {
+              "prefix": "RI",
+              "code": "RI.IT.5.3",
+              "main": "Analyze the impact of two or more individuals and events throughout the course of a text, explaining the relationships or interactions between two or more individuals, events, ideas, or concepts in a historical, scientific, or technical text based on specific evidence in the text.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "6": [
+            {
+              "prefix": "RL",
+              "code": "RL.IT.6.3",
+              "main": "Describe how a particular text’s structure unfolds in a series of episodes and use textual evidence to describe how the characters respond or change as the plot moves toward a resolution.",
+              "subs": [],
+              "subgroup": null
+            },
+            {
+              "prefix": "RI",
+              "code": "RI.IT.6.3",
+              "main": "Analyze how a particular text’s (e.g., article, brochure, technical manual, procedural text) structure unfolds by using textual evidence to describe how a key individual, event, or idea is introduced, illustrated, and elaborated in a text.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "7": [
+            {
+              "prefix": "RL",
+              "code": "RL.IT.7.3",
+              "main": "Analyze how particular elements of a text interact including how particular lines of dialogue or incidents in a story or drama propel the action, reveal aspects of a character, or provoke a decision.",
+              "subs": [],
+              "subgroup": null
+            },
+            {
+              "prefix": "RI",
+              "code": "RI.IT.7.3",
+              "main": "Analyze how particular elements of a text interact including how a text makes connections and distinctions among individuals, events, and ideas (e.g., through comparisons, analogies, or categories).",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "8": [
+            {
+              "prefix": "RL",
+              "code": "RL.IT.8.3",
+              "main": "Analyze how particular elements of a text interact (e.g., how setting shapes the characters or plot, how ideas influence individuals or events, or how characters influence ideas or events) across multiple text types, including across literary and informational texts.",
+              "subs": [],
+              "subgroup": null
+            },
+            {
+              "prefix": "RI",
+              "code": "RI.IT.8.3",
+              "main": "Analyze how particular elements of a text interact (e.g., how contexts influence individuals or events, or how individuals influence ideas or events) across multiple text types, including across literary and informational texts.",
+              "subs": [],
+              "subgroup": null
+            }
+          ]
+        }
+      },
+      {
+        "code": "TS",
+        "name": "Text Structure",
+        "statement": "By the end of grade 12, analyze the structure of texts, including how specific sentences, paragraphs, and larger portions of the text relate to each other and the whole.",
+        "grades": {
+          "5": [
+            {
+              "prefix": "RL",
+              "code": "RL.TS.5.4",
+              "main": "Explain how a series of chapters, scenes, or stanzas fits together to provide the overall structure of a particular story, drama, or poem.",
+              "subs": [],
+              "subgroup": null
+            },
+            {
+              "prefix": "RI",
+              "code": "RI.TS.5.4",
+              "main": "Compare and contrast the overall structure (e.g., chronology, comparison, cause/effect, problem/solution) of events, ideas, concepts, or information in two or more texts.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "6": [
+            {
+              "prefix": "RL",
+              "code": "RL.TS.6.4",
+              "main": "Analyze how a particular piece (e.g., sentence, chapter, scene, stanza, or section) fits into the overall structure of a text and contributes to the development of the ideas, theme, setting, or plot.",
+              "subs": [],
+              "subgroup": null
+            },
+            {
+              "prefix": "RI",
+              "code": "RI.TS.6.4",
+              "main": "Use text structures (e.g., cause-effect, problem-solution), search tools, and genre features (e.g., graphics, captions, indexes) to locate and integrate information.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "7": [
+            {
+              "prefix": "RL",
+              "code": "RL.TS.7.4",
+              "main": "Analyze the structure an author uses to organize a text and how it contributes to the text as a whole, including how a drama’s or poem’s form or structure (e.g., soliloquy, sonnet) contributes to its meaning.",
+              "subs": [],
+              "subgroup": null
+            },
+            {
+              "prefix": "RI",
+              "code": "RI.TS.7.4",
+              "main": "Analyze the structure an author uses to organize a text and how it contributes to the text as a whole, including using knowledge of text structures (e.g., cause-effect, proposition-support) and genre features (e.g., graphics, captions, indexes) to organize and analyze important information.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "8": [
+            {
+              "prefix": "RL",
+              "code": "RL.TS.8.4",
+              "main": "Compare and contrast the structure of texts, analyzing how the differing structure of each text contributes to its meaning, tone and style.",
+              "subs": [],
+              "subgroup": null
+            },
+            {
+              "prefix": "RI",
+              "code": "RI.TS.8.4",
+              "main": "Analyze and explain how an author organizes, develops and presents ideas, establishes a point of view or builds supporting arguments through text structure.",
+              "subs": [],
+              "subgroup": null
+            }
+          ]
+        }
+      },
+      {
+        "code": "PP",
+        "name": "Perspective and Purpose in Texts",
+        "statement": "By the end of grade 12, assess how perspective or purpose shapes the content and style of a text.",
+        "grades": {
+          "5": [
+            {
+              "prefix": "RL",
+              "code": "RL.PP.5.5",
+              "main": "Describe how a narrator’s or speaker’s point of view influences how events are described, and how that may influence the reader’s interpretation.",
+              "subs": [],
+              "subgroup": null
+            },
+            {
+              "prefix": "RI",
+              "code": "RI.PP.5.5",
+              "main": "Analyze multiple accounts of the same event or topic, noting important similarities and differences in the point of view they represent and how that may influence the reader’s interpretation.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "6": [
+            {
+              "prefix": "RL",
+              "code": "RL.PP.6.5",
+              "main": "Determine how an author conveys or develops perspective in a text (through the narrator or speaker when appropriate).",
+              "subs": [],
+              "subgroup": null
+            },
+            {
+              "prefix": "RI",
+              "code": "RI.PP.6.5",
+              "main": "Identify author’s purpose perspective or potential bias in a text and explain the impact on the reader’s interpretation.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "7": [
+            {
+              "prefix": "RL",
+              "code": "RL.PP.7.5",
+              "main": "Determine how an author conveys or develops perspective or purpose in a text through contrasting the points of view of different characters or narrators in a text.",
+              "subs": [],
+              "subgroup": null
+            },
+            {
+              "prefix": "RI",
+              "code": "RI.PP.7.5",
+              "main": "Determine how an author conveys or develops perspective or purpose in a text through distinguishing their position from that of others using evidence.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "8": [
+            {
+              "prefix": "RL",
+              "code": "RL.PP.8.5",
+              "main": "Analyze how an author conveys or develops their perspective or purpose in a text through the use of different perspectives of the characters and that of the audience or reader (e.g., created through the use of dramatic irony).",
+              "subs": [],
+              "subgroup": null
+            },
+            {
+              "prefix": "RI",
+              "code": "RI.PP.8.5",
+              "main": "Analyze how an author conveys or develops their perspective or purpose in a text and by acknowledging and responding to conflicting evidence or viewpoints.",
+              "subs": [],
+              "subgroup": null
+            }
+          ]
+        }
+      },
+      {
+        "code": "MF",
+        "name": "Diverse Media and Formats",
+        "statement": "By the end of grade 12, synthesize content presented in diverse media and formats, including visually and quantitatively, as well as in words.",
+        "grades": {
+          "5": [
+            {
+              "prefix": "RL",
+              "code": "RL.MF.5.6",
+              "main": "Analyze how visual and multimedia elements contribute to the meaning, tone, or beauty of a text (e.g., graphic novel, multimedia presentation of fiction, folktale, myth, poem).",
+              "subs": [],
+              "subgroup": null
+            },
+            {
+              "prefix": "RI",
+              "code": "RI.MF.5.6",
+              "main": "Interpret information presented visually, orally, or quantitatively (e.g., in charts, graphs, diagrams, timelines, animations, or interactive elements on web pages) and explain how the information contributes to an understanding of the text in which it appears.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "6": [
+            {
+              "prefix": "RL",
+              "code": "RL.MF.6.6",
+              "main": "Compare and contrast information or texts to develop a coherent understanding of a theme, topic, or issue when reading a story, drama, or poem to listening to or viewing an audio, video, or live version of the text.",
+              "subs": [],
+              "subgroup": null
+            },
+            {
+              "prefix": "RI",
+              "code": "RI.MF.6.6",
+              "main": "Integrate information when presented in different media or formats (e.g., visually, quantitatively) to develop a coherent understanding of a topic or issue.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "7": [
+            {
+              "prefix": "RL",
+              "code": "RL.MF.7.6",
+              "main": "Compare and contrast texts (e.g., a written story, drama, or poem) to its audio, filmed, staged, or multimedia version and analyze the unique qualities of different mediums, including the effects of techniques unique to each medium (e.g., lighting, sound, color, or camera focus and angles in a film).",
+              "subs": [],
+              "subgroup": null
+            },
+            {
+              "prefix": "RI",
+              "code": "RI.MF.7.6",
+              "main": "Compare and contrast texts to analyze the unique qualities of different mediums, including the integration of information from multiple formats and sources to develop deeper understanding of the concept, topic or subject and resolve conflicting information.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "8": [
+            {
+              "prefix": "RL",
+              "code": "RL.MF.8.6",
+              "main": "Evaluate the choices made (by the authors, directors or actors) when presenting an idea in different mediums, including the representation/s or various perspectives of a subject or a key scene in two different artistic mediums (e.g., a person’s life story in both print and multimedia), as well as what is emphasized or absent in each work.",
+              "subs": [],
+              "subgroup": null
+            },
+            {
+              "prefix": "RI",
+              "code": "RI.MF.8.6",
+              "main": "Evaluate the choices made (by the authors, directors, or actors) when presenting an idea in different mediums and the advantages and disadvantages of using different mediums or formats (e.g., visually, quantitatively) to address a question or solve a problem.",
+              "subs": [],
+              "subgroup": null
+            }
+          ]
+        }
+      },
+      {
+        "code": "AA",
+        "name": "Analysis of an Argument",
+        "statement": "By the end of grade 12, evaluate the argument and specific claims in a text, including the validity of the reasoning, the credibility and accuracy of each source as well as the relevance and sufficiency of the evidence.",
+        "grades": {
+          "5": [
+            {
+              "prefix": "RI",
+              "code": "RI.AA.5.7",
+              "main": "Explain how an author uses reasons and evidence to support particular points in a text, identifying which reasons and evidence support which point(s).",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "6": [
+            {
+              "prefix": "RI",
+              "code": "RI.AA.6.7",
+              "main": "Trace the development of and evaluate the argument and specific claims in a text, distinguishing claims that are supported by reasons and evidence from claims that are not.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "7": [
+            {
+              "prefix": "RI",
+              "code": "RI.AA.7.7",
+              "main": "Trace and evaluate the argument and specific claims in a text, assessing whether the reasoning is sound and the evidence is relevant and sufficient to support the claims.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "8": [
+            {
+              "prefix": "RI",
+              "code": "RI.AA.8.7",
+              "main": "Delineate and evaluate the argument and specific claims in a text, assessing whether the reasoning is sound and the evidence is relevant and sufficient; recognize when irrelevant evidence is introduced.",
+              "subs": [],
+              "subgroup": null
+            }
+          ]
+        }
+      },
+      {
+        "code": "CT",
+        "name": "Comparison of Texts",
+        "statement": "By the end of grade 12, analyze and reflect on how two or more texts address similar themes or topics in order to build knowledge or to compare the approaches the authors take.",
+        "grades": {
+          "5": [
+            {
+              "prefix": "RL",
+              "code": "RL.CT.5.8",
+              "main": "Compare and contrast the authors’ approaches across two or more literary texts within the same genre or about the same or similar topics.",
+              "subs": [],
+              "subgroup": null
+            },
+            {
+              "prefix": "RI",
+              "code": "RI.CT.5.8",
+              "main": "Compare and contrast the authors’ approaches across two or more informational texts within the same genre or about texts on the same or similar topics.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "6": [
+            {
+              "prefix": "RL",
+              "code": "RL.CT.6.8",
+              "main": "Compare and contrast literary texts in different forms, by different authors, or from different genres (e.g., stories and poems; historical novels and primary source documents, scientific journals and fantasy stories) in terms of their approaches to similar themes and topics.",
+              "subs": [],
+              "subgroup": null
+            },
+            {
+              "prefix": "RI",
+              "code": "RI.CT.6.8",
+              "main": "Compare and contrast informational texts in different forms, by different authors, or from different genres (e.g., a memoir written by and a biography on the same person, historical novels and primary source documents, infographics and scientific journals) in terms of their approaches to similar themes and topics.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "7": [
+            {
+              "prefix": "RL",
+              "code": "RL.CT.7.8",
+              "main": "Compare and contrast a fictional portrayal of an event, time, place, or character and a historical or scientific account of the same period or event as a means of understanding how authors of fiction use or alter history and/or events.",
+              "subs": [],
+              "subgroup": null
+            },
+            {
+              "prefix": "RI",
+              "code": "RI.CT.7.8",
+              "main": "Analyze and reflect on (e.g., practical knowledge, historical/cultural context, and background knowledge) how two or more authors writing informational texts about the same topic shape their presentations of key information by emphasizing different evidence or advancing different interpretations of facts.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "8": [
+            {
+              "prefix": "RL",
+              "code": "RL.CT.8.8",
+              "main": "Analyze and reflect on how the author’s idea in fiction and literary nonfiction texts (e.g., practical knowledge, historical/cultural context, and background knowledge) is shaped by the author’s emphasis on different evidence, advancing different interpretations of facts, or fictional portrayal of a time, place, or character and a historical account of the same period.",
+              "subs": [],
+              "subgroup": null
+            },
+            {
+              "prefix": "RI",
+              "code": "RI.CT.8.8",
+              "main": "Analyze and reflect on (e.g., practical knowledge, historical/cultural context, and background knowledge) two or more informational texts that provide conflicting information on the same topic and identify where the texts disagree on matters of fact or interpretation.",
+              "subs": [],
+              "subgroup": null
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "writing": {
+    "name": "Writing Domain",
+    "note": "Seven anchors. Argumentative writing shifts from \"opinion pieces\" at Grade 5 to \"arguments on discipline-specific content\" starting at Grade 6.",
+    "anchors": [
+      {
+        "code": "AW",
+        "name": "Argumentative Writing",
+        "statement": "By the end of grade 12, write arguments to support claims in an analysis of substantive topics or texts, using valid reasoning and relevant and sufficient evidence.",
+        "grades": {
+          "5": [
+            {
+              "prefix": "W",
+              "code": "W.AW.5.1",
+              "main": "Write opinion pieces on topics or texts, supporting a point of view with reasons and information.",
+              "subs": [
+                "Introduce a topic or text clearly, state an opinion, and create an organizational structure in which ideas are logically grouped to support the writer’s purpose.",
+                "Provide logically ordered reasons that are supported by facts and details from text(s), quote directly from text when appropriate.",
+                "Link opinion and reasons using words, phrases, and clauses (e.g., consequently, specifically).",
+                "Provide a conclusion related to the opinion presented."
+              ],
+              "subgroup": null
+            }
+          ],
+          "6": [
+            {
+              "prefix": "W",
+              "code": "W.AW.6.1",
+              "main": "Write arguments on discipline-specific content (e.g., social studies, science, math, technical subjects, English/Language Arts) to support claims with clear reasons and relevant evidence.",
+              "subs": [
+                "Introduce claim(s) about a topic or issue and organize the reasons and evidence logically.",
+                "Support claim(s) with logical reasoning and relevant, accurate data and evidence, that demonstrate an understanding of the topic or text, using credible sources.",
+                "Use words, phrases, and clauses to link and clarify the relationships among claim(s), reasons and evidence.",
+                "Establish and maintain a formal/academic style, approach, and form.",
+                "Provide a concluding statement or section that follows from the argument presented."
+              ],
+              "subgroup": null
+            }
+          ],
+          "7": [
+            {
+              "prefix": "W",
+              "code": "W.AW.7.1",
+              "main": "Write arguments on discipline-specific content (e.g., social studies, science, technical subjects, English/Language Arts) to support claims with clear reasons and relevant evidence.",
+              "subs": [
+                "Introduce claim(s) about a topic or issue, acknowledge alternate or opposing claims, and organize the reasons and evidence logically.",
+                "Support claim(s) with logical reasoning and relevant, accurate data and evidence that demonstrate an understanding of the topic or text, using credible sources.",
+                "Use words, phrases, and clauses to create cohesion and clarify the relationships among claim(s), reasons, and evidence.",
+                "Establish and maintain a formal style/academic style, approach, and form.",
+                "Provide a concluding statement or section that follows from and supports the argument presented."
+              ],
+              "subgroup": null
+            }
+          ],
+          "8": [
+            {
+              "prefix": "W",
+              "code": "W.AW.8.1",
+              "main": "Write arguments on discipline-specific content (e.g., social studies, science, technical subjects, English/Language Arts) to support claims with clear reasons and relevant evidence.",
+              "subs": [
+                "Introduce claim(s) about a topic or issue, acknowledge and distinguish the claim(s) from alternate or opposing claims, and organize the reasons and evidence logically.",
+                "Support claim(s) with logical reasoning and relevant evidence, using relevant, accurate data and evidence that demonstrate an understanding of the topic or text, using credible sources.",
+                "Use words, phrases, and clauses to create cohesion and clarify the relationships among claim(s), counterclaims, reasons, and evidence.",
+                "Establish and maintain a formal or academic style, approach, and form.",
+                "Provide a concluding statement or section that follows from and supports the argument presented."
+              ],
+              "subgroup": null
+            }
+          ]
+        }
+      },
+      {
+        "code": "IW",
+        "name": "Informative and Explanatory Writing",
+        "statement": "By the end of grade 12, write informative/explanatory texts to examine and convey complex ideas and information clearly and accurately through the effective selection, organization, and analysis of content.",
+        "grades": {
+          "5": [
+            {
+              "prefix": "W",
+              "code": "W.IW.5.2",
+              "main": "Write informative/explanatory texts to examine a topic and convey ideas and information clearly.",
+              "subs": [
+                "Introduce a topic clearly to provide a focus and group related information logically; include text features such as headings, illustrations, and multimedia when useful to aid in comprehension.",
+                "Develop the topic with facts, definitions, concrete details, quotations, or other information and examples related to the topic.",
+                "Link ideas within paragraphs and sections of information using words, phrases, and clauses (e.g., in contrast, especially).",
+                "Use precise language and domain-specific vocabulary to inform about or explain the topic.",
+                "Provide a conclusion related to the information of explanation presented."
+              ],
+              "subgroup": null
+            }
+          ],
+          "6": [
+            {
+              "prefix": "W",
+              "code": "W.IW.6.2",
+              "main": "Write informative/explanatory texts (including the narration of historical events, scientific procedures/ experiments, or technical processes) to examine a topic and convey ideas, concepts, and information through the selection, organization, and analysis of relevant content.",
+              "subs": [
+                "Introduce a topic and organize ideas, concepts, and information, using text structures (e.g., definition, classification, comparison/contrast, cause/effect, etc.) and text features (e.g., headings, graphics, and multimedia) when useful to aid in comprehension.",
+                "Develop the topic with relevant facts, definitions, concrete details, quotations, or other information and examples.",
+                "Use appropriate transitions to clarify the relationships among ideas and concepts.",
+                "Use precise language and domain-specific vocabulary to inform about or explain the topic.",
+                "Acknowledge and attempt a formal/academic style, approach, and form.",
+                "Provide a concluding statement or section (e.g., sentence, part of a paragraph, paragraph, or multiple paragraphs) that follows from and supports the information or explanation presented."
+              ],
+              "subgroup": null
+            }
+          ],
+          "7": [
+            {
+              "prefix": "W",
+              "code": "W.IW.7.2",
+              "main": "Write informative/explanatory texts (including the narration of historical events, scientific procedures/ experiments, or technical processes) to examine a topic and convey ideas, concepts, and information through the selection, organization, and analysis of relevant content.",
+              "subs": [
+                "Introduce a topic clearly, previewing what is to follow; organize ideas, concepts, and information, using text structures (e.g., definition, classification, comparison/contrast, cause/effect, etc.) and text features (e.g., headings, graphics, and multimedia) when useful to aid in comprehension.",
+                "Develop the topic with relevant facts, definitions, concrete details, quotations, or other information and examples.",
+                "Use appropriate transitions to create cohesion and clarify the relationships among ideas and concepts.",
+                "Use precise language and domain/ grade-level- specific vocabulary to inform about or explain the topic.",
+                "Establish and maintain a formal style academic style, approach, and form.",
+                "Provide a concluding statement or section (e.g., sentence, part of a paragraph, paragraph, or multiple paragraphs) that follows the flow of ideas, reflects back on the topic, and supports the information or explanation presented."
+              ],
+              "subgroup": null
+            }
+          ],
+          "8": [
+            {
+              "prefix": "W",
+              "code": "W.IW.8.2",
+              "main": "Write informative/explanatory texts (including the narration of historical events, scientific procedures/ experiments, or technical processes) to examine a topic and convey ideas, concepts, and information through the selection, organization, and analysis of relevant content.",
+              "subs": [
+                "Introduce a topic clearly, previewing what is to follow; and organize ideas, concepts, and information, using text structures (e.g., definition, classification, comparison/contrast, cause/effect, etc.) and text features (e.g., headings, graphics, and multimedia) when useful to aid in comprehension.",
+                "Develop the topic with relevant, well-chosen facts, definitions, concrete details, quotations, or other information and examples.",
+                "Use appropriate transitions to create cohesion and clarify the relationships among ideas and concepts.",
+                "Use precise language and domain/grade-level- specific vocabulary to inform about or explain the topic.",
+                "Establish and maintain a formal style/academic style, approach, and form.",
+                "Provide a concluding statement or section (e.g., sentence, part of a paragraph, paragraph, or multiple paragraphs) that synthesizes the information or explanation presented."
+              ],
+              "subgroup": null
+            }
+          ]
+        }
+      },
+      {
+        "code": "NW",
+        "name": "Narrative Writing",
+        "statement": "By the end of grade 12, write narratives to develop real or imagined experiences or events using effective technique, well-chosen details, and well-structured event sequences.",
+        "grades": {
+          "5": [
+            {
+              "prefix": "W",
+              "code": "W.NW.5.3",
+              "main": "Write narratives to develop real or imagined experiences or events using effective technique, descriptive details, and clear event sequences.",
+              "subs": [
+                "Orient the reader by establishing a situation and introducing a narrator and/or characters; organize an event sequence that unfolds naturally.",
+                "Use narrative techniques, such as dialogue, description, and pacing, to develop experiences and events or show the responses of characters to situations.",
+                "Use a variety of transitional words, phrases, and clauses to manage the sequence of events.",
+                "Use concrete words and phrases and sensory details to convey experiences and events precisely.",
+                "Provide a conclusion that follows from the narrated experiences or events."
+              ],
+              "subgroup": null
+            }
+          ],
+          "6": [
+            {
+              "prefix": "W",
+              "code": "W.NW.6.3",
+              "main": "Write narratives to develop real or imagined experiences or events using effective technique, relevant descriptive details, and well-structured event sequences.",
+              "subs": [
+                "Engage and orient the reader by establishing a context and introducing a narrator and/or characters; organize an event sequence that unfolds naturally and logically.",
+                "Use narrative techniques, such as dialogue, pacing, and description, to develop experiences, events, and/or characters.",
+                "Use a variety of transition words, phrases, and clauses to convey sequence and signal shifts from one time frame or setting to another.",
+                "Use precise words and phrases, relevant descriptive details, and sensory language to convey experiences and events.",
+                "Provide a conclusion that follows from the narrated experiences or events."
+              ],
+              "subgroup": null
+            }
+          ],
+          "7": [
+            {
+              "prefix": "W",
+              "code": "W.NW.7.3",
+              "main": "Write narratives to develop real or imagined experiences or events using effective technique, relevant descriptive details, and well-structured event sequences.",
+              "subs": [
+                "Engage and orient the reader by establishing a context and point of view and introducing a narrator and/or characters; organize an event sequence that unfolds naturally and logically.",
+                "Use narrative techniques, such as dialogue, pacing, and description, to develop experiences, events, and/or characters.",
+                "Use a variety of transition words, phrases, and clauses to convey sequence and signal shifts from one time frame or setting to another.",
+                "Use precise words and phrases, relevant descriptive details, and sensory language to capture the action and convey experiences and events.",
+                "Provide a conclusion that follows from and reflects on the narrated experiences or events."
+              ],
+              "subgroup": null
+            }
+          ],
+          "8": [
+            {
+              "prefix": "W",
+              "code": "W.NW.8.3",
+              "main": "Write narratives to develop real or imagined experiences or events using effective technique, relevant descriptive details, and well-structured event sequences.",
+              "subs": [
+                "Engage and orient the reader by establishing a context and point of view and introducing a narrator and/or characters; organize an event sequence that unfolds naturally and logically.",
+                "Use narrative techniques, such as dialogue, pacing, description, and reflection, to develop experiences, events, and/or characters.",
+                "Use a variety of transition words, phrases, and clauses to convey sequence, signal shifts from one time frame or setting to another, and show the relationships among experiences and events.",
+                "Use precise words and phrases, relevant descriptive details, and sensory language to capture the action and convey experiences and events.",
+                "Provide a conclusion that follows from and reflects on the narrated experiences or events."
+              ],
+              "subgroup": null
+            }
+          ]
+        }
+      },
+      {
+        "code": "WP",
+        "name": "Writing Process",
+        "statement": "By the end of grade 12, develop and strengthen writing as needed by planning, revising, editing, rewriting, and publishing.",
+        "grades": {
+          "5": [
+            {
+              "prefix": "W",
+              "code": "W.WP.5.4",
+              "main": "With guidance and support from peers and adults, develop and strengthen writing as needed by planning, revising, editing, rewriting, or trying a new approach.",
+              "subs": [
+                "Consider audience, purpose, and intent before writing.",
+                "Plan appropriately to use specialized, topic-specific language appropriate for the audience, purpose and subject matter.",
+                "Consider writing as a process, including self-evaluation, revision and editing.",
+                "With adult and peer feedback, and digital or print tools such as a dictionary, thesaurus, and/or spell checker, evaluate whether the writing achieved its goal and make changes in content or form as necessary.",
+                "After initial drafting, expand, combine, and reduce sentences for meaning, audience, and style."
+              ],
+              "subgroup": null
+            }
+          ],
+          "6": [
+            {
+              "prefix": "W",
+              "code": "W.WP.6.4",
+              "main": "With some guidance and support from peers and adults, develop and strengthen writing as needed by planning; flexibly making editing and revision choices; sustaining effort to fit composition needs and purposes; and attempting to address purpose and audience.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "7": [
+            {
+              "prefix": "W",
+              "code": "W.WP.7.4",
+              "main": "With some guidance and support from peers and adults, develop and strengthen writing as needed by planning; flexibly making editing and revision choices and sustaining effort to complete complex writing tasks; and focusing on how well purpose and audience have been addressed.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "8": [
+            {
+              "prefix": "W",
+              "code": "W.WP.8.4",
+              "main": "With some guidance and support from peers and adults, develop and strengthen writing as needed by planning, sustaining effort to complete complex writing tasks; seeking out assistance, models, sources or feedback to improve understanding or refine final products; focusing on how well purpose and audience have been addressed.",
+              "subs": [],
+              "subgroup": null
+            }
+          ]
+        }
+      },
+      {
+        "code": "WR",
+        "name": "Writing Research",
+        "statement": "By the end of grade 12, conduct short as well as more sustained research projects, utilizing an inquiry-based research process, based on focused questions, demonstrating understanding of the subject under investigation.",
+        "grades": {
+          "5": [
+            {
+              "prefix": "W",
+              "code": "W.WR.5.5",
+              "main": "Establish a central idea about a topic, investigation, issue or event and use several sources to support the proposed central idea.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "6": [
+            {
+              "prefix": "W",
+              "code": "W.WR.6.5",
+              "main": "Conduct short research projects to answer a question, drawing on several sources and refocusing the inquiry when appropriate.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "7": [
+            {
+              "prefix": "W",
+              "code": "W.WR.7.5",
+              "main": "Conduct short research projects to answer a question, drawing on several sources and generating additional related, focused questions for further research and investigation.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "8": [
+            {
+              "prefix": "W",
+              "code": "W.WR.8.5",
+              "main": "Conduct short research projects to answer a question (including a self-generated question), drawing on several sources and generating additional related, focused questions that allow for multiple avenues of exploration.",
+              "subs": [],
+              "subgroup": null
+            }
+          ]
+        }
+      },
+      {
+        "code": "SE",
+        "name": "Sources of Evidence",
+        "statement": "By the end of grade 12, gather relevant information and evidence from multiple sources to support analysis, reflection, and research, while assessing the credibility and accuracy of each source, and integrating the information while avoiding plagiarism.",
+        "grades": {
+          "5": [
+            {
+              "prefix": "W",
+              "code": "W.SE.5.6",
+              "main": "Gather relevant information from multiple valid and reliable print and digital sources; summarize or paraphrase information in notes and finished work, making note of any similarities and differences among ideas presented; and provide a list of sources.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "6": [
+            {
+              "prefix": "W",
+              "code": "W.SE.6.6",
+              "main": "Gather relevant information from multiple print and digital sources; assess the credibility of each source; and quote or paraphrase the data and conclusions of others while avoiding plagiarism and providing basic bibliographic information for sources.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "7": [
+            {
+              "prefix": "W",
+              "code": "W.SE.7.6",
+              "main": "Gather relevant information from multiple print and digital sources, using search terms effectively; assess the credibility and accuracy of each source; and quote or paraphrase the data and conclusions of others while avoiding plagiarism and following a standard format for citation.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "8": [
+            {
+              "prefix": "W",
+              "code": "W.SE.8.6",
+              "main": "Gather relevant information from multiple print and digital sources, using search terms effectively; assess the credibility and accuracy of each source; and quote or paraphrase the data and conclusions of others while avoiding plagiarism and following a standard format for citation.",
+              "subs": [],
+              "subgroup": null
+            }
+          ]
+        }
+      },
+      {
+        "code": "RW",
+        "name": "Range of Writing",
+        "statement": "By the end of grade 12, write routinely over extended time frames and shorter time frames for a range of tasks, purposes, and audiences.",
+        "grades": {
+          "5": [
+            {
+              "prefix": "W",
+              "code": "W.RW.5.7",
+              "main": "Write routinely over extended time frames (time for research and revision) and shorter time frames (a single sitting or a day or two) for a range of tasks, purposes, and audiences.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "6": [
+            {
+              "prefix": "W",
+              "code": "W.RW.6.7",
+              "main": "Write routinely over extended time frames (time for research, reflection, metacognition/self- correction, and revision) and shorter time frames (a single sitting or a day or two) for a range of discipline-specific tasks, purposes, and audiences.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "7": [
+            {
+              "prefix": "W",
+              "code": "W.RW.7.7",
+              "main": "Write routinely over extended time frames (time for research, reflection, metacognition/self- correction, and revision) and shorter time frames (a single sitting or a day or two) for a range of discipline-specific tasks, purposes, and audiences.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "8": [
+            {
+              "prefix": "W",
+              "code": "W.RW.8.7",
+              "main": "Write routinely over extended time frames (time for research, reflection, metacognition/self- correction, and revision) and shorter time frames (a single sitting or a day or two) for a range of discipline-specific tasks, purposes, and audiences.",
+              "subs": [],
+              "subgroup": null
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "speaking_listening": {
+    "name": "Speaking and Listening Domain",
+    "note": "Six anchors. This is the most consistent domain across Grades 5 through 8; only the rigor of expectations escalates.",
+    "anchors": [
+      {
+        "code": "PE",
+        "name": "Participate Effectively",
+        "statement": "By the end of grade 12, prepare for and participate effectively in a range of conversations and collaborations with diverse partners, building on others' ideas and expressing their own clearly and persuasively.",
+        "grades": {
+          "5": [
+            {
+              "prefix": "SL",
+              "code": "SL.PE.5.1",
+              "main": "Engage effectively in a range of collaborative discussions (one-on-one, in groups, and teacher-led) with diverse partners on grade 5 topics and texts, building on others’ ideas and expressing their own clearly.",
+              "subs": [
+                "Explicitly draw on previously read text or material and other information known about the topic to explore ideas under discussion.",
+                "Follow agreed-upon rules for discussions and carry out assigned roles.",
+                "Pose and respond to specific questions by making comments that contribute to the discussion and elaborate on the remarks of others.",
+                "Review the key ideas expressed and draw conclusions in light of information and knowledge gained from the discussions."
+              ],
+              "subgroup": null
+            }
+          ],
+          "6": [
+            {
+              "prefix": "SL",
+              "code": "SL.PE.6.1",
+              "main": "Engage effectively in a range of collaborative discussions (one-on-one, in groups, and teacher-led) with diverse partners on grade 6 topics, texts, and issues, building on others’ ideas and expressing their own clearly.",
+              "subs": [
+                "Come to discussions prepared, having read or studied required material; explicitly draw on that preparation by referring to evidence on the topic, text, or issue to probe and reflect on ideas under discussion.",
+                "Follow rules for collegial discussions, set specific goals and deadlines, and define individual roles as needed.",
+                "Pose and respond to specific questions with elaboration and detail by making comments that contribute to the topic, text, or issue under discussion.",
+                "Review the key ideas expressed and demonstrate understanding of multiple perspectives through reflection and paraphrasing."
+              ],
+              "subgroup": null
+            }
+          ],
+          "7": [
+            {
+              "prefix": "SL",
+              "code": "SL.PE.7.1",
+              "main": "Engage effectively in a range of collaborative discussions (one-on-one, in groups, and teacher-led) with diverse partners on grade 7 topics, texts, and issues, building on others’ ideas and expressing their own clearly.",
+              "subs": [
+                "Come to discussions prepared, having read or researched material under study; explicitly draw on that preparation by referring to evidence on the topic, text, or issue to probe and reflect on ideas under discussion.",
+                "Follow rules for collegial discussions, track progress toward specific goals and deadlines, and define individual roles as needed.",
+                "Pose questions that elicit elaboration and respond to others’ questions and comments with relevant observations and ideas that bring the discussion back on topic as needed.",
+                "Acknowledge new information expressed by others and, when warranted, modify their own views."
+              ],
+              "subgroup": null
+            }
+          ],
+          "8": [
+            {
+              "prefix": "SL",
+              "code": "SL.PE.8.1",
+              "main": "Engage effectively in a range of collaborative discussions (one-on-one, in groups, and teacher-led) with diverse partners on grade 8 topics, texts, and issues, building on others’ ideas and expressing their own clearly.",
+              "subs": [
+                "Come to discussions prepared, having read or researched material under study; explicitly draw on that preparation by referring to evidence on the topic, text, or issue to probe and reflect on ideas under discussion.",
+                "Follow rules for collegial discussions and decision-making, track progress toward specific goals and deadlines, and define individual roles as needed.",
+                "Pose questions that connect the ideas of several speakers and respond to others’ questions and comments with relevant evidence, observations, and ideas.",
+                "Acknowledge new information expressed by others, and, when warranted, qualify or justify their own views in light of the evidence presented."
+              ],
+              "subgroup": null
+            }
+          ]
+        }
+      },
+      {
+        "code": "II",
+        "name": "Integrate Information",
+        "statement": "By the end of grade 12, integrate and evaluate information presented in diverse media and formats, including visually, quantitatively, and orally.",
+        "grades": {
+          "5": [
+            {
+              "prefix": "SL",
+              "code": "SL.II.5.2",
+              "main": "Summarize a written text read aloud or information presented in diverse media and formats (e.g., visually, quantitatively, and orally).",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "6": [
+            {
+              "prefix": "SL",
+              "code": "SL.II.6.2",
+              "main": "Interpret information presented in diverse media and formats (e.g., visually, quantitatively, orally) and explain how it contributes to a topic, text, or issue under study.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "7": [
+            {
+              "prefix": "SL",
+              "code": "SL.II.7.2",
+              "main": "Analyze the main ideas and supporting details presented in diverse media and formats (e.g., visually, quantitatively, orally) and explain how the ideas clarify a topic, text, or issue under study.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "8": [
+            {
+              "prefix": "SL",
+              "code": "SL.II.8.2",
+              "main": "Analyze the purpose of information presented in diverse media and formats (e.g., visually, quantitatively, orally) and evaluate the motives (e.g., social, commercial, political) behind its presentation.",
+              "subs": [],
+              "subgroup": null
+            }
+          ]
+        }
+      },
+      {
+        "code": "ES",
+        "name": "Evaluate Speakers",
+        "statement": "By the end of grade 12, evaluate a speaker's point of view, reasoning, and use of evidence and rhetoric.",
+        "grades": {
+          "5": [
+            {
+              "prefix": "SL",
+              "code": "SL.ES.5.3",
+              "main": "Summarize the points a speaker makes and explain how each claim is supported by reasons and evidence.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "6": [
+            {
+              "prefix": "SL",
+              "code": "SL.ES.6.3",
+              "main": "Deconstruct a speaker’s argument and specific claims, distinguishing claims that are supported by reasons and evidence from claims that are not.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "7": [
+            {
+              "prefix": "SL",
+              "code": "SL.ES.7.3",
+              "main": "Delineate a speaker’s argument and specific claims, evaluating the soundness of the reasoning and the relevance and sufficiency of the evidence.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "8": [
+            {
+              "prefix": "SL",
+              "code": "SL.ES.8.3",
+              "main": "Delineate a speaker’s argument and specific claims, evaluating the soundness of the reasoning and relevance and sufficiency of the evidence and identifying when irrelevant evidence is introduced.",
+              "subs": [],
+              "subgroup": null
+            }
+          ]
+        }
+      },
+      {
+        "code": "PI",
+        "name": "Present Information",
+        "statement": "By the end of grade 12, present information, findings, and supporting evidence such that listeners can follow the line of reasoning and the organization, development, and style are appropriate to task, purpose, and audience.",
+        "grades": {
+          "5": [
+            {
+              "prefix": "SL",
+              "code": "SL.PI.5.4",
+              "main": "Report on a topic or text or present an opinion, sequencing ideas logically and using appropriate facts and relevant, descriptive details to support main ideas or themes; speak clearly at an understandable pace.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "6": [
+            {
+              "prefix": "SL",
+              "code": "SL.PI.6.4",
+              "main": "Present claims and findings, sequencing ideas logically and using pertinent descriptions, facts, and details to accentuate main ideas or themes; use appropriate speaking behaviors (e.g., eye contact, adequate volume, and clear pronunciation).",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "7": [
+            {
+              "prefix": "SL",
+              "code": "SL.PI.7.4",
+              "main": "Present claims and findings, emphasizing salient points in a focused, coherent manner with pertinent descriptions, facts, details, and examples; use appropriate eye contact, adequate volume, and clear pronunciation.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "8": [
+            {
+              "prefix": "SL",
+              "code": "SL.PI.8.4",
+              "main": "Present claims and findings, emphasizing salient points in a focused, coherent manner with relevant evidence, sound valid reasoning, and well-chosen details; use appropriate eye contact, adequate volume, and clear pronunciation.",
+              "subs": [],
+              "subgroup": null
+            }
+          ]
+        }
+      },
+      {
+        "code": "UM",
+        "name": "Use Media",
+        "statement": "By the end of grade 12, make strategic use of digital media and visual displays of data to express information and enhance understanding of presentations.",
+        "grades": {
+          "5": [
+            {
+              "prefix": "SL",
+              "code": "SL.UM.5.5",
+              "main": "Include multimedia components (e.g., graphics, sound) and visual displays in presentations when appropriate to enhance the development of main ideas or themes.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "6": [
+            {
+              "prefix": "SL",
+              "code": "SL.UM.6.5",
+              "main": "Include multimedia components (e.g., graphics, images, music, sound) and visual displays in presentations to clarify information.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "7": [
+            {
+              "prefix": "SL",
+              "code": "SL.UM.7.5",
+              "main": "Include multimedia components and visual displays in presentations to clarify claims and findings and emphasize salient points.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "8": [
+            {
+              "prefix": "SL",
+              "code": "SL.UM.8.5",
+              "main": "Integrate multimedia and visual displays into presentations to clarify information, strengthen claims and evidence, and add interest.",
+              "subs": [],
+              "subgroup": null
+            }
+          ]
+        }
+      },
+      {
+        "code": "AS",
+        "name": "Adapt Speech",
+        "statement": "By the end of grade 12, adapt speech to a variety of contexts and communicative tasks, demonstrating command of formal English when indicated or appropriate.",
+        "grades": {
+          "5": [
+            {
+              "prefix": "SL",
+              "code": "SL.AS.5.6",
+              "main": "Adapt speech to a variety of contexts and tasks, using formal English when appropriate to task and situation.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "6": [
+            {
+              "prefix": "SL",
+              "code": "SL.AS.6.6",
+              "main": "Adapt speech to a variety of contexts and tasks, demonstrating command of formal English when indicated or appropriate.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "7": [
+            {
+              "prefix": "SL",
+              "code": "SL.AS.7.6",
+              "main": "Adapt speech to a variety of contexts and tasks, demonstrating command of formal English when indicated or appropriate.",
+              "subs": [],
+              "subgroup": null
+            }
+          ],
+          "8": [
+            {
+              "prefix": "SL",
+              "code": "SL.AS.8.6",
+              "main": "Adapt speech to a variety of contexts and tasks, demonstrating command of formal English when indicated or appropriate.",
+              "subs": [],
+              "subgroup": null
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

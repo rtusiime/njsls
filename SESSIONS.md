@@ -6,6 +6,119 @@ Entries are intentionally verbose. The point is full visibility: open the file a
 
 ---
 
+## Session 5 — 2026-05-11, 05:25 PM EDT
+*Data layer extraction (Phase 1) — inline data → `/data/*.json` files + flat all.json index; LaTeX search-strip for math.*
+
+### User context
+
+Conversation started philosophical: user laid out 18+ use cases for the standards corpus (discovery, lesson gen, coverage, audit, parent comms, accreditation, etc.) and asked me to ruthlessly prioritize what we'd actually built, and as a "seasoned product leader + curriculum designer" recommend what to build next.
+
+**What we built was the lookup layer.** That's the honest answer — a fast, pretty, filtered browser. None of the 18 use cases are *primary* targets; lookup is the substrate beneath ~12 of them.
+
+I recommended Phase 2 = coverage-mapping (CC ↔ standards join). User pushed back: with only 1-2 challenges authored it's premature; the higher-leverage primitive is **"vague intent → relevant standards"** discovery search (use case #1 in their list). Agreed.
+
+User also wanted to address two specifics about Phase 2 discovery:
+- BYO API key stored in localStorage instead of a Worker (no new account / no credit card).
+- Concern about Claude reasoning without grounding — I clarified: Path A *is* grounded (sends Claude the full corpus in the prompt; Claude isn't recalling from training).
+
+**This session executed Phase 1 — the foundation that unlocks Phase 2.**
+
+### What changed architecturally
+
+**Before:** each subject HTML had `const STANDARDS = {…}` (or `MATH`, `SCIENCE`) inlined at the bottom of `<script>`. To query the data programmatically, you had to parse HTML.
+
+**After:**
+- `data/ela.json`, `data/math.json`, `data/science.json` — per-subject hierarchical schemas.
+- `data/all.json` — flat denormalised array of all 314 standards with subject, code, grade, statement, etc. The LLM/API consumption layer.
+- HTML pages `fetch()` their JSON at load, then call `render()` + `applyFilters()` in the `.then()` handler.
+- `<link rel="alternate" type="application/json" href="data/all.json">` in each page head — discoverable.
+- `scripts/build_all.py` rebuilds `data/all.json` from the per-subject JSONs.
+
+This makes `https://rtusiime.github.io/njsls/data/all.json` a free, public, read-only API. Any consumer (Claude project, future Worker, Cohort Calendar, future Phase-2 search UI) can `fetch()` it.
+
+### What changed in the HTML
+
+Page line counts after extraction:
+
+| File | Before | After |
+|---|---|---|
+| ela.html | 1988 | 480 |
+| math.html | 1518 | 498 |
+| science.html | 1138 | 572 |
+
+Every page got:
+1. `const X = {…};` replaced with `let X = null;` (data fetched later)
+2. Final `render(); applyFilters();` (and `renderMath();` for math) wrapped in `fetch(json).then(data => { X = data; render(); … }).catch(err => …)`
+3. Two `<link rel="alternate" type="application/json">` tags in the head — one for the subject JSON, one for `all.json`
+4. Graceful error fallback if the JSON fails to load
+
+Index hub also gets the `<link rel="alternate">` and a visible footer note linking to `data/all.json` with the phrase "for use in Claude projects, scripts, or other tooling."
+
+### LaTeX search-strip for math
+
+User's existing complaint: searching `1/2` didn't find `\frac{1}{2}` in the math standards.
+
+**Fix:** added a `stripLatex()` function in `math.html`:
+
+```js
+function stripLatex(s) {
+  return String(s)
+    .replace(/\\frac\{([^{}]*)\}\{([^{}]*)\}/g, '$1/$2')
+    .replace(/\\sqrt\{([^{}]*)\}/g, 'sqrt($1)')
+    .replace(/\\times/g, '*')
+    .replace(/\\div/g, '/')
+    // … and so on for \le, \ge, \ne, \pm, \angle, \circ
+    .replace(/\\[a-zA-Z]+/g, '')   // anything else
+    .replace(/[{}]/g, '');
+}
+```
+
+Then in `render()`, each standard's `data-search` attribute holds **both** the raw text (with LaTeX commands) and the stripped text, lowercased. So a guide typing `1/2` matches the stripped form `1/2`, and a guide typing `frac` matches the raw form. Search works for both mental models.
+
+### Tool / command transcript
+
+**1. Extract inline data → JSON.** Wrote `/tmp/extract_data.py` to parse each `const X = {…};` block as JSON (we'd written it as strict JSON already) and emit:
+- `data/ela.json` (82 KB; 130 standards in hierarchical form)
+- `data/math.json` (69 KB; 110 standards)
+- `data/science.json` (46 KB; 74 standards)
+- `data/all.json` (197 KB; **314 flat standards** for LLM consumption)
+
+**2. Swap inline → fetch.** Wrote `/tmp/swap_to_fetch.py` which:
+- Replaced `const X = {…};` with `let X = null;` in each HTML
+- Wrapped the trailing `render(); applyFilters();` calls in `fetch(jsonPath).then(data => {…}).catch(err => {…})`
+- Injected two `<link rel="alternate" type="application/json">` tags in each `<head>`
+- Special-cased math.html to call `renderMath()` inside the fetch chain (so KaTeX runs after DOM is populated)
+
+**3. LaTeX search-strip.** Surgical `Edit` to math.html — added `stripLatex()` helper and updated the `data-search` attribute calculation to include both raw + stripped.
+
+**4. Add `scripts/build_all.py`.** Small Python script (no deps) to regenerate `data/all.json` after any subject JSON edit. Documented in CLAUDE.md.
+
+**5. CLAUDE.md update.** Rewrote the "File map" and "Per-subject schemas" sections to reflect the new data architecture. Each schema block now shows the JSON shape, references the canonical file path, and documents `data/all.json` as the LLM consumption layer.
+
+**6. Visible API mention on hub.** Added a one-line note in the about-strip on `index.html` linking to `data/all.json`, framed as "for use in Claude projects, scripts, or other tooling."
+
+### Validation
+
+- All four JSON files parse as valid JSON.
+- All three inline scripts pass `node --check`.
+- Page line counts dropped ~70% (data moved out).
+- `scripts/build_all.py` regenerates `data/all.json` identically (314 standards, same per-subject counts: 130 / 110 / 74).
+- Local preview note added to CLAUDE.md: `python3 -m http.server` from repo root, since `file://` blocks `fetch()`.
+
+### Commits produced
+
+To be backfilled.
+
+### Notes / flags for Phase 2
+
+- **API ready.** `data/all.json` is the prompt-friendly format. ~180 KB; trivially fits in Claude's context.
+- **Path A is grounded.** When we build the search UI, the prompt should be: *"Here are 314 NJSLS standards in JSON: [paste]. The user is looking for standards that match this description: '<query>'. Return the top 5–10 best matches with `code`, the verbatim `statement`, and a one-sentence rationale for each. Only return codes that exist in the corpus."* That guarantees grounding.
+- **Prompt caching.** The 314-standard JSON is constant across queries. Prompt-cache it (5-min TTL) → first query at full price, subsequent queries at ~$0.005 each.
+- **BYO key.** User wants `localStorage` + browser → Anthropic API direct via `anthropic-dangerous-direct-browser-access: true` header. CORS supported. No backend, no new accounts.
+- **Cohort Calendar integration (Phase 3).** Their `state.json` has 357 blocks, 173 with standards tagged in NJSLS code format. Once we know where CC publishes (or we add a publish.py target), Phase 3 is a join + render job.
+
+---
+
 ## Session 4 — 2026-05-11, 02:15 PM EDT
 *LaTeX retrospective; Science hub-status bug fix; Grade 5 added.*
 
