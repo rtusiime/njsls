@@ -141,7 +141,9 @@ Special note for math: **LaTeX/TeX source or MathML** is the gold standard — p
 
 ### Commits produced
 
-To be backfilled on commit.
+| Hash | Time (EDT) | Message |
+|---|---|---|
+| `9d71842` | 13:55:13 | Math: full filtered browser with KaTeX-rendered formulas; CLAUDE.md |
 
 ### Notes / flags
 
