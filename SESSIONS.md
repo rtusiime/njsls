@@ -107,7 +107,9 @@ Then in `render()`, each standard's `data-search` attribute holds **both** the r
 
 ### Commits produced
 
-To be backfilled.
+| Hash | Time (EDT) | Message |
+|---|---|---|
+| `b6c7766` | 17:34:55 | Phase 1: extract data to /data/*.json; LaTeX search-strip for math |
 
 ### Notes / flags for Phase 2
 
