@@ -6,7 +6,7 @@ Entries are intentionally verbose. The point is full visibility: open the file a
 
 ---
 
-## Session 12 — 2026-05-12, late afternoon EDT
+## Session 12 — 2026-05-12, 03:37 PM EDT
 *Added CLKS (Career Readiness, Life Literacies & Key Skills) and CHPE (Comprehensive Health & Physical Education) as subjects 6 and 7. Both share the NJDOE-framework shape pioneered for CSDT in Session 11. Source PDFs had several typos and footer leaks the extractor had to handle. Hub now lists seven subjects.*
 
 ### User request
@@ -99,7 +99,7 @@ Fallback: wrote a Python parser (`/tmp/extract_njdoe.py`, ~270 lines) using the 
 
 | Hash | Time (EDT) | Message |
 |---|---|---|
-| _(to be filled at commit time)_ | | CLKS + CHPE: add as subjects 6 and 7; build_all.py framework helper |
+| `0a70cab` | 15:37:47 | CLKS + CHPE: add as subjects 6 and 7 (amber, rose) |
 
 ---
 
