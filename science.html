@@ -9,6 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/cc-backlinks.css">
+<script defer src="assets/cc-backlinks.js"></script>
 <style>
 :root {
   --bg: #FAF6EE;
@@ -420,7 +422,7 @@ function render() {
       html += `</div>`;
       html += `<div class="pe-list">`;
       for (const pe of topic.pes) {
-        html += `<div class="pe-entry" data-pe="${pe.code}">`;
+        html += `<div class="pe-entry" data-pe="${pe.code}" data-code="${esc(pe.code)}">`;
         html += `<div class="pe-header">`;
         html += `<span class="pe-code">${esc(pe.code)}</span>`;
         html += `<span class="pe-statement">${esc(pe.statement)}</span>`;
@@ -562,6 +564,7 @@ fetch('data/science.json').then(r => r.json()).then(data => {
   SCIENCE = data;
   render();
   applyFilters();
+  if (window.attachCCBacklinks) window.attachCCBacklinks();
 }).catch(err => {
   document.getElementById('content').innerHTML =
     '<div style="padding:60px 30px;text-align:center;color:var(--muted);">Failed to load standards data. Refresh the page; if the issue persists, the <code>data/</code> directory may be missing.</div>';

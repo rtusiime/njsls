@@ -6,6 +6,112 @@ Entries are intentionally verbose. The point is full visibility: open the file a
 
 ---
 
+## Session 7 — 2026-05-12, 01:55 AM EDT
+*Phase 3: per-standard "Taught in" backlinks from Cohort Calendar on subject pages.*
+
+### User request
+
+> well the one thing I'm not seeing is that I don't see the challenge blocks when I go to the njsls/math or /science. yet I'm sure at least some of these standards are in the challenge.
+
+Right call — Phase 3 (CC backlinks under each rendered standard) wasn't built yet. Session 6 only shipped Phase 2 (semantic search on hub). User expected Phase 3 to come bundled. Building now.
+
+### Discovery before building
+
+**CC block schema** (from poking around `state.json` and CC commits):
+- 357 blocks total. 173 with `std` tagged. 140 of those marked `std_defensible: true`.
+- Block types (`tp`): challenge (62), math (56), lunch (36), movement (113), ela (16), cog-check (36), biology (15), chem-lab (4), chem (2), diagnostic (2), other (15).
+- "Challenge" is one block type, not a parent group. Larger challenge *units* (Kitchen Enterprise, Scrimmage) aren't modeled in the data — they exist informally via week+content groupings.
+- Fields: `id, ttl, desc, w (0-indexed), d (0=Mon..4=Fri), s (slot), dur (min), tp, grades[] (G5..G8), std[], std_defensible, tag, anc, locked, pin`.
+
+**Per-standard distribution:**
+- Only **39 unique standards** referenced across all CC blocks (out of 314 in our corpus).
+- Top: SL.1 (22), 5.NBT.B.7 (21), 6.SP.B.5 (19), W.4 (19), MS-LS1-7 (18), 8.EE.B.5 (17).
+- 2 standards taught by just 1 block; rest are 2+.
+
+### The alignment problem
+
+Only **20 of CC's 39 tagged codes match our NJSLS corpus exactly**.
+
+| Mismatch class | Examples |
+|---|---|
+| Math: old CCSS code (`MD` not `M`) | `5.MD.A.1`, `5.MD.A.2`, `3.MD.B.3`, `8.F.B.4` |
+| Math: substandard letter | `5.NBT.A.3b` (our corpus stores subs under parent `5.NBT.A.3`) |
+| ELA: CCSS anchor shorthand | `SL.1`, `SL.3-6`, `W.1`, `W.2`, `W.4`, `W.6`, `W.7`, `RI.1`, `RI.2`, `RI.8`, `L.6` |
+
+This is a real data-alignment issue between CC's vintage (older CCSS-style codes) and our corpus (NJSLS 2023). Three remediation paths surfaced in CLAUDE.md:
+- (a) Translation table at the join layer
+- (b) Update CC tags in-place
+- (c) Accept the gap
+
+Shipped (c) — the 20 exact matches — since they cover the heavily-taught standards. Flagged the issue clearly for user decision.
+
+### What got built
+
+**Shared module: `assets/cc-backlinks.js` + `cc-backlinks.css`**
+
+`cc-backlinks.js` (~150 lines):
+- Self-invoking IIFE; exposes `window.attachCCBacklinks()` and `window.__njslsCC` (state for console debugging).
+- Fetches Supabase document with 8s timeout. Stores raw blocks + builds `Map<code, blocks[]>` sorted by week → day → slot.
+- `attachAll()` walks `.entry[data-code]`, `.std-entry[data-code]`, `.pe-entry[data-code]` and appends a `.cc-backlinks` div if blocks match.
+- Auto-runs on DOMContentLoaded; subject pages call it again after their async render so re-attachment works.
+- Graceful when CC fetch fails (logs warning, silently no-ops).
+
+`cc-backlinks.css` (~120 lines):
+- Inherits subject `--accent` and `--accent-pale` from each host page; chip styling is uniform.
+- Chip layout: `[TYPE] [W3 · Mon · G5/G6 · 45m] [Truncated title…]` — type pill is accent-bordered, meta is muted, title takes remaining width with ellipsis.
+- Collapse threshold of 4. "Show N more" button toggles a `<div hidden>` of additional chips.
+- Hover: lift + accent border. Click opens CC at `#<block_id>` in a new tab.
+- Responsive: meta chips hide on screens <540px to keep chips legible.
+
+**Page wiring** (ela.html, math.html, science.html):
+- Each gets `<link rel="stylesheet" href="assets/cc-backlinks.css">` and `<script defer src="assets/cc-backlinks.js">` in `<head>`.
+- Each calls `if (window.attachCCBacklinks) window.attachCCBacklinks();` at the end of its `fetch('data/<subject>.json').then(…)` handler.
+- ELA's render() didn't have `data-code` on rendered entries — added it.
+- Science's render() had `data-pe` but not `data-code` — added `data-code` alongside.
+
+### Tool / command transcript
+
+**Schema probe:**
+```
+$ python3 -c "import json; … " < CohortCalendar/state.json
+Total unique std codes referenced: 39
+Total tagged-block instances (sum): 358
+Top: SL.1 (22), 5.NBT.B.7 (21), 6.SP.B.5 (19), W.4 (19), MS-LS1-7 (18)
+```
+
+**Alignment audit:**
+```
+$ python3 (intersection of CC codes with our corpus)
+Matched: 20 / 39
+Unmatched: 3.MD.B.3, 5.MD.A.1, 5.MD.A.2, 5.NBT.A.3b, 8.F.B.4, L.6, RI.1, RI.2,
+           RI.8, SL.1, SL.3, SL.4, SL.5, SL.6, W.1, W.2, W.4, W.6, W.7
+```
+
+**Files added:**
+- `assets/cc-backlinks.js` (8.8 KB)
+- `assets/cc-backlinks.css` (2.8 KB)
+
+**Files modified:** `ela.html`, `math.html`, `science.html`, `CLAUDE.md`, `SESSIONS.md`.
+
+**Local smoke test:**
+- `python3 -m http.server --bind 127.0.0.1`
+- Confirmed all four assets serve (`200`), all three pages reference both files, attach call is wired into each fetch chain.
+- Live CC Supabase fetch returns 20 blocks teaching `5.NBT.B.7` (close to the 21 in baked state.json — diff is just newer live state).
+
+### Commits produced
+
+To be backfilled.
+
+### Notes / flags
+
+- **Deep linking to CC** uses `#<block_id>` hash. CC's `index.html` doesn't currently handle this hash (we checked). Click currently lands on CC homepage. Adding hash-routing in CC is a tiny commit on the CC side when there's appetite — until then the chip works as a hover-info reference with a "see CC" exit, not a precise jump.
+- **Refresh cadence:** the module fetches CC state on each page load. CC state ≈ 250 KB; one fetch per page open. No caching for now (simpler; real-time freshness). Could cache in localStorage with TTL if it becomes an issue.
+- **Standards with no CC backlinks render unchanged** — no empty "Taught in: 0 blocks" affordance. Considered, decided against: the absence of a section reads as "no curriculum yet" without adding visual noise on every untaught standard.
+- **20 vs 39 matching codes** is the real product question now. CLAUDE.md documents the three paths (translation table / update CC tags / accept gap). User to decide.
+- This took longer because of the alignment audit and the choice of *not* over-engineering a translation layer before knowing user direction.
+
+---
+
 ## Session 6 — 2026-05-12, 01:30 AM EDT
 *Phase 2: semantic discovery search on the hub (BYO Sonnet key) + Cohort Calendar publish-target investigation.*
 

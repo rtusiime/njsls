@@ -9,6 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/cc-backlinks.css">
+<script defer src="assets/cc-backlinks.js"></script>
 <style>
 :root {
   --bg: #FAF6EE;
@@ -380,7 +382,7 @@ function render() {
         for (const entry of entries) {
           const cls = getPrefixClass(entry.prefix);
           const label = getPrefixLabel(entry.prefix);
-          html += `<div class="entry ${cls}">`;
+          html += `<div class="entry ${cls}" data-code="${escapeHtml(entry.code)}">`;
           if (entry.subgroup && entry.subgroup !== 'None') {
             const subgroupName = entry.subgroup.replace(/_/g, ' ');
             html += `<div class="entry-subgroup">${escapeHtml(subgroupName)}</div>`;
@@ -470,6 +472,7 @@ fetch('data/ela.json').then(r => r.json()).then(data => {
   STANDARDS = data;
   render();
   applyFilters();
+  if (window.attachCCBacklinks) window.attachCCBacklinks();
 }).catch(err => {
   document.getElementById('content').innerHTML =
     '<div style="padding:60px 30px;text-align:center;color:var(--muted);">Failed to load standards data. Refresh the page; if the issue persists, the <code>data/</code> directory may be missing.</div>';

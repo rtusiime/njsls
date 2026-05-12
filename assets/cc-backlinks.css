@@ -1,0 +1,135 @@
+/*
+ * cc-backlinks.css
+ * -----------------
+ * Styles for the "Taught in" sections appended under standard entries.
+ * Inherits subject accent via --accent (set per page). Falls back to a
+ * neutral muted tone if --accent is missing.
+ *
+ * The chip-grid layout is the same across all three subjects; only the
+ * accent color cascades from the host page.
+ */
+
+.cc-backlinks {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--rule, #D9D1BD);
+}
+
+.cc-header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.cc-header-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent, #6B645A);
+  padding: 3px 8px;
+  border-radius: 3px;
+  background: var(--accent-pale, rgba(0,0,0,0.05));
+}
+
+.cc-header-count {
+  font-size: 11.5px;
+  color: var(--muted, #6B645A);
+  font-style: italic;
+  letter-spacing: 0.01em;
+}
+
+.cc-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cc-hidden-chips {
+  display: contents;
+}
+
+.cc-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px 6px 10px;
+  background: var(--surface, #FFFFFF);
+  border: 1px solid var(--divider, #E5DCC8);
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 1.3;
+  color: var(--ink-soft, #3A352D);
+  text-decoration: none;
+  transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+  max-width: 100%;
+}
+
+.cc-chip:hover,
+.cc-chip:focus-visible {
+  border-color: var(--accent, #6B645A);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  outline: none;
+}
+
+.cc-chip-type {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent, #6B645A);
+  padding: 1px 5px;
+  border: 1px solid var(--accent, #6B645A);
+  border-radius: 2px;
+  flex-shrink: 0;
+  background: transparent;
+}
+
+.cc-chip-meta {
+  color: var(--muted, #6B645A);
+  font-size: 10.5px;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.cc-chip-title {
+  color: var(--ink-soft, #3A352D);
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.cc-expand-btn {
+  margin-top: 8px;
+  background: none;
+  border: 1px dashed var(--rule, #D9D1BD);
+  color: var(--muted, #6B645A);
+  font: inherit;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 160ms ease;
+}
+
+.cc-expand-btn:hover {
+  border-color: var(--accent, #6B645A);
+  color: var(--accent, #6B645A);
+  border-style: solid;
+}
+
+@media (max-width: 540px) {
+  .cc-chip-meta { display: none; }
+  .cc-chip { padding: 5px 10px 5px 8px; }
+}

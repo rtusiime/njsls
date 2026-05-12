@@ -182,11 +182,11 @@ Subjects start "In progress" and flip to "Ready" once their data is populated. I
 
 **Do** extract data files (`data/<subject>.json` loaded via fetch) if a single HTML grows past ~2500 lines. Current cap: ELA at 1988.
 
-## Cohort Calendar integration (Phase 3 reference)
+## Cohort Calendar integration (Phase 3 — shipped Session 7)
 
-Sister repo `github.com/john-forge/CohortCalendar` (deployed at `https://john-forge.github.io/CohortCalendar/`) holds 357 blocks, 173 with `std` tagged in NJSLS code format (140 `std_defensible: true`).
+Sister repo `github.com/john-forge/CohortCalendar` (deployed at `https://john-forge.github.io/CohortCalendar/`) holds 357 blocks, 173 with `std` tagged.
 
-**Live state source** for coverage-view fetches: Supabase REST endpoint with the public anon key (baked into CC's `publish.py`, already public).
+**Live state source:** Supabase REST endpoint with the public anon key (baked into CC's `publish.py`, already public).
 
 ```
 GET https://vaqdoeckaobmsalikmpx.supabase.co/rest/v1/documents?id=eq.main&select=data
@@ -197,14 +197,34 @@ Headers:
 Returns: [ { "data": { "blocks": [...], "grades": [...], ... } } ]
 ```
 
-CORS is configured to allow `https://rtusiime.github.io` origin — verified Session 6. Phase 3 coverage view can fetch directly from njsls's browser. No proxy/Worker needed.
+CORS allows `https://rtusiime.github.io` origin. No proxy/Worker needed.
 
-To find blocks teaching a standard:
-```js
-const blocks = data.blocks.filter(b => b.std && b.std.includes(STANDARD_CODE));
-```
+Each block has `id, ttl, desc, w (week 0-indexed), d (day 0=Mon..4=Fri), s (slot), dur, tp (block type), grades[] (G5..G8), std[], std_defensible, tag, anc, locked`.
 
-Each block has `id, ttl, desc, w (week), d (day), s (slot), dur, tp (type), grades, std[], std_defensible`.
+### Backlinks shared module — `assets/cc-backlinks.js` + `.css`
+
+Loaded by every subject page. On first DOMContentLoaded **and** any time the page's own render() runs, the module:
+
+1. Fetches CC state from Supabase (once per page load).
+2. Builds `Map<standardCode, blocks[]>`, sorted chronologically (week → day → slot).
+3. Walks the DOM for `.entry[data-code]`, `.std-entry[data-code]`, `.pe-entry[data-code]`.
+4. Appends a `.cc-backlinks` section under each matched entry: header (count) + chip-row of blocks. Collapsed past 4 blocks with "Show N more."
+5. Chip click → opens CC at `#blk_<id>` hash (CC doesn't yet handle the hash; for now it just goes to CC homepage — a small CC change away from a real deep link).
+
+Subject pages call `window.attachCCBacklinks()` at the end of their fetch().then() handler — the module gracefully handles being called before CC state is ready (waits).
+
+### Known data-alignment gap (as of Session 7)
+
+CC uses two code formats interleaved:
+- **Modern NJSLS-2023 codes** (`5.NBT.B.7`, `MS-LS1-7`, `7.RP.A.2`) — match our corpus exactly. 20 of CC's 39 unique tagged codes are in this category.
+- **Older CCSS-anchor abbreviations** (`SL.1`, `W.4`, `RI.2`, also Math `5.MD.A.1` vs our `5.M.A.1`) — don't match. 19 of CC's 39.
+
+Backlinks render for the 20 matching codes; the 19 unmatched ones are silent — those standards appear without a "Taught in" section. **This is a real product gap.** Three remediation paths:
+- **(a) Translation table** at the join layer (mechanical for Math, requires curation for ELA anchors → grade-specific NJSLS codes).
+- **(b) Update CC tags** to current NJSLS — cross-repo migration.
+- **(c) Leave as-is, accept the gap** — the 20 matching codes are the heavily-taught ones; coverage of high-leverage standards is mostly working.
+
+User input needed before picking (a) or (b).
 
 ## What's intentionally *not* in this repo
 

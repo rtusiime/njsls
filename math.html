@@ -12,6 +12,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="assets/cc-backlinks.css">
+<script defer src="assets/cc-backlinks.js"></script>
 <style>
 :root {
   --bg: #FAF6EE;
@@ -498,6 +500,7 @@ fetch('data/math.json').then(r => r.json()).then(data => {
   render();
   applyFilters();
   renderMath();
+  if (window.attachCCBacklinks) window.attachCCBacklinks();
 }).catch(err => {
   document.getElementById('content').innerHTML =
     '<div style="padding:60px 30px;text-align:center;color:var(--muted);">Failed to load standards data. Refresh the page; if the issue persists, the <code>data/</code> directory may be missing.</div>';
