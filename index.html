@@ -8,6 +8,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
 <style>
 :root {
   --bg: #FAF6EE;
@@ -198,6 +201,288 @@ footer {
   font-size: 12px; color: var(--muted); line-height: 1.6;
 }
 
+/* ===== Search section ===== */
+.search-section { margin-bottom: 64px; }
+.search-eyebrow {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--ela); margin-bottom: 10px;
+}
+.search-prompt {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 36;
+  font-weight: 500; font-size: 26px; line-height: 1.25;
+  letter-spacing: -0.01em; margin-bottom: 8px;
+}
+.search-prompt em {
+  font-style: italic; color: var(--ela);
+  font-variation-settings: 'opsz' 36, 'SOFT' 80;
+}
+.search-hint {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 18;
+  font-style: italic; font-size: 15px; color: var(--muted);
+  margin-bottom: 20px; max-width: 720px;
+}
+.search-form { display: flex; gap: 10px; margin-bottom: 14px; align-items: flex-start; }
+.search-input {
+  flex: 1; font-family: inherit; font-size: 16px;
+  padding: 14px 18px; border: 1.5px solid var(--rule);
+  background: var(--surface); border-radius: 10px; color: var(--ink);
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+  resize: vertical; min-height: 56px; max-height: 240px;
+  line-height: 1.55; box-sizing: border-box;
+}
+.search-input:focus {
+  outline: none; border-color: var(--ela);
+  box-shadow: 0 0 0 3px rgba(139,58,31,0.12);
+}
+.search-input::placeholder { color: var(--faint); }
+.search-submit {
+  font-family: inherit; font-size: 14px; font-weight: 600;
+  padding: 14px 24px; background: var(--ela); color: white;
+  border: none; border-radius: 10px; cursor: pointer;
+  letter-spacing: 0.04em; white-space: nowrap;
+  transition: background 160ms ease, box-shadow 160ms ease;
+  min-height: 56px;
+}
+.search-submit:hover { background: #6f2e18; }
+.search-submit:disabled {
+  background: var(--faint); cursor: not-allowed; opacity: 0.7;
+}
+.search-meta {
+  display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+  font-size: 12px; color: var(--muted);
+}
+.search-examples-label {
+  letter-spacing: 0.16em; text-transform: uppercase;
+  font-weight: 700; font-size: 10px; color: var(--faint);
+}
+.search-examples { display: flex; flex-wrap: wrap; gap: 6px; }
+.search-example {
+  background: transparent; border: 1px dashed var(--rule);
+  color: var(--muted); padding: 5px 12px; border-radius: 999px;
+  cursor: pointer; font: inherit; font-size: 12px;
+  transition: all 160ms ease;
+}
+.search-example:hover {
+  border-color: var(--ela); color: var(--ela);
+  border-style: solid; background: var(--ela-pale);
+}
+.search-settings {
+  margin-left: auto; background: none; border: none;
+  color: var(--muted); cursor: pointer; font: inherit; font-size: 11px;
+  text-decoration: underline; text-decoration-color: transparent;
+  text-underline-offset: 3px; padding: 2px 0;
+  transition: text-decoration-color 160ms ease, color 160ms ease;
+}
+.search-settings:hover { text-decoration-color: currentColor; color: var(--ela); }
+
+/* ===== Results ===== */
+.results-section { margin-bottom: 56px; }
+.results-section:empty { display: none; }
+.results-header {
+  font-size: 13px; color: var(--muted); letter-spacing: 0.02em;
+  margin-bottom: 20px; padding-bottom: 12px;
+  border-bottom: 1px solid var(--rule);
+  display: flex; justify-content: space-between; align-items: baseline;
+  flex-wrap: wrap; gap: 12px;
+}
+.results-header em {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic; color: var(--ink); font-size: 14px;
+}
+.results-list { display: flex; flex-direction: column; gap: 14px; }
+.result-card {
+  background: var(--surface); border: 1px solid var(--divider);
+  border-radius: 4px; padding: 22px 26px;
+  position: relative; overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.result-card::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+  width: 4px; background: var(--card-accent); opacity: 0.85;
+}
+.result-card.subject-ela {     --card-accent: var(--ela); }
+.result-card.subject-math {    --card-accent: var(--math); }
+.result-card.subject-science { --card-accent: var(--science); }
+.result-header {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 12px; flex-wrap: wrap;
+}
+.result-subject {
+  font-size: 9px; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; padding: 4px 9px; border-radius: 3px;
+  background: var(--card-accent); color: white;
+}
+.result-code {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 24;
+  font-weight: 600; font-style: italic; font-size: 17px;
+  color: var(--card-accent); letter-spacing: -0.01em;
+}
+.result-grade {
+  font-size: 11px; color: var(--faint); letter-spacing: 0.04em;
+}
+.result-context {
+  font-size: 11px; color: var(--muted); font-style: italic;
+  margin-left: auto; max-width: 50%; text-align: right;
+}
+.result-statement {
+  font-size: 14.5px; line-height: 1.55; color: var(--ink-soft);
+  margin-bottom: 10px;
+}
+.result-subs {
+  margin: -4px 0 12px; padding-left: 4px; list-style: none;
+}
+.result-subs li {
+  font-size: 13px; line-height: 1.5; color: var(--muted);
+  padding: 3px 0 3px 16px; position: relative;
+}
+.result-subs li::before {
+  content: '·'; position: absolute; left: 4px;
+  color: var(--card-accent); font-weight: 700;
+}
+.result-rationale {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 18;
+  font-style: italic; font-size: 14px; line-height: 1.5;
+  color: var(--ink-soft); padding: 10px 14px;
+  background: var(--bg); border-radius: 4px;
+  border-left: 2px solid var(--card-accent); margin-bottom: 12px;
+}
+.result-rationale::before {
+  content: 'Why this matches '; font-style: normal;
+  font-size: 9px; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--card-accent);
+  display: block; margin-bottom: 4px;
+}
+.result-link {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--card-accent);
+  text-decoration: none; border-bottom: 1px solid transparent;
+  padding: 2px 0; transition: border-color 160ms ease;
+}
+.result-link:hover { border-bottom-color: var(--card-accent); }
+
+/* Loading + states */
+.search-loading {
+  display: flex; align-items: center; gap: 12px;
+  padding: 24px 28px; color: var(--muted);
+  font-family: 'Fraunces', Georgia, serif; font-style: italic;
+  background: var(--surface); border: 1px solid var(--divider);
+  border-radius: 4px;
+}
+.spinner {
+  width: 16px; height: 16px;
+  border: 2px solid var(--rule);
+  border-top-color: var(--ela);
+  border-radius: 50%; animation: spin 0.8s linear infinite;
+  flex-shrink: 0;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.no-results {
+  padding: 36px 30px; text-align: center; color: var(--muted);
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 18;
+  font-style: italic; font-size: 16px; line-height: 1.55;
+  background: var(--surface); border: 1px dashed var(--divider);
+  border-radius: 4px;
+}
+.no-results em { color: var(--ink); }
+
+.search-error {
+  background: #FBEEE9; border: 1px solid #C7806A;
+  color: #6F2E18; padding: 14px 18px; border-radius: 4px;
+  font-size: 13.5px; margin-bottom: 18px; line-height: 1.5;
+}
+.search-error strong { font-weight: 600; }
+.search-error button {
+  background: none; border: none; color: #6F2E18;
+  text-decoration: underline; cursor: pointer;
+  font: inherit; font-size: 13.5px; font-weight: 600; padding: 0;
+  margin-left: 6px;
+}
+
+/* ===== Modal ===== */
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(26,24,20,0.45);
+  backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+  z-index: 100; display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+  opacity: 0; pointer-events: none;
+  transition: opacity 200ms ease;
+}
+.modal-overlay.visible { opacity: 1; pointer-events: auto; }
+.modal-card {
+  background: var(--surface); border-radius: 8px;
+  padding: 32px; max-width: 500px; width: 100%;
+  box-shadow: 0 24px 48px rgba(0,0,0,0.25);
+  transform: translateY(8px);
+  transition: transform 200ms ease;
+}
+.modal-overlay.visible .modal-card { transform: translateY(0); }
+.modal-eyebrow {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--ela); margin-bottom: 12px;
+}
+.modal-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 36, 'SOFT' 50;
+  font-weight: 500; font-size: 26px; line-height: 1.2;
+  margin-bottom: 14px; letter-spacing: -0.015em;
+}
+.modal-title em {
+  font-style: italic; color: var(--ela);
+  font-variation-settings: 'opsz' 36, 'SOFT' 100;
+}
+.modal-body {
+  font-size: 14.5px; line-height: 1.6; color: var(--ink-soft);
+  margin-bottom: 20px;
+}
+.modal-body p + p { margin-top: 10px; }
+.modal-body a {
+  color: var(--ela); text-decoration: underline;
+  text-decoration-color: var(--ela-pale); text-underline-offset: 3px;
+}
+.modal-body a:hover { text-decoration-color: var(--ela); }
+.modal-input {
+  width: 100%; font-family: 'SF Mono', Monaco, monospace;
+  font-size: 12px; padding: 12px 14px;
+  border: 1.5px solid var(--rule); border-radius: 6px;
+  margin-bottom: 16px; background: var(--bg); color: var(--ink);
+  letter-spacing: 0.02em; box-sizing: border-box;
+}
+.modal-input:focus { outline: none; border-color: var(--ela); }
+.modal-actions {
+  display: flex; gap: 10px; justify-content: flex-end;
+  margin-bottom: 16px;
+}
+.modal-button {
+  font: inherit; font-size: 13px; font-weight: 600;
+  padding: 10px 20px; border-radius: 6px; cursor: pointer;
+  border: 1px solid transparent;
+  transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+.modal-button.primary { background: var(--ela); color: white; }
+.modal-button.primary:hover { background: #6f2e18; }
+.modal-button.secondary {
+  background: transparent; color: var(--muted);
+  border-color: var(--rule);
+}
+.modal-button.secondary:hover { border-color: var(--ink-soft); color: var(--ink-soft); }
+.modal-fineprint {
+  font-size: 11.5px; color: var(--faint); line-height: 1.55;
+  padding-top: 14px; border-top: 1px solid var(--divider);
+}
+.modal-fineprint code {
+  font-family: 'SF Mono', Monaco, monospace; font-size: 10.5px;
+  background: var(--bg); padding: 1px 5px; border-radius: 3px;
+  color: var(--muted);
+}
+
 @media (max-width: 720px) {
   header.masthead { padding: 48px 28px 24px; }
   main { padding: 36px 28px 60px; }
@@ -205,6 +490,11 @@ footer {
   .subject-card { padding: 26px 26px 24px; min-height: 0; }
   .card-title { font-size: 30px; }
   .about-strip { grid-template-columns: 1fr; gap: 14px; }
+  .search-form { flex-direction: column; }
+  .search-submit { width: 100%; }
+  .search-prompt { font-size: 22px; }
+  .result-context { margin-left: 0; max-width: 100%; text-align: left; }
+  .modal-card { padding: 24px; }
 }
 </style>
 </head>
@@ -218,7 +508,31 @@ footer {
 </header>
 
 <main>
-  <div class="section-label">Subjects</div>
+
+  <section class="search-section" id="search">
+    <div class="search-eyebrow">Discovery</div>
+    <h2 class="search-prompt">Find standards that <em>match</em> what you're teaching.</h2>
+    <p class="search-hint">Paste a lesson plan, a learning goal, a standard code, or just a topic. Search is across all 314 NJSLS standards (ELA, Math, Science).</p>
+    <form class="search-form" id="search-form" autocomplete="off">
+      <textarea class="search-input" id="search-input" rows="1" placeholder="e.g. 'learn to code', 'fractions with unlike denominators', '5.NF.A.1', or paste a whole lesson…" required></textarea>
+      <button type="submit" class="search-submit" id="search-submit">Search</button>
+    </form>
+    <div class="search-meta">
+      <span class="search-examples-label">Try</span>
+      <div class="search-examples">
+        <button type="button" class="search-example">public speaking</button>
+        <button type="button" class="search-example">surface area</button>
+        <button type="button" class="search-example">photosynthesis</button>
+        <button type="button" class="search-example">argumentative writing</button>
+        <button type="button" class="search-example">MS-LS1-7</button>
+      </div>
+      <button type="button" class="search-settings" id="search-settings">Change API key</button>
+    </div>
+  </section>
+
+  <section class="results-section" id="results-section" aria-live="polite"></section>
+
+  <div class="section-label">Or browse by subject</div>
   <div class="subject-grid">
 
     <a class="subject-card ela ready" href="ela.html" aria-label="Open English Language Arts standards, grades 5 through 8">
@@ -278,6 +592,306 @@ footer {
 <footer>
   Built as an internal curriculum reference for Forge Prep. Standards quoted verbatim from their adopted New Jersey Department of Education frameworks. The operative standards for any New Jersey public, charter, or registered nonpublic school.
 </footer>
+
+<div class="modal-overlay" id="key-modal" role="dialog" aria-modal="true" aria-labelledby="key-modal-title">
+  <div class="modal-card">
+    <div class="modal-eyebrow">Bring your own Anthropic key</div>
+    <h2 class="modal-title" id="key-modal-title">Search needs an <em>API key</em></h2>
+    <div class="modal-body">
+      <p>Discovery search calls the Anthropic API (Sonnet 4.6) with your key. It's stored only in this browser — never sent to a Forge server.</p>
+      <p>Don't have one? Create it in 60 seconds at <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener">console.anthropic.com/settings/keys</a>. You'll need an Anthropic account with API credits.</p>
+    </div>
+    <input type="password" class="modal-input" id="key-input" placeholder="sk-ant-api03-..." autocomplete="off" spellcheck="false">
+    <div class="modal-actions">
+      <button type="button" class="modal-button secondary" id="key-cancel">Cancel</button>
+      <button type="button" class="modal-button primary" id="key-save">Save key</button>
+    </div>
+    <div class="modal-fineprint">
+      Stored in <code>localStorage</code> on this device. Used only when you submit a search. Clear it any time via "Change API key" below the search box. You'll be charged on your own Anthropic account — about <code>$0.04</code> per cached query with Sonnet 4.6.
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const STORAGE_KEY = 'njsls_anthropic_api_key';
+  const MODEL = 'claude-sonnet-4-6';
+  const ENDPOINT = 'https://api.anthropic.com/v1/messages';
+
+  const SUBJECT_LABELS = { ela: 'ELA', math: 'Math', science: 'Science' };
+  const SUBJECT_FULL = {
+    ela: 'English Language Arts',
+    math: 'Mathematics',
+    science: 'Science',
+  };
+
+  let corpus = null;
+  let corpusPromise = null;
+
+  function loadCorpus() {
+    if (corpus) return Promise.resolve(corpus);
+    if (corpusPromise) return corpusPromise;
+    corpusPromise = fetch('data/all.json')
+      .then(r => { if (!r.ok) throw new Error('Failed to load standards corpus'); return r.json(); })
+      .then(d => { corpus = d; return d; });
+    return corpusPromise;
+  }
+  loadCorpus().catch(err => console.error('Corpus preload failed:', err));
+
+  function getApiKey() { return localStorage.getItem(STORAGE_KEY) || ''; }
+  function setApiKey(k) { localStorage.setItem(STORAGE_KEY, k.trim()); }
+  function clearApiKey() { localStorage.removeItem(STORAGE_KEY); }
+
+  // --- Modal ---
+  const modal = document.getElementById('key-modal');
+  const modalInput = document.getElementById('key-input');
+  const modalSave = document.getElementById('key-save');
+  const modalCancel = document.getElementById('key-cancel');
+
+  let modalResolver = null;
+
+  function openModal(existing) {
+    modalInput.value = existing || '';
+    modal.classList.add('visible');
+    setTimeout(() => modalInput.focus(), 50);
+    return new Promise(resolve => { modalResolver = resolve; });
+  }
+
+  function closeModal(value) {
+    modal.classList.remove('visible');
+    const r = modalResolver;
+    modalResolver = null;
+    if (r) r(value);
+  }
+
+  modalSave.addEventListener('click', () => {
+    const v = modalInput.value.trim();
+    if (!v) return;
+    setApiKey(v);
+    closeModal(v);
+  });
+  modalCancel.addEventListener('click', () => closeModal(null));
+  modalInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') { e.preventDefault(); modalSave.click(); }
+    if (e.key === 'Escape') modalCancel.click();
+  });
+  modal.addEventListener('click', (e) => { if (e.target === modal) modalCancel.click(); });
+
+  document.getElementById('search-settings').addEventListener('click', async () => {
+    const current = getApiKey();
+    const newKey = await openModal(current);
+    if (newKey === null && current) {
+      // Cancel pressed; if the input was emptied, treat as clear
+      if (modalInput.value.trim() === '' && current) clearApiKey();
+    }
+  });
+
+  // --- Search ---
+  const form = document.getElementById('search-form');
+  const input = document.getElementById('search-input');
+  const submitBtn = document.getElementById('search-submit');
+  const resultsEl = document.getElementById('results-section');
+
+  // Auto-grow textarea
+  input.addEventListener('input', () => {
+    input.style.height = 'auto';
+    input.style.height = Math.min(input.scrollHeight, 240) + 'px';
+  });
+  // Cmd/Ctrl+Enter submits
+  input.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') {
+      e.preventDefault();
+      form.requestSubmit();
+    }
+  });
+
+  document.querySelectorAll('.search-example').forEach(btn => {
+    btn.addEventListener('click', () => {
+      input.value = btn.textContent;
+      input.dispatchEvent(new Event('input'));
+      form.requestSubmit();
+    });
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const query = input.value.trim();
+    if (!query) return;
+
+    let apiKey = getApiKey();
+    if (!apiKey) {
+      apiKey = await openModal('');
+      if (!apiKey) return;
+    }
+
+    submitBtn.disabled = true;
+    resultsEl.innerHTML = '<div class="search-loading"><span class="spinner"></span> Matching standards…</div>';
+
+    try {
+      const corp = await loadCorpus();
+      const parsed = await callClaude(query, apiKey, corp);
+      renderResults(parsed, query, corp);
+    } catch (err) {
+      console.error(err);
+      showError(err);
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+
+  const SYSTEM_INSTRUCTIONS = `You are a curriculum matching assistant for Forge Prep, a school in New Jersey that uses the New Jersey Student Learning Standards (NJSLS).
+
+The user's input could be:
+- A vague learning goal ("learn to code", "public speaking")
+- A standard code ("5.NF.A.1", "MS-PS1-1")
+- A paragraph or full lesson plan
+- A single concept ("surface area", "photosynthesis")
+- Anything else education-related
+
+Your job: find ALL standards in the corpus below that STRONGLY match the input. Quality over quantity — only include a standard if you'd actually recommend it to a teacher designing this content. Could be 0 matches, 1, or 20+.
+
+Return ONLY a JSON object in this exact shape with no preamble, no commentary, no markdown fences:
+{ "matches": [ { "code": "<exact code from corpus>", "rationale": "<one sentence on why it matches>" } ] }
+
+Rules:
+- ONLY return codes that appear in the corpus below. Do not invent codes.
+- Order strongest match first.
+- Rationale must reference what specifically connects the input to the standard (a phrase, a topic, a skill).
+- If nothing strongly matches, return { "matches": [] }.
+
+==CORPUS==
+`;
+
+  function buildSystemPrompt(corp) {
+    return SYSTEM_INSTRUCTIONS + JSON.stringify(corp.standards) + '\n==END CORPUS==';
+  }
+
+  async function callClaude(query, apiKey, corp) {
+    const body = {
+      model: MODEL,
+      max_tokens: 2000,
+      temperature: 0,
+      system: [
+        { type: 'text', text: buildSystemPrompt(corp), cache_control: { type: 'ephemeral' } }
+      ],
+      messages: [ { role: 'user', content: query } ]
+    };
+
+    const res = await fetch(ENDPOINT, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-direct-browser-access': 'true'
+      },
+      body: JSON.stringify(body)
+    });
+
+    if (!res.ok) {
+      let detail = '';
+      try { const j = await res.json(); detail = (j.error && j.error.message) || ''; } catch {}
+      const err = new Error(detail || ('HTTP ' + res.status));
+      err.status = res.status;
+      throw err;
+    }
+    const data = await res.json();
+    const text = (data.content && data.content[0] && data.content[0].text) || '';
+    let parsed;
+    try { parsed = JSON.parse(text); }
+    catch {
+      const m = text.match(/\{[\s\S]*\}/);
+      if (m) {
+        try { parsed = JSON.parse(m[0]); }
+        catch (e) { throw new Error('Could not parse model response as JSON.'); }
+      } else {
+        throw new Error('Model returned a non-JSON response.');
+      }
+    }
+    return parsed;
+  }
+
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  function renderResults(response, query, corp) {
+    const byCode = new Map(corp.standards.map(s => [s.code, s]));
+    const matches = (response.matches || [])
+      .filter(m => m && m.code && byCode.has(m.code))
+      .map(m => ({ ...byCode.get(m.code), rationale: m.rationale || '' }));
+
+    if (matches.length === 0) {
+      resultsEl.innerHTML = `
+        <div class="no-results">
+          No strong matches for <em>"${esc(query)}"</em>.<br>
+          Try different wording, or browse by subject below.
+        </div>`;
+      return;
+    }
+
+    const n = matches.length;
+    let html = `<div class="results-header">
+      <span><strong>${n}</strong> match${n === 1 ? '' : 'es'} for <em>"${esc(query)}"</em></span>
+      <span>${SUBJECT_LABELS.ela} · ${SUBJECT_LABELS.math} · ${SUBJECT_LABELS.science}</span>
+    </div><div class="results-list">`;
+
+    for (const r of matches) {
+      const context = r.anchor || r.cluster || r.topic || r.domain || r.discipline || '';
+      const gradeLabel = r.subject === 'science' && r.grade === 'MS' ? 'Grades 6–8' : 'Grade ' + r.grade;
+      html += `
+        <article class="result-card subject-${esc(r.subject)}">
+          <header class="result-header">
+            <span class="result-subject">${SUBJECT_LABELS[r.subject]}</span>
+            <span class="result-code">${esc(r.code)}</span>
+            <span class="result-grade">${esc(gradeLabel)}</span>
+            ${context ? `<span class="result-context">${esc(context)}</span>` : ''}
+          </header>
+          <p class="result-statement">${esc(r.statement)}</p>
+          ${(r.subs && r.subs.length) ? '<ul class="result-subs">' + r.subs.map(s => `<li>${esc(s)}</li>`).join('') + '</ul>' : ''}
+          ${r.rationale ? `<div class="result-rationale">${esc(r.rationale)}</div>` : ''}
+          <a href="${esc(r.subject)}.html" class="result-link">Open ${SUBJECT_FULL[r.subject]} page →</a>
+        </article>`;
+    }
+    html += '</div>';
+    resultsEl.innerHTML = html;
+
+    // Render math LaTeX in any Math result statements
+    if (typeof renderMathInElement === 'function') {
+      renderMathInElement(resultsEl, {
+        delimiters: [
+          { left: '\\(', right: '\\)', display: false },
+          { left: '\\[', right: '\\]', display: true }
+        ],
+        throwOnError: false
+      });
+    }
+
+    // Scroll results into view
+    resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function showError(err) {
+    let msg = err.message || 'Something went wrong.';
+    let action = '';
+    if (err.status === 401) {
+      msg = 'Your Anthropic API key was rejected. Double-check the key, or paste a new one.';
+      action = ' <button id="error-reset-key">Reset key</button>';
+    } else if (err.status === 429) {
+      msg = 'Anthropic rate-limited the request. Wait a few seconds and try again.';
+    } else if (err.status === 400 && /credit/i.test(msg)) {
+      msg = 'Your Anthropic account is out of credits. Top up at console.anthropic.com.';
+    }
+    resultsEl.innerHTML = '<div class="search-error"><strong>Error:</strong> ' + esc(msg) + action + '</div>';
+    const resetBtn = document.getElementById('error-reset-key');
+    if (resetBtn) resetBtn.addEventListener('click', async () => {
+      clearApiKey();
+      const k = await openModal('');
+      if (k) form.requestSubmit();
+    });
+  }
+})();
+</script>
 
 </body>
 </html>

@@ -1,6 +1,19 @@
 # njsls — repo orientation
 
-Static site presenting the New Jersey Student Learning Standards as a teacher-readable filtered browser, one subject per page. Hub at `index.html` links to each subject. Deploys to GitHub Pages at `https://rtusiime.github.io/njsls/`. Audience: Forge Prep curriculum team.
+Static site presenting the New Jersey Student Learning Standards as a teacher-readable filtered browser, one subject per page. Hub at `index.html` links to each subject and hosts the **semantic discovery search** (BYO Anthropic API key). Deploys to GitHub Pages at `https://rtusiime.github.io/njsls/`. Audience: Forge Prep curriculum team.
+
+## Semantic search (Phase 2, as of Session 6)
+
+The hub has a paste-anything search box that finds NJSLS matches for vague learning goals, standard codes, full lesson plans, or single topics.
+
+- **Model:** `claude-sonnet-4-6` with prompt caching on the corpus (5-min TTL).
+- **Key handling:** BYO — stored in `localStorage` under `njsls_anthropic_api_key`. First-time search prompts via modal; "Change API key" link visible under the search box.
+- **CORS:** browser → `api.anthropic.com/v1/messages` direct using the `anthropic-dangerous-direct-browser-access: true` header. No backend.
+- **Grounding:** the full `data/all.json` corpus (~50K tokens) is injected into the system prompt; Claude returns `{ "matches": [{ code, rationale }] }` JSON. We validate codes against the local corpus before rendering — hallucinated codes are dropped.
+- **Cost:** ~$0.21 first query of a session (cache write), ~$0.04 per query thereafter (cache hit), per user's own Anthropic bill.
+- **Output rendering:** subject-colored result cards with the verbatim statement, optional subs, rationale chip, and a "Open <subject> page →" link. KaTeX renders any LaTeX in Math standards.
+
+To restyle or tune search: it lives inline at the bottom `<script>` block of `index.html`. Prompt text is in `SYSTEM_INSTRUCTIONS`.
 
 ## File map
 
@@ -168,6 +181,30 @@ Subjects start "In progress" and flip to "Ready" once their data is populated. I
 **Don't extract shared CSS or render JS yet.** Three subjects with copy-pasted ~250 lines of CSS each is cheap. The natural refactor trigger is **adding subject #4 or #5** — at that point, edit-once cost dominates copy-paste cost. Until then, self-contained files are simpler to reason about.
 
 **Do** extract data files (`data/<subject>.json` loaded via fetch) if a single HTML grows past ~2500 lines. Current cap: ELA at 1988.
+
+## Cohort Calendar integration (Phase 3 reference)
+
+Sister repo `github.com/john-forge/CohortCalendar` (deployed at `https://john-forge.github.io/CohortCalendar/`) holds 357 blocks, 173 with `std` tagged in NJSLS code format (140 `std_defensible: true`).
+
+**Live state source** for coverage-view fetches: Supabase REST endpoint with the public anon key (baked into CC's `publish.py`, already public).
+
+```
+GET https://vaqdoeckaobmsalikmpx.supabase.co/rest/v1/documents?id=eq.main&select=data
+Headers:
+  apikey: sb_publishable_UlWZDjS5Yx07Cl-reOlLAg_qOsp7DLn
+  Authorization: Bearer sb_publishable_UlWZDjS5Yx07Cl-reOlLAg_qOsp7DLn
+
+Returns: [ { "data": { "blocks": [...], "grades": [...], ... } } ]
+```
+
+CORS is configured to allow `https://rtusiime.github.io` origin — verified Session 6. Phase 3 coverage view can fetch directly from njsls's browser. No proxy/Worker needed.
+
+To find blocks teaching a standard:
+```js
+const blocks = data.blocks.filter(b => b.std && b.std.includes(STANDARD_CODE));
+```
+
+Each block has `id, ttl, desc, w (week), d (day), s (slot), dur, tp (type), grades, std[], std_defensible`.
 
 ## What's intentionally *not* in this repo
 

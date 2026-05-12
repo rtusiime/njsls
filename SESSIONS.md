@@ -6,6 +6,119 @@ Entries are intentionally verbose. The point is full visibility: open the file a
 
 ---
 
+## Session 6 — 2026-05-12, 01:30 AM EDT
+*Phase 2: semantic discovery search on the hub (BYO Sonnet key) + Cohort Calendar publish-target investigation.*
+
+### User context
+
+Alignment reached on the plan in the prior message. User confirmed: **paste-anything search box on the hub**, Sonnet 4.6 with prompt caching, BYO API key in `localStorage`, browser → Anthropic API direct (no backend, no new account). Result count = "all strong matches" (no artificial cap). Plus the user asked me to trace CC's publish target via commits since they didn't remember.
+
+### Phase 2 — built and shipped
+
+**UX shape:**
+- Big paste-anything `<textarea>` on the hub, prominent above the subject grid. Auto-grows on input, Cmd/Ctrl+Enter to submit.
+- Example chip-buttons below: `public speaking`, `surface area`, `photosynthesis`, `argumentative writing`, `MS-LS1-7`. Click → fills box + submits.
+- "Change API key" link beside the examples (clears or replaces the stored key via modal).
+- Result cards stack below in subject color (terracotta ELA / teal Math / green Science). Each card shows: subject pill, verbatim code, grade, context (anchor/cluster/topic), the standard statement, optional subs, a "Why this matches" rationale block from Claude, and an "Open <subject> page →" link.
+- KaTeX renders any LaTeX in Math standard statements within results.
+- "No results" empty state, error banner with "Reset key" recovery on 401.
+
+**Key handling:**
+- First-time search → modal. Title "Search needs an *API key*". Body explains BYO, links to `console.anthropic.com/settings/keys`, password-masked input.
+- Stored under `localStorage` key `njsls_anthropic_api_key`. Never sent off-device.
+- Fine print at bottom of modal: "About $0.04 per cached query with Sonnet 4.6."
+
+**Claude API call:**
+```js
+fetch('https://api.anthropic.com/v1/messages', {
+  method: 'POST',
+  headers: {
+    'content-type': 'application/json',
+    'x-api-key': apiKey,
+    'anthropic-version': '2023-06-01',
+    'anthropic-dangerous-direct-browser-access': 'true'
+  },
+  body: JSON.stringify({
+    model: 'claude-sonnet-4-6',
+    max_tokens: 2000,
+    temperature: 0,
+    system: [{
+      type: 'text',
+      text: INSTRUCTIONS + '\n==CORPUS==\n' + JSON.stringify(corpus.standards) + '\n==END CORPUS==',
+      cache_control: { type: 'ephemeral' }   // ← 5-min prompt cache
+    }],
+    messages: [{ role: 'user', content: query }]
+  })
+});
+```
+
+**System prompt** (key bit):
+> The user's input could be: a vague learning goal, a standard code, a paragraph or lesson plan, a single concept, or anything else education-related. Find ALL standards that STRONGLY match — quality over quantity. Return ONLY `{ "matches": [ { "code": "<from corpus>", "rationale": "<one sentence>" } ] }` with no preamble.
+
+**Grounding safety:** Claude returns `{matches: [{code, rationale}]}`. We look up each code in the local corpus (`new Map(corpus.standards.map(s => [s.code, s]))`) and **drop any code not found** — hallucinated codes don't render.
+
+### Cohort Calendar publish target — traced through commits
+
+Goal: figure out where CC publishes its `state.json` for Phase 3 to consume.
+
+```
+$ grep -nE "supabase|publish|upload" CohortCalendar/publish.py | head
+51:SUPABASE_URL = "https://vaqdoeckaobmsalikmpx.supabase.co"
+52:SUPABASE_KEY = "sb_publishable_UlWZDjS5Yx07Cl-reOlLAg_qOsp7DLn"
+53:DOC_ID = "main"
+```
+
+Live state lives in Supabase `documents` table, row `id=main`, column `data` (JSONB). Anon key is `sb_publishable_…` — explicitly the public-readable key (checked-in to git, safe to share).
+
+**Site deploys to:** `https://john-forge.github.io/CohortCalendar/` (GitHub Pages, confirmed via `gh api /repos/john-forge/CohortCalendar/pages`).
+
+**Sync flow:** browser ↔ Supabase realtime (live two-way edits); `publish.py` runs a 3-way merge (Supabase live ↔ disk `state.json` ↔ `.last_published.json` baseline), bakes resolved state into `index.html` as `const PUBLISHED_STATE = {…}`, commits + pushes to GitHub.
+
+**CORS verified for `https://rtusiime.github.io` origin:**
+```
+$ curl -sI -H "Origin: https://rtusiime.github.io" \
+    "https://vaqdoeckaobmsalikmpx.supabase.co/rest/v1/documents?id=eq.main&select=data" \
+    -H "apikey: sb_publishable_..." \
+    -H "Authorization: Bearer sb_publishable_..."
+HTTP/2 200
+access-control-allow-origin: https://rtusiime.github.io
+```
+
+So Phase 3's coverage view can fetch CC state directly from njsls's browser. **No proxy needed.** Endpoint and example query saved in `CLAUDE.md` under "Cohort Calendar integration."
+
+### Tool / command transcript
+
+**1. Hub HTML edit pattern.** Targeted `Edit` calls:
+- KaTeX CDN links added to `<head>` (CSS + JS + auto-render).
+- ~280 lines of new CSS appended to `<style>` (search section, results, modal, spinner, error banner, responsive overrides).
+- Search section + empty `<section id="results-section">` inserted at top of `<main>`, before the existing subject grid label.
+- Modal HTML appended after `<footer>`.
+- ~250-line inline `<script>` block with corpus loader, modal manager, search submit handler, Claude API call, result renderer, error handler.
+
+**2. Local smoke test.** Ran `python3 -m http.server` (had to bind to `127.0.0.1` explicitly; Python 3.14's IPv6 default was returning empty replies on `localhost`). Verified:
+- `index.html` served at 35,675 bytes
+- `/data/all.json` served at 197,531 bytes with `standard_count: 314`
+- All structural landmarks present in order: masthead → search → results → subjects → about → footer → modal → script
+
+**3. JS validates** under `node --check`.
+
+**4. CLAUDE.md updated** with: (a) the search feature section, (b) Cohort Calendar Supabase endpoint + CORS confirmation for Phase 3 reference.
+
+### Commits produced
+
+To be backfilled.
+
+### Notes / flags
+
+- **First-query latency:** ~3–5s because Sonnet has to ingest 50K corpus tokens. Subsequent queries within 5 min hit cache and respond in ~1–2s.
+- **Key reuse story:** users don't share keys. Each guide pastes their own personal Anthropic key. The "Change API key" affordance lets them clear/replace easily.
+- **External sharing:** site is public; lookup/browse works for anyone. Semantic search is opt-in via paste-your-key. If we ever need genuinely key-free demo access for external reviewers, that's the moment to revisit a Worker (Vercel free tier; no credit card needed).
+- **Failure modes handled:** 401 (bad key) → "Reset key" inline action. 429 (rate limit) → wait-and-retry message. 400 with "credit" in body → "Top up at console.anthropic.com." Other errors → generic message + console.error for debugging.
+- **CSP / SRI:** KaTeX bundles loaded with SRI hashes from jsDelivr (same as math.html). If jsDelivr ever has an integrity-violating change, math in results falls back to raw `\frac{1}{10}` text — readable, not broken.
+- **Phase 3 unblocked.** CC Supabase endpoint, CORS, schema all confirmed. Whenever we want to start, the coverage view + per-standard backlinks are a straightforward fetch+join.
+
+---
+
 ## Session 5 — 2026-05-11, 05:25 PM EDT
 *Data layer extraction (Phase 1) — inline data → `/data/*.json` files + flat all.json index; LaTeX search-strip for math.*
 
