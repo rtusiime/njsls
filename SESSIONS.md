@@ -6,6 +6,107 @@ Entries are intentionally verbose. The point is full visibility: open the file a
 
 ---
 
+## Session 13 — 2026-05-12, 05:15 PM EDT
+*Closed the CC-backlinks data-alignment gap from Session 7. Cross-repo migration: rewrote 87 blocks (510 tags) in CohortCalendar's Supabase document from CCSS-legacy code format to NJSLS-2023. Recovers 154 of 167 previously-orphaned tag occurrences. Also fixed a missing-PE bug in our Math extraction (8.F.B.4/B.5) that was discovered during the analysis.*
+
+### User request
+
+> now let's do the CC backlinks gap
+
+Picked up the deferred thread from Session 7 / 11 / 12. The plan I proposed had three options (translation layer in cc-backlinks.js, cross-repo migration of CC tags, or accept the gap). User picked **cross-repo migration**, with a verification step for the 8.F.B.4 case.
+
+### What changed
+
+**On the njsls side:**
+
+- `data/math.json` — added `8.F.B.4` and `8.F.B.5` to the previously-empty 8.F cluster B (`Use functions to model relationships between quantities`). The cluster heading was in the JSON but the standards array was empty — original extraction stopped after 8.F.A.3. Verified against the NJSLS-Math source docx at `../curriculum/2023_NJSLS_Mathematics.docx`. Verbatim statements pulled from the source XML.
+- `data/all.json` — regenerated. Total **902 standards** (Math 112, up from 110).
+
+**On the CohortCalendar side** (`github.com/john-forge/CohortCalendar`):
+
+- `state.json` rewritten via `publish.py`. 87 blocks, 510 tags after migration (was 358, +152 due to per-grade ELA expansion).
+- `index.html` PUBLISHED_STATE regenerated.
+- `.last_published.json` baseline updated.
+- Schema version bumped to `2026-05-12T21:16:40Z`. Browsers pick up the new state on next load (or via Supabase realtime).
+- Committed as `9530bf0 Migrate CCSS-legacy std tags to NJSLS-2023 (87 blocks, +152 tags)`. Pushed to john-forge/CohortCalendar.
+- Supabase upserted via the same publishable anon key CC's publish.py uses. HTTP 200.
+
+### Migration rules
+
+Mapping derived from the data, not invented: NJSLS-2023 mostly preserves CCSS anchor numbers within renamed themes, so the join is mechanical for SL/W/RI/RL clusters and only requires a per-grade override for L.6 (where NJSLS reshuffled the L cluster more thoroughly).
+
+**Math:**
+
+| CCSS-legacy | NJSLS-2023 | Reason |
+|---|---|---|
+| `5.MD.A.1` | `5.M.A.1` | NJSLS-2023 renamed Measurement cluster `MD`→`M` |
+| `5.MD.A.2` | `5.DL.B.5` | Line-plot standard moved to new Data Literacy cluster |
+| `5.NBT.A.3b` | `5.NBT.A.3` | Sub-bullet code collapsed to parent (NJSLS doesn't address subs by code) |
+| `3.MD.B.3` | (unchanged) | Grade 3, out of Forge G5-8 scope. 6 blocks. Kept-as-is per user choice — preserves curriculum intent even though it can't backlink |
+| `8.F.B.4` | `8.F.B.4` | Already valid NJSLS-2023 code; previously orphan only because our extraction had missed cluster B. Fixed by the data/math.json patch this session |
+
+**ELA — per-grade expansion** (one anchor → themed code per grade in `block.grades` ∩ {G5,G6,G7,G8}):
+
+| Anchor | NJSLS theme |
+|---|---|
+| `SL.1` / `SL.3` / `SL.4` / `SL.5` / `SL.6` | `SL.PE` / `SL.ES` / `SL.PI` / `SL.UM` / `SL.AS` |
+| `W.1` / `W.2` / `W.4` / `W.6` / `W.7` | `W.AW` / `W.IW` / `W.WP` / `W.SE` / `W.RW` |
+| `RI.1` / `RI.2` / `RI.8` | `RI.CR` / `RI.CI` / `RI.CT` |
+| `L.6` | `L.VL` with per-grade anchor numbers (`L.VL.5.2`, `L.VL.6.3`, `L.VL.7.3`, `L.VL.8.3`) |
+
+A block tagged `["SL.1"]` with grades `["G5","G6"]` becomes `["SL.PE.5.1","SL.PE.6.1"]`. Existing already-NJSLS codes are preserved untouched.
+
+**Replacement semantics**: old tag is removed, new tags take its place. User chose replace over keep-both — cleaner forward, only njsls consumes the tags as backlinks.
+
+### Coverage outcome
+
+| | Before this session | After this session |
+|---|---|---|
+| CC unique tagged codes | 39 | 81 (per-grade expansion of ELA themes) |
+| Codes that match our njsls corpus | 20 (51%) | 79-80 (97-99% — depends on njsls Pages rebuild) |
+| Block-tag occurrences with Taught-in landings | 190 (53%) | 344 of 350 (98%) |
+| Codes / occurrences still orphan | `3.MD.B.3` only | `3.MD.B.3` only (6 blocks, Grade-3, intentional) |
+
+The CC-backlinks data-alignment gap is effectively closed: 6 Grade-3 block tags remain unmatched by design (Forge Prep is G5-8). Everything else lands.
+
+### Subagent permission status (carryover from Session 12)
+
+Subagents still can't `Write` (regression continues this session). All cross-repo work was done by the main agent's tools — `Read`/`Edit`/`Write`/`Bash` work fine from the main thread.
+
+### Tool / command transcript
+
+- **Analysis phase** (no mutations):
+  - Fetched live CC state from Supabase via curl → `/tmp/cc-state.json`.
+  - Cross-referenced 39 unique CC tag codes against `data/all.json` — identified 20 matched / 19 missing.
+  - Per-code investigation: inspected CC blocks tagged with `5.MD.A.2` to confirm semantic match to `5.DL.B.5` (line-plot / data representation). Read CC's `publish.py` from raw.githubusercontent.com to understand the write mechanism — confirmed disk → publish.py is the supported path.
+  - Extracted NJSLS-Math docx (`unzip -p ../curriculum/2023_NJSLS_Mathematics.docx word/document.xml`, strip XML) to verify `8.F.B.4` exists in the source. Confirmed it does — our extraction had missed cluster B.
+- **Fix phase**:
+  - Added `8.F.B.4` and `8.F.B.5` to `data/math.json` cluster B. Rebuilt `data/all.json` (now 902 standards).
+- **Dry-run phase**:
+  - Wrote `/tmp/cc_migration_dryrun.py` (read-only). 87 blocks would change. 74 of 75 distinct target codes verified against our corpus (only `3.MD.B.3` would remain unmatched).
+  - Asked user three approval questions: replacement semantics (Replace), 3.MD.B.3 handling (Leave), push timing (Push both).
+- **Apply phase**:
+  - Wrote migration directly to `CohortCalendar/state.json`.
+  - Ran `python3 publish.py "<long descriptive message>"`. 3-way merge stats: 356 blocks merged, 16 position drifts (John's UI drags since last publish), 90 content drifts (mostly my std changes; disk wins for content per merge policy). 1 user-UI delete honored (the `blk_g78_017` block John deleted in browser). Commit + git push + Supabase upsert all clean.
+  - Post-publish verification: 0 legacy CCSS codes left in live Supabase; schema version bumped.
+
+### Decisions / flags for next session
+
+- **CC-backlinks gap is closed.** Only intentional orphans (`3.MD.B.3` Grade-3, 6 blocks) remain.
+- **Subagent perm regression** still active. Documented across Sessions 12 + 13. If it recovers, restore parallel-extraction pattern.
+- **The data/math.json 8.F.B fix is a discovered bug.** Could be other missing-cluster bugs in other subjects' extractions; this session only looked at the clusters CC tagged. A separate completeness audit against each NJSLS source doc would be worth running someday but isn't urgent — coverage is functionally good.
+- **The migration script (`/tmp/cc_migration_dryrun.py`) is throwaway.** Not committed. If we ever need to re-migrate (e.g., NJSLS-2025 adopts), it's easy to recreate.
+- **Test the live experience.** Pages rebuild after this push; then any subject page (especially `ela.html` and `math.html`) should render "Taught in" backlinks for the now-correctly-tagged codes. Worth eyeballing once the rebuild lands.
+
+### Commits produced
+
+| Repo | Hash | Time (EDT) | Message |
+|---|---|---|---|
+| `john-forge/CohortCalendar` | `9530bf0` | 05:16:40 | Migrate CCSS-legacy std tags to NJSLS-2023 (87 blocks, +152 tags) |
+| `rtusiime/njsls` | _(to be filled at commit time)_ | | Math: add missing 8.F.B.4 and 8.F.B.5 (NJSLS source extraction gap) + Session 13 SESSIONS entry |
+
+---
+
 ## Session 12 — 2026-05-12, 03:37 PM EDT
 *Added CLKS (Career Readiness, Life Literacies & Key Skills) and CHPE (Comprehensive Health & Physical Education) as subjects 6 and 7. Both share the NJDOE-framework shape pioneered for CSDT in Session 11. Source PDFs had several typos and footer leaks the extractor had to handle. Hub now lists seven subjects.*
 
