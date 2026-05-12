@@ -6,6 +6,78 @@ Entries are intentionally verbose. The point is full visibility: open the file a
 
 ---
 
+## Session 9 — 2026-05-12, 02:50 AM EDT
+*Verified Social Studies JSON against canonical NJDOE PDFs — turns out we already have everything. Removed misleading "Source extract incomplete" callouts. Relabeled band pills.*
+
+### User request
+
+Two things:
+1. Provided paths to both canonical NJDOE SS PDFs (`2020NJSLS-SS_by_Standard.pdf` and `2020NJSLS-SS_by_GradeBand.pdf`). Asked to compare against our JSON to find gaps.
+2. Said "let's keep it to 5-8. but not sure it changes anything (3-5 standards are the same right?)". Asked me to explain.
+
+### Reasoning
+
+**On "3-5 the same?":** Yes — in NJSLS-SS the 3–5 band has *one* set of standards labeled "by end of grade 5" that applies collectively to grades 3, 4, and 5. There's no separate per-grade version. So our 3–5 data IS the grade-5 content that Forge 5th-graders work toward. Keeping the data, but relabeling the UI to make that explicit for a Forge audience.
+
+**On PDF comparison:** the cleaned-markdown extract I used in Session 8 had a "Source extract incomplete" warning on 6.3.5 and 6.3.8. Turns out the warning was wrong — both standards are complete in our JSON.
+
+### Diff results
+
+Pulled both PDFs through `pdftotext -layout`, regexed all PE codes in scope (bands 3–5 and 6–8), compared against the codes in `data/social-studies.json`:
+
+| Side | Distinct codes |
+|---|---|
+| `2020NJSLS-SS_by_Standard.pdf` | 208 (or 209 with typo-tolerant regex) |
+| `2020NJSLS-SS_by_GradeBand.pdf` | 208 (or 209 with typo-tolerant regex) |
+| `data/social-studies.json` | 209 |
+
+Initial naive diff showed our JSON having one "extra" code — `6.1.8.HistoryCC.5.b`. **Plot twist: the NJDOE PDF itself has a typo.** Both PDFs render that code as `6.1.8.HistoryCC5.b` (no dot between `CC` and `5`), breaking the regex that worked for every other code. The user's cleaned-markdown extract had silently corrected the typo. Our JSON is more accurate than the official PDFs.
+
+After typo-tolerant regex: **209 codes in both, zero diff in either direction.** Spot-checked 7 PE statements (across both bands, all three standards, plus the typo case) against PDF text — all match verbatim.
+
+So: **the SS corpus is complete.** The Session 8 truncation warnings were misleading; removed.
+
+### What changed in this session
+
+1. **Removed the in-page "Source extract incomplete" callout** under 6.3.5 and 6.3.8. Removed the `truncation-note` CSS rule (no longer used).
+2. **Relabeled band pills** to make them Forge-meaningful:
+   - "Grades 3–5" → **"By end of Grade 5"** (since this is the band that 5th-graders work toward)
+   - "Grades 6–8" → **"By end of Grade 8"**
+   - TOC sidebar: "End of Grade 5" / "End of Grade 8" (slightly shorter for the cramped sidebar)
+3. **Added band sub-headlines** explaining the framing:
+   - 3–5: "Standards covering the 3–5 elementary band; for Forge, the standards 5th-graders work toward."
+   - 6–8: "Standards covering the 6–8 middle-school band; one set across grades 6, 7, and 8."
+4. **Updated the source-line in the masthead** to credit the canonical PDFs and note the verification.
+5. **Updated the footer** to flag the one corrected NJDOE typo (so a reader who notices the discrepancy understands why we're more right than the source).
+
+### Tool / command transcript
+
+```
+$ pdftotext -layout 2020NJSLS-SS_by_Standard.pdf /tmp/ss_by_std.txt
+$ pdftotext -layout 2020NJSLS-SS_by_GradeBand.pdf /tmp/ss_by_band.txt
+$ # 208 codes per PDF (strict regex); 209 (typo-tolerant) — match our JSON
+
+$ # Spot-check 7 PE statements across both bands / all 3 standards
+✓ 6.1.5.CivicsPI.1, 6.1.5.HistoryCC.15, 6.3.5.GeoGI.1, 6.1.8.HistoryUP.3.a,
+✓ 6.2.8.GeoPP.1.a, 6.3.8.CivicsPR.4, 6.1.8.HistoryCC.5.b — all match
+
+$ # 6.3.5 / 6.3.8 (supposedly truncated) — match exactly
+6.3.5 — ours: 6, PDF: 6 ✓
+6.3.8 — ours: 20, PDF: 20 ✓
+```
+
+### Commits produced
+
+To be backfilled.
+
+### Notes / flags
+
+- **Coverage status across all four subjects** is now solid: ELA (verified against the user's existing curated source), Math (verified against the docx + WMF formula reconstruction), Science (verified against the 5-8 PDF), Social Studies (verified against both canonical NJDOE PDFs this session).
+- **The NJDOE typo `6.1.8.HistoryCC5.b`** is a small data-quality issue in the *source*. We're treating it as a typo and using the cleaned form. If someone else builds a system that strict-matches against the PDF, they'll have a `5.b` orphan; it's worth knowing about.
+- **CC tag migration still pending** for next session per Session 8 plan.
+
+---
+
 ## Session 8 — 2026-05-12, 02:25 AM EDT
 *Social Studies corpus added; chip-label explanation; CC tag migration deferred to next session.*
 
