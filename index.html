@@ -284,9 +284,10 @@ footer {
 /* ===== Results ===== */
 .results-section { margin-bottom: 56px; }
 .results-section:empty { display: none; }
+.results-block + .results-block { margin-top: 36px; }
 .results-header {
   font-size: 13px; color: var(--muted); letter-spacing: 0.02em;
-  margin-bottom: 20px; padding-bottom: 12px;
+  margin-bottom: 16px; padding-bottom: 10px;
   border-bottom: 1px solid var(--rule);
   display: flex; justify-content: space-between; align-items: baseline;
   flex-wrap: wrap; gap: 12px;
@@ -294,6 +295,25 @@ footer {
 .results-header em {
   font-family: 'Fraunces', Georgia, serif;
   font-style: italic; color: var(--ink); font-size: 14px;
+}
+.results-tag {
+  font-size: 9px; font-weight: 700; letter-spacing: 0.16em;
+  text-transform: uppercase; padding: 3px 8px; border-radius: 3px;
+  white-space: nowrap;
+}
+.results-header.keyword .results-tag {
+  background: var(--divider); color: var(--ink-soft);
+}
+.results-header.claude .results-tag {
+  background: var(--ela-pale); color: var(--ela);
+}
+.overflow-note {
+  margin-top: 12px; padding: 10px 14px;
+  background: var(--bg);
+  border: 1px dashed var(--rule);
+  border-radius: 4px;
+  font-size: 12px; color: var(--muted);
+  font-style: italic;
 }
 .results-list { display: flex; flex-direction: column; gap: 14px; }
 .result-card {
@@ -516,19 +536,19 @@ footer {
   <section class="search-section" id="search">
     <div class="search-eyebrow">Discovery</div>
     <h2 class="search-prompt">Find standards that <em>match</em> what you're teaching.</h2>
-    <p class="search-hint">Paste a lesson plan, a learning goal, a standard code, or just a topic. Search is across all 523 NJSLS standards (ELA, Math, Science, Social Studies).</p>
+    <p class="search-hint">Type a <strong>code</strong> or <strong>keyword</strong> for an instant match across all 523 standards. For <strong>semantic matching</strong> on a vague description or a pasted lesson plan, click <strong>Search with Claude</strong> — that one calls the Anthropic API with your key.</p>
     <form class="search-form" id="search-form" autocomplete="off">
-      <textarea class="search-input" id="search-input" rows="1" placeholder="e.g. 'learn to code', 'fractions with unlike denominators', '5.NF.A.1', or paste a whole lesson…" required></textarea>
-      <button type="submit" class="search-submit" id="search-submit">Search</button>
+      <textarea class="search-input" id="search-input" rows="1" placeholder="Type a code or keyword for instant matches… or describe a goal and click Search with Claude" required></textarea>
+      <button type="submit" class="search-submit" id="search-submit">Search with Claude</button>
     </form>
     <div class="search-meta">
       <span class="search-examples-label">Try</span>
       <div class="search-examples">
-        <button type="button" class="search-example">public speaking</button>
-        <button type="button" class="search-example">surface area</button>
-        <button type="button" class="search-example">photosynthesis</button>
-        <button type="button" class="search-example">argumentative writing</button>
+        <button type="button" class="search-example">5.NF.A.1</button>
         <button type="button" class="search-example">MS-LS1-7</button>
+        <button type="button" class="search-example">fractions</button>
+        <button type="button" class="search-example">civil war</button>
+        <button type="button" class="search-example">public speaking</button>
       </div>
       <button type="button" class="search-settings" id="search-settings">Change API key</button>
     </div>
@@ -636,11 +656,18 @@ footer {
   const MODEL = 'claude-sonnet-4-6';
   const ENDPOINT = 'https://api.anthropic.com/v1/messages';
 
-  const SUBJECT_LABELS = { ela: 'ELA', math: 'Math', science: 'Science' };
+  const SUBJECT_LABELS = { ela: 'ELA', math: 'Math', science: 'Science', social_studies: 'SS' };
   const SUBJECT_FULL = {
     ela: 'English Language Arts',
     math: 'Mathematics',
     science: 'Science',
+    social_studies: 'Social Studies',
+  };
+  const SUBJECT_HREF = {
+    ela: 'ela.html',
+    math: 'math.html',
+    science: 'science.html',
+    social_studies: 'social-studies.html',
   };
 
   let corpus = null;
@@ -704,37 +731,75 @@ footer {
     }
   });
 
-  // --- Search ---
+  // --- Search: keyword (instant, free) + Claude (on submit, paid) ---
   const form = document.getElementById('search-form');
   const input = document.getElementById('search-input');
   const submitBtn = document.getElementById('search-submit');
   const resultsEl = document.getElementById('results-section');
 
-  // Auto-grow textarea
-  input.addEventListener('input', () => {
+  // State
+  let lastQuery = '';
+  let keywordMatches = null;   // null = no search yet; [] = empty; [...] = matches
+  let claudeMatches = null;
+  let claudeError = null;
+  let claudeLoading = false;
+
+  function autogrow() {
     input.style.height = 'auto';
     input.style.height = Math.min(input.scrollHeight, 240) + 'px';
-  });
-  // Cmd/Ctrl+Enter submits
-  input.addEventListener('keydown', (e) => {
-    if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') {
-      e.preventDefault();
-      form.requestSubmit();
+  }
+
+  // -- Keyword (instant, in-browser) --
+  function looksLikeCode(q) {
+    return /^[\dA-Za-z][\d.\-A-Za-z]*$/.test(q) && (q.includes('.') || q.includes('-'));
+  }
+
+  function quickSearch(query, standards) {
+    const q = query.trim().toLowerCase();
+    if (!q) return [];
+
+    // Exact code match
+    const exact = standards.filter(s => s.code.toLowerCase() === q);
+    if (exact.length) {
+      return exact.map(s => ({ ...s, _matchType: 'exact_code' }));
     }
-  });
+    // Code-prefix match
+    if (looksLikeCode(q)) {
+      const pre = standards.filter(s => s.code.toLowerCase().startsWith(q));
+      if (pre.length) {
+        return pre.map(s => ({ ...s, _matchType: 'code_prefix' }));
+      }
+    }
+    // Substring on code or statement
+    return standards.filter(s =>
+      s.code.toLowerCase().includes(q) ||
+      (s.statement || '').toLowerCase().includes(q)
+    ).map(s => ({ ...s, _matchType: 'keyword' }));
+  }
 
-  document.querySelectorAll('.search-example').forEach(btn => {
-    btn.addEventListener('click', () => {
-      input.value = btn.textContent;
-      input.dispatchEvent(new Event('input'));
-      form.requestSubmit();
-    });
-  });
+  async function runKeywordSearch() {
+    const q = input.value.trim();
+    if (q !== lastQuery) {
+      // Query changed — invalidate any stale Claude results
+      claudeMatches = null;
+      claudeError = null;
+    }
+    lastQuery = q;
+    if (!q) {
+      keywordMatches = null;
+      renderAll();
+      return;
+    }
+    const corp = await loadCorpus();
+    keywordMatches = quickSearch(q, corp.standards);
+    renderAll();
+  }
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const query = input.value.trim();
-    if (!query) return;
+  // -- Claude (explicit, paid) --
+  async function runClaudeSearch() {
+    const q = input.value.trim();
+    if (!q) return;
+    lastQuery = q;
 
     let apiKey = getApiKey();
     if (!apiKey) {
@@ -742,19 +807,50 @@ footer {
       if (!apiKey) return;
     }
 
+    claudeLoading = true;
+    claudeError = null;
     submitBtn.disabled = true;
-    resultsEl.innerHTML = '<div class="search-loading"><span class="spinner"></span> Matching standards…</div>';
+    renderAll();
 
     try {
       const corp = await loadCorpus();
-      const parsed = await callClaude(query, apiKey, corp);
-      renderResults(parsed, query, corp);
+      const parsed = await callClaude(q, apiKey, corp);
+      const byCode = new Map(corp.standards.map(s => [s.code, s]));
+      claudeMatches = (parsed.matches || [])
+        .filter(m => m && m.code && byCode.has(m.code))
+        .map(m => ({ ...byCode.get(m.code), rationale: m.rationale || '' }));
     } catch (err) {
       console.error(err);
-      showError(err);
+      claudeError = err;
+      claudeMatches = null;
     } finally {
+      claudeLoading = false;
       submitBtn.disabled = false;
+      renderAll();
     }
+  }
+
+  // -- Listeners --
+  input.addEventListener('input', () => {
+    autogrow();
+    runKeywordSearch();
+  });
+  input.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') {
+      e.preventDefault();
+      form.requestSubmit();
+    }
+  });
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    runClaudeSearch();
+  });
+  document.querySelectorAll('.search-example').forEach(btn => {
+    btn.addEventListener('click', () => {
+      input.value = btn.textContent;
+      input.dispatchEvent(new Event('input'));
+      input.focus();
+    });
   });
 
   const SYSTEM_INSTRUCTIONS = `You are a curriculum matching assistant for Forge Prep, a school in New Jersey that uses the New Jersey Student Learning Standards (NJSLS).
@@ -833,48 +929,106 @@ Rules:
     return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   }
 
-  function renderResults(response, query, corp) {
-    const byCode = new Map(corp.standards.map(s => [s.code, s]));
-    const matches = (response.matches || [])
-      .filter(m => m && m.code && byCode.has(m.code))
-      .map(m => ({ ...byCode.get(m.code), rationale: m.rationale || '' }));
+  // -- Render --
+  function renderCard(r) {
+    const context = r.anchor || r.cluster || r.topic || r.domain || r.discipline || r.standard || '';
+    const gradeLabel = r.subject === 'science' && r.grade === 'MS' ? 'Grades 6–8' : 'Grade ' + r.grade;
+    const href = SUBJECT_HREF[r.subject] || (r.subject + '.html');
+    return `
+      <article class="result-card subject-${esc(r.subject)}">
+        <header class="result-header">
+          <span class="result-subject">${SUBJECT_LABELS[r.subject] || r.subject}</span>
+          <span class="result-code">${esc(r.code)}</span>
+          <span class="result-grade">${esc(gradeLabel)}</span>
+          ${context ? `<span class="result-context">${esc(context)}</span>` : ''}
+        </header>
+        <p class="result-statement">${esc(r.statement)}</p>
+        ${(r.subs && r.subs.length) ? '<ul class="result-subs">' + r.subs.map(s => `<li>${esc(s)}</li>`).join('') + '</ul>' : ''}
+        ${r.rationale ? `<div class="result-rationale">${esc(r.rationale)}</div>` : ''}
+        <a href="${esc(href)}" class="result-link">Open ${SUBJECT_FULL[r.subject] || r.subject} page →</a>
+      </article>`;
+  }
 
-    if (matches.length === 0) {
-      resultsEl.innerHTML = `
-        <div class="no-results">
-          No strong matches for <em>"${esc(query)}"</em>.<br>
-          Try different wording, or browse by subject below.
+  function renderKeywordSection() {
+    if (keywordMatches === null) return '';
+    const q = lastQuery;
+    if (keywordMatches.length === 0) {
+      return `
+        <div class="results-block">
+          <div class="results-header keyword">
+            <span><strong>0</strong> keyword matches for <em>"${esc(q)}"</em></span>
+            <span class="results-tag">Free · Instant</span>
+          </div>
+          <div class="no-results">
+            Nothing in the code or statement text matches <em>"${esc(q)}"</em>.
+            For semantic matching where the word doesn't appear but the concept does, click <strong>Search with Claude</strong>.
+          </div>
         </div>`;
-      return;
     }
+    const matchType = keywordMatches[0]._matchType;
+    const typeLabel = matchType === 'exact_code'  ? 'exact code match'
+                     : matchType === 'code_prefix' ? 'matches by code prefix'
+                     :                                'keyword matches';
+    const n = keywordMatches.length;
+    const CAP = 30;
+    const visible = keywordMatches.slice(0, CAP);
+    const overflow = Math.max(0, n - CAP);
+    return `
+      <div class="results-block">
+        <div class="results-header keyword">
+          <span><strong>${n}</strong> ${esc(typeLabel)} for <em>"${esc(q)}"</em></span>
+          <span class="results-tag">Free · Instant</span>
+        </div>
+        <div class="results-list">${visible.map(renderCard).join('')}</div>
+        ${overflow > 0 ? `<div class="overflow-note">Showing first ${CAP}. ${overflow} more — refine your search to narrow.</div>` : ''}
+      </div>`;
+  }
 
-    const n = matches.length;
-    let html = `<div class="results-header">
-      <span><strong>${n}</strong> match${n === 1 ? '' : 'es'} for <em>"${esc(query)}"</em></span>
-      <span>${SUBJECT_LABELS.ela} · ${SUBJECT_LABELS.math} · ${SUBJECT_LABELS.science}</span>
-    </div><div class="results-list">`;
-
-    for (const r of matches) {
-      const context = r.anchor || r.cluster || r.topic || r.domain || r.discipline || '';
-      const gradeLabel = r.subject === 'science' && r.grade === 'MS' ? 'Grades 6–8' : 'Grade ' + r.grade;
-      html += `
-        <article class="result-card subject-${esc(r.subject)}">
-          <header class="result-header">
-            <span class="result-subject">${SUBJECT_LABELS[r.subject]}</span>
-            <span class="result-code">${esc(r.code)}</span>
-            <span class="result-grade">${esc(gradeLabel)}</span>
-            ${context ? `<span class="result-context">${esc(context)}</span>` : ''}
-          </header>
-          <p class="result-statement">${esc(r.statement)}</p>
-          ${(r.subs && r.subs.length) ? '<ul class="result-subs">' + r.subs.map(s => `<li>${esc(s)}</li>`).join('') + '</ul>' : ''}
-          ${r.rationale ? `<div class="result-rationale">${esc(r.rationale)}</div>` : ''}
-          <a href="${esc(r.subject)}.html" class="result-link">Open ${SUBJECT_FULL[r.subject]} page →</a>
-        </article>`;
+  function renderClaudeSection() {
+    if (claudeLoading) {
+      return `<div class="results-block">
+        <div class="search-loading"><span class="spinner"></span> Asking Claude for semantic matches (first query ~3–5s, cached subsequent queries ~1–2s)…</div>
+      </div>`;
     }
-    html += '</div>';
+    if (claudeError) {
+      let msg = claudeError.message || 'Something went wrong.';
+      let action = '';
+      if (claudeError.status === 401) {
+        msg = 'Your Anthropic API key was rejected. Double-check, or paste a new one.';
+        action = ' <button id="error-reset-key">Reset key</button>';
+      } else if (claudeError.status === 429) {
+        msg = 'Anthropic rate-limited the request. Wait a few seconds and try again.';
+      } else if (claudeError.status === 400 && /credit/i.test(msg)) {
+        msg = 'Your Anthropic account is out of credits. Top up at console.anthropic.com.';
+      }
+      return `<div class="results-block">
+        <div class="search-error"><strong>Claude error:</strong> ${esc(msg)}${action}</div>
+      </div>`;
+    }
+    if (claudeMatches === null) return '';
+    const q = lastQuery;
+    if (claudeMatches.length === 0) {
+      return `<div class="results-block">
+        <div class="results-header claude">
+          <span><strong>0</strong> Claude matches for <em>"${esc(q)}"</em></span>
+          <span class="results-tag">Claude · Semantic</span>
+        </div>
+        <div class="no-results">Claude found no strong semantic matches. Try different wording.</div>
+      </div>`;
+    }
+    const n = claudeMatches.length;
+    return `<div class="results-block">
+      <div class="results-header claude">
+        <span><strong>${n}</strong> Claude match${n === 1 ? '' : 'es'} for <em>"${esc(q)}"</em></span>
+        <span class="results-tag">Claude · Semantic</span>
+      </div>
+      <div class="results-list">${claudeMatches.map(renderCard).join('')}</div>
+    </div>`;
+  }
+
+  function renderAll() {
+    const html = renderKeywordSection() + renderClaudeSection();
     resultsEl.innerHTML = html;
-
-    // Render math LaTeX in any Math result statements
     if (typeof renderMathInElement === 'function') {
       renderMathInElement(resultsEl, {
         delimiters: [
@@ -884,23 +1038,6 @@ Rules:
         throwOnError: false
       });
     }
-
-    // Scroll results into view
-    resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
-  function showError(err) {
-    let msg = err.message || 'Something went wrong.';
-    let action = '';
-    if (err.status === 401) {
-      msg = 'Your Anthropic API key was rejected. Double-check the key, or paste a new one.';
-      action = ' <button id="error-reset-key">Reset key</button>';
-    } else if (err.status === 429) {
-      msg = 'Anthropic rate-limited the request. Wait a few seconds and try again.';
-    } else if (err.status === 400 && /credit/i.test(msg)) {
-      msg = 'Your Anthropic account is out of credits. Top up at console.anthropic.com.';
-    }
-    resultsEl.innerHTML = '<div class="search-error"><strong>Error:</strong> ' + esc(msg) + action + '</div>';
     const resetBtn = document.getElementById('error-reset-key');
     if (resetBtn) resetBtn.addEventListener('click', async () => {
       clearApiKey();

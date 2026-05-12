@@ -6,6 +6,83 @@ Entries are intentionally verbose. The point is full visibility: open the file a
 
 ---
 
+## Session 10 — 2026-05-12, 03:25 AM EDT
+*Split keyword from Claude search on the hub. Live in-browser keyword/code matching by default; Claude becomes an explicit, paid opt-in.*
+
+### User request
+
+> also we can separate claude search from keyword search? it seems like the searchbox defaults to claude even when actual keywords or the codes themselves are used... which is kinda a waste on tokens
+
+Right call — every keystroke previously triggered a $0.04 Claude query, even for simple code lookups like `5.NF.A.1` where Anthropic added zero value. The data is already in the browser via `/data/all.json`; substring + code matching is free.
+
+### What changed
+
+**Two modes, one input box.**
+
+| Mode | Trigger | Cost | When |
+|---|---|---|---|
+| **Keyword/code (instant)** | Every keystroke, live | $0 | Codes, code prefixes, substring on statement |
+| **Claude (semantic)** | Explicit submit button | ~$0.04 cached | Vague intent, lesson plans, concepts that don't share vocabulary with the standard |
+
+Both render in the same column as labeled sections — user can see keyword matches *and* Claude matches simultaneously after they click the button.
+
+### UI tweaks
+
+- Submit button renamed: "Search" → **"Search with Claude"** so the cost / AI dependency is unambiguous.
+- Hint copy rewritten to explain the split.
+- Example chips re-mixed to demonstrate the spectrum: `5.NF.A.1`, `MS-LS1-7` (codes); `fractions`, `civil war` (keywords); `public speaking` (the vague case Claude actually helps with). Clicking a chip fills the box and triggers the input event — keyword results appear instantly. User decides if they want to also click Claude.
+- Result sections each get a small tag: **"Free · Instant"** (grey, ink) for keyword; **"Claude · Semantic"** (terracotta tint) for Claude. Visually clear which results came from where.
+
+### Keyword search algorithm
+
+Three-tier match in priority order:
+
+1. **Exact code match** — `5.NF.A.1` typed → that one standard pinned with "exact code match" header.
+2. **Code prefix** — typing `5.NF` triggers if the query "looks like a code" (`looksLikeCode` regex: contains dots or hyphens, alphanumeric+separators only) and any standard's code starts with the query. Header reads "matches by code prefix."
+3. **Substring on `code` or `statement`** — case-insensitive `.includes()`. Default fall-through. Header reads "keyword matches."
+
+Capped at 30 visible results with an "X more — refine your search" overflow note. Anything bigger would mean the query is too broad to be useful anyway.
+
+### State management
+
+Four state variables:
+- `lastQuery` — string in the box
+- `keywordMatches` — `null` (no search) | `[]` (no hits) | `[...]`
+- `claudeMatches` — same shape
+- `claudeError`, `claudeLoading` — for the Claude side's loading + error states
+
+When the query changes (user typing), Claude results are invalidated — they were tied to the previous query. User has to click "Search with Claude" again for fresh semantic matches. No stale data sitting on screen.
+
+### Tool / command transcript
+
+Edits to `index.html`:
+- Hint copy + chip text + button label (small UI tweaks).
+- `SUBJECT_*` maps extended with `social_studies` (was missing — would have broken result-card rendering for SS matches once they started appearing).
+- New `SUBJECT_HREF` map so SS results link to `social-studies.html` (file uses hyphen, subject key uses underscore).
+- CSS additions: `.results-block + .results-block { margin-top: 36px }` for spacing; `.results-tag` with `.keyword` / `.claude` variants; `.overflow-note` for the cap message.
+- JS rewrite of the search section (~150 lines): introduced `quickSearch`, `runKeywordSearch`, `runClaudeSearch`, `renderCard`, `renderKeywordSection`, `renderClaudeSection`, `renderAll`. Removed standalone `renderResults` and `showError` — error rendering folded into `renderClaudeSection`.
+
+Validations:
+- `node --check` on inline script — OK.
+- Local server smoke test — hub serves at 200, /data/all.json at 200, all six new markers present in served HTML.
+
+### Includes Session 9 backfill
+
+Session 9 SESSIONS entry had "To be backfilled" placeholder. Filled in with hash `7ad7e32` (commit time 02:51:25 EDT). Pages workflow oddly didn't trigger a build for that commit standalone — no rows in `gh api .../pages/builds` or `actions/runs` for it. This Session 10 push will deploy both Session 9's content and Session 10's content together.
+
+### Commits produced
+
+To be backfilled.
+
+### Notes / flags
+
+- **Token economy implications.** Old default: every Enter / chip-click → ~$0.04 Claude query. New default: keyword/code searches are free. If a typical session is 10 searches and 7 of them are codes/keywords, the savings is ~$0.28 per session per guide. Real money at scale.
+- **Speed implications.** First-keystroke result now appears in ~1ms vs ~3-5s for the previous Claude-first design. Huge UX win for the "I want to look up `5.NF.A.1`" case.
+- **Searching `\` won't find `\frac{}`** — the keyword search hits raw `statement` text, which still contains LaTeX commands for Math. Math's own page has the `stripLatex()` normalisation for in-page search, but the hub uses raw statement text. Acceptable for now; if guides search `1/2` on the hub and expect to find Math fractions, we can pre-compute a normalised search-text field in `data/all.json` per record. Defer until someone hits it.
+- **Cache behavior unchanged.** Claude prompt-cache still works the same way when the button is clicked; first query of a session is ~$0.21 cache-write, subsequent ones ~$0.04.
+
+---
+
 ## Session 9 — 2026-05-12, 02:50 AM EDT
 *Verified Social Studies JSON against canonical NJDOE PDFs — turns out we already have everything. Removed misleading "Source extract incomplete" callouts. Relabeled band pills.*
 
@@ -68,7 +145,9 @@ $ # 6.3.5 / 6.3.8 (supposedly truncated) — match exactly
 
 ### Commits produced
 
-To be backfilled.
+| Hash | Time (EDT) | Message |
+|---|---|---|
+| `7ad7e32` | 02:51:25 | SS: verify against canonical NJDOE PDFs; relabel band pills |
 
 ### Notes / flags
 
