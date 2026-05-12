@@ -122,7 +122,9 @@ $ curl http://127.0.0.1:8768/data/all.json → standard_count: 523
 
 ### Commits produced
 
-To be backfilled.
+| Hash | Time (EDT) | Message |
+|---|---|---|
+| `7b4edae` | 02:26:45 | Add Social Studies corpus (NJSLS-SS 2020, Grades 3-8) |
 
 ### Notes / flags
 
