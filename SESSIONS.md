@@ -100,7 +100,9 @@ Unmatched: 3.MD.B.3, 5.MD.A.1, 5.MD.A.2, 5.NBT.A.3b, 8.F.B.4, L.6, RI.1, RI.2,
 
 ### Commits produced
 
-To be backfilled.
+| Hash | Time (EDT) | Message |
+|---|---|---|
+| `6409791` | 01:56:29 | Phase 3: per-standard 'Taught in' backlinks from Cohort Calendar |
 
 ### Notes / flags
 
