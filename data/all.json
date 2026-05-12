@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "site": "https://rtusiime.github.io/njsls/",
-  "source": "New Jersey Department of Education - NJSLS (2023 ELA + Math, 2020 Science)",
-  "standard_count": 523,
+  "source": "New Jersey Department of Education - NJSLS (2023 ELA + Math, 2020 Science / SS / CSDT)",
+  "standard_count": 608,
   "subjects": {
     "ela": {
       "title": "English Language Arts",
@@ -22,6 +22,11 @@
     "social_studies": {
       "title": "Social Studies",
       "grade_range": "3-8 (bands 3-5 and 6-8)",
+      "adopted": "2020"
+    },
+    "csdt": {
+      "title": "Computer Science & Design Thinking",
+      "grade_range": "5-8 (end-of-grade 5 + 8)",
       "adopted": "2020"
     }
   },
@@ -5193,6 +5198,771 @@
       "statement": "Assess the impact of government incentives and disincentives on the economy (e.g., patents, protection of private property, taxes).",
       "discipline": "Economics, Innovation, and Technology",
       "sub_concept": "Economic Ways of Thinking"
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.5.CS.1",
+      "grade": "5",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "CS - Computing Systems",
+      "core_idea": "Computing devices may be connected to other devices to form a system as a way to extend their capabilities.",
+      "statement": "Model how computing devices connect to other components to form a system."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.5.CS.2",
+      "grade": "5",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "CS - Computing Systems",
+      "core_idea": "Software and hardware work together as a system to accomplish tasks (e.g., sending, receiving, processing, and storing units of information).",
+      "statement": "Model how computer software and hardware work together as a system to accomplish tasks."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.5.CS.3",
+      "grade": "5",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "CS - Computing Systems",
+      "core_idea": "Shared features allow for common troubleshooting strategies that can be effective for many systems.",
+      "statement": "Identify potential solutions for simple hardware and software problems using common troubleshooting strategies."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.5.NI.1",
+      "grade": "5",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "NI - Networks and the Internet",
+      "core_idea": "Information needs a physical or wireless path to travel to be sent and received.",
+      "statement": "Develop models that successfully transmit and receive information using both wired and wireless methods."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.5.NI.2",
+      "grade": "5",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "NI - Networks and the Internet",
+      "core_idea": "Distinguishing between public and private information is important for safe and secure online interactions. | Information can be protected using various security measures (i.e., physical and digital).",
+      "statement": "Describe physical and digital security measures for protecting sensitive personal information."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.5.IC.1",
+      "grade": "5",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "IC - Impacts of Computing",
+      "core_idea": "The development and modification of computing technology is driven by individual’s needs and wants and can affect individuals differently.",
+      "statement": "Identify computing technologies that have impacted how individuals live and work and describe the factors that influenced the changes."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.5.IC.2",
+      "grade": "5",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "IC - Impacts of Computing",
+      "core_idea": "The development and modification of computing technology is driven by individual’s needs and wants and can affect individuals differently.",
+      "statement": "Identify possible ways to improve the accessibility and usability of computing technologies to address the diverse needs and wants of users."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.5.DA.1",
+      "grade": "5",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "DA - Data & Analysis",
+      "core_idea": "Data can be organized, displayed, and presented to highlight relationships.",
+      "statement": "Collect, organize, and display data in order to highlight relationships or support a claim."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.5.DA.2",
+      "grade": "5",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "DA - Data & Analysis",
+      "core_idea": "The type of data being stored affects the storage requirements.",
+      "statement": "Compare the amount of storage space required for different types of data."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.5.DA.3",
+      "grade": "5",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "DA - Data & Analysis",
+      "core_idea": "Individuals can select, organize, and transform data into different visual representations and communicate insights gained from the data.",
+      "statement": "Organize and present collected data visually to communicate insights gained from different views of the data."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.5.DA.4",
+      "grade": "5",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "DA - Data & Analysis",
+      "core_idea": "Individuals can select, organize, and transform data into different visual representations and communicate insights gained from the data.",
+      "statement": "Organize and present climate change data visually to highlight relationships or support a claim."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.5.DA.5",
+      "grade": "5",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "DA - Data & Analysis",
+      "core_idea": "Many factors influence the accuracy of inferences and predictions.",
+      "statement": "Propose cause and effect relationships, predict outcomes, or communicate ideas using data."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.5.AP.1",
+      "grade": "5",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "AP - Algorithms & Programming",
+      "core_idea": "Different algorithms can achieve the same result. | Some algorithms are more appropriate for a specific use than others.",
+      "statement": "Compare and refine multiple algorithms for the same task and determine which is the most appropriate."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.5.AP.2",
+      "grade": "5",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "AP - Algorithms & Programming",
+      "core_idea": "Programming languages provide variables, which are used to store and modify data.",
+      "statement": "Create programs that use clearly named variables to store and modify data."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.5.AP.3",
+      "grade": "5",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "AP - Algorithms & Programming",
+      "core_idea": "A variety of control structures are used to change the flow of program execution (e.g., sequences, events, loops, conditionals).",
+      "statement": "Create programs that include sequences, events, loops, and conditionals."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.5.AP.4",
+      "grade": "5",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "AP - Algorithms & Programming",
+      "core_idea": "Programs can be broken down into smaller parts to facilitate their design, implementation, and review. Programs can also be created by incorporating smaller portions of programs that already exist.",
+      "statement": "Break down problems into smaller, manageable sub-problems to facilitate program development."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.5.AP.5",
+      "grade": "5",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "AP - Algorithms & Programming",
+      "core_idea": "Programs can be broken down into smaller parts to facilitate their design, implementation, and review. Programs can also be created by incorporating smaller portions of programs that already exist.",
+      "statement": "Modify, remix, or incorporate pieces of existing programs into one’s own work to add additional features or create a new program."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.5.AP.6",
+      "grade": "5",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "AP - Algorithms & Programming",
+      "core_idea": "Individuals develop programs using an iterative process involving design, implementation, testing, and review.",
+      "statement": "Develop programs using an iterative process, implement the program design, and test the program to ensure it works as intended."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.8.CS.1",
+      "grade": "8",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "CS - Computing Systems",
+      "core_idea": "The study of human–computer interaction can improve the design of devices and extend the abilities of humans.",
+      "statement": "Recommend improvements to computing devices in order to improve the ways users interact with the devices."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.8.CS.2",
+      "grade": "8",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "CS - Computing Systems",
+      "core_idea": "Software and hardware determine a computing system’s capability to store and process information. The design or selection of a computing system involves multiple considerations and potential trade-offs.",
+      "statement": "Design a system that combines hardware and software components to process data."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.8.CS.3",
+      "grade": "8",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "CS - Computing Systems",
+      "core_idea": "Software and hardware determine a computing system’s capability to store and process information. The design or selection of a computing system involves multiple considerations and potential trade-offs.",
+      "statement": "Justify design decisions and explain potential system trade-offs."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.8.CS.4",
+      "grade": "8",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "CS - Computing Systems",
+      "core_idea": "Troubleshooting a problem is more effective when knowledge of the specific device along with a systematic process is used to identify the source of a problem.",
+      "statement": "Systematically apply troubleshooting strategies to identify and resolve hardware and software problems in computing systems."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.8.NI.1",
+      "grade": "8",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "NI - Networks and the Internet",
+      "core_idea": "Protocols, packets, and addressing are the key components for reliable delivery of information across networks.",
+      "statement": "Model how information is broken down into smaller pieces, transmitted as addressed packets through multiple devices over networks and the Internet, and reassembled at the destination."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.8.NI.2",
+      "grade": "8",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "NI - Networks and the Internet",
+      "core_idea": "Protocols, packets, and addressing are the key components for reliable delivery of information across networks.",
+      "statement": "Model the role of protocols in transmitting data across networks and the Internet and how they enable secure and errorless communication."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.8.NI.3",
+      "grade": "8",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "NI - Networks and the Internet",
+      "core_idea": "The information sent and received across networks can be protected from unauthorized access and modification in a variety of ways. | The evolution of malware leads to understanding the key security measures and best practices needed to proactively address the threat to digital data.",
+      "statement": "Explain how network security depends on a combination of hardware, software, and practices that control access to data and systems."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.8.NI.4",
+      "grade": "8",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "NI - Networks and the Internet",
+      "core_idea": "The information sent and received across networks can be protected from unauthorized access and modification in a variety of ways. | The evolution of malware leads to understanding the key security measures and best practices needed to proactively address the threat to digital data.",
+      "statement": "Explain how new security measures have been created in response to key malware events."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.8.IC.1",
+      "grade": "8",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "IC - Impacts of Computing",
+      "core_idea": "Advancements in computing technology can change individuals’ behaviors. | Society is faced with trade-offs due to the increasing globalization and automation that computing brings.",
+      "statement": "Compare the trade-offs associated with computing technologies that affect individual’s everyday activities and career options."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.8.IC.2",
+      "grade": "8",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "IC - Impacts of Computing",
+      "core_idea": "Advancements in computing technology can change individuals’ behaviors. | Society is faced with trade-offs due to the increasing globalization and automation that computing brings.",
+      "statement": "Describe issues of bias and accessibility in the design of existing technologies."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.8.DA.1",
+      "grade": "8",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "DA - Data & Analysis",
+      "core_idea": "People use digital devices and tools to automate the collection, use, and transformation of data. | The manner in which data is collected and transformed is influenced by the type of digital device(s) available and the intended use of the data.",
+      "statement": "Organize and transform data collected using computational tools to make it usable for a specific purpose."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.8.DA.2",
+      "grade": "8",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "DA - Data & Analysis",
+      "core_idea": "Data is represented in many formats. Software tools translate the low-level representation of bits into a form understandable by individuals. Data is organized and accessible based on the application used to store it.",
+      "statement": "Explain the difference between how the computer stores data as bits and how the data is displayed."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.8.DA.3",
+      "grade": "8",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "DA - Data & Analysis",
+      "core_idea": "Data is represented in many formats. Software tools translate the low-level representation of bits into a form understandable by individuals. Data is organized and accessible based on the application used to store it.",
+      "statement": "Identify the appropriate tool to access data based on its file format."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.8.DA.4",
+      "grade": "8",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "DA - Data & Analysis",
+      "core_idea": "The purpose of cleaning data is to remove errors and make it easier for computers to process.",
+      "statement": "Transform data to remove errors and improve the accuracy of the data for analysis."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.8.DA.5",
+      "grade": "8",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "DA - Data & Analysis",
+      "core_idea": "Computer models can be used to simulate events, examine theories and inferences, or make predictions.",
+      "statement": "Test, analyze, and refine computational models."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.8.DA.6",
+      "grade": "8",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "DA - Data & Analysis",
+      "core_idea": "Computer models can be used to simulate events, examine theories and inferences, or make predictions.",
+      "statement": "Analyze climate change computational models and propose refinements."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.8.AP.1",
+      "grade": "8",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "AP - Algorithms & Programming",
+      "core_idea": "Individuals design algorithms that are reusable in many situations. | Algorithms that are readable are easier to follow, test, and debug.",
+      "statement": "Design and illustrate algorithms that solve complex problems using flowcharts and/or pseudocode."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.8.AP.2",
+      "grade": "8",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "AP - Algorithms & Programming",
+      "core_idea": "Programmers create variables to store data values of different types and perform appropriate operations on their values.",
+      "statement": "Create clearly named variables that represent different data types and perform operations on their values."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.8.AP.3",
+      "grade": "8",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "AP - Algorithms & Programming",
+      "core_idea": "Control structures are selected and combined in programs to solve more complex problems.",
+      "statement": "Design and iteratively develop programs that combine control structures, including nested loops and compound conditionals."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.8.AP.4",
+      "grade": "8",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "AP - Algorithms & Programming",
+      "core_idea": "Programs use procedures to organize code and hide implementation details. Procedures can be repurposed in new programs. Defining parameters for procedures can generalize behavior and increase reusability.",
+      "statement": "Decompose problems and sub-problems into parts to facilitate the design, implementation, and review of programs."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.8.AP.5",
+      "grade": "8",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "AP - Algorithms & Programming",
+      "core_idea": "Programs use procedures to organize code and hide implementation details. Procedures can be repurposed in new programs. Defining parameters for procedures can generalize behavior and increase reusability.",
+      "statement": "Create procedures with parameters to organize code and make it easier to reuse."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.8.AP.6",
+      "grade": "8",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "AP - Algorithms & Programming",
+      "core_idea": "Individuals design and test solutions to identify problems taking into consideration the diverse needs of the users and the community.",
+      "statement": "Refine a solution that meets users’ needs by incorporating feedback from team members and users."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.8.AP.7",
+      "grade": "8",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "AP - Algorithms & Programming",
+      "core_idea": "Individuals design and test solutions to identify problems taking into consideration the diverse needs of the users and the community.",
+      "statement": "Design programs, incorporating existing code, media, and libraries, and give attribution."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.8.AP.8",
+      "grade": "8",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "AP - Algorithms & Programming",
+      "core_idea": "Individuals design and test solutions to identify problems taking into consideration the diverse needs of the users and the community.",
+      "statement": "Systematically test and refine programs using a range of test cases and users."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.1.8.AP.9",
+      "grade": "8",
+      "standard": "8.1 - Computer Science",
+      "disciplinary_concept": "AP - Algorithms & Programming",
+      "core_idea": "Individuals design and test solutions to identify problems taking into consideration the diverse needs of the users and the community.",
+      "statement": "Document programs in order to make them easier to follow, test, and debug."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.5.ED.1",
+      "grade": "5",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "ED - Engineering Design",
+      "core_idea": "Engineering design is a systematic and creative process of communicating and collaborating to meet a design challenge. | Often, several design solutions exist, each better in some way than the others.",
+      "statement": "Explain the functions of a system and its subsystems."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.5.ED.2",
+      "grade": "5",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "ED - Engineering Design",
+      "core_idea": "Engineering design is a systematic and creative process of communicating and collaborating to meet a design challenge. | Often, several design solutions exist, each better in some way than the others.",
+      "statement": "Collaborate with peers to collect information, brainstorm to solve a problem, and evaluate all possible solutions to provide the best results with supporting sketches or models."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.5.ED.3",
+      "grade": "5",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "ED - Engineering Design",
+      "core_idea": "Engineering design is a systematic and creative process of communicating and collaborating to meet a design challenge. | Often, several design solutions exist, each better in some way than the others.",
+      "statement": "Follow step by step directions to assemble a product or solve a problem, using appropriate tools to accomplish the task."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.5.ED.4",
+      "grade": "5",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "ED - Engineering Design",
+      "core_idea": "Engineering design requirements include desired features and limitations that need to be considered.",
+      "statement": "Explain factors that influence the development and function of products and systems (e.g., resources, criteria, desired features, constraints)."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.5.ED.5",
+      "grade": "5",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "ED - Engineering Design",
+      "core_idea": "Engineering design requirements include desired features and limitations that need to be considered.",
+      "statement": "Describe how specifications and limitations impact the engineering design process."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.5.ED.6",
+      "grade": "5",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "ED - Engineering Design",
+      "core_idea": "Engineering design requirements include desired features and limitations that need to be considered.",
+      "statement": "Evaluate and test alternative solutions to a problem using the constraints and trade-offs identified in the design process."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.5.ITH.1",
+      "grade": "5",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "ITH - Interaction of Technology and Humans",
+      "core_idea": "Societal needs and wants determine which new tools are developed to address real-world problems.",
+      "statement": "Explain how societal needs and wants influence the development and function of a product and a system."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.5.ITH.2",
+      "grade": "5",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "ITH - Interaction of Technology and Humans",
+      "core_idea": "A new tool may have favorable or unfavorable results as well as both positive and negative effects on society. | Technology spurs new businesses and careers.",
+      "statement": "Evaluate how well a new tool has met its intended purpose and identify any shortcomings it might have."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.5.ITH.3",
+      "grade": "5",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "ITH - Interaction of Technology and Humans",
+      "core_idea": "A new tool may have favorable or unfavorable results as well as both positive and negative effects on society. | Technology spurs new businesses and careers.",
+      "statement": "Analyze the effectiveness of a new product or system and identify the positive and/or negative consequences resulting from its use."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.5.ITH.4",
+      "grade": "5",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "ITH - Interaction of Technology and Humans",
+      "core_idea": "A new tool may have favorable or unfavorable results as well as both positive and negative effects on society. | Technology spurs new businesses and careers.",
+      "statement": "Describe a technology/tool that has made the way people live easier or has led to a new business or career."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.5.NT.1",
+      "grade": "5",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "NT - Nature of Technology",
+      "core_idea": "Technology innovation and improvement may be influenced by a variety of factors. | Engineers create and modify technologies to meet people’s needs and wants; scientists ask questions about the natural world.",
+      "statement": "Troubleshoot a product that has stopped working and brainstorm ideas to correct the problem."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.5.NT.2",
+      "grade": "5",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "NT - Nature of Technology",
+      "core_idea": "Technology innovation and improvement may be influenced by a variety of factors. | Engineers create and modify technologies to meet people’s needs and wants; scientists ask questions about the natural world.",
+      "statement": "Identify new technologies resulting from the demands, values, and interests of individuals, businesses, industries, and societies."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.5.NT.3",
+      "grade": "5",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "NT - Nature of Technology",
+      "core_idea": "Technology innovation and improvement may be influenced by a variety of factors. | Engineers create and modify technologies to meet people’s needs and wants; scientists ask questions about the natural world.",
+      "statement": "Redesign an existing product for a different purpose in a collaborative team."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.5.NT.4",
+      "grade": "5",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "NT - Nature of Technology",
+      "core_idea": "Technology innovation and improvement may be influenced by a variety of factors. | Engineers create and modify technologies to meet people’s needs and wants; scientists ask questions about the natural world.",
+      "statement": "Identify how improvement in the understanding of materials science impacts technologies."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.5.ETW.1",
+      "grade": "5",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "ETW - Effects of Technology on the Natural World",
+      "core_idea": "The technology developed for the human designed world can have unintended consequences for the environment. | Technology must be continually developed and made more efficient to reduce the need for non-renewable resources.",
+      "statement": "Describe how resources such as material, energy, information, time, tools, people, and capital are used in products or systems."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.5.ETW.2",
+      "grade": "5",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "ETW - Effects of Technology on the Natural World",
+      "core_idea": "The technology developed for the human designed world can have unintended consequences for the environment. | Technology must be continually developed and made more efficient to reduce the need for non-renewable resources.",
+      "statement": "Describe ways that various technologies are used to reduce improper use of resources."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.5.ETW.3",
+      "grade": "5",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "ETW - Effects of Technology on the Natural World",
+      "core_idea": "The technology developed for the human designed world can have unintended consequences for the environment. | Technology must be continually developed and made more efficient to reduce the need for non-renewable resources.",
+      "statement": "Explain why human-designed systems, products, and environments need to be constantly monitored, maintained, and improved."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.5.ETW.4",
+      "grade": "5",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "ETW - Effects of Technology on the Natural World",
+      "core_idea": "The technology developed for the human designed world can have unintended consequences for the environment. | Technology must be continually developed and made more efficient to reduce the need for non-renewable resources.",
+      "statement": "Explain the impact that resources, such as energy and materials used to develop technology, have on the environment."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.5.ETW.5",
+      "grade": "5",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "ETW - Effects of Technology on the Natural World",
+      "core_idea": "The technology developed for the human designed world can have unintended consequences for the environment. | Technology must be continually developed and made more efficient to reduce the need for non-renewable resources.",
+      "statement": "Identify the impact of a specific technology on the environment and determine what can be done to increase positive effects and to reduce any negative effects, such as climate change."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.5.EC.1",
+      "grade": "5",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "EC - Ethics & Culture",
+      "core_idea": "Technological choices and opportunities vary due to factors such as differences in economic resources, location, and cultural values.",
+      "statement": "Analyze how technology has contributed to or reduced inequities in local and global communities and determine its short- and long-term effects."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.8.ED.1",
+      "grade": "8",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "ED - Engineering Design",
+      "core_idea": "Engineering design is a systematic, creative, and iterative process used to address local and global problems. | The process includes generating ideas, choosing the best solution, and making, testing, and redesigning models or prototypes. | Engineering design requirements and specifications involve making trade-offs between competing requirements and desired design features.",
+      "statement": "Evaluate the function, value, and aesthetics of a technological product or system, from the perspective of the user and the producer."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.8.ED.2",
+      "grade": "8",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "ED - Engineering Design",
+      "core_idea": "Engineering design is a systematic, creative, and iterative process used to address local and global problems. | The process includes generating ideas, choosing the best solution, and making, testing, and redesigning models or prototypes. | Engineering design requirements and specifications involve making trade-offs between competing requirements and desired design features.",
+      "statement": "Identify the steps in the design process that could be used to solve a problem."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.8.ED.3",
+      "grade": "8",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "ED - Engineering Design",
+      "core_idea": "Engineering design is a systematic, creative, and iterative process used to address local and global problems. | The process includes generating ideas, choosing the best solution, and making, testing, and redesigning models or prototypes. | Engineering design requirements and specifications involve making trade-offs between competing requirements and desired design features.",
+      "statement": "Develop a proposal for a solution to a real-world problem that includes a model (e.g., physical prototype, graphical/technical sketch)."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.8.ED.4",
+      "grade": "8",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "ED - Engineering Design",
+      "core_idea": "Engineering design is a systematic, creative, and iterative process used to address local and global problems. | The process includes generating ideas, choosing the best solution, and making, testing, and redesigning models or prototypes. | Engineering design requirements and specifications involve making trade-offs between competing requirements and desired design features.",
+      "statement": "Investigate a malfunctioning system, identify its impact, and explain the step-by-step process used to troubleshoot, evaluate, and test options to repair the product in a collaborative team."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.8.ED.5",
+      "grade": "8",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "ED - Engineering Design",
+      "core_idea": "Engineering design is a systematic, creative, and iterative process used to address local and global problems. | The process includes generating ideas, choosing the best solution, and making, testing, and redesigning models or prototypes. | Engineering design requirements and specifications involve making trade-offs between competing requirements and desired design features.",
+      "statement": "Explain the need for optimization in a design process."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.8.ED.6",
+      "grade": "8",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "ED - Engineering Design",
+      "core_idea": "Engineering design is a systematic, creative, and iterative process used to address local and global problems. | The process includes generating ideas, choosing the best solution, and making, testing, and redesigning models or prototypes. | Engineering design requirements and specifications involve making trade-offs between competing requirements and desired design features.",
+      "statement": "Analyze how trade-offs can impact the design of a product."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.8.ED.7",
+      "grade": "8",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "ED - Engineering Design",
+      "core_idea": "Engineering design is a systematic, creative, and iterative process used to address local and global problems. | The process includes generating ideas, choosing the best solution, and making, testing, and redesigning models or prototypes. | Engineering design requirements and specifications involve making trade-offs between competing requirements and desired design features.",
+      "statement": "Design a product to address a real-world problem and document the iterative design process, including decisions made as a result of specific constraints and trade-offs (e.g., annotated sketches)."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.8.ITH.1",
+      "grade": "8",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "ITH - Interaction of Technology and Humans",
+      "core_idea": "Economic, political, social and cultural aspects of society drive development of new technological products, processes, and systems.",
+      "statement": "Explain how the development and use of technology influences economic, political, social, and cultural issues."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.8.ITH.2",
+      "grade": "8",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "ITH - Interaction of Technology and Humans",
+      "core_idea": "Technology interacts with society, sometimes bringing about changes in a society’s economy, politics, and culture, and often leading to the creation of new needs and wants. | New needs and wants may create strains on local economies and workforces. | Improvements in technology are intended to make the completion of tasks easier, safer, and/or more efficient.",
+      "statement": "Compare how technologies have influenced society over time."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.8.ITH.3",
+      "grade": "8",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "ITH - Interaction of Technology and Humans",
+      "core_idea": "Technology interacts with society, sometimes bringing about changes in a society’s economy, politics, and culture, and often leading to the creation of new needs and wants. | New needs and wants may create strains on local economies and workforces. | Improvements in technology are intended to make the completion of tasks easier, safer, and/or more efficient.",
+      "statement": "Evaluate the impact of sustainability on the development of a designed product or system."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.8.ITH.4",
+      "grade": "8",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "ITH - Interaction of Technology and Humans",
+      "core_idea": "Technology interacts with society, sometimes bringing about changes in a society’s economy, politics, and culture, and often leading to the creation of new needs and wants. | New needs and wants may create strains on local economies and workforces. | Improvements in technology are intended to make the completion of tasks easier, safer, and/or more efficient.",
+      "statement": "Identify technologies that have been designed to reduce the negative consequences of other technologies and explain the change in impact."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.8.ITH.5",
+      "grade": "8",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "ITH - Interaction of Technology and Humans",
+      "core_idea": "Technology interacts with society, sometimes bringing about changes in a society’s economy, politics, and culture, and often leading to the creation of new needs and wants. | New needs and wants may create strains on local economies and workforces. | Improvements in technology are intended to make the completion of tasks easier, safer, and/or more efficient.",
+      "statement": "Compare the impacts of a given technology on different societies, noting factors that may make a technology appropriate and sustainable in one society but not in another."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.8.NT.1",
+      "grade": "8",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "NT - Nature of Technology",
+      "core_idea": "Technology advances through the processes of innovation and invention which relies upon the imaginative and inventive nature of people. | Sometimes a technology developed for one purpose is adapted to serve other purposes. | Engineers use a systematic process of creating or modifying technologies that is fueled and constrained by physical laws, cultural norms, and economic resources. Scientists use systematic investigation to understand the natural world.",
+      "statement": "Examine a malfunctioning tool, product, or system and propose solutions to the problem."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.8.NT.2",
+      "grade": "8",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "NT - Nature of Technology",
+      "core_idea": "Technology advances through the processes of innovation and invention which relies upon the imaginative and inventive nature of people. | Sometimes a technology developed for one purpose is adapted to serve other purposes. | Engineers use a systematic process of creating or modifying technologies that is fueled and constrained by physical laws, cultural norms, and economic resources. Scientists use systematic investigation to understand the natural world.",
+      "statement": "Analyze an existing technological product that has been repurposed for a different function."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.8.NT.3",
+      "grade": "8",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "NT - Nature of Technology",
+      "core_idea": "Technology advances through the processes of innovation and invention which relies upon the imaginative and inventive nature of people. | Sometimes a technology developed for one purpose is adapted to serve other purposes. | Engineers use a systematic process of creating or modifying technologies that is fueled and constrained by physical laws, cultural norms, and economic resources. Scientists use systematic investigation to understand the natural world.",
+      "statement": "Examine a system, consider how each part relates to other parts, and redesign it for another purpose."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.8.NT.4",
+      "grade": "8",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "NT - Nature of Technology",
+      "core_idea": "Technology advances through the processes of innovation and invention which relies upon the imaginative and inventive nature of people. | Sometimes a technology developed for one purpose is adapted to serve other purposes. | Engineers use a systematic process of creating or modifying technologies that is fueled and constrained by physical laws, cultural norms, and economic resources. Scientists use systematic investigation to understand the natural world.",
+      "statement": "Explain how a product designed for a specific demand was modified to meet a new demand and led to a new product."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.8.ETW.1",
+      "grade": "8",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "ETW - Effects of Technology on the Natural World",
+      "core_idea": "Resources need to be utilized wisely to have positive effects on the environment and society. | Some technological decisions involve trade-offs between environmental and economic needs, while others have positive effects for both the economy and environment.",
+      "statement": "Illustrate how a product is upcycled into a new product and analyze the short- and long-term benefits and costs."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.8.ETW.2",
+      "grade": "8",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "ETW - Effects of Technology on the Natural World",
+      "core_idea": "Resources need to be utilized wisely to have positive effects on the environment and society. | Some technological decisions involve trade-offs between environmental and economic needs, while others have positive effects for both the economy and environment.",
+      "statement": "Analyze the impact of modifying resources in a product or system (e.g., materials, energy, information, time, tools, people, capital)."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.8.ETW.3",
+      "grade": "8",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "ETW - Effects of Technology on the Natural World",
+      "core_idea": "Resources need to be utilized wisely to have positive effects on the environment and society. | Some technological decisions involve trade-offs between environmental and economic needs, while others have positive effects for both the economy and environment.",
+      "statement": "Analyze the design of a product that negatively impacts the environment or society and develop possible solutions to lessen its impact."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.8.ETW.4",
+      "grade": "8",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "ETW - Effects of Technology on the Natural World",
+      "core_idea": "Resources need to be utilized wisely to have positive effects on the environment and society. | Some technological decisions involve trade-offs between environmental and economic needs, while others have positive effects for both the economy and environment.",
+      "statement": "Compare the environmental effects of two alternative technologies devised to address climate change issues and use data to justify which choice is best."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.8.EC.1",
+      "grade": "8",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "EC - Ethics & Culture",
+      "core_idea": "Technological disparities have consequences for public health and prosperity.",
+      "statement": "Explain ethical issues that may arise from the use of new technologies."
+    },
+    {
+      "subject": "csdt",
+      "code": "8.2.8.EC.2",
+      "grade": "8",
+      "standard": "8.2 - Design Thinking",
+      "disciplinary_concept": "EC - Ethics & Culture",
+      "core_idea": "Technological disparities have consequences for public health and prosperity.",
+      "statement": "Examine the effects of ethical and unethical practices in product design and development."
     }
   ]
 }

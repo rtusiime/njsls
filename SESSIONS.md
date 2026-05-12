@@ -6,6 +6,89 @@ Entries are intentionally verbose. The point is full visibility: open the file a
 
 ---
 
+## Session 11 — 2026-05-12, afternoon EDT
+*Added Computer Science & Design Thinking (NJSLS 8.1 + 8.2) as the 5th subject on the hub. Verbatim extraction of all 163 PEs across grades 2/5/8/12; G5 + G8 visible by default on the page; cobalt accent.*
+
+### User request
+
+> before we do cc backlinks, lets add a few more standards
+> /Users/ktusiime/Desktop/DLA/Forge/curriculum/2020 NJSLS-CSDT.pdf
+> /Users/ktusiime/Desktop/DLA/Forge/curriculum/2020NJSLS-CLKS.pdf
+> /Users/ktusiime/Desktop/DLA/Forge/curriculum/2020_NJSLS-CHPE.pdf
+
+Three new subjects requested at once. CC-backlinks data-alignment gap from Session 7 deferred. I peeked at all three PDFs, surfaced that they share the same NJDOE framework shape (Standard → Disciplinary Concept → Core Idea → PE across grade bands 2/5/8/12), and asked the user for three scope decisions before starting:
+
+1. **Grade scope.** User picked: **extract all 4 bands into JSON, default the page UI to G5 + G8** so we don't need re-extraction if Forge expands.
+2. **Sequencing.** User picked: **CSDT first end-to-end**, then re-evaluate before CLKS + CHPE. This session covers CSDT only.
+3. **Accent palette.** User picked: **cobalt (#2D4A8C) / amber (#A47318) / rose (#A6526B)**. Only cobalt is wired this session.
+
+### What changed
+
+**New data file** — `data/csdt.json`.
+- 163 PEs total. Two standards: 8.1 Computer Science (87 PEs) and 8.2 Design Thinking (76 PEs).
+- Schema: `standards[] → grade_bands[band] → disciplinary_concepts[] → core_idea_blocks[] → pes[]`. New field `core_ideas: [string]` (plural array, not singular) because some source table rows pair multiple core ideas with one PE list — preserved as-is.
+- Per-grade counts: 8.1 — G2:18, G5:18, G8:25, G12:26 | 8.2 — G2:16, G5:20, G8:22, G12:18.
+- `default_visible_grade_bands: ["5", "8"]` so the page UI knows which bands to surface by default.
+
+**Source-PDF typo corrected.** PE `8.2.12.ETW.4` appears in the source PDF (page 43) printed under the *Ethics & Culture* table — but its code says it belongs to *Effects of Technology on the Natural World*. Two interpretations: (a) code is truth, placement is the typo; (b) placement is truth, code is the typo. Chose (a) because the statement content reads as environmental ("environmental and economic considerations…") and because the UI filters by concept abbreviation — keeping the code's parent concept consistent. PE moved into the ETW block in JSON; footnote called out in the page's source-line.
+
+**New subject page** — `csdt.html`, modeled on `social-studies.html` (the closest existing shape, also by-concept).
+- Cobalt accent `#2D4A8C` with pale `#DEE4F1`, soft `#6B83B7`, deep `#1F356A`.
+- Filter rows: **Grade band** (5 pills — "Forge — G5 + G8" default + each individual band G2/G5/G8/G12), **Standard** (All / 8.1 / 8.2), **Concept** (dynamically built one pill per disciplinary concept abbreviation, with `.dim` styling for pills that don't belong to the currently-selected standard), **Search** (live substring on statement + code + concept + core ideas).
+- Render order is G5, G8, G2, G12 — Forge bands at the top of the page so the default view doesn't scroll.
+- "Concept" filter resets to All when the Standard filter changes to one that doesn't include the currently-active concept abbreviation.
+- Core-idea block now renders **multiple** core-idea boxes when the source had multiple — but only the *first* gets the "Core idea" caption, so the visual cluster is obvious.
+
+**Build script** — `scripts/build_all.py`:
+- Added `csdt` adapter. Flattens only the **visible** grade bands (G5 + G8) into `all.json` so the Claude semantic-search corpus stays scoped to Forge Prep grades. K-2 and HS PEs stay in `data/csdt.json` but don't leak into search results.
+- Flat record fields: `subject, code, grade, standard, disciplinary_concept, core_idea, statement` (core_ideas joined with ` | ` for the flat representation).
+- `all.json` now has **608 standards** total (was 523). Per-subject: ela 130, math 110, science 74, social_studies 209, csdt 85.
+
+**Hub** — `index.html`:
+- New `:root` vars: `--csdt: #2D4A8C` and `--csdt-pale: #DEE4F1`.
+- Fifth subject card added (titled "Algorithms, Systems, Design & Ethics"), classed `.subject-card.csdt.ready`. Grid wraps cleanly with 5 cards.
+- Added a 5th radial-gradient bloom in cobalt to balance the warm-paper background.
+- `SUBJECT_LABELS`, `SUBJECT_FULL`, `SUBJECT_HREF` maps extended with `csdt`. `.result-card.subject-csdt` and `.result-card.subject-social_studies` accent rules added (SS was previously missing here — would have made SS result cards render with no accent stripe color; latent bug fixed in passing).
+- `renderCard()` context fallback chain now includes `r.disciplinary_concept` ahead of `r.standard` so CSDT result cards surface "CS - Computing Systems" rather than just "8.1 - Computer Science".
+- Hint copy updated: "523 standards" → "608 standards".
+- `<link rel=alternate>` JSON-corpus description updated to include CS&DT.
+
+### Spot-checks performed
+
+- `python3 -c "import json; json.load(open('data/csdt.json'))"` — valid JSON.
+- All 163 codes unique, no `code/parent-abbrev` mismatches after the ETW.4 fix.
+- Verbatim spot-checks against PDF (subagent + me): `8.1.2.CS.1`, `8.1.8.AP.6`, `8.2.12.EC.3` — all match source text.
+- `python3 scripts/build_all.py` — 608 records, csdt=85 (G5: 38 + G8: 47).
+- Local `http.server` smoke test: `csdt.html`, `data/csdt.json`, `data/all.json`, `index.html` all 200; CSDT card class + href + JSON link all present in served HTML.
+- **Not done in this session:** interactive browser test of filter pill behavior, concept-pill dimming on standard change, render-order visual, and the hub's 5-card grid wrap on multiple breakpoints. Flagging this — should be eyeballed in a browser before the next round of subjects gets added.
+
+### Tool / command transcript
+
+- `pdfinfo` + `pdftotext -layout` on all three PDFs (CSDT 43p, CLKS 56p, CHPE 66p) to size the work and verify framework shape.
+- Read the CSDT framework intro (line 638) for the PE coding convention; section headers at lines 778, 883, 989, 1119, 1248, 1318, 1396, 1496 confirmed clean grade-band boundaries.
+- Delegated extraction to a general-purpose subagent with the full pre-extracted text path, schema, and parsing rules. Subagent returned 163 PEs and self-flagged the ETW.4 issue, which I verified directly against the source before deciding how to handle.
+- 5 new files written / edited:
+  - `data/csdt.json` (new, 163 PEs)
+  - `scripts/build_all.py` (added csdt loader + subject metadata)
+  - `data/all.json` (regenerated)
+  - `csdt.html` (new, ~430 lines)
+  - `index.html` (palette + card + search maps + hint copy)
+
+### Decisions / flags for next session
+
+- **Source-typo policy.** Set a precedent with `8.2.12.ETW.4`: code is the source of truth for parent-concept placement when the source PDF puts a PE in a visually wrong cell. Apply the same rule to CLKS and CHPE if similar typos appear.
+- **Shared shape across CSDT / CLKS / CHPE.** All three use the same NJDOE framework structure. The `csdt.html` template is a clean baseline — CLKS and CHPE should mostly clone it, swap data file + accent vars + filter labels. Tempting to extract a shared component now, but per CLAUDE.md ("don't extract shared CSS or render JS yet … natural refactor trigger is adding subject #4 or #5"), we're already at the wrap-edge. Reconsider after CHPE.
+- **CC-backlinks gap still outstanding.** Session 7's three remediation paths (translation table / update CC tags / accept gap) need a call — deferred again.
+- **Forge Prep G5 + G8 scope.** With CSDT, the "Forge" grade-band pill is a multi-band selector for the first time (existing subjects single-band). Once CLKS and CHPE land (also K-12 docs), this UI pattern will be reused — keep it.
+
+### Commits produced
+
+| Hash | Time (EDT) | Message |
+|---|---|---|
+| _(to be filled at commit time)_ | | Add CSDT (NJSLS 8.1 + 8.2) as 5th subject + cobalt palette |
+
+---
+
 ## Session 10 — 2026-05-12, 03:25 AM EDT
 *Split keyword from Claude search on the hub. Live in-browser keyword/code matching by default; Claude becomes an explicit, paid opt-in.*
 

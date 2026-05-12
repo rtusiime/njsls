@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>New Jersey Student Learning Standards — Forge Curriculum Reference</title>
-<link rel="alternate" type="application/json" href="data/all.json" title="All NJSLS standards as JSON (523 standards across ELA / Math / Science / Social Studies)">
+<link rel="alternate" type="application/json" href="data/all.json" title="All NJSLS standards as JSON (608 standards across ELA / Math / Science / Social Studies / CS&DT)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -29,6 +29,8 @@
   --science-pale: #DFEADF;
   --ss: #7E4E6E;
   --ss-pale: #ECDFE5;
+  --csdt: #2D4A8C;
+  --csdt-pale: #DEE4F1;
   --shadow: 0 1px 0 rgba(26,24,20,0.04), 0 8px 24px -12px rgba(26,24,20,0.08);
   --shadow-lift: 0 2px 0 rgba(26,24,20,0.06), 0 18px 36px -16px rgba(26,24,20,0.16);
 }
@@ -42,7 +44,8 @@ body {
     radial-gradient(circle at 10% 8%, rgba(139,58,31,0.03) 0%, transparent 38%),
     radial-gradient(circle at 90% 18%, rgba(31,90,110,0.025) 0%, transparent 38%),
     radial-gradient(circle at 12% 78%, rgba(63,107,71,0.025) 0%, transparent 38%),
-    radial-gradient(circle at 88% 88%, rgba(126,78,110,0.025) 0%, transparent 38%);
+    radial-gradient(circle at 88% 88%, rgba(126,78,110,0.025) 0%, transparent 38%),
+    radial-gradient(circle at 50% 50%, rgba(45,74,140,0.02) 0%, transparent 45%);
 }
 header.masthead {
   max-width: 1100px; margin: 0 auto;
@@ -103,6 +106,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 56px 48px 80px; }
 .subject-card.math { --accent: var(--math); --accent-pale: var(--math-pale); }
 .subject-card.science { --accent: var(--science); --accent-pale: var(--science-pale); }
 .subject-card.ss { --accent: var(--ss); --accent-pale: var(--ss-pale); }
+.subject-card.csdt { --accent: var(--csdt); --accent-pale: var(--csdt-pale); }
 
 .subject-card.ready:hover,
 .subject-card.ready:focus-visible {
@@ -326,9 +330,11 @@ footer {
   content: ''; position: absolute; left: 0; top: 0; bottom: 0;
   width: 4px; background: var(--card-accent); opacity: 0.85;
 }
-.result-card.subject-ela {     --card-accent: var(--ela); }
-.result-card.subject-math {    --card-accent: var(--math); }
-.result-card.subject-science { --card-accent: var(--science); }
+.result-card.subject-ela {            --card-accent: var(--ela); }
+.result-card.subject-math {           --card-accent: var(--math); }
+.result-card.subject-science {        --card-accent: var(--science); }
+.result-card.subject-social_studies { --card-accent: var(--ss); }
+.result-card.subject-csdt {           --card-accent: var(--csdt); }
 .result-header {
   display: flex; align-items: center; gap: 10px;
   margin-bottom: 12px; flex-wrap: wrap;
@@ -536,7 +542,7 @@ footer {
   <section class="search-section" id="search">
     <div class="search-eyebrow">Discovery</div>
     <h2 class="search-prompt">Find standards that <em>match</em> what you're teaching.</h2>
-    <p class="search-hint">Type a <strong>code</strong> or <strong>keyword</strong> for an instant match across all 523 standards. For <strong>semantic matching</strong> on a vague description or a pasted lesson plan, click <strong>Search with Claude</strong> — that one calls the Anthropic API with your key.</p>
+    <p class="search-hint">Type a <strong>code</strong> or <strong>keyword</strong> for an instant match across all 608 standards. For <strong>semantic matching</strong> on a vague description or a pasted lesson plan, click <strong>Search with Claude</strong> — that one calls the Anthropic API with your key.</p>
     <form class="search-form" id="search-form" autocomplete="off">
       <textarea class="search-input" id="search-input" rows="1" placeholder="Type a code or keyword for instant matches… or describe a goal and click Search with Claude" required></textarea>
       <button type="submit" class="search-submit" id="search-submit">Search with Claude</button>
@@ -615,6 +621,20 @@ footer {
       </div>
     </a>
 
+    <a class="subject-card csdt ready" href="csdt.html" aria-label="Open Computer Science and Design Thinking standards">
+      <div class="card-header">
+        <div class="card-eyebrow">Computer Science &amp; Design Thinking</div>
+        <span class="card-status">Ready</span>
+      </div>
+      <h2 class="card-title">Algorithms, Systems,<br><em>Design</em> &amp; Ethics</h2>
+      <div class="card-grade-band">Grades 5 + 8 · Adopted 2020</div>
+      <p class="card-description">Standards 8.1 (Computer Science) and 8.2 (Design Thinking). Ten disciplinary concepts from computing systems and algorithms through engineering design and technology ethics.</p>
+      <div class="card-footer">
+        <span class="card-source">NJSLS · CS&amp;DT · 2020</span>
+        <span class="card-cta">Open <span class="arrow">→</span></span>
+      </div>
+    </a>
+
   </div>
 
   <section class="about-strip">
@@ -656,18 +676,20 @@ footer {
   const MODEL = 'claude-sonnet-4-6';
   const ENDPOINT = 'https://api.anthropic.com/v1/messages';
 
-  const SUBJECT_LABELS = { ela: 'ELA', math: 'Math', science: 'Science', social_studies: 'SS' };
+  const SUBJECT_LABELS = { ela: 'ELA', math: 'Math', science: 'Science', social_studies: 'SS', csdt: 'CS&DT' };
   const SUBJECT_FULL = {
     ela: 'English Language Arts',
     math: 'Mathematics',
     science: 'Science',
     social_studies: 'Social Studies',
+    csdt: 'Computer Science & Design Thinking',
   };
   const SUBJECT_HREF = {
     ela: 'ela.html',
     math: 'math.html',
     science: 'science.html',
     social_studies: 'social-studies.html',
+    csdt: 'csdt.html',
   };
 
   let corpus = null;
@@ -931,7 +953,7 @@ Rules:
 
   // -- Render --
   function renderCard(r) {
-    const context = r.anchor || r.cluster || r.topic || r.domain || r.discipline || r.standard || '';
+    const context = r.anchor || r.cluster || r.topic || r.disciplinary_concept || r.domain || r.discipline || r.standard || '';
     const gradeLabel = r.subject === 'science' && r.grade === 'MS' ? 'Grades 6–8' : 'Grade ' + r.grade;
     const href = SUBJECT_HREF[r.subject] || (r.subject + '.html');
     return `
