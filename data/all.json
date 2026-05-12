@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "site": "https://rtusiime.github.io/njsls/",
-  "source": "New Jersey Department of Education - NJSLS (2023 ELA + Math, 2020 Science / SS / CSDT)",
-  "standard_count": 608,
+  "source": "New Jersey Department of Education - NJSLS (2023 ELA + Math, 2020 Science / SS / CSDT / CLKS / CHPE)",
+  "standard_count": 900,
   "subjects": {
     "ela": {
       "title": "English Language Arts",
@@ -26,6 +26,16 @@
     },
     "csdt": {
       "title": "Computer Science & Design Thinking",
+      "grade_range": "5-8 (end-of-grade 5 + 8)",
+      "adopted": "2020"
+    },
+    "clks": {
+      "title": "Career Readiness, Life Literacies & Key Skills",
+      "grade_range": "5-8 (end-of-grade 5 + 8)",
+      "adopted": "2020"
+    },
+    "chpe": {
+      "title": "Comprehensive Health & Physical Education",
       "grade_range": "5-8 (end-of-grade 5 + 8)",
       "adopted": "2020"
     }
@@ -5963,6 +5973,2634 @@
       "disciplinary_concept": "EC - Ethics & Culture",
       "core_idea": "Technological disparities have consequences for public health and prosperity.",
       "statement": "Examine the effects of ethical and unethical practices in product design and development."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.5.CR.1",
+      "grade": "5",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "CR - Civic Financial Responsibility",
+      "core_idea": "You can give back in areas that matter to you.",
+      "statement": "Compare various ways to give back and relate them to your strengths, interests, and other personal factors."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.5.CP.1",
+      "grade": "5",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "CP - Credit Profile",
+      "core_idea": "There are benefits to having a positive credit history.",
+      "statement": "Identify the advantages of maintaining a positive credit history."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.5.EG.1",
+      "grade": "5",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "EG - Economic and Government Influences",
+      "core_idea": "Taxes are collected on a variety of goods and services at the local, state, and federal levels.",
+      "statement": "Explain and give examples of what is meant by the term “tax.”"
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.5.EG.2",
+      "grade": "5",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "EG - Economic and Government Influences",
+      "core_idea": "Taxes are collected on a variety of goods and services at the local, state, and federal levels.",
+      "statement": "Describe how tax monies are spent"
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.5.EG.3",
+      "grade": "5",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "EG - Economic and Government Influences",
+      "core_idea": "There is a broader economic system that influences your financial goals.",
+      "statement": "Explain the impact of the economic system on one’s personal financial goals."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.5.EG.4",
+      "grade": "5",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "EG - Economic and Government Influences",
+      "core_idea": "There is a broader economic system that influences your financial goals.",
+      "statement": "Describe how an individual’s financial decisions affect society and contribute to the overall economy."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.5.EG.5",
+      "grade": "5",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "EG - Economic and Government Influences",
+      "core_idea": "There are agencies, laws, and resources to protect individuals as consumers.",
+      "statement": "Identify sources of consumer protection and assistance."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.5.FI.1",
+      "grade": "5",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "FI - Financial Institutions",
+      "core_idea": "People can choose to save money in many places such as home in a piggy bank, bank, or credit union.",
+      "statement": "Identify various types of financial institutions and the services they offer including banks, credit unions, and credit card companies."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.5.FP.1",
+      "grade": "5",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "FP - Financial Psychology",
+      "core_idea": "An individual’s financial traits and habits affect his/her finances. Spending choices and their intended and unintended consequences impact financial outcomes and personal well- being.",
+      "statement": "Illustrate the impact of financial traits on financial decisions."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.5.FP.2",
+      "grade": "5",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "FP - Financial Psychology",
+      "core_idea": "An individual’s financial traits and habits affect his/her finances. Spending choices and their intended and unintended consequences impact financial outcomes and personal well- being.",
+      "statement": "Identify the elements of being a good steward of money."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.5.FP.3",
+      "grade": "5",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "FP - Financial Psychology",
+      "core_idea": "An individual’s financial traits and habits affect his/her finances. Spending choices and their intended and unintended consequences impact financial outcomes and personal well- being.",
+      "statement": "Analyze how spending choices and decision-making can result in positive or negative consequences."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.5.FP.4",
+      "grade": "5",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "FP - Financial Psychology",
+      "core_idea": "An individual’s financial traits and habits affect his/her finances. Spending choices and their intended and unintended consequences impact financial outcomes and personal well- being.",
+      "statement": "Explain the role of spending money and how it affects well- being and happiness (e.g., \"happy money,\" experiences over things, donating to causes, anticipation, etc.)."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.5.FP.5",
+      "grade": "5",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "FP - Financial Psychology",
+      "core_idea": "Not all financial information is accurate or truthful.",
+      "statement": "Illustrate how inaccurate information is disseminated through various external influencers including the media, advertisers/marketers, friends, educators, and family members."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.5.PB.1",
+      "grade": "5",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "PB - Planning and Budgeting",
+      "core_idea": "There are specific steps associated with creating a budget.",
+      "statement": "Develop a personal budget and explain how it reflects spending, saving, and charitable contributions."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.5.PB.2",
+      "grade": "5",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "PB - Planning and Budgeting",
+      "core_idea": "Saving money can impact an individual’s ability to address emergencies and accomplish their short-and long-term goals.",
+      "statement": "Describe choices consumers have with money (e.g., save, spend, donate)."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.5.RMI.1",
+      "grade": "5",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "RMI - Risk Management and Insurance",
+      "core_idea": "Individuals can choose to accept inevitable risk or take steps to protect themselves by avoiding or reducing risk. | 2020 New Jersey Student Learning Standa 9.1 Personal Financi",
+      "statement": "Identify risks that individuals and households face."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.5.RMI.2",
+      "grade": "5",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "RMI - Risk Management and Insurance",
+      "core_idea": "Individuals can choose to accept inevitable risk or take steps to protect themselves by avoiding or reducing risk. | 2020 New Jersey Student Learning Standa 9.1 Personal Financi",
+      "statement": "Justify reasons to have insurance."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.CR.1",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "CR - Civic Financial Responsibility",
+      "core_idea": "Philanthropic and charitable organizations play important roles in supporting the interests of individuals and local and global communities and the issues that affect them. Individuals can use their talents, resources, and abilities to give back. The potential for building and using personal wealth includes responsibility to the broader community and an understanding of the legal rights and responsibilities of being a good citizen.",
+      "statement": "Compare and contrast the role of philanthropy, volunteer service, and charities in community development and the quality of life in a variety of cultures."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.CR.2",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "CR - Civic Financial Responsibility",
+      "core_idea": "Philanthropic and charitable organizations play important roles in supporting the interests of individuals and local and global communities and the issues that affect them. Individuals can use their talents, resources, and abilities to give back. The potential for building and using personal wealth includes responsibility to the broader community and an understanding of the legal rights and responsibilities of being a good citizen.",
+      "statement": "Compare various ways to give back through strengths, passions, goals, and other personal factors."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.CR.3",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "CR - Civic Financial Responsibility",
+      "core_idea": "Philanthropic and charitable organizations play important roles in supporting the interests of individuals and local and global communities and the issues that affect them. Individuals can use their talents, resources, and abilities to give back. The potential for building and using personal wealth includes responsibility to the broader community and an understanding of the legal rights and responsibilities of being a good citizen.",
+      "statement": "Relate the importance of consumer, business, and government responsibility to the economy and personal finance."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.CR.4",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "CR - Civic Financial Responsibility",
+      "core_idea": "Philanthropic and charitable organizations play important roles in supporting the interests of individuals and local and global communities and the issues that affect them. Individuals can use their talents, resources, and abilities to give back. The potential for building and using personal wealth includes responsibility to the broader community and an understanding of the legal rights and responsibilities of being a good citizen.",
+      "statement": "Examine the implications of legal and ethical behaviors when making financial decisions."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.CDM.1",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "CDM - Credit and Debt Management",
+      "core_idea": "There are strategies to increase your savings and limit debt.",
+      "statement": "Compare and contrast the use of credit cards and debit cards for specific purchases and the advantages and disadvantages of using each."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.CDM.2",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "CDM - Credit and Debt Management",
+      "core_idea": "There are strategies to increase your savings and limit debt.",
+      "statement": "Demonstrate an understanding of the terminology associated with different types of credit (e.g., credit cards, installment loans, mortgages, lines of credit) and compare and calculate the interest rates associated with each."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.CDM.3",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "CDM - Credit and Debt Management",
+      "core_idea": "Credit management includes making informed choices about sources of credit and requires an understanding of the cost of credit.",
+      "statement": "Compare and contrast loan management strategies, including interest charges and total principal repayment costs."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.CDM.4",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "CDM - Credit and Debt Management",
+      "core_idea": "Credit management includes making informed choices about sources of credit and requires an understanding of the cost of credit.",
+      "statement": "Evaluate the application process for different types of loans (e.g., credit card, mortgage, student loans)."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.CP.1",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "CP - Credit Profile",
+      "core_idea": "There are strategies to build and maintain a good credit history.",
+      "statement": "Compare prices for the same goods or services."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.CP.2",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "CP - Credit Profile",
+      "core_idea": "There are strategies to build and maintain a good credit history.",
+      "statement": "Analyze how spending habits affect one’s ability to save."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.CP.3",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "CP - Credit Profile",
+      "core_idea": "There are strategies to build and maintain a good credit history.",
+      "statement": "Explain the purpose of a credit score and credit record, the factors and impact of credit scores."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.CP.4",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "CP - Credit Profile",
+      "core_idea": "There are strategies to build and maintain a good credit history.",
+      "statement": "Summarize borrower’s credit report rights."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.CP.5",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "CP - Credit Profile",
+      "core_idea": "Credit history affects personal finances.",
+      "statement": "Compare the financial products and services available to"
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.EG.1",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "EG - Economic and Government Influences",
+      "core_idea": "Taxes affect one’s personal finances.",
+      "statement": "Explain how taxes affect disposable income and the difference between net and gross income"
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.EG.2",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "EG - Economic and Government Influences",
+      "core_idea": "Taxes affect one’s personal finances.",
+      "statement": "Explain why various sources of income are taxed differently."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.EG.3",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "EG - Economic and Government Influences",
+      "core_idea": "There are government agencies and policies that affect the financial industry and the broader economy.",
+      "statement": "Explain the concept and forms of taxation and evaluate how local, state and federal governments use taxes to fund public activities and initiatives."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.EG.4",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "EG - Economic and Government Influences",
+      "core_idea": "There are government agencies and policies that affect the financial industry and the broader economy.",
+      "statement": "Identify and explain the consequences of breaking federal and/or state employment or financial laws."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.EG.5",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "EG - Economic and Government Influences",
+      "core_idea": "There are government agencies and policies that affect the financial industry and the broader economy.",
+      "statement": "Interpret how changing economic and societal needs influence employment trends and future education."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.EG.6",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "EG - Economic and Government Influences",
+      "core_idea": "There are government agencies and policies that affect the financial industry and the broader economy.",
+      "statement": "Explain the economic principle of the circular flow of money in different situations regarding buying products or services from a local or national business and buying imported or domestic goods."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.EG.7",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "EG - Economic and Government Influences",
+      "core_idea": "There are government agencies and policies that affect the financial industry and the broader economy.",
+      "statement": "Explain the effect of the economy (e.g., inflation, unemployment) on personal income, individual and family security, and consumer decisions."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.EG.8",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "EG - Economic and Government Influences",
+      "core_idea": "There are government agencies and policies that affect the financial industry and the broader economy.",
+      "statement": "Analyze the impact of currency rates over a period of time and the impact on trade, employment, and income."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.EG.9",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "EG - Economic and Government Influences",
+      "core_idea": "There are procedures required to take advantage of consumer protection laws and assistance programs.",
+      "statement": "Identify types of consumer fraud, the procedures for reporting fraud, the specific consumer protection laws, and the issues they address."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.FI.1",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "FI - Financial Institutions",
+      "core_idea": "There are a variety of factors that influence how well suited a financial institution and/or service will be in meeting an individual’s financial needs.",
+      "statement": "Identify the factors to consider when selecting various financial service providers."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.FI.2",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "FI - Financial Institutions",
+      "core_idea": "There are a variety of factors that influence how well suited a financial institution and/or service will be in meeting an individual’s financial needs.",
+      "statement": "Determine the most appropriate use of various financial products and services to borrow and access money for making purchases (e.g., ATM, debit cards, credit cards, check books, online/mobile banking)."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.FI.3",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "FI - Financial Institutions",
+      "core_idea": "There are a variety of factors that influence how well suited a financial institution and/or service will be in meeting an individual’s financial needs.",
+      "statement": "Evaluate the most appropriate financial institutions to assist with meeting various personal financial needs and goals."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.FI.4",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "FI - Financial Institutions",
+      "core_idea": "There are a variety of factors that influence how well suited a financial institution and/or service will be in meeting an individual’s financial needs.",
+      "statement": "Analyze the interest rates and fees associated with financial"
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.FP.1",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "FP - Financial Psychology",
+      "core_idea": "An individual’s values and emotions will influence the ability to modify financial behavior (when appropriate), which will impact one’s financial well-being.",
+      "statement": "Describe the impact of personal values on various financial scenarios."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.FP.2",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "FP - Financial Psychology",
+      "core_idea": "An individual’s values and emotions will influence the ability to modify financial behavior (when appropriate), which will impact one’s financial well-being.",
+      "statement": "Evaluate the role of emotions, attitudes, and behavior (rational and irrational) in making financial decisions."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.FP.3",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "FP - Financial Psychology",
+      "core_idea": "An individual’s values and emotions will influence the ability to modify financial behavior (when appropriate), which will impact one’s financial well-being.",
+      "statement": "Explain how self-regulation is important to managing money (e.g., delayed gratification, impulse buying, peer pressure, etc.)."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.FP.4",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "FP - Financial Psychology",
+      "core_idea": "An individual’s values and emotions will influence the ability to modify financial behavior (when appropriate), which will impact one’s financial well-being.",
+      "statement": "Analyze how familial and cultural values influence savings rates, spending, and other financial decisions."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.FP.5",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "FP - Financial Psychology",
+      "core_idea": "An individual’s values and emotions will influence the ability to modify financial behavior (when appropriate), which will impact one’s financial well-being.",
+      "statement": "Determine how spending, investing, and using credit wisely contributes to financial well-being."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.FP.6",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "FP - Financial Psychology",
+      "core_idea": "Marketing techniques are designed to encourage individuals to purchase items they may not need or want.",
+      "statement": "Compare and contrast advertising messages to understand what they are trying to accomplish."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.FP.7",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "FP - Financial Psychology",
+      "core_idea": "Marketing techniques are designed to encourage individuals to purchase items they may not need or want.",
+      "statement": "Identify the techniques and effects of deceptive advertising."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.PB.1",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "PB - Planning and Budgeting",
+      "core_idea": "A budget aligned with an individual’s financial goals can help prepare for life events.",
+      "statement": "Predict future expenses or opportunities that should be included in the budget planning process."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.PB.2",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "PB - Planning and Budgeting",
+      "core_idea": "A budget aligned with an individual’s financial goals can help prepare for life events.",
+      "statement": "Explain how different circumstances can affect one’s personal budget."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.PB.3",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "PB - Planning and Budgeting",
+      "core_idea": "A budget aligned with an individual’s financial goals can help prepare for life events.",
+      "statement": "Explain how to create budget that aligns with financial goals."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.PB.4",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "PB - Planning and Budgeting",
+      "core_idea": "A budget aligned with an individual’s financial goals can help prepare for life events.",
+      "statement": "Construct a simple personal savings and spending plan based on various sources of income and different stages of life (e.g. teenager, young adult, family)."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.PB.5",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "PB - Planning and Budgeting",
+      "core_idea": "Goals (e.g., higher education, autos, and homes, retirement), affect your finances.",
+      "statement": "Identify factors that affect one’s goals, including peers, culture, location, and past experiences."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.PB.6",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "PB - Planning and Budgeting",
+      "core_idea": "Goals (e.g., higher education, autos, and homes, retirement), affect your finances.",
+      "statement": "Construct a budget to save for short-term, long term, and charitable goals."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.PB.7",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "PB - Planning and Budgeting",
+      "core_idea": "There are strategies to decrease and manage expenses.",
+      "statement": "Brainstorm techniques that will help decrease expenses including comparison shopping, negotiating, and day-to-day expense"
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.RM.1",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "RM - Risk Management and Insurance",
+      "core_idea": "Individuals can choose to accept some risk, to take steps to avoid or reduce risk, or to transfer risk to others through the purchase of insurance.",
+      "statement": "Determine criteria for deciding the amount of insurance protection needed."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.RM.2",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "RM - Risk Management and Insurance",
+      "core_idea": "Individuals can choose to accept some risk, to take steps to avoid or reduce risk, or to transfer risk to others through the purchase of insurance.",
+      "statement": "Analyze the need for and value of different types of insurance and the impact of deductibles in protecting assets against loss."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.RM.3",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "RM - Risk Management and Insurance",
+      "core_idea": "Individuals can choose to accept some risk, to take steps to avoid or reduce risk, or to transfer risk to others through the purchase of insurance.",
+      "statement": "Evaluate the need for different types of warranties."
+    },
+    {
+      "subject": "clks",
+      "code": "9.1.8.RM.4",
+      "grade": "8",
+      "standard": "9.1 - Personal Financial Literacy",
+      "disciplinary_concept": "RM - Risk Management and Insurance",
+      "core_idea": "Insurance can protect your personal finances. | 9.1 Personal Financial Lite",
+      "statement": "Explain the purpose of insurance products and the reasons for property product and liability insurance protection."
+    },
+    {
+      "subject": "clks",
+      "code": "9.2.5.CAP.1",
+      "grade": "5",
+      "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
+      "disciplinary_concept": "CAP - Career Awareness and Planning",
+      "core_idea": "An individual’s passions, aptitude and skills can affect his/her employment and earning potential.",
+      "statement": "Evaluate personal likes and dislikes and identify careers that might be suited to personal likes."
+    },
+    {
+      "subject": "clks",
+      "code": "9.2.5.CAP.2",
+      "grade": "5",
+      "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
+      "disciplinary_concept": "CAP - Career Awareness and Planning",
+      "core_idea": "An individual’s passions, aptitude and skills can affect his/her employment and earning potential.",
+      "statement": "Identify how you might like to earn an income."
+    },
+    {
+      "subject": "clks",
+      "code": "9.2.5.CAP.3",
+      "grade": "5",
+      "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
+      "disciplinary_concept": "CAP - Career Awareness and Planning",
+      "core_idea": "An individual’s passions, aptitude and skills can affect his/her employment and earning potential.",
+      "statement": "Identify qualifications needed to pursue traditional and non-traditional careers and occupations."
+    },
+    {
+      "subject": "clks",
+      "code": "9.2.5.CAP.4",
+      "grade": "5",
+      "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
+      "disciplinary_concept": "CAP - Career Awareness and Planning",
+      "core_idea": "An individual’s passions, aptitude and skills can affect his/her employment and earning potential.",
+      "statement": "Explain the reasons why some jobs and careers require specific training, skills, and certification (e.g., life guards, child care, medicine, education) and examples of these requirements."
+    },
+    {
+      "subject": "clks",
+      "code": "9.2.5.CAP.5",
+      "grade": "5",
+      "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
+      "disciplinary_concept": "CAP - Career Awareness and Planning",
+      "core_idea": "Income and benefits can vary depending on the employer and type of job or career. There are a variety of factors to consider before starting a business.",
+      "statement": "Identify various employee benefits, including income, medical, vacation time, and lifestyle benefits provided by different types of jobs and careers."
+    },
+    {
+      "subject": "clks",
+      "code": "9.2.5.CAP.6",
+      "grade": "5",
+      "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
+      "disciplinary_concept": "CAP - Career Awareness and Planning",
+      "core_idea": "Income and benefits can vary depending on the employer and type of job or career. There are a variety of factors to consider before starting a business.",
+      "statement": "Compare the characteristics of a successful entrepreneur with the traits of successful employees."
+    },
+    {
+      "subject": "clks",
+      "code": "9.2.5.CAP.7",
+      "grade": "5",
+      "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
+      "disciplinary_concept": "CAP - Career Awareness and Planning",
+      "core_idea": "Income and benefits can vary depending on the employer and type of job or career. There are a variety of factors to consider before starting a business.",
+      "statement": "Identify factors to consider before starting a business."
+    },
+    {
+      "subject": "clks",
+      "code": "9.2.5.CAP.8",
+      "grade": "5",
+      "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
+      "disciplinary_concept": "CAP - Career Awareness and Planning",
+      "core_idea": "Individuals can choose to accept inevitable risk",
+      "statement": "Identify risks that individuals and households face."
+    },
+    {
+      "subject": "clks",
+      "code": "9.2.5.CAP.9",
+      "grade": "5",
+      "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
+      "disciplinary_concept": "CAP - Career Awareness and Planning",
+      "core_idea": "or take steps to protect themselves by avoiding or reducing risk. | 2020 New Jersey Student Learn 9.2 Career Awareness, Exp",
+      "statement": "Justify reasons to have insurance."
+    },
+    {
+      "subject": "clks",
+      "code": "9.2.8.CAP.1",
+      "grade": "8",
+      "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
+      "disciplinary_concept": "CAP - Career Awareness and Planning",
+      "core_idea": "An individual’s strengths, lifestyle goals, choices, and interests affect employment and income",
+      "statement": "Identify offerings such as high school and county career and technical school courses, apprenticeships, military programs, and dual enrollment courses that support career or occupational areas of interest."
+    },
+    {
+      "subject": "clks",
+      "code": "9.2.8.CAP.2",
+      "grade": "8",
+      "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
+      "disciplinary_concept": "CAP - Career Awareness and Planning",
+      "core_idea": "An individual’s strengths, lifestyle goals, choices, and interests affect employment and income",
+      "statement": "Develop a plan that includes information about career areas of interest."
+    },
+    {
+      "subject": "clks",
+      "code": "9.2.8.CAP.3",
+      "grade": "8",
+      "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
+      "disciplinary_concept": "CAP - Career Awareness and Planning",
+      "core_idea": "An individual’s strengths, lifestyle goals, choices, and interests affect employment and income",
+      "statement": "Explain how career choices, educational choices, skills, economic conditions, and personal behavior affect income."
+    },
+    {
+      "subject": "clks",
+      "code": "9.2.8.CAP.4",
+      "grade": "8",
+      "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
+      "disciplinary_concept": "CAP - Career Awareness and Planning",
+      "core_idea": "An individual’s strengths, lifestyle goals, choices, and interests affect employment and income",
+      "statement": "Explain how an individual’s online behavior (e.g., social networking, photo exchanges, video postings) may impact opportunities for employment or advancement."
+    },
+    {
+      "subject": "clks",
+      "code": "9.2.8.CAP.5",
+      "grade": "8",
+      "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
+      "disciplinary_concept": "CAP - Career Awareness and Planning",
+      "core_idea": "Developing and implementing an action plan is an essential step for achieving one’s personal and professional goals.",
+      "statement": "Develop a personal plan with the assistance of an adult mentor that includes information about career areas of interest, goals and an educational plan."
+    },
+    {
+      "subject": "clks",
+      "code": "9.2.8.CAP.6",
+      "grade": "8",
+      "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
+      "disciplinary_concept": "CAP - Career Awareness and Planning",
+      "core_idea": "Early planning can provide more options to pay for post- secondary training and employment.",
+      "statement": "Compare the costs of postsecondary education with the potential increase in income from a career of choice."
+    },
+    {
+      "subject": "clks",
+      "code": "9.2.8.CAP.7",
+      "grade": "8",
+      "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
+      "disciplinary_concept": "CAP - Career Awareness and Planning",
+      "core_idea": "Early planning can provide more options to pay for post- secondary training and employment.",
+      "statement": "Devise a strategy to minimize costs of postsecondary education."
+    },
+    {
+      "subject": "clks",
+      "code": "9.2.8.CAP.8",
+      "grade": "8",
+      "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
+      "disciplinary_concept": "CAP - Career Awareness and Planning",
+      "core_idea": "Early planning can provide more options to pay for post- secondary training and employment.",
+      "statement": "Compare education and training requirements, income potential, and primary duties of at least two jobs of interest."
+    },
+    {
+      "subject": "clks",
+      "code": "9.2.8.CAP.9",
+      "grade": "8",
+      "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
+      "disciplinary_concept": "CAP - Career Awareness and Planning",
+      "core_idea": "Early planning can provide more options to pay for post- secondary training and employment.",
+      "statement": "Analyze how a variety of activities related to career preparation (e.g., volunteering, apprenticeships, structured learning experiences, dual enrollment, job search, scholarships) impacts post- secondary options."
+    },
+    {
+      "subject": "clks",
+      "code": "9.2.8.CAP.10",
+      "grade": "8",
+      "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
+      "disciplinary_concept": "CAP - Career Awareness and Planning",
+      "core_idea": "There are variety of resources available to help navigate the career planning process.",
+      "statement": "Evaluate how careers have evolved regionally, nationally, and globally."
+    },
+    {
+      "subject": "clks",
+      "code": "9.2.8.CAP.11",
+      "grade": "8",
+      "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
+      "disciplinary_concept": "CAP - Career Awareness and Planning",
+      "core_idea": "There are variety of resources available to help navigate the career planning process.",
+      "statement": "Analyze potential career opportunities by considering different types of resources, including occupation databases, and state and national labor market statistics."
+    },
+    {
+      "subject": "clks",
+      "code": "9.2.8.CAP.12",
+      "grade": "8",
+      "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
+      "disciplinary_concept": "CAP - Career Awareness and Planning",
+      "core_idea": "There are variety of resources available to help navigate the career planning process.",
+      "statement": "Assess personal strengths, talents, values, and interests to appropriate jobs and careers to maximize career potential."
+    },
+    {
+      "subject": "clks",
+      "code": "9.2.8.CAP.13",
+      "grade": "8",
+      "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
+      "disciplinary_concept": "CAP - Career Awareness and Planning",
+      "core_idea": "Employee benefits can influence your employment choices.",
+      "statement": "Compare employee benefits when evaluating employment interests and explain the possible impact on personal finances."
+    },
+    {
+      "subject": "clks",
+      "code": "9.2.8.CAP.14",
+      "grade": "8",
+      "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
+      "disciplinary_concept": "CAP - Career Awareness and Planning",
+      "core_idea": "Employee benefits can influence your employment choices.",
+      "statement": "Evaluate sources of income and alternative resources to accurately compare employment options."
+    },
+    {
+      "subject": "clks",
+      "code": "9.2.8.CAP.15",
+      "grade": "8",
+      "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
+      "disciplinary_concept": "CAP - Career Awareness and Planning",
+      "core_idea": "Communication skills and responsible behavior in addition to education, experience, certifications, and skills are all factors that affect employment and income.",
+      "statement": "Present how the demand for certain skills, the job market, and credentials can determine an individual’s earning power."
+    },
+    {
+      "subject": "clks",
+      "code": "9.2.8.CAP.16",
+      "grade": "8",
+      "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
+      "disciplinary_concept": "CAP - Career Awareness and Planning",
+      "core_idea": "Communication skills and responsible behavior in addition to education, experience, certifications, and skills are all factors that affect employment and income.",
+      "statement": "Research different ways workers/ employees improve their earning power through education and the acquisition of new knowledge and skills."
+    },
+    {
+      "subject": "clks",
+      "code": "9.2.8.CAP.17",
+      "grade": "8",
+      "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
+      "disciplinary_concept": "CAP - Career Awareness and Planning",
+      "core_idea": "Communication skills and responsible behavior in addition to education, experience, certifications, and skills are all factors that affect employment and income.",
+      "statement": "Prepare a sample resume and cover letter as part of an application process."
+    },
+    {
+      "subject": "clks",
+      "code": "9.2.8.CAP.18",
+      "grade": "8",
+      "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
+      "disciplinary_concept": "CAP - Career Awareness and Planning",
+      "core_idea": "Communication skills and responsible behavior in addition to education, experience, certifications, and skills are all factors that affect employment and income.",
+      "statement": "Explain how personal behavior, appearance, attitudes, and other choices may impact the job application process."
+    },
+    {
+      "subject": "clks",
+      "code": "9.2.8.CAP.19",
+      "grade": "8",
+      "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
+      "disciplinary_concept": "CAP - Career Awareness and Planning",
+      "core_idea": "Communication skills and responsible behavior in addition to education, experience, certifications, and skills are all factors that affect employment and income.",
+      "statement": "Relate academic achievement, as represented by high school diplomas, college degrees, and industry credentials, to employability and to potential level"
+    },
+    {
+      "subject": "clks",
+      "code": "9.2.8.CAP.20",
+      "grade": "8",
+      "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
+      "disciplinary_concept": "CAP - Career Awareness and Planning",
+      "core_idea": "There are resources to help an individual create a business plan to start or expand a business. | 2020 New Jersey Student Learning Stand 9.2 Career Awareness, Exploration,",
+      "statement": "Identify the items to consider when estimating the cost of funding a business."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.5.CI.1",
+      "grade": "5",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "CI - Creativity and Innovation",
+      "core_idea": "Collaboration with individuals with diverse perspectives can result in new ways of thinking and/or innovative solutions.",
+      "statement": "Use appropriate communication technologies to collaborate with individuals with diverse perspectives about a local and/or global climate change issue and deliberate about possible solutions (e.g., W.4.6, 3.MD.B.3,7.1.NM.IPERS.6)."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.5.CI.2",
+      "grade": "5",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "CI - Creativity and Innovation",
+      "core_idea": "Collaboration with individuals with diverse perspectives can result in new ways of thinking and/or innovative solutions.",
+      "statement": "Investigate a persistent local or global issue, such as climate change, and collaborate with individuals with diverse perspectives to improve upon current actions designed to address the issue (e.g., 6.3.5.CivicsPD.3, W.5.7)."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.5.CI.3",
+      "grade": "5",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "CI - Creativity and Innovation",
+      "core_idea": "Curiosity and a willingness to try new ideas (intellectual risk-taking) contributes to the development of creativity and innovation skills.",
+      "statement": "Participate in a brainstorming session with individuals with diverse perspectives to"
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.5.CI.4",
+      "grade": "5",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "CI - Creativity and Innovation",
+      "core_idea": "Curiosity and a willingness to try new ideas (intellectual risk-taking) contributes to the development of creativity and innovation skills.",
+      "statement": "Research the development process of a product and identify the role of failure as a"
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.5.CT.1",
+      "grade": "5",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "CT - Critical Thinking and Problem-solving",
+      "core_idea": "The ability to solve problems effectively begins with gathering data, seeking resources, and applying critical thinking skills.",
+      "statement": "Identify and gather relevant data that will aid in the problem-solving process (e.g.,"
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.5.CT.2",
+      "grade": "5",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "CT - Critical Thinking and Problem-solving",
+      "core_idea": "The ability to solve problems effectively begins with gathering data, seeking resources, and applying critical thinking skills.",
+      "statement": "Identify a problem and list the types of individuals and resources (e.g., school, community agencies, governmental, online) that can aid in solving the problem (e.g.,"
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.5.CT.3",
+      "grade": "5",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "CT - Critical Thinking and Problem-solving",
+      "core_idea": "The ability to solve problems effectively begins with gathering data, seeking resources, and applying critical thinking skills.",
+      "statement": "Describe how digital tools and technology may be used to solve problems."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.5.CT.4",
+      "grade": "5",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "CT - Critical Thinking and Problem-solving",
+      "core_idea": "The ability to solve problems effectively begins with gathering data, seeking resources, and applying critical thinking skills.",
+      "statement": "Apply critical thinking and problem-solving strategies to different types of problems such as personal, academic, community and global (e.g., 6.1.5.CivicsCM.3)."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.5.DC.1",
+      "grade": "5",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "DC - Digital Citizenship",
+      "core_idea": "Intellectual property rights exist to protect the original works of individuals. It is allowable to use other people’s ideas in one’s own work provided that proper credit is given to the original source. Sending and receiving copies of media on the internet creates the opportunity for unauthorized use of data, such as personally owned video, photos, and music. Digital identities must be managed in order to create a positive digital footprint. Digital tools have positively and negatively changed the way people interact socially.",
+      "statement": "Explain the need for and use of copyrights."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.5.DC.2",
+      "grade": "5",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "DC - Digital Citizenship",
+      "core_idea": "Intellectual property rights exist to protect the original works of individuals. It is allowable to use other people’s ideas in one’s own work provided that proper credit is given to the original source. Sending and receiving copies of media on the internet creates the opportunity for unauthorized use of data, such as personally owned video, photos, and music. Digital identities must be managed in order to create a positive digital footprint. Digital tools have positively and negatively changed the way people interact socially.",
+      "statement": "Provide attribution according to intellectual property rights guidelines using public domain or creative commons media."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.5.DC.3",
+      "grade": "5",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "DC - Digital Citizenship",
+      "core_idea": "Intellectual property rights exist to protect the original works of individuals. It is allowable to use other people’s ideas in one’s own work provided that proper credit is given to the original source. Sending and receiving copies of media on the internet creates the opportunity for unauthorized use of data, such as personally owned video, photos, and music. Digital identities must be managed in order to create a positive digital footprint. Digital tools have positively and negatively changed the way people interact socially.",
+      "statement": "Distinguish between digital images that can be reused freely and those that have copyright restrictions."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.5.DC.4",
+      "grade": "5",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "DC - Digital Citizenship",
+      "core_idea": "Intellectual property rights exist to protect the original works of individuals. It is allowable to use other people’s ideas in one’s own work provided that proper credit is given to the original source. Sending and receiving copies of media on the internet creates the opportunity for unauthorized use of data, such as personally owned video, photos, and music. Digital identities must be managed in order to create a positive digital footprint. Digital tools have positively and negatively changed the way people interact socially.",
+      "statement": "Model safe, legal, and ethical behavior when using online or offline technology (e.g.,"
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.5.DC.5",
+      "grade": "5",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "DC - Digital Citizenship",
+      "core_idea": "Intellectual property rights exist to protect the original works of individuals. It is allowable to use other people’s ideas in one’s own work provided that proper credit is given to the original source. Sending and receiving copies of media on the internet creates the opportunity for unauthorized use of data, such as personally owned video, photos, and music. Digital identities must be managed in order to create a positive digital footprint. Digital tools have positively and negatively changed the way people interact socially.",
+      "statement": "Identify the characteristics of a positive and negative online identity and the lasting implications of online activity."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.5.DC.6",
+      "grade": "5",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "DC - Digital Citizenship",
+      "core_idea": "Intellectual property rights exist to protect the original works of individuals. It is allowable to use other people’s ideas in one’s own work provided that proper credit is given to the original source. Sending and receiving copies of media on the internet creates the opportunity for unauthorized use of data, such as personally owned video, photos, and music. Digital identities must be managed in order to create a positive digital footprint. Digital tools have positively and negatively changed the way people interact socially.",
+      "statement": "Compare and contrast how digital tools have changed social interactions (e.g.,"
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.5.DC.7",
+      "grade": "5",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "DC - Digital Citizenship",
+      "core_idea": "Intellectual property rights exist to protect the original works of individuals. It is allowable to use other people’s ideas in one’s own work provided that proper credit is given to the original source. Sending and receiving copies of media on the internet creates the opportunity for unauthorized use of data, such as personally owned video, photos, and music. Digital identities must be managed in order to create a positive digital footprint. Digital tools have positively and negatively changed the way people interact socially.",
+      "statement": "Explain how posting and commenting in social spaces can have positive or negative consequences."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.5.DC.8",
+      "grade": "5",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "DC - Digital Citizenship",
+      "core_idea": "Digital engagement can improve the planning and delivery of climate change actions.",
+      "statement": "Propose ways local and global communities can engage digitally to participate in and promote climate action (e.g., 6.3.5.GeoHE.1)."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.5.GCA.1",
+      "grade": "5",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "GCA - Global and Cultural Awareness",
+      "core_idea": "Culture and geography can shape an individual’s experiences and perspectives.",
+      "statement": "Analyze how culture shapes individual and community perspectives and points of view (e.g., 1.1.5.C2a, RL.5.9, 6.1.5.HistoryCC.8)."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.5.IML.1",
+      "grade": "5",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "IML - Information and Media Literacy",
+      "core_idea": "Digital tools and media resources provide access to vast stores of information, but the information can be biased or inaccurate. Digital tools can be used to modify and display data in various ways that can be organized to communicate ideas.",
+      "statement": "Evaluate digital sources for accuracy, perspective, credibility and relevance (e.g., Social Studies Practice - Gathering and Evaluating Sources)."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.5.IML.2",
+      "grade": "5",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "IML - Information and Media Literacy",
+      "core_idea": "Digital tools and media resources provide access to vast stores of information, but the information can be biased or inaccurate. Digital tools can be used to modify and display data in various ways that can be organized to communicate ideas.",
+      "statement": "Create a visual representation to organize information about a problem or issue"
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.5.IML.3",
+      "grade": "5",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "IML - Information and Media Literacy",
+      "core_idea": "Digital tools and media resources provide access to vast stores of information, but the information can be biased or inaccurate. Digital tools can be used to modify and display data in various ways that can be organized to communicate ideas.",
+      "statement": "Represent the same data in multiple visual formats in order to tell a story about the data."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.5.IML.4",
+      "grade": "5",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "IML - Information and Media Literacy",
+      "core_idea": "Accurate and comprehensive information comes in a variety of platforms and formats and is the basis for effective decision-making.",
+      "statement": "Determine the impact of implicit and explicit media messages on individuals, groups, and society as a whole."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.5.IML.5",
+      "grade": "5",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "IML - Information and Media Literacy",
+      "core_idea": "Accurate and comprehensive information comes in a variety of platforms and formats and is the basis for effective decision-making.",
+      "statement": "Distinguish how media are used by individuals, groups, and organizations for varying purposes. (e.g., 1.3A.5.R1a)."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.5.IML.6",
+      "grade": "5",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "IML - Information and Media Literacy",
+      "core_idea": "Specific situations require the use of relevant sources of information.",
+      "statement": "Use appropriate sources of information from diverse sources, contexts, disciplines, and cultures to answer questions (e.g., RI.5.7, 6.1.5.HistoryCC.7, 7.1.NM. IPRET.5)."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.5.IML.7",
+      "grade": "5",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "IML - Information and Media Literacy",
+      "core_idea": "Specific situations require the use of relevant sources of information.",
+      "statement": "Evaluate the degree to which information meets a need including social"
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.5.TL.1",
+      "grade": "5",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "TL - Technology Literacy",
+      "core_idea": "Different digital tools have different purposes.",
+      "statement": "Compare the common uses of at least two different digital tools and identify the advantages and disadvantages of using each."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.5.TL.2",
+      "grade": "5",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "TL - Technology Literacy",
+      "core_idea": "Different digital tools have different purposes.",
+      "statement": "Sort and filter data in a spreadsheet to analyze findings."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.5.TL.3",
+      "grade": "5",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "TL - Technology Literacy",
+      "core_idea": "Different digital tools have different purposes.",
+      "statement": "Format a document using a word processing application to enhance text, change page formatting, and include appropriate images graphics, or symbols."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.5.TL.4",
+      "grade": "5",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "TL - Technology Literacy",
+      "core_idea": "Collaborating digitally as a team can often develop a better artifact than an individual working alone. | 2020 New Jersey Student Learni 9.4 Lif",
+      "statement": "Compare and contrast artifacts produced individually to those developed collaboratively (e.g., 1.5.5.CR3a)."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.5.TL.5",
+      "grade": "5",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "TL - Technology Literacy",
+      "core_idea": "Collaborating digitally as a team can often develop a better artifact than an individual working alone. | 2020 New Jersey Student Learni 9.4 Lif",
+      "statement": "Collaborate digitally to produce an artifact (e.g., 1.2.5CR1d)."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.CI.1",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "CI - Creativity and Innovation",
+      "core_idea": "Gathering and evaluating knowledge and information from a variety of sources, including global perspectives, fosters creativity and innovative thinking.",
+      "statement": "Assess data gathered on varying perspectives on causes of climate change (e.g., cross- cultural, gender-specific, generational), and determine how the data can best be used to design"
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.CI.2",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "CI - Creativity and Innovation",
+      "core_idea": "Gathering and evaluating knowledge and information from a variety of sources, including global perspectives, fosters creativity and innovative thinking.",
+      "statement": "Repurpose an existing resource in an innovative way (e.g., 8.2.8.NT.3)."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.CI.3",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "CI - Creativity and Innovation",
+      "core_idea": "Gathering and evaluating knowledge and information from a variety of sources, including global perspectives, fosters creativity and innovative thinking.",
+      "statement": "Examine challenges that may exist in the adoption of new ideas (e.g., 2.1.8.SSH, 6.1.8.CivicsPD.2)."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.CI.4",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "CI - Creativity and Innovation",
+      "core_idea": "Gathering and evaluating knowledge and information from a variety of sources, including global perspectives, fosters creativity and innovative thinking.",
+      "statement": "Explore the role of creativity and innovation in career pathways and industries."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.CT.1",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "CT - Critical Thinking and Problem-solving",
+      "core_idea": "Multiple solutions often exist to solve a problem.",
+      "statement": "Evaluate diverse solutions proposed by a variety of individuals, organizations, and/or agencies to a local or global problem, such as climate change, and use critical thinking skills to predict which one(s) are likely to be effective (e.g., MS-ETS1-2)."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.CT.2",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "CT - Critical Thinking and Problem-solving",
+      "core_idea": "Multiple solutions often exist to solve a problem.",
+      "statement": "Develop multiple solutions to a problem and evaluate short- and long-term effects to determine the most plausible option (e.g., MS-ETS1-4, 6.1.8.CivicsDP.1)."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.CT.3",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "CT - Critical Thinking and Problem-solving",
+      "core_idea": "An essential aspect of problem solving is being able to self-reflect on why possible solutions for solving problems were or were not successful.",
+      "statement": "Compare past problem-solving solutions to local, national, or global issues and analyze the factors that led to a positive or negative outcome."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.DC.1",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "DC - Digital Citizenship",
+      "core_idea": "Detailed examples exist to illustrate crediting others when incorporating their digital artifacts in one’s own work. There are tradeoffs between allowing information to be public and keeping information private and secure. Digital footprints are publicly accessible, even if only shared with a select group. Appropriate measures such as proper interactions can protect online reputations.",
+      "statement": "Analyze the resource citations in online materials for proper use."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.DC.2",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "DC - Digital Citizenship",
+      "core_idea": "Detailed examples exist to illustrate crediting others when incorporating their digital artifacts in one’s own work. There are tradeoffs between allowing information to be public and keeping information private and secure. Digital footprints are publicly accessible, even if only shared with a select group. Appropriate measures such as proper interactions can protect online reputations.",
+      "statement": "Provide appropriate citation and attribution elements when creating media products (e.g., W.6.8)."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.DC.3",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "DC - Digital Citizenship",
+      "core_idea": "Detailed examples exist to illustrate crediting others when incorporating their digital artifacts in one’s own work. There are tradeoffs between allowing information to be public and keeping information private and secure. Digital footprints are publicly accessible, even if only shared with a select group. Appropriate measures such as proper interactions can protect online reputations.",
+      "statement": "Describe tradeoffs between allowing information to be public (e.g., within online games) versus keeping information private and secure."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.DC.4",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "DC - Digital Citizenship",
+      "core_idea": "Detailed examples exist to illustrate crediting others when incorporating their digital artifacts in one’s own work. There are tradeoffs between allowing information to be public and keeping information private and secure. Digital footprints are publicly accessible, even if only shared with a select group. Appropriate measures such as proper interactions can protect online reputations.",
+      "statement": "Explain how information shared digitally is public and can be searched, copied, and potentially seen by public audiences."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.DC.5",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "DC - Digital Citizenship",
+      "core_idea": "Detailed examples exist to illustrate crediting others when incorporating their digital artifacts in one’s own work. There are tradeoffs between allowing information to be public and keeping information private and secure. Digital footprints are publicly accessible, even if only shared with a select group. Appropriate measures such as proper interactions can protect online reputations.",
+      "statement": "Manage digital identity and practice positive online behavior to avoid inappropriate forms of self-disclosure."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.DC.6",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "DC - Digital Citizenship",
+      "core_idea": "Detailed examples exist to illustrate crediting others when incorporating their digital artifacts in one’s own work. There are tradeoffs between allowing information to be public and keeping information private and secure. Digital footprints are publicly accessible, even if only shared with a select group. Appropriate measures such as proper interactions can protect online reputations.",
+      "statement": "Analyze online information to distinguish whether it is helpful or harmful to reputation."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.DC.7",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "DC - Digital Citizenship",
+      "core_idea": "Digital communities are used by individuals to share information, organize, and engage around issues and topics of interest. Digital technology and data can be leveraged by communities to address effects of climate change.",
+      "statement": "Collaborate within a digital community to create a digital artifact using strategies such as crowdsourcing or digital surveys."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.DC.8",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "DC - Digital Citizenship",
+      "core_idea": "Digital communities are used by individuals to share information, organize, and engage around issues and topics of interest. Digital technology and data can be leveraged by communities to address effects of climate change.",
+      "statement": "Explain how communities use data and technology to develop measures to respond to effects of climate change (e.g., smart cities)."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.GCA.1",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "GCA - Global and Cultural Awareness",
+      "core_idea": "Awareness of and appreciation for cultural differences is critical to avoid barriers to productive and positive interaction.",
+      "statement": "Model how to navigate cultural differences with sensitivity and respect (e.g., 1.5.8.C1a)."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.GCA.2",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "GCA - Global and Cultural Awareness",
+      "core_idea": "Awareness of and appreciation for cultural differences is critical to avoid barriers to productive and positive interaction.",
+      "statement": "Demonstrate openness to diverse ideas and perspectives through active discussions to achieve a group goal."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.IML.1",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "IML - Information and Media Literacy",
+      "core_idea": "Increases in the quantity of information available through electronic means have heightened the need to check sources for possible distortion, exaggeration, or misrepresentation. Digital tools make it possible to analyze and interpret data, including text, images, and sound. These tools allow for broad concepts and data to be more effectively communicated.",
+      "statement": "Critically curate multiple resources to assess the credibility of sources when searching for information."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.IML.2",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "IML - Information and Media Literacy",
+      "core_idea": "Increases in the quantity of information available through electronic means have heightened the need to check sources for possible distortion, exaggeration, or misrepresentation. Digital tools make it possible to analyze and interpret data, including text, images, and sound. These tools allow for broad concepts and data to be more effectively communicated.",
+      "statement": "Identify specific examples of distortion, exaggeration, or misrepresentation of information."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.IML.3",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "IML - Information and Media Literacy",
+      "core_idea": "Increases in the quantity of information available through electronic means have heightened the need to check sources for possible distortion, exaggeration, or misrepresentation. Digital tools make it possible to analyze and interpret data, including text, images, and sound. These tools allow for broad concepts and data to be more effectively communicated.",
+      "statement": "Create a digital visualization that effectively communicates a data set using formatting techniques such as form, position, size, color, movement, and spatial grouping (e.g., 6.SP.B.4, 7.SP.B.8b)."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.IML.4",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "IML - Information and Media Literacy",
+      "core_idea": "Increases in the quantity of information available through electronic means have heightened the need to check sources for possible distortion, exaggeration, or misrepresentation. Digital tools make it possible to analyze and interpret data, including text, images, and sound. These tools allow for broad concepts and data to be more effectively communicated.",
+      "statement": "Ask insightful questions to organize different types of data and create meaningful visualizations."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.IML.5",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "IML - Information and Media Literacy",
+      "core_idea": "Increases in the quantity of information available through electronic means have heightened the need to check sources for possible distortion, exaggeration, or misrepresentation. Digital tools make it possible to analyze and interpret data, including text, images, and sound. These tools allow for broad concepts and data to be more effectively communicated.",
+      "statement": "Analyze and interpret local or public data sets to summarize and effectively communicate the data."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.IML.6",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "IML - Information and Media Literacy",
+      "core_idea": "The mode of information can convey a message to consumers or an audience.",
+      "statement": "Identify subtle and overt messages based on the method of communication."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.IML.7",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "IML - Information and Media Literacy",
+      "core_idea": "Sources of information are evaluated for accuracy and relevance when considering the use of information.",
+      "statement": "Use information from a variety of sources, contexts, disciplines, and cultures for a specific purpose (e.g., 1.2.8.C2a, 1.4.8.CR2a, 2.1.8.CHSS/IV.8.AI.1, W.5.8, 6.1.8.GeoSV.3.a, 6.1.8.CivicsDP.4.b, 7.1.NH. IPRET.8)."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.IML.8",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "IML - Information and Media Literacy",
+      "core_idea": "Sources of information are evaluated for accuracy and relevance when considering the use of information.",
+      "statement": "Apply deliberate and thoughtful search strategies to access high-quality information on climate change (e.g., 1.1.8.C1b)."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.IML.9",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "IML - Information and Media Literacy",
+      "core_idea": "There are ethical and unethical uses of information and media.",
+      "statement": "Distinguish between ethical and unethical uses of information and media (e.g.,"
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.IML.10",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "IML - Information and Media Literacy",
+      "core_idea": "There are ethical and unethical uses of information and media.",
+      "statement": "Examine the consequences of the uses of media (e.g., RI.8.7)."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.IML.11",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "IML - Information and Media Literacy",
+      "core_idea": "There are ethical and unethical uses of information and media.",
+      "statement": "Predict the personal and community impact of online and social media activities."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.IML.12",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "IML - Information and Media Literacy",
+      "core_idea": "There is a need to produce and publish media that has information supported with quality evidence and is intended for authentic audiences.",
+      "statement": "Use relevant tools to produce, publish, and deliver information supported with evidence for an authentic audience."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.IML.13",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "IML - Information and Media Literacy",
+      "core_idea": "There is a need to produce and publish media that has information supported with quality evidence and is intended for authentic audiences.",
+      "statement": "Identify the impact of the creator on the content, production, and delivery of"
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.IML.14",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "IML - Information and Media Literacy",
+      "core_idea": "There is a need to produce and publish media that has information supported with quality evidence and is intended for authentic audiences.",
+      "statement": "Analyze the role of media in delivering cultural, political, and other societal messages."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.IML.15",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "IML - Information and Media Literacy",
+      "core_idea": "There is a need to produce and publish media that has information supported with quality evidence and is intended for authentic audiences.",
+      "statement": "Explain ways that individuals may experience the same media message differently."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.TL.1",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "TL - Technology Literacy",
+      "core_idea": "Some digital tools are appropriate for gathering, organizing, analyzing, and presenting information, while other types of digital tools are appropriate for creating text, visualizations models, and communicating with others.",
+      "statement": "Construct a spreadsheet in order to analyze multiple data sets, identify relationships, and facilitate data-based decision-making."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.TL.2",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "TL - Technology Literacy",
+      "core_idea": "Some digital tools are appropriate for gathering, organizing, analyzing, and presenting information, while other types of digital tools are appropriate for creating text, visualizations models, and communicating with others.",
+      "statement": "Gather data and digitally represent information to communicate a real-world problem , (e.g., MS-ESS3-4, 6.1.8.EconET.1, 6.1.8.CivicsPR.4)."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.TL.3",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "TL - Technology Literacy",
+      "core_idea": "Some digital tools are appropriate for gathering, organizing, analyzing, and presenting information, while other types of digital tools are appropriate for creating text, visualizations models, and communicating with others.",
+      "statement": "Select appropriate tools to organize and present information digitally."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.TL.4",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "TL - Technology Literacy",
+      "core_idea": "Some digital tools are appropriate for gathering, organizing, analyzing, and presenting information, while other types of digital tools are appropriate for creating text, visualizations models, and communicating with others.",
+      "statement": "Synthesize and publish information about a local or global issue or event (e.g., MS- LS4-5, 6.1.8.CivicsPI.3)."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.TL.5",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "TL - Technology Literacy",
+      "core_idea": "Digital tools allow for remote collaboration and rapid sharing of ideas unrestricted by geographic location or time. | 2020 New Jersey Student Lear 9.4",
+      "statement": "Compare the process and effectiveness of synchronous collaboration and asynchronous collaboration."
+    },
+    {
+      "subject": "clks",
+      "code": "9.4.8.TL.6",
+      "grade": "8",
+      "standard": "9.4 - Life Literacies and Key Skills",
+      "disciplinary_concept": "TL - Technology Literacy",
+      "core_idea": "Digital tools allow for remote collaboration and rapid sharing of ideas unrestricted by geographic location or time. | 2020 New Jersey Student Lear 9.4",
+      "statement": "Collaborate to develop and publish work that provides perspectives on a real-world problem."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.5.PGD.1",
+      "grade": "5",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "PGD - Personal Growth and Development",
+      "core_idea": "Health is influenced by the interaction of body systems.",
+      "statement": "Identify effective personal health strategies and behaviors that reduce illness, prevent injuries, and maintain or enhance one’s wellness (e.g., adequate sleep, balanced nutrition, ergonomics, regular physical activity)."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.5.PGD.2",
+      "grade": "5",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "PGD - Personal Growth and Development",
+      "core_idea": "Puberty is a time of physical, social, and emotional changes.",
+      "statement": "Examine how the body changes during puberty and how these changes influence personal self-care."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.5.PGD.3",
+      "grade": "5",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "PGD - Personal Growth and Development",
+      "core_idea": "Puberty is a time of physical, social, and emotional changes.",
+      "statement": "Explain the physical, social, and emotional changes that occur during puberty and adolescence and why the onset and progression of puberty can vary."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.5.PGD.4",
+      "grade": "5",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "PGD - Personal Growth and Development",
+      "core_idea": "Puberty is a time of physical, social, and emotional changes.",
+      "statement": "Explain common human sexual development and the role of hormones (e.g., romantic and sexual feelings, masturbation, mood swings, timing of pubertal onset)."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.5.PGD.5",
+      "grade": "5",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "PGD - Personal Growth and Development",
+      "core_idea": "Puberty is a time of physical, social, and emotional changes.",
+      "statement": "Identify trusted adults, including family members, caregivers, school staff, and health care professionals, whom students can talk to about relationships and ask questions about puberty and adolescent health."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.5.PP.1",
+      "grade": "5",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "PP - Pregnancy and Parenting",
+      "core_idea": "Pregnancy can be achieved through a variety of methods.",
+      "statement": "Explain the relationship between sexual intercourse and human reproduction."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.5.PP.2",
+      "grade": "5",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "PP - Pregnancy and Parenting",
+      "core_idea": "Pregnancy can be achieved through a variety of methods.",
+      "statement": "Explain the range of ways pregnancy can occur (e.g., IVF, surrogacy)."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.5.EH.1",
+      "grade": "5",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "EH - Emotional Health",
+      "core_idea": "Self-management skills impact an individual’s ability to recognize, cope, and express emotions about difficult events.",
+      "statement": "Discuss the impact of one’s feelings and thoughts that lead to healthy and unhealthy behaviors."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.5.EH.2",
+      "grade": "5",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "EH - Emotional Health",
+      "core_idea": "Self-management skills impact an individual’s ability to recognize, cope, and express emotions about difficult events.",
+      "statement": "Explain how to cope with rejection, loss, difficult learning situations and/or separation from family or others."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.5.EH.3",
+      "grade": "5",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "EH - Emotional Health",
+      "core_idea": "Resiliency and coping practices influence an individual’s ability to respond positively to everyday challenges and difficult situations.",
+      "statement": "Identify different feelings and emotions that people may experience and how they might express these emotions (e.g., anger, fear, happiness, sadness, hopelessness, anxiety)."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.5.EH.4",
+      "grade": "5",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "EH - Emotional Health",
+      "core_idea": "Resiliency and coping practices influence an individual’s ability to respond positively to everyday challenges and difficult situations.",
+      "statement": "Identify behaviors that help to deal with difficult situations that can occur at home, in school, and/or in the community and where to go for assistance."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.5.SSH.1",
+      "grade": "5",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "SSH - Social and Sexual Health",
+      "core_idea": "All individuals should feel welcome and included regardless of their gender, gender expression, or sexual orientation.",
+      "statement": "Describe gender-role stereotypes and their potential impact on self and others."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.5.SSH.2",
+      "grade": "5",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "SSH - Social and Sexual Health",
+      "core_idea": "All individuals should feel welcome and included regardless of their gender, gender expression, or sexual orientation.",
+      "statement": "Differentiate between sexual orientation and gender identity."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.5.SSH.3",
+      "grade": "5",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "SSH - Social and Sexual Health",
+      "core_idea": "All individuals should feel welcome and included regardless of their gender, gender expression, or sexual orientation.",
+      "statement": "Demonstrate ways to promote dignity and respect for all people (e.g. sexual orientation, gender identity and expression, race, ethnicity, socio-economic status, differing ability, immigration status, family configuration)."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.5.SSH.4",
+      "grade": "5",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "SSH - Social and Sexual Health",
+      "core_idea": "Family members impact the development of their children physically, socially and emotionally.",
+      "statement": "Describe how families can share common values, offer emotional support, and set boundaries and limits."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.5.SSH.5",
+      "grade": "5",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "SSH - Social and Sexual Health",
+      "core_idea": "Family members impact the development of their children physically, socially and emotionally.",
+      "statement": "Explain the importance of communication with family members, caregivers and other trusted adults about a variety of topics."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.5.SSH.6",
+      "grade": "5",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "SSH - Social and Sexual Health",
+      "core_idea": "People in healthy relationships share thoughts and feelings, as well as mutual respect.",
+      "statement": "Describe the characteristics of healthy versus unhealthy relationships among friends and with family members."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.5.SSH.7",
+      "grade": "5",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "SSH - Social and Sexual Health",
+      "core_idea": "People in healthy relationships share thoughts and feelings, as well as mutual respect.",
+      "statement": "Define teasing, harassment and bullying and provide examples of inappropriate behaviors that are harmful to others."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.5.CHSS.1",
+      "grade": "5",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "CHSS - Community Health Services and Support",
+      "core_idea": "Community professionals and school personnel are available to assist and address health emergencies as well as provide reliable information.",
+      "statement": "Identify health services and resources available and determine how each assist in addressing needs and emergencies in a school and in the community (e.g., counselors, medical professionals)."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.5.CHSS.2",
+      "grade": "5",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "CHSS - Community Health Services and Support",
+      "core_idea": "Community professionals and school personnel are available to assist and address health emergencies as well as provide reliable information.",
+      "statement": "Describe how business, non-profit organizations, and individuals can work cooperatively to address health problems that are affected by global issues, including climate change."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.5.CHSS.3",
+      "grade": "5",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "CHSS - Community Health Services and Support",
+      "core_idea": "Individuals will benefit from an awareness of coping strategies that can be used when facing difficult situations. | 2020 New Jersey Student Lear 2.1 Person",
+      "statement": "Describe strategies that are useful for individuals who are feeling sadness, anger, anxiety, or stress."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.8.PGD.1",
+      "grade": "8",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "PGD - Personal Growth and Development",
+      "core_idea": "Individual actions, genetics, and family history can play a role in an individual’s personal health.",
+      "statement": "Explain how appropriate health care can promote personal health."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.8.PGD.2",
+      "grade": "8",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "PGD - Personal Growth and Development",
+      "core_idea": "Individual actions, genetics, and family history can play a role in an individual’s personal health.",
+      "statement": "Analyze how genetics and family history can impact personal health."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.8.PGD.3",
+      "grade": "8",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "PGD - Personal Growth and Development",
+      "core_idea": "Individual actions, genetics, and family history can play a role in an individual’s personal health.",
+      "statement": "Describe the human reproductive systems, the external and internal body parts and their functions, and the natural variations that exist in human bodies."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.8.PGD.4",
+      "grade": "8",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "PGD - Personal Growth and Development",
+      "core_idea": "Responsible actions regarding behavior can impact the development and health of oneself and others.",
+      "statement": "Analyze the relationship between healthy behaviors and personal health."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.8.PP.1",
+      "grade": "8",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "PP - Pregnancy and Parenting",
+      "core_idea": "An awareness of the stages of pregnancy and prenatal care can contribute to a healthy pregnancy and the birth of a healthy child.",
+      "statement": "Describe pregnancy testing, the signs of pregnancy, and pregnancy options, including parenting, abortion, and adoption."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.8.PP.2",
+      "grade": "8",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "PP - Pregnancy and Parenting",
+      "core_idea": "An awareness of the stages of pregnancy and prenatal care can contribute to a healthy pregnancy and the birth of a healthy child.",
+      "statement": "Summarize the stages of pregnancy from fertilization to birth."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.8.PP.3",
+      "grade": "8",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "PP - Pregnancy and Parenting",
+      "core_idea": "An awareness of the stages of pregnancy and prenatal care can contribute to a healthy pregnancy and the birth of a healthy child.",
+      "statement": "Identify prenatal practices that support a healthy pregnancy and identify where to find medically accurate sources of information about prenatal care."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.8.PP.4",
+      "grade": "8",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "PP - Pregnancy and Parenting",
+      "core_idea": "There are a variety of factors that affect the social, emotional, and financial challenges that are associated with parenthood.",
+      "statement": "Predict challenges that may be faced by adolescent parents and their families."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.8.PP.5",
+      "grade": "8",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "PP - Pregnancy and Parenting",
+      "core_idea": "There are a variety of factors that affect the social, emotional, and financial challenges that are associated with parenthood.",
+      "statement": "Identify resources to assist with parenting."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.8.EH.1",
+      "grade": "8",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "EH - Emotional Health",
+      "core_idea": "Self-management skills impact an individual’s ability to cope with different types of mental, psychological, and emotional situations.",
+      "statement": "Compare and contrast stress management strategies that are used to address various types of stress-induced situations (e.g., academics, family, personal relationships, finances, celebrations, violence)."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.8.EH.2",
+      "grade": "8",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "EH - Emotional Health",
+      "core_idea": "Self-management skills impact an individual’s ability to cope with different types of mental, psychological, and emotional situations.",
+      "statement": "Analyze how personal attributes, resiliency, and protective factors support mental and emotional health."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.8.SSH.1",
+      "grade": "8",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "SSH - Social and Sexual Health",
+      "core_idea": "Inclusive schools and communities are accepting of all people and make them feel welcome and included.",
+      "statement": "Differentiate between gender identity, gender expression and sexual orientation."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.8.SSH.2",
+      "grade": "8",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "SSH - Social and Sexual Health",
+      "core_idea": "Inclusive schools and communities are accepting of all people and make them feel welcome and included.",
+      "statement": "Develop a plan for the school to promote dignity and respect for people of all genders, gender identities, gender expressions, and sexual orientations in the school community."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.8.SSH.3",
+      "grade": "8",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "SSH - Social and Sexual Health",
+      "core_idea": "Relationships are influenced by a wide variety of factors, individuals, and behaviors.",
+      "statement": "Demonstrate communication skills that will support healthy relationships"
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.8.SSH.4",
+      "grade": "8",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "SSH - Social and Sexual Health",
+      "core_idea": "Relationships are influenced by a wide variety of factors, individuals, and behaviors.",
+      "statement": "Compare and contrast the characteristics of healthy and unhealthy relationships."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.8.SSH.5",
+      "grade": "8",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "SSH - Social and Sexual Health",
+      "core_idea": "Relationships are influenced by a wide variety of factors, individuals, and behaviors.",
+      "statement": "Analyze the similarities and differences between friendships, romantic relationships and sexual relationships."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.8.SSH.6",
+      "grade": "8",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "SSH - Social and Sexual Health",
+      "core_idea": "Relationships are influenced by a wide variety of factors, individuals, and behaviors.",
+      "statement": "Examine how culture influences the way families cope with traumatic situations, crisis, and change."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.8.SSH.7",
+      "grade": "8",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "SSH - Social and Sexual Health",
+      "core_idea": "There are factors that contribute to making healthy decisions about sex.",
+      "statement": "Identify factors that are important in deciding whether and when to engage in sexual behaviors."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.8.SSH.8",
+      "grade": "8",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "SSH - Social and Sexual Health",
+      "core_idea": "There are factors that contribute to making healthy decisions about sex.",
+      "statement": "Identify factors that can affect the ability to give or perceive consent to sexual activity (e.g., body image, self-esteem, alcohol, other substances)."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.8.SSH.9",
+      "grade": "8",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "SSH - Social and Sexual Health",
+      "core_idea": "There are factors that contribute to making healthy decisions about sex.",
+      "statement": "Define vaginal, oral, and anal sex."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.8.SSH.10",
+      "grade": "8",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "SSH - Social and Sexual Health",
+      "core_idea": "There are factors that contribute to making healthy decisions about sex.",
+      "statement": "Identify short and long-term contraception and safer sex methods that are effective and describe how to access and use them (e.g., abstinence, condom)."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.8.SSH.11",
+      "grade": "8",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "SSH - Social and Sexual Health",
+      "core_idea": "There are factors that contribute to making healthy decisions about sex.",
+      "statement": "Develop a plan to eliminate or reduce risk of unintended pregnancy and STIs (including HIV)."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.8.CHSS.1",
+      "grade": "8",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "CHSS - Community Health Services and Support",
+      "core_idea": "Potential solutions to health issues are dependent on health literacy and locating resources accessible in a community.",
+      "statement": "Identify professionals at school and in the community available to assist with health conditions and emergencies, sexual health services, life skills training and describe how they can be accessed (e.g., suicide prevention, CPR/AED, breast self-examination, traumatic stress)."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.8.CHSS.2",
+      "grade": "8",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "CHSS - Community Health Services and Support",
+      "core_idea": "Potential solutions to health issues are dependent on health literacy and locating resources accessible in a community.",
+      "statement": "Describe the state and federal laws related to age of consent, minors’ ability to consent to health care, confidentiality in a healthcare setting, child pornography, sexting, safe haven and sex trafficking."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.8.CHSS.3",
+      "grade": "8",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "CHSS - Community Health Services and Support",
+      "core_idea": "Potential solutions to health issues are dependent on health literacy and locating resources accessible in a community.",
+      "statement": "Identify the state and federal laws related to minors' access to sexual healthcare services, including pregnancy and STIs/HIV prevention, testing, care, and treatment."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.8.CHSS.4",
+      "grade": "8",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "CHSS - Community Health Services and Support",
+      "core_idea": "Potential solutions to health issues are dependent on health literacy and locating resources accessible in a community.",
+      "statement": "Identify community resources and/or other sources of support, such as trusted adults, including family members, caregivers, and school staff, that students can go to if they are or someone they know is being sexually harassed, abused, assaulted, exploited, or trafficked."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.8.CHSS.5",
+      "grade": "8",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "CHSS - Community Health Services and Support",
+      "core_idea": "Potential solutions to health issues are dependent on health literacy and locating resources accessible in a community.",
+      "statement": "Identify medically accurate sources of information about STIs, including HIV, such as local STIs /HIV prevention, steps to obtain PrEP and PEP, testing, and treatment resources."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.8.CHSS.6",
+      "grade": "8",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "CHSS - Community Health Services and Support",
+      "core_idea": "Advocacy for personal, family, community, and global health can influence and change the interaction of people and their health.",
+      "statement": "Develop an advocacy plan regarding a health issue and share this information in an appropriate setting."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.8.CHSS.7",
+      "grade": "8",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "CHSS - Community Health Services and Support",
+      "core_idea": "Advocacy for personal, family, community, and global health can influence and change the interaction of people and their health.",
+      "statement": "Collaborate with other students to develop a strategy to address health issues related to climate change."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.1.8.CHSS.8",
+      "grade": "8",
+      "standard": "2.1 - Personal and Mental Health",
+      "disciplinary_concept": "CHSS - Community Health Services and Support",
+      "core_idea": "Different people have different capacities to deal with different situations and being aware of a wide variety of tools and resources is beneficial. | 2020 New Jersey Student Learni 2.1 Personal",
+      "statement": "Analyze difficult situations that might lead to feelings sadness, anxiety and or depression and identify individuals, agencies or places in the community where assistance may be available."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.5.MSC.1",
+      "grade": "5",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "MSC - Movement Skills and Concepts",
+      "core_idea": "Competent and confident age appropriate performances of gross, fine motor and manipulative skills, with execution of movement skills and concepts individually and in groups enhance (intensifies) physical activities. free movement, games, aerobics, dance, sports, and recreational activities.",
+      "statement": "Demonstrate body management skills and control when moving in relation to others, objects, and boundaries in personal and general space (e.g., coordination, balance, flexibility, agility)."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.5.MSC.2",
+      "grade": "5",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "MSC - Movement Skills and Concepts",
+      "core_idea": "Competent and confident age appropriate performances of gross, fine motor and manipulative skills, with execution of movement skills and concepts individually and in groups enhance (intensifies) physical activities. free movement, games, aerobics, dance, sports, and recreational activities.",
+      "statement": "Explain and demonstrate movement sequences, individually and with others, in response to various tempos, rhythms, and musical styles."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.5.MSC.3",
+      "grade": "5",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "MSC - Movement Skills and Concepts",
+      "core_idea": "Competent and confident age appropriate performances of gross, fine motor and manipulative skills, with execution of movement skills and concepts individually and in groups enhance (intensifies) physical activities. free movement, games, aerobics, dance, sports, and recreational activities.",
+      "statement": "Demonstrate and perform movement skills with developmentally appropriate control in isolated settings (e.g., skill practice) and applied settings (e.g., games, sports, dance, recreational activities)."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.5.MSC.4",
+      "grade": "5",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "MSC - Movement Skills and Concepts",
+      "core_idea": "Competent and confident age appropriate performances of gross, fine motor and manipulative skills, with execution of movement skills and concepts individually and in groups enhance (intensifies) physical activities. free movement, games, aerobics, dance, sports, and recreational activities.",
+      "statement": "Develop the necessary body control to improve stability and balance during movement and physical activity."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.5.MSC.5",
+      "grade": "5",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "MSC - Movement Skills and Concepts",
+      "core_idea": "Constructive feedback from others impacts improvement, effectiveness and participation in movement skills, concepts, sportsmanship, and safety.",
+      "statement": "Correct movement skills and analyze concepts in response to external feedback and self-evaluation with understanding and demonstrating how the change improves performance."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.5.MSC.6",
+      "grade": "5",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "MSC - Movement Skills and Concepts",
+      "core_idea": "Teams apply offensive, defensive, and cooperative strategies in most games, sports, and physical activities.",
+      "statement": "Execute appropriate behaviors and etiquette while participating as a player and viewing as an observer during physical activity, games, and other events, contributes to a safe environment."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.5.MSC.7",
+      "grade": "5",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "MSC - Movement Skills and Concepts",
+      "core_idea": "Teams apply offensive, defensive, and cooperative strategies in most games, sports, and physical activities.",
+      "statement": "Apply specific rules, strategies, and procedures for specific physical activity, games, and sports in a safe active environment."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.5.PF.1",
+      "grade": "5",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "PF - Physical Fitness",
+      "core_idea": "The components of fitness contribute to enhanced personal health as well as motor skill performance (e.g., speed, agility, endurance, strength, balance).",
+      "statement": "Identify the physical, social, emotional, and intellectual benefits of regular physical activity that effect personal health."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.5.PF.2",
+      "grade": "5",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "PF - Physical Fitness",
+      "core_idea": "The components of fitness contribute to enhanced personal health as well as motor skill performance (e.g., speed, agility, endurance, strength, balance).",
+      "statement": "Accept and respect others of all skill levels and abilities during participation."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.5.PF.3",
+      "grade": "5",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "PF - Physical Fitness",
+      "core_idea": "The components of fitness contribute to enhanced personal health as well as motor skill performance (e.g., speed, agility, endurance, strength, balance).",
+      "statement": "Participate in moderate to vigorous age-appropriate physical fitness activities and build the skills that address each component of health-related fitness (e.g., endurance, strength, speed, agility, flexibility, balance)."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.5.PF.4",
+      "grade": "5",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "PF - Physical Fitness",
+      "core_idea": "The components of fitness contribute to enhanced personal health as well as motor skill performance (e.g., speed, agility, endurance, strength, balance).",
+      "statement": "Develop a short term and/or a long-term health-related fitness goal (e.g., cardiorespiratory endurance 'heart & lungs', muscular strength, muscular endurance, flexibility, body composition, nutrition) to evaluate personal health."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.5.PF.5",
+      "grade": "5",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "PF - Physical Fitness",
+      "core_idea": "The components of fitness contribute to enhanced personal health as well as motor skill performance (e.g., speed, agility, endurance, strength, balance).",
+      "statement": "Determine how different factors influence personal fitness and other healthy lifestyle choices (e.g., heredity, physical activity, nutrition, sleep, technology)."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.5.LF.1",
+      "grade": "5",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "LF - Lifelong Fitness",
+      "core_idea": "Wellness is maintained, and gains occur over time (dimensions and components of health) when participating and setting goals in a variety of moderate to vigorous age appropriate physical activities.",
+      "statement": "Explain the need to engage in physical activities on a voluntary basis for emotional and physical enjoyment."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.5.LF.2",
+      "grade": "5",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "LF - Lifelong Fitness",
+      "core_idea": "Wellness is maintained, and gains occur over time (dimensions and components of health) when participating and setting goals in a variety of moderate to vigorous age appropriate physical activities.",
+      "statement": "Develop a movement vocabulary that is flexible and adaptable for personal physical activity and wellness."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.5.LF.3",
+      "grade": "5",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "LF - Lifelong Fitness",
+      "core_idea": "Wellness is maintained, and gains occur over time (dimensions and components of health) when participating and setting goals in a variety of moderate to vigorous age appropriate physical activities.",
+      "statement": "Proactively engage in movement and physical activity for enjoyment individually or with others."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.5.LF.4",
+      "grade": "5",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "LF - Lifelong Fitness",
+      "core_idea": "Wellness is maintained, and gains occur over time (dimensions and components of health) when participating and setting goals in a variety of moderate to vigorous age appropriate physical activities.",
+      "statement": "Perform and increase the range of motion in dynamic stretching and breathing exercises (e.g., dynamic cardiovascular warm-up exercises, martial arts, aerobics, yoga)."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.5.LF.5",
+      "grade": "5",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "LF - Lifelong Fitness",
+      "core_idea": "Personal and community resources can support physical activity.",
+      "statement": "Describe how community resources could be used to support participation in a variety of physical activities, sports and wellness."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.5.N.1",
+      "grade": "5",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "N - Nutrition",
+      "core_idea": "Understanding the principals of a balanced",
+      "statement": "Explain how healthy eating provides energy, helps to maintain healthy weight, lowers risk of disease, and keeps body systems functioning effectively."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.5.N.2",
+      "grade": "5",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "N - Nutrition",
+      "core_idea": "nutritional plan (e.g. moderation, variety of",
+      "statement": "Create a healthy meal based on nutritional content, value, calories, and cost."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.5.N.3",
+      "grade": "5",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "N - Nutrition",
+      "core_idea": "fruits, vegetables, limiting processed foods) | assists in making nutrition-related decisions | that will contribute to wellness. | 2020 New Jersey Student Learni 2.2 Phy",
+      "statement": "Develop a plan to attain a personal nutrition health goal that addresses strengths, needs, and culture."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.8.MSC.1",
+      "grade": "8",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "MSC - Movement Skills and Concepts",
+      "core_idea": "Effective execution of movements is | determined by the level of related skills and",
+      "statement": "Explain and demonstrate the transition of movement skills from isolated settings (e.g., skill practice) into applied settings (e.g., games, sports, dance, recreational activities)."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.8.MSC.2",
+      "grade": "8",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "MSC - Movement Skills and Concepts",
+      "core_idea": "provides the foundation for physical",
+      "statement": "Demonstrate control of motion in relationship between force, flow, time, and space in interactive dynamic environments."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.8.MSC.3",
+      "grade": "8",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "MSC - Movement Skills and Concepts",
+      "core_idea": "competency and literacy to participate with confidence in a broad range of physical activities (e.g., games, sports, aerobics, martial arts, recreational activities). Feedback from others and self-assessment impacts performance of movement skills and concepts. Individual and team goals are achieved when applying effective tactical strategies in games, sports, and other physical fitness activities.",
+      "statement": "Create and demonstrate planned movement sequences, individually and with others, based on tempo, beat, rhythm, music, and physical activities (e.g., creative, cultural, social, fitness aerobics, dance, yoga)."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.8.MSC.4",
+      "grade": "8",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "MSC - Movement Skills and Concepts",
+      "core_idea": "competency and literacy to participate with confidence in a broad range of physical activities (e.g., games, sports, aerobics, martial arts, recreational activities). Feedback from others and self-assessment impacts performance of movement skills and concepts. Individual and team goals are achieved when applying effective tactical strategies in games, sports, and other physical fitness activities.",
+      "statement": "Analyze, and correct movements and apply to refine movement skills."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.8.MSC.5",
+      "grade": "8",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "MSC - Movement Skills and Concepts",
+      "core_idea": "competency and literacy to participate with confidence in a broad range of physical activities (e.g., games, sports, aerobics, martial arts, recreational activities). Feedback from others and self-assessment impacts performance of movement skills and concepts. Individual and team goals are achieved when applying effective tactical strategies in games, sports, and other physical fitness activities.",
+      "statement": "Predict the impact of rules, etiquette, procedures, and sportsmanship on players' behavior in small groups and large teams during physical activities and games."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.8.MSC.6",
+      "grade": "8",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "MSC - Movement Skills and Concepts",
+      "core_idea": "competency and literacy to participate with confidence in a broad range of physical activities (e.g., games, sports, aerobics, martial arts, recreational activities). Feedback from others and self-assessment impacts performance of movement skills and concepts. Individual and team goals are achieved when applying effective tactical strategies in games, sports, and other physical fitness activities.",
+      "statement": "Demonstrate offensive, defensive, and cooperative strategies in a variety of games and settings."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.8.MSC.7",
+      "grade": "8",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "MSC - Movement Skills and Concepts",
+      "core_idea": "competency and literacy to participate with confidence in a broad range of physical activities (e.g., games, sports, aerobics, martial arts, recreational activities). Feedback from others and self-assessment impacts performance of movement skills and concepts. Individual and team goals are achieved when applying effective tactical strategies in games, sports, and other physical fitness activities.",
+      "statement": "Effectively manage emotions during physical activity (e.g., anger, frustration, excitement) in a safe manner to self and others."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.8.PF.1",
+      "grade": "8",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "PF - Physical Fitness",
+      "core_idea": "A variety of effective fitness principles applied consistently over time, enhance personal fitness levels, performance, and health status (e.g., Frequency, Intensity, Time, Type (F.I.T.T).",
+      "statement": "Summarize the short and long-term physical, social, mental, and emotional health benefits of regular physical fitness activity."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.8.PF.2",
+      "grade": "8",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "PF - Physical Fitness",
+      "core_idea": "A variety of effective fitness principles applied consistently over time, enhance personal fitness levels, performance, and health status (e.g., Frequency, Intensity, Time, Type (F.I.T.T).",
+      "statement": "Recognize and involve others of all ability levels into a physical activity."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.8.PF.3",
+      "grade": "8",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "PF - Physical Fitness",
+      "core_idea": "A variety of effective fitness principles applied consistently over time, enhance personal fitness levels, performance, and health status (e.g., Frequency, Intensity, Time, Type (F.I.T.T).",
+      "statement": "Execute the primary principals of training (FITT) and technology for the purpose of modifying personal levels of fitness (e.g., pedometers, heart rate monitors, health tracking systems, wearable technology, virtual classes, exergames)."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.8.PF.4",
+      "grade": "8",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "PF - Physical Fitness",
+      "core_idea": "A variety of effective fitness principles applied consistently over time, enhance personal fitness levels, performance, and health status (e.g., Frequency, Intensity, Time, Type (F.I.T.T).",
+      "statement": "Implement and assess the effectiveness of a fitness plan based on health data, the assessment of one's personal fitness levels and monitor health/fitness indicators before, during, and after the workout program."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.8.PF.5",
+      "grade": "8",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "PF - Physical Fitness",
+      "core_idea": "A variety of effective fitness principles applied consistently over time, enhance personal fitness levels, performance, and health status (e.g., Frequency, Intensity, Time, Type (F.I.T.T).",
+      "statement": "Use evidence to predict how factors such as health status, body composition, interests, environmental conditions, healthy eating, anabolic steroids, physical activity, and lifestyle behaviors impact personal fitness and health."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.8.LF.1",
+      "grade": "8",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "LF - Lifelong Fitness",
+      "core_idea": "Effective Fitness principles combined with mental and emotional endurance over time will enhance performance and wellness.",
+      "statement": "Develop and build an effective movement and physical fitness vocabulary for self, peers, and family members that can enhance wellness."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.8.LF.2",
+      "grade": "8",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "LF - Lifelong Fitness",
+      "core_idea": "Effective Fitness principles combined with mental and emotional endurance over time will enhance performance and wellness.",
+      "statement": "Explain the importance of assuming responsibility for personal health behaviors through physical activity throughout one’s lifetime."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.8.LF.3",
+      "grade": "8",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "LF - Lifelong Fitness",
+      "core_idea": "Effective Fitness principles combined with mental and emotional endurance over time will enhance performance and wellness.",
+      "statement": "Explore by leading self and others to experience and participate in different cultures' physical fitness activities."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.8.LF.4",
+      "grade": "8",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "LF - Lifelong Fitness",
+      "core_idea": "Effective Fitness principles combined with mental and emotional endurance over time will enhance performance and wellness.",
+      "statement": "Identify and recognize factors that generate positive emotions from participating in movement and physical fitness activities."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.8.LF.5",
+      "grade": "8",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "LF - Lifelong Fitness",
+      "core_idea": "Effective Fitness principles combined with mental and emotional endurance over time will enhance performance and wellness.",
+      "statement": "Engages in a variety of physical activities (e.g., aerobic-fitness, strengthen, endurance-fitness activities) using technology and cross-training, and lifetime activities."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.8.LF.6",
+      "grade": "8",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "LF - Lifelong Fitness",
+      "core_idea": "Community resources can provide participation in physical activity for self and family members.",
+      "statement": "Develop a strategy to overcome barriers that allows for a visit in the community that promotes physical activities."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.8.LF.7",
+      "grade": "8",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "LF - Lifelong Fitness",
+      "core_idea": "Community resources can provide participation in physical activity for self and family members.",
+      "statement": "Evaluate personal attributes as they relate to career options in physical activity and health professions."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.8.N.1",
+      "grade": "8",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "N - Nutrition",
+      "core_idea": "Many factors can influence an individual’s choices when selecting a balanced meal plan, which can affect nutritional wellness. | 2020 New Jersey Student Lear 2.2 Ph",
+      "statement": "Analyze how culture, health status, age and access to healthy foods can influence personal eating habits."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.8.N.2",
+      "grade": "8",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "N - Nutrition",
+      "core_idea": "Many factors can influence an individual’s choices when selecting a balanced meal plan, which can affect nutritional wellness. | 2020 New Jersey Student Lear 2.2 Ph",
+      "statement": "Identify skills and healthy behaviors that can support adolescents in losing, gaining, or maintaining healthy weights."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.8.N.3",
+      "grade": "8",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "N - Nutrition",
+      "core_idea": "Many factors can influence an individual’s choices when selecting a balanced meal plan, which can affect nutritional wellness. | 2020 New Jersey Student Lear 2.2 Ph",
+      "statement": "Design sample nutritional plans for families with different lifestyles, resources, special needs, and cultural backgrounds; then consider the similarities and differences among the plans."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.2.8.N.4",
+      "grade": "8",
+      "standard": "2.2 - Physical Wellness",
+      "disciplinary_concept": "N - Nutrition",
+      "core_idea": "Many factors can influence an individual’s choices when selecting a balanced meal plan, which can affect nutritional wellness. | 2020 New Jersey Student Lear 2.2 Ph",
+      "statement": "Assess personal nutritional health and consider opportunities to improve health and performance (e.g., sports drinks, supplements, balance nutrition)."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.5.PS.1",
+      "grade": "5",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "PS - Personal Safety",
+      "core_idea": "Safety includes being aware of the environment and understanding how certain situations could lead to injury or illness.",
+      "statement": "Develop strategies to reduce the risk of injuries at home, school, and in the community."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.5.PS.2",
+      "grade": "5",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "PS - Personal Safety",
+      "core_idea": "Safety includes being aware of the environment and understanding how certain situations could lead to injury or illness.",
+      "statement": "Demonstrate first aid procedures for choking, bleeding, burns, poisoning, and stroke (F.A.S.T.)."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.5.PS.3",
+      "grade": "5",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "PS - Personal Safety",
+      "core_idea": "Safety includes being aware of the environment and understanding how certain situations could lead to injury or illness.",
+      "statement": "Examine the impact of unsafe behaviors when traveling in motor vehicles and when using other modes of transportation."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.5.PS.4",
+      "grade": "5",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "PS - Personal Safety",
+      "core_idea": "There are strategies that individuals can use to communicate safely in an online environment. Children who practice setting healthy boundaries know how to say no and what to do when they feel uncomfortable or find themselves in unsafe situations.",
+      "statement": "Develop strategies to safely communicate through digital media with respect."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.5.PS.5",
+      "grade": "5",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "PS - Personal Safety",
+      "core_idea": "There are strategies that individuals can use to communicate safely in an online environment. Children who practice setting healthy boundaries know how to say no and what to do when they feel uncomfortable or find themselves in unsafe situations.",
+      "statement": "Communicate personal boundaries and demonstrate ways to respect other people’s personal boundaries."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.5.PS.6",
+      "grade": "5",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "PS - Personal Safety",
+      "core_idea": "There are strategies that individuals can use to communicate safely in an online environment. Children who practice setting healthy boundaries know how to say no and what to do when they feel uncomfortable or find themselves in unsafe situations.",
+      "statement": "Identify strategies a person could use to call attention to or leave an uncomfortable or dangerous situation, including bullying, teasing, teen dating violence, sexual harassment, sexual assault, and sexual abuse."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.5.HCDM.1",
+      "grade": "5",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "HCDM - Health Conditions, Diseases and Medicines",
+      "core_idea": "There are actions that individuals can take to help prevent diseases and stay healthy.",
+      "statement": "Identify conditions that may keep the human body from working properly, and the ways in which the body responds."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.5.HCDM.2",
+      "grade": "5",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "HCDM - Health Conditions, Diseases and Medicines",
+      "core_idea": "There are actions that individuals can take to help prevent diseases and stay healthy.",
+      "statement": "Describe how to prevent the spread of communicable and infection diseases and conditions (e.g., Lyme Disease, influenza)"
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.5.HCDM.3",
+      "grade": "5",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "HCDM - Health Conditions, Diseases and Medicines",
+      "core_idea": "There are actions that individuals can take to help prevent diseases and stay healthy.",
+      "statement": "Examine how mental health can impact one’s wellness (e.g., depression, anxiety, stress, phobias)."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.5.ATD.1",
+      "grade": "5",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "ATD - Alcohol, Tobacco and other Drugs",
+      "core_idea": "The use of alcohol, tobacco, and drugs may affect the user, family, and community members in negative ways and have unintended consequences.",
+      "statement": "Identify products that contain alcohol, tobacco, and drugs and explain potential unhealthy effects (e.g., substance disorder, cancer)."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.5.ATD.2",
+      "grade": "5",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "ATD - Alcohol, Tobacco and other Drugs",
+      "core_idea": "The use of alcohol, tobacco, and drugs may affect the user, family, and community members in negative ways and have unintended consequences.",
+      "statement": "Describe health concerns associated with e-cigarettes, vaping products, inhalants, alcohol, opioids and other drugs, and non-prescribed cannabis products."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.5.ATD.3",
+      "grade": "5",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "ATD - Alcohol, Tobacco and other Drugs",
+      "core_idea": "Drug misuse and abuse can affect one’s relationship with friends, family, and community members in unhealthy ways.",
+      "statement": "Describe the behaviors of people who struggle with the use of alcohol and drugs and identify the type of assistance that is available."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.5.DSDT.1",
+      "grade": "5",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "DSDT - Dependency, Substances Disorder, and Treatment",
+      "core_idea": "The short- and long-term effects of substance abuse are dangerous and harmful to one's health.",
+      "statement": "Differentiate between drug use, misuse, abuse, and, prescription and illicit drugs."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.5.DSDT.2",
+      "grade": "5",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "DSDT - Dependency, Substances Disorder, and Treatment",
+      "core_idea": "The short- and long-term effects of substance abuse are dangerous and harmful to one's health.",
+      "statement": "Identify signs and evaluate evidence that a person might have an alcohol, tobacco, and/or drug use problem."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.5.DSDT.3",
+      "grade": "5",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "DSDT - Dependency, Substances Disorder, and Treatment",
+      "core_idea": "The short- and long-term effects of substance abuse are dangerous and harmful to one's health.",
+      "statement": "Demonstrate effective refusal skills of alcohol, e-cigarettes, vaping products, cannabis products, opioids, and other substances that can negatively impact health."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.5.DSDT.4",
+      "grade": "5",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "DSDT - Dependency, Substances Disorder, and Treatment",
+      "core_idea": "The use/abuse of alcohol, tobacco, and drugs can have unintended consequences but there are resources available for individuals and others affected by these situations. | 2020 New Jersey Student Learni 2.",
+      "statement": "Demonstrate strategies for seeking assistance for someone impacted by an individual who is struggling with the use/abuse of alcohol or drugs."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.5.DSDT.5",
+      "grade": "5",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "DSDT - Dependency, Substances Disorder, and Treatment",
+      "core_idea": "The use/abuse of alcohol, tobacco, and drugs can have unintended consequences but there are resources available for individuals and others affected by these situations. | 2020 New Jersey Student Learni 2.",
+      "statement": "Identify the various types of resources that are available in the community and online to assist individuals who struggle with alcohol, tobacco, and drug use/abuse (e.g., school nurse, counselor, peer leadership group)."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.8.PS.1",
+      "grade": "8",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "PS - Personal Safety",
+      "core_idea": "Awareness of potential risks factors and knowledge of strategies to evaluate choices and potential consequences can help to reduce negative impacts when confronted with difficult or unsafe situations. Individuals may experience interpersonal and/or sexual violence for a variety of reasons, but the victim is never to blame.",
+      "statement": "Assess the degree of risk in a variety of situations, and identify strategies needed to reduce deliberate and non-deliberate injuries to self and others (e.g., digital safety, sexting, dating violence, domestic violence, gang violence, human trafficking, nonconsensual sexual encounters, other threats of violence)."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.8.PS.2",
+      "grade": "8",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "PS - Personal Safety",
+      "core_idea": "Awareness of potential risks factors and knowledge of strategies to evaluate choices and potential consequences can help to reduce negative impacts when confronted with difficult or unsafe situations. Individuals may experience interpersonal and/or sexual violence for a variety of reasons, but the victim is never to blame.",
+      "statement": "Define sexual consent and sexual agency."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.8.PS.3",
+      "grade": "8",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "PS - Personal Safety",
+      "core_idea": "Awareness of potential risks factors and knowledge of strategies to evaluate choices and potential consequences can help to reduce negative impacts when confronted with difficult or unsafe situations. Individuals may experience interpersonal and/or sexual violence for a variety of reasons, but the victim is never to blame.",
+      "statement": "Define interpersonal and sexual violence and describe their impacts on sexual health (e.g., sexual harassment, sexual assault, sexual abuse, incest, rape, domestic violence, coercion, dating violence)."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.8.PS.4",
+      "grade": "8",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "PS - Personal Safety",
+      "core_idea": "Awareness of potential risks factors and knowledge of strategies to evaluate choices and potential consequences can help to reduce negative impacts when confronted with difficult or unsafe situations. Individuals may experience interpersonal and/or sexual violence for a variety of reasons, but the victim is never to blame.",
+      "statement": "Describe strategies that sex traffickers/exploiters employ to recruit youth."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.8.PS.5",
+      "grade": "8",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "PS - Personal Safety",
+      "core_idea": "Awareness of potential risks factors and knowledge of strategies to evaluate choices and potential consequences can help to reduce negative impacts when confronted with difficult or unsafe situations. Individuals may experience interpersonal and/or sexual violence for a variety of reasons, but the victim is never to blame.",
+      "statement": "Determine the effectiveness of laws designed to keep children and adolescents healthy and safe (e.g., consent, child pornography, human trafficking, parental notification, drugs)."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.8.PS.6",
+      "grade": "8",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "PS - Personal Safety",
+      "core_idea": "Technology can impact the capacity of individuals to develop and maintain healthy behaviors and interpersonal relationships.",
+      "statement": "Demonstrate strategies to use social media safely, legally, and respectfully (e.g., sexting, sextortion)."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.8.PS.7",
+      "grade": "8",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "PS - Personal Safety",
+      "core_idea": "Technology can impact the capacity of individuals to develop and maintain healthy behaviors and interpersonal relationships.",
+      "statement": "Evaluate the impact of technology and social media on relationships (e.g., consent, communication, respect)."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.8.HCDM.1",
+      "grade": "8",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "HCDM - Health Conditions, Diseases and Medicines",
+      "core_idea": "Diseases can be contracted from a variety of sources and choices individuals make may contribute to or prevent a person from being susceptible to a disease or health condition.",
+      "statement": "Justify how the use of universal precautions, sanitation and waste disposal, proper food handling and storage, and environmental controls can prevent diseases and health conditions."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.8.HCDM.2",
+      "grade": "8",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "HCDM - Health Conditions, Diseases and Medicines",
+      "core_idea": "Diseases can be contracted from a variety of sources and choices individuals make may contribute to or prevent a person from being susceptible to a disease or health condition.",
+      "statement": "Determine the role of genetics in being susceptible to disease and health conditions and identify the types of behavior that might reduce the risk factors."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.8.HCDM.3",
+      "grade": "8",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "HCDM - Health Conditions, Diseases and Medicines",
+      "core_idea": "Diseases can be contracted from a variety of sources and choices individuals make may contribute to or prevent a person from being susceptible to a disease or health condition.",
+      "statement": "Describe behaviors which may contribute to or prevent a person from being susceptible to disease and illness (e.g., cardiovascular, stroke, hepatitis, sexually transmitted infections (STIs), HIV/AIDS, breast cancer, HPV, testicular cancer)."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.8.HCDM.4",
+      "grade": "8",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "HCDM - Health Conditions, Diseases and Medicines",
+      "core_idea": "Diseases can be contracted from a variety of sources and choices individuals make may contribute to or prevent a person from being susceptible to a disease or health condition.",
+      "statement": "Describe the signs, symptoms, and potential impacts of STIs (including HIV)."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.8.HCDM.5",
+      "grade": "8",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "HCDM - Health Conditions, Diseases and Medicines",
+      "core_idea": "Diseases can be contracted from a variety of sources and choices individuals make may contribute to or prevent a person from being susceptible to a disease or health condition.",
+      "statement": "Compare and contrast behaviors, including abstinence, to determine the potential risk of pregnancy and/or STIs (including HIV) transmission."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.8.HCDM.6",
+      "grade": "8",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "HCDM - Health Conditions, Diseases and Medicines",
+      "core_idea": "The degree to which an individual is impacted by a health condition or disease can be affected by their immune system and treatment strategies.",
+      "statement": "Explain how the immune system fights disease."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.8.HCDM.7",
+      "grade": "8",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "HCDM - Health Conditions, Diseases and Medicines",
+      "core_idea": "The degree to which an individual is impacted by a health condition or disease can be affected by their immune system and treatment strategies.",
+      "statement": "Explain how certain methods of disease prevention, treatment strategies, and appropriate medicine use promote health-enhancing behaviors."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.8.ATD.1",
+      "grade": "8",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "ATD - Alcohol, Tobacco and other Drugs",
+      "core_idea": "The use of alcohol, tobacco (including e- cigarettes, vaping), and other drugs (including cannabis products) can result in social, emotional, and physical harm to oneself and others.",
+      "statement": "Examine how the use of alcohol, tobacco, and other drugs by adolescents has impacted their lives and the lives of family members socially, emotionally, and physically."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.8.ATD.2",
+      "grade": "8",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "ATD - Alcohol, Tobacco and other Drugs",
+      "core_idea": "The use of alcohol, tobacco (including e- cigarettes, vaping), and other drugs (including cannabis products) can result in social, emotional, and physical harm to oneself and others.",
+      "statement": "Relate the use of alcohol and other drugs to decision-making, consent, and risk for sexual assault and abuse."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.8.ATD.3",
+      "grade": "8",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "ATD - Alcohol, Tobacco and other Drugs",
+      "core_idea": "The use of alcohol, tobacco (including e- cigarettes, vaping), and other drugs (including cannabis products) can result in social, emotional, and physical harm to oneself and others.",
+      "statement": "Determine the factors that contribute to different rules, laws, and policies in schools, communities, and states regarding alcohol, tobacco (including e-cigarettes, vaping, cannabis products), and other drugs."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.8.ATD.4",
+      "grade": "8",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "ATD - Alcohol, Tobacco and other Drugs",
+      "core_idea": "The use of alcohol, tobacco (including e- cigarettes, vaping), and other drugs (including cannabis products) can result in social, emotional, and physical harm to oneself and others.",
+      "statement": "Explain the impact of alcohol and other drugs on areas of the brain that control vision, sleep, coordination, reaction time, judgment, and memory."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.8.ATD.5",
+      "grade": "8",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "ATD - Alcohol, Tobacco and other Drugs",
+      "core_idea": "The use of alcohol, tobacco (including e- cigarettes, vaping), and other drugs (including cannabis products) can result in social, emotional, and physical harm to oneself and others.",
+      "statement": "Analyze how the influence of peers and different social settings (e.g., home, school, party) can result in positive and/or negative outcomes."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.8.DSDT.1",
+      "grade": "8",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "DSDT - Dependency, Substances Disorder and Treatment",
+      "core_idea": "A variety of factors can contribute to alcohol, tobacco, and drug disorders (e.g., mental | health, genetics, environment) and a wide variety of treatment options are available depending on the needs of the individual.",
+      "statement": "Summarize the signs and symptoms of alcohol, tobacco, and drug disorders."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.8.DSDT.2",
+      "grade": "8",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "DSDT - Dependency, Substances Disorder and Treatment",
+      "core_idea": "A variety of factors can contribute to alcohol, tobacco, and drug disorders (e.g., mental | health, genetics, environment) and a wide variety of treatment options are available depending on the needs of the individual.",
+      "statement": "Compare and contrast the various services that are available for individuals affected by substance disorders in the community and at the state level."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.8.DSDT.3",
+      "grade": "8",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "DSDT - Dependency, Substances Disorder and Treatment",
+      "core_idea": "The use of alcohol and drugs can affect the social, emotional, and physical behaviors of individuals and their families. | 2020 New Jersey Student Learning 2.3 S",
+      "statement": "Determine the impact that alcohol and drugs can have on an individual’s social, emotional, and physical well-being."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.8.DSDT.4",
+      "grade": "8",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "DSDT - Dependency, Substances Disorder and Treatment",
+      "core_idea": "The use of alcohol and drugs can affect the social, emotional, and physical behaviors of individuals and their families. | 2020 New Jersey Student Learning 2.3 S",
+      "statement": "Examine how alcohol and drug disorders can impact the social, emotional, and physical lives of friends and family members."
+    },
+    {
+      "subject": "chpe",
+      "code": "2.3.8.DSDT.5",
+      "grade": "8",
+      "standard": "2.3 - Safety",
+      "disciplinary_concept": "DSDT - Dependency, Substances Disorder and Treatment",
+      "core_idea": "The use of alcohol and drugs can affect the social, emotional, and physical behaviors of individuals and their families. | 2020 New Jersey Student Learning 2.3 S",
+      "statement": "Compare and contrast the various services that are available for family members and others affected by substance disorders in the community and at the state level."
     }
   ]
 }

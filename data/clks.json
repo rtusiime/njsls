@@ -1,0 +1,2444 @@
+{
+  "grade_bands": [
+    "2",
+    "5",
+    "8",
+    "12"
+  ],
+  "default_visible_grade_bands": [
+    "5",
+    "8"
+  ],
+  "standards_meta": {
+    "9.1": "Personal Financial Literacy",
+    "9.2": "Career Awareness, Exploration, Preparation, and Training",
+    "9.4": "Life Literacies and Key Skills"
+  },
+  "disciplinary_concepts_meta": {
+    "9.1": {
+      "CR": "Civic Responsibility",
+      "FI": "Financial Institutions",
+      "FP": "Financial Psychology",
+      "PB": "Planning and Budgeting",
+      "RM": "Risk Management",
+      "CP": "Credit Profile",
+      "EG": "Economic and Government Influences",
+      "RMI": "Risk Management and Insurance",
+      "CDM": "Credit and Debt Management",
+      "CFR": "Civic Financial Responsibility",
+      "EGI": "Economic and Government Influences"
+    },
+    "9.2": {
+      "CAP": "Career Awareness and Planning"
+    },
+    "9.4": {
+      "CI": "Creativity and Innovation",
+      "CT": "Critical Thinking and Problem-Solving",
+      "DC": "Digital Citizenship",
+      "IML": "Information and Media Literacy",
+      "TL": "Technology Literacy",
+      "GCA": "Global and Cultural Awareness"
+    }
+  },
+  "standards": [
+    {
+      "code": "9.1",
+      "name": "Personal Financial Literacy",
+      "grade_bands": {
+        "2": {
+          "disciplinary_concepts": [
+            {
+              "abbrev": "CR",
+              "name": "Civic Responsibility",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "There are actions an individual can take to help make this world a better place."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.2.CR.1",
+                      "statement": "Recognize ways to volunteer in the classroom, school and community."
+                    },
+                    {
+                      "code": "9.1.2.CR.2",
+                      "statement": "List ways to give back, including making donations,"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "FI",
+              "name": "Financial Institutions",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "Money comes in different values, forms, and uses."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.2.FI.1",
+                      "statement": "Differentiate the various forms of money and how they are"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "FP",
+              "name": "Financial Psychology",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "There is a relationship between an individual’s values, emotions, and the ways he/she chooses to spend money. External factors can influence the items that an individual wants or needs."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.2.FP.1",
+                      "statement": "Explain how emotions influence whether a person spends or saves."
+                    },
+                    {
+                      "code": "9.1.2.FP.2",
+                      "statement": "Differentiate between financial wants and needs."
+                    },
+                    {
+                      "code": "9.1.2.FP.3",
+                      "statement": "Identify the factors that influence people to spend or save"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "PB",
+              "name": "Planning and Budgeting",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "A budget is a plan that helps an individual obtain his/her financial goals. Saving money is a habit that can be developed."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.2.PB.1",
+                      "statement": "Determine various ways to save and places in the local community that help people save and accumulate money over time."
+                    },
+                    {
+                      "code": "9.1.2.PB.2",
+                      "statement": "Explain why an individual would choose to save money."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "RM",
+              "name": "Risk Management and Insurance",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "There are ways to keep the things we value safely at home and other places.",
+                    "2020 New Jersey Student Learning Standa 9.1 Personal Financi"
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.2.RM.1",
+                      "statement": "Describe how valuable items might be damaged or lost and ways to protect them."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "5": {
+          "disciplinary_concepts": [
+            {
+              "abbrev": "CR",
+              "name": "Civic Financial Responsibility",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "You can give back in areas that matter to you."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.5.CR.1",
+                      "statement": "Compare various ways to give back and relate them to your strengths, interests, and other personal factors."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "CP",
+              "name": "Credit Profile",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "There are benefits to having a positive credit history."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.5.CP.1",
+                      "statement": "Identify the advantages of maintaining a positive credit history."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "EG",
+              "name": "Economic and Government Influences",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "Taxes are collected on a variety of goods and services at the local, state, and federal levels."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.5.EG.1",
+                      "statement": "Explain and give examples of what is meant by the term “tax.”"
+                    },
+                    {
+                      "code": "9.1.5.EG.2",
+                      "statement": "Describe how tax monies are spent"
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "There is a broader economic system that influences your financial goals."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.5.EG.3",
+                      "statement": "Explain the impact of the economic system on one’s personal financial goals."
+                    },
+                    {
+                      "code": "9.1.5.EG.4",
+                      "statement": "Describe how an individual’s financial decisions affect society and contribute to the overall economy."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "There are agencies, laws, and resources to protect individuals as consumers."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.5.EG.5",
+                      "statement": "Identify sources of consumer protection and assistance."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "FI",
+              "name": "Financial Institutions",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "People can choose to save money in many places such as home in a piggy bank, bank, or credit union."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.5.FI.1",
+                      "statement": "Identify various types of financial institutions and the services they offer including banks, credit unions, and credit card companies."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "FP",
+              "name": "Financial Psychology",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "An individual’s financial traits and habits affect his/her finances. Spending choices and their intended and unintended consequences impact financial outcomes and personal well- being."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.5.FP.1",
+                      "statement": "Illustrate the impact of financial traits on financial decisions."
+                    },
+                    {
+                      "code": "9.1.5.FP.2",
+                      "statement": "Identify the elements of being a good steward of money."
+                    },
+                    {
+                      "code": "9.1.5.FP.3",
+                      "statement": "Analyze how spending choices and decision-making can result in positive or negative consequences."
+                    },
+                    {
+                      "code": "9.1.5.FP.4",
+                      "statement": "Explain the role of spending money and how it affects well- being and happiness (e.g., \"happy money,\" experiences over things, donating to causes, anticipation, etc.)."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Not all financial information is accurate or truthful."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.5.FP.5",
+                      "statement": "Illustrate how inaccurate information is disseminated through various external influencers including the media, advertisers/marketers, friends, educators, and family members."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "PB",
+              "name": "Planning and Budgeting",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "There are specific steps associated with creating a budget."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.5.PB.1",
+                      "statement": "Develop a personal budget and explain how it reflects spending, saving, and charitable contributions."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Saving money can impact an individual’s ability to address emergencies and accomplish their short-and long-term goals."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.5.PB.2",
+                      "statement": "Describe choices consumers have with money (e.g., save, spend, donate)."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "RMI",
+              "name": "Risk Management and Insurance",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "Individuals can choose to accept inevitable risk or take steps to protect themselves by avoiding or reducing risk.",
+                    "2020 New Jersey Student Learning Standa 9.1 Personal Financi"
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.5.RMI.1",
+                      "statement": "Identify risks that individuals and households face."
+                    },
+                    {
+                      "code": "9.1.5.RMI.2",
+                      "statement": "Justify reasons to have insurance."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "8": {
+          "disciplinary_concepts": [
+            {
+              "abbrev": "CR",
+              "name": "Civic Financial Responsibility",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "Philanthropic and charitable organizations play important roles in supporting the interests of individuals and local and global communities and the issues that affect them. Individuals can use their talents, resources, and abilities to give back. The potential for building and using personal wealth includes responsibility to the broader community and an understanding of the legal rights and responsibilities of being a good citizen."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.8.CR.1",
+                      "statement": "Compare and contrast the role of philanthropy, volunteer service, and charities in community development and the quality of life in a variety of cultures."
+                    },
+                    {
+                      "code": "9.1.8.CR.2",
+                      "statement": "Compare various ways to give back through strengths, passions, goals, and other personal factors."
+                    },
+                    {
+                      "code": "9.1.8.CR.3",
+                      "statement": "Relate the importance of consumer, business, and government responsibility to the economy and personal finance."
+                    },
+                    {
+                      "code": "9.1.8.CR.4",
+                      "statement": "Examine the implications of legal and ethical behaviors when making financial decisions."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "CDM",
+              "name": "Credit and Debt Management",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "There are strategies to increase your savings and limit debt."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.8.CDM.1",
+                      "statement": "Compare and contrast the use of credit cards and debit cards for specific purchases and the advantages and disadvantages of using each."
+                    },
+                    {
+                      "code": "9.1.8.CDM.2",
+                      "statement": "Demonstrate an understanding of the terminology associated with different types of credit (e.g., credit cards, installment loans, mortgages, lines of credit) and compare and calculate the interest rates associated with each."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Credit management includes making informed choices about sources of credit and requires an understanding of the cost of credit."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.8.CDM.3",
+                      "statement": "Compare and contrast loan management strategies, including interest charges and total principal repayment costs."
+                    },
+                    {
+                      "code": "9.1.8.CDM.4",
+                      "statement": "Evaluate the application process for different types of loans (e.g., credit card, mortgage, student loans)."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "CP",
+              "name": "Credit Profile",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "There are strategies to build and maintain a good credit history."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.8.CP.1",
+                      "statement": "Compare prices for the same goods or services."
+                    },
+                    {
+                      "code": "9.1.8.CP.2",
+                      "statement": "Analyze how spending habits affect one’s ability to save."
+                    },
+                    {
+                      "code": "9.1.8.CP.3",
+                      "statement": "Explain the purpose of a credit score and credit record, the factors and impact of credit scores."
+                    },
+                    {
+                      "code": "9.1.8.CP.4",
+                      "statement": "Summarize borrower’s credit report rights."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Credit history affects personal finances."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.8.CP.5",
+                      "statement": "Compare the financial products and services available to"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "EG",
+              "name": "Economic and Government Influences",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "Taxes affect one’s personal finances."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.8.EG.1",
+                      "statement": "Explain how taxes affect disposable income and the difference between net and gross income"
+                    },
+                    {
+                      "code": "9.1.8.EG.2",
+                      "statement": "Explain why various sources of income are taxed differently."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "There are government agencies and policies that affect the financial industry and the broader economy."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.8.EG.3",
+                      "statement": "Explain the concept and forms of taxation and evaluate how local, state and federal governments use taxes to fund public activities and initiatives."
+                    },
+                    {
+                      "code": "9.1.8.EG.4",
+                      "statement": "Identify and explain the consequences of breaking federal and/or state employment or financial laws."
+                    },
+                    {
+                      "code": "9.1.8.EG.5",
+                      "statement": "Interpret how changing economic and societal needs influence employment trends and future education."
+                    },
+                    {
+                      "code": "9.1.8.EG.6",
+                      "statement": "Explain the economic principle of the circular flow of money in different situations regarding buying products or services from a local or national business and buying imported or domestic goods."
+                    },
+                    {
+                      "code": "9.1.8.EG.7",
+                      "statement": "Explain the effect of the economy (e.g., inflation, unemployment) on personal income, individual and family security, and consumer decisions."
+                    },
+                    {
+                      "code": "9.1.8.EG.8",
+                      "statement": "Analyze the impact of currency rates over a period of time and the impact on trade, employment, and income."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "There are procedures required to take advantage of consumer protection laws and assistance programs."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.8.EG.9",
+                      "statement": "Identify types of consumer fraud, the procedures for reporting fraud, the specific consumer protection laws, and the issues they address."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "FI",
+              "name": "Financial Institutions",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "There are a variety of factors that influence how well suited a financial institution and/or service will be in meeting an individual’s financial needs."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.8.FI.1",
+                      "statement": "Identify the factors to consider when selecting various financial service providers."
+                    },
+                    {
+                      "code": "9.1.8.FI.2",
+                      "statement": "Determine the most appropriate use of various financial products and services to borrow and access money for making purchases (e.g., ATM, debit cards, credit cards, check books, online/mobile banking)."
+                    },
+                    {
+                      "code": "9.1.8.FI.3",
+                      "statement": "Evaluate the most appropriate financial institutions to assist with meeting various personal financial needs and goals."
+                    },
+                    {
+                      "code": "9.1.8.FI.4",
+                      "statement": "Analyze the interest rates and fees associated with financial"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "FP",
+              "name": "Financial Psychology",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "An individual’s values and emotions will influence the ability to modify financial behavior (when appropriate), which will impact one’s financial well-being."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.8.FP.1",
+                      "statement": "Describe the impact of personal values on various financial scenarios."
+                    },
+                    {
+                      "code": "9.1.8.FP.2",
+                      "statement": "Evaluate the role of emotions, attitudes, and behavior (rational and irrational) in making financial decisions."
+                    },
+                    {
+                      "code": "9.1.8.FP.3",
+                      "statement": "Explain how self-regulation is important to managing money (e.g., delayed gratification, impulse buying, peer pressure, etc.)."
+                    },
+                    {
+                      "code": "9.1.8.FP.4",
+                      "statement": "Analyze how familial and cultural values influence savings rates, spending, and other financial decisions."
+                    },
+                    {
+                      "code": "9.1.8.FP.5",
+                      "statement": "Determine how spending, investing, and using credit wisely contributes to financial well-being."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Marketing techniques are designed to encourage individuals to purchase items they may not need or want."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.8.FP.6",
+                      "statement": "Compare and contrast advertising messages to understand what they are trying to accomplish."
+                    },
+                    {
+                      "code": "9.1.8.FP.7",
+                      "statement": "Identify the techniques and effects of deceptive advertising."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "PB",
+              "name": "Planning and Budgeting",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "A budget aligned with an individual’s financial goals can help prepare for life events."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.8.PB.1",
+                      "statement": "Predict future expenses or opportunities that should be included in the budget planning process."
+                    },
+                    {
+                      "code": "9.1.8.PB.2",
+                      "statement": "Explain how different circumstances can affect one’s personal budget."
+                    },
+                    {
+                      "code": "9.1.8.PB.3",
+                      "statement": "Explain how to create budget that aligns with financial goals."
+                    },
+                    {
+                      "code": "9.1.8.PB.4",
+                      "statement": "Construct a simple personal savings and spending plan based on various sources of income and different stages of life (e.g. teenager, young adult, family)."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Goals (e.g., higher education, autos, and homes, retirement), affect your finances."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.8.PB.5",
+                      "statement": "Identify factors that affect one’s goals, including peers, culture, location, and past experiences."
+                    },
+                    {
+                      "code": "9.1.8.PB.6",
+                      "statement": "Construct a budget to save for short-term, long term, and charitable goals."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "There are strategies to decrease and manage expenses."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.8.PB.7",
+                      "statement": "Brainstorm techniques that will help decrease expenses including comparison shopping, negotiating, and day-to-day expense"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "RM",
+              "name": "Risk Management and Insurance",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "Individuals can choose to accept some risk, to take steps to avoid or reduce risk, or to transfer risk to others through the purchase of insurance."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.8.RM.1",
+                      "statement": "Determine criteria for deciding the amount of insurance protection needed."
+                    },
+                    {
+                      "code": "9.1.8.RM.2",
+                      "statement": "Analyze the need for and value of different types of insurance and the impact of deductibles in protecting assets against loss."
+                    },
+                    {
+                      "code": "9.1.8.RM.3",
+                      "statement": "Evaluate the need for different types of warranties."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Insurance can protect your personal finances.",
+                    "9.1 Personal Financial Lite"
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.8.RM.4",
+                      "statement": "Explain the purpose of insurance products and the reasons for property product and liability insurance protection."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "12": {
+          "disciplinary_concepts": [
+            {
+              "abbrev": "CFR",
+              "name": "Civic Financial Responsibility",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "Philanthropic, charitable, and entrepreneurial organizations play distinctly different but vitally important roles in supporting the interests of local and global communities."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.12.CFR.1",
+                      "statement": "Compare and contrast the role of philanthropy, volunteer service, and charities in community development and quality of life in a variety of cultures."
+                    },
+                    {
+                      "code": "9.1.12.CFR.2",
+                      "statement": "Summarize causes important to you and compare organizations you seek to support to other organizations with similar missions."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "The potential for building and using personal wealth includes responsibility to the broader community and an understanding of the legal rights and responsibilities of being a good citizen."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.12.CFR.3",
+                      "statement": "Research companies with corporate governance policies supporting the common good and human rights."
+                    },
+                    {
+                      "code": "9.1.12.CFR.4",
+                      "statement": "Demonstrate an understanding of the interrelationships among attitudes, assumptions, and patterns of behavior regarding money, saving, investing, and work across cultures."
+                    },
+                    {
+                      "code": "9.1.12.CFR.5",
+                      "statement": "Summarize the purpose and importance of estate planning documents (e.g., will, durable power of attorney, living will, health care proxy, etc.)."
+                    },
+                    {
+                      "code": "9.1.12.CFR.6",
+                      "statement": "Identify and explain the consequences of breaking federal and/or state employment or financial laws."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "CDM",
+              "name": "Credit and Debt Management",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "There are reasons and consequences to taking on debt."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.12.CDM.1",
+                      "statement": "Identify the purposes, advantages, and disadvantages of debt."
+                    },
+                    {
+                      "code": "9.1.12.CDM.2",
+                      "statement": "Compare and contrast the advantages and disadvantages of various types of mortgages."
+                    },
+                    {
+                      "code": "9.1.12.CDM.3",
+                      "statement": "Determine ways to leverage debt beneficially."
+                    },
+                    {
+                      "code": "9.1.12.CDM.4",
+                      "statement": "Identify issues associated with student loan debt, requirements for repayment, and consequences of failure to repay student loan debt."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "There are ways to evaluate loans and their impact on one’s personal financial plan."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.12.CDM.5",
+                      "statement": "Identify the types of characteristics of predatory lending practices and the importance of collateral (e.g., payday loans, car title loans, high-risk mortgages)."
+                    },
+                    {
+                      "code": "9.1.12.CDM.6",
+                      "statement": "Compute and assess the accumulating effect of interest paid over time when using a variety of sources of credit. (e.g., student loans, credit cards, auto loans, mortgages, etc.)."
+                    },
+                    {
+                      "code": "9.1.12.CDM.7",
+                      "statement": "Calculate a mortgage payment based on type of loan, down payment, credit score, and loan interest rate."
+                    },
+                    {
+                      "code": "9.1.12.CDM.8",
+                      "statement": "Compare and compute interest and compound interest and develop an amortization table using business tools."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Borrowers have rights and responsibilities."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.12.CDM.9",
+                      "statement": "Summarize the causes and consequences of personal and corporate bankruptcy and evaluate the implications for self and others."
+                    },
+                    {
+                      "code": "9.1.12.CDM.10",
+                      "statement": "Determine when credit counselling is necessary and evaluate the resources available to assist consumers who wish to use it."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "CP",
+              "name": "Credit Profile",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "Negative information in credit reports can affect a person’s credit score and financial options."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.12.CP.1",
+                      "statement": "Summarize how one’s credit history can affect finances, including loan terms, employment, and qualifying for loans."
+                    },
+                    {
+                      "code": "9.1.12.CP.2",
+                      "statement": "Identify the advantages of maintaining a positive credit history."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Building and maintaining a good credit history is a process."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.12.CP.3",
+                      "statement": "Summarize factors that affect a positive credit rating, including on-time payments, debt versus available credit, length of open credit, and how often you apply for credit."
+                    },
+                    {
+                      "code": "9.1.12.CP.4",
+                      "statement": "Identify the skill sets needed to build and maintain a positive credit profile."
+                    },
+                    {
+                      "code": "9.1.12.CP.5",
+                      "statement": "Create a plan to improve and maintain an excellent credit rating."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Debt reduces net worth."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.12.CP.6",
+                      "statement": "Explain the effect of debt on a person’s net worth."
+                    },
+                    {
+                      "code": "9.1.12.CP.7",
+                      "statement": "Summarize factors that affect a particular credit scoring system."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "There are ways to ensure that your credit is protected, and information is accurate."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.12.CP.8",
+                      "statement": "Identify different ways you can protect your credit."
+                    },
+                    {
+                      "code": "9.1.12.CP.9",
+                      "statement": "Analyze the information contained in a credit report, how scores are calculated and used, and explain the importance of disputing inaccurate entries."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "EG",
+              "name": "Economic and Government Influences",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "Tax rates vary based on your financial situation."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.12.EG.1",
+                      "statement": "Review the tax rates on different sources of income and on different types of products and services purchased."
+                    },
+                    {
+                      "code": "9.1.12.EG.2",
+                      "statement": "Explain why various forms of income are taxed differently."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "There are different ways you can influence government policy to improve your financial situation."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.12.EG.3",
+                      "statement": "Explain how individuals and businesses influence government policies."
+                    },
+                    {
+                      "code": "9.1.12.EG.4",
+                      "statement": "Explain the relationship between your personal financial situation and the broader economic and governmental policies."
+                    },
+                    {
+                      "code": "9.1.12.EG.5",
+                      "statement": "Relate a country’s economic system of production and consumption to building personal wealth, the mindset of social comparison, and achieving societal responsibilities."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "There are agencies, laws, and resources to protect you as a consumer."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.12.EG.6",
+                      "statement": "Analyze the rights and responsibilities of buyers and sellers under consumer protection laws."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "FI",
+              "name": "Financial Institutions",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "There are ways to manage your accounts that provide you with maximum benefits and protection."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.12.FI.1",
+                      "statement": "Identify ways to protect yourself from identify theft"
+                    },
+                    {
+                      "code": "9.1.12.FI.2",
+                      "statement": "Explain ways to manage your accounts that maximize benefits and provide you with the utmost protection."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "There are factors you can use to select financial institutions and professionals that are best suited for your needs."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.12.FI.3",
+                      "statement": "Develop a plan that uses the services of various financial institutions to prepare for long term personal and family goals (e.g., college, retirement)."
+                    },
+                    {
+                      "code": "9.1.12.FI.4",
+                      "statement": "Research benefits and drawbacks of products offered by financial and non-financial companies (e.g., banks, credit unions,"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "FP",
+              "name": "Financial Psychology",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "To be fiscally responsible, an individual’s finances should align with his or her values and goals."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.12.FP.1",
+                      "statement": "Create a clear long-term financial plan to ensure its alignment with your values."
+                    },
+                    {
+                      "code": "9.1.12.FP.2",
+                      "statement": "Explain how an individual’s financial values and goals may change across a lifetime and the adjustments to the personal financial plan that may be needed."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Biological behavioral biases, psychology, and unconscious beliefs affect financial decision-making."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.12.FP.3",
+                      "statement": "Relate the concept of delayed gratification (i.e., psychological distance) to meeting financial goals, investing and building wealth over time."
+                    },
+                    {
+                      "code": "9.1.12.FP.4",
+                      "statement": "Identify how unconscious beliefs like \"money scripts\" (money avoidant, money worship, money status, money vigilant) influence financial decision-making."
+                    },
+                    {
+                      "code": "9.1.12.FP.5",
+                      "statement": "Evaluate how behavioral bias (e.g., overconfidence, confirmation, recency, loss aversion, etc.) affects decision-making."
+                    },
+                    {
+                      "code": "9.1.12.FP.6",
+                      "statement": "Evaluate the relationship of familial patterns, cultural traditions, and historical influences on financial practice."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "The ability to assess external information is a necessary skill to make informed decisions aligned to one’s goals."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.12.FP.7",
+                      "statement": "Determine how multiple sources of objective, accurate and current financial information affect the prioritization of financial decisions (e.g., print information, prospectus, certified financial planners, internet, sales representatives, etc.)."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "PB",
+              "name": "Planning and Budgeting",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "There are ways to align your investments with your personal financial goals."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.12.PB.1",
+                      "statement": "Explain the difference between saving and investing."
+                    },
+                    {
+                      "code": "9.1.12.PB.2",
+                      "statement": "Prioritize financial decisions by considering alternatives and possible consequences."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "A budget may need to be modified as an individual’s career, financial goals (e.g., education, home ownership, retirement), and/or other life situations change."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.12.PB.3",
+                      "statement": "Design a personal budget that will help you reach your long-term and short-term financial goals."
+                    },
+                    {
+                      "code": "9.1.12.PB.4",
+                      "statement": "Explain how you would revise your budget to accommodate changing circumstances."
+                    },
+                    {
+                      "code": "9.1.12.PB.5",
+                      "statement": "Analyze how changes in taxes, inflation, and personal circumstances can affect a personal budget."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Money management requires understanding of cash flow systems and business practices."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.12.PB.6",
+                      "statement": "Describe and calculate interest and fees that are applied to various forms of spending, debt and saving."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "RM",
+              "name": "Risk Management and Insurance",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "A person’s tolerance for investment depending on factors such as life c goals, and economic conditions."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.12.RM.1",
+                      "statement": "Describe the importance of various sources of income ircumstances, financial in retirement, including Social Security, employer-sponsored retirement savings plans, and personal investments."
+                    },
+                    {
+                      "code": "9.1.12.RM.2",
+                      "statement": "Identify types of investments appropriate for different objectives such as liquidity, income, and growth."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Different types of insurance have d protections.",
+                    "2020 New Jersey 9.2 Career"
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.1.12.RM.3",
+                      "statement": "Compare the cost of various types of insurance (e.g., life, homeowners, motor vehicle) for the same product or service, strategies to lower costs, and the process for filing an insurance claim."
+                    },
+                    {
+                      "code": "9.1.12.RM.4",
+                      "statement": "Determine when and why it may be appropriate for the government to provide insurance coverage rather than private industry."
+                    },
+                    {
+                      "code": "9.1.12.RM.5",
+                      "statement": "Explain what self-insuring is and determine when it is appropriate."
+                    },
+                    {
+                      "code": "9.1.12.RM.6",
+                      "statement": "Differentiate the costs benefits and features (e.g., riders, deductibles, umbrella policies) of renter’s and homeowner’s insurance."
+                    },
+                    {
+                      "code": "9.1.12.RM.7",
+                      "statement": "Evaluate individual and family needs for insurance protection using opportunity-cost analysis to determine if the amount of protection is adequate or over-insured."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "code": "9.2",
+      "name": "Career Awareness, Exploration, Preparation, and Training",
+      "grade_bands": {
+        "2": {
+          "disciplinary_concepts": [
+            {
+              "abbrev": "CAP",
+              "name": "Career Awareness and Planning",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "Different types of jobs require different knowledge and skills. Income is received from work in different ways including regular payments, tips, commissions, and benefits. There are benefits and drawbacks to being an entrepreneur.",
+                    "2020 New Jersey Student Lear 9. 2 Career Awareness, E"
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.2.2.CAP.1",
+                      "statement": "Make a list of different types of jobs and describe the skills associated with each job."
+                    },
+                    {
+                      "code": "9.2.2.CAP.2",
+                      "statement": "Explain why employers are willing to pay individuals to work."
+                    },
+                    {
+                      "code": "9.2.2.CAP.3",
+                      "statement": "Define entrepreneurship and social entrepreneurship."
+                    },
+                    {
+                      "code": "9.2.2.CAP.4",
+                      "statement": "List the potential rewards and risks to starting a business."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "5": {
+          "disciplinary_concepts": [
+            {
+              "abbrev": "CAP",
+              "name": "Career Awareness and Planning",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "An individual’s passions, aptitude and skills can affect his/her employment and earning potential."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.2.5.CAP.1",
+                      "statement": "Evaluate personal likes and dislikes and identify careers that might be suited to personal likes."
+                    },
+                    {
+                      "code": "9.2.5.CAP.2",
+                      "statement": "Identify how you might like to earn an income."
+                    },
+                    {
+                      "code": "9.2.5.CAP.3",
+                      "statement": "Identify qualifications needed to pursue traditional and non-traditional careers and occupations."
+                    },
+                    {
+                      "code": "9.2.5.CAP.4",
+                      "statement": "Explain the reasons why some jobs and careers require specific training, skills, and certification (e.g., life guards, child care, medicine, education) and examples of these requirements."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Income and benefits can vary depending on the employer and type of job or career. There are a variety of factors to consider before starting a business."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.2.5.CAP.5",
+                      "statement": "Identify various employee benefits, including income, medical, vacation time, and lifestyle benefits provided by different types of jobs and careers."
+                    },
+                    {
+                      "code": "9.2.5.CAP.6",
+                      "statement": "Compare the characteristics of a successful entrepreneur with the traits of successful employees."
+                    },
+                    {
+                      "code": "9.2.5.CAP.7",
+                      "statement": "Identify factors to consider before starting a business."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Individuals can choose to accept inevitable risk"
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.2.5.CAP.8",
+                      "statement": "Identify risks that individuals and households face."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "or take steps to protect themselves by avoiding or reducing risk.",
+                    "2020 New Jersey Student Learn 9.2 Career Awareness, Exp"
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.2.5.CAP.9",
+                      "statement": "Justify reasons to have insurance."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "8": {
+          "disciplinary_concepts": [
+            {
+              "abbrev": "CAP",
+              "name": "Career Awareness and Planning",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "An individual’s strengths, lifestyle goals, choices, and interests affect employment and income"
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.2.8.CAP.1",
+                      "statement": "Identify offerings such as high school and county career and technical school courses, apprenticeships, military programs, and dual enrollment courses that support career or occupational areas of interest."
+                    },
+                    {
+                      "code": "9.2.8.CAP.2",
+                      "statement": "Develop a plan that includes information about career areas of interest."
+                    },
+                    {
+                      "code": "9.2.8.CAP.3",
+                      "statement": "Explain how career choices, educational choices, skills, economic conditions, and personal behavior affect income."
+                    },
+                    {
+                      "code": "9.2.8.CAP.4",
+                      "statement": "Explain how an individual’s online behavior (e.g., social networking, photo exchanges, video postings) may impact opportunities for employment or advancement."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Developing and implementing an action plan is an essential step for achieving one’s personal and professional goals."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.2.8.CAP.5",
+                      "statement": "Develop a personal plan with the assistance of an adult mentor that includes information about career areas of interest, goals and an educational plan."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Early planning can provide more options to pay for post- secondary training and employment."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.2.8.CAP.6",
+                      "statement": "Compare the costs of postsecondary education with the potential increase in income from a career of choice."
+                    },
+                    {
+                      "code": "9.2.8.CAP.7",
+                      "statement": "Devise a strategy to minimize costs of postsecondary education."
+                    },
+                    {
+                      "code": "9.2.8.CAP.8",
+                      "statement": "Compare education and training requirements, income potential, and primary duties of at least two jobs of interest."
+                    },
+                    {
+                      "code": "9.2.8.CAP.9",
+                      "statement": "Analyze how a variety of activities related to career preparation (e.g., volunteering, apprenticeships, structured learning experiences, dual enrollment, job search, scholarships) impacts post- secondary options."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "There are variety of resources available to help navigate the career planning process."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.2.8.CAP.10",
+                      "statement": "Evaluate how careers have evolved regionally, nationally, and globally."
+                    },
+                    {
+                      "code": "9.2.8.CAP.11",
+                      "statement": "Analyze potential career opportunities by considering different types of resources, including occupation databases, and state and national labor market statistics."
+                    },
+                    {
+                      "code": "9.2.8.CAP.12",
+                      "statement": "Assess personal strengths, talents, values, and interests to appropriate jobs and careers to maximize career potential."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Employee benefits can influence your employment choices."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.2.8.CAP.13",
+                      "statement": "Compare employee benefits when evaluating employment interests and explain the possible impact on personal finances."
+                    },
+                    {
+                      "code": "9.2.8.CAP.14",
+                      "statement": "Evaluate sources of income and alternative resources to accurately compare employment options."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Communication skills and responsible behavior in addition to education, experience, certifications, and skills are all factors that affect employment and income."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.2.8.CAP.15",
+                      "statement": "Present how the demand for certain skills, the job market, and credentials can determine an individual’s earning power."
+                    },
+                    {
+                      "code": "9.2.8.CAP.16",
+                      "statement": "Research different ways workers/ employees improve their earning power through education and the acquisition of new knowledge and skills."
+                    },
+                    {
+                      "code": "9.2.8.CAP.17",
+                      "statement": "Prepare a sample resume and cover letter as part of an application process."
+                    },
+                    {
+                      "code": "9.2.8.CAP.18",
+                      "statement": "Explain how personal behavior, appearance, attitudes, and other choices may impact the job application process."
+                    },
+                    {
+                      "code": "9.2.8.CAP.19",
+                      "statement": "Relate academic achievement, as represented by high school diplomas, college degrees, and industry credentials, to employability and to potential level"
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "There are resources to help an individual create a business plan to start or expand a business.",
+                    "2020 New Jersey Student Learning Stand 9.2 Career Awareness, Exploration,"
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.2.8.CAP.20",
+                      "statement": "Identify the items to consider when estimating the cost of funding a business."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "12": {
+          "disciplinary_concepts": [
+            {
+              "abbrev": "CAP",
+              "name": "Career Awareness and Planning",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "There are strategies to improve one’s professional value and marketability."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.2.12.CAP.1",
+                      "statement": "Analyze unemployment rates for workers with different levels of education and how the economic, social, and political conditions of a time period are affected by a recession."
+                    },
+                    {
+                      "code": "9.2.12.CAP.2",
+                      "statement": "Develop college and career readiness skills by participating in opportunities such as structured learning experiences, apprenticeships, and dual enrollment programs."
+                    },
+                    {
+                      "code": "9.2.12.CAP.3",
+                      "statement": "Investigate how continuing education contributes to one's career and personal growth."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Career planning requires purposeful planning based on research, self-knowledge, and informed choices."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.2.12.CAP.4",
+                      "statement": "Evaluate different careers and develop various plans (e.g., costs of public, private, training schools) and timetables for achieving them, including educational/training requirements, costs, loans, and debt repayment."
+                    },
+                    {
+                      "code": "9.2.12.CAP.5",
+                      "statement": "Assess and modify a personal plan to support current interests and postsecondary plans."
+                    },
+                    {
+                      "code": "9.2.12.CAP.6",
+                      "statement": "Identify transferable skills in career choices and design alternative career plans based on those skills."
+                    },
+                    {
+                      "code": "9.2.12.CAP.7",
+                      "statement": "Use online resources to examine licensing, certification, and credentialing requirements at the local, state, and national levels to maintain compliance with industry requirements in areas of career interest."
+                    },
+                    {
+                      "code": "9.2.12.CAP.8",
+                      "statement": "Determine job entrance criteria (e.g., education credentials, math/writing/reading comprehension tests, drug tests) used by employers in various industry sectors."
+                    },
+                    {
+                      "code": "9.2.12.CAP.9",
+                      "statement": "Locate information on working papers, what is required to obtain them, and who must sign them."
+                    },
+                    {
+                      "code": "9.2.12.CAP.10",
+                      "statement": "Identify strategies for reducing overall costs of postsecondary education (e.g., tuition assistance, loans, grants, scholarships, and student loans)."
+                    },
+                    {
+                      "code": "9.2.12.CAP.11",
+                      "statement": "Demonstrate an understanding of Free Application for Federal Student Aid (FAFSA) requirements to apply for postsecondary education."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "An individual’s income and benefit needs and financial plan can change over time."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.2.12.CAP.12",
+                      "statement": "Explain how compulsory government programs (e.g., Social Security, Medicare) provide insurance against some loss of income and benefits to eligible recipients."
+                    },
+                    {
+                      "code": "9.2.12.CAP.13",
+                      "statement": "Analyze how the economic, social, and political conditions of a time period can affect the labor market."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Securing an income involve an understanding of the costs and time in preparing for a career fi interview and negotiation skills, job searches, resume development, prior experience, and vesting and retirement plans. Understanding income involves an analysis of payroll taxes, deductions and earned benefits."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.2.12.CAP.14",
+                      "statement": "Analyze and critique various sources of income and available eld, resources (e.g., financial assets, property, and transfer payments) and how they may substitute for earned income."
+                    },
+                    {
+                      "code": "9.2.12.CAP.15",
+                      "statement": "Demonstrate how exemptions, deductions, and deferred income (e.g., retirement or medical) can reduce taxable income."
+                    },
+                    {
+                      "code": "9.2.12.CAP.16",
+                      "statement": "Explain why taxes are withheld from income and the relationship of federal, state, and local taxes (e.g., property, income, excise, and sales) and how the money collected is used by local, county, state, and federal governments."
+                    },
+                    {
+                      "code": "9.2.12.CAP.17",
+                      "statement": "Analyze the impact of the collective bargaining process on benefits, income, and fair labor practice."
+                    },
+                    {
+                      "code": "9.2.12.CAP.18",
+                      "statement": "Differentiate between taxable and nontaxable income from various forms of employment (e.g., cash business, tips, tax filing and withholding)."
+                    },
+                    {
+                      "code": "9.2.12.CAP.19",
+                      "statement": "Explain the purpose of payroll deductions and why fees for various benefits (e.g., medical benefits) are taken out of pay, including the cost of employee benefits to employers and self-employment income."
+                    },
+                    {
+                      "code": "9.2.12.CAP.20",
+                      "statement": "Analyze a Federal and State Income Tax Return."
+                    },
+                    {
+                      "code": "9.2.12.CAP.21",
+                      "statement": "Explain low-cost and low-risk ways to start a business. ty"
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "There are ways to assess a business’s feasibili",
+                    "and risk and to align it with an individual’s"
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.2.12.CAP.22",
+                      "statement": "Compare risk and reward potential and use the comparison to decide whether starting a business is feasible."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "financial goals.",
+                    "2020 New Jersey Stu"
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.2.12.CAP.23",
+                      "statement": "Identify different ways to obtain capital for starting a business."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "code": "9.4",
+      "name": "Life Literacies and Key Skills",
+      "grade_bands": {
+        "2": {
+          "disciplinary_concepts": [
+            {
+              "abbrev": "CI",
+              "name": "Creativity and Innovation",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "Brainstorming can create new, innovative ideas."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.2.CI.1",
+                      "statement": "Demonstrate openness to new ideas and perspectives (e.g., 1.1.2.CR1a,"
+                    },
+                    {
+                      "code": "9.4.2.CI.2",
+                      "statement": "Demonstrate originality and inventiveness in work (e.g., 1.3A.2CR1a)."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "CT",
+              "name": "Critical Thinking and Problem-solving",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "Critical thinkers must first identify a problem then develop a plan to address it to effectively solve the problem."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.2.CT.1",
+                      "statement": "Gather information about an issue, such as climate change, and collaboratively brainstorm ways to solve the problem (e.g., K-2-ETS1-1, 6.3.2.GeoGI.2)."
+                    },
+                    {
+                      "code": "9.4.2.CT.2",
+                      "statement": "Identify possible approaches and resources to execute a plan (e.g., 1.2.2.CR1b,"
+                    },
+                    {
+                      "code": "9.4.2.CT.3",
+                      "statement": "Use a variety of types of thinking to solve problems (e.g., inductive, deductive)."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "DC",
+              "name": "Digital Citizenship",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "Digital artifacts can be owned by individuals or organizations."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.2.DC.1",
+                      "statement": "Explain differences between ownership and sharing of information."
+                    },
+                    {
+                      "code": "9.4.2.DC.2",
+                      "statement": "Explain the importance of respecting digital content of others."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Individuals should practice safe behaviors when using the Internet."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.2.DC.3",
+                      "statement": "Explain how to be safe online and follow safe practices when using the internet"
+                    },
+                    {
+                      "code": "9.4.2.DC.4",
+                      "statement": "Compare information that should be kept private to information that might be made public."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "An individual’s digital footprint reflects the various actions an individual makes online, both positive and negative. Digital communities allow for social interactions that can result in positive or negative outcomes. Young people can have a positive impact on the natural world in the fight against climate change."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.2.DC.5",
+                      "statement": "Explain what a digital footprint is and how it is created."
+                    },
+                    {
+                      "code": "9.4.2.DC.6",
+                      "statement": "Identify respectful and responsible ways to communicate in digital environments."
+                    },
+                    {
+                      "code": "9.4.2.DC.7",
+                      "statement": "Describe actions peers can take to positively impact climate change (e.g., 6.3.2.CivicsPD.1)."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "IML",
+              "name": "Information and Media Literacy",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "Digital tools and media resources provide access to vast stores of information that can be searched. Digital tools can be used to display data in various ways."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.2.IML.1",
+                      "statement": "Identify a simple search term to find information in a search engine or digital resource."
+                    },
+                    {
+                      "code": "9.4.2.IML.2",
+                      "statement": "Represent data in a visual format to tell a story about the data (e.g., 2.MD.D.10)."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "A variety of diverse sources, contexts, disciplines, and cultures provide valuable and necessary information that can be used for different purposes. Information is shared or conveyed in a variety of formats and sources."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.2.IML.3",
+                      "statement": "Use a variety of sources including multimedia sources to find information about topics such as climate change, with guidance and support from adults (e.g., 6.3.2.GeoGI.2, 6.1.2.HistorySE.3, W.2.6, 1-LSI-2)."
+                    },
+                    {
+                      "code": "9.4.2.IML.4",
+                      "statement": "Compare and contrast the way information is shared in a variety of contexts (e.g.,"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "TL",
+              "name": "Technology Literacy",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "Digital tools have a purpose."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.2.TL.1",
+                      "statement": "Identify the basic features of a digital tool and explain the purpose of the tool (e.g.,"
+                    },
+                    {
+                      "code": "9.4.2.TL.2",
+                      "statement": "Create a document using a word processing application."
+                    },
+                    {
+                      "code": "9.4.2.TL.3",
+                      "statement": "Enter information into a spreadsheet and sort the information."
+                    },
+                    {
+                      "code": "9.4.2.TL.4",
+                      "statement": "Navigate a virtual space to build context and describe the visual content."
+                    },
+                    {
+                      "code": "9.4.2.TL.5",
+                      "statement": "Describe the difference between real and virtual experiences."
+                    },
+                    {
+                      "code": "9.4.2.TL.6",
+                      "statement": "Illustrate and communicate ideas and stories using multiple digital tools (e.g., SL.2.5.)."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Collaboration can simplify the work an individual has to do and sometimes produce a better product.",
+                    "2020 New Jersey Student Lear 9.4 Lif"
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.2.TL.7",
+                      "statement": "Describe the benefits of collaborating with others to complete digital tasks or"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "5": {
+          "disciplinary_concepts": [
+            {
+              "abbrev": "CI",
+              "name": "Creativity and Innovation",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "Collaboration with individuals with diverse perspectives can result in new ways of thinking and/or innovative solutions."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.5.CI.1",
+                      "statement": "Use appropriate communication technologies to collaborate with individuals with diverse perspectives about a local and/or global climate change issue and deliberate about possible solutions (e.g., W.4.6, 3.MD.B.3,7.1.NM.IPERS.6)."
+                    },
+                    {
+                      "code": "9.4.5.CI.2",
+                      "statement": "Investigate a persistent local or global issue, such as climate change, and collaborate with individuals with diverse perspectives to improve upon current actions designed to address the issue (e.g., 6.3.5.CivicsPD.3, W.5.7)."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Curiosity and a willingness to try new ideas (intellectual risk-taking) contributes to the development of creativity and innovation skills."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.5.CI.3",
+                      "statement": "Participate in a brainstorming session with individuals with diverse perspectives to"
+                    },
+                    {
+                      "code": "9.4.5.CI.4",
+                      "statement": "Research the development process of a product and identify the role of failure as a"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "CT",
+              "name": "Critical Thinking and Problem-solving",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "The ability to solve problems effectively begins with gathering data, seeking resources, and applying critical thinking skills."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.5.CT.1",
+                      "statement": "Identify and gather relevant data that will aid in the problem-solving process (e.g.,"
+                    },
+                    {
+                      "code": "9.4.5.CT.2",
+                      "statement": "Identify a problem and list the types of individuals and resources (e.g., school, community agencies, governmental, online) that can aid in solving the problem (e.g.,"
+                    },
+                    {
+                      "code": "9.4.5.CT.3",
+                      "statement": "Describe how digital tools and technology may be used to solve problems."
+                    },
+                    {
+                      "code": "9.4.5.CT.4",
+                      "statement": "Apply critical thinking and problem-solving strategies to different types of problems such as personal, academic, community and global (e.g., 6.1.5.CivicsCM.3)."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "DC",
+              "name": "Digital Citizenship",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "Intellectual property rights exist to protect the original works of individuals. It is allowable to use other people’s ideas in one’s own work provided that proper credit is given to the original source. Sending and receiving copies of media on the internet creates the opportunity for unauthorized use of data, such as personally owned video, photos, and music. Digital identities must be managed in order to create a positive digital footprint. Digital tools have positively and negatively changed the way people interact socially."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.5.DC.1",
+                      "statement": "Explain the need for and use of copyrights."
+                    },
+                    {
+                      "code": "9.4.5.DC.2",
+                      "statement": "Provide attribution according to intellectual property rights guidelines using public domain or creative commons media."
+                    },
+                    {
+                      "code": "9.4.5.DC.3",
+                      "statement": "Distinguish between digital images that can be reused freely and those that have copyright restrictions."
+                    },
+                    {
+                      "code": "9.4.5.DC.4",
+                      "statement": "Model safe, legal, and ethical behavior when using online or offline technology (e.g.,"
+                    },
+                    {
+                      "code": "9.4.5.DC.5",
+                      "statement": "Identify the characteristics of a positive and negative online identity and the lasting implications of online activity."
+                    },
+                    {
+                      "code": "9.4.5.DC.6",
+                      "statement": "Compare and contrast how digital tools have changed social interactions (e.g.,"
+                    },
+                    {
+                      "code": "9.4.5.DC.7",
+                      "statement": "Explain how posting and commenting in social spaces can have positive or negative consequences."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Digital engagement can improve the planning and delivery of climate change actions."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.5.DC.8",
+                      "statement": "Propose ways local and global communities can engage digitally to participate in and promote climate action (e.g., 6.3.5.GeoHE.1)."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "GCA",
+              "name": "Global and Cultural Awareness",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "Culture and geography can shape an individual’s experiences and perspectives."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.5.GCA.1",
+                      "statement": "Analyze how culture shapes individual and community perspectives and points of view (e.g., 1.1.5.C2a, RL.5.9, 6.1.5.HistoryCC.8)."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "IML",
+              "name": "Information and Media Literacy",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "Digital tools and media resources provide access to vast stores of information, but the information can be biased or inaccurate. Digital tools can be used to modify and display data in various ways that can be organized to communicate ideas."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.5.IML.1",
+                      "statement": "Evaluate digital sources for accuracy, perspective, credibility and relevance (e.g., Social Studies Practice - Gathering and Evaluating Sources)."
+                    },
+                    {
+                      "code": "9.4.5.IML.2",
+                      "statement": "Create a visual representation to organize information about a problem or issue"
+                    },
+                    {
+                      "code": "9.4.5.IML.3",
+                      "statement": "Represent the same data in multiple visual formats in order to tell a story about the data."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Accurate and comprehensive information comes in a variety of platforms and formats and is the basis for effective decision-making."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.5.IML.4",
+                      "statement": "Determine the impact of implicit and explicit media messages on individuals, groups, and society as a whole."
+                    },
+                    {
+                      "code": "9.4.5.IML.5",
+                      "statement": "Distinguish how media are used by individuals, groups, and organizations for varying purposes. (e.g., 1.3A.5.R1a)."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Specific situations require the use of relevant sources of information."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.5.IML.6",
+                      "statement": "Use appropriate sources of information from diverse sources, contexts, disciplines, and cultures to answer questions (e.g., RI.5.7, 6.1.5.HistoryCC.7, 7.1.NM. IPRET.5)."
+                    },
+                    {
+                      "code": "9.4.5.IML.7",
+                      "statement": "Evaluate the degree to which information meets a need including social"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "TL",
+              "name": "Technology Literacy",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "Different digital tools have different purposes."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.5.TL.1",
+                      "statement": "Compare the common uses of at least two different digital tools and identify the advantages and disadvantages of using each."
+                    },
+                    {
+                      "code": "9.4.5.TL.2",
+                      "statement": "Sort and filter data in a spreadsheet to analyze findings."
+                    },
+                    {
+                      "code": "9.4.5.TL.3",
+                      "statement": "Format a document using a word processing application to enhance text, change page formatting, and include appropriate images graphics, or symbols."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Collaborating digitally as a team can often develop a better artifact than an individual working alone.",
+                    "2020 New Jersey Student Learni 9.4 Lif"
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.5.TL.4",
+                      "statement": "Compare and contrast artifacts produced individually to those developed collaboratively (e.g., 1.5.5.CR3a)."
+                    },
+                    {
+                      "code": "9.4.5.TL.5",
+                      "statement": "Collaborate digitally to produce an artifact (e.g., 1.2.5CR1d)."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "8": {
+          "disciplinary_concepts": [
+            {
+              "abbrev": "CI",
+              "name": "Creativity and Innovation",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "Gathering and evaluating knowledge and information from a variety of sources, including global perspectives, fosters creativity and innovative thinking."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.8.CI.1",
+                      "statement": "Assess data gathered on varying perspectives on causes of climate change (e.g., cross- cultural, gender-specific, generational), and determine how the data can best be used to design"
+                    },
+                    {
+                      "code": "9.4.8.CI.2",
+                      "statement": "Repurpose an existing resource in an innovative way (e.g., 8.2.8.NT.3)."
+                    },
+                    {
+                      "code": "9.4.8.CI.3",
+                      "statement": "Examine challenges that may exist in the adoption of new ideas (e.g., 2.1.8.SSH, 6.1.8.CivicsPD.2)."
+                    },
+                    {
+                      "code": "9.4.8.CI.4",
+                      "statement": "Explore the role of creativity and innovation in career pathways and industries."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "CT",
+              "name": "Critical Thinking and Problem-solving",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "Multiple solutions often exist to solve a problem."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.8.CT.1",
+                      "statement": "Evaluate diverse solutions proposed by a variety of individuals, organizations, and/or agencies to a local or global problem, such as climate change, and use critical thinking skills to predict which one(s) are likely to be effective (e.g., MS-ETS1-2)."
+                    },
+                    {
+                      "code": "9.4.8.CT.2",
+                      "statement": "Develop multiple solutions to a problem and evaluate short- and long-term effects to determine the most plausible option (e.g., MS-ETS1-4, 6.1.8.CivicsDP.1)."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "An essential aspect of problem solving is being able to self-reflect on why possible solutions for solving problems were or were not successful."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.8.CT.3",
+                      "statement": "Compare past problem-solving solutions to local, national, or global issues and analyze the factors that led to a positive or negative outcome."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "DC",
+              "name": "Digital Citizenship",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "Detailed examples exist to illustrate crediting others when incorporating their digital artifacts in one’s own work. There are tradeoffs between allowing information to be public and keeping information private and secure. Digital footprints are publicly accessible, even if only shared with a select group. Appropriate measures such as proper interactions can protect online reputations."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.8.DC.1",
+                      "statement": "Analyze the resource citations in online materials for proper use."
+                    },
+                    {
+                      "code": "9.4.8.DC.2",
+                      "statement": "Provide appropriate citation and attribution elements when creating media products (e.g., W.6.8)."
+                    },
+                    {
+                      "code": "9.4.8.DC.3",
+                      "statement": "Describe tradeoffs between allowing information to be public (e.g., within online games) versus keeping information private and secure."
+                    },
+                    {
+                      "code": "9.4.8.DC.4",
+                      "statement": "Explain how information shared digitally is public and can be searched, copied, and potentially seen by public audiences."
+                    },
+                    {
+                      "code": "9.4.8.DC.5",
+                      "statement": "Manage digital identity and practice positive online behavior to avoid inappropriate forms of self-disclosure."
+                    },
+                    {
+                      "code": "9.4.8.DC.6",
+                      "statement": "Analyze online information to distinguish whether it is helpful or harmful to reputation."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Digital communities are used by individuals to share information, organize, and engage around issues and topics of interest. Digital technology and data can be leveraged by communities to address effects of climate change."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.8.DC.7",
+                      "statement": "Collaborate within a digital community to create a digital artifact using strategies such as crowdsourcing or digital surveys."
+                    },
+                    {
+                      "code": "9.4.8.DC.8",
+                      "statement": "Explain how communities use data and technology to develop measures to respond to effects of climate change (e.g., smart cities)."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "GCA",
+              "name": "Global and Cultural Awareness",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "Awareness of and appreciation for cultural differences is critical to avoid barriers to productive and positive interaction."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.8.GCA.1",
+                      "statement": "Model how to navigate cultural differences with sensitivity and respect (e.g., 1.5.8.C1a)."
+                    },
+                    {
+                      "code": "9.4.8.GCA.2",
+                      "statement": "Demonstrate openness to diverse ideas and perspectives through active discussions to achieve a group goal."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "IML",
+              "name": "Information and Media Literacy",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "Increases in the quantity of information available through electronic means have heightened the need to check sources for possible distortion, exaggeration, or misrepresentation. Digital tools make it possible to analyze and interpret data, including text, images, and sound. These tools allow for broad concepts and data to be more effectively communicated."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.8.IML.1",
+                      "statement": "Critically curate multiple resources to assess the credibility of sources when searching for information."
+                    },
+                    {
+                      "code": "9.4.8.IML.2",
+                      "statement": "Identify specific examples of distortion, exaggeration, or misrepresentation of information."
+                    },
+                    {
+                      "code": "9.4.8.IML.3",
+                      "statement": "Create a digital visualization that effectively communicates a data set using formatting techniques such as form, position, size, color, movement, and spatial grouping (e.g., 6.SP.B.4, 7.SP.B.8b)."
+                    },
+                    {
+                      "code": "9.4.8.IML.4",
+                      "statement": "Ask insightful questions to organize different types of data and create meaningful visualizations."
+                    },
+                    {
+                      "code": "9.4.8.IML.5",
+                      "statement": "Analyze and interpret local or public data sets to summarize and effectively communicate the data."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "The mode of information can convey a message to consumers or an audience."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.8.IML.6",
+                      "statement": "Identify subtle and overt messages based on the method of communication."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Sources of information are evaluated for accuracy and relevance when considering the use of information."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.8.IML.7",
+                      "statement": "Use information from a variety of sources, contexts, disciplines, and cultures for a specific purpose (e.g., 1.2.8.C2a, 1.4.8.CR2a, 2.1.8.CHSS/IV.8.AI.1, W.5.8, 6.1.8.GeoSV.3.a, 6.1.8.CivicsDP.4.b, 7.1.NH. IPRET.8)."
+                    },
+                    {
+                      "code": "9.4.8.IML.8",
+                      "statement": "Apply deliberate and thoughtful search strategies to access high-quality information on climate change (e.g., 1.1.8.C1b)."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "There are ethical and unethical uses of information and media."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.8.IML.9",
+                      "statement": "Distinguish between ethical and unethical uses of information and media (e.g.,"
+                    },
+                    {
+                      "code": "9.4.8.IML.10",
+                      "statement": "Examine the consequences of the uses of media (e.g., RI.8.7)."
+                    },
+                    {
+                      "code": "9.4.8.IML.11",
+                      "statement": "Predict the personal and community impact of online and social media activities."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "There is a need to produce and publish media that has information supported with quality evidence and is intended for authentic audiences."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.8.IML.12",
+                      "statement": "Use relevant tools to produce, publish, and deliver information supported with evidence for an authentic audience."
+                    },
+                    {
+                      "code": "9.4.8.IML.13",
+                      "statement": "Identify the impact of the creator on the content, production, and delivery of"
+                    },
+                    {
+                      "code": "9.4.8.IML.14",
+                      "statement": "Analyze the role of media in delivering cultural, political, and other societal messages."
+                    },
+                    {
+                      "code": "9.4.8.IML.15",
+                      "statement": "Explain ways that individuals may experience the same media message differently."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "TL",
+              "name": "Technology Literacy",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "Some digital tools are appropriate for gathering, organizing, analyzing, and presenting information, while other types of digital tools are appropriate for creating text, visualizations models, and communicating with others."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.8.TL.1",
+                      "statement": "Construct a spreadsheet in order to analyze multiple data sets, identify relationships, and facilitate data-based decision-making."
+                    },
+                    {
+                      "code": "9.4.8.TL.2",
+                      "statement": "Gather data and digitally represent information to communicate a real-world problem , (e.g., MS-ESS3-4, 6.1.8.EconET.1, 6.1.8.CivicsPR.4)."
+                    },
+                    {
+                      "code": "9.4.8.TL.3",
+                      "statement": "Select appropriate tools to organize and present information digitally."
+                    },
+                    {
+                      "code": "9.4.8.TL.4",
+                      "statement": "Synthesize and publish information about a local or global issue or event (e.g., MS- LS4-5, 6.1.8.CivicsPI.3)."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Digital tools allow for remote collaboration and rapid sharing of ideas unrestricted by geographic location or time.",
+                    "2020 New Jersey Student Lear 9.4"
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.8.TL.5",
+                      "statement": "Compare the process and effectiveness of synchronous collaboration and asynchronous collaboration."
+                    },
+                    {
+                      "code": "9.4.8.TL.6",
+                      "statement": "Collaborate to develop and publish work that provides perspectives on a real-world problem."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "12": {
+          "disciplinary_concepts": [
+            {
+              "abbrev": "CI",
+              "name": "Creativity and Innovation",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "With a growth mindset, failure is an important part of success. Innovative ideas or innovation can lead to career opportunities."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.12.CI.1",
+                      "statement": "Demonstrate the ability to reflect, analyze, and use creative skills and ideas (e.g., 1.1.12prof.CR3a)."
+                    },
+                    {
+                      "code": "9.4.12.CI.2",
+                      "statement": "Identify career pathways that highlight personal talents, skills, and abilities (e.g.,"
+                    },
+                    {
+                      "code": "9.4.12.CI.3",
+                      "statement": "Investigate new challenges and opportunities for personal growth, advancement, and"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "CT",
+              "name": "Critical Thinking and Problem-solving",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "Collaboration with individuals with diverse experiences can aid in the problem-solving process, particularly for global issues where diverse solutions are needed."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.12.CT.1",
+                      "statement": "Identify problem-solving strategies used in the development of an innovative product"
+                    },
+                    {
+                      "code": "9.4.12.CT.2",
+                      "statement": "Explain the potential benefits of collaborating to enhance critical thinking and problem solving (e.g., 1.3E.12profCR3.a)."
+                    },
+                    {
+                      "code": "9.4.12.CT.3",
+                      "statement": "Enlist input from a variety of stakeholders (e.g., community members, experts in the field) to design a service learning activity that addresses a local or global issue (e.g., environmental justice)."
+                    },
+                    {
+                      "code": "9.4.12.CT.4",
+                      "statement": "Participate in online strategy and planning sessions for course-based, school-based, or other project and determine the strategies that contribute to effective outcomes."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "DC",
+              "name": "Digital Citizenship",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "Laws govern the use of intellectual property and there are legal consequences to utilizing or sharing another’s original works without permission or appropriate credit. Laws govern many aspects of computing, such as privacy, data, property, information, and identity. These laws can have beneficial and harmful effects, such as expediting or delaying advancements in computing and protecting or infringing upon people’s rights. Cultivating online reputations for employers and academia requires separating private and professional digital identities. Digital communities influence many aspects of society, especially the workforce. The increased connectivity between people in different cultures and different career fields have changed the nature, content, and responsibilities of many careers. Network connectivity and computing capability extended to objects, sensors and everyday items not normally considered computers allows these devices to generate, exchange, and consume data with minimal human intervention. Technologies such as Artificial Intelligence (AI) and blockchain can help minimize the effect of climate change."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.12.DC.1",
+                      "statement": "Explain the beneficial and harmful effects that intellectual property laws can have on the creation and sharing of content (e.g., 6.1.12.CivicsPR.16.a)."
+                    },
+                    {
+                      "code": "9.4.12.DC.2",
+                      "statement": "Compare and contrast international differences in copyright laws and ethics."
+                    },
+                    {
+                      "code": "9.4.12.DC.3",
+                      "statement": "Evaluate the social and economic implications of privacy in the context of safety, law, or ethics (e.g., 6.3.12.HistoryCA.1)."
+                    },
+                    {
+                      "code": "9.4.12.DC.4",
+                      "statement": "Explain the privacy concerns related to the collection of data (e.g., cookies) and generation of data through automated processes that may not be evident to users (e.g.,"
+                    },
+                    {
+                      "code": "9.4.12.DC.5",
+                      "statement": "Debate laws and regulations that impact the development and use of software."
+                    },
+                    {
+                      "code": "9.4.12.DC.6",
+                      "statement": "Select information to post online that positively impacts personal image and future college and career opportunities."
+                    },
+                    {
+                      "code": "9.4.12.DC.7",
+                      "statement": "Evaluate the influence of digital communities on the nature, content and responsibilities of careers, and other aspects of society (e.g., 6.1.12.CivicsPD.16.a)."
+                    },
+                    {
+                      "code": "9.4.12.DC.8",
+                      "statement": "Explain how increased network connectivity and computing capabilities of everyday objects allow for innovative technological approaches to climate protection."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "GCA",
+              "name": "Global and Cultural Awareness",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "Solutions to the problems faced by a global society require the contribution of individuals with different points of view and experiences."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.12.GCA.1",
+                      "statement": "Collaborate with individuals to analyze a variety of potential solutions to climate change effects and determine why some solutions (e.g., political. economic, cultural) may work better than others (e.g., SL.11-12.1., HS-ETS1-1, HS-ETS1-2, HS-ETS1-4, 6.3.12.GeoGI.1,"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "IML",
+              "name": "Information and Media Literacy",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "Advanced search techniques can be used with digital and media resources to locate information and to check the credibility and the expertise of sources to answer questions, solve problems, and inform the decision-making. Digital tools such as artificial intelligence, image enhancement and analysis, and sophisticated computer modeling and simulation create new types of information that may have profound effects on society. These new types of information must be evaluated carefully. In order for members of our society to participate productively, information needs to be shared accurately and ethically."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.12.IML.1",
+                      "statement": "Compare search browsers and recognize features that allow for filtering of information."
+                    },
+                    {
+                      "code": "9.4.12.IML.2",
+                      "statement": "Evaluate digital sources for timeliness, accuracy, perspective, credibility of the source, and relevance of information, in media, data, or other resources (e.g., NJSLSA.W8, Social Studies Practice: Gathering and Evaluating Sources."
+                    },
+                    {
+                      "code": "9.4.12.IML.3",
+                      "statement": "Analyze data using tools and models to make valid and reliable claims, or to"
+                    },
+                    {
+                      "code": "9.4.12.IML.4",
+                      "statement": "Assess and critique the appropriateness and impact of existing data visualizations for an intended audience (e.g., S-ID.B.6b, HS-LS2-4)."
+                    },
+                    {
+                      "code": "9.4.12.IML.5",
+                      "statement": "Evaluate, synthesize, and apply information on climate change from various 7.1.AL.PRSNT.2)."
+                    },
+                    {
+                      "code": "9.4.12.IML.6",
+                      "statement": "Use various types of media to produce and store information on climate change for different purposes and audiences with sensitivity to cultural, gender, and age diversity (e.g., NJSLSA.SL5)."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Accurate information may help in making valuable and ethical choices."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.12.IML.7",
+                      "statement": "Develop an argument to support a claim regarding a current workplace or societal/ethical issue such as climate change (e.g., NJSLSA.W1, 7.1.AL.PRSNT.4)."
+                    }
+                  ]
+                },
+                {
+                  "core_ideas": [
+                    "Media have embedded values and points of view."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.12.IML.8",
+                      "statement": "Evaluate media sources for point of view, bias, and motivations (e.g., NJSLSA.R6, 7.1.AL.IPRET.6)."
+                    },
+                    {
+                      "code": "9.4.12.IML.9",
+                      "statement": "Analyze the decisions creators make to reveal explicit and implicit messages within information and media (e.g., 1.5.12acc.C2a, 7.1.IL.IPRET.4)."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "abbrev": "TL",
+              "name": "Technology Literacy",
+              "core_idea_blocks": [
+                {
+                  "core_ideas": [
+                    "Digital tools differ in features, capacities, and styles. Knowledge of different digital tools is helpful in selecting the best tool for a given task. Collaborative digital tools can be used to access, record and share different viewpoints and to collect and tabulate the views of groups of people."
+                  ],
+                  "pes": [
+                    {
+                      "code": "9.4.12.TL.1",
+                      "statement": "Assess digital tools based on features such as accessibility options, capacities, and utility for accomplishing a specified task (e.g., W.11-12.6.)."
+                    },
+                    {
+                      "code": "9.4.12.TL.2",
+                      "statement": "Generate data using formula-based calculations in a spreadsheet and draw conclusions about the data."
+                    },
+                    {
+                      "code": "9.4.12.TL.3",
+                      "statement": "Analyze the effectiveness of the process and quality of collaborative environments."
+                    },
+                    {
+                      "code": "9.4.12.TL.4",
+                      "statement": "Collaborate in online learning communities or social networks or virtual worlds to analyze and propose a resolution to a real-world problem (e.g., 7.1.AL.IPERS.6)."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>New Jersey Student Learning Standards — Forge Curriculum Reference</title>
-<link rel="alternate" type="application/json" href="data/all.json" title="All NJSLS standards as JSON (608 standards across ELA / Math / Science / Social Studies / CS&DT)">
+<link rel="alternate" type="application/json" href="data/all.json" title="All NJSLS standards as JSON (900 standards across ELA / Math / Science / Social Studies / CS&DT / CLKS / CHPE)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -31,6 +31,10 @@
   --ss-pale: #ECDFE5;
   --csdt: #2D4A8C;
   --csdt-pale: #DEE4F1;
+  --clks: #A47318;
+  --clks-pale: #F2E5C8;
+  --chpe: #A6526B;
+  --chpe-pale: #F1DEE5;
   --shadow: 0 1px 0 rgba(26,24,20,0.04), 0 8px 24px -12px rgba(26,24,20,0.08);
   --shadow-lift: 0 2px 0 rgba(26,24,20,0.06), 0 18px 36px -16px rgba(26,24,20,0.16);
 }
@@ -45,7 +49,9 @@ body {
     radial-gradient(circle at 90% 18%, rgba(31,90,110,0.025) 0%, transparent 38%),
     radial-gradient(circle at 12% 78%, rgba(63,107,71,0.025) 0%, transparent 38%),
     radial-gradient(circle at 88% 88%, rgba(126,78,110,0.025) 0%, transparent 38%),
-    radial-gradient(circle at 50% 50%, rgba(45,74,140,0.02) 0%, transparent 45%);
+    radial-gradient(circle at 50% 50%, rgba(45,74,140,0.02) 0%, transparent 45%),
+    radial-gradient(circle at 70% 35%, rgba(164,115,24,0.022) 0%, transparent 40%),
+    radial-gradient(circle at 30% 60%, rgba(166,82,107,0.022) 0%, transparent 40%);
 }
 header.masthead {
   max-width: 1100px; margin: 0 auto;
@@ -107,6 +113,8 @@ main { max-width: 1100px; margin: 0 auto; padding: 56px 48px 80px; }
 .subject-card.science { --accent: var(--science); --accent-pale: var(--science-pale); }
 .subject-card.ss { --accent: var(--ss); --accent-pale: var(--ss-pale); }
 .subject-card.csdt { --accent: var(--csdt); --accent-pale: var(--csdt-pale); }
+.subject-card.clks { --accent: var(--clks); --accent-pale: var(--clks-pale); }
+.subject-card.chpe { --accent: var(--chpe); --accent-pale: var(--chpe-pale); }
 
 .subject-card.ready:hover,
 .subject-card.ready:focus-visible {
@@ -335,6 +343,8 @@ footer {
 .result-card.subject-science {        --card-accent: var(--science); }
 .result-card.subject-social_studies { --card-accent: var(--ss); }
 .result-card.subject-csdt {           --card-accent: var(--csdt); }
+.result-card.subject-clks {           --card-accent: var(--clks); }
+.result-card.subject-chpe {           --card-accent: var(--chpe); }
 .result-header {
   display: flex; align-items: center; gap: 10px;
   margin-bottom: 12px; flex-wrap: wrap;
@@ -542,7 +552,7 @@ footer {
   <section class="search-section" id="search">
     <div class="search-eyebrow">Discovery</div>
     <h2 class="search-prompt">Find standards that <em>match</em> what you're teaching.</h2>
-    <p class="search-hint">Type a <strong>code</strong> or <strong>keyword</strong> for an instant match across all 608 standards. For <strong>semantic matching</strong> on a vague description or a pasted lesson plan, click <strong>Search with Claude</strong> — that one calls the Anthropic API with your key.</p>
+    <p class="search-hint">Type a <strong>code</strong> or <strong>keyword</strong> for an instant match across all 900 standards. For <strong>semantic matching</strong> on a vague description or a pasted lesson plan, click <strong>Search with Claude</strong> — that one calls the Anthropic API with your key.</p>
     <form class="search-form" id="search-form" autocomplete="off">
       <textarea class="search-input" id="search-input" rows="1" placeholder="Type a code or keyword for instant matches… or describe a goal and click Search with Claude" required></textarea>
       <button type="submit" class="search-submit" id="search-submit">Search with Claude</button>
@@ -635,6 +645,34 @@ footer {
       </div>
     </a>
 
+    <a class="subject-card clks ready" href="clks.html" aria-label="Open Career Readiness, Life Literacies, and Key Skills standards">
+      <div class="card-header">
+        <div class="card-eyebrow">Career Readiness, Life Literacies &amp; Key Skills</div>
+        <span class="card-status">Ready</span>
+      </div>
+      <h2 class="card-title">Finance, <em>Career</em>,<br>Life &amp; Digital Skills</h2>
+      <div class="card-grade-band">Grades 5 + 8 · Adopted 2020</div>
+      <p class="card-description">Standards 9.1 (Financial Literacy), 9.2 (Career Awareness), 9.4 (Life Literacies &amp; Key Skills). Cross-cutting skills meant for integration into every academic content area.</p>
+      <div class="card-footer">
+        <span class="card-source">NJSLS · CLKS · 2020</span>
+        <span class="card-cta">Open <span class="arrow">→</span></span>
+      </div>
+    </a>
+
+    <a class="subject-card chpe ready" href="chpe.html" aria-label="Open Comprehensive Health and Physical Education standards">
+      <div class="card-header">
+        <div class="card-eyebrow">Comprehensive Health &amp; Physical Education</div>
+        <span class="card-status">Ready</span>
+      </div>
+      <h2 class="card-title">Mind, <em>Body</em>,<br>Movement &amp; Safety</h2>
+      <div class="card-grade-band">Grades 5 + 8 · Adopted 2020</div>
+      <p class="card-description">Standards 2.1 (Personal &amp; Mental Health), 2.2 (Physical Wellness), 2.3 (Safety). Thirteen disciplinary concepts from emotional health and nutrition through substance-use prevention.</p>
+      <div class="card-footer">
+        <span class="card-source">NJSLS · CHPE · 2020</span>
+        <span class="card-cta">Open <span class="arrow">→</span></span>
+      </div>
+    </a>
+
   </div>
 
   <section class="about-strip">
@@ -676,13 +714,15 @@ footer {
   const MODEL = 'claude-sonnet-4-6';
   const ENDPOINT = 'https://api.anthropic.com/v1/messages';
 
-  const SUBJECT_LABELS = { ela: 'ELA', math: 'Math', science: 'Science', social_studies: 'SS', csdt: 'CS&DT' };
+  const SUBJECT_LABELS = { ela: 'ELA', math: 'Math', science: 'Science', social_studies: 'SS', csdt: 'CS&DT', clks: 'CLKS', chpe: 'CHPE' };
   const SUBJECT_FULL = {
     ela: 'English Language Arts',
     math: 'Mathematics',
     science: 'Science',
     social_studies: 'Social Studies',
     csdt: 'Computer Science & Design Thinking',
+    clks: 'Career Readiness, Life Literacies & Key Skills',
+    chpe: 'Comprehensive Health & Physical Education',
   };
   const SUBJECT_HREF = {
     ela: 'ela.html',
@@ -690,6 +730,8 @@ footer {
     science: 'science.html',
     social_studies: 'social-studies.html',
     csdt: 'csdt.html',
+    clks: 'clks.html',
+    chpe: 'chpe.html',
   };
 
   let corpus = null;
