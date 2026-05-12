@@ -19,14 +19,19 @@ To restyle or tune search: it lives inline at the bottom `<script>` block of `in
 
 | File / Path | Role |
 |---|---|
-| `index.html` | Hub: subject cards with per-subject accent colors and Ready status. No data dependency. |
+| `index.html` | Hub: 4 subject cards + semantic search box. Loads `data/all.json` when search runs. |
 | `ela.html` | English Language Arts, Grades 5–8. Filtered browser. Fetches `data/ela.json` at load. |
 | `math.html` | Mathematics, Grades 5–8. Filtered browser with KaTeX rendering. Fetches `data/math.json`. |
 | `science.html` | Science, Grades 5–8 (Grade 5 + MS 6–8). Filtered browser. Fetches `data/science.json`. |
-| `data/ela.json` | Subject-specific hierarchical schema (domains → anchors → grades → entries). |
-| `data/math.json` | Subject-specific hierarchical schema (grade → domains → clusters → standards). |
-| `data/science.json` | Subject-specific hierarchical schema (discipline → topics → PEs), per-topic `grade_band`. |
-| `data/all.json` | **Flat denormalized 314-record array of every standard** — `{subject, code, grade, domain, statement, …}`. LLM/API consumption layer. |
+| `social-studies.html` | Social Studies, Grades 3–8 (bands 3–5 and 6–8). Filtered browser. Fetches `data/social-studies.json`. |
+| `data/ela.json` | Hierarchical: domains → anchors → grades → entries. |
+| `data/math.json` | Hierarchical: grade → domains → clusters → standards. |
+| `data/science.json` | Hierarchical: discipline → topics → PEs; per-topic `grade_band`. |
+| `data/social-studies.json` | Hierarchical: band → standards (6.1 / 6.2 / 6.3) → eras OR groups → core_idea_blocks → PEs. |
+| `data/sources/*.md` | Cleaned source markdown for subjects whose source we processed ourselves (currently SS). |
+| `data/all.json` | **Flat denormalized 523-record array of every standard.** LLM/API consumption layer. |
+| `assets/cc-backlinks.js` + `.css` | Shared module: fetches CC live state and attaches "Taught in" sections under each standard entry on subject pages. |
+| `scripts/build_all.py` | Rebuilds `data/all.json` after any subject JSON edit. |
 | `SESSIONS.md` | Reverse-chronological transcript log per work session. Append at top before each session's final commit. |
 | `CLAUDE.md` | This file. Auto-loaded into Claude Code context. |
 
@@ -106,8 +111,41 @@ Filters in UI: Grade pills + live search input. Math has inline LaTeX expression
 ```
 Filters in UI: Discipline pills + Grade-band pills + Topic-code pills + live search.
 
+### Social Studies — `data/social-studies.json`
+```
+{
+  "grade_bands": ["3-5", "6-8"],
+  "standards_meta": { "6.1": "U.S. History: America in the World", "6.2": "World History / Global Studies", "6.3": "Active Citizenship in the 21st Century" },
+  "bands": {
+    "<3-5 | 6-8>": {
+      "standards": [{
+        code,                                   // "6.1", "6.2", "6.3"
+        name,
+        end_grade: 5 | 8,
+        organization: "by_concept" | "by_era",
+        // Either eras (for 6-8 6.1 / 6.2) OR groups (for 3-5 or 6.3):
+        eras: [{
+          era_num, era_label, era_summary,
+          core_idea_blocks: [{ core_idea, pes: [{ code, statement }] }]
+        }],
+        groups: [{
+          discipline,                           // "Civics, Government, and Human Rights"
+          sub_concept,                          // "Civics and Political Institutions"
+          core_idea_blocks: [{ core_idea, pes: [{ code, statement }] }]
+        }]
+      }]
+    }
+  }
+}
+```
+Filters in UI: Grade-band pills + Standard pills (6.1 / 6.2 / 6.3) + live search.
+
+Code shape varies by standard/band:
+- 3-5 and 6.3: `6.<1|3>.<5|8>.<DiscConcept>.<num>` — e.g., `6.1.5.CivicsPI.1`
+- 6-8 6.1/6.2: `6.<1|2>.8.<DiscConcept>.<era>.<letter>` — e.g., `6.1.8.CivicsPI.3.a`
+
 ### `data/all.json` — flat consumption layer
-Each standard is an entry in `standards: [...]` with denormalised fields: `{subject, code, grade, statement, …}` plus subject-specific extras (domain/anchor for ELA, domain/cluster for Math, discipline/topic for Science). 314 entries total as of Session 5.
+Each standard is an entry in `standards: [...]` with denormalised fields: `{subject, code, grade, statement, …}` plus subject-specific extras (domain/anchor for ELA, domain/cluster for Math, discipline/topic for Science, standard/era-or-discipline/core_idea for SS). 523 entries total as of Session 8.
 
 This is the format to feed an LLM / Claude project / external script. Don't put hierarchical schemas in front of consumers when they want to scan all 314 standards.
 
@@ -123,7 +161,7 @@ Same fonts and warm-paper palette across all pages — distinct subject accent.
 | ELA | `#8B3A1F` terracotta | `--accent` |
 | Math | `#1F5A6E` deep teal | `--accent` |
 | Science | `#3F6B47` forest green | `--accent` |
-| Social Studies *(future)* | TBD | `--accent` |
+| Social Studies | `#7E4E6E` mauve | `--accent` |
 
 Fonts: `Fraunces` (display, italic for accent words) + `Manrope` (body). Background: `#FAF6EE` warm paper. Soft radial-gradient blooms in the subject accent color.
 

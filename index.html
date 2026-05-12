@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>New Jersey Student Learning Standards — Forge Curriculum Reference</title>
-<link rel="alternate" type="application/json" href="data/all.json" title="All NJSLS standards as JSON (314 standards across ELA / Math / Science)">
+<link rel="alternate" type="application/json" href="data/all.json" title="All NJSLS standards as JSON (523 standards across ELA / Math / Science / Social Studies)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -27,6 +27,8 @@
   --math-pale: #DCEAF0;
   --science: #3F6B47;
   --science-pale: #DFEADF;
+  --ss: #7E4E6E;
+  --ss-pale: #ECDFE5;
   --shadow: 0 1px 0 rgba(26,24,20,0.04), 0 8px 24px -12px rgba(26,24,20,0.08);
   --shadow-lift: 0 2px 0 rgba(26,24,20,0.06), 0 18px 36px -16px rgba(26,24,20,0.16);
 }
@@ -37,9 +39,10 @@ body {
   font-family: 'Manrope', -apple-system, system-ui, sans-serif;
   font-size: 16px; line-height: 1.5; min-height: 100vh;
   background-image:
-    radial-gradient(circle at 12% 8%, rgba(139,58,31,0.03) 0%, transparent 42%),
-    radial-gradient(circle at 88% 28%, rgba(31,90,110,0.025) 0%, transparent 45%),
-    radial-gradient(circle at 50% 92%, rgba(63,107,71,0.025) 0%, transparent 50%);
+    radial-gradient(circle at 10% 8%, rgba(139,58,31,0.03) 0%, transparent 38%),
+    radial-gradient(circle at 90% 18%, rgba(31,90,110,0.025) 0%, transparent 38%),
+    radial-gradient(circle at 12% 78%, rgba(63,107,71,0.025) 0%, transparent 38%),
+    radial-gradient(circle at 88% 88%, rgba(126,78,110,0.025) 0%, transparent 38%);
 }
 header.masthead {
   max-width: 1100px; margin: 0 auto;
@@ -99,6 +102,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 56px 48px 80px; }
 .subject-card.ela { --accent: var(--ela); --accent-pale: var(--ela-pale); }
 .subject-card.math { --accent: var(--math); --accent-pale: var(--math-pale); }
 .subject-card.science { --accent: var(--science); --accent-pale: var(--science-pale); }
+.subject-card.ss { --accent: var(--ss); --accent-pale: var(--ss-pale); }
 
 .subject-card.ready:hover,
 .subject-card.ready:focus-visible {
@@ -512,7 +516,7 @@ footer {
   <section class="search-section" id="search">
     <div class="search-eyebrow">Discovery</div>
     <h2 class="search-prompt">Find standards that <em>match</em> what you're teaching.</h2>
-    <p class="search-hint">Paste a lesson plan, a learning goal, a standard code, or just a topic. Search is across all 314 NJSLS standards (ELA, Math, Science).</p>
+    <p class="search-hint">Paste a lesson plan, a learning goal, a standard code, or just a topic. Search is across all 523 NJSLS standards (ELA, Math, Science, Social Studies).</p>
     <form class="search-form" id="search-form" autocomplete="off">
       <textarea class="search-input" id="search-input" rows="1" placeholder="e.g. 'learn to code', 'fractions with unlike denominators', '5.NF.A.1', or paste a whole lesson…" required></textarea>
       <button type="submit" class="search-submit" id="search-submit">Search</button>
@@ -573,6 +577,20 @@ footer {
       <p class="card-description">Three-dimensional standards combining disciplinary core ideas with science and engineering practices and cross-cutting concepts.</p>
       <div class="card-footer">
         <span class="card-source">NJSLS · Science · 2020</span>
+        <span class="card-cta">Open <span class="arrow">→</span></span>
+      </div>
+    </a>
+
+    <a class="subject-card ss ready" href="social-studies.html" aria-label="Open Social Studies standards, grades 3 through 8">
+      <div class="card-header">
+        <div class="card-eyebrow">Social Studies</div>
+        <span class="card-status">Ready</span>
+      </div>
+      <h2 class="card-title">U.S. &amp; World <em>History</em>,<br>Civics, Geography</h2>
+      <div class="card-grade-band">Grades 3 – 8 · Adopted 2020</div>
+      <p class="card-description">Three standards: U.S. history, world history, active citizenship. Organized by disciplinary concept at 3–5 and by era for U.S. and world history at 6–8.</p>
+      <div class="card-footer">
+        <span class="card-source">NJSLS · SS · 2020</span>
         <span class="card-cta">Open <span class="arrow">→</span></span>
       </div>
     </a>

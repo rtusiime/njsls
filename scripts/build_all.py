@@ -12,6 +12,7 @@ DATA = Path(__file__).parent.parent / "data"
 ela = json.loads((DATA / "ela.json").read_text())
 math_ = json.loads((DATA / "math.json").read_text())
 science = json.loads((DATA / "science.json").read_text())
+ss = json.loads((DATA / "social-studies.json").read_text())
 
 flat = []
 
@@ -61,6 +62,30 @@ for _disc_key, disc in science.items():
                 "assessment_boundary": pe.get("assessment_boundary"),
             })
 
+# Social Studies: band → standards (6.1 / 6.2 / 6.3) → eras OR groups → core_idea_blocks → pes
+for band_key, band in ss["bands"].items():
+    for std in band["standards"]:
+        container_key = "eras" if std["organization"] == "by_era" else "groups"
+        for container in std[container_key]:
+            for cib in container["core_idea_blocks"]:
+                for pe in cib["pes"]:
+                    rec = {
+                        "subject": "social_studies",
+                        "code": pe["code"],
+                        "grade": band_key,
+                        "standard": f"{std['code']} - {std['name']}",
+                        "core_idea": cib["core_idea"],
+                        "statement": pe["statement"],
+                    }
+                    if std["organization"] == "by_era":
+                        rec["era"] = container["era_label"]
+                        if container.get("era_summary"):
+                            rec["era_summary"] = container["era_summary"]
+                    else:
+                        rec["discipline"] = container["discipline"]
+                        rec["sub_concept"] = container["sub_concept"]
+                    flat.append(rec)
+
 # Strip None values
 flat = [{k: v for k, v in d.items() if v is not None} for d in flat]
 
@@ -70,9 +95,10 @@ all_data = {
     "source": "New Jersey Department of Education - NJSLS (2023 ELA + Math, 2020 Science)",
     "standard_count": len(flat),
     "subjects": {
-        "ela":     {"title": "English Language Arts", "grade_range": "5-8",                      "adopted": "2023"},
-        "math":    {"title": "Mathematics",           "grade_range": "5-8",                      "adopted": "2023"},
-        "science": {"title": "Science",               "grade_range": "5-8 (Grade 5 + MS 6-8)",   "adopted": "2020 (NGSS-aligned)"},
+        "ela":             {"title": "English Language Arts", "grade_range": "5-8",                      "adopted": "2023"},
+        "math":            {"title": "Mathematics",           "grade_range": "5-8",                      "adopted": "2023"},
+        "science":         {"title": "Science",               "grade_range": "5-8 (Grade 5 + MS 6-8)",   "adopted": "2020 (NGSS-aligned)"},
+        "social_studies":  {"title": "Social Studies",        "grade_range": "3-8 (bands 3-5 and 6-8)",  "adopted": "2020"},
     },
     "standards": flat,
 }

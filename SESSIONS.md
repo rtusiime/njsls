@@ -6,6 +6,134 @@ Entries are intentionally verbose. The point is full visibility: open the file a
 
 ---
 
+## Session 8 — 2026-05-12, 02:25 AM EDT
+*Social Studies corpus added; chip-label explanation; CC tag migration deferred to next session.*
+
+### User context
+
+Three things in one message:
+1. Confusion about the "CHALLENGE" / "MATH" chips that Phase 3 backlinks render.
+2. Decision on the CC tag-migration paths: **go with (2) update CC tags.**
+3. Pasted a ~30 KB cleaned markdown of NJSLS-SS Grades 3–5 + 6–8 and asked: *can we add a Social Studies corpus mirroring the aesthetic of the others?*
+
+### What I shipped this session
+
+**(1) Chip explanation** — answered inline at the top of the response. The label is just CC's `tp` (block type) field — "challenge" / "math" / "other" / etc. — passed through the `TYPE_LABELS` map in `cc-backlinks.js`. No code change.
+
+**(2) CC migration — deferred deliberately.** The ELA half (`SL.1`, `RI.2`, `W.4` anchor shortcuts) is a curatorial decision because each anchor expands to multiple NJSLS 2023 codes per grade. Wrong to push to Supabase without a diff review. Plan for next session: write `scripts/migrate_cc_tags.py` with the full translation table, run in dry-run mode against CC's `state.json`, show old→new diff for approval, then apply + push via CC's `publish.py`.
+
+**(3) Social Studies — full subject end-to-end.**
+
+### Schema decision
+
+SS is structurally more complex than other subjects because its three standards organize differently:
+
+| Band | 6.1 U.S. History | 6.2 World History | 6.3 Active Citizenship |
+|---|---|---|---|
+| 3–5 | by disciplinary concept | n/a (starts at 5–8) | by disciplinary concept |
+| 6–8 | by era | by era | by disciplinary concept |
+
+The schema reflects this honestly rather than forcing one shape:
+
+```js
+{
+  bands: {
+    "<band>": {
+      standards: [{
+        code, name, end_grade, organization: "by_concept"|"by_era",
+        // one of:
+        eras: [{ era_num, era_label, era_summary, core_idea_blocks: [...] }],
+        groups: [{ discipline, sub_concept, core_idea_blocks: [...] }]
+      }]
+    }
+  }
+}
+```
+
+Each `core_idea_block` carries the verbatim NJDOE "Core Idea" sentence + the PEs underneath it. That preserves the source's pedagogical framing where a core idea is the umbrella for the PEs below it — important for SS where the core ideas are the doctrinal claims and the PEs are the assessable bits.
+
+### Extraction
+
+Source: the user's pasted markdown, saved to `data/sources/social-studies-source.md`. Parser is `/tmp/extract_ss.py`, a state-machine over markdown lines:
+
+- H1 (`# Grades 3-5` / `# Grades 6-8`) → switch band.
+- H2 (`## 6.1 U.S. History…`) → start a new standard; pick `by_era` for 6-8 6.1/6.2, `by_concept` otherwise.
+- H3 → either era (for `by_era` standards) or `Discipline: Sub-concept` (for `by_concept`).
+- `**Core Idea:**` lines → start a new core-idea block.
+- `- **<code>:** statement` bullets → append PE to current block.
+
+**Initial regex bug:** `[\d.]+` in the PE-bullet pattern rejected the alphabetic disciplinary-concept piece (`CivicsPI`). Fixed to `[^:*]+?`. After fix, **209 PEs** extracted clean:
+
+| Band | Standard | Org | Containers | PEs |
+|---|---|---|---|---|
+| 3-5 | 6.1 | by_concept | 18 groups | 94 |
+| 3-5 | 6.3 | by_concept | 4 groups | 6 *(source truncated)* |
+| 6-8 | 6.1 | by_era | 3 eras | 41 |
+| 6-8 | 6.2 | by_era | 4 eras | 48 |
+| 6-8 | 6.3 | by_concept | 6 groups | 20 *(source truncated)* |
+| | | | **35 containers** | **209 PEs total** |
+
+The source extract noted truncation at 6.3 in both bands — captured in the rendered page as a "Source extract incomplete" callout under the affected standards.
+
+### Page build
+
+`social-studies.html` — modeled on the science.html shape (filter bar + TOC + main rendered from JSON). Distinct touches:
+
+- **Mauve accent** `#7E4E6E` (distinct from terracotta/teal/forest, suits the historical/civic theme).
+- **Filter pills:** Grade band (All / 3–5 / 6–8) + Standard (All / 6.1 / 6.2 / 6.3) + live search.
+- **Render hierarchy:** `band-section` → `standard-card` → `group-block` or `era-block` → `core-idea-block` → `pe-entry`. Each `.core-idea-block` shows the NJDOE Core Idea sentence in a pale-mauve box with a "CORE IDEA" prefix, then the PEs below as left-rule chips (same idiom as ELA/Math/Science).
+- **TOC sidebar** with just two entries (Grades 3–5, Grades 6–8) — no era-level sub-jumps to keep it scannable.
+- **CC backlinks module loaded** — for now the data alignment problem means no SS standards match CC tags (CC doesn't currently tag with `6.1.x.x.x` codes), so all SS standards will render without a "Taught in" section until either (a) CC starts tagging SS or (b) Phase 4 forward mapping handles SS too.
+
+### Hub wiring
+
+Added a 4th subject card with the SS accent, between Science and the about strip. Adjusted the hub's background radial gradients to include a 4th mauve bloom for visual balance. Updated the "314 standards" mentions on the hub (machine-readable link + search hint) to "523 standards across ELA / Math / Science / Social Studies".
+
+### Tool / command transcript
+
+```
+$ # Saved source
+$ wc -l data/sources/social-studies-source.md
+   650+ lines
+
+$ # Extracted
+$ python3 /tmp/extract_ss.py
+Wrote data/social-studies.json
+…
+Grand total: 209 PEs
+
+$ # Rebuilt flat index
+$ python3 scripts/build_all.py
+Wrote data/all.json — 523 standards total
+  ela: 130
+  math: 110
+  science: 74
+  social_studies: 209
+
+$ # JS validated
+$ node --check /tmp/ss_inline.js
+JS OK
+
+$ # Local smoke test on 127.0.0.1
+$ curl http://127.0.0.1:8768/social-studies.html → 21,472 bytes, HTTP 200
+$ curl http://127.0.0.1:8768/data/social-studies.json → 92,523 bytes, 209 PEs
+$ curl http://127.0.0.1:8768/data/all.json → standard_count: 523
+```
+
+### Commits produced
+
+To be backfilled.
+
+### Notes / flags
+
+- **3–5 reach.** Forge runs grades 5–8, but the NJSLS-SS document is structurally 3–5 then 6–8. Including 3–5 here matches the source organization and helps with cross-grade alignment when 5th-graders cover material introduced earlier. If we want to hide 3–5 by default, the Grade-band pill already supports that — could just change the default `activeBand = '6-8'` if user wants.
+- **Source truncation.** The user's extract ended early for both 6.3 standards. Affected standards show a "Source extract incomplete" callout with a pointer to the master NJDOE doc. When you have the full PDF, drop it in and we'll re-extract.
+- **CC alignment for SS.** CC currently has zero SS-code tags. So Phase 3 backlinks won't fire on SS until either (a) the Phase 4 forward-mapping feature tags blocks with SS codes, or (b) someone hand-tags SS blocks in CC. The cc-backlinks module is loaded anyway, so it'll start working the moment any block carries a `6.x.x.x.x` code.
+- **Background bloom.** With four subjects we now have four radial-gradient color blobs on the hub. Each at ~3% opacity, positioned in different quadrants. Subtle enough not to compete with content; gives the page some warmth.
+- **CC migration still pending.** Next session: dry-run the translation table, get user approval, push to Supabase + CC repo.
+
+---
+
 ## Session 7 — 2026-05-12, 01:55 AM EDT
 *Phase 3: per-standard "Taught in" backlinks from Cohort Calendar on subject pages.*
 

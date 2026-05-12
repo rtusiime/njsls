@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Jersey Student Learning Standards — Social Studies — Grades 3 through 8</title>
+<link rel="alternate" type="application/json" href="data/all.json" title="All NJSLS standards as JSON">
+<link rel="alternate" type="application/json" href="data/social-studies.json" title="This subject as JSON">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/cc-backlinks.css">
+<script defer src="assets/cc-backlinks.js"></script>
+<style>
+:root {
+  --bg: #FAF6EE;
+  --surface: #FFFFFF;
+  --ink: #1A1814;
+  --ink-soft: #3A352D;
+  --muted: #6B645A;
+  --faint: #9A9384;
+  --accent: #7E4E6E;
+  --accent-soft: #A07E94;
+  --accent-pale: #ECDFE5;
+  --accent-deep: #5C3A52;
+  --divider: #E5DCC8;
+  --rule: #D9D1BD;
+  --shadow: 0 1px 0 rgba(26,24,20,0.04), 0 8px 24px -12px rgba(26,24,20,0.08);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Manrope', -apple-system, system-ui, sans-serif;
+  font-size: 16px; line-height: 1.5; min-height: 100vh;
+  background-image:
+    radial-gradient(circle at 15% 10%, rgba(126,78,110,0.035) 0%, transparent 42%),
+    radial-gradient(circle at 85% 90%, rgba(126,78,110,0.025) 0%, transparent 50%);
+}
+header.masthead {
+  max-width: 1100px; margin: 0 auto;
+  padding: 40px 48px 24px; border-bottom: 1px solid var(--rule);
+}
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--muted);
+  text-decoration: none; margin-bottom: 28px;
+  padding: 4px 0; border-bottom: 1px solid transparent;
+  transition: color 160ms ease, border-color 160ms ease;
+}
+.back-link:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.back-link .arrow { font-size: 14px; line-height: 1; }
+.eyebrow {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 18px;
+}
+h1.title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 144, 'SOFT' 30;
+  font-weight: 500; font-size: clamp(32px, 4.5vw, 50px);
+  line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 14px;
+}
+h1.title em {
+  font-style: italic;
+  font-variation-settings: 'opsz' 144, 'SOFT' 100;
+  color: var(--accent);
+}
+.subtitle {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 24;
+  font-style: italic; font-size: 19px; color: var(--ink-soft);
+  max-width: 720px; line-height: 1.45;
+}
+.source-line { margin-top: 24px; font-size: 13px; color: var(--muted); }
+.source-line strong { color: var(--ink); font-weight: 600; }
+
+.filter-bar {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(250,246,238,0.94);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--rule);
+}
+.filter-inner {
+  max-width: 1100px; margin: 0 auto; padding: 16px 48px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.filter-row {
+  display: flex; flex-wrap: wrap; gap: 14px; align-items: baseline;
+}
+.filter-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--muted);
+  min-width: 90px; padding-top: 4px;
+}
+.pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.pill {
+  font-size: 13px; font-weight: 500; padding: 7px 14px;
+  border: 1px solid var(--rule); background: var(--surface);
+  color: var(--ink-soft); border-radius: 999px; cursor: pointer;
+  transition: all 160ms ease; user-select: none; white-space: nowrap;
+  font-family: inherit;
+}
+.pill:hover { border-color: var(--accent-soft); color: var(--accent); }
+.pill.active { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.pill.accent.active { background: var(--accent); border-color: var(--accent); }
+
+.search-wrap {
+  display: flex; align-items: center; gap: 8px; flex: 1; min-width: 220px;
+  border: 1px solid var(--rule); background: var(--surface);
+  border-radius: 999px; padding: 6px 14px;
+  transition: border-color 160ms ease;
+}
+.search-wrap:focus-within { border-color: var(--accent); }
+.search-wrap input {
+  flex: 1; border: none; outline: none; background: transparent;
+  font-family: inherit; font-size: 14px; color: var(--ink);
+  padding: 4px 0;
+}
+.search-wrap input::placeholder { color: var(--faint); }
+.search-icon { color: var(--faint); font-size: 13px; }
+.search-clear {
+  background: none; border: none; color: var(--faint); cursor: pointer;
+  font-size: 16px; line-height: 1; padding: 2px 4px;
+  display: none;
+}
+.search-clear.visible { display: inline-block; }
+.search-clear:hover { color: var(--accent); }
+
+.meta-counter {
+  font-size: 12px; color: var(--muted); margin-left: auto;
+  padding-top: 4px; white-space: nowrap;
+}
+.meta-counter strong { color: var(--ink); font-weight: 600; }
+
+main { max-width: 1100px; margin: 0 auto; padding: 48px 48px 80px; }
+
+.band-section { margin-bottom: 72px; scroll-margin-top: 200px; }
+.band-section.hidden { display: none; }
+.band-header {
+  margin-bottom: 28px; padding-bottom: 18px; border-bottom: 2px solid var(--ink);
+}
+.band-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
+}
+.band-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 96, 'SOFT' 50;
+  font-weight: 500; font-size: 36px; line-height: 1.1;
+  letter-spacing: -0.015em; margin-bottom: 6px;
+}
+
+.standard-card {
+  background: var(--surface); border: 1px solid var(--divider);
+  border-radius: 4px; padding: 26px 30px;
+  margin-bottom: 18px;
+  box-shadow: var(--shadow); position: relative; overflow: hidden;
+}
+.standard-card.hidden { display: none; }
+.standard-card::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+  width: 3px; background: var(--accent); opacity: 0.6;
+}
+
+.standard-header {
+  margin-bottom: 18px; padding-bottom: 14px;
+  border-bottom: 1px dashed var(--rule);
+  display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;
+}
+.standard-code {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 96, 'SOFT' 30;
+  font-weight: 600; font-style: italic; font-size: 24px;
+  color: var(--accent); line-height: 1; letter-spacing: -0.01em;
+}
+.standard-name {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 24;
+  font-weight: 500; font-size: 18px; color: var(--ink);
+  line-height: 1.25; flex: 1;
+}
+.standard-orglabel {
+  font-size: 11px; color: var(--faint); letter-spacing: 0.04em;
+  font-style: italic; white-space: nowrap;
+}
+
+.group-block, .era-block {
+  margin-bottom: 28px;
+}
+.group-block:last-child, .era-block:last-child { margin-bottom: 0; }
+.group-block.hidden, .era-block.hidden { display: none; }
+
+.group-header, .era-header {
+  margin-bottom: 12px; padding-bottom: 6px;
+  border-bottom: 1px solid var(--divider);
+}
+.group-discipline, .era-label {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 24;
+  font-weight: 500; font-size: 17px; color: var(--ink);
+}
+.group-discipline { display: block; }
+.group-sub-concept {
+  display: block;
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 18;
+  font-style: italic; font-size: 14px; color: var(--accent);
+  margin-top: 2px;
+}
+.era-summary {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 18;
+  font-style: italic; font-size: 14px; color: var(--muted);
+  line-height: 1.5; margin-top: 6px; max-width: 720px;
+}
+
+.core-idea-block {
+  margin-bottom: 18px;
+  padding-left: 16px;
+  border-left: 2px solid var(--accent-pale);
+}
+.core-idea-block:last-child { margin-bottom: 0; }
+.core-idea-block.hidden { display: none; }
+
+.core-idea {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 18;
+  font-style: italic; font-size: 13.5px; color: var(--accent-deep);
+  line-height: 1.5; margin-bottom: 10px;
+  padding: 6px 10px;
+  background: var(--accent-pale);
+  border-radius: 3px;
+}
+.core-idea::before {
+  content: 'Core idea  ';
+  font-style: normal;
+  font-size: 9px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--accent);
+}
+
+.pe-list { display: flex; flex-direction: column; gap: 10px; }
+
+.pe-entry {
+  border-left: 3px solid var(--rule); padding: 4px 0 4px 14px;
+}
+.pe-entry.hidden { display: none; }
+.pe-header { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.pe-code {
+  font-family: 'Manrope', sans-serif;
+  font-size: 10.5px; font-weight: 700; letter-spacing: 0.02em;
+  color: var(--accent); white-space: nowrap;
+  background: var(--accent-pale); padding: 2px 7px; border-radius: 3px;
+}
+.pe-statement {
+  font-size: 14.5px; line-height: 1.55; color: var(--ink-soft);
+}
+
+.toc-nav {
+  position: fixed; right: 24px; top: 50%;
+  transform: translateY(-50%); z-index: 30;
+  display: flex; flex-direction: column; gap: 8px;
+  padding: 18px 16px; border-left: 2px solid var(--rule);
+}
+.toc-nav-label {
+  font-size: 9px; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--faint); margin-bottom: 6px;
+}
+.toc-nav a {
+  font-size: 12px; color: var(--muted); text-decoration: none;
+  transition: color 160ms ease; line-height: 1.3;
+}
+.toc-nav a:hover { color: var(--accent); }
+.toc-nav a.hidden { display: none; }
+.toc-nav-sub {
+  font-size: 10px; color: var(--faint); padding-left: 10px;
+  text-decoration: none; transition: color 160ms ease;
+}
+.toc-nav-sub:hover { color: var(--accent); }
+.toc-nav-sub.hidden { display: none; }
+
+footer {
+  max-width: 1100px; margin: 0 auto;
+  padding: 40px 48px 60px; border-top: 1px solid var(--rule);
+  font-size: 12px; color: var(--muted); line-height: 1.6;
+}
+
+.empty-state {
+  padding: 60px 30px; text-align: center; color: var(--muted);
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 24;
+  font-style: italic; font-size: 18px;
+  display: none;
+}
+.empty-state.visible { display: block; }
+
+.truncation-note {
+  margin-top: 14px; padding: 12px 16px;
+  background: rgba(126,78,110,0.07);
+  border: 1px dashed var(--accent-soft);
+  border-radius: 4px;
+  font-size: 12.5px; color: var(--muted);
+  font-style: italic; line-height: 1.5;
+}
+.truncation-note strong { color: var(--ink-soft); font-style: normal; font-weight: 600; }
+
+@media (max-width: 980px) {
+  .toc-nav { display: none; }
+}
+@media (max-width: 720px) {
+  header.masthead { padding: 32px 24px 24px; }
+  .filter-inner { padding: 14px 24px; }
+  .filter-label { min-width: 0; }
+  main { padding: 36px 24px 60px; }
+  footer { padding: 32px 24px 48px; }
+  .standard-card { padding: 22px 22px; }
+  .band-title { font-size: 28px; }
+  .meta-counter { margin-left: 0; }
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <a href="index.html" class="back-link"><span class="arrow">←</span> All standards</a>
+  <div class="eyebrow">Reference Document · Forge Prep</div>
+  <h1 class="title">New Jersey Student Learning<br>Standards for <em>Social Studies</em></h1>
+  <p class="subtitle">Grades 3 through 8. Adopted 2020 by the New Jersey Department of Education. Three top-level standards (6.1 U.S. History, 6.2 World History, 6.3 Active Citizenship) organized by disciplinary concept at grade band 3–5 and 6.3, by era at 6.1 / 6.2 in 6–8.</p>
+  <div class="source-line"><strong>Source:</strong> 2020 New Jersey Student Learning Standards — Social Studies, NJ Department of Education. Performance-expectation statements quoted verbatim. The shared front matter (mission, vision, practices, mandate laws) is in the source markdown at <code>data/sources/social-studies-source.md</code>.</div>
+</header>
+
+<nav class="filter-bar">
+  <div class="filter-inner">
+    <div class="filter-row">
+      <span class="filter-label">Grade band</span>
+      <div class="pills" id="band-pills">
+        <button class="pill active" data-band="all">All grade bands</button>
+        <button class="pill" data-band="3-5">Grades 3–5</button>
+        <button class="pill" data-band="6-8">Grades 6–8</button>
+      </div>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">Standard</span>
+      <div class="pills" id="standard-pills">
+        <button class="pill accent active" data-standard="all">All standards</button>
+        <button class="pill accent" data-standard="6.1">6.1 U.S. History</button>
+        <button class="pill accent" data-standard="6.2">6.2 World History</button>
+        <button class="pill accent" data-standard="6.3">6.3 Active Citizenship</button>
+      </div>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">Search</span>
+      <div class="search-wrap">
+        <span class="search-icon">⌕</span>
+        <input id="search-input" type="text" placeholder="Filter by keyword — e.g., civil rights, geography, Roman Empire" autocomplete="off">
+        <button class="search-clear" id="search-clear" aria-label="Clear search">×</button>
+      </div>
+      <span class="meta-counter" id="counter"></span>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc-nav" id="toc">
+  <div class="toc-nav-label">Jump to</div>
+  <a href="#band-3-5" data-band="3-5">Grades 3–5</a>
+  <a href="#band-6-8" data-band="6-8">Grades 6–8</a>
+</aside>
+
+<main id="content"></main>
+<div class="empty-state" id="empty">No standards match the current filters.</div>
+
+<footer>
+  Built as an internal curriculum reference for Forge Prep. Performance expectations quoted verbatim from the 2020 New Jersey Student Learning Standards for Social Studies. Some sections of the source PDF were partial in the uploaded extract; affected standards carry a "Source extract incomplete" note. For the canonical full document, see the NJ Department of Education website.
+</footer>
+
+<script>
+let SS = null;
+
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function render() {
+  const main = document.getElementById('content');
+  let html = '';
+
+  for (const bandKey of SS.grade_bands) {
+    const band = SS.bands[bandKey];
+    html += `<section class="band-section" id="band-${esc(bandKey)}" data-band="${esc(bandKey)}">`;
+    html += `<div class="band-header">`;
+    html += `<div class="band-eyebrow">Grade band</div>`;
+    html += `<h2 class="band-title">Grades ${esc(bandKey)}</h2>`;
+    html += `</div>`;
+
+    for (const std of band.standards) {
+      const orgLabel = std.organization === 'by_era' ? 'organized by era' : 'organized by disciplinary concept';
+      html += `<div class="standard-card" data-band="${esc(bandKey)}" data-standard="${esc(std.code)}">`;
+      html += `<div class="standard-header">`;
+      html += `<span class="standard-code">${esc(std.code)}</span>`;
+      html += `<span class="standard-name">${esc(std.name)} — by end of Grade ${esc(String(std.end_grade))}</span>`;
+      html += `<span class="standard-orglabel">${esc(orgLabel)}</span>`;
+      html += `</div>`;
+
+      const containerKey = std.organization === 'by_era' ? 'eras' : 'groups';
+      const containers = std[containerKey] || [];
+
+      for (const c of containers) {
+        const wrapperClass = std.organization === 'by_era' ? 'era-block' : 'group-block';
+        html += `<div class="${wrapperClass}">`;
+        if (std.organization === 'by_era') {
+          html += `<div class="era-header">`;
+          html += `<span class="era-label">${esc(c.era_label)}</span>`;
+          if (c.era_summary) {
+            html += `<div class="era-summary">${esc(c.era_summary)}</div>`;
+          }
+          html += `</div>`;
+        } else {
+          html += `<div class="group-header">`;
+          html += `<span class="group-discipline">${esc(c.discipline)}</span>`;
+          html += `<span class="group-sub-concept">${esc(c.sub_concept)}</span>`;
+          html += `</div>`;
+        }
+
+        for (const cib of c.core_idea_blocks) {
+          html += `<div class="core-idea-block">`;
+          html += `<div class="core-idea">${esc(cib.core_idea)}</div>`;
+          html += `<div class="pe-list">`;
+          for (const pe of cib.pes) {
+            const searchText = pe.statement.toLowerCase();
+            html += `<div class="pe-entry" data-code="${esc(pe.code)}" data-search="${esc(searchText)}">`;
+            html += `<div class="pe-header">`;
+            html += `<span class="pe-code">${esc(pe.code)}</span>`;
+            html += `<span class="pe-statement">${esc(pe.statement)}</span>`;
+            html += `</div>`;
+            html += `</div>`;
+          }
+          html += `</div>`;
+          html += `</div>`;
+        }
+        html += `</div>`;
+      }
+
+      // Source-truncation note for the standards we know are partial in the source
+      const truncated = (
+        (bandKey === '3-5' && std.code === '6.3') ||
+        (bandKey === '6-8' && std.code === '6.3')
+      );
+      if (truncated) {
+        html += `<div class="truncation-note">`;
+        html += `<strong>Source extract incomplete.</strong> `;
+        html += `Additional performance expectations for ${esc(std.code)} appear in the full NJDOE document but were beyond the uploaded extract. Verify against the master NJSLS-SS PDF at nj.gov/education when needed.`;
+        html += `</div>`;
+      }
+
+      html += `</div>`;  // .standard-card
+    }
+    html += `</section>`;
+  }
+
+  main.innerHTML = html;
+}
+
+let activeBand = 'all';
+let activeStandard = 'all';
+let activeQuery = '';
+
+function applyFilters() {
+  const q = activeQuery.trim().toLowerCase();
+
+  document.querySelectorAll('.pe-entry').forEach(pe => {
+    let visible = true;
+    if (q) visible = (pe.dataset.search || '').includes(q);
+    pe.classList.toggle('hidden', !visible);
+  });
+
+  document.querySelectorAll('.core-idea-block').forEach(blk => {
+    const has = blk.querySelectorAll('.pe-entry:not(.hidden)').length > 0;
+    blk.classList.toggle('hidden', !has);
+  });
+
+  document.querySelectorAll('.group-block, .era-block').forEach(blk => {
+    const has = blk.querySelectorAll('.core-idea-block:not(.hidden)').length > 0;
+    blk.classList.toggle('hidden', !has);
+  });
+
+  document.querySelectorAll('.standard-card').forEach(card => {
+    const matchBand = activeBand === 'all' || card.dataset.band === activeBand;
+    const matchStd = activeStandard === 'all' || card.dataset.standard === activeStandard;
+    const hasContent = card.querySelectorAll('.group-block:not(.hidden), .era-block:not(.hidden)').length > 0;
+    card.classList.toggle('hidden', !(matchBand && matchStd && hasContent));
+  });
+
+  document.querySelectorAll('.band-section').forEach(sec => {
+    const hasCard = sec.querySelectorAll('.standard-card:not(.hidden)').length > 0;
+    sec.classList.toggle('hidden', !hasCard);
+  });
+
+  document.querySelectorAll('.toc-nav a').forEach(a => {
+    const match = activeBand === 'all' || a.dataset.band === activeBand;
+    a.classList.toggle('hidden', !match);
+  });
+
+  updateCounter();
+}
+
+function updateCounter() {
+  let count = 0;
+  document.querySelectorAll('.band-section:not(.hidden) .standard-card:not(.hidden) .pe-entry:not(.hidden)').forEach(() => count++);
+  document.getElementById('counter').innerHTML =
+    `Showing <strong>${count}</strong> performance expectation${count === 1 ? '' : 's'}`;
+  document.getElementById('empty').classList.toggle('visible', count === 0);
+}
+
+document.getElementById('band-pills').addEventListener('click', (e) => {
+  if (e.target.tagName !== 'BUTTON') return;
+  document.querySelectorAll('#band-pills .pill').forEach(p => p.classList.remove('active'));
+  e.target.classList.add('active');
+  activeBand = e.target.dataset.band;
+  applyFilters();
+});
+
+document.getElementById('standard-pills').addEventListener('click', (e) => {
+  if (e.target.tagName !== 'BUTTON') return;
+  document.querySelectorAll('#standard-pills .pill').forEach(p => p.classList.remove('active'));
+  e.target.classList.add('active');
+  activeStandard = e.target.dataset.standard;
+  applyFilters();
+});
+
+const searchInput = document.getElementById('search-input');
+const searchClear = document.getElementById('search-clear');
+searchInput.addEventListener('input', (e) => {
+  activeQuery = e.target.value;
+  searchClear.classList.toggle('visible', !!activeQuery);
+  applyFilters();
+});
+searchClear.addEventListener('click', () => {
+  searchInput.value = '';
+  activeQuery = '';
+  searchClear.classList.remove('visible');
+  applyFilters();
+  searchInput.focus();
+});
+searchInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && activeQuery) searchClear.click();
+});
+
+fetch('data/social-studies.json').then(r => r.json()).then(data => {
+  SS = data;
+  render();
+  applyFilters();
+  if (window.attachCCBacklinks) window.attachCCBacklinks();
+}).catch(err => {
+  document.getElementById('content').innerHTML =
+    '<div style="padding:60px 30px;text-align:center;color:var(--muted);">Failed to load standards data. Refresh the page; if the issue persists, the <code>data/</code> directory may be missing.</div>';
+  console.error('njsls data load failed:', err);
+});
+</script>
+</body>
+</html>
