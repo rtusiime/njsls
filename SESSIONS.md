@@ -103,7 +103,7 @@ Subagents still can't `Write` (regression continues this session). All cross-rep
 | Repo | Hash | Time (EDT) | Message |
 |---|---|---|---|
 | `john-forge/CohortCalendar` | `9530bf0` | 05:16:40 | Migrate CCSS-legacy std tags to NJSLS-2023 (87 blocks, +152 tags) |
-| `rtusiime/njsls` | _(to be filled at commit time)_ | | Math: add missing 8.F.B.4 and 8.F.B.5 (NJSLS source extraction gap) + Session 13 SESSIONS entry |
+| `rtusiime/njsls` | `fe8cce5` | 17:27:52 | Math: add missing 8.F.B.4 and 8.F.B.5 (closes CC-backlinks gap) |
 
 ---
 
