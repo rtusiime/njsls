@@ -6,7 +6,7 @@ Entries are intentionally verbose. The point is full visibility: open the file a
 
 ---
 
-## Session 11 — 2026-05-12, afternoon EDT
+## Session 11 — 2026-05-12, 02:45 PM EDT
 *Added Computer Science & Design Thinking (NJSLS 8.1 + 8.2) as the 5th subject on the hub. Verbatim extraction of all 163 PEs across grades 2/5/8/12; G5 + G8 visible by default on the page; cobalt accent.*
 
 ### User request
@@ -85,7 +85,7 @@ Three new subjects requested at once. CC-backlinks data-alignment gap from Sessi
 
 | Hash | Time (EDT) | Message |
 |---|---|---|
-| _(to be filled at commit time)_ | | Add CSDT (NJSLS 8.1 + 8.2) as 5th subject + cobalt palette |
+| `179f32d` | 14:47:56 | CSDT: add NJSLS 8.1 + 8.2 as 5th subject (cobalt accent) |
 
 ---
 
