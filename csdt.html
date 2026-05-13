@@ -74,6 +74,20 @@ h1.title em {
 }
 .source-line { margin-top: 24px; font-size: 13px; color: var(--muted); }
 .source-line strong { color: var(--ink); font-weight: 600; }
+.source-line .json-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: border-color 160ms ease;
+  white-space: nowrap;
+  margin-left: 4px;
+}
+.source-line .json-link:hover { border-bottom-color: var(--accent); }
+.source-line .json-link .arrow {
+  display: inline-block; margin-left: 3px; font-size: 11px;
+}
+
 
 .filter-bar {
   position: sticky; top: 0; z-index: 50;
@@ -309,7 +323,7 @@ footer {
   <div class="eyebrow">Reference Document · Forge Prep</div>
   <h1 class="title">New Jersey Student Learning<br>Standards for <em>Computer Science &amp; Design Thinking</em></h1>
   <p class="subtitle">Standards 8.1 (Computer Science) and 8.2 (Design Thinking). Adopted June 2020 by the New Jersey Department of Education. Forge Prep view defaults to end-of-grade 5 and end-of-grade 8; the full K–12 set (end-of-grades 2 and 12) is available behind the grade-band filter.</p>
-  <div class="source-line"><strong>Source:</strong> 2020 New Jersey Student Learning Standards — Computer Science and Design Thinking, NJ Department of Education. 163 performance expectations across grades 2, 5, 8, and 12; 85 at the Forge Prep grade bands (G5 + G8). Filing typo in the source PDF (PE <code>8.2.12.ETW.4</code> printed under the Ethics &amp; Culture table on page 43) is restored here to its correctly-coded parent concept (<em>Effects of Technology on the Natural World</em>) so concept filters behave consistently.</div>
+  <div class="source-line"><strong>Source:</strong> 2020 New Jersey Student Learning Standards — Computer Science and Design Thinking, NJ Department of Education. 163 performance expectations across grades 2, 5, 8, and 12; 85 at the Forge Prep grade bands (G5 + G8). Filing typo in the source PDF (PE <code>8.2.12.ETW.4</code> printed under the Ethics &amp; Culture table on page 43) is restored here to its correctly-coded parent concept (<em>Effects of Technology on the Natural World</em>) so concept filters behave consistently. &middot; <a class="json-link" href="data/csdt.json" target="_blank" rel="noopener">View as JSON<span class="arrow">&#x2197;</span></a></div>
 </header>
 
 <nav class="filter-bar">

@@ -77,6 +77,20 @@ h1.title em {
 }
 .source-line { margin-top: 24px; font-size: 13px; color: var(--muted); }
 .source-line strong { color: var(--ink); font-weight: 600; }
+.source-line .json-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: border-color 160ms ease;
+  white-space: nowrap;
+  margin-left: 4px;
+}
+.source-line .json-link:hover { border-bottom-color: var(--accent); }
+.source-line .json-link .arrow {
+  display: inline-block; margin-left: 3px; font-size: 11px;
+}
+
 .filter-bar {
   position: sticky; top: 0; z-index: 50;
   background: rgba(250,246,238,0.94);
@@ -281,7 +295,7 @@ footer {
   <div class="eyebrow">Reference Document · Forge Prep</div>
   <h1 class="title">New Jersey Student Learning<br>Standards for <em>English Language Arts</em></h1>
   <p class="subtitle">Grades 5 through 8. Adopted 2023 by the New Jersey Department of Education. Filter by domain and grade to focus on what's relevant.</p>
-  <div class="source-line"><strong>Source:</strong> 2023 New Jersey Student Learning Standards English Language Arts, Office of Standards, Division of Teaching and Learning Services, New Jersey Department of Education</div>
+  <div class="source-line"><strong>Source:</strong> 2023 New Jersey Student Learning Standards English Language Arts, Office of Standards, Division of Teaching and Learning Services, New Jersey Department of Education &middot; <a class="json-link" href="data/ela.json" target="_blank" rel="noopener">View as JSON<span class="arrow">&#x2197;</span></a></div>
   <div class="legend">
     <span><span class="legend-swatch literature"></span>Literature (RL)</span>
     <span><span class="legend-swatch informational"></span>Informational (RI)</span>

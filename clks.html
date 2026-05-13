@@ -74,6 +74,20 @@ h1.title em {
 }
 .source-line { margin-top: 24px; font-size: 13px; color: var(--muted); }
 .source-line strong { color: var(--ink); font-weight: 600; }
+.source-line .json-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: border-color 160ms ease;
+  white-space: nowrap;
+  margin-left: 4px;
+}
+.source-line .json-link:hover { border-bottom-color: var(--accent); }
+.source-line .json-link .arrow {
+  display: inline-block; margin-left: 3px; font-size: 11px;
+}
+
 
 .filter-bar {
   position: sticky; top: 0; z-index: 50;
@@ -309,7 +323,7 @@ footer {
   <div class="eyebrow">Reference Document · Forge Prep</div>
   <h1 class="title">New Jersey Student Learning<br>Standards for <em>Career Readiness, Life Literacies &amp; Key Skills</em></h1>
   <p class="subtitle">Standards 9.1 (Personal Financial Literacy), 9.2 (Career Awareness, Exploration, Preparation, and Training), and 9.4 (Life Literacies and Key Skills). Adopted June 2020 by the New Jersey Department of Education. Forge Prep view defaults to end-of-grade 5 and end-of-grade 8; the full K–12 set (end-of-grades 2 and 12) is available behind the grade-band filter. Standard 9.3 (Career and Technical Education) is HS-only and not included in this source PDF.</p>
-  <div class="source-line"><strong>Source:</strong> 2020 New Jersey Student Learning Standards — Career Readiness, Life Literacies, and Key Skills, NJ Department of Education. 300 performance expectations across grades 2, 5, 8, and 12. Concept abbreviations in the codes drift across grade bands as the source itself drifts — e.g., 9.1 G2 uses <code>CR</code> (Civic Responsibility) while 9.1 G12 uses <code>CFR</code> (Civic Financial Responsibility); G2/G8 use <code>RM</code> while G5 uses <code>RMI</code>; codes use <code>EG</code> throughout while the abbrev table on page 18 labels it <code>EGI</code>. We honor the codes as actually printed in the source.</div>
+  <div class="source-line"><strong>Source:</strong> 2020 New Jersey Student Learning Standards — Career Readiness, Life Literacies, and Key Skills, NJ Department of Education. 300 performance expectations across grades 2, 5, 8, and 12. Concept abbreviations in the codes drift across grade bands as the source itself drifts — e.g., 9.1 G2 uses <code>CR</code> (Civic Responsibility) while 9.1 G12 uses <code>CFR</code> (Civic Financial Responsibility); G2/G8 use <code>RM</code> while G5 uses <code>RMI</code>; codes use <code>EG</code> throughout while the abbrev table on page 18 labels it <code>EGI</code>. We honor the codes as actually printed in the source. &middot; <a class="json-link" href="data/clks.json" target="_blank" rel="noopener">View as JSON<span class="arrow">&#x2197;</span></a></div>
 </header>
 
 <nav class="filter-bar">

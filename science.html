@@ -76,6 +76,20 @@ h1.title em {
 }
 .source-line { margin-top: 24px; font-size: 13px; color: var(--muted); }
 .source-line strong { color: var(--ink); font-weight: 600; }
+.source-line .json-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: border-color 160ms ease;
+  white-space: nowrap;
+  margin-left: 4px;
+}
+.source-line .json-link:hover { border-bottom-color: var(--accent); }
+.source-line .json-link .arrow {
+  display: inline-block; margin-left: 3px; font-size: 11px;
+}
+
 .legend {
   margin-top: 16px; display: flex; gap: 22px; flex-wrap: wrap;
   font-size: 12px; color: var(--muted);
@@ -311,7 +325,7 @@ footer {
   <div class="eyebrow">Reference Document · Forge Prep</div>
   <h1 class="title">New Jersey Student Learning<br>Standards for <em>Science</em></h1>
   <p class="subtitle">Grades 5 through 8. Adopted 2020 by the New Jersey Department of Education. Grade 5 is written per-grade; Grades 6–8 are banded across middle school. Engineering at Grade 5 is the 3–5-banded ETS1 topic.</p>
-  <div class="source-line"><strong>Source:</strong> 2020 New Jersey Student Learning Standards — Science, Office of Standards, Division of Teaching and Learning Services, New Jersey Department of Education. Performance-expectation statements quoted verbatim; the three-dimensional foundation box (practices, core ideas, crosscutting concepts) is in the source PDF.</div>
+  <div class="source-line"><strong>Source:</strong> 2020 New Jersey Student Learning Standards — Science, Office of Standards, Division of Teaching and Learning Services, New Jersey Department of Education. Performance-expectation statements quoted verbatim; the three-dimensional foundation box (practices, core ideas, crosscutting concepts) is in the source PDF. &middot; <a class="json-link" href="data/science.json" target="_blank" rel="noopener">View as JSON<span class="arrow">&#x2197;</span></a></div>
   <div class="legend">
     <span><span class="legend-swatch clarif"></span>Clarification statement</span>
     <span><span class="legend-swatch assess"></span>Assessment boundary</span>

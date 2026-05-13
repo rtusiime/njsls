@@ -74,6 +74,20 @@ h1.title em {
 }
 .source-line { margin-top: 24px; font-size: 13px; color: var(--muted); }
 .source-line strong { color: var(--ink); font-weight: 600; }
+.source-line .json-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: border-color 160ms ease;
+  white-space: nowrap;
+  margin-left: 4px;
+}
+.source-line .json-link:hover { border-bottom-color: var(--accent); }
+.source-line .json-link .arrow {
+  display: inline-block; margin-left: 3px; font-size: 11px;
+}
+
 
 .filter-bar {
   position: sticky; top: 0; z-index: 50;
@@ -322,7 +336,7 @@ footer {
   <div class="eyebrow">Reference Document · Forge Prep</div>
   <h1 class="title">New Jersey Student Learning<br>Standards for <em>Social Studies</em></h1>
   <p class="subtitle">Grades 3 through 8. Adopted 2020 by the New Jersey Department of Education. Three top-level standards (6.1 U.S. History, 6.2 World History, 6.3 Active Citizenship) organized by disciplinary concept at grade band 3–5 and 6.3, by era at 6.1 / 6.2 in 6–8.</p>
-  <div class="source-line"><strong>Source:</strong> 2020 New Jersey Student Learning Standards — Social Studies, NJ Department of Education. Performance expectations verified against the canonical NJDOE PDFs (<code>2020NJSLS-SS_by_Standard.pdf</code> and <code>2020NJSLS-SS_by_GradeBand.pdf</code>); 209 PEs across grades 5 and 8, exact match for both code list and statement text. Shared front matter (mission, vision, practices, mandate laws) is in the source markdown at <code>data/sources/social-studies-source.md</code>.</div>
+  <div class="source-line"><strong>Source:</strong> 2020 New Jersey Student Learning Standards — Social Studies, NJ Department of Education. Performance expectations verified against the canonical NJDOE PDFs (<code>2020NJSLS-SS_by_Standard.pdf</code> and <code>2020NJSLS-SS_by_GradeBand.pdf</code>); 209 PEs across grades 5 and 8, exact match for both code list and statement text. Shared front matter (mission, vision, practices, mandate laws) is in the source markdown at <code>data/sources/social-studies-source.md</code>. &middot; <a class="json-link" href="data/social-studies.json" target="_blank" rel="noopener">View as JSON<span class="arrow">&#x2197;</span></a></div>
 </header>
 
 <nav class="filter-bar">

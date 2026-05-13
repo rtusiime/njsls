@@ -74,6 +74,20 @@ h1.title em {
 }
 .source-line { margin-top: 24px; font-size: 13px; color: var(--muted); }
 .source-line strong { color: var(--ink); font-weight: 600; }
+.source-line .json-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: border-color 160ms ease;
+  white-space: nowrap;
+  margin-left: 4px;
+}
+.source-line .json-link:hover { border-bottom-color: var(--accent); }
+.source-line .json-link .arrow {
+  display: inline-block; margin-left: 3px; font-size: 11px;
+}
+
 
 .filter-bar {
   position: sticky; top: 0; z-index: 50;
@@ -309,7 +323,7 @@ footer {
   <div class="eyebrow">Reference Document · Forge Prep</div>
   <h1 class="title">New Jersey Student Learning<br>Standards for <em>Comprehensive Health &amp; Physical Education</em></h1>
   <p class="subtitle">Standards 2.1 (Personal and Mental Health), 2.2 (Physical Wellness), and 2.3 (Safety). Adopted June 2020 by the New Jersey Department of Education. Forge Prep view defaults to end-of-grade 5 and end-of-grade 8; the full K–12 set (end-of-grades 2 and 12) is available behind the grade-band filter.</p>
-  <div class="source-line"><strong>Source:</strong> 2020 New Jersey Student Learning Standards — Comprehensive Health and Physical Education, NJ Department of Education. 278 performance expectations across grades 2, 5, 8, and 12. One source-PDF typo corrected: PEs printed as <code>2.1.5.PGD.1</code> and <code>2.1.5.PGD.2</code> under the Pregnancy &amp; Parenting heading (page 30) duplicate real PGD codes and are renumbered here to <code>2.1.5.PP.1</code> and <code>2.1.5.PP.2</code> under the Pregnancy &amp; Parenting concept where the source heading actually places them. PDF page footers (<em>"June 2020 N"</em>) that wrapped into PE statement text were stripped.</div>
+  <div class="source-line"><strong>Source:</strong> 2020 New Jersey Student Learning Standards — Comprehensive Health and Physical Education, NJ Department of Education. 278 performance expectations across grades 2, 5, 8, and 12. One source-PDF typo corrected: PEs printed as <code>2.1.5.PGD.1</code> and <code>2.1.5.PGD.2</code> under the Pregnancy &amp; Parenting heading (page 30) duplicate real PGD codes and are renumbered here to <code>2.1.5.PP.1</code> and <code>2.1.5.PP.2</code> under the Pregnancy &amp; Parenting concept where the source heading actually places them. PDF page footers (<em>"June 2020 N"</em>) that wrapped into PE statement text were stripped. &middot; <a class="json-link" href="data/chpe.json" target="_blank" rel="noopener">View as JSON<span class="arrow">&#x2197;</span></a></div>
 </header>
 
 <nav class="filter-bar">

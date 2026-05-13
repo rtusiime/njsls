@@ -6,6 +6,73 @@ Entries are intentionally verbose. The point is full visibility: open the file a
 
 ---
 
+## Session 14 — 2026-05-13, post-midnight EDT
+*Two follow-ups from the CC-migration debrief in Session 13: (1) data-integrity audit across all 7 subject JSONs to look for other quiet gaps like the 8.F.B miss, and (2) a "View as JSON" CTA on each subject page so users can quickly inspect the underlying data.*
+
+### User request (paraphrased)
+
+After the CC backlinks shipped, user asked three follow-up questions:
+1. When I said the Math extraction "missed cluster 8.F.B entirely," did I mean the JSON entry was absent or just empty?
+2. How would we audit for other quiet gaps — page-by-page eyeball, or something more efficient?
+3. Could each subject page get a beautiful CTA linking to that subject's JSON?
+
+Answered (1) by explaining the cluster shell was present with the heading but its standards array was empty (the extractor stopped early). Answered (2) with three approaches at different effort levels — user chose the automated empty-shell scan. Answered (3) with three placement options — user picked source-line in the masthead.
+
+### What changed
+
+**Audit (no fixes needed):**
+
+An automated walk of all 7 subject JSONs looking for any container (cluster, concept, group, era, etc.) with an empty children list — the same pattern that hid `8.F.B.4/B.5` for two sessions. Walked ELA's `domain → anchors → grades → entries`, Math's `grade → domains → clusters → standards`, Science's `discipline → topics → pes`, SS's `band → standards → eras|groups → core_idea_blocks → pes`, and CSDT/CLKS/CHPE's `standards → grade_bands → disciplinary_concepts → core_idea_blocks → pes`. **Zero empty shells found.** The 8.F.B case was a one-off.
+
+Also ran a quick PE-count check for Math (Grade 5: 30, G6: 29, G7: 24, G8: 29) — all within expected ranges. Single-PE clusters (`5.OA.B`, `5.M.A`, `5.DL.B`, `6.NS.A`, `6.EE.C`, `8.G.C`) all match expected NJSLS-2023 / CCSS-lineage structure, not partial extractions.
+
+The audit script (`/tmp/audit_empty_shells.py`) is throwaway; not committed.
+
+**JSON CTAs across all 7 subject pages:**
+
+Each of `ela.html`, `math.html`, `science.html`, `social-studies.html`, `csdt.html`, `clks.html`, `chpe.html` gets a small "View as JSON ↗" link appended to its existing source-line div, plus matching `.json-link` CSS rules. Per-subject href: `data/ela.json`, `data/math.json`, etc.
+
+Visual treatment: link inherits the subject's accent color (terracotta / teal / forest / mauve / cobalt / amber / rose), 600-weight Manrope, hover underline, small ↗ arrow. Sits inline at the end of the source-line prose so it lives next to provenance info where data-curious users already look.
+
+```html
+... behavior consistently. · <a class="json-link" href="data/csdt.json" target="_blank" rel="noopener">View as JSON ↗</a></div>
+```
+
+```css
+.source-line .json-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: border-color 160ms ease;
+  white-space: nowrap;
+  margin-left: 4px;
+}
+.source-line .json-link:hover { border-bottom-color: var(--accent); }
+.source-line .json-link .arrow { display: inline-block; margin-left: 3px; font-size: 11px; }
+```
+
+### Tool / command transcript
+
+- Wrote `/tmp/audit_empty_shells.py` — walks each per-subject JSON schema and surfaces empty containers. Reported 0 issues.
+- Wrote `/tmp/math_pe_audit.py` — tallies per-grade-per-domain-per-cluster PE counts. Spot-checked single-PE clusters against expected structure.
+- Wrote a Python script to inject the CSS rules + append the link element across all 7 HTML files in one pass. First two passes had bugs (regex didn't match because of an idempotency check that mis-fired off the just-injected CSS class name); third pass succeeded.
+- Local `http.server` smoke-test: all 7 pages serve 200, exactly 1 `<a class="json-link">` element on each page, each pointing to the correct `data/<subject>.json`.
+
+### Decisions / flags for next session
+
+- **All 7 subject JSONs are structurally clean.** No hidden cluster-level gaps. The 8.F.B miss was idiosyncratic to the original Math extraction pass.
+- **CTA placement is restrained on purpose.** Sits inline with the source-line, doesn't compete with the title or filter bar. If users find it hard to discover, easy to add a second placement (filter-bar chip was option 2 in the original question).
+- **Subagent permission regression** has now persisted across Sessions 12, 13, 14. Worth checking if a future session can spawn working subagents again.
+
+### Commits produced
+
+| Hash | Time (EDT) | Message |
+|---|---|---|
+| _(to be filled at commit time)_ | | Subject pages: add "View as JSON" CTA + empty-shell audit (clean) |
+
+---
+
 ## Session 13 — 2026-05-12, 05:15 PM EDT
 *Closed the CC-backlinks data-alignment gap from Session 7. Cross-repo migration: rewrote 87 blocks (510 tags) in CohortCalendar's Supabase document from CCSS-legacy code format to NJSLS-2023. Recovers 154 of 167 previously-orphaned tag occurrences. Also fixed a missing-PE bug in our Math extraction (8.F.B.4/B.5) that was discovered during the analysis.*
 
