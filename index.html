@@ -552,7 +552,7 @@ footer {
   <section class="search-section" id="search">
     <div class="search-eyebrow">Discovery</div>
     <h2 class="search-prompt">Find standards that <em>match</em> what you're teaching.</h2>
-    <p class="search-hint">Type a <strong>code</strong> or <strong>keyword</strong> for an instant match across all 900 standards. For <strong>semantic matching</strong> on a vague description or a pasted lesson plan, click <strong>Search with Claude</strong> — that one calls the Anthropic API with your key.</p>
+    <p class="search-hint">Type a <strong>code</strong> or <strong>keyword</strong> for an instant match across all 902 standards. For <strong>semantic matching</strong> on a vague description or a pasted lesson plan, click <strong>Search with Claude</strong> — that one calls the Anthropic API with your key. (Want to <em>rank</em> or <em>compare</em> standards instead? Paste the <a href="data/all.json" target="_blank">data/all.json</a> link into Claude.ai — it's better at evaluative questions than this matcher is.)</p>
     <form class="search-form" id="search-form" autocomplete="off">
       <textarea class="search-input" id="search-input" rows="1" placeholder="Type a code or keyword for instant matches… or describe a goal and click Search with Claude" required></textarea>
       <button type="submit" class="search-submit" id="search-submit">Search with Claude</button>
@@ -694,7 +694,7 @@ footer {
     <div class="modal-eyebrow">Bring your own Anthropic key</div>
     <h2 class="modal-title" id="key-modal-title">Search needs an <em>API key</em></h2>
     <div class="modal-body">
-      <p>Discovery search calls the Anthropic API (Sonnet 4.6) with your key. It's stored only in this browser — never sent to a Forge server.</p>
+      <p>Discovery search calls the Anthropic API (Haiku 4.5) with your key. It's stored only in this browser — never sent to a Forge server.</p>
       <p>Don't have one? Create it in 60 seconds at <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener">console.anthropic.com/settings/keys</a>. You'll need an Anthropic account with API credits.</p>
     </div>
     <input type="password" class="modal-input" id="key-input" placeholder="sk-ant-api03-..." autocomplete="off" spellcheck="false">
@@ -703,7 +703,7 @@ footer {
       <button type="button" class="modal-button primary" id="key-save">Save key</button>
     </div>
     <div class="modal-fineprint">
-      Stored in <code>localStorage</code> on this device. Used only when you submit a search. Clear it any time via "Change API key" below the search box. You'll be charged on your own Anthropic account — about <code>$0.04</code> per cached query with Sonnet 4.6.
+      Stored in <code>localStorage</code> on this device. Used only when you submit a search. Clear it any time via "Change API key" below the search box. You'll be charged on your own Anthropic account — about <code>$0.005</code> per cached query with Haiku 4.5 (and new Anthropic accounts at the entry tier can run it comfortably).
     </div>
   </div>
 </div>
@@ -711,7 +711,10 @@ footer {
 <script>
 (function () {
   const STORAGE_KEY = 'njsls_anthropic_api_key';
-  const MODEL = 'claude-sonnet-4-6';
+  // Haiku 4.5: lower cost (~$0.005/cached query) and higher rate-limit tier ceilings
+  // than Sonnet, important because new-tier Anthropic accounts can't afford Sonnet's
+  // input-token budget for our slim corpus (~60K tokens) under Tier-1 ITPM caps.
+  const MODEL = 'claude-haiku-4-5-20251001';
   const ENDPOINT = 'https://api.anthropic.com/v1/messages';
 
   const SUBJECT_LABELS = { ela: 'ELA', math: 'Math', science: 'Science', social_studies: 'SS', csdt: 'CS&DT', clks: 'CLKS', chpe: 'CHPE' };
@@ -941,7 +944,14 @@ Rules:
 `;
 
   function buildSystemPrompt(corp) {
-    return SYSTEM_INSTRUCTIONS + JSON.stringify(corp.standards) + '\n==END CORPUS==';
+    // Slim each standard to the four fields the matcher actually needs.
+    // Cuts corpus tokens ~60% vs the full record (which carries core_idea, era,
+    // clarifications, subs, etc.) — keeps the request under Anthropic's Tier-1
+    // input-tokens-per-minute cap so new API accounts can use the search.
+    const lean = corp.standards.map(s => ({
+      code: s.code, statement: s.statement, subject: s.subject, grade: s.grade
+    }));
+    return SYSTEM_INSTRUCTIONS + JSON.stringify(lean) + '\n==END CORPUS==';
   }
 
   async function callClaude(query, apiKey, corp) {
@@ -1051,7 +1061,7 @@ Rules:
   function renderClaudeSection() {
     if (claudeLoading) {
       return `<div class="results-block">
-        <div class="search-loading"><span class="spinner"></span> Asking Claude for semantic matches (first query ~3–5s, cached subsequent queries ~1–2s)…</div>
+        <div class="search-loading"><span class="spinner"></span> Asking Claude for semantic matches (first query ~2–3s, cached subsequent queries ~1s)…</div>
       </div>`;
     }
     if (claudeError) {

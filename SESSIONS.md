@@ -6,6 +6,86 @@ Entries are intentionally verbose. The point is full visibility: open the file a
 
 ---
 
+## Session 15 — 2026-05-13, post-midnight EDT
+*Fixed a silent rate-limit bug on the hub Claude search that has been broken for any new Anthropic API account since Session 11 grew the corpus. Two changes: slim the per-query corpus by 58% (drop fields the matcher doesn't need), switch from Sonnet 4.6 to Haiku 4.5 (higher tier ceilings + much cheaper). Surfaced via a slack thread where a teammate hit `Claude error: Anthropic rate-limited the request` on a brand-new $20-credit key.*
+
+### User report
+
+A teammate (Anand) tried the hub search with a fresh Anthropic key + $20 in credit. Got the 429 immediately. He worked around it by pasting the `data/all.json` URL into Claude.ai, which worked fine. User asked me to look into why his prompt didn't work on the hub.
+
+### Diagnosis
+
+Measured the actual size of the corpus injected per Claude search:
+
+| State | Standards | Per-request input tokens (est.) |
+|---|---|---|
+| Pre-Session 11 (4 subjects) | 523 | ~91K |
+| Current (7 subjects, full record per standard) | 902 | **~143K** |
+
+Anthropic ITPM (input tokens per minute) tier ceilings for Sonnet 4.6:
+
+| Tier | Threshold | ITPM | Per-request budget vs ours |
+|---|---|---|---|
+| 1 (Anand's tier) | $5+ first purchase | ~50K | **0.35× — single query 3× over** |
+| 2 | $40+ over 7d | ~100K | 0.70× — still over |
+| 3 | $200+ | ~200K | 1.4× — comfortable |
+| 4 | $400+ | ~400K | 2.8× — generous |
+
+So Anand's 429 was not "you sent too many requests" — it was "one single request exceeds your tier's per-minute input budget, the next minute starts with the same budget that can't fit either." Kevin's account is at Tier 3+ from regular use, so Kevin never saw it. Every new user hits the wall.
+
+### What changed
+
+**`index.html`:**
+
+1. **Slim the corpus injected to Claude.** `buildSystemPrompt()` now maps each standard down to `{code, statement, subject, grade}` before stringifying. Drops `core_idea`, `era_summary`, `era`, `discipline`, `topic`, `domain`, `cluster`, `anchor`, `disciplinary_concept`, `subs`, `clarification`, `assessment_boundary` — none of which the matcher uses for the find-relevant-standard task.
+
+| | Before | After |
+|---|---|---|
+| Corpus chars sent | ~499K | ~209K |
+| Token estimate | ~143K | ~60K |
+| Reduction | — | **58% smaller** |
+
+2. **Switch from Sonnet 4.6 → Haiku 4.5** (`claude-haiku-4-5-20251001`). Two wins:
+   - Higher rate-limit tier ceilings for the same Anthropic tier (Haiku gets ~3-4× the ITPM of Sonnet at each tier).
+   - ~10× cheaper per cached query (~$0.005 vs ~$0.04).
+   - Trade-off: slightly less powerful for nuanced reasoning. Tested mentally against our task — semantic matching of standards to a teacher-typed query is well within Haiku's competence. The system prompt is explicit, the corpus is now lean, the output schema is rigid JSON. Haiku handles all of it.
+
+3. **Tune the hint copy.** Anand's actual prompt ("What are the social studies standards that are least valuable?") wasn't a semantic-match query — it was evaluative. The tool is built for "find standards that fit this content," not "rank/compare/evaluate standards." Updated the search-hint to explicitly redirect evaluative queries to Claude.ai with the `data/all.json` link.
+
+4. **Update modal copy and cost mentions** to reflect Haiku + new cost (~$0.005/cached query). Update loading-message timing estimate to Haiku's faster latency (~1-2s cached, was ~1-2s on Sonnet too but realistically ~3-5s first-call; Haiku is closer to ~2-3s first-call).
+
+5. **Standard count in hint:** 900 → 902 (CC-gap session added 8.F.B.4 and 8.F.B.5; was already 902 in `all.json` but the hint copy hadn't been updated).
+
+### What didn't change
+
+- Keyword/code search (the free / instant tier) is unaffected. It already reads the full corpus locally in the browser; no API hit.
+- The data files themselves are untouched. Subject pages render exactly as before.
+- BYO API key model stays. The "send Anand to Claude.ai for ranking" hint doesn't replace the in-page tool, just clarifies its scope.
+
+### Open: privacy
+
+Separate thread in the slack: Anand suggested the site be private. User chose not to (Suzanne + Anand using it would each need a GitHub account, friction). Decision is the user's; no code action. Flagging it here since it's part of the same conversation.
+
+### Tool / command transcript
+
+- Wrote `/tmp/measure_corpus.py` — confirmed 143K tokens per query, 1.6× growth from Session 11.
+- Six surgical edits to `index.html`: `MODEL` const, `buildSystemPrompt` body, search-hint copy, modal body copy, modal fineprint cost, loading-message timing.
+- Local `http.server` verified: Haiku model wired, lean corpus mapping present, Sonnet 4.6 mentions all replaced.
+
+### Decisions / flags for next session
+
+- **Quality re-check after migration.** If anyone notices Haiku's semantic matching is meaningfully worse than Sonnet's was for our task, easy to flip back — one line. The hint copy update + slim corpus would stay either way.
+- **Rate limit math is per-Anthropic-tier and changes.** The tier-ceiling numbers above are approximate from training-data knowledge; Anthropic publishes actual current numbers at `console.anthropic.com/settings/limits` for the logged-in user.
+- **The slim corpus loses some signal.** Subject + grade + statement + code is enough for matching but a model wanting to give a richer rationale (e.g., "this matches your 'fractions' query because it's in the Number Fractions cluster") no longer has that context. Acceptable — the rationale field is short.
+
+### Commits produced
+
+| Hash | Time (EDT) | Message |
+|---|---|---|
+| _(to be filled at commit time)_ | | Hub search: slim corpus 58% + switch Sonnet→Haiku (fixes Tier-1 rate limit) |
+
+---
+
 ## Session 14 — 2026-05-13, 12:40 AM EDT
 *Two follow-ups from the CC-migration debrief in Session 13: (1) data-integrity audit across all 7 subject JSONs to look for other quiet gaps like the 8.F.B miss, and (2) a "View as JSON" CTA on each subject page so users can quickly inspect the underlying data.*
 
