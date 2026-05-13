@@ -6,7 +6,7 @@ Entries are intentionally verbose. The point is full visibility: open the file a
 
 ---
 
-## Session 15 — 2026-05-13, post-midnight EDT
+## Session 15 — 2026-05-13, 01:28 AM EDT
 *Fixed a silent rate-limit bug on the hub Claude search that has been broken for any new Anthropic API account since Session 11 grew the corpus. Two changes: slim the per-query corpus by 58% (drop fields the matcher doesn't need), switch from Sonnet 4.6 to Haiku 4.5 (higher tier ceilings + much cheaper). Surfaced via a slack thread where a teammate hit `Claude error: Anthropic rate-limited the request` on a brand-new $20-credit key.*
 
 ### User report
@@ -82,7 +82,7 @@ Separate thread in the slack: Anand suggested the site be private. User chose no
 
 | Hash | Time (EDT) | Message |
 |---|---|---|
-| _(to be filled at commit time)_ | | Hub search: slim corpus 58% + switch Sonnet→Haiku (fixes Tier-1 rate limit) |
+| `384123d` | 01:28:55 | Hub search: slim corpus 58% + Sonnet → Haiku (fix Tier-1 rate limit) |
 
 ---
 
