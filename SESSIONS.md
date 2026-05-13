@@ -6,7 +6,7 @@ Entries are intentionally verbose. The point is full visibility: open the file a
 
 ---
 
-## Session 14 — 2026-05-13, post-midnight EDT
+## Session 14 — 2026-05-13, 12:40 AM EDT
 *Two follow-ups from the CC-migration debrief in Session 13: (1) data-integrity audit across all 7 subject JSONs to look for other quiet gaps like the 8.F.B miss, and (2) a "View as JSON" CTA on each subject page so users can quickly inspect the underlying data.*
 
 ### User request (paraphrased)
@@ -69,7 +69,7 @@ Visual treatment: link inherits the subject's accent color (terracotta / teal / 
 
 | Hash | Time (EDT) | Message |
 |---|---|---|
-| _(to be filled at commit time)_ | | Subject pages: add "View as JSON" CTA + empty-shell audit (clean) |
+| `da27449` | 00:40:59 | Subject pages: add "View as JSON" CTA in source-line |
 
 ---
 
