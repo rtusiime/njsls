@@ -414,7 +414,7 @@ function render() {
         html += `<div class="standards-list">`;
         for (const s of c.standards) {
           const raw = s.main + ' ' + (s.subs || []).join(' ');
-          const searchText = (raw + ' ' + stripLatex(raw)).toLowerCase();
+          const searchText = (s.code + ' ' + raw + ' ' + stripLatex(raw)).toLowerCase();
           html += `<div class="std-entry" data-code="${esc(s.code)}" data-search="${esc(searchText)}">`;
           html += `<div class="std-header">`;
           html += `<span class="std-code">${esc(s.code)}</span>`;

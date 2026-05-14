@@ -439,7 +439,7 @@ function render() {
           html += `<div class="core-idea">${esc(cib.core_idea)}</div>`;
           html += `<div class="pe-list">`;
           for (const pe of cib.pes) {
-            const searchText = pe.statement.toLowerCase();
+            const searchText = (pe.code + ' ' + pe.statement).toLowerCase();
             html += `<div class="pe-entry" data-code="${esc(pe.code)}" data-search="${esc(searchText)}">`;
             html += `<div class="pe-header">`;
             html += `<span class="pe-code">${esc(pe.code)}</span>`;

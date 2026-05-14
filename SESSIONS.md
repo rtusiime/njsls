@@ -6,6 +6,56 @@ Entries are intentionally verbose. The point is full visibility: open the file a
 
 ---
 
+## Session 16 — 2026-05-14, 05:10 AM EDT
+*Quick bug fix: code-based search was broken on math.html and social-studies.html. Caught via screenshots — user typed `5.DL.B.5` on math.html and got 0 results despite the standard being in the data. Both pages' searchable text only indexed statement text, not the code.*
+
+### User report
+
+Three screenshots: (1) hub renders cleanly with the updated Session-15 copy, (2) hub finds `5.DL.B.5` via the free instant-search and offers an "Open Mathematics Page →" link, (3) on math.html, typing the same `5.DL.B.5` into the page's own search returns "No standards match the current filters."
+
+### Diagnosis
+
+Grepped `searchText` assignment across all 7 subject pages:
+
+| Page | Search field includes code? |
+|---|---|
+| `ela.html` | n/a — no free-text search input (pills only) |
+| `math.html` | **No** — `(raw + stripLatex(raw))` where `raw = main + subs.join(' ')` |
+| `science.html` | Yes — uses `pe.textContent.toLowerCase()` which picks up the code from the rendered DOM |
+| `social-studies.html` | **No** — just `pe.statement` |
+| `csdt.html` | Yes — `(pe.statement + pe.code + dc.name + core_ideas.join(' '))` |
+| `clks.html` | Yes |
+| `chpe.html` | Yes |
+
+So two pages with the bug. Other pages either include the code explicitly or pick it up via `textContent`.
+
+### Fix
+
+| File | Was | Now |
+|---|---|---|
+| `math.html:417` | `(raw + ' ' + stripLatex(raw)).toLowerCase()` | `(s.code + ' ' + raw + ' ' + stripLatex(raw)).toLowerCase()` |
+| `social-studies.html:442` | `pe.statement.toLowerCase()` | `(pe.code + ' ' + pe.statement).toLowerCase()` |
+
+Two-line change. Code is now part of the substring-search index on both pages, so typing a code (or a code prefix like `5.DL` or `6.1.5.CivicsPI`) returns the matching standards.
+
+### Tool / command transcript
+
+- `grep -nE searchText` across all 7 subject pages to locate every search-index construction.
+- Two single-line Edits.
+- Local server verified both pages now serve the fixed JS.
+
+### Out of scope (deferred)
+
+- **ELA has no free-text search input at all.** Pills-only (Domain × Grade). If users want to find an ELA standard by code from the URL bar today, they have to scan visually. Not fixed here — adding a search field to ELA is a bigger change than this hotfix.
+
+### Commits produced
+
+| Hash | Time (EDT) | Message |
+|---|---|---|
+| _(to be filled at commit time)_ | | Fix: include code in search index on math + social-studies pages |
+
+---
+
 ## Session 15 — 2026-05-13, 01:28 AM EDT
 *Fixed a silent rate-limit bug on the hub Claude search that has been broken for any new Anthropic API account since Session 11 grew the corpus. Two changes: slim the per-query corpus by 58% (drop fields the matcher doesn't need), switch from Sonnet 4.6 to Haiku 4.5 (higher tier ceilings + much cheaper). Surfaced via a slack thread where a teammate hit `Claude error: Anthropic rate-limited the request` on a brand-new $20-credit key.*
 
