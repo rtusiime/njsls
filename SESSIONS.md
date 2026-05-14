@@ -6,7 +6,7 @@ Entries are intentionally verbose. The point is full visibility: open the file a
 
 ---
 
-## Session 16 — 2026-05-14, 05:10 AM EDT
+## Session 16 — 2026-05-14, 05:37 AM EDT
 *Quick bug fix: code-based search was broken on math.html and social-studies.html. Caught via screenshots — user typed `5.DL.B.5` on math.html and got 0 results despite the standard being in the data. Both pages' searchable text only indexed statement text, not the code.*
 
 ### User report
@@ -52,7 +52,7 @@ Two-line change. Code is now part of the substring-search index on both pages, s
 
 | Hash | Time (EDT) | Message |
 |---|---|---|
-| _(to be filled at commit time)_ | | Fix: include code in search index on math + social-studies pages |
+| `419dd05` | 05:37:47 | Fix: include code in search index on math + social-studies pages |
 
 ---
 
