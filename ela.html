@@ -248,6 +248,27 @@ main { max-width: 1100px; margin: 0 auto; padding: 48px; }
   font-size: 12px; color: var(--muted); margin-left: auto; padding-top: 4px;
 }
 .meta-counter strong { color: var(--ink); font-weight: 700; }
+.search-wrap {
+  display: flex; align-items: center; gap: 8px; flex: 1; min-width: 220px;
+  border: 1px solid var(--rule); background: var(--surface);
+  border-radius: 999px; padding: 6px 14px;
+  transition: border-color 160ms ease;
+}
+.search-wrap:focus-within { border-color: var(--accent); }
+.search-wrap input {
+  flex: 1; border: none; outline: none; background: transparent;
+  font-family: inherit; font-size: 14px; color: var(--ink);
+  padding: 4px 0;
+}
+.search-wrap input::placeholder { color: var(--faint); }
+.search-icon { color: var(--faint); font-size: 13px; }
+.search-clear {
+  background: none; border: none; color: var(--faint); cursor: pointer;
+  font-size: 16px; line-height: 1; padding: 2px 4px; display: none;
+}
+.search-clear.visible { display: inline-block; }
+.search-clear:hover { color: var(--accent); }
+.entry.hidden { display: none; }
 .legend {
   display: flex; gap: 18px; align-items: center; flex-wrap: wrap;
   font-size: 12px; color: var(--muted); margin-top: 10px;
@@ -323,6 +344,14 @@ footer {
         <button class="pill accent" data-grade="7">Grade 7</button>
         <button class="pill accent" data-grade="8">Grade 8</button>
       </div>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">Search</span>
+      <div class="search-wrap">
+        <span class="search-icon">⌕</span>
+        <input id="search-input" type="text" placeholder="Filter by code or keyword — e.g., L.SS.6.1, argument, central idea" autocomplete="off">
+        <button class="search-clear" id="search-clear" aria-label="Clear search">×</button>
+      </div>
       <span class="meta-counter" id="counter"></span>
     </div>
   </div>
@@ -396,7 +425,12 @@ function render() {
         for (const entry of entries) {
           const cls = getPrefixClass(entry.prefix);
           const label = getPrefixLabel(entry.prefix);
-          html += `<div class="entry ${cls}" data-code="${escapeHtml(entry.code)}">`;
+          const searchText = [
+            entry.code, entry.main, (entry.subs || []).join(' '),
+            entry.subgroup || '', label || '',
+            anchor.code, anchor.name, anchor.statement
+          ].join(' ').toLowerCase();
+          html += `<div class="entry ${cls}" data-code="${escapeHtml(entry.code)}" data-search="${escapeHtml(searchText)}">`;
           if (entry.subgroup && entry.subgroup !== 'None') {
             const subgroupName = entry.subgroup.replace(/_/g, ' ');
             html += `<div class="entry-subgroup">${escapeHtml(subgroupName)}</div>`;
@@ -431,18 +465,22 @@ function render() {
 
 let activeDomain = 'all';
 let activeGrade = 'all';
+let activeQuery = '';
 
 function applyFilters() {
-  // Domain filter
-  document.querySelectorAll('.domain-section').forEach(s => {
-    const match = activeDomain === 'all' || s.dataset.domain === activeDomain;
-    s.classList.toggle('hidden', !match);
+  const q = activeQuery.trim().toLowerCase();
+
+  // Entry-level search filter (operates on each leaf .entry first so the rollup below works)
+  document.querySelectorAll('.entry').forEach(e => {
+    const visible = !q || (e.dataset.search || '').includes(q);
+    e.classList.toggle('hidden', !visible);
   });
 
-  // Grade filter for rows
+  // Grade filter for rows + hide rows whose visible-entry count is 0
   document.querySelectorAll('.grade-row').forEach(r => {
-    const match = activeGrade === 'all' || r.dataset.grade === activeGrade;
-    r.classList.toggle('hidden', !match);
+    const gradeMatch = activeGrade === 'all' || r.dataset.grade === activeGrade;
+    const hasVisibleEntry = r.querySelectorAll('.entry:not(.hidden)').length > 0;
+    r.classList.toggle('hidden', !(gradeMatch && hasVisibleEntry));
   });
 
   // Hide anchor cards that have no visible grade rows
@@ -451,18 +489,24 @@ function applyFilters() {
     c.classList.toggle('hidden', visibleRows === 0);
   });
 
-  // Hide TOC entries for hidden domains
+  // Domain filter (still pill-driven), plus hide domains whose anchor cards are all hidden
+  document.querySelectorAll('.domain-section').forEach(s => {
+    const domainMatch = activeDomain === 'all' || s.dataset.domain === activeDomain;
+    const hasVisibleAnchor = s.querySelectorAll('.anchor-card:not(.hidden)').length > 0;
+    s.classList.toggle('hidden', !(domainMatch && hasVisibleAnchor));
+  });
+
+  // Hide TOC entries for domains that are hidden (by filter or by empty rollup)
   document.querySelectorAll('.toc-nav a').forEach(a => {
-    const match = activeDomain === 'all' || a.dataset.domain === activeDomain;
-    a.classList.toggle('hidden', !match);
+    const sec = document.getElementById(a.dataset.domain);
+    a.classList.toggle('hidden', !sec || sec.classList.contains('hidden'));
   });
 
   updateCounter();
 }
 
 function updateCounter() {
-  let count = 0;
-  document.querySelectorAll('.domain-section:not(.hidden) .anchor-card:not(.hidden) .grade-row:not(.hidden) .entry').forEach(() => count++);
+  const count = document.querySelectorAll('.domain-section:not(.hidden) .anchor-card:not(.hidden) .grade-row:not(.hidden) .entry:not(.hidden)').length;
   document.getElementById('counter').innerHTML =
     `Showing <strong>${count}</strong> standard${count === 1 ? '' : 's'}`;
 }
@@ -480,6 +524,24 @@ document.getElementById('grade-pills').addEventListener('click', (e) => {
   e.target.classList.add('active');
   activeGrade = e.target.dataset.grade;
   applyFilters();
+});
+
+const searchInput = document.getElementById('search-input');
+const searchClear = document.getElementById('search-clear');
+searchInput.addEventListener('input', (e) => {
+  activeQuery = e.target.value;
+  searchClear.classList.toggle('visible', !!activeQuery);
+  applyFilters();
+});
+searchClear.addEventListener('click', () => {
+  searchInput.value = '';
+  activeQuery = '';
+  searchClear.classList.remove('visible');
+  applyFilters();
+  searchInput.focus();
+});
+searchInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && activeQuery) searchClear.click();
 });
 
 fetch('data/ela.json').then(r => r.json()).then(data => {
