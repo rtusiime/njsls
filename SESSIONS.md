@@ -6,6 +6,131 @@ Entries are intentionally verbose. The point is full visibility: open the file a
 
 ---
 
+## Session 17 — 2026-05-19, 04:48 PM EDT
+*Merged the three-dimensional NGSS foundation (SEPs, DCIs, CCCs) from `data/sources/science_58_extracted.json` into `data/science.json`, added rendering to `science.html`, and rebuilt `all.json`. 15 PEs have at least one empty dimension — left as `[]` with a "Not yet extracted" placeholder on the page, queued for a later extraction pass.*
+
+### User request
+
+Three things in one turn:
+1. Merge the seps/dcis/cccs fields from `data/sources/science_58_extracted.json` into `data/science.json` for all 75 PEs. About 16 PEs have empty arrays for one or more of those fields — leave those as empty arrays, don't try to fix them tonight.
+2. Update `science.html` to render the DCI, SEP, and CCC dimensions for each PE, with empty arrays gracefully showing as "Not yet extracted" placeholders.
+3. Append a SESSIONS.md entry describing what was done and noting the gaps as a future TODO.
+
+Constraint: show the merge script before running it.
+
+### Pre-merge inspection
+
+Diffed the two files' PE indexes:
+
+| Set | Count | Notes |
+|---|---|---|
+| PEs in `science_58_extracted.json.pe_records` | 75 | Source of truth for the foundation extraction |
+| PEs in `data/science.json` | 74 | Production data file |
+| in src not dst | 1 (`MS-ESS3-5`) | Real NGSS PE about climate change — was missing entirely from `science.json` |
+| in dst not src | 0 | — |
+| PEs with at least one empty dimension in src | **15** (not 16) | Sub-50 chars of joined name/code/bullet text was treated as "thin" in the prior audit pass — exact count is 15 |
+
+Also noticed: bullet text in the source carries Wingdings bullet glyphs (`` = ``) both as leading markers and, in some entries, mid-string — indicating two source-PDF bullets that got joined into one string during extraction.
+
+### Clarifying questions
+
+Asked the user (`AskUserQuestion`) two things before writing the script:
+
+1. **MS-ESS3-5 handling** — skip & flag, or add full PE record? → User: **Add full PE record now.** Pulled statement from src, stripped leading `"• MS-ESS3-5."` artifact, omitted clarification/AB (source had them empty), inserted into `earth_space.MS-ESS3.pes` and sorted by numeric suffix so it lands after `-4`.
+2. **Bullet text cleanup** — strip glyph only, strip + split, or leave verbatim? → User: **Strip glyph + split joined bullets.** A single bullet string containing internal `` glyphs is split into multiple bullet entries.
+
+### The merge script — `scripts/merge_science_dimensions.py`
+
+Plain-English summary of what it does:
+
+- Loads both JSONs. For each PE in `science.json`, looks up by `code` in the extracted source and copies the `seps` / `dcis` / `cccs` arrays.
+- Normalises bullet text via three small helpers:
+  - `clean_text(s)` strips a leading bullet glyph from `intro` fields.
+  - `clean_bullets(list)` strips the leading glyph from each entry, splits any entry containing internal glyphs into separate bullet entries, drops empty strings.
+  - Per-dimension wrappers (`clean_sep`, `clean_dci`, `clean_ccc`) reshape entries into the canonical key set: SEP → `{practice, intro, bullets}`, DCI → `{code, name, bullets}`, CCC → `{concept, intro, bullets}`.
+- `strip_code_prefix(statement, code)` removes the leading `• <code>.` artifact for source PEs that need fresh insertion into dst.
+- `build_pe_record_from_src(src_pe)` constructs a dst-shaped PE record (code, statement, optional clarification/AB, plus the 3 dimensions).
+- `main()` walks dst, copies dimensions onto every existing PE, then for any PE in src-only (currently just `MS-ESS3-5`) finds the matching topic in dst and inserts the new PE in code-order. Reports counts at the end.
+
+### Run output
+
+```
+Merged dimensions into 74 existing PEs.
+Inserted 1 new PE(s):
+  MS-ESS3-5 into topic MS-ESS3
+
+PEs with at least one empty dimension (15):
+  5-PS1-1: empty ['cccs']
+  5-PS3-1: empty ['dcis']
+  MS-PS2-2: empty ['seps']
+  MS-PS2-5: empty ['seps']
+  5-ESS1-1: empty ['seps', 'cccs']
+  5-ESS1-2: empty ['seps', 'dcis']
+  5-ESS2-2: empty ['cccs']
+  5-ESS3-1: empty ['seps']
+  MS-ESS1-3: empty ['dcis']
+  MS-ESS1-4: empty ['cccs']
+  3-5-ETS1-1: empty ['dcis']
+  3-5-ETS1-3: empty ['cccs']
+  MS-ETS1-2: empty ['dcis', 'cccs']
+  MS-ETS1-3: empty ['cccs']
+  MS-ETS1-4: empty ['cccs']
+```
+
+`science.json` is now 75 PEs (up from 74). Backed up the pre-merge file to `data/science.json.bak` first.
+
+### Render update — `science.html`
+
+Added two pieces:
+
+**CSS** (after `.pe-note.assessment .pe-note-tag` block, before `.toc-nav`): a `.pe-dimensions` container plus per-dimension card style. Each dimension renders as a white surface card with a 1px rule border and 4px radius, holding a tag chip (`SEP` / `DCI` / `CCC`) and uppercased subtitle, then one or more `.pe-dim-item`s separated by a dashed divider. Bullets in `.pe-dim-bullets ul`. Empty arrays render `.pe-dim-empty` — italic Fraunces "Not yet extracted" line.
+
+**JS render helpers** (above `render()`):
+
+- `renderBullets(bullets)` → `<ul>` of escaped bullet strings.
+- `renderDimensions(pe)` returns the full `.pe-dimensions` block for a PE. Iterates the three dims; for each, lists items keyed by SEP `practice` / DCI `code + name` / CCC `concept`, includes the optional intro paragraph, and the bullet list. If a dim's array is empty, emits the placeholder.
+
+Call site: one new line in the PE-loop inside `render()`, right after the existing `assessment_boundary` block:
+
+```js
+html += renderDimensions(pe);
+```
+
+Spot-checked the rendered output in Node against real data (one fully-populated PE, one partial) — no missing fields, no XSS leakage, no console-noise.
+
+### `data/all.json` rebuild
+
+`python3 scripts/build_all.py` — 903 total standards, science count went 74 → 75 (matches the merge). `all.json` does **not** yet include the SEP/DCI/CCC fields — see TODO below.
+
+### Tool / command transcript
+
+- `python3 -c` queries comparing src/dst PE codes, sampling shapes, listing empties.
+- Inspected `pdfplumber` table cell API as part of an earlier patch-debug detour (left for a separate effort — see TODO).
+- `Write scripts/merge_science_dimensions.py`; two `Edit`s to expand it after the user's clarifying answers.
+- `cp data/science.json data/science.json.bak && python3 scripts/merge_science_dimensions.py`
+- Two `Edit`s to `science.html` — one CSS block, one JS function + one render-loop line.
+- `python3 -m http.server 8765` to serve locally, `curl` to confirm 200s on `science.html` and `data/science.json`. `node -e` to evaluate `renderDimensions()` against the live data file as a smoke test.
+- `python3 scripts/build_all.py` to refresh the flat index.
+
+### TODO carried out of this session
+
+The bullets below are the work this session deliberately did **not** do. Picking these up later is the natural follow-up.
+
+1. **Fill the 15 empty dimensions.** Listed above. They are bullets the `extract_science_58.py` first pass dropped because its column-boundary detector uses the midpoint between the *starts* of the header words ("Science" → "Disciplinary" → "Crosscutting") — that midpoint falls in the middle of the SEP column itself, so words near the right edge of each line wrap get misbinned into the next column and lost. `pdfplumber`'s `Table.rows[*].cells` exposes the true column bboxes (SEP ~41 → 211, DCI ~221 → 391, CCC ~401 → 571 on the sample page); switching to those will fix it. The half-finished re-extractor lives at `scripts/patch_science_58.py` and is targeting only the problem PEs — needs the boundary fix and a re-run.
+2. **A handful of intro fields still carry internal `` glyphs.** Example: `MS-ESS3-5.seps[0].intro` ends with `"…progresses to specifying relationships between variables and clarifying arguments and models.  Ask questions to identify and"` — that trailing fragment is a bullet that got concatenated into the intro by the extractor. The merge script only strips the *leading* glyph from `intro`; it doesn't split internal occurrences (that would mean reclassifying the tail as a bullet, which is a content decision, not a normalisation). Fixing this belongs with item 1, in the extractor, not in the merge.
+3. **`data/all.json` doesn't carry the new dimensions.** `scripts/build_all.py:80` builds science records from `{subject, code, grade, discipline, topic, statement, clarification, assessment_boundary}` only. Means the hub's semantic search can't match on SEP/DCI/CCC content yet — search "ecosystems" won't find a PE whose DCI is "LS2.B: Cycles of Matter…" if the statement uses different words. Add `seps/dcis/cccs` to the flat record once we trust the corpus is filled; doubling each science record's size is the trade-off, plus a one-time cache rewrite for the hub search.
+4. **Foundation legend.** The page legend at `science.html:378` describes Clarification + Assessment chips. Could add a third entry explaining the SEP/DCI/CCC tags. Skipped — the chips are self-labeled and adding a legend row felt like clutter for a first cut. Reconsider if a teacher misreads them.
+
+### Files touched
+
+- `data/science.json` — 74 PEs got `seps/dcis/cccs` keys; 1 new PE (`MS-ESS3-5`) inserted. Bullet glyphs normalised.
+- `data/science.json.bak` — pre-merge snapshot, untracked.
+- `scripts/merge_science_dimensions.py` — new (168 lines).
+- `science.html` — CSS block (52 lines) + render helpers (52 lines) + 1-line render-site call.
+- `data/all.json` — regenerated. Science section bumped to 75 records but field shape unchanged.
+
+---
+
 ## Session 16 — 2026-05-14, 05:37 AM EDT
 *Quick bug fix: code-based search was broken on math.html and social-studies.html. Caught via screenshots — user typed `5.DL.B.5` on math.html and got 0 results despite the standard being in the data. Both pages' searchable text only indexed statement text, not the code.*
 

@@ -269,6 +269,55 @@ main { max-width: 1100px; margin: 0 auto; padding: 48px 48px 80px; }
 .pe-note.assessment .pe-note-tag { color: var(--warn); border: 1px solid var(--warn); }
 .pe-note-body { flex: 1; }
 
+.pe-dimensions {
+  margin-top: 14px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.pe-dim {
+  border: 1px solid var(--rule); border-radius: 4px;
+  background: var(--surface);
+  padding: 12px 14px;
+  font-size: 13px; line-height: 1.55;
+}
+.pe-dim-head {
+  display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.pe-dim-tag {
+  font-size: 9px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; padding: 2px 7px; border-radius: 3px;
+  background: var(--accent-pale); color: var(--accent);
+  white-space: nowrap; flex-shrink: 0;
+}
+.pe-dim-title {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--muted);
+}
+.pe-dim-item { padding-top: 8px; }
+.pe-dim-item + .pe-dim-item { border-top: 1px dashed var(--divider); margin-top: 8px; }
+.pe-dim-item-head {
+  font-weight: 600; color: var(--ink); font-size: 13px;
+  margin-bottom: 2px;
+}
+.pe-dim-item-code {
+  display: inline-block; font-family: 'Manrope', sans-serif;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.04em;
+  color: var(--accent); background: var(--accent-pale);
+  padding: 1px 6px; border-radius: 2px; margin-right: 6px;
+  vertical-align: 1px;
+}
+.pe-dim-intro {
+  font-size: 12px; color: var(--muted); line-height: 1.5;
+  margin: 2px 0 6px;
+}
+.pe-dim-bullets { margin: 4px 0 0 0; padding-left: 20px; }
+.pe-dim-bullets li { margin-bottom: 4px; color: var(--ink-soft); }
+.pe-dim-empty {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 18;
+  font-style: italic; font-size: 12.5px; color: var(--faint);
+}
+
 .toc-nav {
   position: fixed; right: 24px; top: 50%;
   transform: translateY(-50%); z-index: 30;
@@ -413,6 +462,57 @@ function esc(s) {
   return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
 
+function renderBullets(bullets) {
+  if (!bullets || !bullets.length) return '';
+  return `<ul class="pe-dim-bullets">${bullets.map(b => `<li>${esc(b)}</li>`).join('')}</ul>`;
+}
+
+function renderDimensions(pe) {
+  const dims = [
+    { key: 'seps', tag: 'SEP', title: 'Science & Engineering Practices',
+      items: (pe.seps || []).map(s => ({
+        head: s.practice ? esc(s.practice) : '',
+        intro: s.intro ? `<div class="pe-dim-intro">${esc(s.intro)}</div>` : '',
+        bullets: renderBullets(s.bullets),
+      })) },
+    { key: 'dcis', tag: 'DCI', title: 'Disciplinary Core Ideas',
+      items: (pe.dcis || []).map(d => ({
+        head: (d.code || d.name)
+          ? `${d.code ? `<span class="pe-dim-item-code">${esc(d.code)}</span>` : ''}${esc(d.name || '')}`
+          : '',
+        intro: '',
+        bullets: renderBullets(d.bullets),
+      })) },
+    { key: 'cccs', tag: 'CCC', title: 'Crosscutting Concepts',
+      items: (pe.cccs || []).map(c => ({
+        head: c.concept ? esc(c.concept) : '',
+        intro: c.intro ? `<div class="pe-dim-intro">${esc(c.intro)}</div>` : '',
+        bullets: renderBullets(c.bullets),
+      })) },
+  ];
+  // Only render the wrapper if at least one of the three keys is present on the PE
+  if (!('seps' in pe) && !('dcis' in pe) && !('cccs' in pe)) return '';
+  let html = '<div class="pe-dimensions">';
+  for (const d of dims) {
+    html += '<div class="pe-dim">';
+    html += `<div class="pe-dim-head"><span class="pe-dim-tag">${d.tag}</span><span class="pe-dim-title">${d.title}</span></div>`;
+    if (!d.items.length) {
+      html += `<div class="pe-dim-empty">Not yet extracted</div>`;
+    } else {
+      for (const it of d.items) {
+        html += '<div class="pe-dim-item">';
+        if (it.head) html += `<div class="pe-dim-item-head">${it.head}</div>`;
+        html += it.intro;
+        html += it.bullets;
+        html += '</div>';
+      }
+    }
+    html += '</div>';
+  }
+  html += '</div>';
+  return html;
+}
+
 function render() {
   let html = '';
   for (const discKey of ['physical', 'life', 'earth_space', 'engineering']) {
@@ -453,6 +553,7 @@ function render() {
           html += `<span class="pe-note-body">${esc(pe.assessment_boundary)}</span>`;
           html += `</div>`;
         }
+        html += renderDimensions(pe);
         html += `</div>`;
       }
       html += `</div>`;

@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "site": "https://rtusiime.github.io/njsls/",
   "source": "New Jersey Department of Education - NJSLS (2023 ELA + Math, 2020 Science / SS / CSDT / CLKS / CHPE)",
-  "standard_count": 902,
+  "standard_count": 903,
   "subjects": {
     "ela": {
       "title": "English Language Arts",
@@ -3078,6 +3078,14 @@
       "topic": "MS-ESS3 - Earth and Human Activity",
       "statement": "Construct an argument supported by evidence for how increases in human population and per-capita consumption of natural resources impact Earth’s systems.",
       "clarification": "Examples of evidence include grade-appropriate databases on human populations and the rates of consumption of food and natural resources (such as freshwater, mineral, and energy). Examples of impacts can include changes to the appearance, composition, and structure of Earth’s systems as well as the rates at which they change. The consequences of increases in human populations and consumption of natural resources are described by science, but science does not make the decisions for the actions society takes."
+    },
+    {
+      "subject": "science",
+      "code": "MS-ESS3-5",
+      "grade": "MS",
+      "discipline": "Earth and Space Sciences",
+      "topic": "MS-ESS3 - Earth and Human Activity",
+      "statement": "Ask questions to clarify evidence of the factors that have caused climate change over the past century."
     },
     {
       "subject": "science",
