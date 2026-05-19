@@ -129,6 +129,12 @@ The bullets below are the work this session deliberately did **not** do. Picking
 - `science.html` — CSS block (52 lines) + render helpers (52 lines) + 1-line render-site call.
 - `data/all.json` — regenerated. Science section bumped to 75 records but field shape unchanged.
 
+### Commits produced
+
+| Hash | Time (EDT) | Message |
+|---|---|---|
+| `7b14e0e` | 17:05:30 | Science: merge SEP/DCI/CCC dimensions onto 75 PEs + render on page |
+
 ---
 
 ## Session 16 — 2026-05-14, 05:37 AM EDT
