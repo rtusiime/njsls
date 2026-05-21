@@ -6,6 +6,68 @@ Entries are intentionally verbose. The point is full visibility: open the file a
 
 ---
 
+## Session 18 — 2026-05-21, 12:39 PM EDT
+*Fixed hub keyword search so it surfaces matches that live in sub-bullets and other rich text fields, not just the top-line statement. Trigger: user noticed "paraphrasing" returned 0 hits on the hub but matched SL.PE.6.1 on the ELA page filter.*
+
+### User report
+
+Two screenshots side-by-side: hub showing "0 keyword matches for paraphrasing"; ELA page showing 1 standard (SL.PE.6.1), with "paraphrasing" highlighted inside the fourth sub-bullet ("Review the key ideas expressed and demonstrate understanding of multiple perspectives through reflection and **paraphrasing**"). User asked why a single source corpus produced different results.
+
+### Diagnosis
+
+`data/all.json` carries `subs: [...]` on each ELA/Math standard. The ELA page filter (ela.html:428-432) concatenates `code + main + subs + subgroup + anchor metadata` into its `data-search` haystack, so a sub-bullet word like "paraphrasing" matches. The hub's `quickSearch()` in `index.html` substring branch only checked `s.code` and `s.statement` — sub-bullets and every other rich text field were invisible to keyword search. Same data, different field coverage.
+
+Audited what other subjects expose in `all.json`:
+- ELA / Math → `subs`
+- Science → `clarification`, `assessment_boundary`
+- SS / CSDT / CLKS / CHPE → `core_idea`; SS additionally → `era_summary`
+
+### Fix
+
+`njsls/index.html` `quickSearch()` keyword branch — widened the haystack to include every text field a teacher actually sees on the subject page. Exact-code and code-prefix branches untouched (those should stay code-only).
+
+Before:
+```js
+return standards.filter(s =>
+  s.code.toLowerCase().includes(q) ||
+  (s.statement || '').toLowerCase().includes(q)
+).map(s => ({ ...s, _matchType: 'keyword' }));
+```
+
+After:
+```js
+return standards.filter(s => {
+  const hay = [
+    s.code, s.statement,
+    Array.isArray(s.subs) ? s.subs.join(' ') : '',
+    s.clarification, s.assessment_boundary,
+    s.core_idea, s.era_summary
+  ].filter(Boolean).join(' ').toLowerCase();
+  return hay.includes(q);
+}).map(s => ({ ...s, _matchType: 'keyword' }));
+```
+
+### Verification
+
+Ran the same field-concat logic offline against `data/all.json` for `paraphrasing` → matches `[('ela', 'SL.PE.6.1')]`, matching what the ELA page filter shows. Hub and subject page now agree.
+
+### Files touched
+
+- `njsls/index.html` — keyword search haystack widened (single block in `quickSearch()`).
+- `njsls/SESSIONS.md` — this entry.
+
+### Not in scope
+
+- No change to `data/all.json` or any per-subject JSON.
+- Claude semantic search path untouched — it already sees the full corpus via system prompt.
+- The styling difference between the hub textarea and the ELA filter input (icon + clear button) is real but separate from this bug; not addressed here.
+
+### Commit
+
+(filled in after commit lands)
+
+---
+
 ## Session 17 — 2026-05-19, 04:48 PM EDT
 *Merged the three-dimensional NGSS foundation (SEPs, DCIs, CCCs) from `data/sources/science_58_extracted.json` into `data/science.json`, added rendering to `science.html`, and rebuilt `all.json`. 15 PEs have at least one empty dimension — left as `[]` with a "Not yet extracted" placeholder on the page, queued for a later extraction pass.*
 

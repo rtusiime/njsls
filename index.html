@@ -837,11 +837,19 @@ footer {
         return pre.map(s => ({ ...s, _matchType: 'code_prefix' }));
       }
     }
-    // Substring on code or statement
-    return standards.filter(s =>
-      s.code.toLowerCase().includes(q) ||
-      (s.statement || '').toLowerCase().includes(q)
-    ).map(s => ({ ...s, _matchType: 'keyword' }));
+    // Substring on code or any text field a teacher sees on the subject page
+    return standards.filter(s => {
+      const hay = [
+        s.code,
+        s.statement,
+        Array.isArray(s.subs) ? s.subs.join(' ') : '',
+        s.clarification,
+        s.assessment_boundary,
+        s.core_idea,
+        s.era_summary
+      ].filter(Boolean).join(' ').toLowerCase();
+      return hay.includes(q);
+    }).map(s => ({ ...s, _matchType: 'keyword' }));
   }
 
   async function runKeywordSearch() {
