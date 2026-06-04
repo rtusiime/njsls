@@ -374,7 +374,7 @@ footer {
   <div class="eyebrow">Reference Document · Forge Prep</div>
   <h1 class="title">New Jersey Student Learning<br>Standards for <em>Science</em></h1>
   <p class="subtitle">Grades 5 through 8. Adopted 2020 by the New Jersey Department of Education. Grade 5 is written per-grade; Grades 6–8 are banded across middle school. Engineering at Grade 5 is the 3–5-banded ETS1 topic.</p>
-  <div class="source-line"><strong>Source:</strong> 2020 New Jersey Student Learning Standards — Science, Office of Standards, Division of Teaching and Learning Services, New Jersey Department of Education. Performance-expectation statements quoted verbatim; the three-dimensional foundation box (practices, core ideas, crosscutting concepts) is in the source PDF. &middot; <a class="json-link" href="data/science.json" target="_blank" rel="noopener">View as JSON<span class="arrow">&#x2197;</span></a></div>
+  <div class="source-line"><strong>Source:</strong> 2020 New Jersey Student Learning Standards — Science, Office of Standards, Division of Teaching and Learning Services, New Jersey Department of Education. Performance-expectation statements quoted verbatim; the three-dimensional foundation (science &amp; engineering practices, disciplinary core ideas, crosscutting concepts) follows the NGSS framework that NJSLS-Science adopts. &middot; <a class="json-link" href="data/science.json" target="_blank" rel="noopener">View as JSON<span class="arrow">&#x2197;</span></a></div>
   <div class="legend">
     <span><span class="legend-swatch clarif"></span>Clarification statement</span>
     <span><span class="legend-swatch assess"></span>Assessment boundary</span>
@@ -497,7 +497,7 @@ function renderDimensions(pe) {
     html += '<div class="pe-dim">';
     html += `<div class="pe-dim-head"><span class="pe-dim-tag">${d.tag}</span><span class="pe-dim-title">${d.title}</span></div>`;
     if (!d.items.length) {
-      html += `<div class="pe-dim-empty">Not yet extracted</div>`;
+      html += `<div class="pe-dim-empty">None specified in NGSS</div>`;
     } else {
       for (const it of d.items) {
         html += '<div class="pe-dim-item">';

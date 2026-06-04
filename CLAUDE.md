@@ -103,12 +103,16 @@ Filters in UI: Grade pills + live search input. Math has inline LaTeX expression
         code,                                   // "5-PS1-1", "MS-PS1-1", etc.
         statement,
         clarification,                          // optional
-        assessment_boundary                     // optional
+        assessment_boundary,                    // optional
+        seps: [{ practice, intro, bullets }],   // SEP: practice name, grade-band progression intro, element bullets
+        dcis: [{ code, name, bullets, secondary }], // DCI: code (e.g. "LS2.A"), name, element bullets; secondary:true on secondary core ideas
+        cccs: [{ concept, intro, bullets }]     // CCC + ETS/NOS connections; intro carries the connection sub-concept label, "" for core CCCs
       }]
     }]
   }
 }
 ```
+The three-dimensional foundation (`seps`/`dcis`/`cccs`) is sourced from the NSTA Atlas NGSS element coding (Ted Willard) cross-validated against the ASN RDF export of NGSS — see Session 18. Engineering-design PEs (`*-ETS1-*`) legitimately have no crosscutting concept; those `cccs` are `[]` and render as "None specified in NGSS". `all.json` does **not** carry these dimension fields (see Session 17 TODO).
 Filters in UI: Discipline pills + Grade-band pills + Topic-code pills + live search.
 
 ### Social Studies — `data/social-studies.json`
@@ -266,7 +270,7 @@ User input needed before picking (a) or (b).
 
 ## What's intentionally *not* in this repo
 
-- The three-dimensional NGSS foundation box for Science (SEPs, DCIs, CCCs). The source PDF lays it out in multi-column tables that `pdftotext -layout` mangles. If added later, switch to a column-aware extractor like Python `pdfplumber` with bbox-aware grouping, or pull the foundation from the NGSS website rather than the PDF.
+- ~~The three-dimensional NGSS foundation box for Science (SEPs, DCIs, CCCs).~~ **Added Session 17, re-derived cleanly Session 18.** The original `pdftotext -layout` pass mangled the multi-column foundation tables (intros/bullets split mid-sentence, dimensions bled together, 15 PEs with empty arrays). Session 18 replaced the extraction wholesale by reconstructing every PE's foundation from machine-readable NGSS data on the GitHub allowlist — the NSTA Atlas element coding (`CodesForNGSSelements_TedWillard.xlsx`) for the PE→element mapping, verbatim element text, and canonical names, plus the ASN RDF export (`NGSS.xml`) for the SEP progression intros. If the foundation ever needs re-deriving, those two artifacts (in the `galacticpolymath/standardX` repo) are the source, not the NJSLS PDF.
 - A README. Not needed — this file plus SESSIONS.md cover everything.
 - Build tooling, linters, package.json. Single-file static HTML; don't add a build step.
 
