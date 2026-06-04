@@ -6,6 +6,54 @@ Entries are intentionally verbose. The point is full visibility: open the file a
 
 ---
 
+## Session 24 — 2026-06-04 EDT (rebased onto main 2026-10-12)
+*Re-derived the Science three-dimensional foundation (`seps`/`dcis`/`cccs`) for all 75 PEs from machine-readable NGSS data, replacing the garbled `pdftotext` extraction. Completes the re-extraction task Session 19 spawned: intro pollution, bullet bleed, and the 15 empty-dimension PEs are gone. Written on branch `claude/gifted-pasteur-zGqog` as PR #1 before Sessions 19–23 landed; rebased onto them on 2026-10-12 and re-modeled to Session 19's lens conventions.*
+
+### User request
+
+Fix the foundation's extraction artifacts: (1) SEP/CCC `intro` fields with text bled in from adjacent dimensions, (2) `bullets` running into the next practice's text, (3) the 15 PEs with an empty dimension array. Re-extract column-aware from the source PDFs or pull from the NGSS website; rebuild `all.json`; verify the page; spot-check MS-LS2-1, MS-ETS1-1 and three of the 15.
+
+### The blocker
+
+Neither suggested source was usable from the cloud session: the PDFs are gone (see Session 21), and `nextgenscience.org` plus every state-DOE / standards mirror is blocked by the environment's egress allowlist — only GitHub and PyPI are reachable.
+
+### Sources (GitHub — `galacticpolymath/standardX`, pinned commit `cbf6666`)
+
+- `CodesForNGSSelements_TedWillard.xlsx` — the **NSTA Atlas of the Three Dimensions** element coding: each PE → its practice / core-idea / secondary-core-idea / CCC / ETS / NOS element codes, verbatim element text, canonical DCI names (untruncated — fixes `"Human Impacts on Earth"` → `"Human Impacts on Earth Systems"`).
+- `NGSS.xml` — the **ASN RDF export** of NGSS (Achieve, 2013): the 30 SEP grade-band progression intros keyed by (practice, band), the official connection sub-concept names, and the text of `INFLU-M4` (cited by MS-PS4-3, missing from the workbook).
+- Rejected: `Sallvainian/NGSS-MCP` (a PDF extraction with the same artifacts) and `commonstandardsproject/api` (topic labels only).
+
+### Method — `scripts/rebuild_science_foundation.py` (new)
+
+Downloads both sources from the pinned commit and verifies SHA-256 (not vendored: the repo is GPLv3). Replaces only `seps`/`dcis`/`cccs`; `code`/`statement`/`clarification`/`assessment_boundary`/order stay byte-identical. Source repairs: a stray DCI code in MS-ESS1-4's practices cell; `LS3.A-M1. LS3.B-M2` (period for comma, MS-LS3-1); `PS1,A-M5` (comma for period, MS-PS1-1).
+
+### Rebase reconciliation (2026-10-12)
+
+PR #1 originally put the umbrella ("Connections to Engineering, Technology, and Applications of Science") in `concept` and the sub-concept in `intro`. Session 19's `build_all.py` drops `intro`, so that would have erased the sub-concept from `all.json`. Re-modeled to Session 19's convention:
+- `seps` — the 8 practices only (intro = ASN progression).
+- `dcis` — core, then secondary core ideas (`secondary: true`).
+- `cccs` — core CCCs, then connections, each with `concept` = the specific sub-concept, `connection: "engineering" | "nature_of_science"`, and `intro: ""`. NOS connections that NGSS prints in the practices column also go here, matching the existing data and keeping the SEP lens clean. Official names come from ASN (Appendix H/J): MS-ETS1-1 lands on the same "Influence of Engineering, Technology, and Science on Society and the Natural World" Session 19 set by hand.
+- Main's 10 leftover umbrella-label concepts are resolved to specific sub-concepts.
+- `science.html`: connection items show the NGSS umbrella as a small eyebrow derived from `connection`; empty dimensions read "None specified in NGSS" (they're authoritative absences now, not extraction gaps).
+
+### Results
+
+- 75 SEP / 105 DCI / 107 CCC entries. Lenses: 8 practices, 15 CCC concepts (7 + 2 ETS + 6 NOS), 38 DCI codes (was 35).
+- 0 garble artifacts on a scan for the three patterns. Only empty dimensions: `cccs` of `3-5-ETS1-3`, `MS-ETS1-2/3/4` — NGSS lists no crosscutting concept for them.
+- Cross-check vs `NGSS.xml`: ~80% of bullets byte-identical after normalization; the rest are minor edition variance between the two NGSS transcriptions (hyphenation, "and/or", a few condensed NOS notes) — clean text, none garbled.
+- Spot-checked MS-LS2-1, MS-ETS1-1, and previously-empty 5-PS1-1, MS-PS2-2, 5-ESS1-2, MS-ESS1-4; ran the page's `renderDimensions()` in node — all pass.
+
+### Files touched
+
+- `scripts/rebuild_science_foundation.py` — new.
+- `data/science.json`, `data/all.json` (rebuilt), `science.html`, `CLAUDE.md`, `SESSIONS.md`.
+
+### Commit
+
+(filled in after commit lands)
+
+---
+
 ## Session 23 — 2026-06-05, 03:45 PM EDT
 *ELA: added a Common Core (2016) crosswalk. Each grades 5–8 standard now carries `cc_codes` — its CC equivalent — so searching a CC code (`RL.8.2`, `SL.6.1`) returns the NJSLS standard, and every result shows a `CC …` badge. 129/130 mapped.*
 
