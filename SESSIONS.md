@@ -6,6 +6,72 @@ Entries are intentionally verbose. The point is full visibility: open the file a
 
 ---
 
+## Session 19 — 2026-06-04 EDT
+*Re-derived the entire Science three-dimensional foundation (`seps`/`dcis`/`cccs`) for all 75 PEs from machine-readable NGSS data, replacing the garbled `pdftotext` extraction wholesale. Fixed the three flagged artifact classes — intro pollution, bullet bleed, and the 15 empty-dimension PEs — and rebuilt `all.json`. Net: 87 SEP, 105 DCI, 95 CCC entries, all verbatim-clean; the only remaining empty dimensions are the 4 ETS1 engineering PEs that NGSS genuinely leaves without a crosscutting concept.*
+
+### User request
+
+Fix the extraction-quality artifacts in `data/science.json`'s NGSS foundation: (1) SEP/CCC `intro` fields with bled-in text from adjacent dimensions, (2) `bullets` running into the next practice's text, (3) 15 PEs with ≥1 entirely-empty dimension array (logged in Session 17). The "proper fix" per the task and CLAUDE.md: re-extract with a column-aware extractor from the source PDFs, **or** pull the foundation from the NGSS website. Then rebuild `all.json`, verify the render, and spot-check MS-LS2-1, MS-ETS1-1, and three of the 15 empty PEs against the source.
+
+### The blocker
+
+Neither stated path was available in this remote environment:
+- The source PDFs (`/Users/.../curriculum/NJSLS-Science_*.pdf`) and the Session-17 intermediate (`data/sources/science_58_extracted.json`) are **not in the repo** — only the git clone exists here. So no PDF to re-extract.
+- `nextgenscience.org`, `nsta.org`, `thewonderofscience.com`, every state-DOE mirror, `commonstandardsproject.com`, `corestandards.org`, and `1edtech.org` are all **blocked by the environment's egress allowlist** (`host_not_allowed`). So no NGSS-website pull.
+
+Mapped the allowlist by probing: only **GitHub-family hosts + PyPI** are reachable (`github.com`, `raw.githubusercontent.com`, `codeload.github.com`, `pypi.org`, `files.pythonhosted.org`). The connected CASE-Network MCP server has NGSS *PE statements* but not the foundation box.
+
+### Source hunt (GitHub allowlist)
+
+Cloned candidate NGSS datasets and inspected their actual data:
+- `Sallvainian/NGSS-MCP` — itself a pattern-based PDF extraction with the **same** artifacts (empty SEPs, CCC descriptions bleeding multiple concepts). Rejected.
+- `commonstandardsproject/api` — only topic labels + a BSON jurisdiction stub, no foundation text. Rejected.
+- **`galacticpolymath/standardX`** — the winner. Ships two authoritative machine-readable artifacts:
+  - `data/CodesForNGSSelements_TedWillard.xlsx` — the **NSTA Atlas of the Three Dimensions** element coding. Sheets: `PE Foundations and Connections` (each PE → its Practice/Core-Idea/Secondary-Core-Idea/CCC/Eng/NOS element codes), `SEP|DCI|CCC|Eng|NOS Codes` (element-code → verbatim text), `Topic Codes` (code-prefix → canonical name, incl. the **untruncated** DCI names).
+  - `data/NGSS.xml` — the **ASN RDF** export of NGSS (Achieve, 2013). 1009 statement nodes; used for the 30 verbatim SEP **progression intros**, keyed by (practice, grade band) via parent-node desc + `dcterms:educationLevel`.
+
+### Reconstruction (`/tmp` dry-run script, then applied)
+
+For each of the 75 PEs, assembled `seps`/`dcis`/`cccs` deterministically:
+- **DCI** ← core + secondary element texts, grouped by subcategory, canonical names from Topic Codes (fixes prior truncations like `"Human Impacts on Earth"` → `"Human Impacts on Earth Systems"`). Secondary core ideas carry `secondary: true`.
+- **SEP** ← practice element texts (bullets) + ASN progression (intro), grouped by practice. Nature-of-Science understandings that NGSS places in the SEP column (VOM/BEE/OTR/ENP) appended as "Connections to Nature of Science" entries.
+- **CCC** ← crosscutting-concept element texts; ETS connections (INTER/INFLU) and CCC-column NOS (WOK/AOC/HE/AQAW) rendered NGSS-style: umbrella concept → sub-concept label in `intro` → bullets.
+
+Only `seps`/`dcis`/`cccs` were touched — verified `code`/`statement`/`clarification`/`assessment_boundary`, PE order, and topic metadata are byte-identical to before.
+
+### Edge cases caught and handled
+
+- **MS-ESS1-4**: a stray DCI code (`ESS1.C-M1`) sits in the Willard *practices* cell; filtered out of SEP (it's already correctly in `core`), leaving `CEDS-M3`. Its empty CCC fills with `SPQ-M1`.
+- **Two source typos** in the Willard PE sheet: `'LS3.A-M1. LS3.B-M2'` (period for comma, MS-LS3-1) and `'PS1,A-M5'` (comma for period in a subcat, MS-PS1-1). Switched the code parser from delimiter-split to regex extraction + a targeted subcat repair; both now resolve. A before/after regression guard confirmed no previously-populated dimension was emptied.
+- **`INFLU-M4`** (used only by MS-PS4-3) is missing from the Eng Codes sheet; recovered its verbatim text from `NGSS.xml` (appears once) and corroborated against the prior `science.json` bullet.
+- **The 4 ETS1 PEs** (`3-5-ETS1-3`, `MS-ETS1-2/3/4`) genuinely have no CCC in NGSS (`ccc=eng=nos=[]`). Their `cccs` stay `[]`; changed the page's empty-dimension label from "Not yet extracted" to **"None specified in NGSS"** so it reads as authoritative absence, not a TODO.
+
+### Validation
+
+- Garble scan on the new data: **0** intro-pollution / bullet-bleed / connection-header-in-bullet / double-space artifacts (down from pervasive).
+- Independent cross-check: reconstructed bullets vs `NGSS.xml` — ~80% byte-verbatim (normalized); the remainder are minor edition variances between the NSTA-Atlas and Achieve transcriptions (hyphenation, "and/or", a few condensed Nature-of-Science notes), all clean NGSS text, none garbled. Spot-corroborated several against the prior PDF extraction.
+- Ran the page's actual `renderDimensions()` in node against the new data for MS-LS2-1, MS-ETS1-1, MS-PS2-2, MS-PS4-3, MS-ESS1-4, 3-5-ETS1-3 → all PASS (no `undefined`, expected verbatim text present, empty-label correct).
+- `python3 scripts/build_all.py` → 903 standards, science 75 (`all.json` unchanged — it doesn't carry the dimension fields; Session 17 TODO #3 still open). Served locally: `science.html`, `data/science.json`, `data/all.json` all HTTP 200.
+
+### Files touched
+
+- `data/science.json` — all 75 PEs' `seps`/`dcis`/`cccs` re-derived; 180 KB.
+- `data/all.json` — regenerated (byte-identical; dimensions aren't included in the flat layer).
+- `science.html` — empty-dimension label → "None specified in NGSS"; masthead source-line updated (foundation is now in-repo, not "in the source PDF").
+- `CLAUDE.md` — Science schema documents `seps`/`dcis`/`cccs`; "intentionally not in this repo" note updated to record the foundation is present and how it was sourced.
+- `SESSIONS.md` — this entry.
+
+### Not in scope / carried forward
+
+- Adding `seps`/`dcis`/`cccs` to `all.json` for semantic-search grounding (Session 17 TODO #3) — left as-is; the task only asked to regenerate with the existing builder.
+- The handful of condensed Nature-of-Science note phrasings could be swapped to the longer Achieve wording, but both are authoritative and clean; not worth a second source-merge.
+
+### Commit
+
+(filled in after commit lands)
+
+---
+
 ## Session 18 — 2026-05-21, 12:39 PM EDT
 *Fixed hub keyword search so it surfaces matches that live in sub-bullets and other rich text fields, not just the top-line statement. Trigger: user noticed "paraphrasing" returned 0 hits on the hub but matched SL.PE.6.1 on the ELA page filter.*
 
