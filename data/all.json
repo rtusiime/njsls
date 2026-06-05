@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "site": "https://rtusiime.github.io/njsls/",
   "source": "New Jersey Department of Education - NJSLS (2023 ELA + Math, 2020 Science / SS / CSDT / CLKS / CHPE)",
   "standard_count": 903,
@@ -39,6 +39,73 @@
       "grade_range": "5-8 (end-of-grade 5 + 8)",
       "adopted": "2020"
     }
+  },
+  "science_dimensions": {
+    "note": "NGSS three-dimensionality tagged on science PEs. Filter records by these lenses via their sep_practices / dci_codes / ccc_concepts keys.",
+    "sep_practices": [
+      "Analyzing and Interpreting Data",
+      "Asking Questions and Defining Problems",
+      "Constructing Explanations and Designing Solutions",
+      "Developing and Using Models",
+      "Engaging in Argument from Evidence",
+      "Obtaining, Evaluating, and Communicating Information",
+      "Planning and Carrying Out Investigations",
+      "Using Mathematics and Computational Thinking"
+    ],
+    "ccc_concepts": [
+      "Cause and Effect",
+      "Connections to Engineering, Technology, and Applications of Science",
+      "Connections to Nature of Science",
+      "Energy and Matter",
+      "Influence of Engineering, Technology, and Science on Society and the Natural World",
+      "Interdependence of Science, Engineering, and Technology",
+      "Patterns",
+      "Scale, Proportion, and Quantity",
+      "Science Addresses Questions About the Natural and Material World",
+      "Science is a Human Endeavor",
+      "Scientific Knowledge Assumes an Order and Consistency in Natural Systems",
+      "Scientific Knowledge is Based on Empirical Evidence",
+      "Stability and Change",
+      "Structure and Function",
+      "Systems and System Models"
+    ],
+    "dci_codes": [
+      "ESS1.A",
+      "ESS1.B",
+      "ESS1.C",
+      "ESS2.A",
+      "ESS2.B",
+      "ESS2.C",
+      "ESS2.D",
+      "ESS3.A",
+      "ESS3.B",
+      "ESS3.C",
+      "ESS3.D",
+      "ETS1.A",
+      "ETS1.B",
+      "ETS1.C",
+      "LS1.A",
+      "LS1.B",
+      "LS1.C",
+      "LS1.D",
+      "LS2.A",
+      "LS2.B",
+      "LS3.A",
+      "LS3.B",
+      "LS4.A",
+      "LS4.B",
+      "LS4.C",
+      "PS1.A",
+      "PS1.B",
+      "PS2.A",
+      "PS2.B",
+      "PS3.A",
+      "PS3.B",
+      "PS3.C",
+      "PS4.A",
+      "PS4.B",
+      "PS4.C"
+    ]
   },
   "standards": [
     {
@@ -2444,7 +2511,30 @@
       "topic": "5-PS1 - Matter and its Interactions",
       "statement": "Develop a model to describe that matter is made of particles too small to be seen.",
       "clarification": "Examples of evidence supporting a model could include adding air to expand a basketball, compressing air in a syringe, dissolving sugar in water, and evaporating salt water.",
-      "assessment_boundary": "Assessment does not include the atomic-scale mechanism of evaporation and condensation or defining the unseen particles."
+      "assessment_boundary": "Assessment does not include the atomic-scale mechanism of evaporation and condensation or defining the unseen particles.",
+      "sep_practices": [
+        "Developing and Using Models"
+      ],
+      "dci_codes": [
+        "PS1.A"
+      ],
+      "seps": [
+        {
+          "practice": "Developing and Using Models",
+          "bullets": [
+            "Develop a model to describe phenomena."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "PS1.A",
+          "name": "Structure and Properties of Matter",
+          "bullets": [
+            "Matter of any type can be subdivided into particles that are too small to see, but even then the matter still exists and can be detected by other means. A model showing that gases are made from matter particles that are too small to see and are moving freely around in space can explain many observations, including the inflation and shape of a balloon and the effects of air on larger particles or objects."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2454,7 +2544,50 @@
       "topic": "5-PS1 - Matter and its Interactions",
       "statement": "Measure and graph quantities to provide evidence that regardless of the type of change that occurs when heating, cooling, or mixing substances, the total weight of matter is conserved.",
       "clarification": "Examples of reactions or changes could include phase changes, dissolving, and mixing that form new substances.",
-      "assessment_boundary": "Assessment does not include distinguishing mass and weight."
+      "assessment_boundary": "Assessment does not include distinguishing mass and weight.",
+      "sep_practices": [
+        "Using Mathematics and Computational Thinking"
+      ],
+      "dci_codes": [
+        "PS1.A",
+        "PS1.B"
+      ],
+      "ccc_concepts": [
+        "Scale, Proportion, and Quantity"
+      ],
+      "seps": [
+        {
+          "practice": "Using Mathematics and Computational Thinking",
+          "bullets": [
+            "Measure and graph quantities such as weight to address scientific and engineering questions and problems."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "PS1.A",
+          "name": "Structure and Properties of Matter",
+          "bullets": [
+            "The amount (weight) of matter is conserved when it changes form, even in transitions in which it seems to vanish.",
+            "Measurements of a variety of properties can be used to identify"
+          ]
+        },
+        {
+          "code": "PS1.B",
+          "name": "Chemical Reactions",
+          "bullets": [
+            "No matter what reaction or change in properties occurs, the total weight of the substances does not and change. (Boundary: Mass and weight are not distinguished at this grade level.)"
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Scale, Proportion, and Quantity",
+          "bullets": [
+            "Standard units are used to measure and describe physical quantities such as weight, time, temperature, and volume."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2464,7 +2597,41 @@
       "topic": "5-PS1 - Matter and its Interactions",
       "statement": "Make observations and measurements to identify materials based on their properties.",
       "clarification": "Examples of materials to be identified could include baking soda and other powders, metals, minerals, and liquids. Examples of properties could include color, hardness, reflectivity, electrical conductivity, thermal conductivity, response to magnetic forces, and solubility; density is not intended as an identifiable property.",
-      "assessment_boundary": "Assessment does not include density or distinguishing mass and weight."
+      "assessment_boundary": "Assessment does not include density or distinguishing mass and weight.",
+      "sep_practices": [
+        "Planning and Carrying Out Investigations"
+      ],
+      "dci_codes": [
+        "PS1.A"
+      ],
+      "ccc_concepts": [
+        "Scale, Proportion, and Quantity"
+      ],
+      "seps": [
+        {
+          "practice": "Planning and Carrying Out Investigations",
+          "bullets": [
+            "Make observations and measurements to produce data to serve as the basis for evidence for an explanation of a phenomenon."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "PS1.A",
+          "name": "Structure and Properties of Matter",
+          "bullets": [
+            "materials. (Boundary: At this grade level, mass and weight are not distinguished, and no attempt is made to define the unseen particles or explain the atomic-scale mechanism of evaporation and condensation.)"
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Scale, Proportion, and Quantity",
+          "bullets": [
+            "Standard units are used to measure and describe physical quantities such as weight, time, temperature, and volume."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2472,7 +2639,41 @@
       "grade": "5",
       "discipline": "Physical Sciences",
       "topic": "5-PS1 - Matter and its Interactions",
-      "statement": "Conduct an investigation to determine whether the mixing of two or more substances results in new substances."
+      "statement": "Conduct an investigation to determine whether the mixing of two or more substances results in new substances.",
+      "sep_practices": [
+        "Planning and Carrying Out Investigations"
+      ],
+      "dci_codes": [
+        "PS1.B"
+      ],
+      "ccc_concepts": [
+        "Cause and Effect"
+      ],
+      "seps": [
+        {
+          "practice": "Planning and Carrying Out Investigations",
+          "bullets": [
+            "serve as the basis for evidence, using fair tests in which variables are controlled and the number of trials considered."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "PS1.B",
+          "name": "Chemical Reactions",
+          "bullets": [
+            "When two or more different substances are mixed, a new substance with different properties may be formed."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Cause and Effect",
+          "bullets": [
+            "Cause and effect relationships are routinely identified, tested, and used to explain change."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2482,7 +2683,41 @@
       "topic": "5-PS2 - Motion and Stability: Forces and Interactions",
       "statement": "Support an argument that the gravitational force exerted by Earth on objects is directed down.",
       "clarification": "“Down” is a local description of the direction that points toward the center of the spherical Earth.",
-      "assessment_boundary": "Assessment does not include mathematical representation of gravitational force."
+      "assessment_boundary": "Assessment does not include mathematical representation of gravitational force.",
+      "sep_practices": [
+        "Engaging in Argument from Evidence"
+      ],
+      "dci_codes": [
+        "PS2.B"
+      ],
+      "ccc_concepts": [
+        "Cause and Effect"
+      ],
+      "seps": [
+        {
+          "practice": "Engaging in Argument from Evidence",
+          "bullets": [
+            "Support an argument with evidence, data, or a model."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "PS2.B",
+          "name": "Types of Interactions",
+          "bullets": [
+            "The gravitational force of Earth acting on an object near Earth’s and surface pulls that object toward the planet’s center.  by"
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Cause and Effect",
+          "bullets": [
+            "Cause and effect relationships are routinely identified and used to explain change."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2491,7 +2726,29 @@
       "discipline": "Physical Sciences",
       "topic": "5-PS3 - Energy",
       "statement": "Use models to describe that energy in animals’ food (used for body repair, growth, motion, and to maintain body warmth) was once energy from the sun.",
-      "clarification": "Examples of models could include diagrams, and flow charts."
+      "clarification": "Examples of models could include diagrams, and flow charts.",
+      "sep_practices": [
+        "Developing and Using Models"
+      ],
+      "ccc_concepts": [
+        "Energy and Matter"
+      ],
+      "seps": [
+        {
+          "practice": "Developing and Using Models",
+          "bullets": [
+            "Use models to describe phenomena."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Energy and Matter",
+          "bullets": [
+            "Energy can be transferred in various ways and between objects."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2501,7 +2758,43 @@
       "topic": "MS-PS1 - Matter and its Interactions",
       "statement": "Develop models to describe the atomic composition of simple molecules and extended structures.",
       "clarification": "Emphasis is on developing models of molecules that vary in complexity. Examples of simple molecules could include ammonia and methanol. Examples of extended structures could include sodium chloride or diamonds. Examples of molecular-level models could include drawings, 3D ball and stick structures, or computer representations showing different molecules with different types of atoms.",
-      "assessment_boundary": "Assessment does not include valence electrons and bonding energy, discussing the ionic nature of subunits of complex structures, or a complete depiction of all individual atoms in a complex molecule or extended structure."
+      "assessment_boundary": "Assessment does not include valence electrons and bonding energy, discussing the ionic nature of subunits of complex structures, or a complete depiction of all individual atoms in a complex molecule or extended structure.",
+      "sep_practices": [
+        "Developing and Using Models"
+      ],
+      "dci_codes": [
+        "PS1.A"
+      ],
+      "ccc_concepts": [
+        "Scale, Proportion, and Quantity"
+      ],
+      "seps": [
+        {
+          "practice": "Developing and Using Models",
+          "bullets": [
+            "Develop a model to predict and/or describe phenomena."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "PS1.A",
+          "name": "Structure and Properties of Matter",
+          "bullets": [
+            "Substances are made from different types of atoms, which combine with one another in various ways. Atoms form molecules that range in size from two to thousands of atoms.",
+            "Solids may be formed from molecules, or they may be extended structures with repeating subunits (e.g., crystals).  and",
+            "The changes of state that occur with variations in temperature or pressure can be described and predicted using these models of matter."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Scale, Proportion, and Quantity",
+          "bullets": [
+            "Time, space, and energy phenomena can be observed at various scales using models to study systems that are too large or too small."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2511,7 +2804,56 @@
       "topic": "MS-PS1 - Matter and its Interactions",
       "statement": "Analyze and interpret data on the properties of substances before and after the substances interact to determine if a chemical reaction has occurred.",
       "clarification": "Examples of reactions could include burning sugar or steel wool, fat reacting with sodium hydroxide, and mixing zinc with hydrogen chloride.",
-      "assessment_boundary": "Assessment is limited to analysis of the following properties: density, melting point, boiling point, solubility, flammability, and odor."
+      "assessment_boundary": "Assessment is limited to analysis of the following properties: density, melting point, boiling point, solubility, flammability, and odor.",
+      "sep_practices": [
+        "Analyzing and Interpreting Data"
+      ],
+      "dci_codes": [
+        "PS1.A",
+        "PS1.B"
+      ],
+      "ccc_concepts": [
+        "Patterns",
+        "Connections to Nature of Science"
+      ],
+      "seps": [
+        {
+          "practice": "Analyzing and Interpreting Data",
+          "bullets": [
+            "Analyze and interpret data to determine similarities and differences in findings."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "PS1.A",
+          "name": "Structure and Properties of Matter",
+          "bullets": [
+            "Each pure substance has characteristic physical and chemical properties (for any bulk quantity under given conditions) that can be used to identify it."
+          ]
+        },
+        {
+          "code": "PS1.B",
+          "name": "Chemical Reactions",
+          "bullets": [
+            "Substances react chemically in characteristic ways. In a chemical process, the atoms that make up the original substances are regrouped into different molecules, and these new substances have different properties from those of the reactants. ,"
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Patterns",
+          "bullets": [
+            "Macroscopic patterns are related to the nature of microscopic and atomic-level structure."
+          ]
+        },
+        {
+          "concept": "Connections to Nature of Science",
+          "bullets": [
+            "Science knowledge is based upon logical and conceptual connections between evidence and explanations. Science Models, Laws, Mechanisms, and Theories Explain Natural Phenomena"
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2521,7 +2863,57 @@
       "topic": "MS-PS1 - Matter and its Interactions",
       "statement": "Gather and make sense of information to describe that synthetic materials come from natural resources and impact society.",
       "clarification": "Emphasis is on natural resources that undergo a chemical process to form the synthetic material. Examples of new materials could include new medicine, foods, and alternative fuels.",
-      "assessment_boundary": "Assessment is limited to qualitative information."
+      "assessment_boundary": "Assessment is limited to qualitative information.",
+      "sep_practices": [
+        "Obtaining, Evaluating, and Communicating Information"
+      ],
+      "dci_codes": [
+        "PS1.A",
+        "PS1.B"
+      ],
+      "ccc_concepts": [
+        "Structure and Function",
+        "Connections to Engineering, Technology, and Applications of Science"
+      ],
+      "seps": [
+        {
+          "practice": "Obtaining, Evaluating, and Communicating Information",
+          "bullets": [
+            "Gather, read, and synthesize information from multiple appropriate sources and assess the credibility, accuracy, and possible bias of each publication and methods used, and describe how they are supported or not supported by evidence."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "PS1.A",
+          "name": "Structure and Properties of Matter",
+          "bullets": [
+            "Each pure substance has characteristic physical and chemical properties (for any bulk quantity under given conditions) that can be used to identify it."
+          ]
+        },
+        {
+          "code": "PS1.B",
+          "name": "Chemical Reactions",
+          "bullets": [
+            "Substances react chemically in characteristic ways. In a chemical process, the atoms that make up the original substances are regrouped into different molecules, and these new substances have different properties from those of the reactants. ,"
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Structure and Function",
+          "bullets": [
+            "Structures can be designed to serve particular functions by taking into account properties of different materials, and how materials can be shaped and used."
+          ]
+        },
+        {
+          "concept": "Connections to Engineering, Technology, and Applications of Science",
+          "bullets": [
+            "Engineering advances have led to important discoveries in virtually every field of science, and scientific discoveries have led to the development of entire industries and engineered systems. Influence of Science, Engineering and Technology on Society and the Natural World",
+            "The uses of technologies and any limitations on their use are driven by individual or societal needs, desires, and values; by the findings of scientific research; and by differences in such factors as climate, natural resources, and economic conditions. Thus, technology use varies from region to region and over time."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2530,7 +2922,44 @@
       "discipline": "Physical Sciences",
       "topic": "MS-PS1 - Matter and its Interactions",
       "statement": "Develop a model that predicts and describes changes in particle motion, temperature, and state of a pure substance when thermal energy is added or removed.",
-      "clarification": "Emphasis is on qualitative molecular-level models of solids, liquids, and gases to show that adding or removing thermal energy increases or decreases kinetic energy of the particles until a change of state occurs. Examples of models could include drawings and diagrams. Examples of particles could include molecules or inert atoms. Examples of pure substances could include water, carbon dioxide, and helium."
+      "clarification": "Emphasis is on qualitative molecular-level models of solids, liquids, and gases to show that adding or removing thermal energy increases or decreases kinetic energy of the particles until a change of state occurs. Examples of models could include drawings and diagrams. Examples of particles could include molecules or inert atoms. Examples of pure substances could include water, carbon dioxide, and helium.",
+      "sep_practices": [
+        "Developing and Using Models"
+      ],
+      "dci_codes": [
+        "PS1.A"
+      ],
+      "ccc_concepts": [
+        "Cause and Effect"
+      ],
+      "seps": [
+        {
+          "practice": "Developing and Using Models",
+          "bullets": [
+            "Develop a model to predict and/or describe phenomena."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "PS1.A",
+          "name": "Structure and Properties of Matter",
+          "bullets": [
+            "Gases and liquids are made of molecules or inert atoms that are moving about relative to each other.",
+            "In a liquid, the molecules are constantly in contact with others; in a gas, they are widely spaced except when they happen to collide. In a solid, atoms are closely spaced and may vibrate in position but do not change relative locations.",
+            "Solids may be formed from molecules, or they may be extended structures with repeating subunits (e.g., crystals).  and",
+            "The changes of state that occur with variations in temperature or pressure can be described and predicted using these models of matter."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Cause and Effect",
+          "bullets": [
+            "Cause and effect relationships may be used to predict phenomena in natural or designed systems."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2540,7 +2969,49 @@
       "topic": "MS-PS1 - Matter and its Interactions",
       "statement": "Develop and use a model to describe how the total number of atoms does not change in a chemical reaction and thus mass is conserved.",
       "clarification": "Emphasis is on law of conservation of matter and on physical models or drawings, including digital forms, that represent atoms.",
-      "assessment_boundary": "Assessment does not include the use of atomic masses, balancing symbolic equations, or intermolecular forces."
+      "assessment_boundary": "Assessment does not include the use of atomic masses, balancing symbolic equations, or intermolecular forces.",
+      "sep_practices": [
+        "Developing and Using Models"
+      ],
+      "dci_codes": [
+        "PS1.B"
+      ],
+      "ccc_concepts": [
+        "Energy and Matter",
+        "Connections to Nature of Science"
+      ],
+      "seps": [
+        {
+          "practice": "Developing and Using Models",
+          "bullets": [
+            "Develop a model to describe unobservable mechanisms."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "PS1.B",
+          "name": "Chemical Reactions",
+          "bullets": [
+            "Substances react chemically in characteristic ways. In a chemical process, the atoms that make up the original substances are regrouped into different molecules, and these new substances have different properties from those of the reactants. ,",
+            "The total number of each type of atom is conserved, and thus the mass does not change."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Energy and Matter",
+          "bullets": [
+            "Matter is conserved because atoms are conserved in physical and chemical processes."
+          ]
+        },
+        {
+          "concept": "Connections to Nature of Science",
+          "bullets": [
+            "Laws are regularities or mathematical descriptions of natural phenomena."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2550,7 +3021,41 @@
       "topic": "MS-PS1 - Matter and its Interactions",
       "statement": "Undertake a design project to construct, test, and modify a device that either releases or absorbs thermal energy by chemical processes.",
       "clarification": "Emphasis is on the design, controlling the transfer of energy to the environment, and modification of a device using factors such as type and concentration of a substance. Examples of designs could involve chemical reactions such as dissolving ammonium chloride or calcium chloride.",
-      "assessment_boundary": "Assessment is limited to the criteria of amount, time, and temperature of substance in testing the device."
+      "assessment_boundary": "Assessment is limited to the criteria of amount, time, and temperature of substance in testing the device.",
+      "sep_practices": [
+        "Constructing Explanations and Designing Solutions"
+      ],
+      "dci_codes": [
+        "PS1.B"
+      ],
+      "ccc_concepts": [
+        "Energy and Matter"
+      ],
+      "seps": [
+        {
+          "practice": "Constructing Explanations and Designing Solutions",
+          "bullets": [
+            "Undertake a design project, engaging in the design cycle, to construct and/or implement a solution that meets specific design criteria and constraints."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "PS1.B",
+          "name": "Chemical Reactions",
+          "bullets": [
+            "Some chemical reactions release energy, others store energy."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Energy and Matter",
+          "bullets": [
+            "The transfer of energy can be tracked as energy flows through a designed or natural system."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2560,7 +3065,43 @@
       "topic": "MS-PS2 - Motion and Stability: Forces and Interactions",
       "statement": "Apply Newton’s Third Law to design a solution to a problem involving the motion of two colliding objects.",
       "clarification": "Examples of practical problems could include the impact of collisions between two cars, between a car and stationary objects, and between a meteor and a space vehicle.",
-      "assessment_boundary": "Assessment is limited to vertical or horizontal interactions in one dimension."
+      "assessment_boundary": "Assessment is limited to vertical or horizontal interactions in one dimension.",
+      "sep_practices": [
+        "Asking Questions and Defining Problems"
+      ],
+      "dci_codes": [
+        "PS2.A"
+      ],
+      "ccc_concepts": [
+        "Systems and System Models"
+      ],
+      "seps": [
+        {
+          "practice": "Asking Questions and Defining Problems",
+          "bullets": [
+            "or system. Engaging in Argument from Evidence Engaging in argument from evidence in 6–8 builds from grades K–5 experiences and progresses to constructing a convincing argument that supports or refutes claims for either explanations or solutions about the natural and designed world.",
+            "Construct and present oral and written arguments supported by empirical evidence and scientific reasoning to support or refute an explanation or a model for a"
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "PS2.A",
+          "name": "Forces and Motion",
+          "bullets": [
+            "but in the opposite direction (Newton’s third law).",
+            "The motion of an object is determined by the sum of the forces acting on it; if the total force on the object is not zero, its motion will change. The greater the mass of the object, the greater the force needed to achieve the same change in motion. For any given object, a larger force causes a larger change"
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Systems and System Models",
+          "bullets": [
+            "outputs—and energy and matter flows within systems."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2570,7 +3111,37 @@
       "topic": "MS-PS2 - Motion and Stability: Forces and Interactions",
       "statement": "Plan an investigation to provide evidence that the change in an object’s motion depends on the sum of the forces on the object and the mass of the object.",
       "clarification": "Emphasis is on balanced (Newton’s First Law) and unbalanced forces in a system, qualitative comparisons of forces, mass and changes in motion (Newton’s Second Law), frame of reference, and specification of units.",
-      "assessment_boundary": "Assessment is limited to forces and changes in motion in one-dimension in an inertial reference frame and to change in one variable at a time. Assessment does not include the use of trigonometry."
+      "assessment_boundary": "Assessment is limited to forces and changes in motion in one-dimension in an inertial reference frame and to change in one variable at a time. Assessment does not include the use of trigonometry.",
+      "dci_codes": [
+        "PS2.A"
+      ],
+      "ccc_concepts": [
+        "Stability and Change",
+        "Scientific Knowledge is Based on Empirical Evidence"
+      ],
+      "dcis": [
+        {
+          "code": "PS2.A",
+          "name": "Forces and Motion",
+          "bullets": [
+            "in motion.",
+            "All positions of objects and the directions of forces and motions must be described in an arbitrarily chosen reference frame and arbitrarily chosen units of size. In order to share information with",
+            "other people, these choices must also be shared."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Stability and Change",
+          "bullets": []
+        },
+        {
+          "concept": "Scientific Knowledge is Based on Empirical Evidence",
+          "bullets": [
+            "between evidence and explanations."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2580,7 +3151,41 @@
       "topic": "MS-PS2 - Motion and Stability: Forces and Interactions",
       "statement": "Ask questions about data to determine the factors that affect the strength of electric and magnetic forces.",
       "clarification": "Examples of devices that use electric and magnetic forces could include electromagnets, electric motors, or generators. Examples of data could include the effect of the number of turns of wire on the strength of an electromagnet, or the effect of increasing the number or strength of magnets on the speed of an electric motor.",
-      "assessment_boundary": "Assessment about questions that require quantitative answers is limited to proportional reasoning and algebraic thinking."
+      "assessment_boundary": "Assessment about questions that require quantitative answers is limited to proportional reasoning and algebraic thinking.",
+      "sep_practices": [
+        "Asking Questions and Defining Problems"
+      ],
+      "dci_codes": [
+        "PS2.B"
+      ],
+      "ccc_concepts": [
+        "Cause and Effect"
+      ],
+      "seps": [
+        {
+          "practice": "Asking Questions and Defining Problems",
+          "bullets": [
+            "based on observations and scientific principles. Constructing Explanations and Designing Solutions Constructing explanations and designing solutions in 6–8 builds from grades K–5 experiences and progresses to include constructing explanations and designing solutions supported by multiple sources of evidence consistent with scientific ideas, principles, and theories.",
+            "Apply scientific ideas or principles to design an object, tool, process"
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "PS2.B",
+          "name": "Types of Interactions",
+          "bullets": [
+            "distances between the interacting objects.",
+            "Gravitational forces are always attractive. There is a gravitational force between any two masses, but it is very small except when one or both of the objects have large mass—e.g., Earth and the sun."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Cause and Effect",
+          "bullets": []
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2590,7 +3195,44 @@
       "topic": "MS-PS2 - Motion and Stability: Forces and Interactions",
       "statement": "Construct and present arguments using evidence to support the claim that gravitational interactions are attractive and depend on the masses of interacting objects.",
       "clarification": "Examples of evidence for arguments could include data generated from simulations or digital tools; and charts displaying mass, strength of interaction, distance from the Sun, and orbital periods of objects within the solar system.",
-      "assessment_boundary": "Assessment does not include Newton’s Law of Gravitation or Kepler’s Laws."
+      "assessment_boundary": "Assessment does not include Newton’s Law of Gravitation or Kepler’s Laws.",
+      "sep_practices": [
+        "Asking Questions and Defining Problems"
+      ],
+      "dci_codes": [
+        "PS2.B"
+      ],
+      "ccc_concepts": [
+        "Systems and System Models",
+        "Scientific Knowledge is Based on Empirical Evidence"
+      ],
+      "seps": [
+        {
+          "practice": "Asking Questions and Defining Problems",
+          "bullets": [
+            "phenomenon or a solution to a problem."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "PS2.B",
+          "name": "Types of Interactions",
+          "bullets": [
+            "Forces that act at a distance (electric, magnetic, and gravitational) can be explained by fields that extend through space and can be mapped by their effect on a test object (a charged object, or a ball, respectively)."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Systems and System Models",
+          "bullets": []
+        },
+        {
+          "concept": "Scientific Knowledge is Based on Empirical Evidence",
+          "bullets": []
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2600,7 +3242,26 @@
       "topic": "MS-PS2 - Motion and Stability: Forces and Interactions",
       "statement": "Conduct an investigation and evaluate the experimental design to provide evidence that fields exist between objects exerting forces on each other even though the objects are not in contact.",
       "clarification": "Examples of this phenomenon could include the interactions of magnets, electrically-charged strips of tape, and electrically-charged pith balls. Examples of investigations could include first-hand experiences or simulations.",
-      "assessment_boundary": "Assessment is limited to electric and magnetic fields and limited to qualitative evidence for the existence of fields."
+      "assessment_boundary": "Assessment is limited to electric and magnetic fields and limited to qualitative evidence for the existence of fields.",
+      "dci_codes": [
+        "PS2.B"
+      ],
+      "ccc_concepts": [
+        "Cause and Effect"
+      ],
+      "dcis": [
+        {
+          "code": "PS2.B",
+          "name": "Types of Interactions",
+          "bullets": []
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Cause and Effect",
+          "bullets": []
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2609,7 +3270,41 @@
       "discipline": "Physical Sciences",
       "topic": "MS-PS3 - Energy",
       "statement": "Construct and interpret graphical displays of data to describe the relationships of kinetic energy to the mass of an object and to the speed of an object.",
-      "clarification": "Emphasis is on descriptive relationships between kinetic energy and mass separately from kinetic energy and speed. Examples could include riding a bicycle at different speeds, rolling different sizes of rocks downhill, and getting hit by a wiffle ball versus a tennis ball."
+      "clarification": "Emphasis is on descriptive relationships between kinetic energy and mass separately from kinetic energy and speed. Examples could include riding a bicycle at different speeds, rolling different sizes of rocks downhill, and getting hit by a wiffle ball versus a tennis ball.",
+      "sep_practices": [
+        "Analyzing and Interpreting Data"
+      ],
+      "dci_codes": [
+        "PS3.A"
+      ],
+      "ccc_concepts": [
+        "Scale, Proportion, and Quantity"
+      ],
+      "seps": [
+        {
+          "practice": "Analyzing and Interpreting Data",
+          "bullets": [
+            "Construct and interpret graphical displays of data to identify linear and nonlinear relationships."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "PS3.A",
+          "name": "Definitions of Energy",
+          "bullets": [
+            "Motion energy is properly called kinetic energy; it is proportional to the mass of the moving object and grows with the square of its speed."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Scale, Proportion, and Quantity",
+          "bullets": [
+            "Proportional relationships (e.g. speed as the ratio of distance traveled to time taken) among different types of quantities provide information about the magnitude of properties and processes."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2619,7 +3314,49 @@
       "topic": "MS-PS3 - Energy",
       "statement": "Develop a model to describe that when the arrangement of objects interacting at a distance changes, different amounts of potential energy are stored in the system.",
       "clarification": "Emphasis is on relative amounts of potential energy, not on calculations of potential energy. Examples of objects within systems interacting at varying distances could include: the Earth and either a roller coaster cart at varying positions on a hill or objects at varying heights on shelves, changing the direction/orientation of a magnet, and a balloon with static electrical charge being brought closer to a classmate’s hair. Examples of models could include representations, diagrams, pictures, and written descriptions of systems.",
-      "assessment_boundary": "Assessment is limited to two objects and electric, magnetic, and gravitational interactions."
+      "assessment_boundary": "Assessment is limited to two objects and electric, magnetic, and gravitational interactions.",
+      "sep_practices": [
+        "Developing and Using Models"
+      ],
+      "dci_codes": [
+        "PS3.A",
+        "PS3.C"
+      ],
+      "ccc_concepts": [
+        "Systems and System Models"
+      ],
+      "seps": [
+        {
+          "practice": "Developing and Using Models",
+          "bullets": [
+            "Develop a model to describe unobservable mechanisms. Planning and Carrying Out Investigations Planning and carrying out investigations to answer questions or test solutions to problems in 6–8 builds on K–5 experiences and progresses to include investigations that use multiple variables and provide evidence to support explanations or design solutions."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "PS3.A",
+          "name": "Definitions of Energy",
+          "bullets": [
+            "A system of objects may also contain stored (potential) energy, depending on their relative positions."
+          ]
+        },
+        {
+          "code": "PS3.C",
+          "name": "Relationship Between Energy and Forces",
+          "bullets": [
+            "When two objects interact, each one exerts a force on the other that can cause energy to be transferred to or from the object."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Systems and System Models",
+          "bullets": [
+            "Models can be used to represent systems and their interactions – such as inputs, processes, and outputs – and energy and matter flows within systems."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2629,7 +3366,49 @@
       "topic": "MS-PS3 - Energy",
       "statement": "Apply scientific principles to design, construct, and test a device that either minimizes or maximizes thermal energy transfer.",
       "clarification": "Examples of devices could include an insulated box, a solar cooker, and a Styrofoam cup.",
-      "assessment_boundary": "Assessment does not include calculating the total amount of thermal energy transferred."
+      "assessment_boundary": "Assessment does not include calculating the total amount of thermal energy transferred.",
+      "sep_practices": [
+        "Constructing Explanations and Designing Solutions"
+      ],
+      "dci_codes": [
+        "PS3.A",
+        "PS3.B"
+      ],
+      "ccc_concepts": [
+        "Energy and Matter"
+      ],
+      "seps": [
+        {
+          "practice": "Constructing Explanations and Designing Solutions",
+          "bullets": [
+            "Apply scientific ideas or principles to design, construct, and test a design of an object, tool, process or system."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "PS3.A",
+          "name": "Definitions of Energy",
+          "bullets": [
+            "Temperature is a measure of the average kinetic energy of particles of matter. The relationship between the temperature and the total energy of a system depends on the types, states, and amounts of matter present."
+          ]
+        },
+        {
+          "code": "PS3.B",
+          "name": "Conservation of Energy and Energy Transfer",
+          "bullets": [
+            "Energy is spontaneously transferred out of hotter regions or objects and into colder ones."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Energy and Matter",
+          "bullets": [
+            "The transfer of energy can be tracked as energy flows through a designed or natural system."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2639,7 +3418,56 @@
       "topic": "MS-PS3 - Energy",
       "statement": "Plan an investigation to determine the relationships among the energy transferred, the type of matter, the mass, and the change in the average kinetic energy of the particles as measured by the temperature of the sample.",
       "clarification": "Examples of experiments could include comparing final water temperatures after different masses of ice melted in the same volume of water with the same initial temperature, the temperature change of samples of different materials with the same mass as they cool or heat in the environment, or the same material with different masses when a specific amount of energy is added.",
-      "assessment_boundary": "Assessment does not include calculating the total amount of thermal energy transferred."
+      "assessment_boundary": "Assessment does not include calculating the total amount of thermal energy transferred.",
+      "sep_practices": [
+        "Developing and Using Models"
+      ],
+      "dci_codes": [
+        "PS3.A",
+        "PS3.B"
+      ],
+      "ccc_concepts": [
+        "Scale, Proportion, and Quantity",
+        "Scientific Knowledge is Based on Empirical Evidence"
+      ],
+      "seps": [
+        {
+          "practice": "Developing and Using Models",
+          "bullets": [
+            "Plan an investigation individually and collaboratively, and in the design: identify independent and dependent variables and controls, what tools are needed to do the gathering, how measurements will be recorded, and how many data are needed to support a claim."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "PS3.A",
+          "name": "Definitions of Energy",
+          "bullets": [
+            "Temperature is a measure of the average kinetic energy of particles of matter. The relationship between the temperature and the total energy of a system depends on the types, states, and amounts of matter present."
+          ]
+        },
+        {
+          "code": "PS3.B",
+          "name": "Conservation of Energy and Energy Transfer",
+          "bullets": [
+            "The amount of energy transfer needed to change the temperature of a matter sample by a given amount depends on the nature of the matter, the size of the sample, and the environment."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Scale, Proportion, and Quantity",
+          "bullets": [
+            "Proportional relationships (e.g. speed as the ratio of distance traveled to time taken) among different types of quantities provide information about the magnitude of properties and processes."
+          ]
+        },
+        {
+          "concept": "Scientific Knowledge is Based on Empirical Evidence",
+          "bullets": [
+            "Science knowledge is based upon logical and conceptual connections between evidence and explanations"
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2649,7 +3477,48 @@
       "topic": "MS-PS3 - Energy",
       "statement": "Construct, use, and present arguments to support the claim that when the kinetic energy of an object changes, energy is transferred to or from the object.",
       "clarification": "Examples of empirical evidence used in arguments could include an inventory or other representation of the energy before and after the transfer in the form of temperature changes or motion of object.",
-      "assessment_boundary": "Assessment does not include calculations of energy."
+      "assessment_boundary": "Assessment does not include calculations of energy.",
+      "sep_practices": [
+        "Engaging in Argument from Evidence"
+      ],
+      "dci_codes": [
+        "PS3.B"
+      ],
+      "ccc_concepts": [
+        "Energy and Matter",
+        "Scientific Knowledge is Based on Empirical Evidence"
+      ],
+      "seps": [
+        {
+          "practice": "Engaging in Argument from Evidence",
+          "bullets": [
+            "Construct, use, and present oral and written arguments supported by empirical evidence and scientific reasoning to support or refute an explanation or a model for a phenomenon."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "PS3.B",
+          "name": "Conservation of Energy and Energy Transfer",
+          "bullets": [
+            "When the motion energy of an object changes, there is inevitably some other change in energy at the same time."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Energy and Matter",
+          "bullets": [
+            "Energy may take different forms (e.g. energy in fields, thermal energy, energy of motion)."
+          ]
+        },
+        {
+          "concept": "Scientific Knowledge is Based on Empirical Evidence",
+          "bullets": [
+            "Science knowledge is based upon logical and conceptual connections between evidence and explanations"
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2659,7 +3528,41 @@
       "topic": "MS-PS4 - Waves and Their Applications in Technologies for Information Transfer",
       "statement": "Use mathematical representations to describe a simple model for waves that includes how the amplitude of a wave is related to the energy in a wave.",
       "clarification": "Emphasis is on describing waves with both qualitative and quantitative thinking.",
-      "assessment_boundary": "Assessment does not include electromagnetic waves and is limited to standard repeating waves."
+      "assessment_boundary": "Assessment does not include electromagnetic waves and is limited to standard repeating waves.",
+      "sep_practices": [
+        "Developing and Using Models"
+      ],
+      "dci_codes": [
+        "PS4.A"
+      ],
+      "ccc_concepts": [
+        "Patterns"
+      ],
+      "seps": [
+        {
+          "practice": "Developing and Using Models",
+          "bullets": [
+            "Use mathematical representations to describe and/or support scientific"
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "PS4.A",
+          "name": "Wave Properties",
+          "bullets": [
+            "A simple wave has a repeating pattern with a specific wavelength, frequency, and amplitude."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Patterns",
+          "bullets": [
+            "Graphs and charts can be used to identify patterns in data."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2669,7 +3572,53 @@
       "topic": "MS-PS4 - Waves and Their Applications in Technologies for Information Transfer",
       "statement": "Develop and use a model to describe that waves are reflected, absorbed, or transmitted through various materials.",
       "clarification": "Emphasis is on both light and mechanical waves. Examples of models could include drawings, simulations, and written descriptions.",
-      "assessment_boundary": "Assessment is limited to qualitative applications pertaining to light and mechanical waves."
+      "assessment_boundary": "Assessment is limited to qualitative applications pertaining to light and mechanical waves.",
+      "sep_practices": [
+        "Developing and Using Models"
+      ],
+      "dci_codes": [
+        "PS4.A",
+        "PS4.B"
+      ],
+      "ccc_concepts": [
+        "Structure and Function"
+      ],
+      "seps": [
+        {
+          "practice": "Developing and Using Models",
+          "bullets": [
+            "Develop and use a model to describe phenomena. Using Mathematics and Computational Thinking Mathematical and computational thinking at the 6–8 builds on K–5 progresses to identifying patterns in large data sets and using mathematical concepts to support explanations and arguments."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "PS4.A",
+          "name": "Wave Properties",
+          "bullets": [
+            "A sound wave needs a medium through which it is transmitted."
+          ]
+        },
+        {
+          "code": "PS4.B",
+          "name": "Electromagnetic Radiation",
+          "bullets": [
+            "When light shines on an object, it is reflected, absorbed, or transmitted through the object, depending on the object’s material and and the frequency (color) of the light.",
+            "The path that light travels can be traced as straight lines, except at surfaces between different transparent materials (e.g., air and water, air and glass) where the light path bends.",
+            "A wave model of light is useful for explaining brightness, color, and the frequency-dependent bending",
+            "of light at a surface between media.",
+            "However, because light can travel through space, it cannot be a matter wave, like sound or water waves."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Structure and Function",
+          "bullets": [
+            "Structures can be designed to serve particular functions by taking into account properties of different materials, and how materials can be shaped and used."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2679,7 +3628,42 @@
       "topic": "MS-PS4 - Waves and Their Applications in Technologies for Information Transfer",
       "statement": "Integrate qualitative scientific and technical information to support the claim that digitized signals are a more reliable way to encode and transmit information than analog signals.",
       "clarification": "Emphasis is on a basic understanding that waves can be used for communication purposes. Examples could include using fiber optic cable to transmit light pulses, radio wave pulses in wifi devices, and conversion of stored binary patterns to make sound or text on a computer screen.",
-      "assessment_boundary": "Assessment does not include binary counting. Assessment does not include the specific mechanism of any given device."
+      "assessment_boundary": "Assessment does not include binary counting. Assessment does not include the specific mechanism of any given device.",
+      "sep_practices": [
+        "Obtaining, Evaluating, and Communicating Information"
+      ],
+      "dci_codes": [
+        "PS4.C"
+      ],
+      "ccc_concepts": [
+        "Structure and Function"
+      ],
+      "seps": [
+        {
+          "practice": "Obtaining, Evaluating, and Communicating Information",
+          "bullets": [
+            "Integrate qualitative scientific and technical information in written text with that contained in media and visual displays to clarify claims and findings."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "PS4.C",
+          "name": "Information Technologies and Instrumentation",
+          "bullets": [
+            "Digitized signals (sent as wave pulses) are a more reliable way to encode and transmit information."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Structure and Function",
+          "bullets": [
+            "Structures can be designed to serve particular functions. Connections to Engineering, Technology, and Applications of Science Influence of Science, Engineering, and Technology on Society and the Natural World",
+            "Technologies extend the measurement, exploration, modeling, and computational capacity of scientific investigations."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2688,7 +3672,41 @@
       "discipline": "Life Sciences",
       "topic": "5-LS1 - From Molecules to Organisms: Structures and Processes",
       "statement": "Support an argument that plants get the materials they need for growth chiefly from air and water.",
-      "clarification": "Emphasis is on the idea that plant matter comes mostly from air and water, not from the soil."
+      "clarification": "Emphasis is on the idea that plant matter comes mostly from air and water, not from the soil.",
+      "sep_practices": [
+        "Engaging in Argument from Evidence"
+      ],
+      "dci_codes": [
+        "LS1.C"
+      ],
+      "ccc_concepts": [
+        "Energy and Matter"
+      ],
+      "seps": [
+        {
+          "practice": "Engaging in Argument from Evidence",
+          "bullets": [
+            "Support an argument with evidence, data, or a model."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "LS1.C",
+          "name": "Organization for Matter and Energy Flow in Organisms",
+          "bullets": [
+            "Plants acquire their material for and growth chiefly from air and water.  by"
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Energy and Matter",
+          "bullets": [
+            "Matter is transported into, out of, and within systems."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2698,7 +3716,49 @@
       "topic": "5-LS2 - Ecosystems: Interactions, Energy, and Dynamics",
       "statement": "Develop a model to describe the movement of matter among plants, animals, decomposers, and the environment.",
       "clarification": "Emphasis is on the idea that matter that is not food (air, water, decomposed materials in soil) is changed by plants into matter that is food. Examples of systems could include organisms, ecosystems, and the Earth.",
-      "assessment_boundary": "Assessment does not include molecular explanations."
+      "assessment_boundary": "Assessment does not include molecular explanations.",
+      "sep_practices": [
+        "Developing and Using Models"
+      ],
+      "dci_codes": [
+        "LS2.A",
+        "LS2.B"
+      ],
+      "ccc_concepts": [
+        "Systems and System Models"
+      ],
+      "seps": [
+        {
+          "practice": "Developing and Using Models",
+          "bullets": [
+            "Develop a model to describe phenomena."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "LS2.A",
+          "name": "Interdependent Relationships in Ecosystems",
+          "bullets": [
+            "The food of almost any kind of animal can be traced back to plants. Organisms are related in food webs in which some animals eat plants for food and other animals eat the animals that eat plants. Some organisms, such as fungi and bacteria, break down dead organisms (both plants or plants parts and animals) and therefore operate as “decomposers.” Decomposition eventually restores (recycles) some materials back to the soil. Organisms can survive only in environments in which their particular needs are met. A healthy ecosystem is one in which multiple species of different types are each able to meet their needs in a relatively stable web of life. Newly introduced species can damage the balance of an ecosystem."
+          ]
+        },
+        {
+          "code": "LS2.B",
+          "name": "Cycles of Matter and Energy Transfer in Ecosystems",
+          "bullets": [
+            "Matter cycles between the air and soil and among plants, animals, and microbes as these organisms live and die. Organisms obtain gases, and water, from the environment, and release waste matter (gas, liquid, or solid) back into the environment."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Systems and System Models",
+          "bullets": [
+            "A system can be described in terms of its components and their interactions."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2707,7 +3767,48 @@
       "discipline": "Life Sciences",
       "topic": "MS-LS1 - From Molecules to Organisms: Structures and Processes",
       "statement": "Conduct an investigation to provide evidence that living things are made of cells; either one cell or many different numbers and types of cells.",
-      "clarification": "Emphasis is on developing evidence that living things are made of cells, distinguishing between living and non-living things, and understanding that living things may be made of one cell or many and varied cells."
+      "clarification": "Emphasis is on developing evidence that living things are made of cells, distinguishing between living and non-living things, and understanding that living things may be made of one cell or many and varied cells.",
+      "sep_practices": [
+        "Planning and Carrying Out Investigations"
+      ],
+      "dci_codes": [
+        "LS1.A"
+      ],
+      "ccc_concepts": [
+        "Scale, Proportion, and Quantity",
+        "Interdependence of Science, Engineering, and Technology"
+      ],
+      "seps": [
+        {
+          "practice": "Planning and Carrying Out Investigations",
+          "bullets": [
+            "Conduct an investigation to produce data to serve as the basis for evidence that meet the goals an investigation."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "LS1.A",
+          "name": "Structure and Function",
+          "bullets": [
+            "All living things are made up of cells, which is the smallest unit that can be said to be alive. An organism may consist of one single cell (unicellular) or many different numbers and types of cells (multicellular)."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Scale, Proportion, and Quantity",
+          "bullets": [
+            "Phenomena that can be observed at one scale may not be observable at another scale."
+          ]
+        },
+        {
+          "concept": "Interdependence of Science, Engineering, and Technology",
+          "bullets": [
+            "Engineering advances have led to important discoveries in virtually every field of science, and scientific discoveries have led to the development of entire industries and engineered systems."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2717,7 +3818,41 @@
       "topic": "MS-LS1 - From Molecules to Organisms: Structures and Processes",
       "statement": "Develop and use a model to describe the function of a cell as a whole and ways parts of cells contribute to the function.",
       "clarification": "Emphasis is on the cell functioning as a whole system and the primary role of identified parts of the cell, specifically the nucleus, chloroplasts, mitochondria, cell membrane, and cell wall.",
-      "assessment_boundary": "Assessment of organelle structure/function relationships is limited to the cell wall and cell membrane. Assessment of the function of the other organelles is limited to their relationship to the whole cell. Assessment does not include the biochemical function of cells or cell parts."
+      "assessment_boundary": "Assessment of organelle structure/function relationships is limited to the cell wall and cell membrane. Assessment of the function of the other organelles is limited to their relationship to the whole cell. Assessment does not include the biochemical function of cells or cell parts.",
+      "sep_practices": [
+        "Developing and Using Models"
+      ],
+      "dci_codes": [
+        "LS1.A"
+      ],
+      "ccc_concepts": [
+        "Structure and Function"
+      ],
+      "seps": [
+        {
+          "practice": "Developing and Using Models",
+          "bullets": [
+            "Develop and use a model to describe phenomena."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "LS1.A",
+          "name": "Structure and Function",
+          "bullets": [
+            "Within cells, special structures are responsible for particular functions, and the cell membrane forms the boundary that controls what enters and leaves the cell."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Structure and Function",
+          "bullets": [
+            "depends on the relationships among its parts, therefore complex natural structures/systems can be analyzed to determine how they function. Connections to Engineering, Technology, and Applications of Science"
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2727,7 +3862,48 @@
       "topic": "MS-LS1 - From Molecules to Organisms: Structures and Processes",
       "statement": "Use argument supported by evidence for how the body is a system of interacting subsystems composed of groups of cells.",
       "clarification": "Emphasis is on the conceptual understanding that cells form tissues and tissues form organs specialized for particular body functions. Examples could include the interaction of subsystems within a system and the normal functioning of those systems.",
-      "assessment_boundary": "Assessment does not include the mechanism of one body system independent of others. Assessment is limited to the circulatory, excretory, digestive, respiratory, muscular, and nervous systems."
+      "assessment_boundary": "Assessment does not include the mechanism of one body system independent of others. Assessment is limited to the circulatory, excretory, digestive, respiratory, muscular, and nervous systems.",
+      "sep_practices": [
+        "Engaging in Argument from Evidence"
+      ],
+      "dci_codes": [
+        "LS1.A"
+      ],
+      "ccc_concepts": [
+        "Systems and System Models",
+        "Science is a Human Endeavor"
+      ],
+      "seps": [
+        {
+          "practice": "Engaging in Argument from Evidence",
+          "bullets": [
+            "Use an oral and written argument supported by evidence to support or refute an explanation or a model for a phenomenon."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "LS1.A",
+          "name": "Structure and Function",
+          "bullets": [
+            "In multicellular organisms, the body is a system of multiple interacting subsystems. These subsystems are groups of cells that work together to form tissues and organs that are specialized for particular body functions."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Systems and System Models",
+          "bullets": [
+            "Systems may interact with other systems; they may have sub- systems and be a part of larger complex systems."
+          ]
+        },
+        {
+          "concept": "Science is a Human Endeavor",
+          "bullets": [
+            "Scientists and engineers are guided by habits of mind such as intellectual honesty, tolerance of ambiguity, skepticism, and openness to new ideas. Scientific Knowledge is Based on Empirical Evidence"
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2736,7 +3912,42 @@
       "discipline": "Life Sciences",
       "topic": "MS-LS1 - From Molecules to Organisms: Structures and Processes",
       "statement": "Use argument based on empirical evidence and scientific reasoning to support an explanation for how characteristic animal behaviors and specialized plant structures affect the probability of successful reproduction of animals and plants respectively.",
-      "clarification": "Examples of behaviors that affect the probability of animal reproduction could include nest building to protect young from cold, herding of animals to protect young from predators, and vocalization of animals and colorful plumage to attract mates for breeding. Examples of animal behaviors that affect the probability of plant reproduction could include transferring pollen or seeds, and creating conditions for seed germination and growth. Examples of plant structures could include bright flowers attracting butterflies that transfer pollen, flower nectar and odors that attract insects that transfer pollen, and hard shells on nuts that squirrels bury."
+      "clarification": "Examples of behaviors that affect the probability of animal reproduction could include nest building to protect young from cold, herding of animals to protect young from predators, and vocalization of animals and colorful plumage to attract mates for breeding. Examples of animal behaviors that affect the probability of plant reproduction could include transferring pollen or seeds, and creating conditions for seed germination and growth. Examples of plant structures could include bright flowers attracting butterflies that transfer pollen, flower nectar and odors that attract insects that transfer pollen, and hard shells on nuts that squirrels bury.",
+      "sep_practices": [
+        "Engaging in Argument from Evidence"
+      ],
+      "dci_codes": [
+        "LS1.B"
+      ],
+      "ccc_concepts": [
+        "Cause and Effect"
+      ],
+      "seps": [
+        {
+          "practice": "Engaging in Argument from Evidence",
+          "bullets": [
+            "Use an oral and written argument supported by empirical evidence and scientific reasoning to support or refute an explanation or a model for a phenomenon or a solution to a problem."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "LS1.B",
+          "name": "Growth and Development of Organisms",
+          "bullets": [
+            "Animals engage in characteristic of behaviors that increase the odds of reproduction.",
+            "Plants reproduce in a variety of ways, sometimes depending on animal behavior and specialized features for reproduction."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Cause and Effect",
+          "bullets": [
+            "Phenomena may have more than one cause, and some cause and effect relationships in systems can only be described using probability."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2746,7 +3957,41 @@
       "topic": "MS-LS1 - From Molecules to Organisms: Structures and Processes",
       "statement": "Construct a scientific explanation based on evidence for how environmental and genetic factors influence the growth of organisms.",
       "clarification": "Examples of local environmental conditions could include availability of food, light, space, and water. Examples of genetic factors could include large breed cattle and species of grass affecting growth of organisms. Examples of evidence could include drought decreasing plant growth, fertilizer increasing plant growth, different varieties of plant seeds growing at different rates in different conditions, and fish growing larger in large ponds than they do in small ponds.",
-      "assessment_boundary": "Assessment does not include genetic mechanisms, gene regulation, or biochemical processes."
+      "assessment_boundary": "Assessment does not include genetic mechanisms, gene regulation, or biochemical processes.",
+      "sep_practices": [
+        "Constructing Explanations and Designing Solutions"
+      ],
+      "dci_codes": [
+        "LS1.B"
+      ],
+      "ccc_concepts": [
+        "Cause and Effect"
+      ],
+      "seps": [
+        {
+          "practice": "Constructing Explanations and Designing Solutions",
+          "bullets": [
+            "Construct a scientific explanation based on valid and reliable evidence obtained from sources (including the students’ own experiments) and the assumption that theories and laws that describe the natural world operate today as they did in the past and will continue to do so in the future."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "LS1.B",
+          "name": "Growth and Development of Organisms",
+          "bullets": [
+            "Genetic factors as well as local conditions affect the growth of the adult plant."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Cause and Effect",
+          "bullets": [
+            "Phenomena may have more than one cause, and some cause and effect relationships in systems can only be described using probability."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2756,7 +4001,48 @@
       "topic": "MS-LS1 - From Molecules to Organisms: Structures and Processes",
       "statement": "Construct a scientific explanation based on evidence for the role of photosynthesis in the cycling of matter and flow of energy into and out of organisms.",
       "clarification": "Emphasis is on tracing movement of matter and flow of energy.",
-      "assessment_boundary": "Assessment does not include the biochemical mechanisms of photosynthesis."
+      "assessment_boundary": "Assessment does not include the biochemical mechanisms of photosynthesis.",
+      "sep_practices": [
+        "Constructing Explanations and Designing Solutions"
+      ],
+      "dci_codes": [
+        "LS1.C"
+      ],
+      "ccc_concepts": [
+        "Energy and Matter",
+        "Science is a Human Endeavor"
+      ],
+      "seps": [
+        {
+          "practice": "Constructing Explanations and Designing Solutions",
+          "bullets": [
+            "Construct a scientific explanation based on valid and reliable evidence obtained from sources (including the students’ own experiments) and the assumption that theories and laws that describe the natural world operate today as they did in the past and will continue to do so in the future."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "LS1.C",
+          "name": "Organization for Matter",
+          "bullets": [
+            "Plants, algae (including phytoplankton), and many microorganisms use the energy from light to make sugars (food) from carbon dioxide from the atmosphere and water through the process of photosynthesis, which also releases oxygen. These sugars can be used immediately or stored for growth or later use."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Energy and Matter",
+          "bullets": [
+            "Within a natural system, the transfer of energy drives the motion and/or cycling of matter."
+          ]
+        },
+        {
+          "concept": "Science is a Human Endeavor",
+          "bullets": [
+            "Science knowledge is based upon logical connections between evidence and explanations."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2766,7 +4052,41 @@
       "topic": "MS-LS1 - From Molecules to Organisms: Structures and Processes",
       "statement": "Develop a model to describe how food is rearranged through chemical reactions forming new molecules that support growth and/or release energy as this matter moves through an organism.",
       "clarification": "Emphasis is on describing that molecules are broken apart and put back together and that in this process, energy is released.",
-      "assessment_boundary": "Assessment does not include details of the chemical reactions for photosynthesis or respiration."
+      "assessment_boundary": "Assessment does not include details of the chemical reactions for photosynthesis or respiration.",
+      "sep_practices": [
+        "Developing and Using Models"
+      ],
+      "dci_codes": [
+        "LS1.C"
+      ],
+      "ccc_concepts": [
+        "Energy and Matter"
+      ],
+      "seps": [
+        {
+          "practice": "Developing and Using Models",
+          "bullets": [
+            "Develop a model to describe unobservable mechanisms."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "LS1.C",
+          "name": "Organization for Matter",
+          "bullets": [
+            "Within individual organisms, food moves through a series of chemical reactions in which it is broken down and rearranged to form new molecules, to support growth, or to or release energy."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Energy and Matter",
+          "bullets": [
+            "Matter is conserved because atoms are conserved in physical and chemical processes."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2775,7 +4095,41 @@
       "discipline": "Life Sciences",
       "topic": "MS-LS1 - From Molecules to Organisms: Structures and Processes",
       "statement": "Gather and synthesize information that sensory receptors respond to stimuli by sending messages to the brain for immediate behavior or storage as memories.",
-      "assessment_boundary": "Assessment does not include mechanisms for the transmission of this information."
+      "assessment_boundary": "Assessment does not include mechanisms for the transmission of this information.",
+      "sep_practices": [
+        "Obtaining, Evaluating, and Communicating Information"
+      ],
+      "dci_codes": [
+        "LS1.D"
+      ],
+      "ccc_concepts": [
+        "Cause and Effect"
+      ],
+      "seps": [
+        {
+          "practice": "Obtaining, Evaluating, and Communicating Information",
+          "bullets": [
+            "Gather, read, and synthesize information from multiple appropriate sources and assess the credibility, accuracy, and possible bias of each publication and methods used, and describe how they are supported or not supported by evidence."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "LS1.D",
+          "name": "Information Processing",
+          "bullets": [
+            "Each sense receptor responds to different inputs (electromagnetic, mechanical, chemical), transmitting them as signals that travel along nerve cells to the brain. The signals are then processed in the brain, resulting in immediate behaviors or memories."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Cause and Effect",
+          "bullets": [
+            "Cause and effect relationships may be used to predict phenomena in natural systems."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2784,7 +4138,43 @@
       "discipline": "Life Sciences",
       "topic": "MS-LS2 - Ecosystems: Interactions, Energy, and Dynamics",
       "statement": "Analyze and interpret data to provide evidence for the effects of resource availability on organisms and populations of organisms in an ecosystem.",
-      "clarification": "Emphasis is on cause and effect relationships between resources and growth of individual organisms and the numbers of organisms in ecosystems during periods of abundant and scarce resources."
+      "clarification": "Emphasis is on cause and effect relationships between resources and growth of individual organisms and the numbers of organisms in ecosystems during periods of abundant and scarce resources.",
+      "sep_practices": [
+        "Analyzing and Interpreting Data"
+      ],
+      "dci_codes": [
+        "LS2.A"
+      ],
+      "ccc_concepts": [
+        "Cause and Effect"
+      ],
+      "seps": [
+        {
+          "practice": "Analyzing and Interpreting Data",
+          "bullets": [
+            "Analyze and interpret data to provide evidence for phenomena. Constructing Explanations and Designing Solutions Constructing explanations and designing solutions in 6–8 builds on K–5 experiences and progresses to include constructing explanations designing solutions supported by multiple sources of evidence consistent with scientific ideas, principles, and theories."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "LS2.A",
+          "name": "Interdependent Relationships in Ecosystems",
+          "bullets": [
+            "Organisms, and populations of organisms, are dependent on their environmental interactions both with other living things and with nonliving factors.",
+            "In any ecosystem, organisms and populations with similar requirements for food, water, oxygen, or other resources may compete with each other for limited resources, access to which consequently constrains their growth and reproduction.",
+            "Growth of organisms and population increases are limited by access to resources."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Cause and Effect",
+          "bullets": [
+            "Cause and effect relationships may be used to predict phenomena in natural or designed systems."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2793,7 +4183,41 @@
       "discipline": "Life Sciences",
       "topic": "MS-LS2 - Ecosystems: Interactions, Energy, and Dynamics",
       "statement": "Construct an explanation that predicts patterns of interactions among organisms across multiple ecosystems.",
-      "clarification": "Emphasis is on predicting consistent patterns of interactions in different ecosystems in terms of the relationships among and between organisms and abiotic components of ecosystems. Examples of types of interactions could include competitive, predatory, and mutually beneficial."
+      "clarification": "Emphasis is on predicting consistent patterns of interactions in different ecosystems in terms of the relationships among and between organisms and abiotic components of ecosystems. Examples of types of interactions could include competitive, predatory, and mutually beneficial.",
+      "sep_practices": [
+        "Analyzing and Interpreting Data"
+      ],
+      "dci_codes": [
+        "LS2.A"
+      ],
+      "ccc_concepts": [
+        "Patterns"
+      ],
+      "seps": [
+        {
+          "practice": "Analyzing and Interpreting Data",
+          "bullets": [
+            "Construct an explanation that includes qualitative or quantitative relationships between variables that predict phenomena. Engaging in Argument from Evidence Engaging in argument from evidence in 6–8 builds on K–5 experiences progresses to constructing a convincing argument that supports refutes claims for either explanations or solutions about the natural and designed world(s)."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "LS2.A",
+          "name": "Interdependent Relationships in Ecosystems",
+          "bullets": [
+            "Similarly, predatory interactions may reduce the number of organisms or eliminate whole populations of organisms. Mutually beneficial interactions, in contrast, may become so interdependent that each organism requires the other for survival. Although the species involved in these competitive, predatory, and mutually beneficial interactions and vary across ecosystems, the patterns of interactions of organisms with their environments, both living and nonliving, are shared."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Patterns",
+          "bullets": [
+            "Patterns can be used to identify cause and effect relationships."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2803,7 +4227,48 @@
       "topic": "MS-LS2 - Ecosystems: Interactions, Energy, and Dynamics",
       "statement": "Develop a model to describe the cycling of matter and flow of energy among living and nonliving parts of an ecosystem.",
       "clarification": "Emphasis is on describing the conservation of matter and flow of energy into and out of various ecosystems, and on defining the boundaries of the system.",
-      "assessment_boundary": "Assessment does not include the use of chemical reactions to describe the processes."
+      "assessment_boundary": "Assessment does not include the use of chemical reactions to describe the processes.",
+      "sep_practices": [
+        "Developing and Using Models"
+      ],
+      "dci_codes": [
+        "LS2.B"
+      ],
+      "ccc_concepts": [
+        "Energy and Matter",
+        "Connections to Nature of Science"
+      ],
+      "seps": [
+        {
+          "practice": "Developing and Using Models",
+          "bullets": [
+            "Develop a model to describe phenomena."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "LS2.B",
+          "name": "Cycle of Matter and Energy",
+          "bullets": [
+            "Food webs are models that demonstrate how matter and energy is transferred between producers, consumers, and decomposers as the three groups interact within an ecosystem. Transfers of matter into and out of and the physical environment occur at every level. Decomposers recycle or nutrients from dead plant or animal matter back to the soil in terrestrial environments or to the water in aquatic environments. The atoms that make up the organisms in an ecosystem are cycled repeatedly between the living and nonliving parts of the ecosystem.  a LS2.C: Ecosystem Dynamics Functioning, and Resilience"
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Energy and Matter",
+          "bullets": [
+            "The transfer of energy can be tracked as energy flows through a natural system."
+          ]
+        },
+        {
+          "concept": "Connections to Nature of Science",
+          "bullets": [
+            "Science assumes that objects and events in natural systems occur in consistent patterns that are understandable through measurement and observation."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2812,7 +4277,49 @@
       "discipline": "Life Sciences",
       "topic": "MS-LS2 - Ecosystems: Interactions, Energy, and Dynamics",
       "statement": "Construct an argument supported by empirical evidence that changes to physical or biological components of an ecosystem affect populations.",
-      "clarification": "Emphasis is on recognizing patterns in data and making warranted inferences about changes in populations, and on evaluating empirical evidence supporting arguments about changes to ecosystems."
+      "clarification": "Emphasis is on recognizing patterns in data and making warranted inferences about changes in populations, and on evaluating empirical evidence supporting arguments about changes to ecosystems.",
+      "sep_practices": [
+        "Analyzing and Interpreting Data"
+      ],
+      "dci_codes": [
+        "LS2.B"
+      ],
+      "ccc_concepts": [
+        "Stability and Change",
+        "Scientific Knowledge is Based on Empirical Evidence"
+      ],
+      "seps": [
+        {
+          "practice": "Analyzing and Interpreting Data",
+          "bullets": [
+            "Construct an oral and written argument supported by empirical evidence and scientific reasoning to support or refute an explanation or a model for a phenomenon or solution to a problem."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "LS2.B",
+          "name": "Cycle of Matter and Energy",
+          "bullets": [
+            "Ecosystems are dynamic in nature; their characteristics can vary over time. Disruptions to any physical or biological component of an ecosystem can lead to shifts in all its populations.",
+            "Biodiversity describes the variety of species found in Earth’s terrestrial and oceanic ecosystems."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Stability and Change",
+          "bullets": [
+            "Small changes in one part of a system might cause large changes in another part. Connections to Engineering, Technology, and Applications of Science Influence of Science, Engineering, and Technology on Society and the Natural World"
+          ]
+        },
+        {
+          "concept": "Scientific Knowledge is Based on Empirical Evidence",
+          "bullets": [
+            "Science disciplines share common rules of obtaining and evaluating empirical evidence."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2821,7 +4328,49 @@
       "discipline": "Life Sciences",
       "topic": "MS-LS2 - Ecosystems: Interactions, Energy, and Dynamics",
       "statement": "Evaluate competing design solutions for maintaining biodiversity and ecosystem services.",
-      "clarification": "Examples of ecosystem services could include water purification, nutrient recycling, and prevention of soil erosion. Examples of design solution constraints could include scientific, economic, and social considerations."
+      "clarification": "Examples of ecosystem services could include water purification, nutrient recycling, and prevention of soil erosion. Examples of design solution constraints could include scientific, economic, and social considerations.",
+      "sep_practices": [
+        "Analyzing and Interpreting Data"
+      ],
+      "dci_codes": [
+        "LS2.B"
+      ],
+      "ccc_concepts": [
+        "Stability and Change",
+        "Science Addresses Questions About the Natural and Material World"
+      ],
+      "seps": [
+        {
+          "practice": "Analyzing and Interpreting Data",
+          "bullets": [
+            "Evaluate competing design solutions based on jointly developed and agreed-upon design criteria."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "LS2.B",
+          "name": "Cycle of Matter and Energy",
+          "bullets": [
+            "The completeness or integrity of an ecosystem’s biodiversity is often used as a measure of its health."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Stability and Change",
+          "bullets": [
+            "Small changes in one part of a system might cause large changes in another part. Connections to Engineering, Technology, and Applications of Science Influence of Science, Engineering, and Technology on Society and the Natural World",
+            "The use of technologies and any limitations on their use are driven by individual or societal needs, desires, and values; by the findings of scientific research; and by differences in such factors as climate, natural resources, and economic conditions. Thus, technology use varies from region to region and over time."
+          ]
+        },
+        {
+          "concept": "Science Addresses Questions About the Natural and Material World",
+          "bullets": [
+            "Scientific knowledge can describe the consequences of actions but does not necessarily prescribe the decisions that society takes."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2831,7 +4380,48 @@
       "topic": "MS-LS3 - Heredity: Inheritance and Variation of Traits",
       "statement": "Develop and use a model to describe why structural changes to genes (mutations) located on chromosomes may affect proteins and may result in harmful, beneficial, or neutral effects to the structure and function of the organism.",
       "clarification": "Emphasis is on conceptual understanding that changes in genetic material may result in making different proteins.",
-      "assessment_boundary": "Assessment does not include specific changes at the molecular level, mechanisms for protein synthesis, or specific types of mutations."
+      "assessment_boundary": "Assessment does not include specific changes at the molecular level, mechanisms for protein synthesis, or specific types of mutations.",
+      "sep_practices": [
+        "Developing and Using Models"
+      ],
+      "dci_codes": [
+        "LS3.A",
+        "LS3.B"
+      ],
+      "ccc_concepts": [
+        "Structure and Function"
+      ],
+      "seps": [
+        {
+          "practice": "Developing and Using Models",
+          "bullets": [
+            "Develop and use a model to describe phenomena."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "LS3.A",
+          "name": "Inheritance of Traits",
+          "bullets": [
+            "change traits.",
+            "Variations of inherited traits between parent and offspring arise from genetic differences that result from the subset of chromosomes (and therefore genes) inherited."
+          ]
+        },
+        {
+          "code": "LS3.B",
+          "name": "Variation of Traits",
+          "bullets": []
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Structure and Function",
+          "bullets": [
+            "function."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2840,7 +4430,46 @@
       "discipline": "Life Sciences",
       "topic": "MS-LS3 - Heredity: Inheritance and Variation of Traits",
       "statement": "Develop and use a model to describe why asexual reproduction results in offspring with identical genetic information and sexual reproduction results in offspring with genetic variation.",
-      "clarification": "Emphasis is on using models such as Punnett squares, diagrams, and simulations to describe the cause and effect relationship of gene transmission from parent(s) to offspring and resulting genetic variation."
+      "clarification": "Emphasis is on using models such as Punnett squares, diagrams, and simulations to describe the cause and effect relationship of gene transmission from parent(s) to offspring and resulting genetic variation.",
+      "sep_practices": [
+        "Developing and Using Models"
+      ],
+      "dci_codes": [
+        "LS3.A",
+        "LS3.B"
+      ],
+      "ccc_concepts": [
+        "Cause and Effect"
+      ],
+      "seps": [
+        {
+          "practice": "Developing and Using Models",
+          "bullets": []
+        }
+      ],
+      "dcis": [
+        {
+          "code": "LS3.A",
+          "name": "Inheritance of Traits",
+          "bullets": []
+        },
+        {
+          "code": "LS3.B",
+          "name": "Variation of Traits",
+          "bullets": [
+            "from each other.",
+            "In addition to variations that arise from sexual reproduction, genetic information can be altered because of mutations. Though rare, mutations may result in changes to the structure and function of proteins. Some changes are beneficial, others harmful, and some neutral to the organism."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Cause and Effect",
+          "bullets": [
+            "natural systems."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2850,7 +4479,49 @@
       "topic": "MS-LS4 - Biological Evolution: Unity and Diversity",
       "statement": "Analyze and interpret data for patterns in the fossil record that document the existence, diversity, extinction, and change of life forms throughout the history of life on Earth under the assumption that natural laws operate today as in the past.",
       "clarification": "Emphasis is on finding patterns of changes in the level of complexity of anatomical structures in organisms and the chronological order of fossil appearance in the rock layers.",
-      "assessment_boundary": "Assessment does not include the names of individual species or geological eras in the fossil record."
+      "assessment_boundary": "Assessment does not include the names of individual species or geological eras in the fossil record.",
+      "sep_practices": [
+        "Analyzing and Interpreting Data"
+      ],
+      "dci_codes": [
+        "LS4.A"
+      ],
+      "ccc_concepts": [
+        "Patterns",
+        "Scientific Knowledge is Based on Empirical Evidence"
+      ],
+      "seps": [
+        {
+          "practice": "Analyzing and Interpreting Data",
+          "bullets": [
+            "Analyze and interpret data to determine similarities and differences in findings."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "LS4.A",
+          "name": "Evidence of Common Ancestry and Diversity",
+          "bullets": [
+            "The collection of fossils and their placement in chronological order (e.g., through the location of the sedimentary layers in which they are found or through radioactive dating) is known as the fossil record. It documents the existence, diversity, extinction, and change of many life forms throughout the history of life on Earth."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Patterns",
+          "bullets": [
+            "Graphs, charts, and images can be used to identify patterns in data."
+          ]
+        },
+        {
+          "concept": "Scientific Knowledge is Based on Empirical Evidence",
+          "bullets": [
+            "Science knowledge is based upon logical and conceptual connections between evidence and explanations. Scientific Knowledge Assumes an Order and Consistency in Natural Systems",
+            "Science assumes that objects and events in natural systems occur in consistent patterns that are understandable through measurement and observation. Science Addresses Questions About the Natural and Material World"
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2859,7 +4530,49 @@
       "discipline": "Life Sciences",
       "topic": "MS-LS4 - Biological Evolution: Unity and Diversity",
       "statement": "Apply scientific ideas to construct an explanation for the anatomical similarities and differences among modern organisms and between modern and fossil organisms to infer evolutionary relationships.",
-      "clarification": "Emphasis is on explanations of the evolutionary relationships among organisms in terms of similarity or differences of the gross appearance of anatomical structures."
+      "clarification": "Emphasis is on explanations of the evolutionary relationships among organisms in terms of similarity or differences of the gross appearance of anatomical structures.",
+      "sep_practices": [
+        "Using Mathematics and Computational Thinking"
+      ],
+      "dci_codes": [
+        "LS4.A"
+      ],
+      "ccc_concepts": [
+        "Patterns",
+        "Scientific Knowledge is Based on Empirical Evidence"
+      ],
+      "seps": [
+        {
+          "practice": "Using Mathematics and Computational Thinking",
+          "bullets": [
+            "Apply scientific ideas to construct an explanation for real-world phenomena, examples, or events.",
+            "Construct an explanation that includes qualitative or quantitative relationships between variables"
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "LS4.A",
+          "name": "Evidence of Common Ancestry and Diversity",
+          "bullets": [
+            "Anatomical similarities and differences between various organisms living today and between them and organisms in the fossil record, enable the reconstruction of evolutionary history and the inference of lines of evolutionary descent."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Patterns",
+          "bullets": [
+            "Patterns can be used to identify cause and effect relationships."
+          ]
+        },
+        {
+          "concept": "Scientific Knowledge is Based on Empirical Evidence",
+          "bullets": [
+            "Science assumes that objects and events in natural systems occur in consistent patterns that are understandable through measurement and observation. Science Addresses Questions About the Natural and Material World"
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2869,7 +4582,41 @@
       "topic": "MS-LS4 - Biological Evolution: Unity and Diversity",
       "statement": "Analyze displays of pictorial data to compare patterns of similarities in the embryological development across multiple species to identify relationships not evident in the fully formed anatomy.",
       "clarification": "Emphasis is on inferring general patterns of relatedness among embryos of different organisms by comparing the macroscopic appearance of diagrams or pictures.",
-      "assessment_boundary": "Assessment of comparisons is limited to gross appearance of anatomical structures in embryological development."
+      "assessment_boundary": "Assessment of comparisons is limited to gross appearance of anatomical structures in embryological development.",
+      "sep_practices": [
+        "Analyzing and Interpreting Data"
+      ],
+      "dci_codes": [
+        "LS4.A"
+      ],
+      "ccc_concepts": [
+        "Patterns"
+      ],
+      "seps": [
+        {
+          "practice": "Analyzing and Interpreting Data",
+          "bullets": [
+            "Analyze displays of data to identify linear and nonlinear relationships."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "LS4.A",
+          "name": "Evidence of Common Ancestry and Diversity",
+          "bullets": [
+            "Comparison of the embryological development of different species also reveals similarities that show relationships not evident in the fully-formed anatomy."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Patterns",
+          "bullets": [
+            "Graphs, charts, and images can be used to identify patterns in data."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2878,7 +4625,41 @@
       "discipline": "Life Sciences",
       "topic": "MS-LS4 - Biological Evolution: Unity and Diversity",
       "statement": "Construct an explanation based on evidence that describes how genetic variations of traits in a population increase some individuals’ probability of surviving and reproducing in a specific environment.",
-      "clarification": "Emphasis is on using simple probability statements and proportional reasoning to construct explanations."
+      "clarification": "Emphasis is on using simple probability statements and proportional reasoning to construct explanations.",
+      "sep_practices": [
+        "Using Mathematics and Computational Thinking"
+      ],
+      "dci_codes": [
+        "LS4.B"
+      ],
+      "ccc_concepts": [
+        "Cause and Effect"
+      ],
+      "seps": [
+        {
+          "practice": "Using Mathematics and Computational Thinking",
+          "bullets": [
+            "that describe phenomena. Obtaining, Evaluating, and Communicating Information Obtaining, evaluating, and communicating information in 6–8 builds on K–5 experiences and progresses to evaluating the merit and validity of ideas and methods."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "LS4.B",
+          "name": "Natural Selection",
+          "bullets": [
+            "Natural selection leads to the predominance of certain traits in a population, and the suppression of others."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Cause and Effect",
+          "bullets": [
+            "Phenomena may have more than one cause, and some cause and effect relationships in systems can only be described using probability. , Connections to Engineering, Technology, and Applications of Science Interdependence of Science, Engineering, and Technology"
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2887,7 +4668,49 @@
       "discipline": "Life Sciences",
       "topic": "MS-LS4 - Biological Evolution: Unity and Diversity",
       "statement": "Gather and synthesize information about the technologies that have changed the way humans influence the inheritance of desired traits in organisms.",
-      "clarification": "Emphasis is on synthesizing information from reliable sources about the influence of humans on genetic outcomes in artificial selection (such as genetic modification, animal husbandry, gene therapy); and, on the impacts these technologies have on society as well as the technologies leading to these scientific discoveries."
+      "clarification": "Emphasis is on synthesizing information from reliable sources about the influence of humans on genetic outcomes in artificial selection (such as genetic modification, animal husbandry, gene therapy); and, on the impacts these technologies have on society as well as the technologies leading to these scientific discoveries.",
+      "sep_practices": [
+        "Using Mathematics and Computational Thinking"
+      ],
+      "dci_codes": [
+        "LS4.B"
+      ],
+      "ccc_concepts": [
+        "Cause and Effect",
+        "Scientific Knowledge is Based on Empirical Evidence"
+      ],
+      "seps": [
+        {
+          "practice": "Using Mathematics and Computational Thinking",
+          "bullets": [
+            "Gather, read, and synthesize information from multiple appropriate sources and assess the credibility, accuracy, and possible bias of each publication and methods used, and describe how they are supported or not supported by evidence."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "LS4.B",
+          "name": "Natural Selection",
+          "bullets": [
+            "In artificial selection, humans have the capacity to influence certain characteristics of organisms by selective breeding. One can choose desired parental traits determined by genes, which are then passed on to offspring."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Cause and Effect",
+          "bullets": [
+            "Phenomena may have more than one cause, and some cause and effect relationships in systems can only be described using probability. , Connections to Engineering, Technology, and Applications of Science Interdependence of Science, Engineering, and Technology",
+            "Engineering advances have led to important discoveries in virtually every field of science, and scientific discoveries have led to the development of entire industries and engineered systems."
+          ]
+        },
+        {
+          "concept": "Scientific Knowledge is Based on Empirical Evidence",
+          "bullets": [
+            "Scientific knowledge can describe the consequences of actions but does not necessarily prescribe the decisions that society takes."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2897,7 +4720,41 @@
       "topic": "MS-LS4 - Biological Evolution: Unity and Diversity",
       "statement": "Use mathematical representations to support explanations of how natural selection may lead to increases and decreases of specific traits in populations over time.",
       "clarification": "Emphasis is on using mathematical models, probability statements, and proportional reasoning to support explanations of trends in changes to populations over time.",
-      "assessment_boundary": "Assessment does not include Hardy Weinberg calculations."
+      "assessment_boundary": "Assessment does not include Hardy Weinberg calculations.",
+      "sep_practices": [
+        "Using Mathematics and Computational Thinking"
+      ],
+      "dci_codes": [
+        "LS4.C"
+      ],
+      "ccc_concepts": [
+        "Cause and Effect"
+      ],
+      "seps": [
+        {
+          "practice": "Using Mathematics and Computational Thinking",
+          "bullets": [
+            "Use mathematical representations to support scientific conclusions and design solutions. Constructing Explanations and Designing Solutions Constructing explanations and designing solutions in 6–8 builds on K–5 experiences and progresses to include constructing explanations and designing solutions supported by multiple sources of evidence consistent with scientific ideas, principles, and theories."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "LS4.C",
+          "name": "Adaptation",
+          "bullets": [
+            "environment become more common; those that do not become less common. Thus, the distribution of traits in a population changes."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Cause and Effect",
+          "bullets": [
+            "Phenomena may have more than one cause, and some cause and effect relationships in systems can only be described using probability. , Connections to Engineering, Technology, and Applications of Science Interdependence of Science, Engineering, and Technology"
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2906,7 +4763,19 @@
       "discipline": "Earth and Space Sciences",
       "topic": "5-ESS1 - Earth’s Place in the Universe",
       "statement": "Support an argument that differences in the apparent brightness of the sun compared to other stars is due to their relative distances from Earth.",
-      "assessment_boundary": "Assessment is limited to relative distances, not sizes, of stars. Assessment does not include other factors that affect apparent brightness (such as stellar masses, age, stage)."
+      "assessment_boundary": "Assessment is limited to relative distances, not sizes, of stars. Assessment does not include other factors that affect apparent brightness (such as stellar masses, age, stage).",
+      "dci_codes": [
+        "ESS1.A"
+      ],
+      "dcis": [
+        {
+          "code": "ESS1.A",
+          "name": "The Universe and its Stars",
+          "bullets": [
+            "The sun is a star that appears larger and brighter than other stars because it is closer. Stars range greatly in their distance from Earth."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2916,7 +4785,18 @@
       "topic": "5-ESS1 - Earth’s Place in the Universe",
       "statement": "Represent data in graphical displays to reveal patterns of daily changes in length and direction of shadows, day and night, and the seasonal appearance of some stars in the night sky.",
       "clarification": "Examples of patterns could include the position and motion of Earth with respect to the sun and selected stars that are visible only in particular months.",
-      "assessment_boundary": "Assessment does not include causes of seasons."
+      "assessment_boundary": "Assessment does not include causes of seasons.",
+      "ccc_concepts": [
+        "Patterns"
+      ],
+      "cccs": [
+        {
+          "concept": "Patterns",
+          "bullets": [
+            "Similarities and differences in patterns can be used to sort, classify, communicate and analyze simple rates of change for natural phenomena."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2926,7 +4806,41 @@
       "topic": "5-ESS2 - Earth’s Systems",
       "statement": "Develop a model using an example to describe ways the geosphere, biosphere, hydrosphere, and/or atmosphere interact.",
       "clarification": "Examples could include the influence of the ocean on ecosystems, landform shape, and climate; the influence of the atmosphere on landforms and ecosystems through weather and climate; and the influence of mountain ranges on winds and clouds in the atmosphere. The geosphere, hydrosphere, atmosphere, and biosphere are each a system.",
-      "assessment_boundary": "Assessment is limited to the interactions of two systems at a time."
+      "assessment_boundary": "Assessment is limited to the interactions of two systems at a time.",
+      "sep_practices": [
+        "Developing and Using Models"
+      ],
+      "dci_codes": [
+        "ESS2.A"
+      ],
+      "ccc_concepts": [
+        "Systems and System Models"
+      ],
+      "seps": [
+        {
+          "practice": "Developing and Using Models",
+          "bullets": [
+            "Develop a model using an example to describe a scientific principle."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "ESS2.A",
+          "name": "Earth Materials and Systems",
+          "bullets": [
+            "Earth’s major systems are the geosphere (solid and molten rock, soil, and sediments), the hydrosphere (water and ice), the atmosphere (air), and the biosphere (living things, including humans). These systems interact in multiple ways to affect Earth’s surface materials and processes. The ocean supports a variety of ecosystems and organisms, shapes landforms, and influences climate. Winds and clouds in the atmosphere interact with the landforms to determine patterns of weather."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Systems and System Models",
+          "bullets": [
+            "A system can be described in terms of its components and their interactions."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2935,7 +4849,30 @@
       "discipline": "Earth and Space Sciences",
       "topic": "5-ESS2 - Earth’s Systems",
       "statement": "Describe and graph the amounts of salt water and fresh water in various reservoirs to provide evidence about the distribution of water on Earth.",
-      "assessment_boundary": "Assessment is limited to oceans, lakes, rivers, glaciers, ground water, and polar ice caps, and does not include the atmosphere."
+      "assessment_boundary": "Assessment is limited to oceans, lakes, rivers, glaciers, ground water, and polar ice caps, and does not include the atmosphere.",
+      "sep_practices": [
+        "Using Mathematics and Computational Thinking"
+      ],
+      "dci_codes": [
+        "ESS2.C"
+      ],
+      "seps": [
+        {
+          "practice": "Using Mathematics and Computational Thinking",
+          "bullets": [
+            "Describe and graph quantities such as area and volume to address scientific questions."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "ESS2.C",
+          "name": "The Roles of Water in Earth’s Surface Processes",
+          "bullets": [
+            "Nearly all of Earth’s available water is in the ocean. Most fresh water is in glaciers or underground; only a tiny fraction is in streams, lakes, wetlands, and the atmosphere."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2943,7 +4880,37 @@
       "grade": "5",
       "discipline": "Earth and Space Sciences",
       "topic": "5-ESS3 - Earth and Human Activity",
-      "statement": "Obtain and combine information about ways individual communities use science ideas to protect the Earth’s resources, environment, and address climate change issues."
+      "statement": "Obtain and combine information about ways individual communities use science ideas to protect the Earth’s resources, environment, and address climate change issues.",
+      "dci_codes": [
+        "ESS3.C"
+      ],
+      "ccc_concepts": [
+        "Systems and System Models",
+        "Connections to Nature of Science"
+      ],
+      "dcis": [
+        {
+          "code": "ESS3.C",
+          "name": "Human Impacts on Earth Systems",
+          "bullets": [
+            "Human activities in agriculture, industry, and everyday life have had major effects on the land, and vegetation, streams, ocean, air, and even outer space. But individuals and communities are doing things to help protect Earth’s resources and environments."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Systems and System Models",
+          "bullets": [
+            "A system can be described in terms of its components and their interactions."
+          ]
+        },
+        {
+          "concept": "Connections to Nature of Science",
+          "bullets": [
+            "Science findings are limited to questions that can be answered with empirical evidence."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2952,7 +4919,56 @@
       "discipline": "Earth and Space Sciences",
       "topic": "MS-ESS1 - Earth's Place in the Universe",
       "statement": "Develop and use a model of the Earth-sun-moon system to describe the cyclic patterns of lunar phases, eclipses of the sun and moon, and seasons.",
-      "clarification": "Examples of models can be physical, graphical, or conceptual."
+      "clarification": "Examples of models can be physical, graphical, or conceptual.",
+      "sep_practices": [
+        "Developing and Using Models"
+      ],
+      "dci_codes": [
+        "ESS1.A",
+        "ESS1.B"
+      ],
+      "ccc_concepts": [
+        "Patterns",
+        "Scientific Knowledge Assumes an Order and Consistency in Natural Systems"
+      ],
+      "seps": [
+        {
+          "practice": "Developing and Using Models",
+          "bullets": [
+            "Develop and use a model to describe phenomena."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "ESS1.A",
+          "name": "The Universe and Its Stars",
+          "bullets": [
+            "Patterns of the apparent motion of the sun, the moon, and stars in the sky can be observed, described, predicted, and explained with models."
+          ]
+        },
+        {
+          "code": "ESS1.B",
+          "name": "Earth and the Solar System",
+          "bullets": [
+            "This model of the solar system can explain eclipses of the sun and the moon. Earth’s spin axis is fixed in direction over the short-term but tilted relative to its orbit around the sun. The seasons are a result of that tilt and are caused by the differential intensity of sunlight on different areas of Earth across the and year."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Patterns",
+          "bullets": [
+            "Patterns can be used to identify cause and effect relationships."
+          ]
+        },
+        {
+          "concept": "Scientific Knowledge Assumes an Order and Consistency in Natural Systems",
+          "bullets": [
+            "Science assumes that objects and events in natural systems occur in consistent patterns that are understandable through measurement and observation."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2962,7 +4978,57 @@
       "topic": "MS-ESS1 - Earth's Place in the Universe",
       "statement": "Develop and use a model to describe the role of gravity in the motions within galaxies and the solar system.",
       "clarification": "Emphasis for the model is on gravity as the force that holds together the solar system and Milky Way galaxy and controls orbital motions within them. Examples of models can be physical (such as the analogy of distance along a football field or computer visualizations of elliptical orbits) or conceptual (such as mathematical proportions relative to the size of familiar objects such as students’ school or state).",
-      "assessment_boundary": "Assessment does not include Kepler’s Laws of orbital motion or the apparent retrograde motion of the planets as viewed from Earth."
+      "assessment_boundary": "Assessment does not include Kepler’s Laws of orbital motion or the apparent retrograde motion of the planets as viewed from Earth.",
+      "sep_practices": [
+        "Developing and Using Models"
+      ],
+      "dci_codes": [
+        "ESS1.A",
+        "ESS1.B"
+      ],
+      "ccc_concepts": [
+        "Systems and System Models",
+        "Scientific Knowledge Assumes an Order and Consistency in Natural Systems"
+      ],
+      "seps": [
+        {
+          "practice": "Developing and Using Models",
+          "bullets": [
+            "Develop and use a model to describe phenomena."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "ESS1.A",
+          "name": "The Universe and Its Stars",
+          "bullets": [
+            "Earth and its solar system are part of the Milky Way galaxy, which is one of many galaxies in the universe."
+          ]
+        },
+        {
+          "code": "ESS1.B",
+          "name": "Earth and the Solar System",
+          "bullets": [
+            "The solar system consists of the sun and a collection of objects, including planets, their moons, and asteroids that are held in orbit around the sun by its gravitational pull on them. , (MS- ESS1-3)",
+            "The solar system appears to have formed from a disk of dust and gas, drawn together by gravity."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Systems and System Models",
+          "bullets": [
+            "Models can be used to represent systems and their interactions. Connections to Engineering, Technology, and Applications of Science Interdependence of Science, Engineering, and Technology"
+          ]
+        },
+        {
+          "concept": "Scientific Knowledge Assumes an Order and Consistency in Natural Systems",
+          "bullets": [
+            "Science assumes that objects and events in natural systems occur in consistent patterns that are understandable through measurement and observation."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2972,7 +5038,36 @@
       "topic": "MS-ESS1 - Earth's Place in the Universe",
       "statement": "Analyze and interpret data to determine scale properties of objects in the solar system.",
       "clarification": "Emphasis is on the analysis of data from Earth-based instruments, space- based telescopes, and spacecraft to determine similarities and differences among solar system objects. Examples of scale properties include the sizes of an object’s layers (such as crust and atmosphere), surface features (such as volcanoes), and orbital radius. Examples of data include statistical information, drawings and photographs, and models.",
-      "assessment_boundary": "Assessment does not include recalling facts about properties of the planets and other solar system bodies."
+      "assessment_boundary": "Assessment does not include recalling facts about properties of the planets and other solar system bodies.",
+      "sep_practices": [
+        "Analyzing and Interpreting Data"
+      ],
+      "ccc_concepts": [
+        "Scale, Proportion, and Quantity",
+        "Systems and System Models"
+      ],
+      "seps": [
+        {
+          "practice": "Analyzing and Interpreting Data",
+          "bullets": [
+            "Analyze and interpret data to determine similarities and differences in findings."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Scale, Proportion, and Quantity",
+          "bullets": [
+            "Time, space, and energy phenomena can be observed at various scales using models to study systems that are too large or too small. , (MS- ESS1-4)"
+          ]
+        },
+        {
+          "concept": "Systems and System Models",
+          "bullets": [
+            "Engineering advances have led to important discoveries in virtually every field of science and scientific discoveries have led to the development of entire industries and engineered systems."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2982,7 +5077,30 @@
       "topic": "MS-ESS1 - Earth's Place in the Universe",
       "statement": "Construct a scientific explanation based on evidence from rock strata for how the geologic time scale is used to organize Earth’s 4.6-billion-year-old history.",
       "clarification": "Emphasis is on how analyses of rock formations and the fossils they contain are used to establish relative ages of major events in Earth’s history. Examples of Earth’s major events could range from being very recent (such as the last Ice Age or the earliest fossils of homo sapiens) to very old (such as the formation of Earth or the earliest evidence of life). Examples can include the formation of mountain chains and ocean basins, the evolution or extinction of particular living organisms, or significant volcanic eruptions.",
-      "assessment_boundary": "Assessment does not include recalling the names of specific periods or epochs and events within them."
+      "assessment_boundary": "Assessment does not include recalling the names of specific periods or epochs and events within them.",
+      "sep_practices": [
+        "Constructing Explanations and Designing Solutions"
+      ],
+      "dci_codes": [
+        "ESS1.C"
+      ],
+      "seps": [
+        {
+          "practice": "Constructing Explanations and Designing Solutions",
+          "bullets": [
+            "Construct a scientific explanation based on valid and reliable evidence obtained from sources (including the students’ own experiments) and the assumption that theories and laws that describe the natural world operate today as they did in the past and will continue to do so in the future."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "ESS1.C",
+          "name": "The History of Planet Earth",
+          "bullets": [
+            "The geologic time scale interpreted from rock strata provides a way to organize Earth’s history. Analyses of rock strata and the fossil record provide only relative dates, not an absolute scale."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -2992,7 +5110,41 @@
       "topic": "MS-ESS2 - Earth's Systems",
       "statement": "Develop a model to describe the cycling of Earth's materials and the flow of energy that drives this process.",
       "clarification": "Emphasis is on the processes of melting, crystallization, weathering, deformation, and sedimentation, which act together to form minerals and rocks through the cycling of Earth’s materials.",
-      "assessment_boundary": "Assessment does not include the identification and naming of minerals."
+      "assessment_boundary": "Assessment does not include the identification and naming of minerals.",
+      "sep_practices": [
+        "Developing and Using Models"
+      ],
+      "dci_codes": [
+        "ESS2.A"
+      ],
+      "ccc_concepts": [
+        "Stability and Change"
+      ],
+      "seps": [
+        {
+          "practice": "Developing and Using Models",
+          "bullets": [
+            "Develop and use a model to describe phenomena."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "ESS2.A",
+          "name": "Earth’s Materials and",
+          "bullets": [
+            "All Earth processes are the result of energy flowing and matter cycling within and among the planet’s systems. This energy is derived from the sun and Earth’s hot interior. The energy that flows and matter that cycles produce chemical and physical changes in Earth’s materials and living K–5 organisms."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Stability and Change",
+          "bullets": [
+            "Explanations of stability and change in natural or designed systems can be constructed by examining the changes over time and processes at different scales, including the atomic scale."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -3001,7 +5153,49 @@
       "discipline": "Earth and Space Sciences",
       "topic": "MS-ESS2 - Earth's Systems",
       "statement": "Construct an explanation based on evidence for how geoscience processes have changed Earth's surface at varying time and spatial scales.",
-      "clarification": "Emphasis is on how processes change Earth’s surface at time and spatial scales that can be large (such as slow plate motions or the uplift of large mountain ranges) or small (such as rapid landslides or microscopic geochemical reactions), and how many geoscience processes (such as earthquakes, volcanoes, and meteor impacts) usually behave gradually but are punctuated by catastrophic events. Examples of geoscience processes include surface weathering and deposition by the movements of water, ice, and wind. Emphasis is on geoscience processes that shape local geographic features, where appropriate."
+      "clarification": "Emphasis is on how processes change Earth’s surface at time and spatial scales that can be large (such as slow plate motions or the uplift of large mountain ranges) or small (such as rapid landslides or microscopic geochemical reactions), and how many geoscience processes (such as earthquakes, volcanoes, and meteor impacts) usually behave gradually but are punctuated by catastrophic events. Examples of geoscience processes include surface weathering and deposition by the movements of water, ice, and wind. Emphasis is on geoscience processes that shape local geographic features, where appropriate.",
+      "sep_practices": [
+        "Analyzing and Interpreting Data"
+      ],
+      "dci_codes": [
+        "ESS2.A",
+        "ESS2.C"
+      ],
+      "ccc_concepts": [
+        "Cause and Effect"
+      ],
+      "seps": [
+        {
+          "practice": "Analyzing and Interpreting Data",
+          "bullets": [
+            "Construct a scientific explanation based on valid and reliable evidence obtained from sources (including the students’ own experiments) and the assumption that theories and laws that describe nature operate today as they did the past and will continue to do in the future."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "ESS2.A",
+          "name": "Earth’s Materials and",
+          "bullets": [
+            "The planet’s systems interact over scales that range from microscopic to global in size, and they operate over fractions of a second to billions of years. These interactions have shaped Earth’s history and will determine its future."
+          ]
+        },
+        {
+          "code": "ESS2.C",
+          "name": "The Roles of Water in",
+          "bullets": [
+            "Water’s movements—both on the in land and underground—cause weathering and erosion, which so change the land’s surface features and create underground formations."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Cause and Effect",
+          "bullets": [
+            "Time, space, and energy phenomena can be observed at various scales using models to study systems that are too large or too small."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -3011,7 +5205,48 @@
       "topic": "MS-ESS2 - Earth's Systems",
       "statement": "Analyze and interpret data on the distribution of fossils and rocks, continental shapes, and seafloor structures to provide evidence of the past plate motions.",
       "clarification": "Examples of data include similarities of rock and fossil types on different continents, the shapes of the continents (including continental shelves), and the locations of ocean structures (such as ridges, fracture zones, and trenches).",
-      "assessment_boundary": "Paleomagnetic anomalies in oceanic and continental crust are not assessed."
+      "assessment_boundary": "Paleomagnetic anomalies in oceanic and continental crust are not assessed.",
+      "sep_practices": [
+        "Analyzing and Interpreting Data"
+      ],
+      "dci_codes": [
+        "ESS2.B"
+      ],
+      "ccc_concepts": [
+        "Patterns",
+        "Connections to Nature of Science"
+      ],
+      "seps": [
+        {
+          "practice": "Analyzing and Interpreting Data",
+          "bullets": [
+            "Analyze and interpret data to provide evidence for phenomena. Constructing Explanations and Designing Solutions Constructing explanations and designing solutions in in 6–8 builds on K–5 experiences and progresses include constructing explanations designing solutions supported by multiple sources of evidence consistent with scientific ideas, principles, and theories."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "ESS2.B",
+          "name": "Plate Tectonics and Large-",
+          "bullets": [
+            "Maps of ancient land and water patterns, based on investigations of rocks and fossils, make clear how Earth’s plates have moved great distances, collided, and spread apart."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Patterns",
+          "bullets": [
+            "Patterns in rates of change and other numerical relationships can provide information about natural systems."
+          ]
+        },
+        {
+          "concept": "Connections to Nature of Science",
+          "bullets": [
+            "Science findings are frequently revised and/or reinterpreted based on new evidence."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -3021,7 +5256,42 @@
       "topic": "MS-ESS2 - Earth's Systems",
       "statement": "Develop a model to describe the cycling of water through Earth's systems driven by energy from the sun and the force of gravity.",
       "clarification": "Emphasis is on the ways water changes its state as it moves through the multiple pathways of the hydrologic cycle. Examples of models can be conceptual or physical.",
-      "assessment_boundary": "A quantitative understanding of the latent heats of vaporization and fusion is not assessed."
+      "assessment_boundary": "A quantitative understanding of the latent heats of vaporization and fusion is not assessed.",
+      "sep_practices": [
+        "Developing and Using Models"
+      ],
+      "dci_codes": [
+        "ESS2.C"
+      ],
+      "ccc_concepts": [
+        "Energy and Matter"
+      ],
+      "seps": [
+        {
+          "practice": "Developing and Using Models",
+          "bullets": [
+            "Develop a model to describe unobservable mechanisms."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "ESS2.C",
+          "name": "The Roles of Water in",
+          "bullets": [
+            "Water continually cycles among land, ocean, and atmosphere via transpiration, evaporation, condensation and crystallization, and precipitation, as well as downhill flows on land.",
+            "Global movements of water and its changes in form are propelled by sunlight and gravity."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Energy and Matter",
+          "bullets": [
+            "Within a natural or designed system, the transfer of energy drives the motion and/or cycling of matter."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -3031,7 +5301,41 @@
       "topic": "MS-ESS2 - Earth's Systems",
       "statement": "Collect data to provide evidence for how the motions and complex interactions of air masses result in changes in weather conditions.",
       "clarification": "Emphasis is on how air masses flow from regions of high pressure to low pressure, causing weather (defined by temperature, pressure, humidity, precipitation, and wind) at a fixed location to change over time, and how sudden changes in weather can result when different air masses collide. Emphasis is on how weather can be predicted within probabilistic ranges. Examples of data can be provided to students (such as weather maps, diagrams, and visualizations) or obtained through laboratory experiments (such as with condensation).",
-      "assessment_boundary": "Assessment does not include recalling the names of cloud types or weather symbols used on weather maps or the reported diagrams from weather stations."
+      "assessment_boundary": "Assessment does not include recalling the names of cloud types or weather symbols used on weather maps or the reported diagrams from weather stations.",
+      "sep_practices": [
+        "Planning and Carrying Out Investigations"
+      ],
+      "dci_codes": [
+        "ESS2.C"
+      ],
+      "ccc_concepts": [
+        "Cause and Effect"
+      ],
+      "seps": [
+        {
+          "practice": "Planning and Carrying Out Investigations",
+          "bullets": [
+            "Collect data to produce data to serve as the basis for evidence to answer scientific questions or test design solutions under a range of conditions."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "ESS2.C",
+          "name": "The Roles of Water in",
+          "bullets": [
+            "The complex patterns of the changes and the movement of water in the atmosphere, determined by winds, landforms, and ocean temperatures and currents, are major determinants of to local weather patterns. and"
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Cause and Effect",
+          "bullets": [
+            "Cause and effect relationships may be used to predict phenomena in natural or designed systems. Scale Proportion and Quantity"
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -3041,7 +5345,49 @@
       "topic": "MS-ESS2 - Earth's Systems",
       "statement": "Develop and use a model to describe how unequal heating and rotation of the Earth cause patterns of atmospheric and oceanic circulation that determine regional climates.",
       "clarification": "Emphasis is on how patterns vary by latitude, altitude, and geographic land distribution. Emphasis of atmospheric circulation is on the sunlight-driven latitudinal banding, the Coriolis effect, and resulting prevailing winds; emphasis of ocean circulation is on the transfer of heat by the global ocean convection cycle, which is constrained by the Coriolis effect and the outlines of continents. Examples of models can be diagrams, maps and globes, or digital representations.",
-      "assessment_boundary": "Assessment does not include the dynamics of the Coriolis effect."
+      "assessment_boundary": "Assessment does not include the dynamics of the Coriolis effect.",
+      "sep_practices": [
+        "Developing and Using Models"
+      ],
+      "dci_codes": [
+        "ESS2.C",
+        "ESS2.D"
+      ],
+      "ccc_concepts": [
+        "Systems and System Models"
+      ],
+      "seps": [
+        {
+          "practice": "Developing and Using Models",
+          "bullets": [
+            "Develop and use a model to describe phenomena."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "ESS2.C",
+          "name": "The Roles of Water in",
+          "bullets": [
+            "Variations in density due to variations in temperature and salinity drive a global pattern of interconnected ocean currents."
+          ]
+        },
+        {
+          "code": "ESS2.D",
+          "name": "Weather and Climate",
+          "bullets": [
+            "The ocean exerts a major influence on weather and climate by absorbing energy from the sun, releasing it over time, and globally redistributing it through ocean currents."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Systems and System Models",
+          "bullets": [
+            "Models can be used to represent systems and their interactions— such as inputs, processes and outputs—and energy, matter, and information flows within systems."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -3050,7 +5396,47 @@
       "discipline": "Earth and Space Sciences",
       "topic": "MS-ESS3 - Earth and Human Activity",
       "statement": "Construct a scientific explanation based on evidence for how the uneven distributions of Earth’s mineral, energy, and groundwater resources are the result of past and current geoscience processes.",
-      "clarification": "Emphasis is on how these resources are limited and typically non- renewable, and how their distributions are significantly changing as a result of removal by humans. Examples of uneven distributions of resources as a result of past processes include but are not limited to petroleum (locations of the burial of organic marine sediments and subsequent geologic traps), metal ores (locations of past volcanic and hydrothermal activity associated with subduction zones), and soil (locations of active weathering and/or deposition of rock)."
+      "clarification": "Emphasis is on how these resources are limited and typically non- renewable, and how their distributions are significantly changing as a result of removal by humans. Examples of uneven distributions of resources as a result of past processes include but are not limited to petroleum (locations of the burial of organic marine sediments and subsequent geologic traps), metal ores (locations of past volcanic and hydrothermal activity associated with subduction zones), and soil (locations of active weathering and/or deposition of rock).",
+      "sep_practices": [
+        "Analyzing and Interpreting Data"
+      ],
+      "dci_codes": [
+        "ESS3.A"
+      ],
+      "ccc_concepts": [
+        "Cause and Effect",
+        "Connections to Engineering, Technology, and Applications of Science"
+      ],
+      "seps": [
+        {
+          "practice": "Analyzing and Interpreting Data",
+          "bullets": [
+            "Apply scientific principles to design an object, tool, process or"
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "ESS3.A",
+          "name": "Natural Resources",
+          "bullets": []
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Cause and Effect",
+          "bullets": [
+            "natural or designed systems."
+          ]
+        },
+        {
+          "concept": "Connections to Engineering, Technology, and Applications of Science",
+          "bullets": [
+            "environment.",
+            "The uses of technologies and any limitations on their use are driven by individual or societal needs, desires, and values; by the findings of scientific research; and by differences in such factors as climate, natural resources, and economic conditions. Thus, technology use varies from region"
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -3059,7 +5445,49 @@
       "discipline": "Earth and Space Sciences",
       "topic": "MS-ESS3 - Earth and Human Activity",
       "statement": "Analyze and interpret data on natural hazards to forecast future catastrophic events and inform the development of technologies to mitigate their effects.",
-      "clarification": "Emphasis is on how some natural hazards, such as volcanic eruptions and severe weather, are preceded by phenomena that allow for reliable predictions, but others, such as earthquakes, occur suddenly and with no notice, and thus are not yet predictable. Examples of natural hazards can be taken from interior processes (such as earthquakes and volcanic eruptions), surface processes (such as mass wasting and tsunamis), or severe weather events (such as hurricanes, tornadoes, and floods). Examples of data can include the locations, magnitudes, and frequencies of the natural hazards. Examples of technologies can be global (such as satellite systems to monitor hurricanes or forest fires) or local (such as building basements in tornado-prone regions or reservoirs to mitigate droughts)."
+      "clarification": "Emphasis is on how some natural hazards, such as volcanic eruptions and severe weather, are preceded by phenomena that allow for reliable predictions, but others, such as earthquakes, occur suddenly and with no notice, and thus are not yet predictable. Examples of natural hazards can be taken from interior processes (such as earthquakes and volcanic eruptions), surface processes (such as mass wasting and tsunamis), or severe weather events (such as hurricanes, tornadoes, and floods). Examples of data can include the locations, magnitudes, and frequencies of the natural hazards. Examples of technologies can be global (such as satellite systems to monitor hurricanes or forest fires) or local (such as building basements in tornado-prone regions or reservoirs to mitigate droughts).",
+      "sep_practices": [
+        "Analyzing and Interpreting Data"
+      ],
+      "dci_codes": [
+        "ESS3.B"
+      ],
+      "ccc_concepts": [
+        "Patterns",
+        "Connections to Engineering, Technology, and Applications of Science"
+      ],
+      "seps": [
+        {
+          "practice": "Analyzing and Interpreting Data",
+          "bullets": [
+            "differences in findings. Constructing Explanations and Designing Solutions Constructing explanations and designing solutions in 6–8 builds on grades K–5 experiences and progresses to include constructing explanations and designing solutions supported by multiple sources of evidence consistent with scientific ideas, principles, and theories.",
+            "Construct a scientific explanation based on valid and reliable evidence obtained from sources (including the students’ own experiments) and the assumption that theories and laws that describe the natural world operate today as they did in the past and will continue to do so in the future."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "ESS3.B",
+          "name": "Natural Hazards",
+          "bullets": [
+            "future events."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Patterns",
+          "bullets": [
+            "used to identify patterns in data."
+          ]
+        },
+        {
+          "concept": "Connections to Engineering, Technology, and Applications of Science",
+          "bullets": [
+            "to region and over time."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -3068,7 +5496,51 @@
       "discipline": "Earth and Space Sciences",
       "topic": "MS-ESS3 - Earth and Human Activity",
       "statement": "Apply scientific principles to design a method for monitoring and minimizing a human impact on the environment.",
-      "clarification": "Examples of the design process include examining human environmental impacts, assessing the kinds of solutions that are feasible, and designing and evaluating solutions that could reduce that impact. Examples of human impacts can include water usage (such as the withdrawal of water from streams and aquifers or the construction of dams and levees), land usage (such as urban development, agriculture, or the removal of wetlands), and pollution (such as of the air, water, or land)."
+      "clarification": "Examples of the design process include examining human environmental impacts, assessing the kinds of solutions that are feasible, and designing and evaluating solutions that could reduce that impact. Examples of human impacts can include water usage (such as the withdrawal of water from streams and aquifers or the construction of dams and levees), land usage (such as urban development, agriculture, or the removal of wetlands), and pollution (such as of the air, water, or land).",
+      "sep_practices": [
+        "Analyzing and Interpreting Data"
+      ],
+      "dci_codes": [
+        "ESS3.C"
+      ],
+      "ccc_concepts": [
+        "Cause and Effect",
+        "Connections to Engineering, Technology, and Applications of Science"
+      ],
+      "seps": [
+        {
+          "practice": "Analyzing and Interpreting Data",
+          "bullets": [
+            "system."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "ESS3.C",
+          "name": "Human Impacts on Earth",
+          "bullets": [
+            "different living things.",
+            "Typically, as human populations and per-capita consumption of natural resources increase, so do the negative impacts on Earth unless the activities and technologies involved are",
+            "engineered otherwise."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Cause and Effect",
+          "bullets": [
+            "imply causation.",
+            "Cause and effect relationships may be used to predict phenomena in"
+          ]
+        },
+        {
+          "concept": "Connections to Engineering, Technology, and Applications of Science",
+          "bullets": [
+            "to region and over time."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -3077,7 +5549,56 @@
       "discipline": "Earth and Space Sciences",
       "topic": "MS-ESS3 - Earth and Human Activity",
       "statement": "Construct an argument supported by evidence for how increases in human population and per-capita consumption of natural resources impact Earth’s systems.",
-      "clarification": "Examples of evidence include grade-appropriate databases on human populations and the rates of consumption of food and natural resources (such as freshwater, mineral, and energy). Examples of impacts can include changes to the appearance, composition, and structure of Earth’s systems as well as the rates at which they change. The consequences of increases in human populations and consumption of natural resources are described by science, but science does not make the decisions for the actions society takes."
+      "clarification": "Examples of evidence include grade-appropriate databases on human populations and the rates of consumption of food and natural resources (such as freshwater, mineral, and energy). Examples of impacts can include changes to the appearance, composition, and structure of Earth’s systems as well as the rates at which they change. The consequences of increases in human populations and consumption of natural resources are described by science, but science does not make the decisions for the actions society takes.",
+      "sep_practices": [
+        "Engaging in Argument from Evidence"
+      ],
+      "dci_codes": [
+        "ESS3.C"
+      ],
+      "ccc_concepts": [
+        "Cause and Effect",
+        "Connections to Engineering, Technology, and Applications of Science",
+        "Science Addresses Questions About the Natural and Material World"
+      ],
+      "seps": [
+        {
+          "practice": "Engaging in Argument from Evidence",
+          "bullets": [
+            "Construct an oral and written argument supported by empirical evidence and scientific reasoning to support or refute an explanation or a model for a phenomenon or solution to a problem."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "ESS3.C",
+          "name": "Human Impacts on Earth",
+          "bullets": [
+            "engineered otherwise."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Cause and Effect",
+          "bullets": [
+            "natural or designed systems."
+          ]
+        },
+        {
+          "concept": "Connections to Engineering, Technology, and Applications of Science",
+          "bullets": [
+            "environment.",
+            "The uses of technologies and any limitations on their use are driven by individual or societal needs, desires, and values; by the findings of scientific research; and by differences in such factors as climate, natural resources, and economic conditions. Thus, technology use varies from region"
+          ]
+        },
+        {
+          "concept": "Science Addresses Questions About the Natural and Material World",
+          "bullets": [
+            "Scientific knowledge can describe the consequences of actions but does not necessarily prescribe the decisions that society takes."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -3085,7 +5606,41 @@
       "grade": "MS",
       "discipline": "Earth and Space Sciences",
       "topic": "MS-ESS3 - Earth and Human Activity",
-      "statement": "Ask questions to clarify evidence of the factors that have caused climate change over the past century."
+      "statement": "Ask questions to clarify evidence of the factors that have caused climate change over the past century.",
+      "sep_practices": [
+        "Asking Questions and Defining Problems"
+      ],
+      "dci_codes": [
+        "ESS3.D"
+      ],
+      "ccc_concepts": [
+        "Stability and Change"
+      ],
+      "seps": [
+        {
+          "practice": "Asking Questions and Defining Problems",
+          "bullets": [
+            "clarify evidence of an argument."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "ESS3.D",
+          "name": "Global Climate Change",
+          "bullets": [
+            "Human activities, such as the release of greenhouse gases from burning fossil fuels, are major factors in the current rise in Earth’s mean surface temperature (global warming). Reducing the level of climate change and reducing human vulnerability to whatever climate changes do occur depend on the understanding of climate science, engineering capabilities, and other kinds of knowledge, such as understanding of human behavior and on applying that knowledge wisely in decisions and activities. a"
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Stability and Change",
+          "bullets": [
+            "time."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -3093,7 +5648,29 @@
       "grade": "5",
       "discipline": "Engineering, Technology, and Applications of Science",
       "topic": "3-5-ETS1 - Engineering Design",
-      "statement": "Define a simple design problem reflecting a need or a want that includes specified criteria for success and constraints on materials, time, or cost."
+      "statement": "Define a simple design problem reflecting a need or a want that includes specified criteria for success and constraints on materials, time, or cost.",
+      "sep_practices": [
+        "Asking Questions and Defining Problems"
+      ],
+      "ccc_concepts": [
+        "Influence of Engineering, Technology, and Science on Society and the Natural World"
+      ],
+      "seps": [
+        {
+          "practice": "Asking Questions and Defining Problems",
+          "bullets": [
+            "Define a simple design problem that can be solved through the development of an object, tool, process, or system and includes several criteria for success and constraints on materials, time, or cost."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Influence of Engineering, Technology, and Science on Society and the Natural World",
+          "bullets": [
+            "People’s needs and wants change over time, as do their demands for new and improved technologies."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -3101,7 +5678,43 @@
       "grade": "5",
       "discipline": "Engineering, Technology, and Applications of Science",
       "topic": "3-5-ETS1 - Engineering Design",
-      "statement": "Generate and compare multiple possible solutions to a problem based on how well each is likely to meet the criteria and constraints of the problem."
+      "statement": "Generate and compare multiple possible solutions to a problem based on how well each is likely to meet the criteria and constraints of the problem.",
+      "sep_practices": [
+        "Constructing Explanations and Designing Solutions"
+      ],
+      "dci_codes": [
+        "ETS1.B"
+      ],
+      "ccc_concepts": [
+        "Influence of Engineering, Technology, and Science on Society and the Natural World"
+      ],
+      "seps": [
+        {
+          "practice": "Constructing Explanations and Designing Solutions",
+          "bullets": [
+            "Generate and compare multiple solutions to a problem based on how well they meet the criteria and constraints of the design problem."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "ETS1.B",
+          "name": "Developing Possible Solutions",
+          "bullets": [
+            "Research on a problem, such as climate change, should be carried out before beginning to design a solution. Testing a solution involves investigating how well it performs under a range of likely conditions.",
+            "At whatever stage, communicating with peers about proposed solutions is an important part of the design process, and shared ideas can lead to improved designs.",
+            "Tests are often designed to identify failure points or difficulties, which suggest the elements of the design that need to be improved."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Influence of Engineering, Technology, and Science on Society and the Natural World",
+          "bullets": [
+            "Engineers improve existing technologies or develop new ones to increase their benefits, decrease known risks, and meet societal demands."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -3109,7 +5722,40 @@
       "grade": "5",
       "discipline": "Engineering, Technology, and Applications of Science",
       "topic": "3-5-ETS1 - Engineering Design",
-      "statement": "Plan and carry out fair tests in which variables are controlled and failure points are considered to identify aspects of a model or prototype that can be improved."
+      "statement": "Plan and carry out fair tests in which variables are controlled and failure points are considered to identify aspects of a model or prototype that can be improved.",
+      "sep_practices": [
+        "Planning and Carrying Out Investigations"
+      ],
+      "dci_codes": [
+        "ETS1.B",
+        "ETS1.C"
+      ],
+      "seps": [
+        {
+          "practice": "Planning and Carrying Out Investigations",
+          "bullets": [
+            "Plan and conduct an investigation collaboratively to produce data to serve as the basis for evidence, using fair tests in which variables are controlled and the number of trials considered."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "ETS1.B",
+          "name": "Developing Possible Solutions",
+          "bullets": [
+            "Research on a problem, such as climate change, should be carried out before beginning to design a solution. Testing a solution involves investigating how well it performs under a range of likely conditions.",
+            "At whatever stage, communicating with peers about proposed solutions is an important part of the design process, and shared ideas can lead to improved designs.",
+            "Tests are often designed to identify failure points or difficulties, which suggest the elements of the design that need to be improved."
+          ]
+        },
+        {
+          "code": "ETS1.C",
+          "name": "Optimizing the Design Solution",
+          "bullets": [
+            "Different solutions need to be tested in order to determine which of them best solves the problem, given the criteria and the constraints."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -3117,7 +5763,42 @@
       "grade": "MS",
       "discipline": "Engineering, Technology, and Applications of Science",
       "topic": "MS-ETS1 - Engineering Design",
-      "statement": "Define the criteria and constraints of a design problem with sufficient precision to ensure a successful solution, taking into account relevant scientific principles and potential impacts on people and the natural environment that may limit possible solutions."
+      "statement": "Define the criteria and constraints of a design problem with sufficient precision to ensure a successful solution, taking into account relevant scientific principles and potential impacts on people and the natural environment that may limit possible solutions.",
+      "sep_practices": [
+        "Asking Questions and Defining Problems"
+      ],
+      "dci_codes": [
+        "ETS1.A"
+      ],
+      "ccc_concepts": [
+        "Influence of Engineering, Technology, and Science on Society and the Natural World"
+      ],
+      "seps": [
+        {
+          "practice": "Asking Questions and Defining Problems",
+          "bullets": [
+            "Define a design problem that can be solved through the development of an object, tool, process or system and includes multiple criteria and constraints, including scientific knowledge that may limit possible solutions."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "ETS1.A",
+          "name": "Defining and Delimiting Engineering Problems",
+          "bullets": [
+            "The more precisely a design task’s criteria and constraints can be K–5 defined, the more likely it is that the designed solution will be successful. Specification of constraints includes consideration of scientific principles and other relevant knowledge that are likely to limit possible solutions."
+          ]
+        }
+      ],
+      "cccs": [
+        {
+          "concept": "Influence of Engineering, Technology, and Science on Society and the Natural World",
+          "bullets": [
+            "All human activity draws on natural resources and has both short and long-term consequences, positive as well as negative, for the health of people and the natural environment.",
+            "The uses of technologies and limitations on their use are driven by individual or societal needs, desires, and values; by the findings of scientific research; and by differences in such factors as climate, natural resources, and economic conditions."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -3125,7 +5806,18 @@
       "grade": "MS",
       "discipline": "Engineering, Technology, and Applications of Science",
       "topic": "MS-ETS1 - Engineering Design",
-      "statement": "Evaluate competing design solutions using a systematic process to determine how well they meet the criteria and constraints of the problem."
+      "statement": "Evaluate competing design solutions using a systematic process to determine how well they meet the criteria and constraints of the problem.",
+      "sep_practices": [
+        "Engaging in Argument from Evidence"
+      ],
+      "seps": [
+        {
+          "practice": "Engaging in Argument from Evidence",
+          "bullets": [
+            "Evaluate competing design solutions based on jointly developed and agreed-upon design criteria."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -3133,7 +5825,39 @@
       "grade": "MS",
       "discipline": "Engineering, Technology, and Applications of Science",
       "topic": "MS-ETS1 - Engineering Design",
-      "statement": "Analyze data from tests to determine similarities and differences among several design solutions to identify the best characteristics of each that can be combined into a new solution to better meet the criteria for success."
+      "statement": "Analyze data from tests to determine similarities and differences among several design solutions to identify the best characteristics of each that can be combined into a new solution to better meet the criteria for success.",
+      "sep_practices": [
+        "Analyzing and Interpreting Data"
+      ],
+      "dci_codes": [
+        "ETS1.B",
+        "ETS1.C"
+      ],
+      "seps": [
+        {
+          "practice": "Analyzing and Interpreting Data",
+          "bullets": [
+            "Analyze and interpret data to determine similarities and differences in findings."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "ETS1.B",
+          "name": "Developing Possible",
+          "bullets": [
+            "There are systematic processes for evaluating solutions with respect to how well they meet the criteria and constraints of a problem. (MS- ETS1-2)",
+            "Sometimes parts of different solutions can be combined to create a solution that is better than any of its predecessors. (MS- ETS1-3)"
+          ]
+        },
+        {
+          "code": "ETS1.C",
+          "name": "Optimizing the Design",
+          "bullets": [
+            "Although one design may not perform the best across all tests, identifying the characteristics of the design that performed the best in each test can provide useful information for the redesign process—that is, some of those characteristics may be incorporated into the new design."
+          ]
+        }
+      ]
     },
     {
       "subject": "science",
@@ -3141,7 +5865,39 @@
       "grade": "MS",
       "discipline": "Engineering, Technology, and Applications of Science",
       "topic": "MS-ETS1 - Engineering Design",
-      "statement": "Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process such that an optimal design can be achieved."
+      "statement": "Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process such that an optimal design can be achieved.",
+      "sep_practices": [
+        "Developing and Using Models"
+      ],
+      "dci_codes": [
+        "ETS1.B",
+        "ETS1.C"
+      ],
+      "seps": [
+        {
+          "practice": "Developing and Using Models",
+          "bullets": [
+            "Develop a model to generate data to test ideas about designed systems, including those representing inputs and outputs."
+          ]
+        }
+      ],
+      "dcis": [
+        {
+          "code": "ETS1.B",
+          "name": "Developing Possible",
+          "bullets": [
+            "A solution needs to be tested, and then modified on the basis of the test results, in order to improve it.",
+            "Models of all kinds are important for testing solutions."
+          ]
+        },
+        {
+          "code": "ETS1.C",
+          "name": "Optimizing the Design",
+          "bullets": [
+            "The iterative process of testing the most promising solutions and modifying what is proposed on the basis of the test results leads to greater refinement and ultimately to an optimal solution. and or"
+          ]
+        }
+      ]
     },
     {
       "subject": "social_studies",
@@ -6032,7 +8788,7 @@
       "standard": "9.1 - Personal Financial Literacy",
       "disciplinary_concept": "EG - Economic and Government Influences",
       "core_idea": "Taxes are collected on a variety of goods and services at the local, state, and federal levels.",
-      "statement": "Describe how tax monies are spent"
+      "statement": "Describe how tax monies are spent."
     },
     {
       "subject": "clks",
@@ -6104,7 +8860,7 @@
       "standard": "9.1 - Personal Financial Literacy",
       "disciplinary_concept": "FP - Financial Psychology",
       "core_idea": "An individual’s financial traits and habits affect his/her finances. Spending choices and their intended and unintended consequences impact financial outcomes and personal well- being.",
-      "statement": "Explain the role of spending money and how it affects well- being and happiness (e.g., \"happy money,\" experiences over things, donating to causes, anticipation, etc.)."
+      "statement": "Explain the role of spending money and how it affects well-being and happiness (e.g., \"happy money,\" experiences over things, donating to causes, anticipation, etc.)."
     },
     {
       "subject": "clks",
@@ -6266,7 +9022,7 @@
       "standard": "9.1 - Personal Financial Literacy",
       "disciplinary_concept": "CP - Credit Profile",
       "core_idea": "Credit history affects personal finances.",
-      "statement": "Compare the financial products and services available to"
+      "statement": "Compare the financial products and services available to borrowers relative to their credit worthiness."
     },
     {
       "subject": "clks",
@@ -6275,7 +9031,7 @@
       "standard": "9.1 - Personal Financial Literacy",
       "disciplinary_concept": "EG - Economic and Government Influences",
       "core_idea": "Taxes affect one’s personal finances.",
-      "statement": "Explain how taxes affect disposable income and the difference between net and gross income"
+      "statement": "Explain how taxes affect disposable income and the difference between net and gross income."
     },
     {
       "subject": "clks",
@@ -6383,7 +9139,7 @@
       "standard": "9.1 - Personal Financial Literacy",
       "disciplinary_concept": "FI - Financial Institutions",
       "core_idea": "There are a variety of factors that influence how well suited a financial institution and/or service will be in meeting an individual’s financial needs.",
-      "statement": "Analyze the interest rates and fees associated with financial"
+      "statement": "Analyze the interest rates and fees associated with financial products."
     },
     {
       "subject": "clks",
@@ -6509,7 +9265,7 @@
       "standard": "9.1 - Personal Financial Literacy",
       "disciplinary_concept": "PB - Planning and Budgeting",
       "core_idea": "There are strategies to decrease and manage expenses.",
-      "statement": "Brainstorm techniques that will help decrease expenses including comparison shopping, negotiating, and day-to-day expense"
+      "statement": "Brainstorm techniques that will help decrease expenses including comparison shopping, negotiating, and day-to-day expense management."
     },
     {
       "subject": "clks",
@@ -6707,7 +9463,7 @@
       "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
       "disciplinary_concept": "CAP - Career Awareness and Planning",
       "core_idea": "Early planning can provide more options to pay for post- secondary training and employment.",
-      "statement": "Analyze how a variety of activities related to career preparation (e.g., volunteering, apprenticeships, structured learning experiences, dual enrollment, job search, scholarships) impacts post- secondary options."
+      "statement": "Analyze how a variety of activities related to career preparation (e.g., volunteering, apprenticeships, structured learning experiences, dual enrollment, job search, scholarships) impacts post-secondary options."
     },
     {
       "subject": "clks",
@@ -6833,7 +9589,7 @@
       "standard": "9.4 - Life Literacies and Key Skills",
       "disciplinary_concept": "CI - Creativity and Innovation",
       "core_idea": "Curiosity and a willingness to try new ideas (intellectual risk-taking) contributes to the development of creativity and innovation skills.",
-      "statement": "Participate in a brainstorming session with individuals with diverse perspectives to"
+      "statement": "Participate in a brainstorming session with individuals with diverse perspectives to expand one’s thinking about a topic of curiosity (e.g., 8.2.5.ED.2, 1.5.5.CR1a)."
     },
     {
       "subject": "clks",
@@ -6842,7 +9598,7 @@
       "standard": "9.4 - Life Literacies and Key Skills",
       "disciplinary_concept": "CI - Creativity and Innovation",
       "core_idea": "Curiosity and a willingness to try new ideas (intellectual risk-taking) contributes to the development of creativity and innovation skills.",
-      "statement": "Research the development process of a product and identify the role of failure as a"
+      "statement": "Research the development process of a product and identify the role of failure as a part of the creative process (e.g., W.4.7, 8.2.5.ED.6)."
     },
     {
       "subject": "clks",
@@ -6851,7 +9607,7 @@
       "standard": "9.4 - Life Literacies and Key Skills",
       "disciplinary_concept": "CT - Critical Thinking and Problem-solving",
       "core_idea": "The ability to solve problems effectively begins with gathering data, seeking resources, and applying critical thinking skills.",
-      "statement": "Identify and gather relevant data that will aid in the problem-solving process (e.g.,"
+      "statement": "Identify and gather relevant data that will aid in the problem-solving process (e.g., 2.1.5.EH.4, 4-ESS3-1, 6.3.5.CivicsPD.2)."
     },
     {
       "subject": "clks",
@@ -6860,7 +9616,7 @@
       "standard": "9.4 - Life Literacies and Key Skills",
       "disciplinary_concept": "CT - Critical Thinking and Problem-solving",
       "core_idea": "The ability to solve problems effectively begins with gathering data, seeking resources, and applying critical thinking skills.",
-      "statement": "Identify a problem and list the types of individuals and resources (e.g., school, community agencies, governmental, online) that can aid in solving the problem (e.g.,"
+      "statement": "Identify a problem and list the types of individuals and resources (e.g., school, community agencies, governmental, online) that can aid in solving the problem (e.g., 2.1.5.CHSS.1, 4-ESS3-1)."
     },
     {
       "subject": "clks",
@@ -6914,7 +9670,7 @@
       "standard": "9.4 - Life Literacies and Key Skills",
       "disciplinary_concept": "DC - Digital Citizenship",
       "core_idea": "Intellectual property rights exist to protect the original works of individuals. It is allowable to use other people’s ideas in one’s own work provided that proper credit is given to the original source. Sending and receiving copies of media on the internet creates the opportunity for unauthorized use of data, such as personally owned video, photos, and music. Digital identities must be managed in order to create a positive digital footprint. Digital tools have positively and negatively changed the way people interact socially.",
-      "statement": "Model safe, legal, and ethical behavior when using online or offline technology (e.g.,"
+      "statement": "Model safe, legal, and ethical behavior when using online or offline technology (e.g., 8.1.5.NI.2)."
     },
     {
       "subject": "clks",
@@ -6932,7 +9688,7 @@
       "standard": "9.4 - Life Literacies and Key Skills",
       "disciplinary_concept": "DC - Digital Citizenship",
       "core_idea": "Intellectual property rights exist to protect the original works of individuals. It is allowable to use other people’s ideas in one’s own work provided that proper credit is given to the original source. Sending and receiving copies of media on the internet creates the opportunity for unauthorized use of data, such as personally owned video, photos, and music. Digital identities must be managed in order to create a positive digital footprint. Digital tools have positively and negatively changed the way people interact socially.",
-      "statement": "Compare and contrast how digital tools have changed social interactions (e.g.,"
+      "statement": "Compare and contrast how digital tools have changed social interactions (e.g., 8.1.5.IC.1)."
     },
     {
       "subject": "clks",
@@ -6977,7 +9733,7 @@
       "standard": "9.4 - Life Literacies and Key Skills",
       "disciplinary_concept": "IML - Information and Media Literacy",
       "core_idea": "Digital tools and media resources provide access to vast stores of information, but the information can be biased or inaccurate. Digital tools can be used to modify and display data in various ways that can be organized to communicate ideas.",
-      "statement": "Create a visual representation to organize information about a problem or issue"
+      "statement": "Create a visual representation to organize information about a problem or issue (e.g., 4.MD.B.4, 8.1.5.DA.3)."
     },
     {
       "subject": "clks",
@@ -7022,7 +9778,7 @@
       "standard": "9.4 - Life Literacies and Key Skills",
       "disciplinary_concept": "IML - Information and Media Literacy",
       "core_idea": "Specific situations require the use of relevant sources of information.",
-      "statement": "Evaluate the degree to which information meets a need including social"
+      "statement": "Evaluate the degree to which information meets a need including social emotional learning, academic, and social (e.g., 2.2.5.PF.5)."
     },
     {
       "subject": "clks",
@@ -7076,7 +9832,7 @@
       "standard": "9.4 - Life Literacies and Key Skills",
       "disciplinary_concept": "CI - Creativity and Innovation",
       "core_idea": "Gathering and evaluating knowledge and information from a variety of sources, including global perspectives, fosters creativity and innovative thinking.",
-      "statement": "Assess data gathered on varying perspectives on causes of climate change (e.g., cross- cultural, gender-specific, generational), and determine how the data can best be used to design"
+      "statement": "Assess data gathered on varying perspectives on causes of climate change (e.g., cross-cultural, gender-specific, generational), and determine how the data can best be used to design multiple potential solutions (e.g., RI.7.9, 6.SP.B.5, 7.1.NH.IPERS.6, 8.2.8.ETW.4)."
     },
     {
       "subject": "clks",
@@ -7301,7 +10057,7 @@
       "standard": "9.4 - Life Literacies and Key Skills",
       "disciplinary_concept": "IML - Information and Media Literacy",
       "core_idea": "There are ethical and unethical uses of information and media.",
-      "statement": "Distinguish between ethical and unethical uses of information and media (e.g.,"
+      "statement": "Distinguish between ethical and unethical uses of information and media (e.g., 1.5.8.CR3b, 8.2.8.EC.2)."
     },
     {
       "subject": "clks",
@@ -7337,7 +10093,7 @@
       "standard": "9.4 - Life Literacies and Key Skills",
       "disciplinary_concept": "IML - Information and Media Literacy",
       "core_idea": "There is a need to produce and publish media that has information supported with quality evidence and is intended for authentic audiences.",
-      "statement": "Identify the impact of the creator on the content, production, and delivery of"
+      "statement": "Identify the impact of the creator on the content, production, and delivery of information (e.g., 8.2.8.ED.1)."
     },
     {
       "subject": "clks",
@@ -7373,7 +10129,7 @@
       "standard": "9.4 - Life Literacies and Key Skills",
       "disciplinary_concept": "TL - Technology Literacy",
       "core_idea": "Some digital tools are appropriate for gathering, organizing, analyzing, and presenting information, while other types of digital tools are appropriate for creating text, visualizations models, and communicating with others.",
-      "statement": "Gather data and digitally represent information to communicate a real-world problem , (e.g., MS-ESS3-4, 6.1.8.EconET.1, 6.1.8.CivicsPR.4)."
+      "statement": "Gather data and digitally represent information to communicate a real-world problem (e.g., MS-ESS3-4, 6.1.8.EconET.1, 6.1.8.CivicsPR.4)."
     },
     {
       "subject": "clks",
@@ -7391,7 +10147,7 @@
       "standard": "9.4 - Life Literacies and Key Skills",
       "disciplinary_concept": "TL - Technology Literacy",
       "core_idea": "Some digital tools are appropriate for gathering, organizing, analyzing, and presenting information, while other types of digital tools are appropriate for creating text, visualizations models, and communicating with others.",
-      "statement": "Synthesize and publish information about a local or global issue or event (e.g., MS- LS4-5, 6.1.8.CivicsPI.3)."
+      "statement": "Synthesize and publish information about a local or global issue or event (e.g., MS-LS4-5, 6.1.8.CivicsPI.3)."
     },
     {
       "subject": "clks",

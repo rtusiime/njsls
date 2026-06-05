@@ -76,7 +76,28 @@ for grade, gdata in math_.items():
                     "subs": s.get("subs") or None,
                 })
 
-# Science: discipline → topics → pes
+# Science: discipline → topics → pes.
+# NGSS three-dimensionality (SEP / DCI / CCC) is structured in science.json but used to be
+# fused into statement+clarification prose here, so the flat layer couldn't be queried by
+# dimension. Propagate it: compact scalar "lens" keys (sep_practices / dci_codes /
+# ccc_concepts) make filtering trivial ("everything using the Cause-and-Effect lens"), and
+# the full structures carry the bullets + identifiers for grounding. The repeated grade-band
+# progression `intro` paragraphs are dropped — presentation boilerplate that stays on the
+# page (science.json → science.html), not in this scan-everything layer.
+def science_dimensions(pe):
+    seps, dcis, cccs = pe.get("seps") or [], pe.get("dcis") or [], pe.get("cccs") or []
+    dims = {}
+    sep_practices = [s["practice"] for s in seps if s.get("practice")]
+    dci_codes     = [d["code"]     for d in dcis if d.get("code")]
+    ccc_concepts  = [c["concept"]  for c in cccs if c.get("concept")]
+    if sep_practices: dims["sep_practices"] = sep_practices
+    if dci_codes:     dims["dci_codes"]     = dci_codes
+    if ccc_concepts:  dims["ccc_concepts"]  = ccc_concepts
+    if seps: dims["seps"] = [{k: v for k, v in s.items() if k != "intro"} for s in seps]
+    if dcis: dims["dcis"] = dcis
+    if cccs: dims["cccs"] = [{k: v for k, v in c.items() if k != "intro"} for c in cccs]
+    return dims
+
 for _disc_key, disc in science.items():
     for topic in disc["topics"]:
         for pe in topic["pes"]:
@@ -89,6 +110,7 @@ for _disc_key, disc in science.items():
                 "statement": pe["statement"],
                 "clarification": pe.get("clarification"),
                 "assessment_boundary": pe.get("assessment_boundary"),
+                **science_dimensions(pe),
             })
 
 # Social Studies: band → standards (6.1 / 6.2 / 6.3) → eras OR groups → core_idea_blocks → pes
@@ -123,8 +145,19 @@ flat.extend(flatten_njdoe_framework("chpe", chpe))
 # Strip None values
 flat = [{k: v for k, v in d.items() if v is not None} for d in flat]
 
+# Controlled vocabularies for the science NGSS dimensions — the set of "lenses" a consumer
+# can filter records by (each value appears in the sep_practices / dci_codes / ccc_concepts
+# keys on individual science records).
+_sci = [d for d in flat if d["subject"] == "science"]
+science_dimension_index = {
+    "note": "NGSS three-dimensionality tagged on science PEs. Filter records by these lenses via their sep_practices / dci_codes / ccc_concepts keys.",
+    "sep_practices": sorted({p for d in _sci for p in d.get("sep_practices", [])}),
+    "ccc_concepts":  sorted({c for d in _sci for c in d.get("ccc_concepts", [])}),
+    "dci_codes":     sorted({c for d in _sci for c in d.get("dci_codes", [])}),
+}
+
 all_data = {
-    "schema_version": "1.0",
+    "schema_version": "1.1",
     "site": "https://rtusiime.github.io/njsls/",
     "source": "New Jersey Department of Education - NJSLS (2023 ELA + Math, 2020 Science / SS / CSDT / CLKS / CHPE)",
     "standard_count": len(flat),
@@ -137,6 +170,7 @@ all_data = {
         "clks":            {"title": "Career Readiness, Life Literacies & Key Skills",   "grade_range": "5-8 (end-of-grade 5 + 8)", "adopted": "2020"},
         "chpe":            {"title": "Comprehensive Health & Physical Education",        "grade_range": "5-8 (end-of-grade 5 + 8)", "adopted": "2020"},
     },
+    "science_dimensions": science_dimension_index,
     "standards": flat,
 }
 

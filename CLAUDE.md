@@ -145,9 +145,11 @@ Code shape varies by standard/band:
 - 6-8 6.1/6.2: `6.<1|2>.8.<DiscConcept>.<era>.<letter>` — e.g., `6.1.8.CivicsPI.3.a`
 
 ### `data/all.json` — flat consumption layer
-Each standard is an entry in `standards: [...]` with denormalised fields: `{subject, code, grade, statement, …}` plus subject-specific extras (domain/anchor for ELA, domain/cluster for Math, discipline/topic for Science, standard/era-or-discipline/core_idea for SS). 523 entries total as of Session 8.
+Each standard is an entry in `standards: [...]` with denormalised fields: `{subject, code, grade, statement, …}` plus subject-specific extras (domain/anchor for ELA, domain/cluster for Math, discipline/topic for Science, standard/era-or-discipline/core_idea for SS). 903 entries (`schema_version` 1.1).
 
-This is the format to feed an LLM / Claude project / external script. Don't put hierarchical schemas in front of consumers when they want to scan all 314 standards.
+**Science PEs also carry NGSS three-dimensionality as queryable structure** (not latent prose fused into statement/clarification): scalar *lens keys* `sep_practices` / `dci_codes` / `ccc_concepts` for filtering by dimension (e.g. every PE using the Cause-and-Effect lens), plus full `seps` / `dcis` / `cccs` structures with identifiers + bullets. The repeated grade-band progression `intro` paragraphs are kept in `science.json` for the page render but dropped from `all.json` as boilerplate. A top-level `science_dimensions` block enumerates the available lenses (8 SEP practices, 15 CCC concepts, 35 DCI codes). Propagation logic lives in `science_dimensions()` in `scripts/build_all.py`.
+
+This is the format to feed an LLM / Claude project / external script. Don't put hierarchical schemas in front of consumers when they want to scan all the standards.
 
 ### Other subjects, when added
 Pick a schema that matches the source document's natural organization. Add a new `data/<subject>.json`. Update `scripts/build_all.py` to include it in `all.json`. The HTML view layer can have totally different shapes per subject — the only contract is each subject page fetches its own JSON.
@@ -186,7 +188,7 @@ All NJSLS PDFs and docx files live one level up at `../curriculum/`. When adding
 | Health / PE | `2020_NJSLS-CHPE.pdf` |
 | World Languages | `2020NJSLS-WL.pdf` |
 | Visual & Performing Arts | `2020 NJSLS-VPA.pdf` |
-| Career Readiness | `2020NJSLS-CLKS.pdf` |
+| Career Readiness (CLKS) | Local `2020NJSLS-CLKS.pdf` no longer in `../curriculum/`. Live source — NJDOE: [9.1 Financial Literacy](https://www.nj.gov/education/standards/clicks/Docs/2020NJSLS-9.1FinancialLiteracy.pdf), [9.2 Career Awareness](https://www.nj.gov/education/standards/clicks/Docs/2020NJSLS-9.2CareerAwareness.pdf), [9.4 Life Literacies & Key Skills](https://www.nj.gov/education/standards/clicks/Docs/2020NJSLS-9.4LifeLiteraciesandKeySkills.pdf) (also [combined](https://www.nj.gov/education/standards/clicks/Docs/2020NJSLS-CLKS.pdf)) |
 
 For PDF extraction: `pdftotext -layout` from poppler (already installed via brew). For docx: `unzip -p file.docx word/document.xml` and parse the XML, or use Python's `python-docx` if installed.
 

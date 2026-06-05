@@ -6,6 +6,80 @@ Entries are intentionally verbose. The point is full visibility: open the file a
 
 ---
 
+## Session 20 — 2026-06-05, 02:00 PM EDT
+*Restored 41 truncated/corrupted Career Readiness (CLKS) statements in `data/clks.json` from the official NJDOE PDFs. The original extraction had captured only the first line of multi-line performance expectations in the two-column source layout.*
+
+### User report
+
+Screenshot of the CLKS page ("By end of Grade 5", 9.4 → Creativity and Innovation): `9.4.5.CI.3` rendered as "Participate in a brainstorming session with individuals with diverse perspectives **to**" — cut mid-sentence. ("seems like my Career Readiness, Life Literacies & Key Skills has truncated descriptions for the standards.")
+
+### Diagnosis
+
+`data/clks.json` statements were truncated at the **first line** of each PE. NJDOE's source is a two-column table (Core Ideas | Performance Expectations); the original extraction dropped wrapped continuation lines, cutting any statement that spilled past line one. 35 statements ended without terminal punctuation; a full 300-statement audit against the authoritative source surfaced more — mid-statement **column-bleed corruptions** that ended in a period and so slipped past the simple check. The local source `../curriculum/2020NJSLS-CLKS.pdf` is gone.
+
+### Fix
+
+Downloaded the official NJDOE 9.1 / 9.2 / 9.4 PDFs; re-parsed column-aware with `pdfplumber` + reading-order `pdftotext -raw`, handling source quirks (entries missing the `•` bullet, in-code spaces like "9.1.2. FI.1", line-wrap hyphenation, and header/footer/core-idea bleed). Every restoration validated three ways: the old (truncated) text must be a verbatim prefix of the new; result must end cleanly; no embedded codes/markers/hyphen artifacts. Applied **41** corrections:
+- **31** first-line truncations (the reported bug).
+- **7** audit-found corruptions: `9.1.12.RM.1`, `9.2.12.CAP.14`, `9.4.12.IML.5` (left-column garbage spliced in / dropped middle); `9.4.8.TL.2`, `9.1.5.FP.4`, `9.2.8.CAP.9`, `9.4.8.TL.4` (stray-space / hyphen artifacts).
+- **3** per user choice: terminal periods added to `9.1.5.EG.2` / `9.1.8.EG.1` / `9.1.12.FI.1`, and source typo "identify theft" → "identity theft" in `9.1.12.FI.1`.
+
+### Source defect left as-is
+
+`9.2.8.CAP.19` ends mid-phrase "…to employability and to potential level" in **both** the split and combined official NJDOE PDFs (confirmed at the word level — nothing follows in that table cell). Left verbatim per the user's decision.
+
+### Verification
+
+Rebuilt `all.json` (clks 157, total 903 — unchanged; only statement text changed). Only `9.2.8.CAP.19` remains non-terminal. Both JSON valid. Previewed `clks.html` locally — `9.4.5.CI.3` and `9.4.5.CI.4` now render in full with their `(e.g., …)` cross-references.
+
+### Files touched
+
+- `data/clks.json` — 41 statements corrected.
+- `data/all.json` — rebuilt.
+- `CLAUDE.md` — source-table row for CLKS updated to the live NJDOE URLs (local PDF is gone).
+- `SESSIONS.md` — this entry.
+
+### Commit
+
+(filled in after commit lands)
+
+---
+
+## Session 19 — 2026-06-05, 02:00 PM EDT
+*Propagated the Science NGSS three-dimensionality (SEP/DCI/CCC) from `science.json` into the flat `all.json` consumption layer so the dimensions are queryable structure, not latent prose. Closes the TODO deferred in Session 17. Also fixed one CCC label misfiled into `intro`.*
+
+### User report
+
+Feedback that the `all.json` consumption layer had no `cross_cutting` field — the three NGSS dimensions were fused into `statement`/`clarification` text. Example `MS-LS2-1`: SEP + DCI in the statement, CCC ("cause and effect") in the clarification, none tagged. Couldn't query "everything using the Cause-and-Effect lens."
+
+### Diagnosis
+
+`science.json` already carried structured `seps`/`dcis`/`cccs` (added Session 17), but `scripts/build_all.py` only copied `statement`/`clarification`/`assessment_boundary` for Science — the dimension fields never reached `all.json`. The Session 17 commit (`7b14e0e`) had explicitly flagged this propagation as a TODO.
+
+### Fix
+
+- `scripts/build_all.py`: added `science_dimensions(pe)` — emits compact scalar **lens keys** (`sep_practices` / `dci_codes` / `ccc_concepts`) for filtering, plus full `seps`/`dcis`/`cccs` structures (identifiers + bullets), dropping the repeated grade-band progression `intro` boilerplate. Added a top-level `science_dimensions` controlled-vocabulary index (8 SEP practices, 15 CCC concepts, 35 DCI codes). Bumped `schema_version` 1.0 → 1.1.
+- `data/science.json`: `MS-ETS1-1`'s CCC had its label misfiled in `intro` with an empty `concept`; set `concept` to the canonical "Influence of Engineering, Technology, and Science on Society and the Natural World" so it's lens-queryable and groups with `3-5-ETS1-1/2`.
+- `CLAUDE.md`: documented the new `all.json` science dimension fields.
+
+### Verification
+
+Rebuilt `all.json` (903 total, science 75 — unchanged). `ccc_concepts` contains "Cause and Effect" → 18 PEs. CCC coverage 67/67 with no empty concepts; no `intro` boilerplate or empty arrays leaked into the flat layer.
+
+### Files touched
+
+- `scripts/build_all.py`, `data/science.json`, `data/all.json`, `CLAUDE.md`, `SESSIONS.md`.
+
+### Not in scope
+
+- 15 PEs still have ≥1 empty dimension array (re-extraction gap from Session 17) and some intro/bullet extraction bleed remains in `science.json` — flagged for a column-aware `pdfplumber` re-extraction (spawned as a separate task).
+
+### Commit
+
+(filled in after commit lands)
+
+---
+
 ## Session 18 — 2026-05-21, 12:39 PM EDT
 *Fixed hub keyword search so it surfaces matches that live in sub-bullets and other rich text fields, not just the top-line statement. Trigger: user noticed "paraphrasing" returned 0 hits on the hub but matched SL.PE.6.1 on the ELA page filter.*
 
