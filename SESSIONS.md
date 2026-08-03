@@ -21,14 +21,14 @@ Source `data/sources/2023_NJSLS_ELA.docx` (moved in from Downloads). Parsed `wor
 
 - `data/ela.json` — 34 entries, 158 subs → `{code, text}` (letters A–H).
 - `ela.html` — render letter marker + `data-subcode`; search haystack includes sub-codes; exact sub-code query adds a `.sub-hit` highlight.
-- `index.html` — hub keyword haystack now handles object subs (and Math's string subs) and indexes sub-codes.
+- `index.html` — hub keyword haystack indexes sub-codes (handles ELA object subs + Math string subs); result cards render the letter marker and highlight the matched sub. **Follow-up fix:** the initial commit (`37c8238`) rendered object subs as `[object Object]` in the hub result card (`renderCard` still used `esc(s)` on the new object shape) — caught by browser-testing the hub after the user pushed back. Also corrected the hardcoded standards count (902 → 903).
 - `data/all.json` — rebuilt; `L.SS.6.1.A` is queryable.
 - `CLAUDE.md` — ELA schema (`subs: [{code,text}]`), source-doc row → `data/sources/`, searchability note.
 - `data/sources/2023_NJSLS_ELA.docx` — source added to the repo.
 
 ### Verification
 
-Served locally and drove the ELA page: searching `L.SS.6.1.A` → "Showing 1 standard" (L.SS.6.1) with sub A highlighted; letter markers render. `all.json` carries 158 ELA sub-codes; Math subs unchanged.
+Served locally and drove **both** pages in the browser. ELA page: searching `L.SS.6.1.A` → "Showing 1 standard" (L.SS.6.1) with sub A highlighted; letter markers render. Hub (index.html): searching `L.SS.6.1.A` → 1 keyword match, card renders subs A–F with sub A highlighted, no `[object Object]`. `all.json` carries 158 ELA sub-codes; Math subs unchanged.
 
 ### Not in scope / next
 

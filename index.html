@@ -382,6 +382,16 @@ footer {
   content: '·'; position: absolute; left: 4px;
   color: var(--card-accent); font-weight: 700;
 }
+.result-subs li.has-code { padding-left: 28px; border-radius: 4px; }
+.result-subs li.has-code::before { content: none; }
+.result-subs li .result-sub-code {
+  position: absolute; left: 2px; top: 3px; min-width: 22px;
+  color: var(--card-accent); font-weight: 700; font-size: 11.5px; letter-spacing: 0.02em;
+}
+.result-subs li.result-sub-hit {
+  background: color-mix(in srgb, var(--card-accent) 14%, transparent);
+  box-shadow: inset 3px 0 0 var(--card-accent);
+}
 .result-rationale {
   font-family: 'Fraunces', Georgia, serif;
   font-variation-settings: 'opsz' 18;
@@ -552,7 +562,7 @@ footer {
   <section class="search-section" id="search">
     <div class="search-eyebrow">Discovery</div>
     <h2 class="search-prompt">Find standards that <em>match</em> what you're teaching.</h2>
-    <p class="search-hint">Type a <strong>code</strong> or <strong>keyword</strong> for an instant match across all 902 standards. For <strong>semantic matching</strong> on a vague description or a pasted lesson plan, click <strong>Search with Claude</strong> — that one calls the Anthropic API with your key. (Want to <em>rank</em> or <em>compare</em> standards instead? Paste the <a href="data/all.json" target="_blank">data/all.json</a> link into Claude.ai — it's better at evaluative questions than this matcher is.)</p>
+    <p class="search-hint">Type a <strong>code</strong> or <strong>keyword</strong> for an instant match across all 903 standards. For <strong>semantic matching</strong> on a vague description or a pasted lesson plan, click <strong>Search with Claude</strong> — that one calls the Anthropic API with your key. (Want to <em>rank</em> or <em>compare</em> standards instead? Paste the <a href="data/all.json" target="_blank">data/all.json</a> link into Claude.ai — it's better at evaluative questions than this matcher is.)</p>
     <form class="search-form" id="search-form" autocomplete="off">
       <textarea class="search-input" id="search-input" rows="1" placeholder="Type a code or keyword for instant matches… or describe a goal and click Search with Claude" required></textarea>
       <button type="submit" class="search-submit" id="search-submit">Search with Claude</button>
@@ -1025,7 +1035,11 @@ Rules:
           ${context ? `<span class="result-context">${esc(context)}</span>` : ''}
         </header>
         <p class="result-statement">${esc(r.statement)}</p>
-        ${(r.subs && r.subs.length) ? '<ul class="result-subs">' + r.subs.map(s => `<li>${esc(s)}</li>`).join('') + '</ul>' : ''}
+        ${(r.subs && r.subs.length) ? '<ul class="result-subs">' + r.subs.map(s => {
+          if (typeof s === 'string') return `<li>${esc(s)}</li>`;
+          const hit = lastQuery.trim().toLowerCase() === s.code.toLowerCase();
+          return `<li class="has-code${hit ? ' result-sub-hit' : ''}" title="${esc(s.code)}"><span class="result-sub-code">${esc(s.code.split('.').pop())}</span>${esc(s.text)}</li>`;
+        }).join('') + '</ul>' : ''}
         ${r.rationale ? `<div class="result-rationale">${esc(r.rationale)}</div>` : ''}
         <a href="${esc(href)}" class="result-link">Open ${SUBJECT_FULL[r.subject] || r.subject} page →</a>
       </article>`;
