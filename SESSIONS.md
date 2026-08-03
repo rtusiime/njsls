@@ -6,6 +6,23 @@ Entries are intentionally verbose. The point is full visibility: open the file a
 
 ---
 
+## Session 21 — 2026-06-05, 02:52 PM EDT
+*Housekeeping: preserved the Science extraction provenance in-repo and added a `.gitignore`. The source PDFs (`NJSLS-Science_6-8.pdf` / `NJSLS-Science_K-5.pdf`) are gone from `../curriculum/`, so the `data/sources/science_*_extracted.json` files are now the only surviving copies of that extracted NGSS foundation — committed alongside the extract/patch/audit scripts so the pipeline stays reproducible.*
+
+### Files touched
+
+- `data/sources/science_58_extracted.json` — extracted 6–8 NGSS foundation (SEP/DCI/CCC); consumed by the committed `scripts/merge_science_dimensions.py` (Session 17).
+- `data/sources/science_k4_extracted.json` — extracted K–5 NGSS foundation; **WIP** toward a future elementary-science page (not on the site yet).
+- `scripts/extract_science_58.py`, `scripts/extract_science_k4.py`, `scripts/patch_science_58.py`, `scripts/audit_science_58.py` — the extraction / patch / audit pipeline.
+- `.gitignore` — new: `*.bak`, `__pycache__/`, `*.pyc` (stops stale backups and bytecode from showing as untracked).
+- `SESSIONS.md` — this entry.
+
+### Commit
+
+(filled in after commit lands)
+
+---
+
 ## Session 20 — 2026-06-05, 02:00 PM EDT
 *Restored 41 truncated/corrupted Career Readiness (CLKS) statements in `data/clks.json` from the official NJDOE PDFs. The original extraction had captured only the first line of multi-line performance expectations in the two-column source layout.*
 
