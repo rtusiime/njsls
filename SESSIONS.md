@@ -6,6 +6,49 @@ Entries are intentionally verbose. The point is full visibility: open the file a
 
 ---
 
+## Session 23 — 2026-06-05, 03:45 PM EDT
+*ELA: added a Common Core (2016) crosswalk. Each grades 5–8 standard now carries `cc_codes` — its CC equivalent — so searching a CC code (`RL.8.2`, `SL.6.1`) returns the NJSLS standard, and every result shows a `CC …` badge. 129/130 mapped.*
+
+### User request
+
+"A crosswalk for CC — if I search a standard by its CC equivalent, the NJSLS with identical wording should show up. And search the words and both codes should show up." Chose (via AskUserQuestion) the official NJDOE crosswalk, with wording-match for the gap, ELA only.
+
+### Source & method
+
+Official NJDOE 2016→2023 ELA crosswalk (`data/sources/NJSLS_ELA_Crosswalk_2016_to_2023.docx`, from nj.gov), parsed with stdlib XML. The 2016 codes *are* the Common Core codes. Coverage split by `cc_source`:
+- **official (65)** — a direct crosswalk table row (Language, Reading-Literature, Writing, RI.AA).
+- **derived (40)** — the crosswalk normalizes companion standards: Reading-Informational folds into the RL rows (`RI.CI.8.2 → RI.8.2`, parallel to `RL.CI.8.2 → RL.8.2`); Writing grade 6–8 follows the grade-5 subcat→CC-anchor pattern.
+- **wording (24)** — Speaking/Listening is absent from the crosswalk entirely; the 2023 SL subcats preserve the CC anchor number (`SL.PE.6.1 → SL.6.1`), confirmed against Common Core SL text — the match holds even where NJSLS reworded ("Deconstruct" for CC's "Delineate a speaker's argument"). Marked with a `≈` in the badge.
+- `L.WF.5.2` — new-in-2023, no CC equivalent (left uncoded).
+
+### Why RI/SL first looked "missing"
+
+The doc is NJDOE's *Technical Revisions* crosswalk. Reading uses companion standards, so each concept (Central Ideas, Text Structure…) is listed once under RL and RI inherits it; only "Analysis of an Argument" (RI.AA) is RI-specific. Speaking/Listening has no section at all — hence the wording-match.
+
+### Changes
+
+- `scripts/build_ela_cc_crosswalk.py` — new; regenerates `cc_codes`/`cc_source` from the crosswalk docx (idempotent).
+- `data/ela.json` — `cc_codes` + `cc_source` on 129 entries.
+- `ela.html` — `CC …` badge per entry; CC-code search filters and highlights the badge.
+- `index.html` — hub keyword search matches CC codes; result cards show the `CC …` badge.
+- `data/all.json` — rebuilt; `cc_codes` queryable.
+- `CLAUDE.md` — ELA schema + a "Common Core crosswalk" section.
+- `data/sources/NJSLS_ELA_Crosswalk_2016_to_2023.docx` — source added to the repo.
+
+### Precision note
+
+CC-code matching is **exact-token**, not substring, so `L.6.1` returns only `L.SS.6.1` — not `RL.6.1`/`SL.6.1`, which contain it as a substring. (NJSLS-code and keyword matching stay substring, as before.)
+
+### Verification
+
+Browser-tested **both** pages. ELA page: `RL.8.2` → `RL.CI.8.2` with its badge highlighted; badges render `CC L.6.1` (official), `CC RI.8.2` (derived), `CC ≈SL.6.1` (wording). Hub: `SL.6.1` → `SL.PE.6.1` with the `CC ≈SL.6.1` badge, no render bug. Offline replay of the search over `all.json`: `l.6.1`/`rl.8.2`/`ri.8.2`/`sl.6.1`/`sl.8.6` each return exactly the right standard.
+
+### Commit
+
+(filled in after commit lands)
+
+---
+
 ## Session 22 — 2026-06-05, 03:05 PM EDT
 *ELA: made each lettered sub-bullet individually addressable — `subs: [string]` → `subs: [{code, text}]`, codes assigned by list position (e.g. `L.SS.6.1.A`). Searchable on the ELA page (an exact sub-code highlights the bullet) and the hub; propagated to `all.json`. Source docx moved into the repo.*
 

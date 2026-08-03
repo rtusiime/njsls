@@ -14,7 +14,11 @@
               "code": "L.RF.5.3",
               "main": "Know and apply grade-level phonics and word analysis skills in decoding and encoding words; use combined knowledge of all letter-sound correspondences, syllabication patterns, and morphology (e.g., roots and affixes) to read accurately unfamiliar multisyllabic words in context and out of context.",
               "subs": [],
-              "subgroup": "phonics"
+              "subgroup": "phonics",
+              "cc_codes": [
+                "RF.5.3"
+              ],
+              "cc_source": "official"
             },
             {
               "prefix": "L",
@@ -34,7 +38,11 @@
                   "text": "Use context to confirm or self-correct word recognition and understanding, rereading as necessary."
                 }
               ],
-              "subgroup": "fluency"
+              "subgroup": "fluency",
+              "cc_codes": [
+                "RF.5.4"
+              ],
+              "cc_source": "official"
             }
           ]
         }
@@ -124,7 +132,11 @@
                   "text": "Recognize spelling conventions."
                 }
               ],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "L.6.1"
+              ],
+              "cc_source": "official"
             }
           ],
           "7": [
@@ -154,7 +166,11 @@
                   "text": "Recognize spelling conventions."
                 }
               ],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "L.7.1"
+              ],
+              "cc_source": "official"
             }
           ],
           "8": [
@@ -192,7 +208,11 @@
                   "text": "Recognize spelling conventions."
                 }
               ],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "L.8.1"
+              ],
+              "cc_source": "official"
             }
           ]
         }
@@ -221,7 +241,11 @@
                   "text": "Compare and contrast the varieties of English (e.g., dialects, registers) used in stories, dramas, or poems."
                 }
               ],
-              "subgroup": "sentence_composition"
+              "subgroup": "sentence_composition",
+              "cc_codes": [
+                "L.5.3"
+              ],
+              "cc_source": "official"
             }
           ],
           "6": [
@@ -247,7 +271,11 @@
                   "text": "Maintain consistency in style and tone."
                 }
               ],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "L.6.3"
+              ],
+              "cc_source": "official"
             }
           ],
           "7": [
@@ -269,7 +297,11 @@
                   "text": "Choose language that expresses ideas precisely and concisely, recognizing and eliminating wordiness and redundancy."
                 }
               ],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "L.7.3"
+              ],
+              "cc_source": "official"
             }
           ],
           "8": [
@@ -291,7 +323,11 @@
                   "text": "Use verbs in the active and passive voice and in the conditional and subjunctive mood to achieve particular effects (e.g., emphasizing the actor or the action; expressing uncertainty or describing a state contrary to fact)."
                 }
               ],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "L.8.3"
+              ],
+              "cc_source": "official"
             }
           ]
         }
@@ -320,7 +356,11 @@
                   "text": "Consult reference materials (e.g., dictionaries, glossaries, thesauruses), both print and digital, to find the pronunciation and determine or clarify the precise meaning of key words and phrases."
                 }
               ],
-              "subgroup": "sentence_composition"
+              "subgroup": "sentence_composition",
+              "cc_codes": [
+                "L.5.4"
+              ],
+              "cc_source": "official"
             }
           ],
           "6": [
@@ -350,7 +390,11 @@
                   "text": "Verify the preliminary determination of the meaning of a word or phrase (e.g., by checking the inferred meaning in context or in a dictionary)."
                 }
               ],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "L.6.4"
+              ],
+              "cc_source": "official"
             }
           ],
           "7": [
@@ -380,7 +424,11 @@
                   "text": "Verify the preliminary determination of the meaning of a word or phrase (e.g., by checking the inferred meaning in context or in a dictionary)."
                 }
               ],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "L.7.4"
+              ],
+              "cc_source": "official"
             }
           ],
           "8": [
@@ -410,7 +458,11 @@
                   "text": "Verify the preliminary determination of the meaning of a word or phrase (e.g., by checking the inferred meaning in context or in a dictionary)."
                 }
               ],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "L.8.4"
+              ],
+              "cc_source": "official"
             }
           ]
         }
@@ -439,7 +491,11 @@
                   "text": "Use the relationship between particular words (e.g., synonyms, antonyms, homographs) to better understand each of the words."
                 }
               ],
-              "subgroup": "sentence_composition"
+              "subgroup": "sentence_composition",
+              "cc_codes": [
+                "L.5.5"
+              ],
+              "cc_source": "official"
             }
           ],
           "6": [
@@ -465,7 +521,11 @@
                   "text": "Distinguish among the connotations (associations) of words with similar denotations (definitions) (e.g., stingy, scrimping, economical, unwasteful, thrifty)."
                 }
               ],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "L.6.5"
+              ],
+              "cc_source": "official"
             }
           ],
           "7": [
@@ -491,7 +551,11 @@
                   "text": "Distinguish among the connotations (associations) of words with similar denotations (definitions) (e.g., refined, respectful, polite, diplomatic, condescending)."
                 }
               ],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "L.7.5"
+              ],
+              "cc_source": "official"
             }
           ],
           "8": [
@@ -517,7 +581,11 @@
                   "text": "Distinguish among the connotations (associations) of words with similar denotations (definitions) (e.g., bullheaded, willful, firm, persistent, resolute)."
                 }
               ],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "L.8.5"
+              ],
+              "cc_source": "official"
             }
           ]
         }
@@ -539,14 +607,22 @@
               "code": "RL.CR.5.1",
               "main": "Quote accurately from a literary text when explaining what the text says explicitly and make relevant connections when drawing inferences from the text.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RL.5.1"
+              ],
+              "cc_source": "official"
             },
             {
               "prefix": "RI",
               "code": "RI.CR.5.1",
               "main": "Quote accurately from an informational text when explaining what the text says explicitly and make relevant connections when drawing inferences from the text.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.5.1"
+              ],
+              "cc_source": "derived"
             }
           ],
           "6": [
@@ -555,14 +631,22 @@
               "code": "RL.CR.6.1",
               "main": "Cite textual evidence and make relevant connections to support analysis of what a literary text says explicitly as well as inferences drawn from the text.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RL.6.1"
+              ],
+              "cc_source": "official"
             },
             {
               "prefix": "RI",
               "code": "RI.CR.6.1",
               "main": "Cite textual evidence and make relevant connections to support analysis of what an informational text says explicitly as well as inferences drawn from the text.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.6.1"
+              ],
+              "cc_source": "derived"
             }
           ],
           "7": [
@@ -571,14 +655,22 @@
               "code": "RL.CR.7.1",
               "main": "Cite several pieces of textual evidence and make relevant connections to support analysis of what a literary text says explicitly as well as inferences drawn from the text.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RL.7.1"
+              ],
+              "cc_source": "official"
             },
             {
               "prefix": "RI",
               "code": "RI.CR.7.1",
               "main": "Cite several pieces of textual evidence and make relevant connections to support analysis of what an informational text says explicitly as well as inferences drawn from the text.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.7.1"
+              ],
+              "cc_source": "derived"
             }
           ],
           "8": [
@@ -587,14 +679,22 @@
               "code": "RL.CR.8.1",
               "main": "Cite a range of textual evidence and make clear and relevant connections to strongly support an analysis of multiple aspects of what a literary text says explicitly as well as inferences drawn from the text.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RL.8.1"
+              ],
+              "cc_source": "official"
             },
             {
               "prefix": "RI",
               "code": "RI.CR.8.1",
               "main": "Cite a range of textual evidence and make clear and relevant connections (including informational text features such as charts, graphs, and diagrams) that strongly support an analysis of multiple aspects of what an informational text says explicitly, as well as inferences drawn from the text.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.8.1"
+              ],
+              "cc_source": "derived"
             }
           ]
         }
@@ -610,14 +710,22 @@
               "code": "RL.CI.5.2",
               "main": "Determine the theme of a literary text (e.g., stories, plays or poetry) and explain how it is supported by key details; summarize the text.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RL.5.2"
+              ],
+              "cc_source": "official"
             },
             {
               "prefix": "RI",
               "code": "RI.CI.5.2",
               "main": "Determine the central idea of an informational text and explain how it is supported by key details; summarize the text.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.5.2"
+              ],
+              "cc_source": "derived"
             }
           ],
           "6": [
@@ -626,14 +734,22 @@
               "code": "RL.CI.6.2",
               "main": "Determine the theme of a literary text (e.g., stories, plays or poetry) and explain how it is supported by key details; provide a summary of the text distinct from personal opinions or judgments.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RL.6.2"
+              ],
+              "cc_source": "official"
             },
             {
               "prefix": "RI",
               "code": "RI.CI.6.2",
               "main": "Determine the central idea of an informational text and explain how it is supported by key details; provide a summary of the text distinct from personal opinions or judgments.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.6.2"
+              ],
+              "cc_source": "derived"
             }
           ],
           "7": [
@@ -642,14 +758,22 @@
               "code": "RL.CI.7.2",
               "main": "Determine a theme in a literary text (e.g., stories, plays or poetry) and explain how it is conveyed through particular details; provide a summary of the text distinct from personal opinions or judgments.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RL.7.2"
+              ],
+              "cc_source": "official"
             },
             {
               "prefix": "RI",
               "code": "RI.CI.7.2",
               "main": "Determine a central idea in an informational text and explain how it is conveyed through particular details; provide a summary of the text distinct from personal opinions or judgments.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.7.2"
+              ],
+              "cc_source": "derived"
             }
           ],
           "8": [
@@ -658,14 +782,22 @@
               "code": "RL.CI.8.2",
               "main": "Determine a theme of a literary text and how it is conveyed through particular details; provide a summary of the text distinct from personal opinions or judgments.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RL.8.2"
+              ],
+              "cc_source": "official"
             },
             {
               "prefix": "RI",
               "code": "RI.CI.8.2",
               "main": "Determine a central idea of an informational text and how it is conveyed through particular details; provide a summary of the text distinct from personal opinions or judgments.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.8.2"
+              ],
+              "cc_source": "derived"
             }
           ]
         }
@@ -681,14 +813,22 @@
               "code": "RL.IT.5.3",
               "main": "Analyze the impact of two or more individuals and events throughout the course of a text, comparing and contrasting two or more characters, settings, or events in a story or drama, drawing on specific textual evidence (e.g., how characters interact).",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RL.5.3"
+              ],
+              "cc_source": "official"
             },
             {
               "prefix": "RI",
               "code": "RI.IT.5.3",
               "main": "Analyze the impact of two or more individuals and events throughout the course of a text, explaining the relationships or interactions between two or more individuals, events, ideas, or concepts in a historical, scientific, or technical text based on specific evidence in the text.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.5.3"
+              ],
+              "cc_source": "derived"
             }
           ],
           "6": [
@@ -697,14 +837,22 @@
               "code": "RL.IT.6.3",
               "main": "Describe how a particular text’s structure unfolds in a series of episodes and use textual evidence to describe how the characters respond or change as the plot moves toward a resolution.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RL.6.3"
+              ],
+              "cc_source": "official"
             },
             {
               "prefix": "RI",
               "code": "RI.IT.6.3",
               "main": "Analyze how a particular text’s (e.g., article, brochure, technical manual, procedural text) structure unfolds by using textual evidence to describe how a key individual, event, or idea is introduced, illustrated, and elaborated in a text.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.6.3"
+              ],
+              "cc_source": "derived"
             }
           ],
           "7": [
@@ -713,14 +861,22 @@
               "code": "RL.IT.7.3",
               "main": "Analyze how particular elements of a text interact including how particular lines of dialogue or incidents in a story or drama propel the action, reveal aspects of a character, or provoke a decision.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RL.7.3"
+              ],
+              "cc_source": "official"
             },
             {
               "prefix": "RI",
               "code": "RI.IT.7.3",
               "main": "Analyze how particular elements of a text interact including how a text makes connections and distinctions among individuals, events, and ideas (e.g., through comparisons, analogies, or categories).",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.7.3"
+              ],
+              "cc_source": "derived"
             }
           ],
           "8": [
@@ -729,14 +885,22 @@
               "code": "RL.IT.8.3",
               "main": "Analyze how particular elements of a text interact (e.g., how setting shapes the characters or plot, how ideas influence individuals or events, or how characters influence ideas or events) across multiple text types, including across literary and informational texts.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RL.8.3"
+              ],
+              "cc_source": "official"
             },
             {
               "prefix": "RI",
               "code": "RI.IT.8.3",
               "main": "Analyze how particular elements of a text interact (e.g., how contexts influence individuals or events, or how individuals influence ideas or events) across multiple text types, including across literary and informational texts.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.8.3"
+              ],
+              "cc_source": "derived"
             }
           ]
         }
@@ -752,14 +916,22 @@
               "code": "RL.TS.5.4",
               "main": "Explain how a series of chapters, scenes, or stanzas fits together to provide the overall structure of a particular story, drama, or poem.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RL.5.5"
+              ],
+              "cc_source": "official"
             },
             {
               "prefix": "RI",
               "code": "RI.TS.5.4",
               "main": "Compare and contrast the overall structure (e.g., chronology, comparison, cause/effect, problem/solution) of events, ideas, concepts, or information in two or more texts.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.5.5"
+              ],
+              "cc_source": "derived"
             }
           ],
           "6": [
@@ -768,14 +940,22 @@
               "code": "RL.TS.6.4",
               "main": "Analyze how a particular piece (e.g., sentence, chapter, scene, stanza, or section) fits into the overall structure of a text and contributes to the development of the ideas, theme, setting, or plot.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RL.6.5"
+              ],
+              "cc_source": "official"
             },
             {
               "prefix": "RI",
               "code": "RI.TS.6.4",
               "main": "Use text structures (e.g., cause-effect, problem-solution), search tools, and genre features (e.g., graphics, captions, indexes) to locate and integrate information.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.6.5"
+              ],
+              "cc_source": "derived"
             }
           ],
           "7": [
@@ -784,14 +964,22 @@
               "code": "RL.TS.7.4",
               "main": "Analyze the structure an author uses to organize a text and how it contributes to the text as a whole, including how a drama’s or poem’s form or structure (e.g., soliloquy, sonnet) contributes to its meaning.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RL.7.5"
+              ],
+              "cc_source": "official"
             },
             {
               "prefix": "RI",
               "code": "RI.TS.7.4",
               "main": "Analyze the structure an author uses to organize a text and how it contributes to the text as a whole, including using knowledge of text structures (e.g., cause-effect, proposition-support) and genre features (e.g., graphics, captions, indexes) to organize and analyze important information.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.7.5"
+              ],
+              "cc_source": "derived"
             }
           ],
           "8": [
@@ -800,14 +988,22 @@
               "code": "RL.TS.8.4",
               "main": "Compare and contrast the structure of texts, analyzing how the differing structure of each text contributes to its meaning, tone and style.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RL.8.5"
+              ],
+              "cc_source": "official"
             },
             {
               "prefix": "RI",
               "code": "RI.TS.8.4",
               "main": "Analyze and explain how an author organizes, develops and presents ideas, establishes a point of view or builds supporting arguments through text structure.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.8.5"
+              ],
+              "cc_source": "derived"
             }
           ]
         }
@@ -823,14 +1019,22 @@
               "code": "RL.PP.5.5",
               "main": "Describe how a narrator’s or speaker’s point of view influences how events are described, and how that may influence the reader’s interpretation.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RL.5.6"
+              ],
+              "cc_source": "official"
             },
             {
               "prefix": "RI",
               "code": "RI.PP.5.5",
               "main": "Analyze multiple accounts of the same event or topic, noting important similarities and differences in the point of view they represent and how that may influence the reader’s interpretation.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.5.6"
+              ],
+              "cc_source": "derived"
             }
           ],
           "6": [
@@ -839,14 +1043,22 @@
               "code": "RL.PP.6.5",
               "main": "Determine how an author conveys or develops perspective in a text (through the narrator or speaker when appropriate).",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RL.6.6"
+              ],
+              "cc_source": "official"
             },
             {
               "prefix": "RI",
               "code": "RI.PP.6.5",
               "main": "Identify author’s purpose perspective or potential bias in a text and explain the impact on the reader’s interpretation.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.6.6"
+              ],
+              "cc_source": "derived"
             }
           ],
           "7": [
@@ -855,14 +1067,22 @@
               "code": "RL.PP.7.5",
               "main": "Determine how an author conveys or develops perspective or purpose in a text through contrasting the points of view of different characters or narrators in a text.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RL.7.6"
+              ],
+              "cc_source": "official"
             },
             {
               "prefix": "RI",
               "code": "RI.PP.7.5",
               "main": "Determine how an author conveys or develops perspective or purpose in a text through distinguishing their position from that of others using evidence.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.7.6"
+              ],
+              "cc_source": "derived"
             }
           ],
           "8": [
@@ -871,14 +1091,22 @@
               "code": "RL.PP.8.5",
               "main": "Analyze how an author conveys or develops their perspective or purpose in a text through the use of different perspectives of the characters and that of the audience or reader (e.g., created through the use of dramatic irony).",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RL.8.6"
+              ],
+              "cc_source": "official"
             },
             {
               "prefix": "RI",
               "code": "RI.PP.8.5",
               "main": "Analyze how an author conveys or develops their perspective or purpose in a text and by acknowledging and responding to conflicting evidence or viewpoints.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.8.6"
+              ],
+              "cc_source": "derived"
             }
           ]
         }
@@ -894,14 +1122,22 @@
               "code": "RL.MF.5.6",
               "main": "Analyze how visual and multimedia elements contribute to the meaning, tone, or beauty of a text (e.g., graphic novel, multimedia presentation of fiction, folktale, myth, poem).",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RL.5.7"
+              ],
+              "cc_source": "official"
             },
             {
               "prefix": "RI",
               "code": "RI.MF.5.6",
               "main": "Interpret information presented visually, orally, or quantitatively (e.g., in charts, graphs, diagrams, timelines, animations, or interactive elements on web pages) and explain how the information contributes to an understanding of the text in which it appears.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.5.7"
+              ],
+              "cc_source": "derived"
             }
           ],
           "6": [
@@ -910,14 +1146,22 @@
               "code": "RL.MF.6.6",
               "main": "Compare and contrast information or texts to develop a coherent understanding of a theme, topic, or issue when reading a story, drama, or poem to listening to or viewing an audio, video, or live version of the text.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RL.6.7"
+              ],
+              "cc_source": "official"
             },
             {
               "prefix": "RI",
               "code": "RI.MF.6.6",
               "main": "Integrate information when presented in different media or formats (e.g., visually, quantitatively) to develop a coherent understanding of a topic or issue.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.6.7"
+              ],
+              "cc_source": "derived"
             }
           ],
           "7": [
@@ -926,14 +1170,22 @@
               "code": "RL.MF.7.6",
               "main": "Compare and contrast texts (e.g., a written story, drama, or poem) to its audio, filmed, staged, or multimedia version and analyze the unique qualities of different mediums, including the effects of techniques unique to each medium (e.g., lighting, sound, color, or camera focus and angles in a film).",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RL.7.7"
+              ],
+              "cc_source": "official"
             },
             {
               "prefix": "RI",
               "code": "RI.MF.7.6",
               "main": "Compare and contrast texts to analyze the unique qualities of different mediums, including the integration of information from multiple formats and sources to develop deeper understanding of the concept, topic or subject and resolve conflicting information.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.7.7"
+              ],
+              "cc_source": "derived"
             }
           ],
           "8": [
@@ -942,14 +1194,22 @@
               "code": "RL.MF.8.6",
               "main": "Evaluate the choices made (by the authors, directors or actors) when presenting an idea in different mediums, including the representation/s or various perspectives of a subject or a key scene in two different artistic mediums (e.g., a person’s life story in both print and multimedia), as well as what is emphasized or absent in each work.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RL.8.7"
+              ],
+              "cc_source": "official"
             },
             {
               "prefix": "RI",
               "code": "RI.MF.8.6",
               "main": "Evaluate the choices made (by the authors, directors, or actors) when presenting an idea in different mediums and the advantages and disadvantages of using different mediums or formats (e.g., visually, quantitatively) to address a question or solve a problem.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.8.7"
+              ],
+              "cc_source": "derived"
             }
           ]
         }
@@ -965,7 +1225,11 @@
               "code": "RI.AA.5.7",
               "main": "Explain how an author uses reasons and evidence to support particular points in a text, identifying which reasons and evidence support which point(s).",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.5.8"
+              ],
+              "cc_source": "official"
             }
           ],
           "6": [
@@ -974,7 +1238,11 @@
               "code": "RI.AA.6.7",
               "main": "Trace the development of and evaluate the argument and specific claims in a text, distinguishing claims that are supported by reasons and evidence from claims that are not.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.6.8"
+              ],
+              "cc_source": "official"
             }
           ],
           "7": [
@@ -983,7 +1251,11 @@
               "code": "RI.AA.7.7",
               "main": "Trace and evaluate the argument and specific claims in a text, assessing whether the reasoning is sound and the evidence is relevant and sufficient to support the claims.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.7.8"
+              ],
+              "cc_source": "official"
             }
           ],
           "8": [
@@ -992,7 +1264,11 @@
               "code": "RI.AA.8.7",
               "main": "Delineate and evaluate the argument and specific claims in a text, assessing whether the reasoning is sound and the evidence is relevant and sufficient; recognize when irrelevant evidence is introduced.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.8.8"
+              ],
+              "cc_source": "official"
             }
           ]
         }
@@ -1008,14 +1284,22 @@
               "code": "RL.CT.5.8",
               "main": "Compare and contrast the authors’ approaches across two or more literary texts within the same genre or about the same or similar topics.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RL.5.9"
+              ],
+              "cc_source": "official"
             },
             {
               "prefix": "RI",
               "code": "RI.CT.5.8",
               "main": "Compare and contrast the authors’ approaches across two or more informational texts within the same genre or about texts on the same or similar topics.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.5.9"
+              ],
+              "cc_source": "derived"
             }
           ],
           "6": [
@@ -1024,14 +1308,22 @@
               "code": "RL.CT.6.8",
               "main": "Compare and contrast literary texts in different forms, by different authors, or from different genres (e.g., stories and poems; historical novels and primary source documents, scientific journals and fantasy stories) in terms of their approaches to similar themes and topics.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RL.6.9"
+              ],
+              "cc_source": "official"
             },
             {
               "prefix": "RI",
               "code": "RI.CT.6.8",
               "main": "Compare and contrast informational texts in different forms, by different authors, or from different genres (e.g., a memoir written by and a biography on the same person, historical novels and primary source documents, infographics and scientific journals) in terms of their approaches to similar themes and topics.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.6.9"
+              ],
+              "cc_source": "derived"
             }
           ],
           "7": [
@@ -1040,14 +1332,22 @@
               "code": "RL.CT.7.8",
               "main": "Compare and contrast a fictional portrayal of an event, time, place, or character and a historical or scientific account of the same period or event as a means of understanding how authors of fiction use or alter history and/or events.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RL.7.9"
+              ],
+              "cc_source": "official"
             },
             {
               "prefix": "RI",
               "code": "RI.CT.7.8",
               "main": "Analyze and reflect on (e.g., practical knowledge, historical/cultural context, and background knowledge) how two or more authors writing informational texts about the same topic shape their presentations of key information by emphasizing different evidence or advancing different interpretations of facts.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.7.9"
+              ],
+              "cc_source": "derived"
             }
           ],
           "8": [
@@ -1056,14 +1356,22 @@
               "code": "RL.CT.8.8",
               "main": "Analyze and reflect on how the author’s idea in fiction and literary nonfiction texts (e.g., practical knowledge, historical/cultural context, and background knowledge) is shaped by the author’s emphasis on different evidence, advancing different interpretations of facts, or fictional portrayal of a time, place, or character and a historical account of the same period.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RL.8.9"
+              ],
+              "cc_source": "official"
             },
             {
               "prefix": "RI",
               "code": "RI.CT.8.8",
               "main": "Analyze and reflect on (e.g., practical knowledge, historical/cultural context, and background knowledge) two or more informational texts that provide conflicting information on the same topic and identify where the texts disagree on matters of fact or interpretation.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "RI.8.9"
+              ],
+              "cc_source": "derived"
             }
           ]
         }
@@ -1102,7 +1410,11 @@
                   "text": "Provide a conclusion related to the opinion presented."
                 }
               ],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "W.5.1"
+              ],
+              "cc_source": "official"
             }
           ],
           "6": [
@@ -1132,7 +1444,11 @@
                   "text": "Provide a concluding statement or section that follows from the argument presented."
                 }
               ],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "W.6.1"
+              ],
+              "cc_source": "official"
             }
           ],
           "7": [
@@ -1162,7 +1478,11 @@
                   "text": "Provide a concluding statement or section that follows from and supports the argument presented."
                 }
               ],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "W.7.1"
+              ],
+              "cc_source": "official"
             }
           ],
           "8": [
@@ -1192,7 +1512,11 @@
                   "text": "Provide a concluding statement or section that follows from and supports the argument presented."
                 }
               ],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "W.8.1"
+              ],
+              "cc_source": "official"
             }
           ]
         }
@@ -1229,7 +1553,11 @@
                   "text": "Provide a conclusion related to the information of explanation presented."
                 }
               ],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "W.5.2"
+              ],
+              "cc_source": "official"
             }
           ],
           "6": [
@@ -1263,7 +1591,11 @@
                   "text": "Provide a concluding statement or section (e.g., sentence, part of a paragraph, paragraph, or multiple paragraphs) that follows from and supports the information or explanation presented."
                 }
               ],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "W.6.2"
+              ],
+              "cc_source": "official"
             }
           ],
           "7": [
@@ -1297,7 +1629,11 @@
                   "text": "Provide a concluding statement or section (e.g., sentence, part of a paragraph, paragraph, or multiple paragraphs) that follows the flow of ideas, reflects back on the topic, and supports the information or explanation presented."
                 }
               ],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "W.7.2"
+              ],
+              "cc_source": "official"
             }
           ],
           "8": [
@@ -1331,7 +1667,11 @@
                   "text": "Provide a concluding statement or section (e.g., sentence, part of a paragraph, paragraph, or multiple paragraphs) that synthesizes the information or explanation presented."
                 }
               ],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "W.8.2"
+              ],
+              "cc_source": "official"
             }
           ]
         }
@@ -1368,7 +1708,11 @@
                   "text": "Provide a conclusion that follows from the narrated experiences or events."
                 }
               ],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "W.5.3"
+              ],
+              "cc_source": "official"
             }
           ],
           "6": [
@@ -1398,7 +1742,11 @@
                   "text": "Provide a conclusion that follows from the narrated experiences or events."
                 }
               ],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "W.6.3"
+              ],
+              "cc_source": "derived"
             }
           ],
           "7": [
@@ -1428,7 +1776,11 @@
                   "text": "Provide a conclusion that follows from and reflects on the narrated experiences or events."
                 }
               ],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "W.7.3"
+              ],
+              "cc_source": "derived"
             }
           ],
           "8": [
@@ -1458,7 +1810,11 @@
                   "text": "Provide a conclusion that follows from and reflects on the narrated experiences or events."
                 }
               ],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "W.8.3"
+              ],
+              "cc_source": "derived"
             }
           ]
         }
@@ -1495,7 +1851,11 @@
                   "text": "After initial drafting, expand, combine, and reduce sentences for meaning, audience, and style."
                 }
               ],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "W.5.5"
+              ],
+              "cc_source": "official"
             }
           ],
           "6": [
@@ -1504,7 +1864,11 @@
               "code": "W.WP.6.4",
               "main": "With some guidance and support from peers and adults, develop and strengthen writing as needed by planning; flexibly making editing and revision choices; sustaining effort to fit composition needs and purposes; and attempting to address purpose and audience.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "W.6.5"
+              ],
+              "cc_source": "official"
             }
           ],
           "7": [
@@ -1513,7 +1877,11 @@
               "code": "W.WP.7.4",
               "main": "With some guidance and support from peers and adults, develop and strengthen writing as needed by planning; flexibly making editing and revision choices and sustaining effort to complete complex writing tasks; and focusing on how well purpose and audience have been addressed.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "W.7.5"
+              ],
+              "cc_source": "official"
             }
           ],
           "8": [
@@ -1522,7 +1890,11 @@
               "code": "W.WP.8.4",
               "main": "With some guidance and support from peers and adults, develop and strengthen writing as needed by planning, sustaining effort to complete complex writing tasks; seeking out assistance, models, sources or feedback to improve understanding or refine final products; focusing on how well purpose and audience have been addressed.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "W.8.5"
+              ],
+              "cc_source": "official"
             }
           ]
         }
@@ -1538,7 +1910,11 @@
               "code": "W.WR.5.5",
               "main": "Establish a central idea about a topic, investigation, issue or event and use several sources to support the proposed central idea.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "W.5.7"
+              ],
+              "cc_source": "official"
             }
           ],
           "6": [
@@ -1547,7 +1923,11 @@
               "code": "W.WR.6.5",
               "main": "Conduct short research projects to answer a question, drawing on several sources and refocusing the inquiry when appropriate.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "W.6.7"
+              ],
+              "cc_source": "derived"
             }
           ],
           "7": [
@@ -1556,7 +1936,11 @@
               "code": "W.WR.7.5",
               "main": "Conduct short research projects to answer a question, drawing on several sources and generating additional related, focused questions for further research and investigation.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "W.7.7"
+              ],
+              "cc_source": "derived"
             }
           ],
           "8": [
@@ -1565,7 +1949,11 @@
               "code": "W.WR.8.5",
               "main": "Conduct short research projects to answer a question (including a self-generated question), drawing on several sources and generating additional related, focused questions that allow for multiple avenues of exploration.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "W.8.7"
+              ],
+              "cc_source": "derived"
             }
           ]
         }
@@ -1581,7 +1969,11 @@
               "code": "W.SE.5.6",
               "main": "Gather relevant information from multiple valid and reliable print and digital sources; summarize or paraphrase information in notes and finished work, making note of any similarities and differences among ideas presented; and provide a list of sources.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "W.5.8"
+              ],
+              "cc_source": "official"
             }
           ],
           "6": [
@@ -1590,7 +1982,11 @@
               "code": "W.SE.6.6",
               "main": "Gather relevant information from multiple print and digital sources; assess the credibility of each source; and quote or paraphrase the data and conclusions of others while avoiding plagiarism and providing basic bibliographic information for sources.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "W.6.8"
+              ],
+              "cc_source": "derived"
             }
           ],
           "7": [
@@ -1599,7 +1995,11 @@
               "code": "W.SE.7.6",
               "main": "Gather relevant information from multiple print and digital sources, using search terms effectively; assess the credibility and accuracy of each source; and quote or paraphrase the data and conclusions of others while avoiding plagiarism and following a standard format for citation.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "W.7.8"
+              ],
+              "cc_source": "derived"
             }
           ],
           "8": [
@@ -1608,7 +2008,11 @@
               "code": "W.SE.8.6",
               "main": "Gather relevant information from multiple print and digital sources, using search terms effectively; assess the credibility and accuracy of each source; and quote or paraphrase the data and conclusions of others while avoiding plagiarism and following a standard format for citation.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "W.8.8"
+              ],
+              "cc_source": "derived"
             }
           ]
         }
@@ -1624,7 +2028,11 @@
               "code": "W.RW.5.7",
               "main": "Write routinely over extended time frames (time for research and revision) and shorter time frames (a single sitting or a day or two) for a range of tasks, purposes, and audiences.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "W.5.10"
+              ],
+              "cc_source": "official"
             }
           ],
           "6": [
@@ -1633,7 +2041,11 @@
               "code": "W.RW.6.7",
               "main": "Write routinely over extended time frames (time for research, reflection, metacognition/self- correction, and revision) and shorter time frames (a single sitting or a day or two) for a range of discipline-specific tasks, purposes, and audiences.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "W.6.10"
+              ],
+              "cc_source": "derived"
             }
           ],
           "7": [
@@ -1642,7 +2054,11 @@
               "code": "W.RW.7.7",
               "main": "Write routinely over extended time frames (time for research, reflection, metacognition/self- correction, and revision) and shorter time frames (a single sitting or a day or two) for a range of discipline-specific tasks, purposes, and audiences.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "W.7.10"
+              ],
+              "cc_source": "derived"
             }
           ],
           "8": [
@@ -1651,7 +2067,11 @@
               "code": "W.RW.8.7",
               "main": "Write routinely over extended time frames (time for research, reflection, metacognition/self- correction, and revision) and shorter time frames (a single sitting or a day or two) for a range of discipline-specific tasks, purposes, and audiences.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "W.8.10"
+              ],
+              "cc_source": "derived"
             }
           ]
         }
@@ -1690,7 +2110,11 @@
                   "text": "Review the key ideas expressed and draw conclusions in light of information and knowledge gained from the discussions."
                 }
               ],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "SL.5.1"
+              ],
+              "cc_source": "wording"
             }
           ],
           "6": [
@@ -1716,7 +2140,11 @@
                   "text": "Review the key ideas expressed and demonstrate understanding of multiple perspectives through reflection and paraphrasing."
                 }
               ],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "SL.6.1"
+              ],
+              "cc_source": "wording"
             }
           ],
           "7": [
@@ -1742,7 +2170,11 @@
                   "text": "Acknowledge new information expressed by others and, when warranted, modify their own views."
                 }
               ],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "SL.7.1"
+              ],
+              "cc_source": "wording"
             }
           ],
           "8": [
@@ -1768,7 +2200,11 @@
                   "text": "Acknowledge new information expressed by others, and, when warranted, qualify or justify their own views in light of the evidence presented."
                 }
               ],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "SL.8.1"
+              ],
+              "cc_source": "wording"
             }
           ]
         }
@@ -1784,7 +2220,11 @@
               "code": "SL.II.5.2",
               "main": "Summarize a written text read aloud or information presented in diverse media and formats (e.g., visually, quantitatively, and orally).",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "SL.5.2"
+              ],
+              "cc_source": "wording"
             }
           ],
           "6": [
@@ -1793,7 +2233,11 @@
               "code": "SL.II.6.2",
               "main": "Interpret information presented in diverse media and formats (e.g., visually, quantitatively, orally) and explain how it contributes to a topic, text, or issue under study.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "SL.6.2"
+              ],
+              "cc_source": "wording"
             }
           ],
           "7": [
@@ -1802,7 +2246,11 @@
               "code": "SL.II.7.2",
               "main": "Analyze the main ideas and supporting details presented in diverse media and formats (e.g., visually, quantitatively, orally) and explain how the ideas clarify a topic, text, or issue under study.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "SL.7.2"
+              ],
+              "cc_source": "wording"
             }
           ],
           "8": [
@@ -1811,7 +2259,11 @@
               "code": "SL.II.8.2",
               "main": "Analyze the purpose of information presented in diverse media and formats (e.g., visually, quantitatively, orally) and evaluate the motives (e.g., social, commercial, political) behind its presentation.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "SL.8.2"
+              ],
+              "cc_source": "wording"
             }
           ]
         }
@@ -1827,7 +2279,11 @@
               "code": "SL.ES.5.3",
               "main": "Summarize the points a speaker makes and explain how each claim is supported by reasons and evidence.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "SL.5.3"
+              ],
+              "cc_source": "wording"
             }
           ],
           "6": [
@@ -1836,7 +2292,11 @@
               "code": "SL.ES.6.3",
               "main": "Deconstruct a speaker’s argument and specific claims, distinguishing claims that are supported by reasons and evidence from claims that are not.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "SL.6.3"
+              ],
+              "cc_source": "wording"
             }
           ],
           "7": [
@@ -1845,7 +2305,11 @@
               "code": "SL.ES.7.3",
               "main": "Delineate a speaker’s argument and specific claims, evaluating the soundness of the reasoning and the relevance and sufficiency of the evidence.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "SL.7.3"
+              ],
+              "cc_source": "wording"
             }
           ],
           "8": [
@@ -1854,7 +2318,11 @@
               "code": "SL.ES.8.3",
               "main": "Delineate a speaker’s argument and specific claims, evaluating the soundness of the reasoning and relevance and sufficiency of the evidence and identifying when irrelevant evidence is introduced.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "SL.8.3"
+              ],
+              "cc_source": "wording"
             }
           ]
         }
@@ -1870,7 +2338,11 @@
               "code": "SL.PI.5.4",
               "main": "Report on a topic or text or present an opinion, sequencing ideas logically and using appropriate facts and relevant, descriptive details to support main ideas or themes; speak clearly at an understandable pace.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "SL.5.4"
+              ],
+              "cc_source": "wording"
             }
           ],
           "6": [
@@ -1879,7 +2351,11 @@
               "code": "SL.PI.6.4",
               "main": "Present claims and findings, sequencing ideas logically and using pertinent descriptions, facts, and details to accentuate main ideas or themes; use appropriate speaking behaviors (e.g., eye contact, adequate volume, and clear pronunciation).",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "SL.6.4"
+              ],
+              "cc_source": "wording"
             }
           ],
           "7": [
@@ -1888,7 +2364,11 @@
               "code": "SL.PI.7.4",
               "main": "Present claims and findings, emphasizing salient points in a focused, coherent manner with pertinent descriptions, facts, details, and examples; use appropriate eye contact, adequate volume, and clear pronunciation.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "SL.7.4"
+              ],
+              "cc_source": "wording"
             }
           ],
           "8": [
@@ -1897,7 +2377,11 @@
               "code": "SL.PI.8.4",
               "main": "Present claims and findings, emphasizing salient points in a focused, coherent manner with relevant evidence, sound valid reasoning, and well-chosen details; use appropriate eye contact, adequate volume, and clear pronunciation.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "SL.8.4"
+              ],
+              "cc_source": "wording"
             }
           ]
         }
@@ -1913,7 +2397,11 @@
               "code": "SL.UM.5.5",
               "main": "Include multimedia components (e.g., graphics, sound) and visual displays in presentations when appropriate to enhance the development of main ideas or themes.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "SL.5.5"
+              ],
+              "cc_source": "wording"
             }
           ],
           "6": [
@@ -1922,7 +2410,11 @@
               "code": "SL.UM.6.5",
               "main": "Include multimedia components (e.g., graphics, images, music, sound) and visual displays in presentations to clarify information.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "SL.6.5"
+              ],
+              "cc_source": "wording"
             }
           ],
           "7": [
@@ -1931,7 +2423,11 @@
               "code": "SL.UM.7.5",
               "main": "Include multimedia components and visual displays in presentations to clarify claims and findings and emphasize salient points.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "SL.7.5"
+              ],
+              "cc_source": "wording"
             }
           ],
           "8": [
@@ -1940,7 +2436,11 @@
               "code": "SL.UM.8.5",
               "main": "Integrate multimedia and visual displays into presentations to clarify information, strengthen claims and evidence, and add interest.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "SL.8.5"
+              ],
+              "cc_source": "wording"
             }
           ]
         }
@@ -1956,7 +2456,11 @@
               "code": "SL.AS.5.6",
               "main": "Adapt speech to a variety of contexts and tasks, using formal English when appropriate to task and situation.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "SL.5.6"
+              ],
+              "cc_source": "wording"
             }
           ],
           "6": [
@@ -1965,7 +2469,11 @@
               "code": "SL.AS.6.6",
               "main": "Adapt speech to a variety of contexts and tasks, demonstrating command of formal English when indicated or appropriate.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "SL.6.6"
+              ],
+              "cc_source": "wording"
             }
           ],
           "7": [
@@ -1974,7 +2482,11 @@
               "code": "SL.AS.7.6",
               "main": "Adapt speech to a variety of contexts and tasks, demonstrating command of formal English when indicated or appropriate.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "SL.7.6"
+              ],
+              "cc_source": "wording"
             }
           ],
           "8": [
@@ -1983,7 +2495,11 @@
               "code": "SL.AS.8.6",
               "main": "Adapt speech to a variety of contexts and tasks, demonstrating command of formal English when indicated or appropriate.",
               "subs": [],
-              "subgroup": null
+              "subgroup": null,
+              "cc_codes": [
+                "SL.8.6"
+              ],
+              "cc_source": "wording"
             }
           ]
         }

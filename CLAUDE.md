@@ -58,7 +58,9 @@ The schemas are intentionally **different shapes per subject** because NJDOE org
           code,                                 // e.g., "L.RF.5.3"
           main,                                 // statement text
           subs: [{ code, text }],               // optional lettered sub-bullets; code = <parent>.A/.B/… (e.g. L.SS.6.1.A), individually searchable
-          subgroup                              // optional category tag (e.g., "phonics")
+          subgroup,                             // optional category tag (e.g., "phonics")
+          cc_codes,                             // [str] Common Core (2016) equivalent(s), e.g. ["L.6.1"]; searchable by exact code. Absent for new-in-2023 standards (L.WF.5.2)
+          cc_source                             // "official" (NJDOE crosswalk row) | "derived" (RL→RI companion + W subcat pattern) | "wording" (SL, matched to CC by statement)
         }]
       }
     }]
@@ -66,6 +68,8 @@ The schemas are intentionally **different shapes per subject** because NJDOE org
 }
 ```
 Filters in UI: Domain pills + Grade pills. Lettered sub-bullets are individually coded (`L.SS.6.1.A`) and searchable by that code; an exact sub-code query highlights the matching bullet. Codes are assigned by list position from the source docx (verified: all 34 sub-bearing entries match the docx exactly).
+
+**Common Core crosswalk:** each 5–8 entry carries `cc_codes` — its Common Core (2016) equivalent — so searching a CC code (e.g. `RL.8.2`, `SL.6.1`) returns the NJSLS standard, and every result shows a `CC …` badge. 129/130 mapped; `L.WF.5.2` is new-in-2023 with no CC equivalent. Sources: **official** NJDOE 2016→2023 crosswalk (`data/sources/` — download from [nj.gov](https://www.nj.gov/education/standards/ela/Docs/NJSLS_ELA_Crosswalk_2016_to_2023.docx)); **derived** where the crosswalk normalizes companion standards — RI folds into the RL rows (`RI.CI.8.2 → RI.8.2`, parallel to `RL.CI.8.2 → RL.8.2`) and Writing's grade-6–8 rows follow the grade-5 subcat→anchor pattern; **wording** for Speaking/Listening (absent from the crosswalk entirely — matched `SL.PE.6.1 → SL.6.1` etc. against Common Core text, marked with a `≈` in the badge). CC-code search is exact-token (so `L.6.1` doesn't spuriously match `RL.6.1`/`SL.6.1`). Build logic in `scripts/build_all.py` reads the fields; the map itself was generated once from the crosswalk docx and merged into `ela.json`.
 
 ### Math — `data/math.json`
 ```

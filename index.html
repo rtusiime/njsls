@@ -360,6 +360,11 @@ footer {
   font-weight: 600; font-style: italic; font-size: 17px;
   color: var(--card-accent); letter-spacing: -0.01em;
 }
+.result-cc {
+  font-family: 'Manrope', monospace; font-size: 11px; font-weight: 600;
+  color: var(--card-accent); background: color-mix(in srgb, var(--card-accent) 12%, transparent);
+  padding: 2px 8px; border-radius: 4px; letter-spacing: 0.01em;
+}
 .result-grade {
   font-size: 11px; color: var(--faint); letter-spacing: 0.04em;
 }
@@ -858,7 +863,8 @@ footer {
         s.core_idea,
         s.era_summary
       ].filter(Boolean).join(' ').toLowerCase();
-      return hay.includes(q);
+      const ccHit = Array.isArray(s.cc_codes) && s.cc_codes.some(c => c.toLowerCase() === q);
+      return hay.includes(q) || ccHit;
     }).map(s => ({ ...s, _matchType: 'keyword' }));
   }
 
@@ -1031,6 +1037,7 @@ Rules:
         <header class="result-header">
           <span class="result-subject">${SUBJECT_LABELS[r.subject] || r.subject}</span>
           <span class="result-code">${esc(r.code)}</span>
+          ${(r.cc_codes && r.cc_codes.length) ? `<span class="result-cc" title="${r.cc_source === 'wording' ? 'Common Core equivalent — wording-matched' : 'Common Core equivalent — NJDOE crosswalk'}">CC ${r.cc_source === 'wording' ? '≈' : ''}${esc(r.cc_codes.join(', '))}</span>` : ''}
           <span class="result-grade">${esc(gradeLabel)}</span>
           ${context ? `<span class="result-context">${esc(context)}</span>` : ''}
         </header>

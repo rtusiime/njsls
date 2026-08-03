@@ -59,6 +59,8 @@ for _domain_key, domain in ela.items():
                     "statement": e["main"],
                     "subs": e.get("subs") or None,
                     "prefix": e.get("prefix"),
+                    "cc_codes": e.get("cc_codes") or None,      # Common Core (2016) equivalent(s)
+                    "cc_source": e.get("cc_source"),            # official | derived | wording
                 })
 
 # Math: grade → domains → clusters → standards
