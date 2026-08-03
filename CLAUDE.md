@@ -57,7 +57,7 @@ The schemas are intentionally **different shapes per subject** because NJDOE org
           prefix,                               // L | RL | RI | W | SL
           code,                                 // e.g., "L.RF.5.3"
           main,                                 // statement text
-          subs: [string],                       // optional sub-bullets
+          subs: [{ code, text }],               // optional lettered sub-bullets; code = <parent>.A/.B/… (e.g. L.SS.6.1.A), individually searchable
           subgroup                              // optional category tag (e.g., "phonics")
         }]
       }
@@ -65,7 +65,7 @@ The schemas are intentionally **different shapes per subject** because NJDOE org
   }
 }
 ```
-Filters in UI: Domain pills + Grade pills.
+Filters in UI: Domain pills + Grade pills. Lettered sub-bullets are individually coded (`L.SS.6.1.A`) and searchable by that code; an exact sub-code query highlights the matching bullet. Codes are assigned by list position from the source docx (verified: all 34 sub-bearing entries match the docx exactly).
 
 ### Math — `data/math.json`
 ```
@@ -179,7 +179,7 @@ All NJSLS PDFs and docx files live one level up at `../curriculum/`. When adding
 
 | Subject | Source path |
 |---|---|
-| ELA (already in this repo) | originally extracted from a 2023 NJSLS-ELA reference |
+| ELA (already in this repo) | Source docx now in-repo: `data/sources/2023_NJSLS_ELA.docx` (2023 NJSLS-ELA). Parse via stdlib `zipfile` + `xml.etree` on `word/document.xml` — deterministic; lettered subs are Word auto-numbering (`numPr`/`ilvl`), so letters derive from list position. |
 | Math | `/Users/ktusiime/Desktop/DLA/Forge/curriculum/2023_NJSLS_Mathematics.docx` |
 | Science 6–8 | `/Users/ktusiime/Desktop/DLA/Forge/curriculum/NJSLS-Science_6-8.pdf` |
 | Science K–5 | `/Users/ktusiime/Desktop/DLA/Forge/curriculum/NJSLS-Science_K-5.pdf` |

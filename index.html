@@ -842,7 +842,7 @@ footer {
       const hay = [
         s.code,
         s.statement,
-        Array.isArray(s.subs) ? s.subs.join(' ') : '',
+        Array.isArray(s.subs) ? s.subs.map(x => typeof x === 'string' ? x : `${x.code} ${x.text}`).join(' ') : '',
         s.clarification,
         s.assessment_boundary,
         s.core_idea,

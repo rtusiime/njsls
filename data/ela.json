@@ -21,9 +21,18 @@
               "code": "L.RF.5.4",
               "main": "Read with sufficient accuracy and fluency to support comprehension.",
               "subs": [
-                "Read grade-level text with purpose and understanding.",
-                "Read grade-level text orally with accuracy, appropriate rate, and expression.",
-                "Use context to confirm or self-correct word recognition and understanding, rereading as necessary."
+                {
+                  "code": "L.RF.5.4.A",
+                  "text": "Read grade-level text with purpose and understanding."
+                },
+                {
+                  "code": "L.RF.5.4.B",
+                  "text": "Read grade-level text orally with accuracy, appropriate rate, and expression."
+                },
+                {
+                  "code": "L.RF.5.4.C",
+                  "text": "Use context to confirm or self-correct word recognition and understanding, rereading as necessary."
+                }
               ],
               "subgroup": "fluency"
             }
@@ -41,14 +50,38 @@
               "code": "L.WF.5.2",
               "main": "Demonstrate command of the conventions of writing, including those listed under grade four foundational skills.",
               "subs": [
-                "Avoid fragments, run-ons and rambling sentences, and comma splices.",
-                "Maintain consistency in verb tense; place phrases and clauses; choose between adjectives and adverbs.",
-                "Ensure agreement between subject and verb and between pronoun and antecedent.",
-                "Distinguish between frequently confused words.",
-                "Use idiomatic language and choose words for effect; use punctuating for meaning and effect.",
-                "Use punctuation to separate items in a series; use commas in a series of phrases or clauses.",
-                "Use a comma to separate an introductory element from the rest of the sentence; use a comma to set off the words yes and no (e.g., Yes, thank you), to set off a tag question from the rest of the sentence (e.g., It’s true, isn’t it?), and to indicate direct address (e.g., Is that you, Emma?).",
-                "Spell grade appropriate words correctly, consulting references as needed."
+                {
+                  "code": "L.WF.5.2.A",
+                  "text": "Avoid fragments, run-ons and rambling sentences, and comma splices."
+                },
+                {
+                  "code": "L.WF.5.2.B",
+                  "text": "Maintain consistency in verb tense; place phrases and clauses; choose between adjectives and adverbs."
+                },
+                {
+                  "code": "L.WF.5.2.C",
+                  "text": "Ensure agreement between subject and verb and between pronoun and antecedent."
+                },
+                {
+                  "code": "L.WF.5.2.D",
+                  "text": "Distinguish between frequently confused words."
+                },
+                {
+                  "code": "L.WF.5.2.E",
+                  "text": "Use idiomatic language and choose words for effect; use punctuating for meaning and effect."
+                },
+                {
+                  "code": "L.WF.5.2.F",
+                  "text": "Use punctuation to separate items in a series; use commas in a series of phrases or clauses."
+                },
+                {
+                  "code": "L.WF.5.2.G",
+                  "text": "Use a comma to separate an introductory element from the rest of the sentence; use a comma to set off the words yes and no (e.g., Yes, thank you), to set off a tag question from the rest of the sentence (e.g., It’s true, isn’t it?), and to indicate direct address (e.g., Is that you, Emma?)."
+                },
+                {
+                  "code": "L.WF.5.2.H",
+                  "text": "Spell grade appropriate words correctly, consulting references as needed."
+                }
               ],
               "subgroup": "sentence_composition"
             }
@@ -66,12 +99,30 @@
               "code": "L.SS.6.1",
               "main": "Demonstrate command of the system and structure of the English language when writing or speaking.",
               "subs": [
-                "Ensure that pronouns are in the proper case (subjective, objective, possessive).",
-                "Use intensive pronouns (e.g., myself, ourselves).",
-                "Recognize and correct inappropriate shifts in pronoun number and person.",
-                "Recognize and correct vague pronouns (i.e., ones with unclear or ambiguous antecedents).",
-                "Use punctuation (commas, parentheses, dashes) to set off nonrestrictive and parenthetical elements.",
-                "Recognize spelling conventions."
+                {
+                  "code": "L.SS.6.1.A",
+                  "text": "Ensure that pronouns are in the proper case (subjective, objective, possessive)."
+                },
+                {
+                  "code": "L.SS.6.1.B",
+                  "text": "Use intensive pronouns (e.g., myself, ourselves)."
+                },
+                {
+                  "code": "L.SS.6.1.C",
+                  "text": "Recognize and correct inappropriate shifts in pronoun number and person."
+                },
+                {
+                  "code": "L.SS.6.1.D",
+                  "text": "Recognize and correct vague pronouns (i.e., ones with unclear or ambiguous antecedents)."
+                },
+                {
+                  "code": "L.SS.6.1.E",
+                  "text": "Use punctuation (commas, parentheses, dashes) to set off nonrestrictive and parenthetical elements."
+                },
+                {
+                  "code": "L.SS.6.1.F",
+                  "text": "Recognize spelling conventions."
+                }
               ],
               "subgroup": null
             }
@@ -82,11 +133,26 @@
               "code": "L.SS.7.1",
               "main": "Demonstrate command of the system and structure of the English language when writing or speaking.",
               "subs": [
-                "Explain the function of phrases and clauses in general and their function in specific sentences.",
-                "Choose among simple, compound, complex, and compound-complex sentences to signal differing relationships among ideas.",
-                "Place phrases and clauses within a sentence, recognizing and correcting misplaced and dangling modifiers.",
-                "Use a comma to separate coordinate adjectives (e.g., It was a fascinating, enjoyable movie but not He wore an old green shirt).",
-                "Recognize spelling conventions."
+                {
+                  "code": "L.SS.7.1.A",
+                  "text": "Explain the function of phrases and clauses in general and their function in specific sentences."
+                },
+                {
+                  "code": "L.SS.7.1.B",
+                  "text": "Choose among simple, compound, complex, and compound-complex sentences to signal differing relationships among ideas."
+                },
+                {
+                  "code": "L.SS.7.1.C",
+                  "text": "Place phrases and clauses within a sentence, recognizing and correcting misplaced and dangling modifiers."
+                },
+                {
+                  "code": "L.SS.7.1.D",
+                  "text": "Use a comma to separate coordinate adjectives (e.g., It was a fascinating, enjoyable movie but not He wore an old green shirt)."
+                },
+                {
+                  "code": "L.SS.7.1.E",
+                  "text": "Recognize spelling conventions."
+                }
               ],
               "subgroup": null
             }
@@ -97,13 +163,34 @@
               "code": "L.SS.8.1",
               "main": "Demonstrate command of the system and structure of the English language when writing or speaking.",
               "subs": [
-                "Explain the function of verbals (gerunds, participles, infinitives) in general and their function in particular sentences.",
-                "Form and use verbs in the active and passive voice.",
-                "Form and use verbs in the indicative, imperative, interrogative, conditional, and subjunctive mood.",
-                "Recognize and correct inappropriate shifts in verb voice and mood.",
-                "Use punctuation (comma, ellipsis, dash) to indicate a pause or break.",
-                "Use an ellipsis to indicate an omission.",
-                "Recognize spelling conventions."
+                {
+                  "code": "L.SS.8.1.A",
+                  "text": "Explain the function of verbals (gerunds, participles, infinitives) in general and their function in particular sentences."
+                },
+                {
+                  "code": "L.SS.8.1.B",
+                  "text": "Form and use verbs in the active and passive voice."
+                },
+                {
+                  "code": "L.SS.8.1.C",
+                  "text": "Form and use verbs in the indicative, imperative, interrogative, conditional, and subjunctive mood."
+                },
+                {
+                  "code": "L.SS.8.1.D",
+                  "text": "Recognize and correct inappropriate shifts in verb voice and mood."
+                },
+                {
+                  "code": "L.SS.8.1.E",
+                  "text": "Use punctuation (comma, ellipsis, dash) to indicate a pause or break."
+                },
+                {
+                  "code": "L.SS.8.1.F",
+                  "text": "Use an ellipsis to indicate an omission."
+                },
+                {
+                  "code": "L.SS.8.1.G",
+                  "text": "Recognize spelling conventions."
+                }
               ],
               "subgroup": null
             }
@@ -121,9 +208,18 @@
               "code": "L.KL.5.1",
               "main": "Use knowledge of language and its conventions when writing, speaking, reading, or listening.",
               "subs": [
-                "Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases.",
-                "Expand, combine, and reduce sentences for meaning, reader/listener interest, and style.",
-                "Compare and contrast the varieties of English (e.g., dialects, registers) used in stories, dramas, or poems."
+                {
+                  "code": "L.KL.5.1.A",
+                  "text": "Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases."
+                },
+                {
+                  "code": "L.KL.5.1.B",
+                  "text": "Expand, combine, and reduce sentences for meaning, reader/listener interest, and style."
+                },
+                {
+                  "code": "L.KL.5.1.C",
+                  "text": "Compare and contrast the varieties of English (e.g., dialects, registers) used in stories, dramas, or poems."
+                }
               ],
               "subgroup": "sentence_composition"
             }
@@ -134,10 +230,22 @@
               "code": "L.KL.6.2",
               "main": "Use knowledge of language and its conventions when writing, speaking, reading, or listening.",
               "subs": [
-                "Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases.",
-                "Gather vocabulary knowledge when considering a word or phrase important to comprehension or expression.",
-                "Vary sentence patterns for meaning (syntax), reader/listener interest, and style/voice.",
-                "Maintain consistency in style and tone."
+                {
+                  "code": "L.KL.6.2.A",
+                  "text": "Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases."
+                },
+                {
+                  "code": "L.KL.6.2.B",
+                  "text": "Gather vocabulary knowledge when considering a word or phrase important to comprehension or expression."
+                },
+                {
+                  "code": "L.KL.6.2.C",
+                  "text": "Vary sentence patterns for meaning (syntax), reader/listener interest, and style/voice."
+                },
+                {
+                  "code": "L.KL.6.2.D",
+                  "text": "Maintain consistency in style and tone."
+                }
               ],
               "subgroup": null
             }
@@ -148,9 +256,18 @@
               "code": "L.KL.7.2",
               "main": "Use knowledge of language and its conventions when writing, speaking, reading, or listening.",
               "subs": [
-                "Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases.",
-                "Gather vocabulary knowledge when selecting a word or phrase important to comprehension or expression.",
-                "Choose language that expresses ideas precisely and concisely, recognizing and eliminating wordiness and redundancy."
+                {
+                  "code": "L.KL.7.2.A",
+                  "text": "Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases."
+                },
+                {
+                  "code": "L.KL.7.2.B",
+                  "text": "Gather vocabulary knowledge when selecting a word or phrase important to comprehension or expression."
+                },
+                {
+                  "code": "L.KL.7.2.C",
+                  "text": "Choose language that expresses ideas precisely and concisely, recognizing and eliminating wordiness and redundancy."
+                }
               ],
               "subgroup": null
             }
@@ -161,9 +278,18 @@
               "code": "L.KL.8.2",
               "main": "Use knowledge of language and its conventions when writing, speaking, reading, or listening.",
               "subs": [
-                "Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases.",
-                "Gather vocabulary knowledge when selecting a word or phrase important to comprehension or expression.",
-                "Use verbs in the active and passive voice and in the conditional and subjunctive mood to achieve particular effects (e.g., emphasizing the actor or the action; expressing uncertainty or describing a state contrary to fact)."
+                {
+                  "code": "L.KL.8.2.A",
+                  "text": "Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases."
+                },
+                {
+                  "code": "L.KL.8.2.B",
+                  "text": "Gather vocabulary knowledge when selecting a word or phrase important to comprehension or expression."
+                },
+                {
+                  "code": "L.KL.8.2.C",
+                  "text": "Use verbs in the active and passive voice and in the conditional and subjunctive mood to achieve particular effects (e.g., emphasizing the actor or the action; expressing uncertainty or describing a state contrary to fact)."
+                }
               ],
               "subgroup": null
             }
@@ -181,9 +307,18 @@
               "code": "L.VL.5.2",
               "main": "Determine or clarify the meaning of unknown and multiple-meaning academic and domain-specific words and phrases based on grade 5 reading and content, choosing flexibly from a range of strategies.",
               "subs": [
-                "Use context (e.g., cause/effect relationships and comparisons in text) as a clue to the meaning of a word or phrase.",
-                "Use common, grade-appropriate Greek and Latin affixes and roots as clues to the meaning of a word (e.g., photograph, photosynthesis).",
-                "Consult reference materials (e.g., dictionaries, glossaries, thesauruses), both print and digital, to find the pronunciation and determine or clarify the precise meaning of key words and phrases."
+                {
+                  "code": "L.VL.5.2.A",
+                  "text": "Use context (e.g., cause/effect relationships and comparisons in text) as a clue to the meaning of a word or phrase."
+                },
+                {
+                  "code": "L.VL.5.2.B",
+                  "text": "Use common, grade-appropriate Greek and Latin affixes and roots as clues to the meaning of a word (e.g., photograph, photosynthesis)."
+                },
+                {
+                  "code": "L.VL.5.2.C",
+                  "text": "Consult reference materials (e.g., dictionaries, glossaries, thesauruses), both print and digital, to find the pronunciation and determine or clarify the precise meaning of key words and phrases."
+                }
               ],
               "subgroup": "sentence_composition"
             }
@@ -194,11 +329,26 @@
               "code": "L.VL.6.3",
               "main": "Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 6 reading and content, including technical meanings, choosing flexibly from a range of strategies.",
               "subs": [
-                "Use context (e.g., the overall meaning of a sentence or paragraph; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase.",
-                "Determine the meaning of words and phrases as they are used, including figurative, connotative, and technical meanings.",
-                "Use common, grade-appropriate Greek or Latin affixes and roots as clues to the meaning of a word (e.g., audience, auditory, audible).",
-                "Consult reference materials (e.g., dictionaries, glossaries, thesauruses), both print and digital, to find the pronunciation of a word or determine or clarify its precise meaning or its part of speech.",
-                "Verify the preliminary determination of the meaning of a word or phrase (e.g., by checking the inferred meaning in context or in a dictionary)."
+                {
+                  "code": "L.VL.6.3.A",
+                  "text": "Use context (e.g., the overall meaning of a sentence or paragraph; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase."
+                },
+                {
+                  "code": "L.VL.6.3.B",
+                  "text": "Determine the meaning of words and phrases as they are used, including figurative, connotative, and technical meanings."
+                },
+                {
+                  "code": "L.VL.6.3.C",
+                  "text": "Use common, grade-appropriate Greek or Latin affixes and roots as clues to the meaning of a word (e.g., audience, auditory, audible)."
+                },
+                {
+                  "code": "L.VL.6.3.D",
+                  "text": "Consult reference materials (e.g., dictionaries, glossaries, thesauruses), both print and digital, to find the pronunciation of a word or determine or clarify its precise meaning or its part of speech."
+                },
+                {
+                  "code": "L.VL.6.3.E",
+                  "text": "Verify the preliminary determination of the meaning of a word or phrase (e.g., by checking the inferred meaning in context or in a dictionary)."
+                }
               ],
               "subgroup": null
             }
@@ -209,11 +359,26 @@
               "code": "L.VL.7.3",
               "main": "Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 7 reading and content, including technical meanings, choosing flexibly from a range of strategies.",
               "subs": [
-                "Use context (e.g., the overall meaning of a sentence or paragraph; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase.",
-                "Use common, grade-appropriate Greek or Latin affixes and roots as clues to the meaning of a word (e.g., belligerent, bellicose, rebel).",
-                "Analyze the impact of a specific word choice on meaning and tone.",
-                "Consult reference materials (e.g., dictionaries, glossaries, thesauruses), both print and digital, to find the pronunciation of a word or determine or clarify its precise meaning or its part of speech.",
-                "Verify the preliminary determination of the meaning of a word or phrase (e.g., by checking the inferred meaning in context or in a dictionary)."
+                {
+                  "code": "L.VL.7.3.A",
+                  "text": "Use context (e.g., the overall meaning of a sentence or paragraph; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase."
+                },
+                {
+                  "code": "L.VL.7.3.B",
+                  "text": "Use common, grade-appropriate Greek or Latin affixes and roots as clues to the meaning of a word (e.g., belligerent, bellicose, rebel)."
+                },
+                {
+                  "code": "L.VL.7.3.C",
+                  "text": "Analyze the impact of a specific word choice on meaning and tone."
+                },
+                {
+                  "code": "L.VL.7.3.D",
+                  "text": "Consult reference materials (e.g., dictionaries, glossaries, thesauruses), both print and digital, to find the pronunciation of a word or determine or clarify its precise meaning or its part of speech."
+                },
+                {
+                  "code": "L.VL.7.3.E",
+                  "text": "Verify the preliminary determination of the meaning of a word or phrase (e.g., by checking the inferred meaning in context or in a dictionary)."
+                }
               ],
               "subgroup": null
             }
@@ -224,11 +389,26 @@
               "code": "L.VL.8.3",
               "main": "Determine or clarify the meaning of unknown and multiple-meaning words or phrases based on grade 8 reading and content, including technical meanings, choosing flexibly from a range of strategies.",
               "subs": [
-                "Use context (e.g., the overall meaning of a sentence or paragraph; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase.",
-                "Analyze the impact of specific word choices on meaning and tone.",
-                "Use common, grade-appropriate Greek or Latin affixes and roots as clues to the meaning of a word (e.g., precede, recede, secede).",
-                "Consult reference materials (e.g., dictionaries, glossaries, thesauruses), both print and digital, to find the pronunciation of a word or determine or clarify its precise meaning or its part of speech.",
-                "Verify the preliminary determination of the meaning of a word or phrase (e.g., by checking the inferred meaning in context or in a dictionary)."
+                {
+                  "code": "L.VL.8.3.A",
+                  "text": "Use context (e.g., the overall meaning of a sentence or paragraph; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase."
+                },
+                {
+                  "code": "L.VL.8.3.B",
+                  "text": "Analyze the impact of specific word choices on meaning and tone."
+                },
+                {
+                  "code": "L.VL.8.3.C",
+                  "text": "Use common, grade-appropriate Greek or Latin affixes and roots as clues to the meaning of a word (e.g., precede, recede, secede)."
+                },
+                {
+                  "code": "L.VL.8.3.D",
+                  "text": "Consult reference materials (e.g., dictionaries, glossaries, thesauruses), both print and digital, to find the pronunciation of a word or determine or clarify its precise meaning or its part of speech."
+                },
+                {
+                  "code": "L.VL.8.3.E",
+                  "text": "Verify the preliminary determination of the meaning of a word or phrase (e.g., by checking the inferred meaning in context or in a dictionary)."
+                }
               ],
               "subgroup": null
             }
@@ -246,9 +426,18 @@
               "code": "L.VI.5.3",
               "main": "Demonstrate understanding of figurative language, word relationships, and nuances in word meanings.",
               "subs": [
-                "Interpret figurative language, including similes and metaphors, in context.",
-                "Recognize and explain the meaning of common idioms, adages, and proverbs.",
-                "Use the relationship between particular words (e.g., synonyms, antonyms, homographs) to better understand each of the words."
+                {
+                  "code": "L.VI.5.3.A",
+                  "text": "Interpret figurative language, including similes and metaphors, in context."
+                },
+                {
+                  "code": "L.VI.5.3.B",
+                  "text": "Recognize and explain the meaning of common idioms, adages, and proverbs."
+                },
+                {
+                  "code": "L.VI.5.3.C",
+                  "text": "Use the relationship between particular words (e.g., synonyms, antonyms, homographs) to better understand each of the words."
+                }
               ],
               "subgroup": "sentence_composition"
             }
@@ -259,10 +448,22 @@
               "code": "L.VI.6.4",
               "main": "Demonstrate understanding of figurative language, word relationships, and nuances in word meanings.",
               "subs": [
-                "Interpret figures of speech (e.g., personification) in context.",
-                "Use the relationship between particular words (e.g., cause/effect, part/whole, item/category) to better understand each of the words.",
-                "Analyze the impact of a specific word choice on meaning and tone.",
-                "Distinguish among the connotations (associations) of words with similar denotations (definitions) (e.g., stingy, scrimping, economical, unwasteful, thrifty)."
+                {
+                  "code": "L.VI.6.4.A",
+                  "text": "Interpret figures of speech (e.g., personification) in context."
+                },
+                {
+                  "code": "L.VI.6.4.B",
+                  "text": "Use the relationship between particular words (e.g., cause/effect, part/whole, item/category) to better understand each of the words."
+                },
+                {
+                  "code": "L.VI.6.4.C",
+                  "text": "Analyze the impact of a specific word choice on meaning and tone."
+                },
+                {
+                  "code": "L.VI.6.4.D",
+                  "text": "Distinguish among the connotations (associations) of words with similar denotations (definitions) (e.g., stingy, scrimping, economical, unwasteful, thrifty)."
+                }
               ],
               "subgroup": null
             }
@@ -273,10 +474,22 @@
               "code": "L.VI.7.4",
               "main": "Demonstrate understanding of figurative language, word relationships, and nuances in word meanings.",
               "subs": [
-                "Interpret figures of speech (e.g., literary, biblical, and mythological allusions) in context.",
-                "Use the relationship between particular words (e.g., synonym/antonym, analogy) to better understand each of the words.",
-                "Analyze the impact of rhymes and other repetitions of sound (e.g., alliteration) on a specific verse or stanza or a poem or section of a story or drama.",
-                "Distinguish among the connotations (associations) of words with similar denotations (definitions) (e.g., refined, respectful, polite, diplomatic, condescending)."
+                {
+                  "code": "L.VI.7.4.A",
+                  "text": "Interpret figures of speech (e.g., literary, biblical, and mythological allusions) in context."
+                },
+                {
+                  "code": "L.VI.7.4.B",
+                  "text": "Use the relationship between particular words (e.g., synonym/antonym, analogy) to better understand each of the words."
+                },
+                {
+                  "code": "L.VI.7.4.C",
+                  "text": "Analyze the impact of rhymes and other repetitions of sound (e.g., alliteration) on a specific verse or stanza or a poem or section of a story or drama."
+                },
+                {
+                  "code": "L.VI.7.4.D",
+                  "text": "Distinguish among the connotations (associations) of words with similar denotations (definitions) (e.g., refined, respectful, polite, diplomatic, condescending)."
+                }
               ],
               "subgroup": null
             }
@@ -287,10 +500,22 @@
               "code": "L.VI.8.4",
               "main": "Demonstrate understanding of figurative language, word relationships, and nuances in word meanings.",
               "subs": [
-                "Interpret figures of speech (e.g., verbal irony, puns) in context.",
-                "Use the relationship between particular words to better understand each of the words.",
-                "Analyze the impact of specific word choices on meaning and tone, including analogies or allusions to other texts.",
-                "Distinguish among the connotations (associations) of words with similar denotations (definitions) (e.g., bullheaded, willful, firm, persistent, resolute)."
+                {
+                  "code": "L.VI.8.4.A",
+                  "text": "Interpret figures of speech (e.g., verbal irony, puns) in context."
+                },
+                {
+                  "code": "L.VI.8.4.B",
+                  "text": "Use the relationship between particular words to better understand each of the words."
+                },
+                {
+                  "code": "L.VI.8.4.C",
+                  "text": "Analyze the impact of specific word choices on meaning and tone, including analogies or allusions to other texts."
+                },
+                {
+                  "code": "L.VI.8.4.D",
+                  "text": "Distinguish among the connotations (associations) of words with similar denotations (definitions) (e.g., bullheaded, willful, firm, persistent, resolute)."
+                }
               ],
               "subgroup": null
             }
@@ -860,10 +1085,22 @@
               "code": "W.AW.5.1",
               "main": "Write opinion pieces on topics or texts, supporting a point of view with reasons and information.",
               "subs": [
-                "Introduce a topic or text clearly, state an opinion, and create an organizational structure in which ideas are logically grouped to support the writer’s purpose.",
-                "Provide logically ordered reasons that are supported by facts and details from text(s), quote directly from text when appropriate.",
-                "Link opinion and reasons using words, phrases, and clauses (e.g., consequently, specifically).",
-                "Provide a conclusion related to the opinion presented."
+                {
+                  "code": "W.AW.5.1.A",
+                  "text": "Introduce a topic or text clearly, state an opinion, and create an organizational structure in which ideas are logically grouped to support the writer’s purpose."
+                },
+                {
+                  "code": "W.AW.5.1.B",
+                  "text": "Provide logically ordered reasons that are supported by facts and details from text(s), quote directly from text when appropriate."
+                },
+                {
+                  "code": "W.AW.5.1.C",
+                  "text": "Link opinion and reasons using words, phrases, and clauses (e.g., consequently, specifically)."
+                },
+                {
+                  "code": "W.AW.5.1.D",
+                  "text": "Provide a conclusion related to the opinion presented."
+                }
               ],
               "subgroup": null
             }
@@ -874,11 +1111,26 @@
               "code": "W.AW.6.1",
               "main": "Write arguments on discipline-specific content (e.g., social studies, science, math, technical subjects, English/Language Arts) to support claims with clear reasons and relevant evidence.",
               "subs": [
-                "Introduce claim(s) about a topic or issue and organize the reasons and evidence logically.",
-                "Support claim(s) with logical reasoning and relevant, accurate data and evidence, that demonstrate an understanding of the topic or text, using credible sources.",
-                "Use words, phrases, and clauses to link and clarify the relationships among claim(s), reasons and evidence.",
-                "Establish and maintain a formal/academic style, approach, and form.",
-                "Provide a concluding statement or section that follows from the argument presented."
+                {
+                  "code": "W.AW.6.1.A",
+                  "text": "Introduce claim(s) about a topic or issue and organize the reasons and evidence logically."
+                },
+                {
+                  "code": "W.AW.6.1.B",
+                  "text": "Support claim(s) with logical reasoning and relevant, accurate data and evidence, that demonstrate an understanding of the topic or text, using credible sources."
+                },
+                {
+                  "code": "W.AW.6.1.C",
+                  "text": "Use words, phrases, and clauses to link and clarify the relationships among claim(s), reasons and evidence."
+                },
+                {
+                  "code": "W.AW.6.1.D",
+                  "text": "Establish and maintain a formal/academic style, approach, and form."
+                },
+                {
+                  "code": "W.AW.6.1.E",
+                  "text": "Provide a concluding statement or section that follows from the argument presented."
+                }
               ],
               "subgroup": null
             }
@@ -889,11 +1141,26 @@
               "code": "W.AW.7.1",
               "main": "Write arguments on discipline-specific content (e.g., social studies, science, technical subjects, English/Language Arts) to support claims with clear reasons and relevant evidence.",
               "subs": [
-                "Introduce claim(s) about a topic or issue, acknowledge alternate or opposing claims, and organize the reasons and evidence logically.",
-                "Support claim(s) with logical reasoning and relevant, accurate data and evidence that demonstrate an understanding of the topic or text, using credible sources.",
-                "Use words, phrases, and clauses to create cohesion and clarify the relationships among claim(s), reasons, and evidence.",
-                "Establish and maintain a formal style/academic style, approach, and form.",
-                "Provide a concluding statement or section that follows from and supports the argument presented."
+                {
+                  "code": "W.AW.7.1.A",
+                  "text": "Introduce claim(s) about a topic or issue, acknowledge alternate or opposing claims, and organize the reasons and evidence logically."
+                },
+                {
+                  "code": "W.AW.7.1.B",
+                  "text": "Support claim(s) with logical reasoning and relevant, accurate data and evidence that demonstrate an understanding of the topic or text, using credible sources."
+                },
+                {
+                  "code": "W.AW.7.1.C",
+                  "text": "Use words, phrases, and clauses to create cohesion and clarify the relationships among claim(s), reasons, and evidence."
+                },
+                {
+                  "code": "W.AW.7.1.D",
+                  "text": "Establish and maintain a formal style/academic style, approach, and form."
+                },
+                {
+                  "code": "W.AW.7.1.E",
+                  "text": "Provide a concluding statement or section that follows from and supports the argument presented."
+                }
               ],
               "subgroup": null
             }
@@ -904,11 +1171,26 @@
               "code": "W.AW.8.1",
               "main": "Write arguments on discipline-specific content (e.g., social studies, science, technical subjects, English/Language Arts) to support claims with clear reasons and relevant evidence.",
               "subs": [
-                "Introduce claim(s) about a topic or issue, acknowledge and distinguish the claim(s) from alternate or opposing claims, and organize the reasons and evidence logically.",
-                "Support claim(s) with logical reasoning and relevant evidence, using relevant, accurate data and evidence that demonstrate an understanding of the topic or text, using credible sources.",
-                "Use words, phrases, and clauses to create cohesion and clarify the relationships among claim(s), counterclaims, reasons, and evidence.",
-                "Establish and maintain a formal or academic style, approach, and form.",
-                "Provide a concluding statement or section that follows from and supports the argument presented."
+                {
+                  "code": "W.AW.8.1.A",
+                  "text": "Introduce claim(s) about a topic or issue, acknowledge and distinguish the claim(s) from alternate or opposing claims, and organize the reasons and evidence logically."
+                },
+                {
+                  "code": "W.AW.8.1.B",
+                  "text": "Support claim(s) with logical reasoning and relevant evidence, using relevant, accurate data and evidence that demonstrate an understanding of the topic or text, using credible sources."
+                },
+                {
+                  "code": "W.AW.8.1.C",
+                  "text": "Use words, phrases, and clauses to create cohesion and clarify the relationships among claim(s), counterclaims, reasons, and evidence."
+                },
+                {
+                  "code": "W.AW.8.1.D",
+                  "text": "Establish and maintain a formal or academic style, approach, and form."
+                },
+                {
+                  "code": "W.AW.8.1.E",
+                  "text": "Provide a concluding statement or section that follows from and supports the argument presented."
+                }
               ],
               "subgroup": null
             }
@@ -926,11 +1208,26 @@
               "code": "W.IW.5.2",
               "main": "Write informative/explanatory texts to examine a topic and convey ideas and information clearly.",
               "subs": [
-                "Introduce a topic clearly to provide a focus and group related information logically; include text features such as headings, illustrations, and multimedia when useful to aid in comprehension.",
-                "Develop the topic with facts, definitions, concrete details, quotations, or other information and examples related to the topic.",
-                "Link ideas within paragraphs and sections of information using words, phrases, and clauses (e.g., in contrast, especially).",
-                "Use precise language and domain-specific vocabulary to inform about or explain the topic.",
-                "Provide a conclusion related to the information of explanation presented."
+                {
+                  "code": "W.IW.5.2.A",
+                  "text": "Introduce a topic clearly to provide a focus and group related information logically; include text features such as headings, illustrations, and multimedia when useful to aid in comprehension."
+                },
+                {
+                  "code": "W.IW.5.2.B",
+                  "text": "Develop the topic with facts, definitions, concrete details, quotations, or other information and examples related to the topic."
+                },
+                {
+                  "code": "W.IW.5.2.C",
+                  "text": "Link ideas within paragraphs and sections of information using words, phrases, and clauses (e.g., in contrast, especially)."
+                },
+                {
+                  "code": "W.IW.5.2.D",
+                  "text": "Use precise language and domain-specific vocabulary to inform about or explain the topic."
+                },
+                {
+                  "code": "W.IW.5.2.E",
+                  "text": "Provide a conclusion related to the information of explanation presented."
+                }
               ],
               "subgroup": null
             }
@@ -941,12 +1238,30 @@
               "code": "W.IW.6.2",
               "main": "Write informative/explanatory texts (including the narration of historical events, scientific procedures/ experiments, or technical processes) to examine a topic and convey ideas, concepts, and information through the selection, organization, and analysis of relevant content.",
               "subs": [
-                "Introduce a topic and organize ideas, concepts, and information, using text structures (e.g., definition, classification, comparison/contrast, cause/effect, etc.) and text features (e.g., headings, graphics, and multimedia) when useful to aid in comprehension.",
-                "Develop the topic with relevant facts, definitions, concrete details, quotations, or other information and examples.",
-                "Use appropriate transitions to clarify the relationships among ideas and concepts.",
-                "Use precise language and domain-specific vocabulary to inform about or explain the topic.",
-                "Acknowledge and attempt a formal/academic style, approach, and form.",
-                "Provide a concluding statement or section (e.g., sentence, part of a paragraph, paragraph, or multiple paragraphs) that follows from and supports the information or explanation presented."
+                {
+                  "code": "W.IW.6.2.A",
+                  "text": "Introduce a topic and organize ideas, concepts, and information, using text structures (e.g., definition, classification, comparison/contrast, cause/effect, etc.) and text features (e.g., headings, graphics, and multimedia) when useful to aid in comprehension."
+                },
+                {
+                  "code": "W.IW.6.2.B",
+                  "text": "Develop the topic with relevant facts, definitions, concrete details, quotations, or other information and examples."
+                },
+                {
+                  "code": "W.IW.6.2.C",
+                  "text": "Use appropriate transitions to clarify the relationships among ideas and concepts."
+                },
+                {
+                  "code": "W.IW.6.2.D",
+                  "text": "Use precise language and domain-specific vocabulary to inform about or explain the topic."
+                },
+                {
+                  "code": "W.IW.6.2.E",
+                  "text": "Acknowledge and attempt a formal/academic style, approach, and form."
+                },
+                {
+                  "code": "W.IW.6.2.F",
+                  "text": "Provide a concluding statement or section (e.g., sentence, part of a paragraph, paragraph, or multiple paragraphs) that follows from and supports the information or explanation presented."
+                }
               ],
               "subgroup": null
             }
@@ -957,12 +1272,30 @@
               "code": "W.IW.7.2",
               "main": "Write informative/explanatory texts (including the narration of historical events, scientific procedures/ experiments, or technical processes) to examine a topic and convey ideas, concepts, and information through the selection, organization, and analysis of relevant content.",
               "subs": [
-                "Introduce a topic clearly, previewing what is to follow; organize ideas, concepts, and information, using text structures (e.g., definition, classification, comparison/contrast, cause/effect, etc.) and text features (e.g., headings, graphics, and multimedia) when useful to aid in comprehension.",
-                "Develop the topic with relevant facts, definitions, concrete details, quotations, or other information and examples.",
-                "Use appropriate transitions to create cohesion and clarify the relationships among ideas and concepts.",
-                "Use precise language and domain/ grade-level- specific vocabulary to inform about or explain the topic.",
-                "Establish and maintain a formal style academic style, approach, and form.",
-                "Provide a concluding statement or section (e.g., sentence, part of a paragraph, paragraph, or multiple paragraphs) that follows the flow of ideas, reflects back on the topic, and supports the information or explanation presented."
+                {
+                  "code": "W.IW.7.2.A",
+                  "text": "Introduce a topic clearly, previewing what is to follow; organize ideas, concepts, and information, using text structures (e.g., definition, classification, comparison/contrast, cause/effect, etc.) and text features (e.g., headings, graphics, and multimedia) when useful to aid in comprehension."
+                },
+                {
+                  "code": "W.IW.7.2.B",
+                  "text": "Develop the topic with relevant facts, definitions, concrete details, quotations, or other information and examples."
+                },
+                {
+                  "code": "W.IW.7.2.C",
+                  "text": "Use appropriate transitions to create cohesion and clarify the relationships among ideas and concepts."
+                },
+                {
+                  "code": "W.IW.7.2.D",
+                  "text": "Use precise language and domain/ grade-level- specific vocabulary to inform about or explain the topic."
+                },
+                {
+                  "code": "W.IW.7.2.E",
+                  "text": "Establish and maintain a formal style academic style, approach, and form."
+                },
+                {
+                  "code": "W.IW.7.2.F",
+                  "text": "Provide a concluding statement or section (e.g., sentence, part of a paragraph, paragraph, or multiple paragraphs) that follows the flow of ideas, reflects back on the topic, and supports the information or explanation presented."
+                }
               ],
               "subgroup": null
             }
@@ -973,12 +1306,30 @@
               "code": "W.IW.8.2",
               "main": "Write informative/explanatory texts (including the narration of historical events, scientific procedures/ experiments, or technical processes) to examine a topic and convey ideas, concepts, and information through the selection, organization, and analysis of relevant content.",
               "subs": [
-                "Introduce a topic clearly, previewing what is to follow; and organize ideas, concepts, and information, using text structures (e.g., definition, classification, comparison/contrast, cause/effect, etc.) and text features (e.g., headings, graphics, and multimedia) when useful to aid in comprehension.",
-                "Develop the topic with relevant, well-chosen facts, definitions, concrete details, quotations, or other information and examples.",
-                "Use appropriate transitions to create cohesion and clarify the relationships among ideas and concepts.",
-                "Use precise language and domain/grade-level- specific vocabulary to inform about or explain the topic.",
-                "Establish and maintain a formal style/academic style, approach, and form.",
-                "Provide a concluding statement or section (e.g., sentence, part of a paragraph, paragraph, or multiple paragraphs) that synthesizes the information or explanation presented."
+                {
+                  "code": "W.IW.8.2.A",
+                  "text": "Introduce a topic clearly, previewing what is to follow; and organize ideas, concepts, and information, using text structures (e.g., definition, classification, comparison/contrast, cause/effect, etc.) and text features (e.g., headings, graphics, and multimedia) when useful to aid in comprehension."
+                },
+                {
+                  "code": "W.IW.8.2.B",
+                  "text": "Develop the topic with relevant, well-chosen facts, definitions, concrete details, quotations, or other information and examples."
+                },
+                {
+                  "code": "W.IW.8.2.C",
+                  "text": "Use appropriate transitions to create cohesion and clarify the relationships among ideas and concepts."
+                },
+                {
+                  "code": "W.IW.8.2.D",
+                  "text": "Use precise language and domain/grade-level- specific vocabulary to inform about or explain the topic."
+                },
+                {
+                  "code": "W.IW.8.2.E",
+                  "text": "Establish and maintain a formal style/academic style, approach, and form."
+                },
+                {
+                  "code": "W.IW.8.2.F",
+                  "text": "Provide a concluding statement or section (e.g., sentence, part of a paragraph, paragraph, or multiple paragraphs) that synthesizes the information or explanation presented."
+                }
               ],
               "subgroup": null
             }
@@ -996,11 +1347,26 @@
               "code": "W.NW.5.3",
               "main": "Write narratives to develop real or imagined experiences or events using effective technique, descriptive details, and clear event sequences.",
               "subs": [
-                "Orient the reader by establishing a situation and introducing a narrator and/or characters; organize an event sequence that unfolds naturally.",
-                "Use narrative techniques, such as dialogue, description, and pacing, to develop experiences and events or show the responses of characters to situations.",
-                "Use a variety of transitional words, phrases, and clauses to manage the sequence of events.",
-                "Use concrete words and phrases and sensory details to convey experiences and events precisely.",
-                "Provide a conclusion that follows from the narrated experiences or events."
+                {
+                  "code": "W.NW.5.3.A",
+                  "text": "Orient the reader by establishing a situation and introducing a narrator and/or characters; organize an event sequence that unfolds naturally."
+                },
+                {
+                  "code": "W.NW.5.3.B",
+                  "text": "Use narrative techniques, such as dialogue, description, and pacing, to develop experiences and events or show the responses of characters to situations."
+                },
+                {
+                  "code": "W.NW.5.3.C",
+                  "text": "Use a variety of transitional words, phrases, and clauses to manage the sequence of events."
+                },
+                {
+                  "code": "W.NW.5.3.D",
+                  "text": "Use concrete words and phrases and sensory details to convey experiences and events precisely."
+                },
+                {
+                  "code": "W.NW.5.3.E",
+                  "text": "Provide a conclusion that follows from the narrated experiences or events."
+                }
               ],
               "subgroup": null
             }
@@ -1011,11 +1377,26 @@
               "code": "W.NW.6.3",
               "main": "Write narratives to develop real or imagined experiences or events using effective technique, relevant descriptive details, and well-structured event sequences.",
               "subs": [
-                "Engage and orient the reader by establishing a context and introducing a narrator and/or characters; organize an event sequence that unfolds naturally and logically.",
-                "Use narrative techniques, such as dialogue, pacing, and description, to develop experiences, events, and/or characters.",
-                "Use a variety of transition words, phrases, and clauses to convey sequence and signal shifts from one time frame or setting to another.",
-                "Use precise words and phrases, relevant descriptive details, and sensory language to convey experiences and events.",
-                "Provide a conclusion that follows from the narrated experiences or events."
+                {
+                  "code": "W.NW.6.3.A",
+                  "text": "Engage and orient the reader by establishing a context and introducing a narrator and/or characters; organize an event sequence that unfolds naturally and logically."
+                },
+                {
+                  "code": "W.NW.6.3.B",
+                  "text": "Use narrative techniques, such as dialogue, pacing, and description, to develop experiences, events, and/or characters."
+                },
+                {
+                  "code": "W.NW.6.3.C",
+                  "text": "Use a variety of transition words, phrases, and clauses to convey sequence and signal shifts from one time frame or setting to another."
+                },
+                {
+                  "code": "W.NW.6.3.D",
+                  "text": "Use precise words and phrases, relevant descriptive details, and sensory language to convey experiences and events."
+                },
+                {
+                  "code": "W.NW.6.3.E",
+                  "text": "Provide a conclusion that follows from the narrated experiences or events."
+                }
               ],
               "subgroup": null
             }
@@ -1026,11 +1407,26 @@
               "code": "W.NW.7.3",
               "main": "Write narratives to develop real or imagined experiences or events using effective technique, relevant descriptive details, and well-structured event sequences.",
               "subs": [
-                "Engage and orient the reader by establishing a context and point of view and introducing a narrator and/or characters; organize an event sequence that unfolds naturally and logically.",
-                "Use narrative techniques, such as dialogue, pacing, and description, to develop experiences, events, and/or characters.",
-                "Use a variety of transition words, phrases, and clauses to convey sequence and signal shifts from one time frame or setting to another.",
-                "Use precise words and phrases, relevant descriptive details, and sensory language to capture the action and convey experiences and events.",
-                "Provide a conclusion that follows from and reflects on the narrated experiences or events."
+                {
+                  "code": "W.NW.7.3.A",
+                  "text": "Engage and orient the reader by establishing a context and point of view and introducing a narrator and/or characters; organize an event sequence that unfolds naturally and logically."
+                },
+                {
+                  "code": "W.NW.7.3.B",
+                  "text": "Use narrative techniques, such as dialogue, pacing, and description, to develop experiences, events, and/or characters."
+                },
+                {
+                  "code": "W.NW.7.3.C",
+                  "text": "Use a variety of transition words, phrases, and clauses to convey sequence and signal shifts from one time frame or setting to another."
+                },
+                {
+                  "code": "W.NW.7.3.D",
+                  "text": "Use precise words and phrases, relevant descriptive details, and sensory language to capture the action and convey experiences and events."
+                },
+                {
+                  "code": "W.NW.7.3.E",
+                  "text": "Provide a conclusion that follows from and reflects on the narrated experiences or events."
+                }
               ],
               "subgroup": null
             }
@@ -1041,11 +1437,26 @@
               "code": "W.NW.8.3",
               "main": "Write narratives to develop real or imagined experiences or events using effective technique, relevant descriptive details, and well-structured event sequences.",
               "subs": [
-                "Engage and orient the reader by establishing a context and point of view and introducing a narrator and/or characters; organize an event sequence that unfolds naturally and logically.",
-                "Use narrative techniques, such as dialogue, pacing, description, and reflection, to develop experiences, events, and/or characters.",
-                "Use a variety of transition words, phrases, and clauses to convey sequence, signal shifts from one time frame or setting to another, and show the relationships among experiences and events.",
-                "Use precise words and phrases, relevant descriptive details, and sensory language to capture the action and convey experiences and events.",
-                "Provide a conclusion that follows from and reflects on the narrated experiences or events."
+                {
+                  "code": "W.NW.8.3.A",
+                  "text": "Engage and orient the reader by establishing a context and point of view and introducing a narrator and/or characters; organize an event sequence that unfolds naturally and logically."
+                },
+                {
+                  "code": "W.NW.8.3.B",
+                  "text": "Use narrative techniques, such as dialogue, pacing, description, and reflection, to develop experiences, events, and/or characters."
+                },
+                {
+                  "code": "W.NW.8.3.C",
+                  "text": "Use a variety of transition words, phrases, and clauses to convey sequence, signal shifts from one time frame or setting to another, and show the relationships among experiences and events."
+                },
+                {
+                  "code": "W.NW.8.3.D",
+                  "text": "Use precise words and phrases, relevant descriptive details, and sensory language to capture the action and convey experiences and events."
+                },
+                {
+                  "code": "W.NW.8.3.E",
+                  "text": "Provide a conclusion that follows from and reflects on the narrated experiences or events."
+                }
               ],
               "subgroup": null
             }
@@ -1063,11 +1474,26 @@
               "code": "W.WP.5.4",
               "main": "With guidance and support from peers and adults, develop and strengthen writing as needed by planning, revising, editing, rewriting, or trying a new approach.",
               "subs": [
-                "Consider audience, purpose, and intent before writing.",
-                "Plan appropriately to use specialized, topic-specific language appropriate for the audience, purpose and subject matter.",
-                "Consider writing as a process, including self-evaluation, revision and editing.",
-                "With adult and peer feedback, and digital or print tools such as a dictionary, thesaurus, and/or spell checker, evaluate whether the writing achieved its goal and make changes in content or form as necessary.",
-                "After initial drafting, expand, combine, and reduce sentences for meaning, audience, and style."
+                {
+                  "code": "W.WP.5.4.A",
+                  "text": "Consider audience, purpose, and intent before writing."
+                },
+                {
+                  "code": "W.WP.5.4.B",
+                  "text": "Plan appropriately to use specialized, topic-specific language appropriate for the audience, purpose and subject matter."
+                },
+                {
+                  "code": "W.WP.5.4.C",
+                  "text": "Consider writing as a process, including self-evaluation, revision and editing."
+                },
+                {
+                  "code": "W.WP.5.4.D",
+                  "text": "With adult and peer feedback, and digital or print tools such as a dictionary, thesaurus, and/or spell checker, evaluate whether the writing achieved its goal and make changes in content or form as necessary."
+                },
+                {
+                  "code": "W.WP.5.4.E",
+                  "text": "After initial drafting, expand, combine, and reduce sentences for meaning, audience, and style."
+                }
               ],
               "subgroup": null
             }
@@ -1247,10 +1673,22 @@
               "code": "SL.PE.5.1",
               "main": "Engage effectively in a range of collaborative discussions (one-on-one, in groups, and teacher-led) with diverse partners on grade 5 topics and texts, building on others’ ideas and expressing their own clearly.",
               "subs": [
-                "Explicitly draw on previously read text or material and other information known about the topic to explore ideas under discussion.",
-                "Follow agreed-upon rules for discussions and carry out assigned roles.",
-                "Pose and respond to specific questions by making comments that contribute to the discussion and elaborate on the remarks of others.",
-                "Review the key ideas expressed and draw conclusions in light of information and knowledge gained from the discussions."
+                {
+                  "code": "SL.PE.5.1.A",
+                  "text": "Explicitly draw on previously read text or material and other information known about the topic to explore ideas under discussion."
+                },
+                {
+                  "code": "SL.PE.5.1.B",
+                  "text": "Follow agreed-upon rules for discussions and carry out assigned roles."
+                },
+                {
+                  "code": "SL.PE.5.1.C",
+                  "text": "Pose and respond to specific questions by making comments that contribute to the discussion and elaborate on the remarks of others."
+                },
+                {
+                  "code": "SL.PE.5.1.D",
+                  "text": "Review the key ideas expressed and draw conclusions in light of information and knowledge gained from the discussions."
+                }
               ],
               "subgroup": null
             }
@@ -1261,10 +1699,22 @@
               "code": "SL.PE.6.1",
               "main": "Engage effectively in a range of collaborative discussions (one-on-one, in groups, and teacher-led) with diverse partners on grade 6 topics, texts, and issues, building on others’ ideas and expressing their own clearly.",
               "subs": [
-                "Come to discussions prepared, having read or studied required material; explicitly draw on that preparation by referring to evidence on the topic, text, or issue to probe and reflect on ideas under discussion.",
-                "Follow rules for collegial discussions, set specific goals and deadlines, and define individual roles as needed.",
-                "Pose and respond to specific questions with elaboration and detail by making comments that contribute to the topic, text, or issue under discussion.",
-                "Review the key ideas expressed and demonstrate understanding of multiple perspectives through reflection and paraphrasing."
+                {
+                  "code": "SL.PE.6.1.A",
+                  "text": "Come to discussions prepared, having read or studied required material; explicitly draw on that preparation by referring to evidence on the topic, text, or issue to probe and reflect on ideas under discussion."
+                },
+                {
+                  "code": "SL.PE.6.1.B",
+                  "text": "Follow rules for collegial discussions, set specific goals and deadlines, and define individual roles as needed."
+                },
+                {
+                  "code": "SL.PE.6.1.C",
+                  "text": "Pose and respond to specific questions with elaboration and detail by making comments that contribute to the topic, text, or issue under discussion."
+                },
+                {
+                  "code": "SL.PE.6.1.D",
+                  "text": "Review the key ideas expressed and demonstrate understanding of multiple perspectives through reflection and paraphrasing."
+                }
               ],
               "subgroup": null
             }
@@ -1275,10 +1725,22 @@
               "code": "SL.PE.7.1",
               "main": "Engage effectively in a range of collaborative discussions (one-on-one, in groups, and teacher-led) with diverse partners on grade 7 topics, texts, and issues, building on others’ ideas and expressing their own clearly.",
               "subs": [
-                "Come to discussions prepared, having read or researched material under study; explicitly draw on that preparation by referring to evidence on the topic, text, or issue to probe and reflect on ideas under discussion.",
-                "Follow rules for collegial discussions, track progress toward specific goals and deadlines, and define individual roles as needed.",
-                "Pose questions that elicit elaboration and respond to others’ questions and comments with relevant observations and ideas that bring the discussion back on topic as needed.",
-                "Acknowledge new information expressed by others and, when warranted, modify their own views."
+                {
+                  "code": "SL.PE.7.1.A",
+                  "text": "Come to discussions prepared, having read or researched material under study; explicitly draw on that preparation by referring to evidence on the topic, text, or issue to probe and reflect on ideas under discussion."
+                },
+                {
+                  "code": "SL.PE.7.1.B",
+                  "text": "Follow rules for collegial discussions, track progress toward specific goals and deadlines, and define individual roles as needed."
+                },
+                {
+                  "code": "SL.PE.7.1.C",
+                  "text": "Pose questions that elicit elaboration and respond to others’ questions and comments with relevant observations and ideas that bring the discussion back on topic as needed."
+                },
+                {
+                  "code": "SL.PE.7.1.D",
+                  "text": "Acknowledge new information expressed by others and, when warranted, modify their own views."
+                }
               ],
               "subgroup": null
             }
@@ -1289,10 +1751,22 @@
               "code": "SL.PE.8.1",
               "main": "Engage effectively in a range of collaborative discussions (one-on-one, in groups, and teacher-led) with diverse partners on grade 8 topics, texts, and issues, building on others’ ideas and expressing their own clearly.",
               "subs": [
-                "Come to discussions prepared, having read or researched material under study; explicitly draw on that preparation by referring to evidence on the topic, text, or issue to probe and reflect on ideas under discussion.",
-                "Follow rules for collegial discussions and decision-making, track progress toward specific goals and deadlines, and define individual roles as needed.",
-                "Pose questions that connect the ideas of several speakers and respond to others’ questions and comments with relevant evidence, observations, and ideas.",
-                "Acknowledge new information expressed by others, and, when warranted, qualify or justify their own views in light of the evidence presented."
+                {
+                  "code": "SL.PE.8.1.A",
+                  "text": "Come to discussions prepared, having read or researched material under study; explicitly draw on that preparation by referring to evidence on the topic, text, or issue to probe and reflect on ideas under discussion."
+                },
+                {
+                  "code": "SL.PE.8.1.B",
+                  "text": "Follow rules for collegial discussions and decision-making, track progress toward specific goals and deadlines, and define individual roles as needed."
+                },
+                {
+                  "code": "SL.PE.8.1.C",
+                  "text": "Pose questions that connect the ideas of several speakers and respond to others’ questions and comments with relevant evidence, observations, and ideas."
+                },
+                {
+                  "code": "SL.PE.8.1.D",
+                  "text": "Acknowledge new information expressed by others, and, when warranted, qualify or justify their own views in light of the evidence presented."
+                }
               ],
               "subgroup": null
             }

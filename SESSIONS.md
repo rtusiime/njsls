@@ -6,6 +6,41 @@ Entries are intentionally verbose. The point is full visibility: open the file a
 
 ---
 
+## Session 22 — 2026-06-05, 03:05 PM EDT
+*ELA: made each lettered sub-bullet individually addressable — `subs: [string]` → `subs: [{code, text}]`, codes assigned by list position (e.g. `L.SS.6.1.A`). Searchable on the ELA page (an exact sub-code highlights the bullet) and the hub; propagated to `all.json`. Source docx moved into the repo.*
+
+### User request
+
+"Update the ELA such that the letters under each standard map to a standard — e.g. search `L.SS.6.1.A` and get back 'Ensure that pronouns are in the proper case…'." User believed Math already did this; it does not — Math subs are plain strings too.
+
+### Approach / reliability
+
+Source `data/sources/2023_NJSLS_ELA.docx` (moved in from Downloads). Parsed `word/document.xml` with stdlib `zipfile` + `xml.etree` — deterministic; no docling/OCR needed for a structured docx (that unreliability was a PDF problem). The A/B/C letters are Word auto-numbering (`numPr`/`ilvl=0`), not literal text, so codes derive from list position. Validated existing `ela.json` subs against the docx: **all 34 sub-bearing entries match exactly, 0 discrepancies** → position-based lettering is safe. Nested items (`ilvl≥1`) exist only in grade 2–3 phonics (outside the 5–8 scope), so no sub-sub-codes — per user, those would just be bullets.
+
+### Changes
+
+- `data/ela.json` — 34 entries, 158 subs → `{code, text}` (letters A–H).
+- `ela.html` — render letter marker + `data-subcode`; search haystack includes sub-codes; exact sub-code query adds a `.sub-hit` highlight.
+- `index.html` — hub keyword haystack now handles object subs (and Math's string subs) and indexes sub-codes.
+- `data/all.json` — rebuilt; `L.SS.6.1.A` is queryable.
+- `CLAUDE.md` — ELA schema (`subs: [{code,text}]`), source-doc row → `data/sources/`, searchability note.
+- `data/sources/2023_NJSLS_ELA.docx` — source added to the repo.
+
+### Verification
+
+Served locally and drove the ELA page: searching `L.SS.6.1.A` → "Showing 1 standard" (L.SS.6.1) with sub A highlighted; letter markers render. `all.json` carries 158 ELA sub-codes; Math subs unchanged.
+
+### Not in scope / next
+
+- Math sub-codes (user chose ELA only for now).
+- CC (Common Core) crosswalk — searching a CCSS code returns the wording-matched NJSLS — queued next, using NJDOE's official 2016→2023 ELA crosswalk.
+
+### Commit
+
+(filled in after commit lands)
+
+---
+
 ## Session 21 — 2026-06-05, 02:52 PM EDT
 *Housekeeping: preserved the Science extraction provenance in-repo and added a `.gitignore`. The source PDFs (`NJSLS-Science_6-8.pdf` / `NJSLS-Science_K-5.pdf`) are gone from `../curriculum/`, so the `data/sources/science_*_extracted.json` files are now the only surviving copies of that extracted NGSS foundation — committed alongside the extract/patch/audit scripts so the pipeline stays reproducible.*
 
