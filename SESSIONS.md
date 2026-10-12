@@ -31,7 +31,22 @@ Main had moved on (Sessions 19–23, including Session 22's ELA sub-coding conve
 
 ### Verification findings and fixes
 
-(filled in below once the verification agents report)
+**Math vs NJDOE's registry (173 items).** All 61 subs are lettered correctly and **none are missing** — 112 completeness probes (next letter after each parent's last sub; `…a` on every sub-less standard) found nothing, so the "missing sub-standards" premise is definitively ruled out. But 44 items had real text defects; 43 fixed, each re-checked against NJ (or Common Core for "For example…" sentences, which NJ's registry omits):
+- **Content errors in the standard text (8):** 6.EE.B.7 "x + p" → "x + p = q"; 8.EE.A.2 `x2`/`x3` → `x^{2}`/`x^{3}`; 8.F.B.4 dropped "(x, y)"; 5.NBT.A.3.a paren inside the denominator ×3; 6.RP.A.3.c `1\frac{30}{00}` → `\frac{30}{100}`; 7.NS.A.1.b lost `|q|` bars; 7.NS.A.2.b "If q and q" → "If p and q" and `-(\frac{p}{q})`; 8.EE.A.2.a `\frac{}{2}` → `\sqrt{2}`.
+- **Wrong math in examples (10):** 5.NF.B.4.a `ab/bd` → `ac/bd`; 5.NF.B.7.a `1½` → `1/12`; 6.NS.C.7.c `|-30|`; 6.EE.A.2.c `V = 6s3` → `V = s^{3}`; 7.RP.A.1 complex fraction rendered as a product; 8.EE.A.1 / 8.EE.A.3 / 8.F.A.3 flattened exponents; 8.NS.A.2 and 8.EE.A.2.b `\frac{}{n}` → `\sqrt{n}`.
+- **Display artifacts (22):** literal `*x*`, `**,**`, `\$75`, `\>`/`\<`, stray `\ `, math glued to words (`\)of`). Variables rendered as `\(x\)` to match the existing house style (the agent's plain-letter versions read oddly: "as a parts of a partition of q").
+- **Punctuation (3)** + a global tidy of space-before-punctuation after math (8 texts).
+- Skipped 8.G.B.7 ("real-world" → NJ's "real world"): NJ's registry drops hyphens elsewhere too ("realworld", "twodigit"); ours matches Common Core.
+- Result: all 153 math expressions render in KaTeX strict mode with 0 errors.
+
+**Non-Math audit (51 findings; 45 fixed).** ELA's 130 statements and 158 subs match the official docx; Science's 75 statements match NGSS; Social Studies' 209 and CSDT are clean. Fixed:
+- ELA anchors TS and RW — restored dropped parentheticals from the docx.
+- Science MS-ESS1-3, MS-ESS3-1 clarifications — "space- based", "non- renewable" (verified vs ASN).
+- CLKS/CHPE — 22 page-footer fragments stored as core ideas ("2020 New Jersey Student Learni 2.2 Phy") deleted; the 52-entry CHPE glossary spliced into 2.3.12.DSDT.5's core ideas removed; 8 core-idea sentences split line-by-line across PE rows rejoined (fragments replaced in place, then adjacent blocks with now-identical core ideas merged — 7 merges, PE count and order unchanged); 10 stray-character fixes ("express y themselves", "have ir adequate", "rhythmic , activities", spaces inside cross-referenced codes, "self- assessment" etc.).
+
+**Left as-is — need the official PDF** (nj.gov is unreachable from the cloud session by curl and WebFetch alike, and no mirror carries the text): words lost to column truncation in CLKS `9.1.12.RM.1` core idea ("life c goals"), `9.1.12.RM.3` ("have d protections"), `9.2.12.CAP.14` ("career fi interview"); CHPE `2.2.12.MSC.1` core idea ("an participation", "gam sports") and statement ("d sport", "es"), `2.2.5.MSC.1` core idea (words missing before "free movement"). All but the last are grade-12 band, outside `all.json`.
+
+**Left as-is — typos in NJDOE's own source:** ELA W.*.6–8 "metacognition/self- correction" and W 7–8 sub "grade-level- specific" appear exactly so in the official docx; the repo quotes verbatim.
 
 ### Verification
 
@@ -39,11 +54,18 @@ Browser end-to-end (Playwright + Chromium, KaTeX served from its npm package —
 - `math.html` — 112 standards, 61 letter markers, 0 KaTeX errors; `6.RP.A.3.c`, `6.rp.a.3c`, `7.NS.A.2.d`, `5.NF.B.5.b` each → exactly one standard with the right sub highlighted; keyword `percent` unaffected.
 - Hub — the same codes (+ `L.SS.6.1.A`) → "1 exact code match" with the sub highlighted. Mocked Claude response `[6.RP.A.3.c, 6.RP.A.3, L.SS.6.1.A, 7.NS.A.2d, FAKE.9.Z.9]` → 3 cards (6.RP.A.3 / c, L.SS.6.1 / A, 7.NS.A.2 / d): duplicate merged, hallucination dropped. Captured request: same model + caching; all 219 subs in the prompt.
 - CC: `7.RP.A.2.a` + `7.RP.A.2b` (+ parent tag) → 2 chips on 7.RP.A.2 marked `sub a` / `sub b`; ELA `L.SS.6.1.A` → L.SS.6.1; SS `6.1.8.CivicsPI.3.a` → itself, nothing on a phantom parent.
-- `ela.html` / `science.html` / `social-studies.html` regressions clean; zero console or page errors on all five pages.
+- `ela.html` / `science.html` / `social-studies.html` regressions clean.
+- After the data fixes: corrected Math renders as real math (KaTeX annotations `\frac{30}{100}` on 6.RP.A.3.c, `\sqrt{2}` on 8.EE.A.2.a, `\frac{1}{12}` on 5.NF.B.7.a, "If p and q" on 7.NS.A.2.b) with no literal `*x*` / `**` / `\$` left; `chpe.html` / `clks.html` / `csdt.html` render all 278 / 300 / 163 PEs with no footer text, and 2.2.5.N.1–N.3 share their rejoined core idea.
+- 48 browser checks across all eight pages pass; zero console or page errors.
 
 ### Files touched
 
-- `data/math.json`, `data/all.json`, `math.html`, `index.html`, `assets/cc-backlinks.js`, `scripts/build_all.py`, `CLAUDE.md`, `SESSIONS.md` (+ data fixes listed above).
+- `data/math.json`, `data/ela.json`, `data/science.json`, `data/clks.json`, `data/chpe.json`, `data/all.json`, `math.html`, `index.html`, `assets/cc-backlinks.js`, `scripts/build_all.py`, `CLAUDE.md`, `SESSIONS.md`.
+
+### Not in scope / carried forward
+
+- The 6 truncations above need NJDOE's PDFs (`2020NJSLS-CLKS.pdf`, `2020NJSLS-CHPE.pdf`) — a session on a machine that can reach nj.gov.
+- Whether to correct the two NJDOE source typos in ELA is the user's call.
 
 ### Commit
 

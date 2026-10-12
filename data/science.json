@@ -2347,7 +2347,7 @@
           {
             "code": "MS-ESS1-3",
             "statement": "Analyze and interpret data to determine scale properties of objects in the solar system.",
-            "clarification": "Emphasis is on the analysis of data from Earth-based instruments, space- based telescopes, and spacecraft to determine similarities and differences among solar system objects. Examples of scale properties include the sizes of an object’s layers (such as crust and atmosphere), surface features (such as volcanoes), and orbital radius. Examples of data include statistical information, drawings and photographs, and models.",
+            "clarification": "Emphasis is on the analysis of data from Earth-based instruments, space-based telescopes, and spacecraft to determine similarities and differences among solar system objects. Examples of scale properties include the sizes of an object’s layers (such as crust and atmosphere), surface features (such as volcanoes), and orbital radius. Examples of data include statistical information, drawings and photographs, and models.",
             "assessment_boundary": "Assessment does not include recalling facts about properties of the planets and other solar system bodies.",
             "seps": [
               {
@@ -2671,7 +2671,7 @@
           {
             "code": "MS-ESS3-1",
             "statement": "Construct a scientific explanation based on evidence for how the uneven distributions of Earth’s mineral, energy, and groundwater resources are the result of past and current geoscience processes.",
-            "clarification": "Emphasis is on how these resources are limited and typically non- renewable, and how their distributions are significantly changing as a result of removal by humans. Examples of uneven distributions of resources as a result of past processes include but are not limited to petroleum (locations of the burial of organic marine sediments and subsequent geologic traps), metal ores (locations of past volcanic and hydrothermal activity associated with subduction zones), and soil (locations of active weathering and/or deposition of rock).",
+            "clarification": "Emphasis is on how these resources are limited and typically non-renewable, and how their distributions are significantly changing as a result of removal by humans. Examples of uneven distributions of resources as a result of past processes include but are not limited to petroleum (locations of the burial of organic marine sediments and subsequent geologic traps), metal ores (locations of past volcanic and hydrothermal activity associated with subduction zones), and soil (locations of active weathering and/or deposition of rock).",
             "seps": [
               {
                 "practice": "Constructing Explanations and Designing Solutions",

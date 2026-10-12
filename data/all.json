@@ -2512,7 +2512,7 @@
       "grade": "5",
       "domain": "5.OA - Operations and Algebraic Thinking",
       "cluster": "A. Write and interpret numerical expressions",
-      "statement": "Write simple expressions that record calculations with numbers, and interpret numerical expressions without evaluating them. For example, express the calculation \"add 8 and 7, then multiply by 2\" as \\(2 \\times (8 + 7)\\) . Recognize that \\(3 \\times (18932 + 921)\\) is three times as large as \\(18932 + 921\\) without having to calculate the indicated sum or product."
+      "statement": "Write simple expressions that record calculations with numbers, and interpret numerical expressions without evaluating them. For example, express the calculation \"add 8 and 7, then multiply by 2\" as \\(2 \\times (8 + 7)\\). Recognize that \\(3 \\times (18932 + 921)\\) is three times as large as \\(18932 + 921\\) without having to calculate the indicated sum or product."
     },
     {
       "subject": "math",
@@ -2528,7 +2528,7 @@
       "grade": "5",
       "domain": "5.NBT - Number and Operations in Base Ten",
       "cluster": "A. Understand the place value system",
-      "statement": "Recognize that in a multi-digit number, a digit in one place represents 10 times as much as it represents in the place to its right and \\(\\frac{1}{10}\\)of what it represents in the place to its left."
+      "statement": "Recognize that in a multi-digit number, a digit in one place represents 10 times as much as it represents in the place to its right and \\(\\frac{1}{10}\\) of what it represents in the place to its left."
     },
     {
       "subject": "math",
@@ -2548,11 +2548,11 @@
       "subs": [
         {
           "code": "5.NBT.A.3.a",
-          "text": "Read and write decimals to thousandths using base-ten numerals, number names, and expanded form, e.g., \\(347.392 = 3 \\times 100 + 4 \\times 10 + 7 \\times 1 + 3 \\times (\\frac{1}{10)} + 9 \\times (\\frac{1}{100)} + 2 \\times (\\frac{1}{1000)}\\)."
+          "text": "Read and write decimals to thousandths using base-ten numerals, number names, and expanded form, e.g., \\(347.392 = 3 \\times 100 + 4 \\times 10 + 7 \\times 1 + 3 \\times (\\frac{1}{10}) + 9 \\times (\\frac{1}{100}) + 2 \\times (\\frac{1}{1000})\\)."
         },
         {
           "code": "5.NBT.A.3.b",
-          "text": "Compare two decimals to thousandths based on meanings of the digits in each place, using \\>, =, and \\< symbols to record the results of comparisons."
+          "text": "Compare two decimals to thousandths based on meanings of the digits in each place, using >, =, and < symbols to record the results of comparisons."
         }
       ]
     },
@@ -2602,7 +2602,7 @@
       "grade": "5",
       "domain": "5.NF - Number and Operations --- Fractions",
       "cluster": "A. Use equivalent fractions as a strategy to add and subtract fractions",
-      "statement": "Solve word problems involving addition and subtraction of fractions referring to the same whole, including cases of unlike denominators, e.g., by using visual fraction models or equations to represent the problem. Use benchmark fractions and number sense of fractions to estimate mentally and assess the reasonableness of answers. For example, recognize an incorrect result \\(\\frac{2}{5} + \\frac{1}{2} = \\frac{3}{7}\\) , by observing that \\(\\frac{3}{7} < \\frac{1}{2}\\) ."
+      "statement": "Solve word problems involving addition and subtraction of fractions referring to the same whole, including cases of unlike denominators, e.g., by using visual fraction models or equations to represent the problem. Use benchmark fractions and number sense of fractions to estimate mentally and assess the reasonableness of answers. For example, recognize an incorrect result \\(\\frac{2}{5} + \\frac{1}{2} = \\frac{3}{7}\\), by observing that \\(\\frac{3}{7} < \\frac{1}{2}\\)."
     },
     {
       "subject": "math",
@@ -2610,7 +2610,7 @@
       "grade": "5",
       "domain": "5.NF - Number and Operations --- Fractions",
       "cluster": "B. Apply and extend previous understandings of multiplication and division to multiply and divide fractions",
-      "statement": "Interpret a fraction as division of the numerator by the denominator (i.e., \\(\\frac{a}{b} = a \\div b\\)). Solve word problems involving division of whole numbers leading to answers in the form of fractions or mixed numbers, e.g., by using visual fraction models or equations to represent the problem. For example, interpret \\(\\frac{3}{4}\\) as the result of dividing 3 by 4, noting that \\(\\frac{3}{4}\\) multiplied by 4 equals 3, and that when 3 wholes are shared equally among 4 people each person has a share of size \\(\\frac{3}{4}\\) . If 9 people want to share a 50-pound sack of rice equally by weight, how many pounds of rice should each person get? Between what two whole numbers does your answer lie?"
+      "statement": "Interpret a fraction as division of the numerator by the denominator (i.e., \\(\\frac{a}{b} = a \\div b\\)). Solve word problems involving division of whole numbers leading to answers in the form of fractions or mixed numbers, e.g., by using visual fraction models or equations to represent the problem. For example, interpret \\(\\frac{3}{4}\\) as the result of dividing 3 by 4, noting that \\(\\frac{3}{4}\\) multiplied by 4 equals 3, and that when 3 wholes are shared equally among 4 people each person has a share of size \\(\\frac{3}{4}\\). If 9 people want to share a 50-pound sack of rice equally by weight, how many pounds of rice should each person get? Between what two whole numbers does your answer lie?"
     },
     {
       "subject": "math",
@@ -2622,7 +2622,7 @@
       "subs": [
         {
           "code": "5.NF.B.4.a",
-          "text": "Interpret the product \\(\\frac{a}{b} \\times q\\) as *a* parts of a partition of *q* into *b* equal parts; equivalently, as the result of a sequence of operations \\(a \\times q \\div b\\). For example, use a visual fraction model to show \\(\\frac{2}{3} \\times 4 = \\frac{8}{3}\\) , and create a story context for this equation. Do the same with \\(\\frac{2}{3} \\times \\frac{4}{5} = \\frac{8}{15}\\). (In general, \\(\\frac{a}{b} \\times \\frac{c}{d} = \\frac{ab}{bd}\\))."
+          "text": "Interpret the product \\((\\frac{a}{b}) \\times q\\) as \\(a\\) parts of a partition of \\(q\\) into \\(b\\) equal parts; equivalently, as the result of a sequence of operations \\(a \\times q \\div b\\). For example, use a visual fraction model to show \\(\\frac{2}{3} \\times 4 = \\frac{8}{3}\\), and create a story context for this equation. Do the same with \\(\\frac{2}{3} \\times \\frac{4}{5} = \\frac{8}{15}\\). (In general, \\(\\frac{a}{b} \\times \\frac{c}{d} = \\frac{ac}{bd}\\))."
         },
         {
           "code": "5.NF.B.4.b",
@@ -2666,11 +2666,11 @@
       "subs": [
         {
           "code": "5.NF.B.7.a",
-          "text": "Interpret division of a unit fraction by a non-zero whole number, and compute such quotients. For example, create a story context for \\(\\frac{1}{3} \\div 4\\) , and use a visual fraction model to show the quotient. Use the relationship between multiplication and division to explain that \\(\\frac{1}{3} \\div 4 = 1\\frac{1}{2}\\) because \\(1\\frac{1}{2} \\times 4 = \\frac{1}{3}\\)."
+          "text": "Interpret division of a unit fraction by a non-zero whole number, and compute such quotients. For example, create a story context for \\(\\frac{1}{3} \\div 4\\), and use a visual fraction model to show the quotient. Use the relationship between multiplication and division to explain that \\(\\frac{1}{3} \\div 4 = \\frac{1}{12}\\) because \\(\\frac{1}{12} \\times 4 = \\frac{1}{3}\\)."
         },
         {
           "code": "5.NF.B.7.b",
-          "text": "Interpret division of a whole number by a unit fraction, and compute such quotients. For example, create a story context for \\(4 \\div \\frac{1}{5}\\) , and use a visual fraction model to show the quotient. Use the relationship between multiplication and division to explain that \\(4 \\div \\frac{1}{5} = 20\\) because \\(20 \\times \\frac{1}{5} = 4\\)."
+          "text": "Interpret division of a whole number by a unit fraction, and compute such quotients. For example, create a story context for \\(4 \\div \\frac{1}{5}\\), and use a visual fraction model to show the quotient. Use the relationship between multiplication and division to explain that \\(4 \\div \\frac{1}{5} = 20\\) because \\(20 \\times \\frac{1}{5} = 4\\)."
         },
         {
           "code": "5.NF.B.7.c",
@@ -2700,7 +2700,7 @@
         },
         {
           "code": "5.M.B.2.b",
-          "text": "A solid figure which can be packed without gaps or overlaps using *n* unit cubes is said to have a volume of *n* cubic units."
+          "text": "A solid figure which can be packed without gaps or overlaps using \\(n\\) unit cubes is said to have a volume of \\(n\\) cubic units."
         }
       ]
     },
@@ -2726,7 +2726,7 @@
         },
         {
           "code": "5.M.B.4.b",
-          "text": "Apply the formulas \\(V = l \\times w \\times h\\)and \\(V = B \\times h\\) for rectangular prisms to find volumes of right rectangular prisms with whole number edge lengths in the context of solving real world and mathematical problems."
+          "text": "Apply the formulas \\(V = l \\times w \\times h\\) and \\(V = B \\times h\\) for rectangular prisms to find volumes of right rectangular prisms with whole number edge lengths in the context of solving real world and mathematical problems."
         },
         {
           "code": "5.M.B.4.c",
@@ -2780,7 +2780,7 @@
       "grade": "5",
       "domain": "5.G - Geometry",
       "cluster": "A. Graph points on the coordinate plane to solve real-world and mathematical problems",
-      "statement": "Use a pair of perpendicular number lines, called axes, to define a coordinate system, with the intersection of the lines (the origin) arranged to coincide with the 0 on each line and a given point in the plane located by using an ordered pair of numbers, called its coordinates. Understand that the first number indicates how far to travel from the origin in the direction of one axis, and the second number indicates how far to travel in the direction of the second axis, with the convention that the names of the two axes and the coordinates correspond (e.g., *x*-axis and *x*-coordinate, *y*-axis and *y*-coordinate)."
+      "statement": "Use a pair of perpendicular number lines, called axes, to define a coordinate system, with the intersection of the lines (the origin) arranged to coincide with the 0 on each line and a given point in the plane located by using an ordered pair of numbers, called its coordinates. Understand that the first number indicates how far to travel from the origin in the direction of one axis, and the second number indicates how far to travel in the direction of the second axis, with the convention that the names of the two axes and the coordinates correspond (e.g., \\(x\\)-axis and \\(x\\)-coordinate, \\(y\\)-axis and \\(y\\)-coordinate)."
     },
     {
       "subject": "math",
@@ -2820,7 +2820,7 @@
       "grade": "6",
       "domain": "6.RP - Ratios and Proportional Relationships",
       "cluster": "A. Understand ratio concepts and use ratio reasoning to solve problems",
-      "statement": "Understand the concept of a unit rate *a*/*b* associated with a ratio *a*:*b* with *b* ≠0, and use rate language in the context of a ratio relationship. For example, \"This recipe has a ratio of 3 cups of flour to 4 cups of sugar, so there is ¾-cup of flour for each cup of sugar.\" \"We paid \\$75 for 15 hamburgers, which is a rate of \\$5 per hamburger.\" (Clarification: Expectations for unit rates in this grade are limited to non-complex fractions.)"
+      "statement": "Understand the concept of a unit rate \\(\\frac{a}{b}\\) associated with a ratio \\(a:b\\) with \\(b \\neq 0\\), and use rate language in the context of a ratio relationship. For example, \"This recipe has a ratio of 3 cups of flour to 4 cups of sugar, so there is ¾-cup of flour for each cup of sugar.\" \"We paid $75 for 15 hamburgers, which is a rate of $5 per hamburger.\" (Clarification: Expectations for unit rates in this grade are limited to non-complex fractions.)"
     },
     {
       "subject": "math",
@@ -2840,7 +2840,7 @@
         },
         {
           "code": "6.RP.A.3.c",
-          "text": "Find a percent of a quantity as a rate per 100 (e.g., 30% of a quantity means \\(1\\frac{30}{00}\\)times the quantity); solve problems involving finding the whole, given a part and the percent."
+          "text": "Find a percent of a quantity as a rate per 100 (e.g., 30% of a quantity means \\(\\frac{30}{100}\\) times the quantity); solve problems involving finding the whole, given a part and the percent."
         },
         {
           "code": "6.RP.A.3.d",
@@ -2854,7 +2854,7 @@
       "grade": "6",
       "domain": "6.NS - The Number System",
       "cluster": "A. Apply and extend previous understandings of multiplication and division to divide fractions by fractions",
-      "statement": "Interpret and compute quotients of fractions, and solve word problems involving division of fractions by fractions, e.g., by using visual fraction models and equations to represent the problem. For example, create a story context for \\(\\frac{2}{3} \\div \\frac{3}{4}\\) and use a visual fraction model to show the quotient; use the relationship between multiplication and division to explain that \\(\\frac{2}{3} \\div \\frac{3}{4} = \\frac{8}{9}\\) because \\(\\frac{3}{4}\\) of \\(\\frac{8}{9}\\) is \\(\\frac{2}{3}\\). (In general, \\(\\frac{a}{b} \\div \\frac{c}{d} = \\frac{ad}{bc}\\) ). How much chocolate will each person get if 3 people share\\(\\frac{1}{2}\\) lb. of chocolate equally? How many \\(\\frac{3}{4}\\) cup servings are in \\(\\frac{2}{3}\\) of a cup of yogurt? How wide is a rectangular strip of land with length\\(\\frac{3}{4}\\) mi and area \\(\\frac{1}{2}\\) square mi?"
+      "statement": "Interpret and compute quotients of fractions, and solve word problems involving division of fractions by fractions, e.g., by using visual fraction models and equations to represent the problem. For example, create a story context for \\(\\frac{2}{3} \\div \\frac{3}{4}\\) and use a visual fraction model to show the quotient; use the relationship between multiplication and division to explain that \\(\\frac{2}{3} \\div \\frac{3}{4} = \\frac{8}{9}\\) because \\(\\frac{3}{4}\\) of \\(\\frac{8}{9}\\) is \\(\\frac{2}{3}\\). (In general, \\(\\frac{a}{b} \\div \\frac{c}{d} = \\frac{ad}{bc}\\) ). How much chocolate will each person get if 3 people share \\(\\frac{1}{2}\\) lb. of chocolate equally? How many \\(\\frac{3}{4}\\) cup servings are in \\(\\frac{2}{3}\\) of a cup of yogurt? How wide is a rectangular strip of land with length \\(\\frac{3}{4}\\) mi and area \\(\\frac{1}{2}\\) square mi?"
     },
     {
       "subject": "math",
@@ -2862,7 +2862,7 @@
       "grade": "6",
       "domain": "6.NS - The Number System",
       "cluster": "B. Compute fluently with multi-digit numbers & find common factors & multiples",
-      "statement": "With accuracy and efficiency**,** divide multi-digit numbers using the standard algorithm."
+      "statement": "With accuracy and efficiency, divide multi-digit numbers using the standard algorithm."
     },
     {
       "subject": "math",
@@ -2870,7 +2870,7 @@
       "grade": "6",
       "domain": "6.NS - The Number System",
       "cluster": "B. Compute fluently with multi-digit numbers & find common factors & multiples",
-      "statement": "With accuracy and efficiency**,** add, subtract, multiply, and divide multi-digit decimals using the standard algorithm for each operation."
+      "statement": "With accuracy and efficiency, add, subtract, multiply, and divide multi-digit decimals using the standard algorithm for each operation."
     },
     {
       "subject": "math",
@@ -2878,7 +2878,7 @@
       "grade": "6",
       "domain": "6.NS - The Number System",
       "cluster": "B. Compute fluently with multi-digit numbers & find common factors & multiples",
-      "statement": "Find the greatest common factor of two whole numbers less than or equal to 100 and the least common multiple of two whole numbers less than or equal to 12. Use the distributive property to express a sum of two whole numbers 1--100 with a common factor as a multiple of a sum of two whole numbers with no common factor. For example, express \\(36 + 8\\) as \\(4(9 + 2)\\)."
+      "statement": "Find the greatest common factor of two whole numbers less than or equal to 100 and the least common multiple of two whole numbers less than or equal to 12. Use the distributive property to express a sum of two whole numbers 1-100 with a common factor as a multiple of a sum of two whole numbers with no common factor. For example, express \\(36 + 8\\) as \\(4(9 + 2)\\)."
     },
     {
       "subject": "math",
@@ -2920,19 +2920,19 @@
       "subs": [
         {
           "code": "6.NS.C.7.a",
-          "text": "Interpret statements of inequality as statements about the relative position of two numbers on a number line diagram. For example, interpret \\(- 3 > - 7\\) as a statement that\\ \\(- 3\\) is located to the right of \\(- 7\\) on a number line oriented from left to right."
+          "text": "Interpret statements of inequality as statements about the relative position of two numbers on a number line diagram. For example, interpret \\(- 3 > - 7\\) as a statement that \\(- 3\\) is located to the right of \\(- 7\\) on a number line oriented from left to right."
         },
         {
           "code": "6.NS.C.7.b",
-          "text": "Write, interpret, and explain statements of order for rational numbers in real-world contexts. For example, write \\(- 3^{\\circ}C > - 7^{\\circ}C\\) to express the fact that \\(- 3^{\\circ}C\\) is warmer than \\(- 7^{\\circ}C\\) ."
+          "text": "Write, interpret, and explain statements of order for rational numbers in real-world contexts. For example, write \\(- 3^{\\circ}C > - 7^{\\circ}C\\) to express the fact that \\(- 3^{\\circ}C\\) is warmer than \\(- 7^{\\circ}C\\)."
         },
         {
           "code": "6.NS.C.7.c",
-          "text": "Understand the absolute value of a rational number as its distance from 0 on the number line; interpret absolute value as magnitude for a positive or negative quantity in a real-world situation. For example, for an account balance of \\(- 30\\)dollars, write \\(- 30 = 30\\) to describe the size of the debt in dollars."
+          "text": "Understand the absolute value of a rational number as its distance from 0 on the number line; interpret absolute value as magnitude for a positive or negative quantity in a real-world situation. For example, for an account balance of \\(- 30\\) dollars, write \\(|-30| = 30\\) to describe the size of the debt in dollars."
         },
         {
           "code": "6.NS.C.7.d",
-          "text": "Distinguish comparisons of absolute value from statements about order. For example, recognize that an account balance less than \\(- 30\\)dollars represents a debt greater than 30 dollars."
+          "text": "Distinguish comparisons of absolute value from statements about order. For example, recognize that an account balance less than \\(- 30\\) dollars represents a debt greater than 30 dollars."
         }
       ]
     },
@@ -2970,7 +2970,7 @@
         },
         {
           "code": "6.EE.A.2.c",
-          "text": "Evaluate expressions at specific values of their variables. Include expressions that arise from formulas used in real-world problems. Perform arithmetic operations, including those involving whole number exponents, in the conventional order when there are no parentheses to specify a particular order (Order of Operations). For example, use the formulas \\(V = 6s3\\) and \\(A = 6s2\\) to find the volume and surface area of a cube with sides of length \\(s = \\frac{1}{2}\\)."
+          "text": "Evaluate expressions at specific values of their variables. Include expressions that arise from formulas used in real-world problems. Perform arithmetic operations, including those involving whole number exponents, in the conventional order when there are no parentheses to specify a particular order (Order of Operations). For example, use the formulas \\(V = s^{3}\\) and \\(A = 6s^{2}\\) to find the volume and surface area of a cube with sides of length \\(s = \\frac{1}{2}\\)."
         }
       ]
     },
@@ -2980,7 +2980,7 @@
       "grade": "6",
       "domain": "6.EE - Expressions and Equations",
       "cluster": "A. Apply and extend previous understandings of arithmetic to algebraic expressions",
-      "statement": "Apply the properties of operations to generate equivalent expressions. For example, apply the distributive property to the expression \\(3(2 + x)\\) to produce the equivalent expression\\(6 + 3x\\) apply the distributive property to the expression \\(24x + 18y\\)to produce the equivalent expression \\(6(4x + 3y)\\) ; apply properties of operations to \\(y + y + y\\) to produce the equivalent expression \\(3y\\)."
+      "statement": "Apply the properties of operations to generate equivalent expressions. For example, apply the distributive property to the expression \\(3(2 + x)\\) to produce the equivalent expression \\(6 + 3x\\); apply the distributive property to the expression \\(24x + 18y\\) to produce the equivalent expression \\(6(4x + 3y)\\); apply properties of operations to \\(y + y + y\\) to produce the equivalent expression \\(3y\\)."
     },
     {
       "subject": "math",
@@ -2988,7 +2988,7 @@
       "grade": "6",
       "domain": "6.EE - Expressions and Equations",
       "cluster": "A. Apply and extend previous understandings of arithmetic to algebraic expressions",
-      "statement": "Identify when two expressions are equivalent (i.e., when the two expressions name the same number regardless of which value is substituted into them). For example, the expressions \\(y + y + y\\) and \\(3y\\)are equivalent because they name the same number regardless of which number \\(y\\) stands for."
+      "statement": "Identify when two expressions are equivalent (i.e., when the two expressions name the same number regardless of which value is substituted into them). For example, the expressions \\(y + y + y\\) and \\(3y\\) are equivalent because they name the same number regardless of which number \\(y\\) stands for."
     },
     {
       "subject": "math",
@@ -3012,7 +3012,7 @@
       "grade": "6",
       "domain": "6.EE - Expressions and Equations",
       "cluster": "B. Reason about and solve one-variable equations and inequalities",
-      "statement": "Solve real-world and mathematical problems by writing and solving equations of the form\\ \\(x + p\\) and \\(px = q\\)for cases in which \\(p\\), \\(q\\) and \\(x\\) are all nonnegative rational numbers."
+      "statement": "Solve real-world and mathematical problems by writing and solving equations of the form \\(x + p = q\\) and \\(px = q\\) for cases in which \\(p\\), \\(q\\) and \\(x\\) are all nonnegative rational numbers."
     },
     {
       "subject": "math",
@@ -3020,7 +3020,7 @@
       "grade": "6",
       "domain": "6.EE - Expressions and Equations",
       "cluster": "B. Reason about and solve one-variable equations and inequalities",
-      "statement": "Write an inequality of the form \\(x > c\\) or \\(x < c\\) to represent a constraint or condition in a real-world or mathematical problem. Recognize that inequalities of the form \\(x > c\\)or \\(x < c\\)have infinitely many solutions; represent solutions of such inequalities on number line diagrams."
+      "statement": "Write an inequality of the form \\(x > c\\) or \\(x < c\\) to represent a constraint or condition in a real-world or mathematical problem. Recognize that inequalities of the form \\(x > c\\) or \\(x < c\\) have infinitely many solutions; represent solutions of such inequalities on number line diagrams."
     },
     {
       "subject": "math",
@@ -3044,7 +3044,7 @@
       "grade": "6",
       "domain": "6.G - Geometry",
       "cluster": "A. Solve real-world and mathematical problems involving area, surface area, and volume",
-      "statement": "Find the volume of a right rectangular prism with fractional edge lengths by packing it with unit cubes of the appropriate unit fraction edge lengths, and show that the volume is the same as would be found by multiplying the edge lengths of the prism. Apply the formulas \\(V = lwh\\)and \\(V = Bh\\)to find volumes of right rectangular prisms with fractional edge lengths in the context of solving real-world and mathematical problems."
+      "statement": "Find the volume of a right rectangular prism with fractional edge lengths by packing it with unit cubes of the appropriate unit fraction edge lengths, and show that the volume is the same as would be found by multiplying the edge lengths of the prism. Apply the formulas \\(V = lwh\\) and \\(V = Bh\\) to find volumes of right rectangular prisms with fractional edge lengths in the context of solving real-world and mathematical problems."
     },
     {
       "subject": "math",
@@ -3126,7 +3126,7 @@
       "grade": "7",
       "domain": "7.RP - Ratios and Proportional Relationships",
       "cluster": "A. Analyze proportional relationships and use them to solve real-world and mathematical problems",
-      "statement": "Compute unit rates associated with ratios of fractions, including ratios of lengths, areas and other quantities measured in like or different units. For example, if a person walks \\(\\frac{1}{2}\\) mile in each \\(\\frac{1}{4}\\) hour, compute the unit rate as the complex fraction \\((\\frac{1}{2})(\\frac{1}{4})\\) miles per hour, equivalently 2 miles per hour."
+      "statement": "Compute unit rates associated with ratios of fractions, including ratios of lengths, areas and other quantities measured in like or different units. For example, if a person walks \\(\\frac{1}{2}\\) mile in each \\(\\frac{1}{4}\\) hour, compute the unit rate as the complex fraction \\(\\frac{\\frac{1}{2}}{\\frac{1}{4}}\\) miles per hour, equivalently 2 miles per hour."
     },
     {
       "subject": "math",
@@ -3150,7 +3150,7 @@
         },
         {
           "code": "7.RP.A.2.d",
-          "text": "Explain what a point \\((x,y)\\) on the graph of a proportional relationship means in terms of the situation, with special attention to the points (0, 0) and \\((1,r)\\)where \\(r\\)is the unit rate."
+          "text": "Explain what a point \\((x,y)\\) on the graph of a proportional relationship means in terms of the situation, with special attention to the points (0, 0) and \\((1,r)\\) where \\(r\\) is the unit rate."
         }
       ]
     },
@@ -3176,7 +3176,7 @@
         },
         {
           "code": "7.NS.A.1.b",
-          "text": "Understand \\(p + q\\)as the number located a distance \\(q\\)from\\(p\\), in the positive or negative direction depending on whether *q* is positive or negative. Show that a number and its opposite have a sum of 0 (are additive inverses). Interpret sums of rational numbers by describing real-world contexts."
+          "text": "Understand \\(p + q\\) as the number located a distance \\(|q|\\) from \\(p\\), in the positive or negative direction depending on whether \\(q\\) is positive or negative. Show that a number and its opposite have a sum of 0 (are additive inverses). Interpret sums of rational numbers by describing real-world contexts."
         },
         {
           "code": "7.NS.A.1.c",
@@ -3202,7 +3202,7 @@
         },
         {
           "code": "7.NS.A.2.b",
-          "text": "Understand that integers can be divided, provided that the divisor is not zero, and every quotient of integers (with non-zero divisor) is a rational number. If \\(q\\) and \\(q\\) are integers, then \\(- \\frac{p}{q} = \\frac{( - p)}{q} = \\frac{p}{( - q)}\\) . Interpret quotients of rational numbers by describing real world contexts."
+          "text": "Understand that integers can be divided, provided that the divisor is not zero, and every quotient of integers (with non-zero divisor) is a rational number. If \\(p\\) and \\(q\\) are integers, then \\(-(\\frac{p}{q}) = \\frac{(-p)}{q} = \\frac{p}{(-q)}\\). Interpret quotients of rational numbers by describing real world contexts."
         },
         {
           "code": "7.NS.A.2.c",
@@ -3244,7 +3244,7 @@
       "grade": "7",
       "domain": "7.EE - Expressions and Equations",
       "cluster": "B. Solve real-life and mathematical problems using numerical and algebraic expressions and equations",
-      "statement": "Solve multi-step real-life and mathematical problems posed with positive and negative rational numbers in any form (whole numbers, fractions, and decimals), using tools strategically. Apply properties of operations to calculate with numbers in any form; convert between forms as appropriate; and assess the reasonableness of answers using mental computation and estimation strategies. For example: If a woman making \\$25 an hour gets a 10% raise, she will make an additional \\(\\frac{1}{10}\\) of her salary an hour, or \\$2.50, for a new salary of \\$27.50. If you want to place a towel bar \\(9\\frac{3}{4}\\) inches long in the center of a door that is \\(27\\frac{1}{2}\\) inches wide, you will need to place the bar about 9 inches from each edge; this estimate can be used as a check on the exact computation."
+      "statement": "Solve multi-step real-life and mathematical problems posed with positive and negative rational numbers in any form (whole numbers, fractions, and decimals), using tools strategically. Apply properties of operations to calculate with numbers in any form; convert between forms as appropriate; and assess the reasonableness of answers using mental computation and estimation strategies. For example: If a woman making $25 an hour gets a 10% raise, she will make an additional \\(\\frac{1}{10}\\) of her salary an hour, or $2.50, for a new salary of $27.50. If you want to place a towel bar \\(9\\frac{3}{4}\\) inches long in the center of a door that is \\(27\\frac{1}{2}\\) inches wide, you will need to place the bar about 9 inches from each edge; this estimate can be used as a check on the exact computation."
     },
     {
       "subject": "math",
@@ -3256,11 +3256,11 @@
       "subs": [
         {
           "code": "7.EE.B.4.a",
-          "text": "Solve word problems leading to equations of the form\\(px + q = r\\)and \\(p(x + q) = r\\), where\\(p\\), \\(q\\), and \\(r\\) are specific rational numbers. Solve equations of these forms with accuracy and efficiency. Compare an algebraic solution to an arithmetic solution, identifying the sequence of the operations used in each approach. For example, the perimeter of a rectangle is 54 cm. Its length is 6 cm. What is its width?"
+          "text": "Solve word problems leading to equations of the form \\(px + q = r\\) and \\(p(x + q) = r\\), where \\(p\\), \\(q\\), and \\(r\\) are specific rational numbers. Solve equations of these forms with accuracy and efficiency. Compare an algebraic solution to an arithmetic solution, identifying the sequence of the operations used in each approach. For example, the perimeter of a rectangle is 54 cm. Its length is 6 cm. What is its width?"
         },
         {
           "code": "7.EE.B.4.b",
-          "text": "Solve word problems leading to inequalities of the form\\(px + q > r\\)or \\(px + q < r\\), where \\(p\\), \\(q\\), and \\(r\\) are specific rational numbers. Graph the solution set of the inequality and interpret it in the context of the problem. For example: As a salesperson, you are paid \\$50 per week plus \\$3 per sale. This week you want your pay to be at least \\$100. Write an inequality for the number of sales you need to make, and describe the solutions."
+          "text": "Solve word problems leading to inequalities of the form \\(px + q > r\\) or \\(px + q < r\\), where \\(p\\), \\(q\\), and \\(r\\) are specific rational numbers. Graph the solution set of the inequality and interpret it in the context of the problem. For example: As a salesperson, you are paid $50 per week plus $3 per sale. This week you want your pay to be at least $100. Write an inequality for the number of sales you need to make, and describe the solutions."
         }
       ]
     },
@@ -3370,7 +3370,7 @@
       "subs": [
         {
           "code": "7.SP.C.7.a",
-          "text": "Develop a uniform probability model by assigning equal probability to all outcomes and use the model to determine probabilities of events. For example, if a student is selected at random from a class, find the probability that Jane will be selected and the probability that a girl will be selected."
+          "text": "Develop a uniform probability model by assigning equal probability to all outcomes, and use the model to determine probabilities of events. For example, if a student is selected at random from a class, find the probability that Jane will be selected and the probability that a girl will be selected."
         },
         {
           "code": "7.SP.C.7.b",
@@ -3406,7 +3406,7 @@
       "grade": "8",
       "domain": "8.NS - The Number System",
       "cluster": "A. Know that there are numbers that are not rational and approximate them by rational numbers",
-      "statement": "Know that numbers that are not rational are called irrational. Understand informally that every number has a decimal expansion; for rational numbers show that the decimal expansion repeats eventually and convert a decimal expansion which repeats eventually into a rational number."
+      "statement": "Know that numbers that are not rational are called irrational. Understand informally that every number has a decimal expansion; for rational numbers show that the decimal expansion repeats eventually, and convert a decimal expansion which repeats eventually into a rational number."
     },
     {
       "subject": "math",
@@ -3414,7 +3414,7 @@
       "grade": "8",
       "domain": "8.NS - The Number System",
       "cluster": "A. Know that there are numbers that are not rational and approximate them by rational numbers",
-      "statement": "Use rational approximations of irrational numbers to compare the size of irrational numbers, locate them approximately on a number line diagram, and estimate the value of expressions (e.g., $\\pi^{2}$). For example, by truncating the decimal expansion of \\(\\frac{}{2}\\), show that \\(\\frac{}{2}\\)is between 1 and 2, then between 1.4 and 1.5, and explain how to continue on to get better approximations."
+      "statement": "Use rational approximations of irrational numbers to compare the size of irrational numbers, locate them approximately on a number line diagram, and estimate the value of expressions (e.g., $\\pi^{2}$). For example, by truncating the decimal expansion of \\(\\sqrt{2}\\), show that \\(\\sqrt{2}\\) is between 1 and 2, then between 1.4 and 1.5, and explain how to continue on to get better approximations."
     },
     {
       "subject": "math",
@@ -3430,7 +3430,7 @@
       "grade": "8",
       "domain": "8.EE - Expressions and Equations",
       "cluster": "A. Work with radicals and integer exponents",
-      "statement": "Know and apply the properties of integer exponents to generate equivalent numerical expressions. For example, \\(32 \\times 3 - 5 = 3 - 3 = \\frac{1}{33} = \\frac{1}{27}\\)."
+      "statement": "Know and apply the properties of integer exponents to generate equivalent numerical expressions. For example, \\(3^{2} \\times 3^{-5} = 3^{-3} = \\frac{1}{3^{3}} = \\frac{1}{27}\\)."
     },
     {
       "subject": "math",
@@ -3438,15 +3438,15 @@
       "grade": "8",
       "domain": "8.EE - Expressions and Equations",
       "cluster": "A. Work with radicals and integer exponents",
-      "statement": "Use square root and cube root symbols to represent solutions to equations of the form \\(x2 = p\\)and \\(x3 = p\\) where \\(p\\) is a positive rational number.",
+      "statement": "Use square root and cube root symbols to represent solutions to equations of the form \\(x^{2} = p\\) and \\(x^{3} = p\\), where \\(p\\) is a positive rational number.",
       "subs": [
         {
           "code": "8.EE.A.2.a",
-          "text": "Evaluate square roots of small perfect squares and cube roots of small perfect cubes. Know that \\(\\frac{}{2}\\) is irrational."
+          "text": "Evaluate square roots of small perfect squares and cube roots of small perfect cubes. Know that \\(\\sqrt{2}\\) is irrational."
         },
         {
           "code": "8.EE.A.2.b",
-          "text": "Simplify numerical radicals, limiting to square roots (i.e. nonperfect squares). For example, simplify \\(\\frac{}{8}\\) to \\(2\\frac{}{2}\\)."
+          "text": "Simplify numerical radicals, limiting to square roots (i.e. nonperfect squares). For example, simplify \\(\\sqrt{8}\\) to \\(2\\sqrt{2}\\)."
         }
       ]
     },
@@ -3456,7 +3456,7 @@
       "grade": "8",
       "domain": "8.EE - Expressions and Equations",
       "cluster": "A. Work with radicals and integer exponents",
-      "statement": "Use numbers expressed in the form of a single digit times an integer power of 10 to estimate very large or very small quantities, and to express how many times as much one is than the other. For example, estimate the population of the United States as \\(3 \\times 108\\) and the population of the world as \\(7 \\times 109\\) and determine that the world population is more than 20 times larger."
+      "statement": "Use numbers expressed in the form of a single digit times an integer power of 10 to estimate very large or very small quantities, and to express how many times as much one is than the other. For example, estimate the population of the United States as \\(3 \\times 10^{8}\\) and the population of the world as \\(7 \\times 10^{9}\\), and determine that the world population is more than 20 times larger."
     },
     {
       "subject": "math",
@@ -3492,7 +3492,7 @@
       "subs": [
         {
           "code": "8.EE.C.7.a",
-          "text": "Give examples of linear equations in one variable with one solution, infinitely many solutions, or no solutions. Show which of these possibilities is the case by successively transforming the given equation into simpler forms, until an equivalent equation of the form \\(x = a\\), \\(a = a\\), or \\(a = b\\)results (where \\(a\\)and \\(b\\)are different numbers)."
+          "text": "Give examples of linear equations in one variable with one solution, infinitely many solutions, or no solutions. Show which of these possibilities is the case by successively transforming the given equation into simpler forms, until an equivalent equation of the form \\(x = a\\), \\(a = a\\), or \\(a = b\\) results (where \\(a\\) and \\(b\\) are different numbers)."
         },
         {
           "code": "8.EE.C.7.b",
@@ -3514,7 +3514,7 @@
         },
         {
           "code": "8.EE.C.8.b",
-          "text": "Solve systems of two linear equations in two variables using the substitution method and estimate solutions by graphing the equations. Solve simple cases by inspection. For example: by inspection, conclude that \\(3x + 2y = 5\\) and \\(3x + 2y = 6\\)have no solution because \\(3x + 2y\\) cannot simultaneously be 5 and 6. Solve \\(3x + y = 30\\) and \\(y = 2x\\)using the substitution method; Solve \\(y = 3x + 1\\) and \\(y = - 2x + 7\\)using the substitution method."
+          "text": "Solve systems of two linear equations in two variables using the substitution method and estimate solutions by graphing the equations. Solve simple cases by inspection. For example: by inspection, conclude that \\(3x + 2y = 5\\) and \\(3x + 2y = 6\\) have no solution because \\(3x + 2y\\) cannot simultaneously be 5 and 6. Solve \\(3x + y = 30\\) and \\(y = 2x\\) using the substitution method; Solve \\(y = 3x + 1\\) and \\(y = - 2x + 7\\) using the substitution method."
         },
         {
           "code": "8.EE.C.8.c",
@@ -3528,7 +3528,7 @@
       "grade": "8",
       "domain": "8.F - Functions",
       "cluster": "A. Define, evaluate and compare functions",
-      "statement": "Understand that a function is a rule that assigns to each input exactly one output. The graph of a function is the set of ordered pairs consisting of an input and the corresponding output.\\ (Clarification: Function notation is not required in Grade 8)"
+      "statement": "Understand that a function is a rule that assigns to each input exactly one output. The graph of a function is the set of ordered pairs consisting of an input and the corresponding output. (Clarification: Function notation is not required in Grade 8)"
     },
     {
       "subject": "math",
@@ -3544,7 +3544,7 @@
       "grade": "8",
       "domain": "8.F - Functions",
       "cluster": "A. Define, evaluate and compare functions",
-      "statement": "Interpret the equation \\(y = mx + b\\)as defining a linear function, whose graph is a straight line; give examples of functions that are not linear. For example, the function \\(A = s2\\) giving the area of a square as a function of its side length is not linear because its graph contains the points (1,1), (2,4) and (3,9), which are not on a straight line."
+      "statement": "Interpret the equation \\(y = mx + b\\) as defining a linear function, whose graph is a straight line; give examples of functions that are not linear. For example, the function \\(A = s^{2}\\) giving the area of a square as a function of its side length is not linear because its graph contains the points (1,1), (2,4) and (3,9), which are not on a straight line."
     },
     {
       "subject": "math",
@@ -3552,7 +3552,7 @@
       "grade": "8",
       "domain": "8.F - Functions",
       "cluster": "B. Use functions to model relationships between quantities",
-      "statement": "Construct a function to model a linear relationship between two quantities. Determine the rate of change and initial value of the function from a description of a relationship or from two values, including reading these from a table or from a graph. Interpret the rate of change and initial value of a linear function in terms of the situation it models, and in terms of its graph or a table of values."
+      "statement": "Construct a function to model a linear relationship between two quantities. Determine the rate of change and initial value of the function from a description of a relationship or from two (x, y) values, including reading these from a table or from a graph. Interpret the rate of change and initial value of a linear function in terms of the situation it models, and in terms of its graph or a table of values."
     },
     {
       "subject": "math",
@@ -6528,7 +6528,7 @@
       "discipline": "Earth and Space Sciences",
       "topic": "MS-ESS1 - Earth's Place in the Universe",
       "statement": "Analyze and interpret data to determine scale properties of objects in the solar system.",
-      "clarification": "Emphasis is on the analysis of data from Earth-based instruments, space- based telescopes, and spacecraft to determine similarities and differences among solar system objects. Examples of scale properties include the sizes of an object’s layers (such as crust and atmosphere), surface features (such as volcanoes), and orbital radius. Examples of data include statistical information, drawings and photographs, and models.",
+      "clarification": "Emphasis is on the analysis of data from Earth-based instruments, space-based telescopes, and spacecraft to determine similarities and differences among solar system objects. Examples of scale properties include the sizes of an object’s layers (such as crust and atmosphere), surface features (such as volcanoes), and orbital radius. Examples of data include statistical information, drawings and photographs, and models.",
       "assessment_boundary": "Assessment does not include recalling facts about properties of the planets and other solar system bodies.",
       "sep_practices": [
         "Analyzing and Interpreting Data"
@@ -6930,7 +6930,7 @@
       "discipline": "Earth and Space Sciences",
       "topic": "MS-ESS3 - Earth and Human Activity",
       "statement": "Construct a scientific explanation based on evidence for how the uneven distributions of Earth’s mineral, energy, and groundwater resources are the result of past and current geoscience processes.",
-      "clarification": "Emphasis is on how these resources are limited and typically non- renewable, and how their distributions are significantly changing as a result of removal by humans. Examples of uneven distributions of resources as a result of past processes include but are not limited to petroleum (locations of the burial of organic marine sediments and subsequent geologic traps), metal ores (locations of past volcanic and hydrothermal activity associated with subduction zones), and soil (locations of active weathering and/or deposition of rock).",
+      "clarification": "Emphasis is on how these resources are limited and typically non-renewable, and how their distributions are significantly changing as a result of removal by humans. Examples of uneven distributions of resources as a result of past processes include but are not limited to petroleum (locations of the burial of organic marine sediments and subsequent geologic traps), metal ores (locations of past volcanic and hydrothermal activity associated with subduction zones), and soil (locations of active weathering and/or deposition of rock).",
       "sep_practices": [
         "Constructing Explanations and Designing Solutions"
       ],
@@ -10392,7 +10392,7 @@
       "grade": "5",
       "standard": "9.1 - Personal Financial Literacy",
       "disciplinary_concept": "FP - Financial Psychology",
-      "core_idea": "An individual’s financial traits and habits affect his/her finances. Spending choices and their intended and unintended consequences impact financial outcomes and personal well- being.",
+      "core_idea": "An individual’s financial traits and habits affect his/her finances. Spending choices and their intended and unintended consequences impact financial outcomes and personal well-being.",
       "statement": "Illustrate the impact of financial traits on financial decisions."
     },
     {
@@ -10401,7 +10401,7 @@
       "grade": "5",
       "standard": "9.1 - Personal Financial Literacy",
       "disciplinary_concept": "FP - Financial Psychology",
-      "core_idea": "An individual’s financial traits and habits affect his/her finances. Spending choices and their intended and unintended consequences impact financial outcomes and personal well- being.",
+      "core_idea": "An individual’s financial traits and habits affect his/her finances. Spending choices and their intended and unintended consequences impact financial outcomes and personal well-being.",
       "statement": "Identify the elements of being a good steward of money."
     },
     {
@@ -10410,7 +10410,7 @@
       "grade": "5",
       "standard": "9.1 - Personal Financial Literacy",
       "disciplinary_concept": "FP - Financial Psychology",
-      "core_idea": "An individual’s financial traits and habits affect his/her finances. Spending choices and their intended and unintended consequences impact financial outcomes and personal well- being.",
+      "core_idea": "An individual’s financial traits and habits affect his/her finances. Spending choices and their intended and unintended consequences impact financial outcomes and personal well-being.",
       "statement": "Analyze how spending choices and decision-making can result in positive or negative consequences."
     },
     {
@@ -10419,7 +10419,7 @@
       "grade": "5",
       "standard": "9.1 - Personal Financial Literacy",
       "disciplinary_concept": "FP - Financial Psychology",
-      "core_idea": "An individual’s financial traits and habits affect his/her finances. Spending choices and their intended and unintended consequences impact financial outcomes and personal well- being.",
+      "core_idea": "An individual’s financial traits and habits affect his/her finances. Spending choices and their intended and unintended consequences impact financial outcomes and personal well-being.",
       "statement": "Explain the role of spending money and how it affects well-being and happiness (e.g., \"happy money,\" experiences over things, donating to causes, anticipation, etc.)."
     },
     {
@@ -10455,7 +10455,7 @@
       "grade": "5",
       "standard": "9.1 - Personal Financial Literacy",
       "disciplinary_concept": "RMI - Risk Management and Insurance",
-      "core_idea": "Individuals can choose to accept inevitable risk or take steps to protect themselves by avoiding or reducing risk. | 2020 New Jersey Student Learning Standa 9.1 Personal Financi",
+      "core_idea": "Individuals can choose to accept inevitable risk or take steps to protect themselves by avoiding or reducing risk.",
       "statement": "Identify risks that individuals and households face."
     },
     {
@@ -10464,7 +10464,7 @@
       "grade": "5",
       "standard": "9.1 - Personal Financial Literacy",
       "disciplinary_concept": "RMI - Risk Management and Insurance",
-      "core_idea": "Individuals can choose to accept inevitable risk or take steps to protect themselves by avoiding or reducing risk. | 2020 New Jersey Student Learning Standa 9.1 Personal Financi",
+      "core_idea": "Individuals can choose to accept inevitable risk or take steps to protect themselves by avoiding or reducing risk.",
       "statement": "Justify reasons to have insurance."
     },
     {
@@ -10860,7 +10860,7 @@
       "grade": "8",
       "standard": "9.1 - Personal Financial Literacy",
       "disciplinary_concept": "RM - Risk Management and Insurance",
-      "core_idea": "Insurance can protect your personal finances. | 9.1 Personal Financial Lite",
+      "core_idea": "Insurance can protect your personal finances.",
       "statement": "Explain the purpose of insurance products and the reasons for property product and liability insurance protection."
     },
     {
@@ -10932,7 +10932,7 @@
       "grade": "5",
       "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
       "disciplinary_concept": "CAP - Career Awareness and Planning",
-      "core_idea": "Individuals can choose to accept inevitable risk",
+      "core_idea": "Individuals can choose to accept inevitable risk or take steps to protect themselves by avoiding or reducing risk.",
       "statement": "Identify risks that individuals and households face."
     },
     {
@@ -10941,7 +10941,7 @@
       "grade": "5",
       "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
       "disciplinary_concept": "CAP - Career Awareness and Planning",
-      "core_idea": "or take steps to protect themselves by avoiding or reducing risk. | 2020 New Jersey Student Learn 9.2 Career Awareness, Exp",
+      "core_idea": "Individuals can choose to accept inevitable risk or take steps to protect themselves by avoiding or reducing risk.",
       "statement": "Justify reasons to have insurance."
     },
     {
@@ -10995,7 +10995,7 @@
       "grade": "8",
       "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
       "disciplinary_concept": "CAP - Career Awareness and Planning",
-      "core_idea": "Early planning can provide more options to pay for post- secondary training and employment.",
+      "core_idea": "Early planning can provide more options to pay for post-secondary training and employment.",
       "statement": "Compare the costs of postsecondary education with the potential increase in income from a career of choice."
     },
     {
@@ -11004,7 +11004,7 @@
       "grade": "8",
       "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
       "disciplinary_concept": "CAP - Career Awareness and Planning",
-      "core_idea": "Early planning can provide more options to pay for post- secondary training and employment.",
+      "core_idea": "Early planning can provide more options to pay for post-secondary training and employment.",
       "statement": "Devise a strategy to minimize costs of postsecondary education."
     },
     {
@@ -11013,7 +11013,7 @@
       "grade": "8",
       "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
       "disciplinary_concept": "CAP - Career Awareness and Planning",
-      "core_idea": "Early planning can provide more options to pay for post- secondary training and employment.",
+      "core_idea": "Early planning can provide more options to pay for post-secondary training and employment.",
       "statement": "Compare education and training requirements, income potential, and primary duties of at least two jobs of interest."
     },
     {
@@ -11022,7 +11022,7 @@
       "grade": "8",
       "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
       "disciplinary_concept": "CAP - Career Awareness and Planning",
-      "core_idea": "Early planning can provide more options to pay for post- secondary training and employment.",
+      "core_idea": "Early planning can provide more options to pay for post-secondary training and employment.",
       "statement": "Analyze how a variety of activities related to career preparation (e.g., volunteering, apprenticeships, structured learning experiences, dual enrollment, job search, scholarships) impacts post-secondary options."
     },
     {
@@ -11121,7 +11121,7 @@
       "grade": "8",
       "standard": "9.2 - Career Awareness, Exploration, Preparation, and Training",
       "disciplinary_concept": "CAP - Career Awareness and Planning",
-      "core_idea": "There are resources to help an individual create a business plan to start or expand a business. | 2020 New Jersey Student Learning Stand 9.2 Career Awareness, Exploration,",
+      "core_idea": "There are resources to help an individual create a business plan to start or expand a business.",
       "statement": "Identify the items to consider when estimating the cost of funding a business."
     },
     {
@@ -11329,7 +11329,7 @@
       "standard": "9.4 - Life Literacies and Key Skills",
       "disciplinary_concept": "IML - Information and Media Literacy",
       "core_idea": "Specific situations require the use of relevant sources of information.",
-      "statement": "Use appropriate sources of information from diverse sources, contexts, disciplines, and cultures to answer questions (e.g., RI.5.7, 6.1.5.HistoryCC.7, 7.1.NM. IPRET.5)."
+      "statement": "Use appropriate sources of information from diverse sources, contexts, disciplines, and cultures to answer questions (e.g., RI.5.7, 6.1.5.HistoryCC.7, 7.1.NM.IPRET.5)."
     },
     {
       "subject": "clks",
@@ -11373,7 +11373,7 @@
       "grade": "5",
       "standard": "9.4 - Life Literacies and Key Skills",
       "disciplinary_concept": "TL - Technology Literacy",
-      "core_idea": "Collaborating digitally as a team can often develop a better artifact than an individual working alone. | 2020 New Jersey Student Learni 9.4 Lif",
+      "core_idea": "Collaborating digitally as a team can often develop a better artifact than an individual working alone.",
       "statement": "Compare and contrast artifacts produced individually to those developed collaboratively (e.g., 1.5.5.CR3a)."
     },
     {
@@ -11382,7 +11382,7 @@
       "grade": "5",
       "standard": "9.4 - Life Literacies and Key Skills",
       "disciplinary_concept": "TL - Technology Literacy",
-      "core_idea": "Collaborating digitally as a team can often develop a better artifact than an individual working alone. | 2020 New Jersey Student Learni 9.4 Lif",
+      "core_idea": "Collaborating digitally as a team can often develop a better artifact than an individual working alone.",
       "statement": "Collaborate digitally to produce an artifact (e.g., 1.2.5CR1d)."
     },
     {
@@ -11599,7 +11599,7 @@
       "standard": "9.4 - Life Literacies and Key Skills",
       "disciplinary_concept": "IML - Information and Media Literacy",
       "core_idea": "Sources of information are evaluated for accuracy and relevance when considering the use of information.",
-      "statement": "Use information from a variety of sources, contexts, disciplines, and cultures for a specific purpose (e.g., 1.2.8.C2a, 1.4.8.CR2a, 2.1.8.CHSS/IV.8.AI.1, W.5.8, 6.1.8.GeoSV.3.a, 6.1.8.CivicsDP.4.b, 7.1.NH. IPRET.8)."
+      "statement": "Use information from a variety of sources, contexts, disciplines, and cultures for a specific purpose (e.g., 1.2.8.C2a, 1.4.8.CR2a, 2.1.8.CHSS/IV.8.AI.1, W.5.8, 6.1.8.GeoSV.3.a, 6.1.8.CivicsDP.4.b, 7.1.NH.IPRET.8)."
     },
     {
       "subject": "clks",
@@ -11715,7 +11715,7 @@
       "grade": "8",
       "standard": "9.4 - Life Literacies and Key Skills",
       "disciplinary_concept": "TL - Technology Literacy",
-      "core_idea": "Digital tools allow for remote collaboration and rapid sharing of ideas unrestricted by geographic location or time. | 2020 New Jersey Student Lear 9.4",
+      "core_idea": "Digital tools allow for remote collaboration and rapid sharing of ideas unrestricted by geographic location or time.",
       "statement": "Compare the process and effectiveness of synchronous collaboration and asynchronous collaboration."
     },
     {
@@ -11724,7 +11724,7 @@
       "grade": "8",
       "standard": "9.4 - Life Literacies and Key Skills",
       "disciplinary_concept": "TL - Technology Literacy",
-      "core_idea": "Digital tools allow for remote collaboration and rapid sharing of ideas unrestricted by geographic location or time. | 2020 New Jersey Student Lear 9.4",
+      "core_idea": "Digital tools allow for remote collaboration and rapid sharing of ideas unrestricted by geographic location or time.",
       "statement": "Collaborate to develop and publish work that provides perspectives on a real-world problem."
     },
     {
@@ -11913,7 +11913,7 @@
       "grade": "5",
       "standard": "2.1 - Personal and Mental Health",
       "disciplinary_concept": "CHSS - Community Health Services and Support",
-      "core_idea": "Individuals will benefit from an awareness of coping strategies that can be used when facing difficult situations. | 2020 New Jersey Student Lear 2.1 Person",
+      "core_idea": "Individuals will benefit from an awareness of coping strategies that can be used when facing difficult situations.",
       "statement": "Describe strategies that are useful for individuals who are feeling sadness, anger, anxiety, or stress."
     },
     {
@@ -12183,7 +12183,7 @@
       "grade": "8",
       "standard": "2.1 - Personal and Mental Health",
       "disciplinary_concept": "CHSS - Community Health Services and Support",
-      "core_idea": "Different people have different capacities to deal with different situations and being aware of a wide variety of tools and resources is beneficial. | 2020 New Jersey Student Learni 2.1 Personal",
+      "core_idea": "Different people have different capacities to deal with different situations and being aware of a wide variety of tools and resources is beneficial.",
       "statement": "Analyze difficult situations that might lead to feelings sadness, anxiety and or depression and identify individuals, agencies or places in the community where assistance may be available."
     },
     {
@@ -12345,7 +12345,7 @@
       "grade": "5",
       "standard": "2.2 - Physical Wellness",
       "disciplinary_concept": "N - Nutrition",
-      "core_idea": "Understanding the principals of a balanced",
+      "core_idea": "Understanding the principals of a balanced nutritional plan (e.g. moderation, variety of fruits, vegetables, limiting processed foods) assists in making nutrition-related decisions that will contribute to wellness.",
       "statement": "Explain how healthy eating provides energy, helps to maintain healthy weight, lowers risk of disease, and keeps body systems functioning effectively."
     },
     {
@@ -12354,7 +12354,7 @@
       "grade": "5",
       "standard": "2.2 - Physical Wellness",
       "disciplinary_concept": "N - Nutrition",
-      "core_idea": "nutritional plan (e.g. moderation, variety of",
+      "core_idea": "Understanding the principals of a balanced nutritional plan (e.g. moderation, variety of fruits, vegetables, limiting processed foods) assists in making nutrition-related decisions that will contribute to wellness.",
       "statement": "Create a healthy meal based on nutritional content, value, calories, and cost."
     },
     {
@@ -12363,7 +12363,7 @@
       "grade": "5",
       "standard": "2.2 - Physical Wellness",
       "disciplinary_concept": "N - Nutrition",
-      "core_idea": "fruits, vegetables, limiting processed foods) | assists in making nutrition-related decisions | that will contribute to wellness. | 2020 New Jersey Student Learni 2.2 Phy",
+      "core_idea": "Understanding the principals of a balanced nutritional plan (e.g. moderation, variety of fruits, vegetables, limiting processed foods) assists in making nutrition-related decisions that will contribute to wellness.",
       "statement": "Develop a plan to attain a personal nutrition health goal that addresses strengths, needs, and culture."
     },
     {
@@ -12372,7 +12372,7 @@
       "grade": "8",
       "standard": "2.2 - Physical Wellness",
       "disciplinary_concept": "MSC - Movement Skills and Concepts",
-      "core_idea": "Effective execution of movements is | determined by the level of related skills and",
+      "core_idea": "Effective execution of movements is determined by the level of related skills and provides the foundation for physical competency and literacy to participate with confidence in a broad range of physical activities (e.g., games, sports, aerobics, martial arts, recreational activities).",
       "statement": "Explain and demonstrate the transition of movement skills from isolated settings (e.g., skill practice) into applied settings (e.g., games, sports, dance, recreational activities)."
     },
     {
@@ -12381,7 +12381,7 @@
       "grade": "8",
       "standard": "2.2 - Physical Wellness",
       "disciplinary_concept": "MSC - Movement Skills and Concepts",
-      "core_idea": "provides the foundation for physical",
+      "core_idea": "Effective execution of movements is determined by the level of related skills and provides the foundation for physical competency and literacy to participate with confidence in a broad range of physical activities (e.g., games, sports, aerobics, martial arts, recreational activities).",
       "statement": "Demonstrate control of motion in relationship between force, flow, time, and space in interactive dynamic environments."
     },
     {
@@ -12390,7 +12390,7 @@
       "grade": "8",
       "standard": "2.2 - Physical Wellness",
       "disciplinary_concept": "MSC - Movement Skills and Concepts",
-      "core_idea": "competency and literacy to participate with confidence in a broad range of physical activities (e.g., games, sports, aerobics, martial arts, recreational activities). Feedback from others and self-assessment impacts performance of movement skills and concepts. Individual and team goals are achieved when applying effective tactical strategies in games, sports, and other physical fitness activities.",
+      "core_idea": "Effective execution of movements is determined by the level of related skills and provides the foundation for physical competency and literacy to participate with confidence in a broad range of physical activities (e.g., games, sports, aerobics, martial arts, recreational activities). | Feedback from others and self-assessment impacts performance of movement skills and concepts. | Individual and team goals are achieved when applying effective tactical strategies in games, sports, and other physical fitness activities.",
       "statement": "Create and demonstrate planned movement sequences, individually and with others, based on tempo, beat, rhythm, music, and physical activities (e.g., creative, cultural, social, fitness aerobics, dance, yoga)."
     },
     {
@@ -12399,7 +12399,7 @@
       "grade": "8",
       "standard": "2.2 - Physical Wellness",
       "disciplinary_concept": "MSC - Movement Skills and Concepts",
-      "core_idea": "competency and literacy to participate with confidence in a broad range of physical activities (e.g., games, sports, aerobics, martial arts, recreational activities). Feedback from others and self-assessment impacts performance of movement skills and concepts. Individual and team goals are achieved when applying effective tactical strategies in games, sports, and other physical fitness activities.",
+      "core_idea": "Effective execution of movements is determined by the level of related skills and provides the foundation for physical competency and literacy to participate with confidence in a broad range of physical activities (e.g., games, sports, aerobics, martial arts, recreational activities). | Feedback from others and self-assessment impacts performance of movement skills and concepts. | Individual and team goals are achieved when applying effective tactical strategies in games, sports, and other physical fitness activities.",
       "statement": "Analyze, and correct movements and apply to refine movement skills."
     },
     {
@@ -12408,7 +12408,7 @@
       "grade": "8",
       "standard": "2.2 - Physical Wellness",
       "disciplinary_concept": "MSC - Movement Skills and Concepts",
-      "core_idea": "competency and literacy to participate with confidence in a broad range of physical activities (e.g., games, sports, aerobics, martial arts, recreational activities). Feedback from others and self-assessment impacts performance of movement skills and concepts. Individual and team goals are achieved when applying effective tactical strategies in games, sports, and other physical fitness activities.",
+      "core_idea": "Effective execution of movements is determined by the level of related skills and provides the foundation for physical competency and literacy to participate with confidence in a broad range of physical activities (e.g., games, sports, aerobics, martial arts, recreational activities). | Feedback from others and self-assessment impacts performance of movement skills and concepts. | Individual and team goals are achieved when applying effective tactical strategies in games, sports, and other physical fitness activities.",
       "statement": "Predict the impact of rules, etiquette, procedures, and sportsmanship on players' behavior in small groups and large teams during physical activities and games."
     },
     {
@@ -12417,7 +12417,7 @@
       "grade": "8",
       "standard": "2.2 - Physical Wellness",
       "disciplinary_concept": "MSC - Movement Skills and Concepts",
-      "core_idea": "competency and literacy to participate with confidence in a broad range of physical activities (e.g., games, sports, aerobics, martial arts, recreational activities). Feedback from others and self-assessment impacts performance of movement skills and concepts. Individual and team goals are achieved when applying effective tactical strategies in games, sports, and other physical fitness activities.",
+      "core_idea": "Effective execution of movements is determined by the level of related skills and provides the foundation for physical competency and literacy to participate with confidence in a broad range of physical activities (e.g., games, sports, aerobics, martial arts, recreational activities). | Feedback from others and self-assessment impacts performance of movement skills and concepts. | Individual and team goals are achieved when applying effective tactical strategies in games, sports, and other physical fitness activities.",
       "statement": "Demonstrate offensive, defensive, and cooperative strategies in a variety of games and settings."
     },
     {
@@ -12426,7 +12426,7 @@
       "grade": "8",
       "standard": "2.2 - Physical Wellness",
       "disciplinary_concept": "MSC - Movement Skills and Concepts",
-      "core_idea": "competency and literacy to participate with confidence in a broad range of physical activities (e.g., games, sports, aerobics, martial arts, recreational activities). Feedback from others and self-assessment impacts performance of movement skills and concepts. Individual and team goals are achieved when applying effective tactical strategies in games, sports, and other physical fitness activities.",
+      "core_idea": "Effective execution of movements is determined by the level of related skills and provides the foundation for physical competency and literacy to participate with confidence in a broad range of physical activities (e.g., games, sports, aerobics, martial arts, recreational activities). | Feedback from others and self-assessment impacts performance of movement skills and concepts. | Individual and team goals are achieved when applying effective tactical strategies in games, sports, and other physical fitness activities.",
       "statement": "Effectively manage emotions during physical activity (e.g., anger, frustration, excitement) in a safe manner to self and others."
     },
     {
@@ -12543,7 +12543,7 @@
       "grade": "8",
       "standard": "2.2 - Physical Wellness",
       "disciplinary_concept": "N - Nutrition",
-      "core_idea": "Many factors can influence an individual’s choices when selecting a balanced meal plan, which can affect nutritional wellness. | 2020 New Jersey Student Lear 2.2 Ph",
+      "core_idea": "Many factors can influence an individual’s choices when selecting a balanced meal plan, which can affect nutritional wellness.",
       "statement": "Analyze how culture, health status, age and access to healthy foods can influence personal eating habits."
     },
     {
@@ -12552,7 +12552,7 @@
       "grade": "8",
       "standard": "2.2 - Physical Wellness",
       "disciplinary_concept": "N - Nutrition",
-      "core_idea": "Many factors can influence an individual’s choices when selecting a balanced meal plan, which can affect nutritional wellness. | 2020 New Jersey Student Lear 2.2 Ph",
+      "core_idea": "Many factors can influence an individual’s choices when selecting a balanced meal plan, which can affect nutritional wellness.",
       "statement": "Identify skills and healthy behaviors that can support adolescents in losing, gaining, or maintaining healthy weights."
     },
     {
@@ -12561,7 +12561,7 @@
       "grade": "8",
       "standard": "2.2 - Physical Wellness",
       "disciplinary_concept": "N - Nutrition",
-      "core_idea": "Many factors can influence an individual’s choices when selecting a balanced meal plan, which can affect nutritional wellness. | 2020 New Jersey Student Lear 2.2 Ph",
+      "core_idea": "Many factors can influence an individual’s choices when selecting a balanced meal plan, which can affect nutritional wellness.",
       "statement": "Design sample nutritional plans for families with different lifestyles, resources, special needs, and cultural backgrounds; then consider the similarities and differences among the plans."
     },
     {
@@ -12570,7 +12570,7 @@
       "grade": "8",
       "standard": "2.2 - Physical Wellness",
       "disciplinary_concept": "N - Nutrition",
-      "core_idea": "Many factors can influence an individual’s choices when selecting a balanced meal plan, which can affect nutritional wellness. | 2020 New Jersey Student Lear 2.2 Ph",
+      "core_idea": "Many factors can influence an individual’s choices when selecting a balanced meal plan, which can affect nutritional wellness.",
       "statement": "Assess personal nutritional health and consider opportunities to improve health and performance (e.g., sports drinks, supplements, balance nutrition)."
     },
     {
@@ -12714,7 +12714,7 @@
       "grade": "5",
       "standard": "2.3 - Safety",
       "disciplinary_concept": "DSDT - Dependency, Substances Disorder, and Treatment",
-      "core_idea": "The use/abuse of alcohol, tobacco, and drugs can have unintended consequences but there are resources available for individuals and others affected by these situations. | 2020 New Jersey Student Learni 2.",
+      "core_idea": "The use/abuse of alcohol, tobacco, and drugs can have unintended consequences but there are resources available for individuals and others affected by these situations.",
       "statement": "Demonstrate strategies for seeking assistance for someone impacted by an individual who is struggling with the use/abuse of alcohol or drugs."
     },
     {
@@ -12723,7 +12723,7 @@
       "grade": "5",
       "standard": "2.3 - Safety",
       "disciplinary_concept": "DSDT - Dependency, Substances Disorder, and Treatment",
-      "core_idea": "The use/abuse of alcohol, tobacco, and drugs can have unintended consequences but there are resources available for individuals and others affected by these situations. | 2020 New Jersey Student Learni 2.",
+      "core_idea": "The use/abuse of alcohol, tobacco, and drugs can have unintended consequences but there are resources available for individuals and others affected by these situations.",
       "statement": "Identify the various types of resources that are available in the community and online to assist individuals who struggle with alcohol, tobacco, and drug use/abuse (e.g., school nurse, counselor, peer leadership group)."
     },
     {
@@ -12858,7 +12858,7 @@
       "grade": "8",
       "standard": "2.3 - Safety",
       "disciplinary_concept": "ATD - Alcohol, Tobacco and other Drugs",
-      "core_idea": "The use of alcohol, tobacco (including e- cigarettes, vaping), and other drugs (including cannabis products) can result in social, emotional, and physical harm to oneself and others.",
+      "core_idea": "The use of alcohol, tobacco (including e-cigarettes, vaping), and other drugs (including cannabis products) can result in social, emotional, and physical harm to oneself and others.",
       "statement": "Examine how the use of alcohol, tobacco, and other drugs by adolescents has impacted their lives and the lives of family members socially, emotionally, and physically."
     },
     {
@@ -12867,7 +12867,7 @@
       "grade": "8",
       "standard": "2.3 - Safety",
       "disciplinary_concept": "ATD - Alcohol, Tobacco and other Drugs",
-      "core_idea": "The use of alcohol, tobacco (including e- cigarettes, vaping), and other drugs (including cannabis products) can result in social, emotional, and physical harm to oneself and others.",
+      "core_idea": "The use of alcohol, tobacco (including e-cigarettes, vaping), and other drugs (including cannabis products) can result in social, emotional, and physical harm to oneself and others.",
       "statement": "Relate the use of alcohol and other drugs to decision-making, consent, and risk for sexual assault and abuse."
     },
     {
@@ -12876,7 +12876,7 @@
       "grade": "8",
       "standard": "2.3 - Safety",
       "disciplinary_concept": "ATD - Alcohol, Tobacco and other Drugs",
-      "core_idea": "The use of alcohol, tobacco (including e- cigarettes, vaping), and other drugs (including cannabis products) can result in social, emotional, and physical harm to oneself and others.",
+      "core_idea": "The use of alcohol, tobacco (including e-cigarettes, vaping), and other drugs (including cannabis products) can result in social, emotional, and physical harm to oneself and others.",
       "statement": "Determine the factors that contribute to different rules, laws, and policies in schools, communities, and states regarding alcohol, tobacco (including e-cigarettes, vaping, cannabis products), and other drugs."
     },
     {
@@ -12885,7 +12885,7 @@
       "grade": "8",
       "standard": "2.3 - Safety",
       "disciplinary_concept": "ATD - Alcohol, Tobacco and other Drugs",
-      "core_idea": "The use of alcohol, tobacco (including e- cigarettes, vaping), and other drugs (including cannabis products) can result in social, emotional, and physical harm to oneself and others.",
+      "core_idea": "The use of alcohol, tobacco (including e-cigarettes, vaping), and other drugs (including cannabis products) can result in social, emotional, and physical harm to oneself and others.",
       "statement": "Explain the impact of alcohol and other drugs on areas of the brain that control vision, sleep, coordination, reaction time, judgment, and memory."
     },
     {
@@ -12894,7 +12894,7 @@
       "grade": "8",
       "standard": "2.3 - Safety",
       "disciplinary_concept": "ATD - Alcohol, Tobacco and other Drugs",
-      "core_idea": "The use of alcohol, tobacco (including e- cigarettes, vaping), and other drugs (including cannabis products) can result in social, emotional, and physical harm to oneself and others.",
+      "core_idea": "The use of alcohol, tobacco (including e-cigarettes, vaping), and other drugs (including cannabis products) can result in social, emotional, and physical harm to oneself and others.",
       "statement": "Analyze how the influence of peers and different social settings (e.g., home, school, party) can result in positive and/or negative outcomes."
     },
     {
@@ -12903,7 +12903,7 @@
       "grade": "8",
       "standard": "2.3 - Safety",
       "disciplinary_concept": "DSDT - Dependency, Substances Disorder and Treatment",
-      "core_idea": "A variety of factors can contribute to alcohol, tobacco, and drug disorders (e.g., mental | health, genetics, environment) and a wide variety of treatment options are available depending on the needs of the individual.",
+      "core_idea": "A variety of factors can contribute to alcohol, tobacco, and drug disorders (e.g., mental health, genetics, environment) and a wide variety of treatment options are available depending on the needs of the individual.",
       "statement": "Summarize the signs and symptoms of alcohol, tobacco, and drug disorders."
     },
     {
@@ -12912,7 +12912,7 @@
       "grade": "8",
       "standard": "2.3 - Safety",
       "disciplinary_concept": "DSDT - Dependency, Substances Disorder and Treatment",
-      "core_idea": "A variety of factors can contribute to alcohol, tobacco, and drug disorders (e.g., mental | health, genetics, environment) and a wide variety of treatment options are available depending on the needs of the individual.",
+      "core_idea": "A variety of factors can contribute to alcohol, tobacco, and drug disorders (e.g., mental health, genetics, environment) and a wide variety of treatment options are available depending on the needs of the individual.",
       "statement": "Compare and contrast the various services that are available for individuals affected by substance disorders in the community and at the state level."
     },
     {
@@ -12921,7 +12921,7 @@
       "grade": "8",
       "standard": "2.3 - Safety",
       "disciplinary_concept": "DSDT - Dependency, Substances Disorder and Treatment",
-      "core_idea": "The use of alcohol and drugs can affect the social, emotional, and physical behaviors of individuals and their families. | 2020 New Jersey Student Learning 2.3 S",
+      "core_idea": "The use of alcohol and drugs can affect the social, emotional, and physical behaviors of individuals and their families.",
       "statement": "Determine the impact that alcohol and drugs can have on an individual’s social, emotional, and physical well-being."
     },
     {
@@ -12930,7 +12930,7 @@
       "grade": "8",
       "standard": "2.3 - Safety",
       "disciplinary_concept": "DSDT - Dependency, Substances Disorder and Treatment",
-      "core_idea": "The use of alcohol and drugs can affect the social, emotional, and physical behaviors of individuals and their families. | 2020 New Jersey Student Learning 2.3 S",
+      "core_idea": "The use of alcohol and drugs can affect the social, emotional, and physical behaviors of individuals and their families.",
       "statement": "Examine how alcohol and drug disorders can impact the social, emotional, and physical lives of friends and family members."
     },
     {
@@ -12939,7 +12939,7 @@
       "grade": "8",
       "standard": "2.3 - Safety",
       "disciplinary_concept": "DSDT - Dependency, Substances Disorder and Treatment",
-      "core_idea": "The use of alcohol and drugs can affect the social, emotional, and physical behaviors of individuals and their families. | 2020 New Jersey Student Learning 2.3 S",
+      "core_idea": "The use of alcohol and drugs can affect the social, emotional, and physical behaviors of individuals and their families.",
       "statement": "Compare and contrast the various services that are available for family members and others affected by substance disorders in the community and at the state level."
     }
   ],
@@ -14213,7 +14213,7 @@
       "code": "5.NBT.A.3.a",
       "parent": "5.NBT.A.3",
       "grade": "5",
-      "statement": "Read and write decimals to thousandths using base-ten numerals, number names, and expanded form, e.g., \\(347.392 = 3 \\times 100 + 4 \\times 10 + 7 \\times 1 + 3 \\times (\\frac{1}{10)} + 9 \\times (\\frac{1}{100)} + 2 \\times (\\frac{1}{1000)}\\).",
+      "statement": "Read and write decimals to thousandths using base-ten numerals, number names, and expanded form, e.g., \\(347.392 = 3 \\times 100 + 4 \\times 10 + 7 \\times 1 + 3 \\times (\\frac{1}{10}) + 9 \\times (\\frac{1}{100}) + 2 \\times (\\frac{1}{1000})\\).",
       "parent_statement": "Read, write, and compare decimals to thousandths.",
       "aliases": [
         "5.NBT.A.3a"
@@ -14224,7 +14224,7 @@
       "code": "5.NBT.A.3.b",
       "parent": "5.NBT.A.3",
       "grade": "5",
-      "statement": "Compare two decimals to thousandths based on meanings of the digits in each place, using \\>, =, and \\< symbols to record the results of comparisons.",
+      "statement": "Compare two decimals to thousandths based on meanings of the digits in each place, using >, =, and < symbols to record the results of comparisons.",
       "parent_statement": "Read, write, and compare decimals to thousandths.",
       "aliases": [
         "5.NBT.A.3b"
@@ -14235,7 +14235,7 @@
       "code": "5.NF.B.4.a",
       "parent": "5.NF.B.4",
       "grade": "5",
-      "statement": "Interpret the product \\(\\frac{a}{b} \\times q\\) as *a* parts of a partition of *q* into *b* equal parts; equivalently, as the result of a sequence of operations \\(a \\times q \\div b\\). For example, use a visual fraction model to show \\(\\frac{2}{3} \\times 4 = \\frac{8}{3}\\) , and create a story context for this equation. Do the same with \\(\\frac{2}{3} \\times \\frac{4}{5} = \\frac{8}{15}\\). (In general, \\(\\frac{a}{b} \\times \\frac{c}{d} = \\frac{ab}{bd}\\)).",
+      "statement": "Interpret the product \\((\\frac{a}{b}) \\times q\\) as \\(a\\) parts of a partition of \\(q\\) into \\(b\\) equal parts; equivalently, as the result of a sequence of operations \\(a \\times q \\div b\\). For example, use a visual fraction model to show \\(\\frac{2}{3} \\times 4 = \\frac{8}{3}\\), and create a story context for this equation. Do the same with \\(\\frac{2}{3} \\times \\frac{4}{5} = \\frac{8}{15}\\). (In general, \\(\\frac{a}{b} \\times \\frac{c}{d} = \\frac{ac}{bd}\\)).",
       "parent_statement": "Apply and extend previous understandings of multiplication to multiply a fraction or whole number by a fraction.",
       "aliases": [
         "5.NF.B.4a"
@@ -14279,7 +14279,7 @@
       "code": "5.NF.B.7.a",
       "parent": "5.NF.B.7",
       "grade": "5",
-      "statement": "Interpret division of a unit fraction by a non-zero whole number, and compute such quotients. For example, create a story context for \\(\\frac{1}{3} \\div 4\\) , and use a visual fraction model to show the quotient. Use the relationship between multiplication and division to explain that \\(\\frac{1}{3} \\div 4 = 1\\frac{1}{2}\\) because \\(1\\frac{1}{2} \\times 4 = \\frac{1}{3}\\).",
+      "statement": "Interpret division of a unit fraction by a non-zero whole number, and compute such quotients. For example, create a story context for \\(\\frac{1}{3} \\div 4\\), and use a visual fraction model to show the quotient. Use the relationship between multiplication and division to explain that \\(\\frac{1}{3} \\div 4 = \\frac{1}{12}\\) because \\(\\frac{1}{12} \\times 4 = \\frac{1}{3}\\).",
       "parent_statement": "Apply and extend previous understandings of division to divide unit fractions by whole numbers and whole numbers by unit fractions.",
       "aliases": [
         "5.NF.B.7a"
@@ -14290,7 +14290,7 @@
       "code": "5.NF.B.7.b",
       "parent": "5.NF.B.7",
       "grade": "5",
-      "statement": "Interpret division of a whole number by a unit fraction, and compute such quotients. For example, create a story context for \\(4 \\div \\frac{1}{5}\\) , and use a visual fraction model to show the quotient. Use the relationship between multiplication and division to explain that \\(4 \\div \\frac{1}{5} = 20\\) because \\(20 \\times \\frac{1}{5} = 4\\).",
+      "statement": "Interpret division of a whole number by a unit fraction, and compute such quotients. For example, create a story context for \\(4 \\div \\frac{1}{5}\\), and use a visual fraction model to show the quotient. Use the relationship between multiplication and division to explain that \\(4 \\div \\frac{1}{5} = 20\\) because \\(20 \\times \\frac{1}{5} = 4\\).",
       "parent_statement": "Apply and extend previous understandings of division to divide unit fractions by whole numbers and whole numbers by unit fractions.",
       "aliases": [
         "5.NF.B.7b"
@@ -14323,7 +14323,7 @@
       "code": "5.M.B.2.b",
       "parent": "5.M.B.2",
       "grade": "5",
-      "statement": "A solid figure which can be packed without gaps or overlaps using *n* unit cubes is said to have a volume of *n* cubic units.",
+      "statement": "A solid figure which can be packed without gaps or overlaps using \\(n\\) unit cubes is said to have a volume of \\(n\\) cubic units.",
       "parent_statement": "Recognize volume as an attribute of solid figures and understand concepts of volume measurement.",
       "aliases": [
         "5.M.B.2b"
@@ -14345,7 +14345,7 @@
       "code": "5.M.B.4.b",
       "parent": "5.M.B.4",
       "grade": "5",
-      "statement": "Apply the formulas \\(V = l \\times w \\times h\\)and \\(V = B \\times h\\) for rectangular prisms to find volumes of right rectangular prisms with whole number edge lengths in the context of solving real world and mathematical problems.",
+      "statement": "Apply the formulas \\(V = l \\times w \\times h\\) and \\(V = B \\times h\\) for rectangular prisms to find volumes of right rectangular prisms with whole number edge lengths in the context of solving real world and mathematical problems.",
       "parent_statement": "Relate volume to the operations of multiplication and addition and solve real world and mathematical problems involving volume.",
       "aliases": [
         "5.M.B.4b"
@@ -14389,7 +14389,7 @@
       "code": "6.RP.A.3.c",
       "parent": "6.RP.A.3",
       "grade": "6",
-      "statement": "Find a percent of a quantity as a rate per 100 (e.g., 30% of a quantity means \\(1\\frac{30}{00}\\)times the quantity); solve problems involving finding the whole, given a part and the percent.",
+      "statement": "Find a percent of a quantity as a rate per 100 (e.g., 30% of a quantity means \\(\\frac{30}{100}\\) times the quantity); solve problems involving finding the whole, given a part and the percent.",
       "parent_statement": "Use ratio and rate reasoning to solve real-world and mathematical problems, e.g., by reasoning about tables of equivalent ratios, tape diagrams, double number line diagrams, or equations.",
       "aliases": [
         "6.RP.A.3c"
@@ -14444,7 +14444,7 @@
       "code": "6.NS.C.7.a",
       "parent": "6.NS.C.7",
       "grade": "6",
-      "statement": "Interpret statements of inequality as statements about the relative position of two numbers on a number line diagram. For example, interpret \\(- 3 > - 7\\) as a statement that\\ \\(- 3\\) is located to the right of \\(- 7\\) on a number line oriented from left to right.",
+      "statement": "Interpret statements of inequality as statements about the relative position of two numbers on a number line diagram. For example, interpret \\(- 3 > - 7\\) as a statement that \\(- 3\\) is located to the right of \\(- 7\\) on a number line oriented from left to right.",
       "parent_statement": "Understand ordering and absolute value of rational numbers.",
       "aliases": [
         "6.NS.C.7a"
@@ -14455,7 +14455,7 @@
       "code": "6.NS.C.7.b",
       "parent": "6.NS.C.7",
       "grade": "6",
-      "statement": "Write, interpret, and explain statements of order for rational numbers in real-world contexts. For example, write \\(- 3^{\\circ}C > - 7^{\\circ}C\\) to express the fact that \\(- 3^{\\circ}C\\) is warmer than \\(- 7^{\\circ}C\\) .",
+      "statement": "Write, interpret, and explain statements of order for rational numbers in real-world contexts. For example, write \\(- 3^{\\circ}C > - 7^{\\circ}C\\) to express the fact that \\(- 3^{\\circ}C\\) is warmer than \\(- 7^{\\circ}C\\).",
       "parent_statement": "Understand ordering and absolute value of rational numbers.",
       "aliases": [
         "6.NS.C.7b"
@@ -14466,7 +14466,7 @@
       "code": "6.NS.C.7.c",
       "parent": "6.NS.C.7",
       "grade": "6",
-      "statement": "Understand the absolute value of a rational number as its distance from 0 on the number line; interpret absolute value as magnitude for a positive or negative quantity in a real-world situation. For example, for an account balance of \\(- 30\\)dollars, write \\(- 30 = 30\\) to describe the size of the debt in dollars.",
+      "statement": "Understand the absolute value of a rational number as its distance from 0 on the number line; interpret absolute value as magnitude for a positive or negative quantity in a real-world situation. For example, for an account balance of \\(- 30\\) dollars, write \\(|-30| = 30\\) to describe the size of the debt in dollars.",
       "parent_statement": "Understand ordering and absolute value of rational numbers.",
       "aliases": [
         "6.NS.C.7c"
@@ -14477,7 +14477,7 @@
       "code": "6.NS.C.7.d",
       "parent": "6.NS.C.7",
       "grade": "6",
-      "statement": "Distinguish comparisons of absolute value from statements about order. For example, recognize that an account balance less than \\(- 30\\)dollars represents a debt greater than 30 dollars.",
+      "statement": "Distinguish comparisons of absolute value from statements about order. For example, recognize that an account balance less than \\(- 30\\) dollars represents a debt greater than 30 dollars.",
       "parent_statement": "Understand ordering and absolute value of rational numbers.",
       "aliases": [
         "6.NS.C.7d"
@@ -14510,7 +14510,7 @@
       "code": "6.EE.A.2.c",
       "parent": "6.EE.A.2",
       "grade": "6",
-      "statement": "Evaluate expressions at specific values of their variables. Include expressions that arise from formulas used in real-world problems. Perform arithmetic operations, including those involving whole number exponents, in the conventional order when there are no parentheses to specify a particular order (Order of Operations). For example, use the formulas \\(V = 6s3\\) and \\(A = 6s2\\) to find the volume and surface area of a cube with sides of length \\(s = \\frac{1}{2}\\).",
+      "statement": "Evaluate expressions at specific values of their variables. Include expressions that arise from formulas used in real-world problems. Perform arithmetic operations, including those involving whole number exponents, in the conventional order when there are no parentheses to specify a particular order (Order of Operations). For example, use the formulas \\(V = s^{3}\\) and \\(A = 6s^{2}\\) to find the volume and surface area of a cube with sides of length \\(s = \\frac{1}{2}\\).",
       "parent_statement": "Write, read, and evaluate expressions in which letters stand for numbers.",
       "aliases": [
         "6.EE.A.2c"
@@ -14598,7 +14598,7 @@
       "code": "7.RP.A.2.d",
       "parent": "7.RP.A.2",
       "grade": "7",
-      "statement": "Explain what a point \\((x,y)\\) on the graph of a proportional relationship means in terms of the situation, with special attention to the points (0, 0) and \\((1,r)\\)where \\(r\\)is the unit rate.",
+      "statement": "Explain what a point \\((x,y)\\) on the graph of a proportional relationship means in terms of the situation, with special attention to the points (0, 0) and \\((1,r)\\) where \\(r\\) is the unit rate.",
       "parent_statement": "Recognize and represent proportional relationships between quantities.",
       "aliases": [
         "7.RP.A.2d"
@@ -14620,7 +14620,7 @@
       "code": "7.NS.A.1.b",
       "parent": "7.NS.A.1",
       "grade": "7",
-      "statement": "Understand \\(p + q\\)as the number located a distance \\(q\\)from\\(p\\), in the positive or negative direction depending on whether *q* is positive or negative. Show that a number and its opposite have a sum of 0 (are additive inverses). Interpret sums of rational numbers by describing real-world contexts.",
+      "statement": "Understand \\(p + q\\) as the number located a distance \\(|q|\\) from \\(p\\), in the positive or negative direction depending on whether \\(q\\) is positive or negative. Show that a number and its opposite have a sum of 0 (are additive inverses). Interpret sums of rational numbers by describing real-world contexts.",
       "parent_statement": "Apply and extend previous understandings of addition and subtraction to add and subtract rational numbers; represent addition and subtraction on a horizontal or vertical number line diagram.",
       "aliases": [
         "7.NS.A.1b"
@@ -14664,7 +14664,7 @@
       "code": "7.NS.A.2.b",
       "parent": "7.NS.A.2",
       "grade": "7",
-      "statement": "Understand that integers can be divided, provided that the divisor is not zero, and every quotient of integers (with non-zero divisor) is a rational number. If \\(q\\) and \\(q\\) are integers, then \\(- \\frac{p}{q} = \\frac{( - p)}{q} = \\frac{p}{( - q)}\\) . Interpret quotients of rational numbers by describing real world contexts.",
+      "statement": "Understand that integers can be divided, provided that the divisor is not zero, and every quotient of integers (with non-zero divisor) is a rational number. If \\(p\\) and \\(q\\) are integers, then \\(-(\\frac{p}{q}) = \\frac{(-p)}{q} = \\frac{p}{(-q)}\\). Interpret quotients of rational numbers by describing real world contexts.",
       "parent_statement": "Apply and extend previous understandings of multiplication and division and of fractions to multiply and divide rational numbers.",
       "aliases": [
         "7.NS.A.2b"
@@ -14697,7 +14697,7 @@
       "code": "7.EE.B.4.a",
       "parent": "7.EE.B.4",
       "grade": "7",
-      "statement": "Solve word problems leading to equations of the form\\(px + q = r\\)and \\(p(x + q) = r\\), where\\(p\\), \\(q\\), and \\(r\\) are specific rational numbers. Solve equations of these forms with accuracy and efficiency. Compare an algebraic solution to an arithmetic solution, identifying the sequence of the operations used in each approach. For example, the perimeter of a rectangle is 54 cm. Its length is 6 cm. What is its width?",
+      "statement": "Solve word problems leading to equations of the form \\(px + q = r\\) and \\(p(x + q) = r\\), where \\(p\\), \\(q\\), and \\(r\\) are specific rational numbers. Solve equations of these forms with accuracy and efficiency. Compare an algebraic solution to an arithmetic solution, identifying the sequence of the operations used in each approach. For example, the perimeter of a rectangle is 54 cm. Its length is 6 cm. What is its width?",
       "parent_statement": "Use variables to represent quantities in a real-world or mathematical problem, and construct simple equations and inequalities to solve problems by reasoning about the quantities.",
       "aliases": [
         "7.EE.B.4a"
@@ -14708,7 +14708,7 @@
       "code": "7.EE.B.4.b",
       "parent": "7.EE.B.4",
       "grade": "7",
-      "statement": "Solve word problems leading to inequalities of the form\\(px + q > r\\)or \\(px + q < r\\), where \\(p\\), \\(q\\), and \\(r\\) are specific rational numbers. Graph the solution set of the inequality and interpret it in the context of the problem. For example: As a salesperson, you are paid \\$50 per week plus \\$3 per sale. This week you want your pay to be at least \\$100. Write an inequality for the number of sales you need to make, and describe the solutions.",
+      "statement": "Solve word problems leading to inequalities of the form \\(px + q > r\\) or \\(px + q < r\\), where \\(p\\), \\(q\\), and \\(r\\) are specific rational numbers. Graph the solution set of the inequality and interpret it in the context of the problem. For example: As a salesperson, you are paid $50 per week plus $3 per sale. This week you want your pay to be at least $100. Write an inequality for the number of sales you need to make, and describe the solutions.",
       "parent_statement": "Use variables to represent quantities in a real-world or mathematical problem, and construct simple equations and inequalities to solve problems by reasoning about the quantities.",
       "aliases": [
         "7.EE.B.4b"
@@ -14719,7 +14719,7 @@
       "code": "7.SP.C.7.a",
       "parent": "7.SP.C.7",
       "grade": "7",
-      "statement": "Develop a uniform probability model by assigning equal probability to all outcomes and use the model to determine probabilities of events. For example, if a student is selected at random from a class, find the probability that Jane will be selected and the probability that a girl will be selected.",
+      "statement": "Develop a uniform probability model by assigning equal probability to all outcomes, and use the model to determine probabilities of events. For example, if a student is selected at random from a class, find the probability that Jane will be selected and the probability that a girl will be selected.",
       "parent_statement": "Develop a probability model and use it to find probabilities of events. Compare probabilities from a model to observed frequencies; if the agreement is not good, explain possible sources of the discrepancy.",
       "aliases": [
         "7.SP.C.7a"
@@ -14774,8 +14774,8 @@
       "code": "8.EE.A.2.a",
       "parent": "8.EE.A.2",
       "grade": "8",
-      "statement": "Evaluate square roots of small perfect squares and cube roots of small perfect cubes. Know that \\(\\frac{}{2}\\) is irrational.",
-      "parent_statement": "Use square root and cube root symbols to represent solutions to equations of the form \\(x2 = p\\)and \\(x3 = p\\) where \\(p\\) is a positive rational number.",
+      "statement": "Evaluate square roots of small perfect squares and cube roots of small perfect cubes. Know that \\(\\sqrt{2}\\) is irrational.",
+      "parent_statement": "Use square root and cube root symbols to represent solutions to equations of the form \\(x^{2} = p\\) and \\(x^{3} = p\\), where \\(p\\) is a positive rational number.",
       "aliases": [
         "8.EE.A.2a"
       ]
@@ -14785,8 +14785,8 @@
       "code": "8.EE.A.2.b",
       "parent": "8.EE.A.2",
       "grade": "8",
-      "statement": "Simplify numerical radicals, limiting to square roots (i.e. nonperfect squares). For example, simplify \\(\\frac{}{8}\\) to \\(2\\frac{}{2}\\).",
-      "parent_statement": "Use square root and cube root symbols to represent solutions to equations of the form \\(x2 = p\\)and \\(x3 = p\\) where \\(p\\) is a positive rational number.",
+      "statement": "Simplify numerical radicals, limiting to square roots (i.e. nonperfect squares). For example, simplify \\(\\sqrt{8}\\) to \\(2\\sqrt{2}\\).",
+      "parent_statement": "Use square root and cube root symbols to represent solutions to equations of the form \\(x^{2} = p\\) and \\(x^{3} = p\\), where \\(p\\) is a positive rational number.",
       "aliases": [
         "8.EE.A.2b"
       ]
@@ -14796,7 +14796,7 @@
       "code": "8.EE.C.7.a",
       "parent": "8.EE.C.7",
       "grade": "8",
-      "statement": "Give examples of linear equations in one variable with one solution, infinitely many solutions, or no solutions. Show which of these possibilities is the case by successively transforming the given equation into simpler forms, until an equivalent equation of the form \\(x = a\\), \\(a = a\\), or \\(a = b\\)results (where \\(a\\)and \\(b\\)are different numbers).",
+      "statement": "Give examples of linear equations in one variable with one solution, infinitely many solutions, or no solutions. Show which of these possibilities is the case by successively transforming the given equation into simpler forms, until an equivalent equation of the form \\(x = a\\), \\(a = a\\), or \\(a = b\\) results (where \\(a\\) and \\(b\\) are different numbers).",
       "parent_statement": "Solve linear equations in one variable.",
       "aliases": [
         "8.EE.C.7a"
@@ -14829,7 +14829,7 @@
       "code": "8.EE.C.8.b",
       "parent": "8.EE.C.8",
       "grade": "8",
-      "statement": "Solve systems of two linear equations in two variables using the substitution method and estimate solutions by graphing the equations. Solve simple cases by inspection. For example: by inspection, conclude that \\(3x + 2y = 5\\) and \\(3x + 2y = 6\\)have no solution because \\(3x + 2y\\) cannot simultaneously be 5 and 6. Solve \\(3x + y = 30\\) and \\(y = 2x\\)using the substitution method; Solve \\(y = 3x + 1\\) and \\(y = - 2x + 7\\)using the substitution method.",
+      "statement": "Solve systems of two linear equations in two variables using the substitution method and estimate solutions by graphing the equations. Solve simple cases by inspection. For example: by inspection, conclude that \\(3x + 2y = 5\\) and \\(3x + 2y = 6\\) have no solution because \\(3x + 2y\\) cannot simultaneously be 5 and 6. Solve \\(3x + y = 30\\) and \\(y = 2x\\) using the substitution method; Solve \\(y = 3x + 1\\) and \\(y = - 2x + 7\\) using the substitution method.",
       "parent_statement": "Analyze and solve pairs of simultaneous linear equations.",
       "aliases": [
         "8.EE.C.8b"

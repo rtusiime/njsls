@@ -908,7 +908,7 @@
       {
         "code": "TS",
         "name": "Text Structure",
-        "statement": "By the end of grade 12, analyze the structure of texts, including how specific sentences, paragraphs, and larger portions of the text relate to each other and the whole.",
+        "statement": "By the end of grade 12, analyze the structure of texts, including how specific sentences, paragraphs, and larger portions of the text (e.g., a section, chapter, scene, or stanza) relate to each other and the whole.",
         "grades": {
           "5": [
             {
@@ -2020,7 +2020,7 @@
       {
         "code": "RW",
         "name": "Range of Writing",
-        "statement": "By the end of grade 12, write routinely over extended time frames and shorter time frames for a range of tasks, purposes, and audiences.",
+        "statement": "By the end of grade 12, write routinely over extended time frames (time for research, reflection, and revision) and shorter time frames (a single sitting or a day or two) for a range of tasks, purposes, and audiences.",
         "grades": {
           "5": [
             {
