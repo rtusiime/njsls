@@ -6,6 +6,51 @@ Entries are intentionally verbose. The point is full visibility: open the file a
 
 ---
 
+## Session 25 — 2026-10-12 EDT
+*Made every lettered sub-standard individually addressable across all subjects. Math's 61 subs were plain strings: now coded `{code, text}` (`6.RP.A.3.c`) like ELA's. `all.json` gains a flat `sub_standards` index (219 records), the hub's instant and Claude searches resolve sub-codes instead of dropping them, and CohortCalendar tags on a sub roll up to its parent. Verified all Math text against NJDOE's registry and audited every other subject for text corruption; fixed what was found.*
+
+### User request
+
+A lesson doc "quoted the parent standard" because "your NJSLS file is missing the lettered sub-standards (6.RP.A.3.c, 7.RP.A.2.a, 7.NS.A.2.d, 5.NF.B.5 a–b)." Checked: the sub *text* was present, but Math subs were unlabeled strings with no code, so a lookup of `6.RP.A.3.c` found nothing. User: label + individually code them, fix the `6.RP.A.3.c` LaTeX bug I'd spotted — "fix EVERYTHING. across all subjects! plan your work so you can do this efficiently!"
+
+### Plan
+
+Main had moved on (Sessions 19–23, including Session 22's ELA sub-coding convention) while PR #1 sat unmerged, so: rebase first (Session 24), then copy ELA's convention to Math rather than invent a new one. Two background agents ran in parallel with the code work: one verified all 112 Math statements and 61 subs against NJDOE's registry (Learning Commons knowledge graph, `jurisdiction: New Jersey`, code form `6.RP.A.3c`), probing for subs we lack; the other audited the six non-Math subjects for text corruption (ELA against the vendored source docx, Science against NGSS, the rest by heuristics). Survey result: only ELA and Math have lettered sub-standards — no other subject has `subs` or inline lettered lists.
+
+### Changes
+
+- **`data/math.json`** — 61 subs across 21 standards → `{code, text}`, lowercase letters by list position (`6.RP.A.3.c`; matches Common Core and the hub's existing letter rendering).
+- **`math.html`** — letter markers + `data-subcode` (KaTeX still renders inside), sub-codes in the search haystack, `.sub-hit` highlight on an exact sub-code query, and `normalizeSubCode()` so NJDOE's no-dot form (`6.RP.A.3c`) works too. Mirrors `ela.html`'s Session 22 implementation.
+- **`index.html` (hub)** —
+  - Instant search: new exact-sub-code branch → parent card, sub highlighted, labeled "exact code match" (ELA sub-codes previously surfaced only as a keyword hit).
+  - Claude search: `resolveMatches()` maps a cited sub-code to its parent card with the sub highlighted, merges duplicate hits, still drops hallucinations. Before this, **any** lettered sub-code Claude returned — ELA's included — was discarded as hallucinated.
+  - Claude never saw sub-standards: the prompt corpus was `{code, statement, subject, grade}` JSON. Switched to a compact line format with every sub on an indented line — all 219 subs fit and the prompt *shrinks* ≈58.3K → ≈56.6K tokens (no per-record JSON keys), keeping new Tier-1 accounts under their rate cap. Instructions tell Claude to cite a sub's own code when the match is that specific.
+- **`scripts/build_all.py`** — `schema_version` 1.2; Math `subs` now objects; new top-level **`sub_standards`** (219: ELA 158, Math 61), each `{subject, code, parent, grade, statement, parent_statement, aliases?}` so a naive lookup by code resolves the sub itself; `parent_statement` because many subs are fragments of the stem; Math lists NJDOE's no-dot form in `aliases`. `standard_count` stays 903.
+- **`assets/cc-backlinks.js`** — a CohortCalendar block tagged `7.RP.A.2.a`, `7.RP.A.2a`, or `L.SS.6.1.A` now attaches to its parent's entry (deduped against a parent tag; chip says `sub a`). Social Studies PEs that end in `.a` (`6.1.8.CivicsPI.3.a`) are top-level codes and still match exactly.
+- **`CLAUDE.md`** — Math schema, `all.json` 1.2 + `sub_standards`, CC rollup; also corrected stale facts: search model is Haiku 4.5 (not Sonnet), the corpus is a lean serialization (not "the full all.json ~50K"), cost figures, "7 subject cards", file-map rows for CSDT/CLKS/CHPE.
+
+### Verification findings and fixes
+
+(filled in below once the verification agents report)
+
+### Verification
+
+Browser end-to-end (Playwright + Chromium, KaTeX served from its npm package — byte-identical to the pinned CDN files' SRI hashes; CohortCalendar and the Anthropic API mocked, outgoing prompt captured):
+- `math.html` — 112 standards, 61 letter markers, 0 KaTeX errors; `6.RP.A.3.c`, `6.rp.a.3c`, `7.NS.A.2.d`, `5.NF.B.5.b` each → exactly one standard with the right sub highlighted; keyword `percent` unaffected.
+- Hub — the same codes (+ `L.SS.6.1.A`) → "1 exact code match" with the sub highlighted. Mocked Claude response `[6.RP.A.3.c, 6.RP.A.3, L.SS.6.1.A, 7.NS.A.2d, FAKE.9.Z.9]` → 3 cards (6.RP.A.3 / c, L.SS.6.1 / A, 7.NS.A.2 / d): duplicate merged, hallucination dropped. Captured request: same model + caching; all 219 subs in the prompt.
+- CC: `7.RP.A.2.a` + `7.RP.A.2b` (+ parent tag) → 2 chips on 7.RP.A.2 marked `sub a` / `sub b`; ELA `L.SS.6.1.A` → L.SS.6.1; SS `6.1.8.CivicsPI.3.a` → itself, nothing on a phantom parent.
+- `ela.html` / `science.html` / `social-studies.html` regressions clean; zero console or page errors on all five pages.
+
+### Files touched
+
+- `data/math.json`, `data/all.json`, `math.html`, `index.html`, `assets/cc-backlinks.js`, `scripts/build_all.py`, `CLAUDE.md`, `SESSIONS.md` (+ data fixes listed above).
+
+### Commit
+
+(filled in after commit lands)
+
+---
+
 ## Session 24 — 2026-06-04 EDT (rebased onto main 2026-10-12)
 *Re-derived the Science three-dimensional foundation (`seps`/`dcis`/`cccs`) for all 75 PEs from machine-readable NGSS data, replacing the garbled `pdftotext` extraction. Completes the re-extraction task Session 19 spawned: intro pollution, bullet bleed, and the 15 empty-dimension PEs are gone. Written on branch `claude/gifted-pasteur-zGqog` as PR #1 before Sessions 19–23 landed; rebased onto them on 2026-10-12 and re-modeled to Session 19's lens conventions.*
 

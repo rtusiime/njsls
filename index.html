@@ -567,7 +567,7 @@ footer {
   <section class="search-section" id="search">
     <div class="search-eyebrow">Discovery</div>
     <h2 class="search-prompt">Find standards that <em>match</em> what you're teaching.</h2>
-    <p class="search-hint">Type a <strong>code</strong> or <strong>keyword</strong> for an instant match across all 903 standards. For <strong>semantic matching</strong> on a vague description or a pasted lesson plan, click <strong>Search with Claude</strong> — that one calls the Anthropic API with your key. (Want to <em>rank</em> or <em>compare</em> standards instead? Paste the <a href="data/all.json" target="_blank">data/all.json</a> link into Claude.ai — it's better at evaluative questions than this matcher is.)</p>
+    <p class="search-hint">Type a <strong>code</strong> (lettered sub-standards like <em>6.RP.A.3.c</em> work too) or <strong>keyword</strong> for an instant match across all 903 standards. For <strong>semantic matching</strong> on a vague description or a pasted lesson plan, click <strong>Search with Claude</strong> — that one calls the Anthropic API with your key. (Want to <em>rank</em> or <em>compare</em> standards instead? Paste the <a href="data/all.json" target="_blank">data/all.json</a> link into Claude.ai — it's better at evaluative questions than this matcher is.)</p>
     <form class="search-form" id="search-form" autocomplete="off">
       <textarea class="search-input" id="search-input" rows="1" placeholder="Type a code or keyword for instant matches… or describe a goal and click Search with Claude" required></textarea>
       <button type="submit" class="search-submit" id="search-submit">Search with Claude</button>
@@ -836,14 +836,38 @@ footer {
     return /^[\dA-Za-z][\d.\-A-Za-z]*$/.test(q) && (q.includes('.') || q.includes('-'));
   }
 
+  // NJDOE's own registry writes lettered Math sub-standards without the final dot
+  // ("6.RP.A.3c"); the pages, all.json and Common Core write "6.RP.A.3.c". Accept both.
+  function normalizeCode(q) {
+    return q.replace(/^(\d+\.[a-z]+\.[a-z]\.\d+)([a-z])$/i, '$1.$2');
+  }
+
+  // Lowercased lettered sub-standard code (6.rp.a.3.c, l.ss.6.1.a) -> { parent, sub }.
+  let subIndex = null;
+  function subIndexOf(standards) {
+    if (subIndex) return subIndex;
+    subIndex = new Map();
+    for (const s of standards) {
+      for (const x of s.subs || []) {
+        if (typeof x !== 'string') subIndex.set(x.code.toLowerCase(), { parent: s, sub: x });
+      }
+    }
+    return subIndex;
+  }
+
   function quickSearch(query, standards) {
-    const q = query.trim().toLowerCase();
+    const q = normalizeCode(query.trim().toLowerCase());
     if (!q) return [];
 
     // Exact code match
     const exact = standards.filter(s => s.code.toLowerCase() === q);
     if (exact.length) {
       return exact.map(s => ({ ...s, _matchType: 'exact_code' }));
+    }
+    // Exact lettered sub-standard code -> its parent's card with that sub highlighted
+    const subHit = subIndexOf(standards).get(q);
+    if (subHit) {
+      return [{ ...subHit.parent, _matchType: 'exact_code', _subHits: [subHit.sub.code] }];
     }
     // Code-prefix match
     if (looksLikeCode(q)) {
@@ -866,6 +890,26 @@ footer {
       const ccHit = Array.isArray(s.cc_codes) && s.cc_codes.some(c => c.toLowerCase() === q);
       return hay.includes(q) || ccHit;
     }).map(s => ({ ...s, _matchType: 'keyword' }));
+  }
+
+  // Claude's matches -> result cards. Keeps only codes that exist in the corpus (drops
+  // hallucinations). A lettered sub-standard (6.RP.A.3.c) resolves to its parent's card with
+  // that sub highlighted; several hits on one parent merge into a single card.
+  function resolveMatches(matches, standards) {
+    const byCode = new Map(standards.map(s => [s.code.toLowerCase(), s]));
+    const subs = subIndexOf(standards);
+    const cards = new Map();
+    for (const m of matches || []) {
+      if (!m || !m.code) continue;
+      const c = normalizeCode(String(m.code).trim().toLowerCase());
+      const sub = subs.get(c);
+      const std = byCode.get(c) || (sub && sub.parent);
+      if (!std) continue;
+      const card = cards.get(std.code) || { ...std, rationale: m.rationale || '', _subHits: [] };
+      if (sub && !card._subHits.includes(sub.sub.code)) card._subHits.push(sub.sub.code);
+      cards.set(std.code, card);
+    }
+    return [...cards.values()];
   }
 
   async function runKeywordSearch() {
@@ -906,10 +950,7 @@ footer {
     try {
       const corp = await loadCorpus();
       const parsed = await callClaude(q, apiKey, corp);
-      const byCode = new Map(corp.standards.map(s => [s.code, s]));
-      claudeMatches = (parsed.matches || [])
-        .filter(m => m && m.code && byCode.has(m.code))
-        .map(m => ({ ...byCode.get(m.code), rationale: m.rationale || '' }));
+      claudeMatches = resolveMatches(parsed.matches, corp.standards);
     } catch (err) {
       console.error(err);
       claudeError = err;
@@ -948,7 +989,7 @@ footer {
 
 The user's input could be:
 - A vague learning goal ("learn to code", "public speaking")
-- A standard code ("5.NF.A.1", "MS-PS1-1")
+- A standard code ("5.NF.A.1", "MS-PS1-1", "6.RP.A.3.c")
 - A paragraph or full lesson plan
 - A single concept ("surface area", "photosynthesis")
 - Anything else education-related
@@ -958,8 +999,11 @@ Your job: find ALL standards in the corpus below that STRONGLY match the input. 
 Return ONLY a JSON object in this exact shape with no preamble, no commentary, no markdown fences:
 { "matches": [ { "code": "<exact code from corpus>", "rationale": "<one sentence on why it matches>" } ] }
 
+The corpus lists one standard per line as "code | subject | grade | statement". Lettered sub-standards follow their parent on indented lines as "code | statement" (e.g. 6.RP.A.3.c, L.SS.6.1.A).
+
 Rules:
 - ONLY return codes that appear in the corpus below. Do not invent codes.
+- When the input matches one specific lettered sub-standard, return that sub-standard's own code (e.g. 6.RP.A.3.c), not only its parent.
 - Order strongest match first.
 - Rationale must reference what specifically connects the input to the standard (a phrase, a topic, a skill).
 - If nothing strongly matches, return { "matches": [] }.
@@ -968,14 +1012,20 @@ Rules:
 `;
 
   function buildSystemPrompt(corp) {
-    // Slim each standard to the four fields the matcher actually needs.
-    // Cuts corpus tokens ~60% vs the full record (which carries core_idea, era,
-    // clarifications, subs, etc.) — keeps the request under Anthropic's Tier-1
+    // One compact line per standard ("code | subject | grade | statement") with its lettered
+    // sub-standards on indented lines beneath. Dropping the per-record JSON keys pays for
+    // including all 219 sub-standards: ~56K tokens, vs ~58K for the old four-field JSON
+    // array without them — keeps the request under Anthropic's Tier-1
     // input-tokens-per-minute cap so new API accounts can use the search.
-    const lean = corp.standards.map(s => ({
-      code: s.code, statement: s.statement, subject: s.subject, grade: s.grade
-    }));
-    return SYSTEM_INSTRUCTIONS + JSON.stringify(lean) + '\n==END CORPUS==';
+    const flat = t => String(t).replace(/\s+/g, ' ').trim();
+    const lines = [];
+    for (const s of corp.standards) {
+      lines.push(`${s.code} | ${s.subject} | ${s.grade} | ${flat(s.statement)}`);
+      for (const x of s.subs || []) {
+        if (typeof x !== 'string') lines.push(`  ${x.code} | ${flat(x.text)}`);
+      }
+    }
+    return SYSTEM_INSTRUCTIONS + lines.join('\n') + '\n==END CORPUS==';
   }
 
   async function callClaude(query, apiKey, corp) {
@@ -1044,7 +1094,9 @@ Rules:
         <p class="result-statement">${esc(r.statement)}</p>
         ${(r.subs && r.subs.length) ? '<ul class="result-subs">' + r.subs.map(s => {
           if (typeof s === 'string') return `<li>${esc(s)}</li>`;
-          const hit = lastQuery.trim().toLowerCase() === s.code.toLowerCase();
+          const code = s.code.toLowerCase();
+          const hit = (r._subHits || []).some(c => c.toLowerCase() === code)
+                   || normalizeCode(lastQuery.trim().toLowerCase()) === code;
           return `<li class="has-code${hit ? ' result-sub-hit' : ''}" title="${esc(s.code)}"><span class="result-sub-code">${esc(s.code.split('.').pop())}</span>${esc(s.text)}</li>`;
         }).join('') + '</ul>' : ''}
         ${r.rationale ? `<div class="result-rationale">${esc(r.rationale)}</div>` : ''}

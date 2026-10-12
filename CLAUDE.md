@@ -6,12 +6,13 @@ Static site presenting the New Jersey Student Learning Standards as a teacher-re
 
 The hub has a paste-anything search box that finds NJSLS matches for vague learning goals, standard codes, full lesson plans, or single topics.
 
-- **Model:** `claude-sonnet-4-6` with prompt caching on the corpus (5-min TTL).
+- **Model:** `claude-haiku-4-5-20251001` with prompt caching on the corpus (5-min TTL). Haiku over Sonnet so new Tier-1 API accounts fit the corpus under their input-tokens-per-minute cap.
 - **Key handling:** BYO — stored in `localStorage` under `njsls_anthropic_api_key`. First-time search prompts via modal; "Change API key" link visible under the search box.
 - **CORS:** browser → `api.anthropic.com/v1/messages` direct using the `anthropic-dangerous-direct-browser-access: true` header. No backend.
-- **Grounding:** the full `data/all.json` corpus (~50K tokens) is injected into the system prompt; Claude returns `{ "matches": [{ code, rationale }] }` JSON. We validate codes against the local corpus before rendering — hallucinated codes are dropped.
-- **Cost:** ~$0.21 first query of a session (cache write), ~$0.04 per query thereafter (cache hit), per user's own Anthropic bill.
-- **Output rendering:** subject-colored result cards with the verbatim statement, optional subs, rationale chip, and a "Open <subject> page →" link. KaTeX renders any LaTeX in Math standards.
+- **Grounding:** `buildSystemPrompt()` serializes `data/all.json` into a compact corpus — one line per standard (`code | subject | grade | statement`) with its lettered sub-standards on indented lines (`code | text`) — ~56K tokens for all 903 standards + 219 sub-standards. Claude returns `{ "matches": [{ code, rationale }] }` JSON and may cite a lettered sub (`6.RP.A.3.c`). `resolveMatches()` validates against the local corpus: hallucinated codes are dropped; a sub-code resolves to its parent's card with that sub highlighted (duplicate hits merge into one card); NJDOE's no-dot form (`6.RP.A.3c`) is accepted.
+- **Cost:** ~$0.07 first query of a session (cache write), ~$0.01 per query thereafter (cache hit), at Haiku 4.5 rates, on the user's own Anthropic bill.
+- **Output rendering:** subject-colored result cards with the verbatim statement, lettered subs (the matched one highlighted), rationale chip, and a "Open <subject> page →" link. KaTeX renders any LaTeX in Math standards.
+- **Instant (free) search** — `quickSearch()`: exact code → exact lettered sub-code (parent card, sub highlighted) → code prefix → keyword substring over code, statement, subs, clarification, core idea, and Common Core codes.
 
 To restyle or tune search: it lives inline at the bottom `<script>` block of `index.html`. Prompt text is in `SYSTEM_INSTRUCTIONS`.
 
@@ -19,19 +20,21 @@ To restyle or tune search: it lives inline at the bottom `<script>` block of `in
 
 | File / Path | Role |
 |---|---|
-| `index.html` | Hub: 4 subject cards + semantic search box. Loads `data/all.json` when search runs. |
+| `index.html` | Hub: 7 subject cards + semantic search box. Loads `data/all.json` when search runs. |
 | `ela.html` | English Language Arts, Grades 5–8. Filtered browser. Fetches `data/ela.json` at load. |
 | `math.html` | Mathematics, Grades 5–8. Filtered browser with KaTeX rendering. Fetches `data/math.json`. |
 | `science.html` | Science, Grades 5–8 (Grade 5 + MS 6–8). Filtered browser. Fetches `data/science.json`. |
 | `social-studies.html` | Social Studies, Grades 3–8 (bands 3–5 and 6–8). Filtered browser. Fetches `data/social-studies.json`. |
+| `csdt.html` / `clks.html` / `chpe.html` | Computer Science & Design Thinking, Career Readiness / Life Literacies & Key Skills, Comprehensive Health & PE. Fetch `data/csdt.json` / `clks.json` / `chpe.json` (shared NJDOE-framework shape: standards → grade_bands → disciplinary_concepts → core_idea_blocks → PEs). |
 | `data/ela.json` | Hierarchical: domains → anchors → grades → entries. |
 | `data/math.json` | Hierarchical: grade → domains → clusters → standards. |
 | `data/science.json` | Hierarchical: discipline → topics → PEs; per-topic `grade_band`. |
 | `data/social-studies.json` | Hierarchical: band → standards (6.1 / 6.2 / 6.3) → eras OR groups → core_idea_blocks → PEs. |
 | `data/sources/*.md` | Cleaned source markdown for subjects whose source we processed ourselves (currently SS). |
-| `data/all.json` | **Flat denormalized 523-record array of every standard.** LLM/API consumption layer. |
+| `data/all.json` | **Flat denormalized index: 903 standards + 219 lettered sub-standards.** LLM/API consumption layer. |
 | `assets/cc-backlinks.js` + `.css` | Shared module: fetches CC live state and attaches "Taught in" sections under each standard entry on subject pages. |
 | `scripts/build_all.py` | Rebuilds `data/all.json` after any subject JSON edit. |
+| `scripts/rebuild_science_foundation.py` | Regenerates Science `seps`/`dcis`/`cccs` from pinned NGSS sources (see Session 24). |
 | `SESSIONS.md` | Reverse-chronological transcript log per work session. Append at top before each session's final commit. |
 | `CLAUDE.md` | This file. Auto-loaded into Claude Code context. |
 
@@ -85,14 +88,14 @@ Filters in UI: Domain pills + Grade pills. Lettered sub-bullets are individually
         standards: [{
           code,                                 // "5.OA.A.2"
           main,                                 // verbatim text with inline LaTeX in \(...\)
-          subs: [string]                        // optional lettered sub-items
+          subs: [{ code, text }]                // optional lettered sub-standards; code = <parent>.a/.b/… (e.g. 6.RP.A.3.c); text may carry LaTeX
         }]
       }]
     }]
   }
 }
 ```
-Filters in UI: Grade pills + live search input. Math has inline LaTeX expressions (e.g., `\frac{1}{10}`); rendered client-side via KaTeX auto-render. Search is normalised so plain-text queries like `1/2` find `\frac{1}{2}` — see `stripLatex()` in `math.html`.
+Filters in UI: Grade pills + live search input. Math has inline LaTeX expressions (e.g., `\frac{1}{10}`); rendered client-side via KaTeX auto-render. Search is normalised so plain-text queries like `1/2` find `\frac{1}{2}` — see `stripLatex()` in `math.html`. Lettered sub-standards are individually coded the same way as ELA's (lowercase letters, matching Common Core: `6.RP.A.3.c`) and searchable by code; an exact sub-code query highlights that sub. NJDOE's own registry writes them without the final dot (`6.RP.A.3c`) — search accepts that form too (`normalizeSubCode()`), and `all.json`'s `sub_standards` lists it under `aliases`. 61 subs across 21 standards, lettered by list position (verified against NJDOE's registry — see Session 25).
 
 ### Science — `data/science.json`
 ```
@@ -153,7 +156,9 @@ Code shape varies by standard/band:
 - 6-8 6.1/6.2: `6.<1|2>.8.<DiscConcept>.<era>.<letter>` — e.g., `6.1.8.CivicsPI.3.a`
 
 ### `data/all.json` — flat consumption layer
-Each standard is an entry in `standards: [...]` with denormalised fields: `{subject, code, grade, statement, …}` plus subject-specific extras (domain/anchor for ELA, domain/cluster for Math, discipline/topic for Science, standard/era-or-discipline/core_idea for SS). 903 entries (`schema_version` 1.1).
+Each standard is an entry in `standards: [...]` with denormalised fields: `{subject, code, grade, statement, …}` plus subject-specific extras (domain/anchor for ELA, domain/cluster for Math, discipline/topic for Science, standard/era-or-discipline/core_idea for SS). 903 entries (`schema_version` 1.2). ELA and Math records carry `subs: [{code, text}]` (Math subs were plain strings before 1.2).
+
+**Lettered sub-standards are also first-class records** in a separate top-level `sub_standards: [...]` array (219: ELA 158, Math 61) — `{subject, code, parent, grade, statement, parent_statement, aliases?}` — so a plain lookup of `6.RP.A.3.c` or `L.SS.6.1.A` resolves to the sub-standard itself rather than falling back to its parent. `parent_statement` is included because many subs are fragments of the parent's stem ("…by: Comparing the size of a product…"). Math records list NJDOE's no-dot form under `aliases` (`6.RP.A.3c`). Kept out of `standards` so `standard_count` and search results are unchanged; `sub_standard_count` gives the total.
 
 **Science PEs also carry NGSS three-dimensionality as queryable structure** (not latent prose fused into statement/clarification): scalar *lens keys* `sep_practices` / `dci_codes` / `ccc_concepts` for filtering by dimension (e.g. every PE using the Cause-and-Effect lens), plus full `seps` / `dcis` / `cccs` structures with identifiers + bullets. The repeated grade-band progression `intro` paragraphs are kept in `science.json` for the page render but dropped from `all.json` as boilerplate. A top-level `science_dimensions` block enumerates the available lenses (8 SEP practices; 15 CCC concepts = the 7 crosscutting concepts + 2 engineering and 6 nature-of-science connection sub-concepts; 38 DCI codes). Propagation logic lives in `science_dimensions()` in `scripts/build_all.py`.
 
@@ -254,7 +259,7 @@ Each block has `id, ttl, desc, w (week 0-indexed), d (day 0=Mon..4=Fri), s (slot
 Loaded by every subject page. On first DOMContentLoaded **and** any time the page's own render() runs, the module:
 
 1. Fetches CC state from Supabase (once per page load).
-2. Builds `Map<standardCode, blocks[]>`, sorted chronologically (week → day → slot).
+2. Builds `Map<standardCode, blocks[]>`, sorted chronologically (week → day → slot). A tag naming a lettered sub-standard — Math `7.RP.A.2.a` or NJDOE's `7.RP.A.2a`, ELA `L.SS.6.1.A` — is filed under its parent code (pages render one entry per standard, subs inside it), deduped against the parent's own tag, and its chip notes `sub a`. Only those patterns roll up: Social Studies codes like `6.1.8.CivicsPI.3.a` are top-level PEs and match exactly (`parseSubCode()`).
 3. Walks the DOM for `.entry[data-code]`, `.std-entry[data-code]`, `.pe-entry[data-code]`.
 4. Appends a `.cc-backlinks` section under each matched entry: header (count) + chip-row of blocks. Collapsed past 4 blocks with "Show N more."
 5. Chip click → opens CC at `#blk_<id>` hash (CC doesn't yet handle the hash; for now it just goes to CC homepage — a small CC change away from a real deep link).

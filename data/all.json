@@ -1,8 +1,9 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "site": "https://rtusiime.github.io/njsls/",
   "source": "New Jersey Department of Education - NJSLS (2023 ELA + Math, 2020 Science / SS / CSDT / CLKS / CHPE)",
   "standard_count": 903,
+  "sub_standard_count": 219,
   "subjects": {
     "ela": {
       "title": "English Language Arts",
@@ -2545,8 +2546,14 @@
       "cluster": "A. Understand the place value system",
       "statement": "Read, write, and compare decimals to thousandths.",
       "subs": [
-        "Read and write decimals to thousandths using base-ten numerals, number names, and expanded form, e.g., \\(347.392 = 3 \\times 100 + 4 \\times 10 + 7 \\times 1 + 3 \\times (\\frac{1}{10)} + 9 \\times (\\frac{1}{100)} + 2 \\times (\\frac{1}{1000)}\\).",
-        "Compare two decimals to thousandths based on meanings of the digits in each place, using \\>, =, and \\< symbols to record the results of comparisons."
+        {
+          "code": "5.NBT.A.3.a",
+          "text": "Read and write decimals to thousandths using base-ten numerals, number names, and expanded form, e.g., \\(347.392 = 3 \\times 100 + 4 \\times 10 + 7 \\times 1 + 3 \\times (\\frac{1}{10)} + 9 \\times (\\frac{1}{100)} + 2 \\times (\\frac{1}{1000)}\\)."
+        },
+        {
+          "code": "5.NBT.A.3.b",
+          "text": "Compare two decimals to thousandths based on meanings of the digits in each place, using \\>, =, and \\< symbols to record the results of comparisons."
+        }
       ]
     },
     {
@@ -2613,8 +2620,14 @@
       "cluster": "B. Apply and extend previous understandings of multiplication and division to multiply and divide fractions",
       "statement": "Apply and extend previous understandings of multiplication to multiply a fraction or whole number by a fraction.",
       "subs": [
-        "Interpret the product \\(\\frac{a}{b} \\times q\\) as *a* parts of a partition of *q* into *b* equal parts; equivalently, as the result of a sequence of operations \\(a \\times q \\div b\\). For example, use a visual fraction model to show \\(\\frac{2}{3} \\times 4 = \\frac{8}{3}\\) , and create a story context for this equation. Do the same with \\(\\frac{2}{3} \\times \\frac{4}{5} = \\frac{8}{15}\\). (In general, \\(\\frac{a}{b} \\times \\frac{c}{d} = \\frac{ab}{bd}\\)).",
-        "Find the area of a rectangle with fractional side lengths by tiling it with unit squares of the appropriate unit fraction side lengths, and show that the area is the same as would be found by multiplying the side lengths. Multiply fractional side lengths to find areas of rectangles, and represent fraction products as rectangular areas."
+        {
+          "code": "5.NF.B.4.a",
+          "text": "Interpret the product \\(\\frac{a}{b} \\times q\\) as *a* parts of a partition of *q* into *b* equal parts; equivalently, as the result of a sequence of operations \\(a \\times q \\div b\\). For example, use a visual fraction model to show \\(\\frac{2}{3} \\times 4 = \\frac{8}{3}\\) , and create a story context for this equation. Do the same with \\(\\frac{2}{3} \\times \\frac{4}{5} = \\frac{8}{15}\\). (In general, \\(\\frac{a}{b} \\times \\frac{c}{d} = \\frac{ab}{bd}\\))."
+        },
+        {
+          "code": "5.NF.B.4.b",
+          "text": "Find the area of a rectangle with fractional side lengths by tiling it with unit squares of the appropriate unit fraction side lengths, and show that the area is the same as would be found by multiplying the side lengths. Multiply fractional side lengths to find areas of rectangles, and represent fraction products as rectangular areas."
+        }
       ]
     },
     {
@@ -2625,8 +2638,14 @@
       "cluster": "B. Apply and extend previous understandings of multiplication and division to multiply and divide fractions",
       "statement": "Interpret multiplication as scaling (resizing), by:",
       "subs": [
-        "Comparing the size of a product to the size of one factor on the basis of the size of the other factor, without performing the indicated multiplication.",
-        "Explaining why multiplying a given number by a fraction greater than 1 results in a product greater than the given number (recognizing multiplication by whole numbers greater than 1 as a familiar case); explaining why multiplying a given number by a fraction less than 1 results in a product smaller than the given number; and relating the principle of fraction equivalence \\(\\frac{a}{b} = \\frac{(n \\times a)}{(n \\times b)}\\) to the effect of multiplying \\(\\frac{a}{b}\\) by 1."
+        {
+          "code": "5.NF.B.5.a",
+          "text": "Comparing the size of a product to the size of one factor on the basis of the size of the other factor, without performing the indicated multiplication."
+        },
+        {
+          "code": "5.NF.B.5.b",
+          "text": "Explaining why multiplying a given number by a fraction greater than 1 results in a product greater than the given number (recognizing multiplication by whole numbers greater than 1 as a familiar case); explaining why multiplying a given number by a fraction less than 1 results in a product smaller than the given number; and relating the principle of fraction equivalence \\(\\frac{a}{b} = \\frac{(n \\times a)}{(n \\times b)}\\) to the effect of multiplying \\(\\frac{a}{b}\\) by 1."
+        }
       ]
     },
     {
@@ -2645,9 +2664,18 @@
       "cluster": "B. Apply and extend previous understandings of multiplication and division to multiply and divide fractions",
       "statement": "Apply and extend previous understandings of division to divide unit fractions by whole numbers and whole numbers by unit fractions.",
       "subs": [
-        "Interpret division of a unit fraction by a non-zero whole number, and compute such quotients. For example, create a story context for \\(\\frac{1}{3} \\div 4\\) , and use a visual fraction model to show the quotient. Use the relationship between multiplication and division to explain that \\(\\frac{1}{3} \\div 4 = 1\\frac{1}{2}\\) because \\(1\\frac{1}{2} \\times 4 = \\frac{1}{3}\\).",
-        "Interpret division of a whole number by a unit fraction, and compute such quotients. For example, create a story context for \\(4 \\div \\frac{1}{5}\\) , and use a visual fraction model to show the quotient. Use the relationship between multiplication and division to explain that \\(4 \\div \\frac{1}{5} = 20\\) because \\(20 \\times \\frac{1}{5} = 4\\).",
-        "Solve real world problems involving division of unit fractions by non-zero whole numbers and division of whole numbers by unit fractions, e.g., by using visual fraction models and equations to represent the problem. For example, how much chocolate will each person get if 3 people share \\(\\frac{1}{2}\\) lb. of chocolate equally? How many \\(\\frac{1}{3}\\)-cup servings are in 2 cups of raisins?"
+        {
+          "code": "5.NF.B.7.a",
+          "text": "Interpret division of a unit fraction by a non-zero whole number, and compute such quotients. For example, create a story context for \\(\\frac{1}{3} \\div 4\\) , and use a visual fraction model to show the quotient. Use the relationship between multiplication and division to explain that \\(\\frac{1}{3} \\div 4 = 1\\frac{1}{2}\\) because \\(1\\frac{1}{2} \\times 4 = \\frac{1}{3}\\)."
+        },
+        {
+          "code": "5.NF.B.7.b",
+          "text": "Interpret division of a whole number by a unit fraction, and compute such quotients. For example, create a story context for \\(4 \\div \\frac{1}{5}\\) , and use a visual fraction model to show the quotient. Use the relationship between multiplication and division to explain that \\(4 \\div \\frac{1}{5} = 20\\) because \\(20 \\times \\frac{1}{5} = 4\\)."
+        },
+        {
+          "code": "5.NF.B.7.c",
+          "text": "Solve real world problems involving division of unit fractions by non-zero whole numbers and division of whole numbers by unit fractions, e.g., by using visual fraction models and equations to represent the problem. For example, how much chocolate will each person get if 3 people share \\(\\frac{1}{2}\\) lb. of chocolate equally? How many \\(\\frac{1}{3}\\)-cup servings are in 2 cups of raisins?"
+        }
       ]
     },
     {
@@ -2666,8 +2694,14 @@
       "cluster": "B. Geometric measurement: understand concepts of volume and relate volume to multiplication and to addition",
       "statement": "Recognize volume as an attribute of solid figures and understand concepts of volume measurement.",
       "subs": [
-        "A cube with side length 1 unit, called a \"unit cube,\" is said to have \"one cubic unit\" of volume, and can be used to measure volume.",
-        "A solid figure which can be packed without gaps or overlaps using *n* unit cubes is said to have a volume of *n* cubic units."
+        {
+          "code": "5.M.B.2.a",
+          "text": "A cube with side length 1 unit, called a \"unit cube,\" is said to have \"one cubic unit\" of volume, and can be used to measure volume."
+        },
+        {
+          "code": "5.M.B.2.b",
+          "text": "A solid figure which can be packed without gaps or overlaps using *n* unit cubes is said to have a volume of *n* cubic units."
+        }
       ]
     },
     {
@@ -2686,9 +2720,18 @@
       "cluster": "B. Geometric measurement: understand concepts of volume and relate volume to multiplication and to addition",
       "statement": "Relate volume to the operations of multiplication and addition and solve real world and mathematical problems involving volume.",
       "subs": [
-        "Find the volume of a right rectangular prism with whole-number side lengths by packing it with unit cubes, and show that the volume is the same as would be found by multiplying the edge lengths, equivalently by multiplying the height by the area of the base. Represent threefold whole-number products as volumes, e.g., to represent the associative property of multiplication.",
-        "Apply the formulas \\(V = l \\times w \\times h\\)and \\(V = B \\times h\\) for rectangular prisms to find volumes of right rectangular prisms with whole number edge lengths in the context of solving real world and mathematical problems.",
-        "Recognize volume as additive. Find volumes of solid figures composed of two non-overlapping right rectangular prisms by adding the volumes of the non-overlapping parts, applying this technique to solve real world problems."
+        {
+          "code": "5.M.B.4.a",
+          "text": "Find the volume of a right rectangular prism with whole-number side lengths by packing it with unit cubes, and show that the volume is the same as would be found by multiplying the edge lengths, equivalently by multiplying the height by the area of the base. Represent threefold whole-number products as volumes, e.g., to represent the associative property of multiplication."
+        },
+        {
+          "code": "5.M.B.4.b",
+          "text": "Apply the formulas \\(V = l \\times w \\times h\\)and \\(V = B \\times h\\) for rectangular prisms to find volumes of right rectangular prisms with whole number edge lengths in the context of solving real world and mathematical problems."
+        },
+        {
+          "code": "5.M.B.4.c",
+          "text": "Recognize volume as additive. Find volumes of solid figures composed of two non-overlapping right rectangular prisms by adding the volumes of the non-overlapping parts, applying this technique to solve real world problems."
+        }
       ]
     },
     {
@@ -2787,10 +2830,22 @@
       "cluster": "A. Understand ratio concepts and use ratio reasoning to solve problems",
       "statement": "Use ratio and rate reasoning to solve real-world and mathematical problems, e.g., by reasoning about tables of equivalent ratios, tape diagrams, double number line diagrams, or equations.",
       "subs": [
-        "Make tables of equivalent ratios relating quantities with whole number measurements, find missing values in the tables, and plot the pairs of values on the coordinate plane. Use tables to compare ratios.",
-        "Solve unit rate problems including those involving unit pricing and constant speed. For example, if it took 7 hours to mow 4 lawns, then at that rate, how many lawns could be mowed in 35 hours? At what rate were lawns being mowed?",
-        "Find a percent of a quantity as a rate per 100 (e.g., 30% of a quantity means \\(1\\frac{30}{00}\\)times the quantity); solve problems involving finding the whole, given a part and the percent.",
-        "Use ratio reasoning to convert measurement units; manipulate and transform units appropriately when multiplying or dividing quantities."
+        {
+          "code": "6.RP.A.3.a",
+          "text": "Make tables of equivalent ratios relating quantities with whole number measurements, find missing values in the tables, and plot the pairs of values on the coordinate plane. Use tables to compare ratios."
+        },
+        {
+          "code": "6.RP.A.3.b",
+          "text": "Solve unit rate problems including those involving unit pricing and constant speed. For example, if it took 7 hours to mow 4 lawns, then at that rate, how many lawns could be mowed in 35 hours? At what rate were lawns being mowed?"
+        },
+        {
+          "code": "6.RP.A.3.c",
+          "text": "Find a percent of a quantity as a rate per 100 (e.g., 30% of a quantity means \\(1\\frac{30}{00}\\)times the quantity); solve problems involving finding the whole, given a part and the percent."
+        },
+        {
+          "code": "6.RP.A.3.d",
+          "text": "Use ratio reasoning to convert measurement units; manipulate and transform units appropriately when multiplying or dividing quantities."
+        }
       ]
     },
     {
@@ -2841,9 +2896,18 @@
       "cluster": "C. Apply and extend previous understandings of numbers to the system of rational numbers",
       "statement": "Understand a rational number as a point on the number line. Extend number line diagrams and coordinate axes familiar from previous grades to represent points on the line and in the plane with negative number coordinates.",
       "subs": [
-        "Recognize opposite signs of numbers as indicating locations on opposite sides of 0 on the number line; recognize that the opposite of the opposite of a number is the number itself, e.g., \\(- ( - 3) = 3\\), and that 0 is its own opposite.",
-        "Understand signs of numbers in ordered pairs as indicating locations in quadrants of the coordinate plane; recognize that when two ordered pairs differ only by signs, the locations of the points are related by reflections across one or both axes.",
-        "Find and position integers and other rational numbers on a horizontal or vertical number line diagram; find and position pairs of integers and other rational numbers on a coordinate plane."
+        {
+          "code": "6.NS.C.6.a",
+          "text": "Recognize opposite signs of numbers as indicating locations on opposite sides of 0 on the number line; recognize that the opposite of the opposite of a number is the number itself, e.g., \\(- ( - 3) = 3\\), and that 0 is its own opposite."
+        },
+        {
+          "code": "6.NS.C.6.b",
+          "text": "Understand signs of numbers in ordered pairs as indicating locations in quadrants of the coordinate plane; recognize that when two ordered pairs differ only by signs, the locations of the points are related by reflections across one or both axes."
+        },
+        {
+          "code": "6.NS.C.6.c",
+          "text": "Find and position integers and other rational numbers on a horizontal or vertical number line diagram; find and position pairs of integers and other rational numbers on a coordinate plane."
+        }
       ]
     },
     {
@@ -2854,10 +2918,22 @@
       "cluster": "C. Apply and extend previous understandings of numbers to the system of rational numbers",
       "statement": "Understand ordering and absolute value of rational numbers.",
       "subs": [
-        "Interpret statements of inequality as statements about the relative position of two numbers on a number line diagram. For example, interpret \\(- 3 > - 7\\) as a statement that\\ \\(- 3\\) is located to the right of \\(- 7\\) on a number line oriented from left to right.",
-        "Write, interpret, and explain statements of order for rational numbers in real-world contexts. For example, write \\(- 3^{\\circ}C > - 7^{\\circ}C\\) to express the fact that \\(- 3^{\\circ}C\\) is warmer than \\(- 7^{\\circ}C\\) .",
-        "Understand the absolute value of a rational number as its distance from 0 on the number line; interpret absolute value as magnitude for a positive or negative quantity in a real-world situation. For example, for an account balance of \\(- 30\\)dollars, write \\(- 30 = 30\\) to describe the size of the debt in dollars.",
-        "Distinguish comparisons of absolute value from statements about order. For example, recognize that an account balance less than \\(- 30\\)dollars represents a debt greater than 30 dollars."
+        {
+          "code": "6.NS.C.7.a",
+          "text": "Interpret statements of inequality as statements about the relative position of two numbers on a number line diagram. For example, interpret \\(- 3 > - 7\\) as a statement that\\ \\(- 3\\) is located to the right of \\(- 7\\) on a number line oriented from left to right."
+        },
+        {
+          "code": "6.NS.C.7.b",
+          "text": "Write, interpret, and explain statements of order for rational numbers in real-world contexts. For example, write \\(- 3^{\\circ}C > - 7^{\\circ}C\\) to express the fact that \\(- 3^{\\circ}C\\) is warmer than \\(- 7^{\\circ}C\\) ."
+        },
+        {
+          "code": "6.NS.C.7.c",
+          "text": "Understand the absolute value of a rational number as its distance from 0 on the number line; interpret absolute value as magnitude for a positive or negative quantity in a real-world situation. For example, for an account balance of \\(- 30\\)dollars, write \\(- 30 = 30\\) to describe the size of the debt in dollars."
+        },
+        {
+          "code": "6.NS.C.7.d",
+          "text": "Distinguish comparisons of absolute value from statements about order. For example, recognize that an account balance less than \\(- 30\\)dollars represents a debt greater than 30 dollars."
+        }
       ]
     },
     {
@@ -2884,9 +2960,18 @@
       "cluster": "A. Apply and extend previous understandings of arithmetic to algebraic expressions",
       "statement": "Write, read, and evaluate expressions in which letters stand for numbers.",
       "subs": [
-        "Write expressions that record operations with numbers and with letters standing for numbers. For example, express the calculation \"Subtract \\(y\\) from 5\" as \\(5 - y\\).",
-        "Identify parts of an expression using mathematical terms (sum, term, product, factor, quotient, coefficient); view one or more parts of an expression as a single entity. For example, describe the expression \\(2(8 + 7)\\) as a product of two factors; view \\((8 + 7)\\) as both a single entity and a sum of two terms.",
-        "Evaluate expressions at specific values of their variables. Include expressions that arise from formulas used in real-world problems. Perform arithmetic operations, including those involving whole number exponents, in the conventional order when there are no parentheses to specify a particular order (Order of Operations). For example, use the formulas \\(V = 6s3\\) and \\(A = 6s2\\) to find the volume and surface area of a cube with sides of length \\(s = \\frac{1}{2}\\)."
+        {
+          "code": "6.EE.A.2.a",
+          "text": "Write expressions that record operations with numbers and with letters standing for numbers. For example, express the calculation \"Subtract \\(y\\) from 5\" as \\(5 - y\\)."
+        },
+        {
+          "code": "6.EE.A.2.b",
+          "text": "Identify parts of an expression using mathematical terms (sum, term, product, factor, quotient, coefficient); view one or more parts of an expression as a single entity. For example, describe the expression \\(2(8 + 7)\\) as a product of two factors; view \\((8 + 7)\\) as both a single entity and a sum of two terms."
+        },
+        {
+          "code": "6.EE.A.2.c",
+          "text": "Evaluate expressions at specific values of their variables. Include expressions that arise from formulas used in real-world problems. Perform arithmetic operations, including those involving whole number exponents, in the conventional order when there are no parentheses to specify a particular order (Order of Operations). For example, use the formulas \\(V = 6s3\\) and \\(A = 6s2\\) to find the volume and surface area of a cube with sides of length \\(s = \\frac{1}{2}\\)."
+        }
       ]
     },
     {
@@ -3017,10 +3102,22 @@
       "cluster": "B. Summarize and describe distributions",
       "statement": "Summarize numerical data sets in relation to their context, such as by:",
       "subs": [
-        "Reporting the number of observations.",
-        "Describing the nature of the attribute under investigation, including how it was measured and its units of measurement.",
-        "Giving quantitative measures of center (median and/or mean) and variability (interquartile range and/or mean absolute deviation), as well as describing any overall pattern and any striking deviations from the overall pattern with reference to the context in which the data were gathered.",
-        "Relating the choice of measures of center and variability to the shape of the data distribution and the context in which the data were gathered."
+        {
+          "code": "6.SP.B.5.a",
+          "text": "Reporting the number of observations."
+        },
+        {
+          "code": "6.SP.B.5.b",
+          "text": "Describing the nature of the attribute under investigation, including how it was measured and its units of measurement."
+        },
+        {
+          "code": "6.SP.B.5.c",
+          "text": "Giving quantitative measures of center (median and/or mean) and variability (interquartile range and/or mean absolute deviation), as well as describing any overall pattern and any striking deviations from the overall pattern with reference to the context in which the data were gathered."
+        },
+        {
+          "code": "6.SP.B.5.d",
+          "text": "Relating the choice of measures of center and variability to the shape of the data distribution and the context in which the data were gathered."
+        }
       ]
     },
     {
@@ -3039,10 +3136,22 @@
       "cluster": "A. Analyze proportional relationships and use them to solve real-world and mathematical problems",
       "statement": "Recognize and represent proportional relationships between quantities.",
       "subs": [
-        "Decide whether two quantities are in a proportional relationship, e.g., by testing for equivalent ratios in a table or graphing on a coordinate plane and observing whether the graph is a straight line through the origin.",
-        "Identify the constant of proportionality (unit rate) in tables, graphs, equations, diagrams, and verbal descriptions of proportional relationships.",
-        "Represent proportional relationships by equations. For example, if total cost t is proportional to the number n of items purchased at a constant price p, the relationship between the total cost and the number of items can be expressed as \\(t = pn\\).",
-        "Explain what a point \\((x,y)\\) on the graph of a proportional relationship means in terms of the situation, with special attention to the points (0, 0) and \\((1,r)\\)where \\(r\\)is the unit rate."
+        {
+          "code": "7.RP.A.2.a",
+          "text": "Decide whether two quantities are in a proportional relationship, e.g., by testing for equivalent ratios in a table or graphing on a coordinate plane and observing whether the graph is a straight line through the origin."
+        },
+        {
+          "code": "7.RP.A.2.b",
+          "text": "Identify the constant of proportionality (unit rate) in tables, graphs, equations, diagrams, and verbal descriptions of proportional relationships."
+        },
+        {
+          "code": "7.RP.A.2.c",
+          "text": "Represent proportional relationships by equations. For example, if total cost t is proportional to the number n of items purchased at a constant price p, the relationship between the total cost and the number of items can be expressed as \\(t = pn\\)."
+        },
+        {
+          "code": "7.RP.A.2.d",
+          "text": "Explain what a point \\((x,y)\\) on the graph of a proportional relationship means in terms of the situation, with special attention to the points (0, 0) and \\((1,r)\\)where \\(r\\)is the unit rate."
+        }
       ]
     },
     {
@@ -3061,10 +3170,22 @@
       "cluster": "A. Apply and extend previous understandings of operations with fractions to add, subtract, multiply, and divide rational numbers",
       "statement": "Apply and extend previous understandings of addition and subtraction to add and subtract rational numbers; represent addition and subtraction on a horizontal or vertical number line diagram.",
       "subs": [
-        "Describe situations in which opposite quantities combine to make 0. For example, in the first round of a game, Maria scored 20 points. In the second round of the same game, she lost 20 points. What is her score at the end of the second round?",
-        "Understand \\(p + q\\)as the number located a distance \\(q\\)from\\(p\\), in the positive or negative direction depending on whether *q* is positive or negative. Show that a number and its opposite have a sum of 0 (are additive inverses). Interpret sums of rational numbers by describing real-world contexts.",
-        "Understand subtraction of rational numbers as adding the additive inverse, \\(p - q = p + ( - q)\\). Show that the distance between two rational numbers on the number line is the absolute value of their difference, and apply this principle in real-world contexts.",
-        "Apply properties of operations as strategies to add and subtract rational numbers."
+        {
+          "code": "7.NS.A.1.a",
+          "text": "Describe situations in which opposite quantities combine to make 0. For example, in the first round of a game, Maria scored 20 points. In the second round of the same game, she lost 20 points. What is her score at the end of the second round?"
+        },
+        {
+          "code": "7.NS.A.1.b",
+          "text": "Understand \\(p + q\\)as the number located a distance \\(q\\)from\\(p\\), in the positive or negative direction depending on whether *q* is positive or negative. Show that a number and its opposite have a sum of 0 (are additive inverses). Interpret sums of rational numbers by describing real-world contexts."
+        },
+        {
+          "code": "7.NS.A.1.c",
+          "text": "Understand subtraction of rational numbers as adding the additive inverse, \\(p - q = p + ( - q)\\). Show that the distance between two rational numbers on the number line is the absolute value of their difference, and apply this principle in real-world contexts."
+        },
+        {
+          "code": "7.NS.A.1.d",
+          "text": "Apply properties of operations as strategies to add and subtract rational numbers."
+        }
       ]
     },
     {
@@ -3075,10 +3196,22 @@
       "cluster": "A. Apply and extend previous understandings of operations with fractions to add, subtract, multiply, and divide rational numbers",
       "statement": "Apply and extend previous understandings of multiplication and division and of fractions to multiply and divide rational numbers.",
       "subs": [
-        "Understand that multiplication is extended from fractions to rational numbers by requiring that operations continue to satisfy the properties of operations, particularly the distributive property, leading to products such as \\(( - 1)( - 1) = 1\\) and the rules for multiplying signed numbers. Interpret products of rational numbers by describing real-world contexts.",
-        "Understand that integers can be divided, provided that the divisor is not zero, and every quotient of integers (with non-zero divisor) is a rational number. If \\(q\\) and \\(q\\) are integers, then \\(- \\frac{p}{q} = \\frac{( - p)}{q} = \\frac{p}{( - q)}\\) . Interpret quotients of rational numbers by describing real world contexts.",
-        "Apply properties of operations as strategies to multiply and divide rational numbers.",
-        "Convert a rational number to a decimal using long division; know that the decimal form of a rational number terminates in 0s or eventually repeats."
+        {
+          "code": "7.NS.A.2.a",
+          "text": "Understand that multiplication is extended from fractions to rational numbers by requiring that operations continue to satisfy the properties of operations, particularly the distributive property, leading to products such as \\(( - 1)( - 1) = 1\\) and the rules for multiplying signed numbers. Interpret products of rational numbers by describing real-world contexts."
+        },
+        {
+          "code": "7.NS.A.2.b",
+          "text": "Understand that integers can be divided, provided that the divisor is not zero, and every quotient of integers (with non-zero divisor) is a rational number. If \\(q\\) and \\(q\\) are integers, then \\(- \\frac{p}{q} = \\frac{( - p)}{q} = \\frac{p}{( - q)}\\) . Interpret quotients of rational numbers by describing real world contexts."
+        },
+        {
+          "code": "7.NS.A.2.c",
+          "text": "Apply properties of operations as strategies to multiply and divide rational numbers."
+        },
+        {
+          "code": "7.NS.A.2.d",
+          "text": "Convert a rational number to a decimal using long division; know that the decimal form of a rational number terminates in 0s or eventually repeats."
+        }
       ]
     },
     {
@@ -3121,8 +3254,14 @@
       "cluster": "B. Solve real-life and mathematical problems using numerical and algebraic expressions and equations",
       "statement": "Use variables to represent quantities in a real-world or mathematical problem, and construct simple equations and inequalities to solve problems by reasoning about the quantities.",
       "subs": [
-        "Solve word problems leading to equations of the form\\(px + q = r\\)and \\(p(x + q) = r\\), where\\(p\\), \\(q\\), and \\(r\\) are specific rational numbers. Solve equations of these forms with accuracy and efficiency. Compare an algebraic solution to an arithmetic solution, identifying the sequence of the operations used in each approach. For example, the perimeter of a rectangle is 54 cm. Its length is 6 cm. What is its width?",
-        "Solve word problems leading to inequalities of the form\\(px + q > r\\)or \\(px + q < r\\), where \\(p\\), \\(q\\), and \\(r\\) are specific rational numbers. Graph the solution set of the inequality and interpret it in the context of the problem. For example: As a salesperson, you are paid \\$50 per week plus \\$3 per sale. This week you want your pay to be at least \\$100. Write an inequality for the number of sales you need to make, and describe the solutions."
+        {
+          "code": "7.EE.B.4.a",
+          "text": "Solve word problems leading to equations of the form\\(px + q = r\\)and \\(p(x + q) = r\\), where\\(p\\), \\(q\\), and \\(r\\) are specific rational numbers. Solve equations of these forms with accuracy and efficiency. Compare an algebraic solution to an arithmetic solution, identifying the sequence of the operations used in each approach. For example, the perimeter of a rectangle is 54 cm. Its length is 6 cm. What is its width?"
+        },
+        {
+          "code": "7.EE.B.4.b",
+          "text": "Solve word problems leading to inequalities of the form\\(px + q > r\\)or \\(px + q < r\\), where \\(p\\), \\(q\\), and \\(r\\) are specific rational numbers. Graph the solution set of the inequality and interpret it in the context of the problem. For example: As a salesperson, you are paid \\$50 per week plus \\$3 per sale. This week you want your pay to be at least \\$100. Write an inequality for the number of sales you need to make, and describe the solutions."
+        }
       ]
     },
     {
@@ -3229,8 +3368,14 @@
       "cluster": "C. Investigate chance processes and develop, use, & evaluate probability models",
       "statement": "Develop a probability model and use it to find probabilities of events. Compare probabilities from a model to observed frequencies; if the agreement is not good, explain possible sources of the discrepancy.",
       "subs": [
-        "Develop a uniform probability model by assigning equal probability to all outcomes and use the model to determine probabilities of events. For example, if a student is selected at random from a class, find the probability that Jane will be selected and the probability that a girl will be selected.",
-        "Develop a probability model (which may not be uniform) by observing frequencies in data generated from a chance process. For example, find the approximate probability that a spinning penny will land heads up or that a tossed paper cup will land open-end down. Do the outcomes for the spinning penny appear to be equally likely based on the observed frequencies?"
+        {
+          "code": "7.SP.C.7.a",
+          "text": "Develop a uniform probability model by assigning equal probability to all outcomes and use the model to determine probabilities of events. For example, if a student is selected at random from a class, find the probability that Jane will be selected and the probability that a girl will be selected."
+        },
+        {
+          "code": "7.SP.C.7.b",
+          "text": "Develop a probability model (which may not be uniform) by observing frequencies in data generated from a chance process. For example, find the approximate probability that a spinning penny will land heads up or that a tossed paper cup will land open-end down. Do the outcomes for the spinning penny appear to be equally likely based on the observed frequencies?"
+        }
       ]
     },
     {
@@ -3241,9 +3386,18 @@
       "cluster": "C. Investigate chance processes and develop, use, & evaluate probability models",
       "statement": "Find probabilities of compound events using organized lists, tables, tree diagrams, and simulation.",
       "subs": [
-        "Understand that, just as with simple events, the probability of a compound event is the fraction of outcomes in the sample space for which the compound event occurs.",
-        "Represent sample spaces for compound events using methods such as organized lists, tables and tree diagrams. For an event described in everyday language (e.g., \"rolling double sixes\"), identify the outcomes in the sample space which compose the event.",
-        "Design and use a simulation to generate frequencies for compound events. For example, use random digits as a simulation tool to approximate the answer to the question: If 40% of donors have type A blood, what is the probability that it will take at least 4 donors to find one with type A blood?"
+        {
+          "code": "7.SP.C.8.a",
+          "text": "Understand that, just as with simple events, the probability of a compound event is the fraction of outcomes in the sample space for which the compound event occurs."
+        },
+        {
+          "code": "7.SP.C.8.b",
+          "text": "Represent sample spaces for compound events using methods such as organized lists, tables and tree diagrams. For an event described in everyday language (e.g., \"rolling double sixes\"), identify the outcomes in the sample space which compose the event."
+        },
+        {
+          "code": "7.SP.C.8.c",
+          "text": "Design and use a simulation to generate frequencies for compound events. For example, use random digits as a simulation tool to approximate the answer to the question: If 40% of donors have type A blood, what is the probability that it will take at least 4 donors to find one with type A blood?"
+        }
       ]
     },
     {
@@ -3286,8 +3440,14 @@
       "cluster": "A. Work with radicals and integer exponents",
       "statement": "Use square root and cube root symbols to represent solutions to equations of the form \\(x2 = p\\)and \\(x3 = p\\) where \\(p\\) is a positive rational number.",
       "subs": [
-        "Evaluate square roots of small perfect squares and cube roots of small perfect cubes. Know that \\(\\frac{}{2}\\) is irrational.",
-        "Simplify numerical radicals, limiting to square roots (i.e. nonperfect squares). For example, simplify \\(\\frac{}{8}\\) to \\(2\\frac{}{2}\\)."
+        {
+          "code": "8.EE.A.2.a",
+          "text": "Evaluate square roots of small perfect squares and cube roots of small perfect cubes. Know that \\(\\frac{}{2}\\) is irrational."
+        },
+        {
+          "code": "8.EE.A.2.b",
+          "text": "Simplify numerical radicals, limiting to square roots (i.e. nonperfect squares). For example, simplify \\(\\frac{}{8}\\) to \\(2\\frac{}{2}\\)."
+        }
       ]
     },
     {
@@ -3330,8 +3490,14 @@
       "cluster": "C. Analyze and solve linear equations and pairs of simultaneous linear equations",
       "statement": "Solve linear equations in one variable.",
       "subs": [
-        "Give examples of linear equations in one variable with one solution, infinitely many solutions, or no solutions. Show which of these possibilities is the case by successively transforming the given equation into simpler forms, until an equivalent equation of the form \\(x = a\\), \\(a = a\\), or \\(a = b\\)results (where \\(a\\)and \\(b\\)are different numbers).",
-        "Solve linear equations with rational number coefficients, including equations whose solutions require expanding expressions using the distributive property and collecting like terms."
+        {
+          "code": "8.EE.C.7.a",
+          "text": "Give examples of linear equations in one variable with one solution, infinitely many solutions, or no solutions. Show which of these possibilities is the case by successively transforming the given equation into simpler forms, until an equivalent equation of the form \\(x = a\\), \\(a = a\\), or \\(a = b\\)results (where \\(a\\)and \\(b\\)are different numbers)."
+        },
+        {
+          "code": "8.EE.C.7.b",
+          "text": "Solve linear equations with rational number coefficients, including equations whose solutions require expanding expressions using the distributive property and collecting like terms."
+        }
       ]
     },
     {
@@ -3342,9 +3508,18 @@
       "cluster": "C. Analyze and solve linear equations and pairs of simultaneous linear equations",
       "statement": "Analyze and solve pairs of simultaneous linear equations.",
       "subs": [
-        "Understand that solutions to a system of two linear equations in two variables correspond to points of intersection of their graphs, because points of intersection satisfy both equations simultaneously.",
-        "Solve systems of two linear equations in two variables using the substitution method and estimate solutions by graphing the equations. Solve simple cases by inspection. For example: by inspection, conclude that \\(3x + 2y = 5\\) and \\(3x + 2y = 6\\)have no solution because \\(3x + 2y\\) cannot simultaneously be 5 and 6. Solve \\(3x + y = 30\\) and \\(y = 2x\\)using the substitution method; Solve \\(y = 3x + 1\\) and \\(y = - 2x + 7\\)using the substitution method.",
-        "Solve real-world and mathematical problems leading to two linear equations in two variables. For example, given coordinates for two pairs of points, determine whether the line through the first pair of points intersects the line through the second pair."
+        {
+          "code": "8.EE.C.8.a",
+          "text": "Understand that solutions to a system of two linear equations in two variables correspond to points of intersection of their graphs, because points of intersection satisfy both equations simultaneously."
+        },
+        {
+          "code": "8.EE.C.8.b",
+          "text": "Solve systems of two linear equations in two variables using the substitution method and estimate solutions by graphing the equations. Solve simple cases by inspection. For example: by inspection, conclude that \\(3x + 2y = 5\\) and \\(3x + 2y = 6\\)have no solution because \\(3x + 2y\\) cannot simultaneously be 5 and 6. Solve \\(3x + y = 30\\) and \\(y = 2x\\)using the substitution method; Solve \\(y = 3x + 1\\) and \\(y = - 2x + 7\\)using the substitution method."
+        },
+        {
+          "code": "8.EE.C.8.c",
+          "text": "Solve real-world and mathematical problems leading to two linear equations in two variables. For example, given coordinates for two pairs of points, determine whether the line through the first pair of points intersects the line through the second pair."
+        }
       ]
     },
     {
@@ -3395,9 +3570,18 @@
       "cluster": "A. Understand congruence and similarity using physical models, transparencies, or geometry software",
       "statement": "Verify experimentally the properties of rotations, reflections, and translations:",
       "subs": [
-        "Lines are transformed to lines, and line segments to line segments of the same length.",
-        "Angles are transformed to angles of the same measure.",
-        "Parallel lines are transformed to parallel lines."
+        {
+          "code": "8.G.A.1.a",
+          "text": "Lines are transformed to lines, and line segments to line segments of the same length."
+        },
+        {
+          "code": "8.G.A.1.b",
+          "text": "Angles are transformed to angles of the same measure."
+        },
+        {
+          "code": "8.G.A.1.c",
+          "text": "Parallel lines are transformed to parallel lines."
+        }
       ]
     },
     {
@@ -12757,6 +12941,1943 @@
       "disciplinary_concept": "DSDT - Dependency, Substances Disorder and Treatment",
       "core_idea": "The use of alcohol and drugs can affect the social, emotional, and physical behaviors of individuals and their families. | 2020 New Jersey Student Learning 2.3 S",
       "statement": "Compare and contrast the various services that are available for family members and others affected by substance disorders in the community and at the state level."
+    }
+  ],
+  "sub_standards": [
+    {
+      "subject": "ela",
+      "code": "L.RF.5.4.A",
+      "parent": "L.RF.5.4",
+      "grade": "5",
+      "statement": "Read grade-level text with purpose and understanding.",
+      "parent_statement": "Read with sufficient accuracy and fluency to support comprehension."
+    },
+    {
+      "subject": "ela",
+      "code": "L.RF.5.4.B",
+      "parent": "L.RF.5.4",
+      "grade": "5",
+      "statement": "Read grade-level text orally with accuracy, appropriate rate, and expression.",
+      "parent_statement": "Read with sufficient accuracy and fluency to support comprehension."
+    },
+    {
+      "subject": "ela",
+      "code": "L.RF.5.4.C",
+      "parent": "L.RF.5.4",
+      "grade": "5",
+      "statement": "Use context to confirm or self-correct word recognition and understanding, rereading as necessary.",
+      "parent_statement": "Read with sufficient accuracy and fluency to support comprehension."
+    },
+    {
+      "subject": "ela",
+      "code": "L.WF.5.2.A",
+      "parent": "L.WF.5.2",
+      "grade": "5",
+      "statement": "Avoid fragments, run-ons and rambling sentences, and comma splices.",
+      "parent_statement": "Demonstrate command of the conventions of writing, including those listed under grade four foundational skills."
+    },
+    {
+      "subject": "ela",
+      "code": "L.WF.5.2.B",
+      "parent": "L.WF.5.2",
+      "grade": "5",
+      "statement": "Maintain consistency in verb tense; place phrases and clauses; choose between adjectives and adverbs.",
+      "parent_statement": "Demonstrate command of the conventions of writing, including those listed under grade four foundational skills."
+    },
+    {
+      "subject": "ela",
+      "code": "L.WF.5.2.C",
+      "parent": "L.WF.5.2",
+      "grade": "5",
+      "statement": "Ensure agreement between subject and verb and between pronoun and antecedent.",
+      "parent_statement": "Demonstrate command of the conventions of writing, including those listed under grade four foundational skills."
+    },
+    {
+      "subject": "ela",
+      "code": "L.WF.5.2.D",
+      "parent": "L.WF.5.2",
+      "grade": "5",
+      "statement": "Distinguish between frequently confused words.",
+      "parent_statement": "Demonstrate command of the conventions of writing, including those listed under grade four foundational skills."
+    },
+    {
+      "subject": "ela",
+      "code": "L.WF.5.2.E",
+      "parent": "L.WF.5.2",
+      "grade": "5",
+      "statement": "Use idiomatic language and choose words for effect; use punctuating for meaning and effect.",
+      "parent_statement": "Demonstrate command of the conventions of writing, including those listed under grade four foundational skills."
+    },
+    {
+      "subject": "ela",
+      "code": "L.WF.5.2.F",
+      "parent": "L.WF.5.2",
+      "grade": "5",
+      "statement": "Use punctuation to separate items in a series; use commas in a series of phrases or clauses.",
+      "parent_statement": "Demonstrate command of the conventions of writing, including those listed under grade four foundational skills."
+    },
+    {
+      "subject": "ela",
+      "code": "L.WF.5.2.G",
+      "parent": "L.WF.5.2",
+      "grade": "5",
+      "statement": "Use a comma to separate an introductory element from the rest of the sentence; use a comma to set off the words yes and no (e.g., Yes, thank you), to set off a tag question from the rest of the sentence (e.g., It’s true, isn’t it?), and to indicate direct address (e.g., Is that you, Emma?).",
+      "parent_statement": "Demonstrate command of the conventions of writing, including those listed under grade four foundational skills."
+    },
+    {
+      "subject": "ela",
+      "code": "L.WF.5.2.H",
+      "parent": "L.WF.5.2",
+      "grade": "5",
+      "statement": "Spell grade appropriate words correctly, consulting references as needed.",
+      "parent_statement": "Demonstrate command of the conventions of writing, including those listed under grade four foundational skills."
+    },
+    {
+      "subject": "ela",
+      "code": "L.SS.6.1.A",
+      "parent": "L.SS.6.1",
+      "grade": "6",
+      "statement": "Ensure that pronouns are in the proper case (subjective, objective, possessive).",
+      "parent_statement": "Demonstrate command of the system and structure of the English language when writing or speaking."
+    },
+    {
+      "subject": "ela",
+      "code": "L.SS.6.1.B",
+      "parent": "L.SS.6.1",
+      "grade": "6",
+      "statement": "Use intensive pronouns (e.g., myself, ourselves).",
+      "parent_statement": "Demonstrate command of the system and structure of the English language when writing or speaking."
+    },
+    {
+      "subject": "ela",
+      "code": "L.SS.6.1.C",
+      "parent": "L.SS.6.1",
+      "grade": "6",
+      "statement": "Recognize and correct inappropriate shifts in pronoun number and person.",
+      "parent_statement": "Demonstrate command of the system and structure of the English language when writing or speaking."
+    },
+    {
+      "subject": "ela",
+      "code": "L.SS.6.1.D",
+      "parent": "L.SS.6.1",
+      "grade": "6",
+      "statement": "Recognize and correct vague pronouns (i.e., ones with unclear or ambiguous antecedents).",
+      "parent_statement": "Demonstrate command of the system and structure of the English language when writing or speaking."
+    },
+    {
+      "subject": "ela",
+      "code": "L.SS.6.1.E",
+      "parent": "L.SS.6.1",
+      "grade": "6",
+      "statement": "Use punctuation (commas, parentheses, dashes) to set off nonrestrictive and parenthetical elements.",
+      "parent_statement": "Demonstrate command of the system and structure of the English language when writing or speaking."
+    },
+    {
+      "subject": "ela",
+      "code": "L.SS.6.1.F",
+      "parent": "L.SS.6.1",
+      "grade": "6",
+      "statement": "Recognize spelling conventions.",
+      "parent_statement": "Demonstrate command of the system and structure of the English language when writing or speaking."
+    },
+    {
+      "subject": "ela",
+      "code": "L.SS.7.1.A",
+      "parent": "L.SS.7.1",
+      "grade": "7",
+      "statement": "Explain the function of phrases and clauses in general and their function in specific sentences.",
+      "parent_statement": "Demonstrate command of the system and structure of the English language when writing or speaking."
+    },
+    {
+      "subject": "ela",
+      "code": "L.SS.7.1.B",
+      "parent": "L.SS.7.1",
+      "grade": "7",
+      "statement": "Choose among simple, compound, complex, and compound-complex sentences to signal differing relationships among ideas.",
+      "parent_statement": "Demonstrate command of the system and structure of the English language when writing or speaking."
+    },
+    {
+      "subject": "ela",
+      "code": "L.SS.7.1.C",
+      "parent": "L.SS.7.1",
+      "grade": "7",
+      "statement": "Place phrases and clauses within a sentence, recognizing and correcting misplaced and dangling modifiers.",
+      "parent_statement": "Demonstrate command of the system and structure of the English language when writing or speaking."
+    },
+    {
+      "subject": "ela",
+      "code": "L.SS.7.1.D",
+      "parent": "L.SS.7.1",
+      "grade": "7",
+      "statement": "Use a comma to separate coordinate adjectives (e.g., It was a fascinating, enjoyable movie but not He wore an old green shirt).",
+      "parent_statement": "Demonstrate command of the system and structure of the English language when writing or speaking."
+    },
+    {
+      "subject": "ela",
+      "code": "L.SS.7.1.E",
+      "parent": "L.SS.7.1",
+      "grade": "7",
+      "statement": "Recognize spelling conventions.",
+      "parent_statement": "Demonstrate command of the system and structure of the English language when writing or speaking."
+    },
+    {
+      "subject": "ela",
+      "code": "L.SS.8.1.A",
+      "parent": "L.SS.8.1",
+      "grade": "8",
+      "statement": "Explain the function of verbals (gerunds, participles, infinitives) in general and their function in particular sentences.",
+      "parent_statement": "Demonstrate command of the system and structure of the English language when writing or speaking."
+    },
+    {
+      "subject": "ela",
+      "code": "L.SS.8.1.B",
+      "parent": "L.SS.8.1",
+      "grade": "8",
+      "statement": "Form and use verbs in the active and passive voice.",
+      "parent_statement": "Demonstrate command of the system and structure of the English language when writing or speaking."
+    },
+    {
+      "subject": "ela",
+      "code": "L.SS.8.1.C",
+      "parent": "L.SS.8.1",
+      "grade": "8",
+      "statement": "Form and use verbs in the indicative, imperative, interrogative, conditional, and subjunctive mood.",
+      "parent_statement": "Demonstrate command of the system and structure of the English language when writing or speaking."
+    },
+    {
+      "subject": "ela",
+      "code": "L.SS.8.1.D",
+      "parent": "L.SS.8.1",
+      "grade": "8",
+      "statement": "Recognize and correct inappropriate shifts in verb voice and mood.",
+      "parent_statement": "Demonstrate command of the system and structure of the English language when writing or speaking."
+    },
+    {
+      "subject": "ela",
+      "code": "L.SS.8.1.E",
+      "parent": "L.SS.8.1",
+      "grade": "8",
+      "statement": "Use punctuation (comma, ellipsis, dash) to indicate a pause or break.",
+      "parent_statement": "Demonstrate command of the system and structure of the English language when writing or speaking."
+    },
+    {
+      "subject": "ela",
+      "code": "L.SS.8.1.F",
+      "parent": "L.SS.8.1",
+      "grade": "8",
+      "statement": "Use an ellipsis to indicate an omission.",
+      "parent_statement": "Demonstrate command of the system and structure of the English language when writing or speaking."
+    },
+    {
+      "subject": "ela",
+      "code": "L.SS.8.1.G",
+      "parent": "L.SS.8.1",
+      "grade": "8",
+      "statement": "Recognize spelling conventions.",
+      "parent_statement": "Demonstrate command of the system and structure of the English language when writing or speaking."
+    },
+    {
+      "subject": "ela",
+      "code": "L.KL.5.1.A",
+      "parent": "L.KL.5.1",
+      "grade": "5",
+      "statement": "Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases.",
+      "parent_statement": "Use knowledge of language and its conventions when writing, speaking, reading, or listening."
+    },
+    {
+      "subject": "ela",
+      "code": "L.KL.5.1.B",
+      "parent": "L.KL.5.1",
+      "grade": "5",
+      "statement": "Expand, combine, and reduce sentences for meaning, reader/listener interest, and style.",
+      "parent_statement": "Use knowledge of language and its conventions when writing, speaking, reading, or listening."
+    },
+    {
+      "subject": "ela",
+      "code": "L.KL.5.1.C",
+      "parent": "L.KL.5.1",
+      "grade": "5",
+      "statement": "Compare and contrast the varieties of English (e.g., dialects, registers) used in stories, dramas, or poems.",
+      "parent_statement": "Use knowledge of language and its conventions when writing, speaking, reading, or listening."
+    },
+    {
+      "subject": "ela",
+      "code": "L.KL.6.2.A",
+      "parent": "L.KL.6.2",
+      "grade": "6",
+      "statement": "Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases.",
+      "parent_statement": "Use knowledge of language and its conventions when writing, speaking, reading, or listening."
+    },
+    {
+      "subject": "ela",
+      "code": "L.KL.6.2.B",
+      "parent": "L.KL.6.2",
+      "grade": "6",
+      "statement": "Gather vocabulary knowledge when considering a word or phrase important to comprehension or expression.",
+      "parent_statement": "Use knowledge of language and its conventions when writing, speaking, reading, or listening."
+    },
+    {
+      "subject": "ela",
+      "code": "L.KL.6.2.C",
+      "parent": "L.KL.6.2",
+      "grade": "6",
+      "statement": "Vary sentence patterns for meaning (syntax), reader/listener interest, and style/voice.",
+      "parent_statement": "Use knowledge of language and its conventions when writing, speaking, reading, or listening."
+    },
+    {
+      "subject": "ela",
+      "code": "L.KL.6.2.D",
+      "parent": "L.KL.6.2",
+      "grade": "6",
+      "statement": "Maintain consistency in style and tone.",
+      "parent_statement": "Use knowledge of language and its conventions when writing, speaking, reading, or listening."
+    },
+    {
+      "subject": "ela",
+      "code": "L.KL.7.2.A",
+      "parent": "L.KL.7.2",
+      "grade": "7",
+      "statement": "Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases.",
+      "parent_statement": "Use knowledge of language and its conventions when writing, speaking, reading, or listening."
+    },
+    {
+      "subject": "ela",
+      "code": "L.KL.7.2.B",
+      "parent": "L.KL.7.2",
+      "grade": "7",
+      "statement": "Gather vocabulary knowledge when selecting a word or phrase important to comprehension or expression.",
+      "parent_statement": "Use knowledge of language and its conventions when writing, speaking, reading, or listening."
+    },
+    {
+      "subject": "ela",
+      "code": "L.KL.7.2.C",
+      "parent": "L.KL.7.2",
+      "grade": "7",
+      "statement": "Choose language that expresses ideas precisely and concisely, recognizing and eliminating wordiness and redundancy.",
+      "parent_statement": "Use knowledge of language and its conventions when writing, speaking, reading, or listening."
+    },
+    {
+      "subject": "ela",
+      "code": "L.KL.8.2.A",
+      "parent": "L.KL.8.2",
+      "grade": "8",
+      "statement": "Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases.",
+      "parent_statement": "Use knowledge of language and its conventions when writing, speaking, reading, or listening."
+    },
+    {
+      "subject": "ela",
+      "code": "L.KL.8.2.B",
+      "parent": "L.KL.8.2",
+      "grade": "8",
+      "statement": "Gather vocabulary knowledge when selecting a word or phrase important to comprehension or expression.",
+      "parent_statement": "Use knowledge of language and its conventions when writing, speaking, reading, or listening."
+    },
+    {
+      "subject": "ela",
+      "code": "L.KL.8.2.C",
+      "parent": "L.KL.8.2",
+      "grade": "8",
+      "statement": "Use verbs in the active and passive voice and in the conditional and subjunctive mood to achieve particular effects (e.g., emphasizing the actor or the action; expressing uncertainty or describing a state contrary to fact).",
+      "parent_statement": "Use knowledge of language and its conventions when writing, speaking, reading, or listening."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VL.5.2.A",
+      "parent": "L.VL.5.2",
+      "grade": "5",
+      "statement": "Use context (e.g., cause/effect relationships and comparisons in text) as a clue to the meaning of a word or phrase.",
+      "parent_statement": "Determine or clarify the meaning of unknown and multiple-meaning academic and domain-specific words and phrases based on grade 5 reading and content, choosing flexibly from a range of strategies."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VL.5.2.B",
+      "parent": "L.VL.5.2",
+      "grade": "5",
+      "statement": "Use common, grade-appropriate Greek and Latin affixes and roots as clues to the meaning of a word (e.g., photograph, photosynthesis).",
+      "parent_statement": "Determine or clarify the meaning of unknown and multiple-meaning academic and domain-specific words and phrases based on grade 5 reading and content, choosing flexibly from a range of strategies."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VL.5.2.C",
+      "parent": "L.VL.5.2",
+      "grade": "5",
+      "statement": "Consult reference materials (e.g., dictionaries, glossaries, thesauruses), both print and digital, to find the pronunciation and determine or clarify the precise meaning of key words and phrases.",
+      "parent_statement": "Determine or clarify the meaning of unknown and multiple-meaning academic and domain-specific words and phrases based on grade 5 reading and content, choosing flexibly from a range of strategies."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VL.6.3.A",
+      "parent": "L.VL.6.3",
+      "grade": "6",
+      "statement": "Use context (e.g., the overall meaning of a sentence or paragraph; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase.",
+      "parent_statement": "Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 6 reading and content, including technical meanings, choosing flexibly from a range of strategies."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VL.6.3.B",
+      "parent": "L.VL.6.3",
+      "grade": "6",
+      "statement": "Determine the meaning of words and phrases as they are used, including figurative, connotative, and technical meanings.",
+      "parent_statement": "Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 6 reading and content, including technical meanings, choosing flexibly from a range of strategies."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VL.6.3.C",
+      "parent": "L.VL.6.3",
+      "grade": "6",
+      "statement": "Use common, grade-appropriate Greek or Latin affixes and roots as clues to the meaning of a word (e.g., audience, auditory, audible).",
+      "parent_statement": "Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 6 reading and content, including technical meanings, choosing flexibly from a range of strategies."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VL.6.3.D",
+      "parent": "L.VL.6.3",
+      "grade": "6",
+      "statement": "Consult reference materials (e.g., dictionaries, glossaries, thesauruses), both print and digital, to find the pronunciation of a word or determine or clarify its precise meaning or its part of speech.",
+      "parent_statement": "Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 6 reading and content, including technical meanings, choosing flexibly from a range of strategies."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VL.6.3.E",
+      "parent": "L.VL.6.3",
+      "grade": "6",
+      "statement": "Verify the preliminary determination of the meaning of a word or phrase (e.g., by checking the inferred meaning in context or in a dictionary).",
+      "parent_statement": "Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 6 reading and content, including technical meanings, choosing flexibly from a range of strategies."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VL.7.3.A",
+      "parent": "L.VL.7.3",
+      "grade": "7",
+      "statement": "Use context (e.g., the overall meaning of a sentence or paragraph; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase.",
+      "parent_statement": "Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 7 reading and content, including technical meanings, choosing flexibly from a range of strategies."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VL.7.3.B",
+      "parent": "L.VL.7.3",
+      "grade": "7",
+      "statement": "Use common, grade-appropriate Greek or Latin affixes and roots as clues to the meaning of a word (e.g., belligerent, bellicose, rebel).",
+      "parent_statement": "Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 7 reading and content, including technical meanings, choosing flexibly from a range of strategies."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VL.7.3.C",
+      "parent": "L.VL.7.3",
+      "grade": "7",
+      "statement": "Analyze the impact of a specific word choice on meaning and tone.",
+      "parent_statement": "Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 7 reading and content, including technical meanings, choosing flexibly from a range of strategies."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VL.7.3.D",
+      "parent": "L.VL.7.3",
+      "grade": "7",
+      "statement": "Consult reference materials (e.g., dictionaries, glossaries, thesauruses), both print and digital, to find the pronunciation of a word or determine or clarify its precise meaning or its part of speech.",
+      "parent_statement": "Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 7 reading and content, including technical meanings, choosing flexibly from a range of strategies."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VL.7.3.E",
+      "parent": "L.VL.7.3",
+      "grade": "7",
+      "statement": "Verify the preliminary determination of the meaning of a word or phrase (e.g., by checking the inferred meaning in context or in a dictionary).",
+      "parent_statement": "Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 7 reading and content, including technical meanings, choosing flexibly from a range of strategies."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VL.8.3.A",
+      "parent": "L.VL.8.3",
+      "grade": "8",
+      "statement": "Use context (e.g., the overall meaning of a sentence or paragraph; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase.",
+      "parent_statement": "Determine or clarify the meaning of unknown and multiple-meaning words or phrases based on grade 8 reading and content, including technical meanings, choosing flexibly from a range of strategies."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VL.8.3.B",
+      "parent": "L.VL.8.3",
+      "grade": "8",
+      "statement": "Analyze the impact of specific word choices on meaning and tone.",
+      "parent_statement": "Determine or clarify the meaning of unknown and multiple-meaning words or phrases based on grade 8 reading and content, including technical meanings, choosing flexibly from a range of strategies."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VL.8.3.C",
+      "parent": "L.VL.8.3",
+      "grade": "8",
+      "statement": "Use common, grade-appropriate Greek or Latin affixes and roots as clues to the meaning of a word (e.g., precede, recede, secede).",
+      "parent_statement": "Determine or clarify the meaning of unknown and multiple-meaning words or phrases based on grade 8 reading and content, including technical meanings, choosing flexibly from a range of strategies."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VL.8.3.D",
+      "parent": "L.VL.8.3",
+      "grade": "8",
+      "statement": "Consult reference materials (e.g., dictionaries, glossaries, thesauruses), both print and digital, to find the pronunciation of a word or determine or clarify its precise meaning or its part of speech.",
+      "parent_statement": "Determine or clarify the meaning of unknown and multiple-meaning words or phrases based on grade 8 reading and content, including technical meanings, choosing flexibly from a range of strategies."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VL.8.3.E",
+      "parent": "L.VL.8.3",
+      "grade": "8",
+      "statement": "Verify the preliminary determination of the meaning of a word or phrase (e.g., by checking the inferred meaning in context or in a dictionary).",
+      "parent_statement": "Determine or clarify the meaning of unknown and multiple-meaning words or phrases based on grade 8 reading and content, including technical meanings, choosing flexibly from a range of strategies."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VI.5.3.A",
+      "parent": "L.VI.5.3",
+      "grade": "5",
+      "statement": "Interpret figurative language, including similes and metaphors, in context.",
+      "parent_statement": "Demonstrate understanding of figurative language, word relationships, and nuances in word meanings."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VI.5.3.B",
+      "parent": "L.VI.5.3",
+      "grade": "5",
+      "statement": "Recognize and explain the meaning of common idioms, adages, and proverbs.",
+      "parent_statement": "Demonstrate understanding of figurative language, word relationships, and nuances in word meanings."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VI.5.3.C",
+      "parent": "L.VI.5.3",
+      "grade": "5",
+      "statement": "Use the relationship between particular words (e.g., synonyms, antonyms, homographs) to better understand each of the words.",
+      "parent_statement": "Demonstrate understanding of figurative language, word relationships, and nuances in word meanings."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VI.6.4.A",
+      "parent": "L.VI.6.4",
+      "grade": "6",
+      "statement": "Interpret figures of speech (e.g., personification) in context.",
+      "parent_statement": "Demonstrate understanding of figurative language, word relationships, and nuances in word meanings."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VI.6.4.B",
+      "parent": "L.VI.6.4",
+      "grade": "6",
+      "statement": "Use the relationship between particular words (e.g., cause/effect, part/whole, item/category) to better understand each of the words.",
+      "parent_statement": "Demonstrate understanding of figurative language, word relationships, and nuances in word meanings."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VI.6.4.C",
+      "parent": "L.VI.6.4",
+      "grade": "6",
+      "statement": "Analyze the impact of a specific word choice on meaning and tone.",
+      "parent_statement": "Demonstrate understanding of figurative language, word relationships, and nuances in word meanings."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VI.6.4.D",
+      "parent": "L.VI.6.4",
+      "grade": "6",
+      "statement": "Distinguish among the connotations (associations) of words with similar denotations (definitions) (e.g., stingy, scrimping, economical, unwasteful, thrifty).",
+      "parent_statement": "Demonstrate understanding of figurative language, word relationships, and nuances in word meanings."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VI.7.4.A",
+      "parent": "L.VI.7.4",
+      "grade": "7",
+      "statement": "Interpret figures of speech (e.g., literary, biblical, and mythological allusions) in context.",
+      "parent_statement": "Demonstrate understanding of figurative language, word relationships, and nuances in word meanings."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VI.7.4.B",
+      "parent": "L.VI.7.4",
+      "grade": "7",
+      "statement": "Use the relationship between particular words (e.g., synonym/antonym, analogy) to better understand each of the words.",
+      "parent_statement": "Demonstrate understanding of figurative language, word relationships, and nuances in word meanings."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VI.7.4.C",
+      "parent": "L.VI.7.4",
+      "grade": "7",
+      "statement": "Analyze the impact of rhymes and other repetitions of sound (e.g., alliteration) on a specific verse or stanza or a poem or section of a story or drama.",
+      "parent_statement": "Demonstrate understanding of figurative language, word relationships, and nuances in word meanings."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VI.7.4.D",
+      "parent": "L.VI.7.4",
+      "grade": "7",
+      "statement": "Distinguish among the connotations (associations) of words with similar denotations (definitions) (e.g., refined, respectful, polite, diplomatic, condescending).",
+      "parent_statement": "Demonstrate understanding of figurative language, word relationships, and nuances in word meanings."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VI.8.4.A",
+      "parent": "L.VI.8.4",
+      "grade": "8",
+      "statement": "Interpret figures of speech (e.g., verbal irony, puns) in context.",
+      "parent_statement": "Demonstrate understanding of figurative language, word relationships, and nuances in word meanings."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VI.8.4.B",
+      "parent": "L.VI.8.4",
+      "grade": "8",
+      "statement": "Use the relationship between particular words to better understand each of the words.",
+      "parent_statement": "Demonstrate understanding of figurative language, word relationships, and nuances in word meanings."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VI.8.4.C",
+      "parent": "L.VI.8.4",
+      "grade": "8",
+      "statement": "Analyze the impact of specific word choices on meaning and tone, including analogies or allusions to other texts.",
+      "parent_statement": "Demonstrate understanding of figurative language, word relationships, and nuances in word meanings."
+    },
+    {
+      "subject": "ela",
+      "code": "L.VI.8.4.D",
+      "parent": "L.VI.8.4",
+      "grade": "8",
+      "statement": "Distinguish among the connotations (associations) of words with similar denotations (definitions) (e.g., bullheaded, willful, firm, persistent, resolute).",
+      "parent_statement": "Demonstrate understanding of figurative language, word relationships, and nuances in word meanings."
+    },
+    {
+      "subject": "ela",
+      "code": "W.AW.5.1.A",
+      "parent": "W.AW.5.1",
+      "grade": "5",
+      "statement": "Introduce a topic or text clearly, state an opinion, and create an organizational structure in which ideas are logically grouped to support the writer’s purpose.",
+      "parent_statement": "Write opinion pieces on topics or texts, supporting a point of view with reasons and information."
+    },
+    {
+      "subject": "ela",
+      "code": "W.AW.5.1.B",
+      "parent": "W.AW.5.1",
+      "grade": "5",
+      "statement": "Provide logically ordered reasons that are supported by facts and details from text(s), quote directly from text when appropriate.",
+      "parent_statement": "Write opinion pieces on topics or texts, supporting a point of view with reasons and information."
+    },
+    {
+      "subject": "ela",
+      "code": "W.AW.5.1.C",
+      "parent": "W.AW.5.1",
+      "grade": "5",
+      "statement": "Link opinion and reasons using words, phrases, and clauses (e.g., consequently, specifically).",
+      "parent_statement": "Write opinion pieces on topics or texts, supporting a point of view with reasons and information."
+    },
+    {
+      "subject": "ela",
+      "code": "W.AW.5.1.D",
+      "parent": "W.AW.5.1",
+      "grade": "5",
+      "statement": "Provide a conclusion related to the opinion presented.",
+      "parent_statement": "Write opinion pieces on topics or texts, supporting a point of view with reasons and information."
+    },
+    {
+      "subject": "ela",
+      "code": "W.AW.6.1.A",
+      "parent": "W.AW.6.1",
+      "grade": "6",
+      "statement": "Introduce claim(s) about a topic or issue and organize the reasons and evidence logically.",
+      "parent_statement": "Write arguments on discipline-specific content (e.g., social studies, science, math, technical subjects, English/Language Arts) to support claims with clear reasons and relevant evidence."
+    },
+    {
+      "subject": "ela",
+      "code": "W.AW.6.1.B",
+      "parent": "W.AW.6.1",
+      "grade": "6",
+      "statement": "Support claim(s) with logical reasoning and relevant, accurate data and evidence, that demonstrate an understanding of the topic or text, using credible sources.",
+      "parent_statement": "Write arguments on discipline-specific content (e.g., social studies, science, math, technical subjects, English/Language Arts) to support claims with clear reasons and relevant evidence."
+    },
+    {
+      "subject": "ela",
+      "code": "W.AW.6.1.C",
+      "parent": "W.AW.6.1",
+      "grade": "6",
+      "statement": "Use words, phrases, and clauses to link and clarify the relationships among claim(s), reasons and evidence.",
+      "parent_statement": "Write arguments on discipline-specific content (e.g., social studies, science, math, technical subjects, English/Language Arts) to support claims with clear reasons and relevant evidence."
+    },
+    {
+      "subject": "ela",
+      "code": "W.AW.6.1.D",
+      "parent": "W.AW.6.1",
+      "grade": "6",
+      "statement": "Establish and maintain a formal/academic style, approach, and form.",
+      "parent_statement": "Write arguments on discipline-specific content (e.g., social studies, science, math, technical subjects, English/Language Arts) to support claims with clear reasons and relevant evidence."
+    },
+    {
+      "subject": "ela",
+      "code": "W.AW.6.1.E",
+      "parent": "W.AW.6.1",
+      "grade": "6",
+      "statement": "Provide a concluding statement or section that follows from the argument presented.",
+      "parent_statement": "Write arguments on discipline-specific content (e.g., social studies, science, math, technical subjects, English/Language Arts) to support claims with clear reasons and relevant evidence."
+    },
+    {
+      "subject": "ela",
+      "code": "W.AW.7.1.A",
+      "parent": "W.AW.7.1",
+      "grade": "7",
+      "statement": "Introduce claim(s) about a topic or issue, acknowledge alternate or opposing claims, and organize the reasons and evidence logically.",
+      "parent_statement": "Write arguments on discipline-specific content (e.g., social studies, science, technical subjects, English/Language Arts) to support claims with clear reasons and relevant evidence."
+    },
+    {
+      "subject": "ela",
+      "code": "W.AW.7.1.B",
+      "parent": "W.AW.7.1",
+      "grade": "7",
+      "statement": "Support claim(s) with logical reasoning and relevant, accurate data and evidence that demonstrate an understanding of the topic or text, using credible sources.",
+      "parent_statement": "Write arguments on discipline-specific content (e.g., social studies, science, technical subjects, English/Language Arts) to support claims with clear reasons and relevant evidence."
+    },
+    {
+      "subject": "ela",
+      "code": "W.AW.7.1.C",
+      "parent": "W.AW.7.1",
+      "grade": "7",
+      "statement": "Use words, phrases, and clauses to create cohesion and clarify the relationships among claim(s), reasons, and evidence.",
+      "parent_statement": "Write arguments on discipline-specific content (e.g., social studies, science, technical subjects, English/Language Arts) to support claims with clear reasons and relevant evidence."
+    },
+    {
+      "subject": "ela",
+      "code": "W.AW.7.1.D",
+      "parent": "W.AW.7.1",
+      "grade": "7",
+      "statement": "Establish and maintain a formal style/academic style, approach, and form.",
+      "parent_statement": "Write arguments on discipline-specific content (e.g., social studies, science, technical subjects, English/Language Arts) to support claims with clear reasons and relevant evidence."
+    },
+    {
+      "subject": "ela",
+      "code": "W.AW.7.1.E",
+      "parent": "W.AW.7.1",
+      "grade": "7",
+      "statement": "Provide a concluding statement or section that follows from and supports the argument presented.",
+      "parent_statement": "Write arguments on discipline-specific content (e.g., social studies, science, technical subjects, English/Language Arts) to support claims with clear reasons and relevant evidence."
+    },
+    {
+      "subject": "ela",
+      "code": "W.AW.8.1.A",
+      "parent": "W.AW.8.1",
+      "grade": "8",
+      "statement": "Introduce claim(s) about a topic or issue, acknowledge and distinguish the claim(s) from alternate or opposing claims, and organize the reasons and evidence logically.",
+      "parent_statement": "Write arguments on discipline-specific content (e.g., social studies, science, technical subjects, English/Language Arts) to support claims with clear reasons and relevant evidence."
+    },
+    {
+      "subject": "ela",
+      "code": "W.AW.8.1.B",
+      "parent": "W.AW.8.1",
+      "grade": "8",
+      "statement": "Support claim(s) with logical reasoning and relevant evidence, using relevant, accurate data and evidence that demonstrate an understanding of the topic or text, using credible sources.",
+      "parent_statement": "Write arguments on discipline-specific content (e.g., social studies, science, technical subjects, English/Language Arts) to support claims with clear reasons and relevant evidence."
+    },
+    {
+      "subject": "ela",
+      "code": "W.AW.8.1.C",
+      "parent": "W.AW.8.1",
+      "grade": "8",
+      "statement": "Use words, phrases, and clauses to create cohesion and clarify the relationships among claim(s), counterclaims, reasons, and evidence.",
+      "parent_statement": "Write arguments on discipline-specific content (e.g., social studies, science, technical subjects, English/Language Arts) to support claims with clear reasons and relevant evidence."
+    },
+    {
+      "subject": "ela",
+      "code": "W.AW.8.1.D",
+      "parent": "W.AW.8.1",
+      "grade": "8",
+      "statement": "Establish and maintain a formal or academic style, approach, and form.",
+      "parent_statement": "Write arguments on discipline-specific content (e.g., social studies, science, technical subjects, English/Language Arts) to support claims with clear reasons and relevant evidence."
+    },
+    {
+      "subject": "ela",
+      "code": "W.AW.8.1.E",
+      "parent": "W.AW.8.1",
+      "grade": "8",
+      "statement": "Provide a concluding statement or section that follows from and supports the argument presented.",
+      "parent_statement": "Write arguments on discipline-specific content (e.g., social studies, science, technical subjects, English/Language Arts) to support claims with clear reasons and relevant evidence."
+    },
+    {
+      "subject": "ela",
+      "code": "W.IW.5.2.A",
+      "parent": "W.IW.5.2",
+      "grade": "5",
+      "statement": "Introduce a topic clearly to provide a focus and group related information logically; include text features such as headings, illustrations, and multimedia when useful to aid in comprehension.",
+      "parent_statement": "Write informative/explanatory texts to examine a topic and convey ideas and information clearly."
+    },
+    {
+      "subject": "ela",
+      "code": "W.IW.5.2.B",
+      "parent": "W.IW.5.2",
+      "grade": "5",
+      "statement": "Develop the topic with facts, definitions, concrete details, quotations, or other information and examples related to the topic.",
+      "parent_statement": "Write informative/explanatory texts to examine a topic and convey ideas and information clearly."
+    },
+    {
+      "subject": "ela",
+      "code": "W.IW.5.2.C",
+      "parent": "W.IW.5.2",
+      "grade": "5",
+      "statement": "Link ideas within paragraphs and sections of information using words, phrases, and clauses (e.g., in contrast, especially).",
+      "parent_statement": "Write informative/explanatory texts to examine a topic and convey ideas and information clearly."
+    },
+    {
+      "subject": "ela",
+      "code": "W.IW.5.2.D",
+      "parent": "W.IW.5.2",
+      "grade": "5",
+      "statement": "Use precise language and domain-specific vocabulary to inform about or explain the topic.",
+      "parent_statement": "Write informative/explanatory texts to examine a topic and convey ideas and information clearly."
+    },
+    {
+      "subject": "ela",
+      "code": "W.IW.5.2.E",
+      "parent": "W.IW.5.2",
+      "grade": "5",
+      "statement": "Provide a conclusion related to the information of explanation presented.",
+      "parent_statement": "Write informative/explanatory texts to examine a topic and convey ideas and information clearly."
+    },
+    {
+      "subject": "ela",
+      "code": "W.IW.6.2.A",
+      "parent": "W.IW.6.2",
+      "grade": "6",
+      "statement": "Introduce a topic and organize ideas, concepts, and information, using text structures (e.g., definition, classification, comparison/contrast, cause/effect, etc.) and text features (e.g., headings, graphics, and multimedia) when useful to aid in comprehension.",
+      "parent_statement": "Write informative/explanatory texts (including the narration of historical events, scientific procedures/ experiments, or technical processes) to examine a topic and convey ideas, concepts, and information through the selection, organization, and analysis of relevant content."
+    },
+    {
+      "subject": "ela",
+      "code": "W.IW.6.2.B",
+      "parent": "W.IW.6.2",
+      "grade": "6",
+      "statement": "Develop the topic with relevant facts, definitions, concrete details, quotations, or other information and examples.",
+      "parent_statement": "Write informative/explanatory texts (including the narration of historical events, scientific procedures/ experiments, or technical processes) to examine a topic and convey ideas, concepts, and information through the selection, organization, and analysis of relevant content."
+    },
+    {
+      "subject": "ela",
+      "code": "W.IW.6.2.C",
+      "parent": "W.IW.6.2",
+      "grade": "6",
+      "statement": "Use appropriate transitions to clarify the relationships among ideas and concepts.",
+      "parent_statement": "Write informative/explanatory texts (including the narration of historical events, scientific procedures/ experiments, or technical processes) to examine a topic and convey ideas, concepts, and information through the selection, organization, and analysis of relevant content."
+    },
+    {
+      "subject": "ela",
+      "code": "W.IW.6.2.D",
+      "parent": "W.IW.6.2",
+      "grade": "6",
+      "statement": "Use precise language and domain-specific vocabulary to inform about or explain the topic.",
+      "parent_statement": "Write informative/explanatory texts (including the narration of historical events, scientific procedures/ experiments, or technical processes) to examine a topic and convey ideas, concepts, and information through the selection, organization, and analysis of relevant content."
+    },
+    {
+      "subject": "ela",
+      "code": "W.IW.6.2.E",
+      "parent": "W.IW.6.2",
+      "grade": "6",
+      "statement": "Acknowledge and attempt a formal/academic style, approach, and form.",
+      "parent_statement": "Write informative/explanatory texts (including the narration of historical events, scientific procedures/ experiments, or technical processes) to examine a topic and convey ideas, concepts, and information through the selection, organization, and analysis of relevant content."
+    },
+    {
+      "subject": "ela",
+      "code": "W.IW.6.2.F",
+      "parent": "W.IW.6.2",
+      "grade": "6",
+      "statement": "Provide a concluding statement or section (e.g., sentence, part of a paragraph, paragraph, or multiple paragraphs) that follows from and supports the information or explanation presented.",
+      "parent_statement": "Write informative/explanatory texts (including the narration of historical events, scientific procedures/ experiments, or technical processes) to examine a topic and convey ideas, concepts, and information through the selection, organization, and analysis of relevant content."
+    },
+    {
+      "subject": "ela",
+      "code": "W.IW.7.2.A",
+      "parent": "W.IW.7.2",
+      "grade": "7",
+      "statement": "Introduce a topic clearly, previewing what is to follow; organize ideas, concepts, and information, using text structures (e.g., definition, classification, comparison/contrast, cause/effect, etc.) and text features (e.g., headings, graphics, and multimedia) when useful to aid in comprehension.",
+      "parent_statement": "Write informative/explanatory texts (including the narration of historical events, scientific procedures/ experiments, or technical processes) to examine a topic and convey ideas, concepts, and information through the selection, organization, and analysis of relevant content."
+    },
+    {
+      "subject": "ela",
+      "code": "W.IW.7.2.B",
+      "parent": "W.IW.7.2",
+      "grade": "7",
+      "statement": "Develop the topic with relevant facts, definitions, concrete details, quotations, or other information and examples.",
+      "parent_statement": "Write informative/explanatory texts (including the narration of historical events, scientific procedures/ experiments, or technical processes) to examine a topic and convey ideas, concepts, and information through the selection, organization, and analysis of relevant content."
+    },
+    {
+      "subject": "ela",
+      "code": "W.IW.7.2.C",
+      "parent": "W.IW.7.2",
+      "grade": "7",
+      "statement": "Use appropriate transitions to create cohesion and clarify the relationships among ideas and concepts.",
+      "parent_statement": "Write informative/explanatory texts (including the narration of historical events, scientific procedures/ experiments, or technical processes) to examine a topic and convey ideas, concepts, and information through the selection, organization, and analysis of relevant content."
+    },
+    {
+      "subject": "ela",
+      "code": "W.IW.7.2.D",
+      "parent": "W.IW.7.2",
+      "grade": "7",
+      "statement": "Use precise language and domain/ grade-level- specific vocabulary to inform about or explain the topic.",
+      "parent_statement": "Write informative/explanatory texts (including the narration of historical events, scientific procedures/ experiments, or technical processes) to examine a topic and convey ideas, concepts, and information through the selection, organization, and analysis of relevant content."
+    },
+    {
+      "subject": "ela",
+      "code": "W.IW.7.2.E",
+      "parent": "W.IW.7.2",
+      "grade": "7",
+      "statement": "Establish and maintain a formal style academic style, approach, and form.",
+      "parent_statement": "Write informative/explanatory texts (including the narration of historical events, scientific procedures/ experiments, or technical processes) to examine a topic and convey ideas, concepts, and information through the selection, organization, and analysis of relevant content."
+    },
+    {
+      "subject": "ela",
+      "code": "W.IW.7.2.F",
+      "parent": "W.IW.7.2",
+      "grade": "7",
+      "statement": "Provide a concluding statement or section (e.g., sentence, part of a paragraph, paragraph, or multiple paragraphs) that follows the flow of ideas, reflects back on the topic, and supports the information or explanation presented.",
+      "parent_statement": "Write informative/explanatory texts (including the narration of historical events, scientific procedures/ experiments, or technical processes) to examine a topic and convey ideas, concepts, and information through the selection, organization, and analysis of relevant content."
+    },
+    {
+      "subject": "ela",
+      "code": "W.IW.8.2.A",
+      "parent": "W.IW.8.2",
+      "grade": "8",
+      "statement": "Introduce a topic clearly, previewing what is to follow; and organize ideas, concepts, and information, using text structures (e.g., definition, classification, comparison/contrast, cause/effect, etc.) and text features (e.g., headings, graphics, and multimedia) when useful to aid in comprehension.",
+      "parent_statement": "Write informative/explanatory texts (including the narration of historical events, scientific procedures/ experiments, or technical processes) to examine a topic and convey ideas, concepts, and information through the selection, organization, and analysis of relevant content."
+    },
+    {
+      "subject": "ela",
+      "code": "W.IW.8.2.B",
+      "parent": "W.IW.8.2",
+      "grade": "8",
+      "statement": "Develop the topic with relevant, well-chosen facts, definitions, concrete details, quotations, or other information and examples.",
+      "parent_statement": "Write informative/explanatory texts (including the narration of historical events, scientific procedures/ experiments, or technical processes) to examine a topic and convey ideas, concepts, and information through the selection, organization, and analysis of relevant content."
+    },
+    {
+      "subject": "ela",
+      "code": "W.IW.8.2.C",
+      "parent": "W.IW.8.2",
+      "grade": "8",
+      "statement": "Use appropriate transitions to create cohesion and clarify the relationships among ideas and concepts.",
+      "parent_statement": "Write informative/explanatory texts (including the narration of historical events, scientific procedures/ experiments, or technical processes) to examine a topic and convey ideas, concepts, and information through the selection, organization, and analysis of relevant content."
+    },
+    {
+      "subject": "ela",
+      "code": "W.IW.8.2.D",
+      "parent": "W.IW.8.2",
+      "grade": "8",
+      "statement": "Use precise language and domain/grade-level- specific vocabulary to inform about or explain the topic.",
+      "parent_statement": "Write informative/explanatory texts (including the narration of historical events, scientific procedures/ experiments, or technical processes) to examine a topic and convey ideas, concepts, and information through the selection, organization, and analysis of relevant content."
+    },
+    {
+      "subject": "ela",
+      "code": "W.IW.8.2.E",
+      "parent": "W.IW.8.2",
+      "grade": "8",
+      "statement": "Establish and maintain a formal style/academic style, approach, and form.",
+      "parent_statement": "Write informative/explanatory texts (including the narration of historical events, scientific procedures/ experiments, or technical processes) to examine a topic and convey ideas, concepts, and information through the selection, organization, and analysis of relevant content."
+    },
+    {
+      "subject": "ela",
+      "code": "W.IW.8.2.F",
+      "parent": "W.IW.8.2",
+      "grade": "8",
+      "statement": "Provide a concluding statement or section (e.g., sentence, part of a paragraph, paragraph, or multiple paragraphs) that synthesizes the information or explanation presented.",
+      "parent_statement": "Write informative/explanatory texts (including the narration of historical events, scientific procedures/ experiments, or technical processes) to examine a topic and convey ideas, concepts, and information through the selection, organization, and analysis of relevant content."
+    },
+    {
+      "subject": "ela",
+      "code": "W.NW.5.3.A",
+      "parent": "W.NW.5.3",
+      "grade": "5",
+      "statement": "Orient the reader by establishing a situation and introducing a narrator and/or characters; organize an event sequence that unfolds naturally.",
+      "parent_statement": "Write narratives to develop real or imagined experiences or events using effective technique, descriptive details, and clear event sequences."
+    },
+    {
+      "subject": "ela",
+      "code": "W.NW.5.3.B",
+      "parent": "W.NW.5.3",
+      "grade": "5",
+      "statement": "Use narrative techniques, such as dialogue, description, and pacing, to develop experiences and events or show the responses of characters to situations.",
+      "parent_statement": "Write narratives to develop real or imagined experiences or events using effective technique, descriptive details, and clear event sequences."
+    },
+    {
+      "subject": "ela",
+      "code": "W.NW.5.3.C",
+      "parent": "W.NW.5.3",
+      "grade": "5",
+      "statement": "Use a variety of transitional words, phrases, and clauses to manage the sequence of events.",
+      "parent_statement": "Write narratives to develop real or imagined experiences or events using effective technique, descriptive details, and clear event sequences."
+    },
+    {
+      "subject": "ela",
+      "code": "W.NW.5.3.D",
+      "parent": "W.NW.5.3",
+      "grade": "5",
+      "statement": "Use concrete words and phrases and sensory details to convey experiences and events precisely.",
+      "parent_statement": "Write narratives to develop real or imagined experiences or events using effective technique, descriptive details, and clear event sequences."
+    },
+    {
+      "subject": "ela",
+      "code": "W.NW.5.3.E",
+      "parent": "W.NW.5.3",
+      "grade": "5",
+      "statement": "Provide a conclusion that follows from the narrated experiences or events.",
+      "parent_statement": "Write narratives to develop real or imagined experiences or events using effective technique, descriptive details, and clear event sequences."
+    },
+    {
+      "subject": "ela",
+      "code": "W.NW.6.3.A",
+      "parent": "W.NW.6.3",
+      "grade": "6",
+      "statement": "Engage and orient the reader by establishing a context and introducing a narrator and/or characters; organize an event sequence that unfolds naturally and logically.",
+      "parent_statement": "Write narratives to develop real or imagined experiences or events using effective technique, relevant descriptive details, and well-structured event sequences."
+    },
+    {
+      "subject": "ela",
+      "code": "W.NW.6.3.B",
+      "parent": "W.NW.6.3",
+      "grade": "6",
+      "statement": "Use narrative techniques, such as dialogue, pacing, and description, to develop experiences, events, and/or characters.",
+      "parent_statement": "Write narratives to develop real or imagined experiences or events using effective technique, relevant descriptive details, and well-structured event sequences."
+    },
+    {
+      "subject": "ela",
+      "code": "W.NW.6.3.C",
+      "parent": "W.NW.6.3",
+      "grade": "6",
+      "statement": "Use a variety of transition words, phrases, and clauses to convey sequence and signal shifts from one time frame or setting to another.",
+      "parent_statement": "Write narratives to develop real or imagined experiences or events using effective technique, relevant descriptive details, and well-structured event sequences."
+    },
+    {
+      "subject": "ela",
+      "code": "W.NW.6.3.D",
+      "parent": "W.NW.6.3",
+      "grade": "6",
+      "statement": "Use precise words and phrases, relevant descriptive details, and sensory language to convey experiences and events.",
+      "parent_statement": "Write narratives to develop real or imagined experiences or events using effective technique, relevant descriptive details, and well-structured event sequences."
+    },
+    {
+      "subject": "ela",
+      "code": "W.NW.6.3.E",
+      "parent": "W.NW.6.3",
+      "grade": "6",
+      "statement": "Provide a conclusion that follows from the narrated experiences or events.",
+      "parent_statement": "Write narratives to develop real or imagined experiences or events using effective technique, relevant descriptive details, and well-structured event sequences."
+    },
+    {
+      "subject": "ela",
+      "code": "W.NW.7.3.A",
+      "parent": "W.NW.7.3",
+      "grade": "7",
+      "statement": "Engage and orient the reader by establishing a context and point of view and introducing a narrator and/or characters; organize an event sequence that unfolds naturally and logically.",
+      "parent_statement": "Write narratives to develop real or imagined experiences or events using effective technique, relevant descriptive details, and well-structured event sequences."
+    },
+    {
+      "subject": "ela",
+      "code": "W.NW.7.3.B",
+      "parent": "W.NW.7.3",
+      "grade": "7",
+      "statement": "Use narrative techniques, such as dialogue, pacing, and description, to develop experiences, events, and/or characters.",
+      "parent_statement": "Write narratives to develop real or imagined experiences or events using effective technique, relevant descriptive details, and well-structured event sequences."
+    },
+    {
+      "subject": "ela",
+      "code": "W.NW.7.3.C",
+      "parent": "W.NW.7.3",
+      "grade": "7",
+      "statement": "Use a variety of transition words, phrases, and clauses to convey sequence and signal shifts from one time frame or setting to another.",
+      "parent_statement": "Write narratives to develop real or imagined experiences or events using effective technique, relevant descriptive details, and well-structured event sequences."
+    },
+    {
+      "subject": "ela",
+      "code": "W.NW.7.3.D",
+      "parent": "W.NW.7.3",
+      "grade": "7",
+      "statement": "Use precise words and phrases, relevant descriptive details, and sensory language to capture the action and convey experiences and events.",
+      "parent_statement": "Write narratives to develop real or imagined experiences or events using effective technique, relevant descriptive details, and well-structured event sequences."
+    },
+    {
+      "subject": "ela",
+      "code": "W.NW.7.3.E",
+      "parent": "W.NW.7.3",
+      "grade": "7",
+      "statement": "Provide a conclusion that follows from and reflects on the narrated experiences or events.",
+      "parent_statement": "Write narratives to develop real or imagined experiences or events using effective technique, relevant descriptive details, and well-structured event sequences."
+    },
+    {
+      "subject": "ela",
+      "code": "W.NW.8.3.A",
+      "parent": "W.NW.8.3",
+      "grade": "8",
+      "statement": "Engage and orient the reader by establishing a context and point of view and introducing a narrator and/or characters; organize an event sequence that unfolds naturally and logically.",
+      "parent_statement": "Write narratives to develop real or imagined experiences or events using effective technique, relevant descriptive details, and well-structured event sequences."
+    },
+    {
+      "subject": "ela",
+      "code": "W.NW.8.3.B",
+      "parent": "W.NW.8.3",
+      "grade": "8",
+      "statement": "Use narrative techniques, such as dialogue, pacing, description, and reflection, to develop experiences, events, and/or characters.",
+      "parent_statement": "Write narratives to develop real or imagined experiences or events using effective technique, relevant descriptive details, and well-structured event sequences."
+    },
+    {
+      "subject": "ela",
+      "code": "W.NW.8.3.C",
+      "parent": "W.NW.8.3",
+      "grade": "8",
+      "statement": "Use a variety of transition words, phrases, and clauses to convey sequence, signal shifts from one time frame or setting to another, and show the relationships among experiences and events.",
+      "parent_statement": "Write narratives to develop real or imagined experiences or events using effective technique, relevant descriptive details, and well-structured event sequences."
+    },
+    {
+      "subject": "ela",
+      "code": "W.NW.8.3.D",
+      "parent": "W.NW.8.3",
+      "grade": "8",
+      "statement": "Use precise words and phrases, relevant descriptive details, and sensory language to capture the action and convey experiences and events.",
+      "parent_statement": "Write narratives to develop real or imagined experiences or events using effective technique, relevant descriptive details, and well-structured event sequences."
+    },
+    {
+      "subject": "ela",
+      "code": "W.NW.8.3.E",
+      "parent": "W.NW.8.3",
+      "grade": "8",
+      "statement": "Provide a conclusion that follows from and reflects on the narrated experiences or events.",
+      "parent_statement": "Write narratives to develop real or imagined experiences or events using effective technique, relevant descriptive details, and well-structured event sequences."
+    },
+    {
+      "subject": "ela",
+      "code": "W.WP.5.4.A",
+      "parent": "W.WP.5.4",
+      "grade": "5",
+      "statement": "Consider audience, purpose, and intent before writing.",
+      "parent_statement": "With guidance and support from peers and adults, develop and strengthen writing as needed by planning, revising, editing, rewriting, or trying a new approach."
+    },
+    {
+      "subject": "ela",
+      "code": "W.WP.5.4.B",
+      "parent": "W.WP.5.4",
+      "grade": "5",
+      "statement": "Plan appropriately to use specialized, topic-specific language appropriate for the audience, purpose and subject matter.",
+      "parent_statement": "With guidance and support from peers and adults, develop and strengthen writing as needed by planning, revising, editing, rewriting, or trying a new approach."
+    },
+    {
+      "subject": "ela",
+      "code": "W.WP.5.4.C",
+      "parent": "W.WP.5.4",
+      "grade": "5",
+      "statement": "Consider writing as a process, including self-evaluation, revision and editing.",
+      "parent_statement": "With guidance and support from peers and adults, develop and strengthen writing as needed by planning, revising, editing, rewriting, or trying a new approach."
+    },
+    {
+      "subject": "ela",
+      "code": "W.WP.5.4.D",
+      "parent": "W.WP.5.4",
+      "grade": "5",
+      "statement": "With adult and peer feedback, and digital or print tools such as a dictionary, thesaurus, and/or spell checker, evaluate whether the writing achieved its goal and make changes in content or form as necessary.",
+      "parent_statement": "With guidance and support from peers and adults, develop and strengthen writing as needed by planning, revising, editing, rewriting, or trying a new approach."
+    },
+    {
+      "subject": "ela",
+      "code": "W.WP.5.4.E",
+      "parent": "W.WP.5.4",
+      "grade": "5",
+      "statement": "After initial drafting, expand, combine, and reduce sentences for meaning, audience, and style.",
+      "parent_statement": "With guidance and support from peers and adults, develop and strengthen writing as needed by planning, revising, editing, rewriting, or trying a new approach."
+    },
+    {
+      "subject": "ela",
+      "code": "SL.PE.5.1.A",
+      "parent": "SL.PE.5.1",
+      "grade": "5",
+      "statement": "Explicitly draw on previously read text or material and other information known about the topic to explore ideas under discussion.",
+      "parent_statement": "Engage effectively in a range of collaborative discussions (one-on-one, in groups, and teacher-led) with diverse partners on grade 5 topics and texts, building on others’ ideas and expressing their own clearly."
+    },
+    {
+      "subject": "ela",
+      "code": "SL.PE.5.1.B",
+      "parent": "SL.PE.5.1",
+      "grade": "5",
+      "statement": "Follow agreed-upon rules for discussions and carry out assigned roles.",
+      "parent_statement": "Engage effectively in a range of collaborative discussions (one-on-one, in groups, and teacher-led) with diverse partners on grade 5 topics and texts, building on others’ ideas and expressing their own clearly."
+    },
+    {
+      "subject": "ela",
+      "code": "SL.PE.5.1.C",
+      "parent": "SL.PE.5.1",
+      "grade": "5",
+      "statement": "Pose and respond to specific questions by making comments that contribute to the discussion and elaborate on the remarks of others.",
+      "parent_statement": "Engage effectively in a range of collaborative discussions (one-on-one, in groups, and teacher-led) with diverse partners on grade 5 topics and texts, building on others’ ideas and expressing their own clearly."
+    },
+    {
+      "subject": "ela",
+      "code": "SL.PE.5.1.D",
+      "parent": "SL.PE.5.1",
+      "grade": "5",
+      "statement": "Review the key ideas expressed and draw conclusions in light of information and knowledge gained from the discussions.",
+      "parent_statement": "Engage effectively in a range of collaborative discussions (one-on-one, in groups, and teacher-led) with diverse partners on grade 5 topics and texts, building on others’ ideas and expressing their own clearly."
+    },
+    {
+      "subject": "ela",
+      "code": "SL.PE.6.1.A",
+      "parent": "SL.PE.6.1",
+      "grade": "6",
+      "statement": "Come to discussions prepared, having read or studied required material; explicitly draw on that preparation by referring to evidence on the topic, text, or issue to probe and reflect on ideas under discussion.",
+      "parent_statement": "Engage effectively in a range of collaborative discussions (one-on-one, in groups, and teacher-led) with diverse partners on grade 6 topics, texts, and issues, building on others’ ideas and expressing their own clearly."
+    },
+    {
+      "subject": "ela",
+      "code": "SL.PE.6.1.B",
+      "parent": "SL.PE.6.1",
+      "grade": "6",
+      "statement": "Follow rules for collegial discussions, set specific goals and deadlines, and define individual roles as needed.",
+      "parent_statement": "Engage effectively in a range of collaborative discussions (one-on-one, in groups, and teacher-led) with diverse partners on grade 6 topics, texts, and issues, building on others’ ideas and expressing their own clearly."
+    },
+    {
+      "subject": "ela",
+      "code": "SL.PE.6.1.C",
+      "parent": "SL.PE.6.1",
+      "grade": "6",
+      "statement": "Pose and respond to specific questions with elaboration and detail by making comments that contribute to the topic, text, or issue under discussion.",
+      "parent_statement": "Engage effectively in a range of collaborative discussions (one-on-one, in groups, and teacher-led) with diverse partners on grade 6 topics, texts, and issues, building on others’ ideas and expressing their own clearly."
+    },
+    {
+      "subject": "ela",
+      "code": "SL.PE.6.1.D",
+      "parent": "SL.PE.6.1",
+      "grade": "6",
+      "statement": "Review the key ideas expressed and demonstrate understanding of multiple perspectives through reflection and paraphrasing.",
+      "parent_statement": "Engage effectively in a range of collaborative discussions (one-on-one, in groups, and teacher-led) with diverse partners on grade 6 topics, texts, and issues, building on others’ ideas and expressing their own clearly."
+    },
+    {
+      "subject": "ela",
+      "code": "SL.PE.7.1.A",
+      "parent": "SL.PE.7.1",
+      "grade": "7",
+      "statement": "Come to discussions prepared, having read or researched material under study; explicitly draw on that preparation by referring to evidence on the topic, text, or issue to probe and reflect on ideas under discussion.",
+      "parent_statement": "Engage effectively in a range of collaborative discussions (one-on-one, in groups, and teacher-led) with diverse partners on grade 7 topics, texts, and issues, building on others’ ideas and expressing their own clearly."
+    },
+    {
+      "subject": "ela",
+      "code": "SL.PE.7.1.B",
+      "parent": "SL.PE.7.1",
+      "grade": "7",
+      "statement": "Follow rules for collegial discussions, track progress toward specific goals and deadlines, and define individual roles as needed.",
+      "parent_statement": "Engage effectively in a range of collaborative discussions (one-on-one, in groups, and teacher-led) with diverse partners on grade 7 topics, texts, and issues, building on others’ ideas and expressing their own clearly."
+    },
+    {
+      "subject": "ela",
+      "code": "SL.PE.7.1.C",
+      "parent": "SL.PE.7.1",
+      "grade": "7",
+      "statement": "Pose questions that elicit elaboration and respond to others’ questions and comments with relevant observations and ideas that bring the discussion back on topic as needed.",
+      "parent_statement": "Engage effectively in a range of collaborative discussions (one-on-one, in groups, and teacher-led) with diverse partners on grade 7 topics, texts, and issues, building on others’ ideas and expressing their own clearly."
+    },
+    {
+      "subject": "ela",
+      "code": "SL.PE.7.1.D",
+      "parent": "SL.PE.7.1",
+      "grade": "7",
+      "statement": "Acknowledge new information expressed by others and, when warranted, modify their own views.",
+      "parent_statement": "Engage effectively in a range of collaborative discussions (one-on-one, in groups, and teacher-led) with diverse partners on grade 7 topics, texts, and issues, building on others’ ideas and expressing their own clearly."
+    },
+    {
+      "subject": "ela",
+      "code": "SL.PE.8.1.A",
+      "parent": "SL.PE.8.1",
+      "grade": "8",
+      "statement": "Come to discussions prepared, having read or researched material under study; explicitly draw on that preparation by referring to evidence on the topic, text, or issue to probe and reflect on ideas under discussion.",
+      "parent_statement": "Engage effectively in a range of collaborative discussions (one-on-one, in groups, and teacher-led) with diverse partners on grade 8 topics, texts, and issues, building on others’ ideas and expressing their own clearly."
+    },
+    {
+      "subject": "ela",
+      "code": "SL.PE.8.1.B",
+      "parent": "SL.PE.8.1",
+      "grade": "8",
+      "statement": "Follow rules for collegial discussions and decision-making, track progress toward specific goals and deadlines, and define individual roles as needed.",
+      "parent_statement": "Engage effectively in a range of collaborative discussions (one-on-one, in groups, and teacher-led) with diverse partners on grade 8 topics, texts, and issues, building on others’ ideas and expressing their own clearly."
+    },
+    {
+      "subject": "ela",
+      "code": "SL.PE.8.1.C",
+      "parent": "SL.PE.8.1",
+      "grade": "8",
+      "statement": "Pose questions that connect the ideas of several speakers and respond to others’ questions and comments with relevant evidence, observations, and ideas.",
+      "parent_statement": "Engage effectively in a range of collaborative discussions (one-on-one, in groups, and teacher-led) with diverse partners on grade 8 topics, texts, and issues, building on others’ ideas and expressing their own clearly."
+    },
+    {
+      "subject": "ela",
+      "code": "SL.PE.8.1.D",
+      "parent": "SL.PE.8.1",
+      "grade": "8",
+      "statement": "Acknowledge new information expressed by others, and, when warranted, qualify or justify their own views in light of the evidence presented.",
+      "parent_statement": "Engage effectively in a range of collaborative discussions (one-on-one, in groups, and teacher-led) with diverse partners on grade 8 topics, texts, and issues, building on others’ ideas and expressing their own clearly."
+    },
+    {
+      "subject": "math",
+      "code": "5.NBT.A.3.a",
+      "parent": "5.NBT.A.3",
+      "grade": "5",
+      "statement": "Read and write decimals to thousandths using base-ten numerals, number names, and expanded form, e.g., \\(347.392 = 3 \\times 100 + 4 \\times 10 + 7 \\times 1 + 3 \\times (\\frac{1}{10)} + 9 \\times (\\frac{1}{100)} + 2 \\times (\\frac{1}{1000)}\\).",
+      "parent_statement": "Read, write, and compare decimals to thousandths.",
+      "aliases": [
+        "5.NBT.A.3a"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "5.NBT.A.3.b",
+      "parent": "5.NBT.A.3",
+      "grade": "5",
+      "statement": "Compare two decimals to thousandths based on meanings of the digits in each place, using \\>, =, and \\< symbols to record the results of comparisons.",
+      "parent_statement": "Read, write, and compare decimals to thousandths.",
+      "aliases": [
+        "5.NBT.A.3b"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "5.NF.B.4.a",
+      "parent": "5.NF.B.4",
+      "grade": "5",
+      "statement": "Interpret the product \\(\\frac{a}{b} \\times q\\) as *a* parts of a partition of *q* into *b* equal parts; equivalently, as the result of a sequence of operations \\(a \\times q \\div b\\). For example, use a visual fraction model to show \\(\\frac{2}{3} \\times 4 = \\frac{8}{3}\\) , and create a story context for this equation. Do the same with \\(\\frac{2}{3} \\times \\frac{4}{5} = \\frac{8}{15}\\). (In general, \\(\\frac{a}{b} \\times \\frac{c}{d} = \\frac{ab}{bd}\\)).",
+      "parent_statement": "Apply and extend previous understandings of multiplication to multiply a fraction or whole number by a fraction.",
+      "aliases": [
+        "5.NF.B.4a"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "5.NF.B.4.b",
+      "parent": "5.NF.B.4",
+      "grade": "5",
+      "statement": "Find the area of a rectangle with fractional side lengths by tiling it with unit squares of the appropriate unit fraction side lengths, and show that the area is the same as would be found by multiplying the side lengths. Multiply fractional side lengths to find areas of rectangles, and represent fraction products as rectangular areas.",
+      "parent_statement": "Apply and extend previous understandings of multiplication to multiply a fraction or whole number by a fraction.",
+      "aliases": [
+        "5.NF.B.4b"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "5.NF.B.5.a",
+      "parent": "5.NF.B.5",
+      "grade": "5",
+      "statement": "Comparing the size of a product to the size of one factor on the basis of the size of the other factor, without performing the indicated multiplication.",
+      "parent_statement": "Interpret multiplication as scaling (resizing), by:",
+      "aliases": [
+        "5.NF.B.5a"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "5.NF.B.5.b",
+      "parent": "5.NF.B.5",
+      "grade": "5",
+      "statement": "Explaining why multiplying a given number by a fraction greater than 1 results in a product greater than the given number (recognizing multiplication by whole numbers greater than 1 as a familiar case); explaining why multiplying a given number by a fraction less than 1 results in a product smaller than the given number; and relating the principle of fraction equivalence \\(\\frac{a}{b} = \\frac{(n \\times a)}{(n \\times b)}\\) to the effect of multiplying \\(\\frac{a}{b}\\) by 1.",
+      "parent_statement": "Interpret multiplication as scaling (resizing), by:",
+      "aliases": [
+        "5.NF.B.5b"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "5.NF.B.7.a",
+      "parent": "5.NF.B.7",
+      "grade": "5",
+      "statement": "Interpret division of a unit fraction by a non-zero whole number, and compute such quotients. For example, create a story context for \\(\\frac{1}{3} \\div 4\\) , and use a visual fraction model to show the quotient. Use the relationship between multiplication and division to explain that \\(\\frac{1}{3} \\div 4 = 1\\frac{1}{2}\\) because \\(1\\frac{1}{2} \\times 4 = \\frac{1}{3}\\).",
+      "parent_statement": "Apply and extend previous understandings of division to divide unit fractions by whole numbers and whole numbers by unit fractions.",
+      "aliases": [
+        "5.NF.B.7a"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "5.NF.B.7.b",
+      "parent": "5.NF.B.7",
+      "grade": "5",
+      "statement": "Interpret division of a whole number by a unit fraction, and compute such quotients. For example, create a story context for \\(4 \\div \\frac{1}{5}\\) , and use a visual fraction model to show the quotient. Use the relationship between multiplication and division to explain that \\(4 \\div \\frac{1}{5} = 20\\) because \\(20 \\times \\frac{1}{5} = 4\\).",
+      "parent_statement": "Apply and extend previous understandings of division to divide unit fractions by whole numbers and whole numbers by unit fractions.",
+      "aliases": [
+        "5.NF.B.7b"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "5.NF.B.7.c",
+      "parent": "5.NF.B.7",
+      "grade": "5",
+      "statement": "Solve real world problems involving division of unit fractions by non-zero whole numbers and division of whole numbers by unit fractions, e.g., by using visual fraction models and equations to represent the problem. For example, how much chocolate will each person get if 3 people share \\(\\frac{1}{2}\\) lb. of chocolate equally? How many \\(\\frac{1}{3}\\)-cup servings are in 2 cups of raisins?",
+      "parent_statement": "Apply and extend previous understandings of division to divide unit fractions by whole numbers and whole numbers by unit fractions.",
+      "aliases": [
+        "5.NF.B.7c"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "5.M.B.2.a",
+      "parent": "5.M.B.2",
+      "grade": "5",
+      "statement": "A cube with side length 1 unit, called a \"unit cube,\" is said to have \"one cubic unit\" of volume, and can be used to measure volume.",
+      "parent_statement": "Recognize volume as an attribute of solid figures and understand concepts of volume measurement.",
+      "aliases": [
+        "5.M.B.2a"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "5.M.B.2.b",
+      "parent": "5.M.B.2",
+      "grade": "5",
+      "statement": "A solid figure which can be packed without gaps or overlaps using *n* unit cubes is said to have a volume of *n* cubic units.",
+      "parent_statement": "Recognize volume as an attribute of solid figures and understand concepts of volume measurement.",
+      "aliases": [
+        "5.M.B.2b"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "5.M.B.4.a",
+      "parent": "5.M.B.4",
+      "grade": "5",
+      "statement": "Find the volume of a right rectangular prism with whole-number side lengths by packing it with unit cubes, and show that the volume is the same as would be found by multiplying the edge lengths, equivalently by multiplying the height by the area of the base. Represent threefold whole-number products as volumes, e.g., to represent the associative property of multiplication.",
+      "parent_statement": "Relate volume to the operations of multiplication and addition and solve real world and mathematical problems involving volume.",
+      "aliases": [
+        "5.M.B.4a"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "5.M.B.4.b",
+      "parent": "5.M.B.4",
+      "grade": "5",
+      "statement": "Apply the formulas \\(V = l \\times w \\times h\\)and \\(V = B \\times h\\) for rectangular prisms to find volumes of right rectangular prisms with whole number edge lengths in the context of solving real world and mathematical problems.",
+      "parent_statement": "Relate volume to the operations of multiplication and addition and solve real world and mathematical problems involving volume.",
+      "aliases": [
+        "5.M.B.4b"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "5.M.B.4.c",
+      "parent": "5.M.B.4",
+      "grade": "5",
+      "statement": "Recognize volume as additive. Find volumes of solid figures composed of two non-overlapping right rectangular prisms by adding the volumes of the non-overlapping parts, applying this technique to solve real world problems.",
+      "parent_statement": "Relate volume to the operations of multiplication and addition and solve real world and mathematical problems involving volume.",
+      "aliases": [
+        "5.M.B.4c"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "6.RP.A.3.a",
+      "parent": "6.RP.A.3",
+      "grade": "6",
+      "statement": "Make tables of equivalent ratios relating quantities with whole number measurements, find missing values in the tables, and plot the pairs of values on the coordinate plane. Use tables to compare ratios.",
+      "parent_statement": "Use ratio and rate reasoning to solve real-world and mathematical problems, e.g., by reasoning about tables of equivalent ratios, tape diagrams, double number line diagrams, or equations.",
+      "aliases": [
+        "6.RP.A.3a"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "6.RP.A.3.b",
+      "parent": "6.RP.A.3",
+      "grade": "6",
+      "statement": "Solve unit rate problems including those involving unit pricing and constant speed. For example, if it took 7 hours to mow 4 lawns, then at that rate, how many lawns could be mowed in 35 hours? At what rate were lawns being mowed?",
+      "parent_statement": "Use ratio and rate reasoning to solve real-world and mathematical problems, e.g., by reasoning about tables of equivalent ratios, tape diagrams, double number line diagrams, or equations.",
+      "aliases": [
+        "6.RP.A.3b"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "6.RP.A.3.c",
+      "parent": "6.RP.A.3",
+      "grade": "6",
+      "statement": "Find a percent of a quantity as a rate per 100 (e.g., 30% of a quantity means \\(1\\frac{30}{00}\\)times the quantity); solve problems involving finding the whole, given a part and the percent.",
+      "parent_statement": "Use ratio and rate reasoning to solve real-world and mathematical problems, e.g., by reasoning about tables of equivalent ratios, tape diagrams, double number line diagrams, or equations.",
+      "aliases": [
+        "6.RP.A.3c"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "6.RP.A.3.d",
+      "parent": "6.RP.A.3",
+      "grade": "6",
+      "statement": "Use ratio reasoning to convert measurement units; manipulate and transform units appropriately when multiplying or dividing quantities.",
+      "parent_statement": "Use ratio and rate reasoning to solve real-world and mathematical problems, e.g., by reasoning about tables of equivalent ratios, tape diagrams, double number line diagrams, or equations.",
+      "aliases": [
+        "6.RP.A.3d"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "6.NS.C.6.a",
+      "parent": "6.NS.C.6",
+      "grade": "6",
+      "statement": "Recognize opposite signs of numbers as indicating locations on opposite sides of 0 on the number line; recognize that the opposite of the opposite of a number is the number itself, e.g., \\(- ( - 3) = 3\\), and that 0 is its own opposite.",
+      "parent_statement": "Understand a rational number as a point on the number line. Extend number line diagrams and coordinate axes familiar from previous grades to represent points on the line and in the plane with negative number coordinates.",
+      "aliases": [
+        "6.NS.C.6a"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "6.NS.C.6.b",
+      "parent": "6.NS.C.6",
+      "grade": "6",
+      "statement": "Understand signs of numbers in ordered pairs as indicating locations in quadrants of the coordinate plane; recognize that when two ordered pairs differ only by signs, the locations of the points are related by reflections across one or both axes.",
+      "parent_statement": "Understand a rational number as a point on the number line. Extend number line diagrams and coordinate axes familiar from previous grades to represent points on the line and in the plane with negative number coordinates.",
+      "aliases": [
+        "6.NS.C.6b"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "6.NS.C.6.c",
+      "parent": "6.NS.C.6",
+      "grade": "6",
+      "statement": "Find and position integers and other rational numbers on a horizontal or vertical number line diagram; find and position pairs of integers and other rational numbers on a coordinate plane.",
+      "parent_statement": "Understand a rational number as a point on the number line. Extend number line diagrams and coordinate axes familiar from previous grades to represent points on the line and in the plane with negative number coordinates.",
+      "aliases": [
+        "6.NS.C.6c"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "6.NS.C.7.a",
+      "parent": "6.NS.C.7",
+      "grade": "6",
+      "statement": "Interpret statements of inequality as statements about the relative position of two numbers on a number line diagram. For example, interpret \\(- 3 > - 7\\) as a statement that\\ \\(- 3\\) is located to the right of \\(- 7\\) on a number line oriented from left to right.",
+      "parent_statement": "Understand ordering and absolute value of rational numbers.",
+      "aliases": [
+        "6.NS.C.7a"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "6.NS.C.7.b",
+      "parent": "6.NS.C.7",
+      "grade": "6",
+      "statement": "Write, interpret, and explain statements of order for rational numbers in real-world contexts. For example, write \\(- 3^{\\circ}C > - 7^{\\circ}C\\) to express the fact that \\(- 3^{\\circ}C\\) is warmer than \\(- 7^{\\circ}C\\) .",
+      "parent_statement": "Understand ordering and absolute value of rational numbers.",
+      "aliases": [
+        "6.NS.C.7b"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "6.NS.C.7.c",
+      "parent": "6.NS.C.7",
+      "grade": "6",
+      "statement": "Understand the absolute value of a rational number as its distance from 0 on the number line; interpret absolute value as magnitude for a positive or negative quantity in a real-world situation. For example, for an account balance of \\(- 30\\)dollars, write \\(- 30 = 30\\) to describe the size of the debt in dollars.",
+      "parent_statement": "Understand ordering and absolute value of rational numbers.",
+      "aliases": [
+        "6.NS.C.7c"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "6.NS.C.7.d",
+      "parent": "6.NS.C.7",
+      "grade": "6",
+      "statement": "Distinguish comparisons of absolute value from statements about order. For example, recognize that an account balance less than \\(- 30\\)dollars represents a debt greater than 30 dollars.",
+      "parent_statement": "Understand ordering and absolute value of rational numbers.",
+      "aliases": [
+        "6.NS.C.7d"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "6.EE.A.2.a",
+      "parent": "6.EE.A.2",
+      "grade": "6",
+      "statement": "Write expressions that record operations with numbers and with letters standing for numbers. For example, express the calculation \"Subtract \\(y\\) from 5\" as \\(5 - y\\).",
+      "parent_statement": "Write, read, and evaluate expressions in which letters stand for numbers.",
+      "aliases": [
+        "6.EE.A.2a"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "6.EE.A.2.b",
+      "parent": "6.EE.A.2",
+      "grade": "6",
+      "statement": "Identify parts of an expression using mathematical terms (sum, term, product, factor, quotient, coefficient); view one or more parts of an expression as a single entity. For example, describe the expression \\(2(8 + 7)\\) as a product of two factors; view \\((8 + 7)\\) as both a single entity and a sum of two terms.",
+      "parent_statement": "Write, read, and evaluate expressions in which letters stand for numbers.",
+      "aliases": [
+        "6.EE.A.2b"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "6.EE.A.2.c",
+      "parent": "6.EE.A.2",
+      "grade": "6",
+      "statement": "Evaluate expressions at specific values of their variables. Include expressions that arise from formulas used in real-world problems. Perform arithmetic operations, including those involving whole number exponents, in the conventional order when there are no parentheses to specify a particular order (Order of Operations). For example, use the formulas \\(V = 6s3\\) and \\(A = 6s2\\) to find the volume and surface area of a cube with sides of length \\(s = \\frac{1}{2}\\).",
+      "parent_statement": "Write, read, and evaluate expressions in which letters stand for numbers.",
+      "aliases": [
+        "6.EE.A.2c"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "6.SP.B.5.a",
+      "parent": "6.SP.B.5",
+      "grade": "6",
+      "statement": "Reporting the number of observations.",
+      "parent_statement": "Summarize numerical data sets in relation to their context, such as by:",
+      "aliases": [
+        "6.SP.B.5a"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "6.SP.B.5.b",
+      "parent": "6.SP.B.5",
+      "grade": "6",
+      "statement": "Describing the nature of the attribute under investigation, including how it was measured and its units of measurement.",
+      "parent_statement": "Summarize numerical data sets in relation to their context, such as by:",
+      "aliases": [
+        "6.SP.B.5b"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "6.SP.B.5.c",
+      "parent": "6.SP.B.5",
+      "grade": "6",
+      "statement": "Giving quantitative measures of center (median and/or mean) and variability (interquartile range and/or mean absolute deviation), as well as describing any overall pattern and any striking deviations from the overall pattern with reference to the context in which the data were gathered.",
+      "parent_statement": "Summarize numerical data sets in relation to their context, such as by:",
+      "aliases": [
+        "6.SP.B.5c"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "6.SP.B.5.d",
+      "parent": "6.SP.B.5",
+      "grade": "6",
+      "statement": "Relating the choice of measures of center and variability to the shape of the data distribution and the context in which the data were gathered.",
+      "parent_statement": "Summarize numerical data sets in relation to their context, such as by:",
+      "aliases": [
+        "6.SP.B.5d"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "7.RP.A.2.a",
+      "parent": "7.RP.A.2",
+      "grade": "7",
+      "statement": "Decide whether two quantities are in a proportional relationship, e.g., by testing for equivalent ratios in a table or graphing on a coordinate plane and observing whether the graph is a straight line through the origin.",
+      "parent_statement": "Recognize and represent proportional relationships between quantities.",
+      "aliases": [
+        "7.RP.A.2a"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "7.RP.A.2.b",
+      "parent": "7.RP.A.2",
+      "grade": "7",
+      "statement": "Identify the constant of proportionality (unit rate) in tables, graphs, equations, diagrams, and verbal descriptions of proportional relationships.",
+      "parent_statement": "Recognize and represent proportional relationships between quantities.",
+      "aliases": [
+        "7.RP.A.2b"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "7.RP.A.2.c",
+      "parent": "7.RP.A.2",
+      "grade": "7",
+      "statement": "Represent proportional relationships by equations. For example, if total cost t is proportional to the number n of items purchased at a constant price p, the relationship between the total cost and the number of items can be expressed as \\(t = pn\\).",
+      "parent_statement": "Recognize and represent proportional relationships between quantities.",
+      "aliases": [
+        "7.RP.A.2c"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "7.RP.A.2.d",
+      "parent": "7.RP.A.2",
+      "grade": "7",
+      "statement": "Explain what a point \\((x,y)\\) on the graph of a proportional relationship means in terms of the situation, with special attention to the points (0, 0) and \\((1,r)\\)where \\(r\\)is the unit rate.",
+      "parent_statement": "Recognize and represent proportional relationships between quantities.",
+      "aliases": [
+        "7.RP.A.2d"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "7.NS.A.1.a",
+      "parent": "7.NS.A.1",
+      "grade": "7",
+      "statement": "Describe situations in which opposite quantities combine to make 0. For example, in the first round of a game, Maria scored 20 points. In the second round of the same game, she lost 20 points. What is her score at the end of the second round?",
+      "parent_statement": "Apply and extend previous understandings of addition and subtraction to add and subtract rational numbers; represent addition and subtraction on a horizontal or vertical number line diagram.",
+      "aliases": [
+        "7.NS.A.1a"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "7.NS.A.1.b",
+      "parent": "7.NS.A.1",
+      "grade": "7",
+      "statement": "Understand \\(p + q\\)as the number located a distance \\(q\\)from\\(p\\), in the positive or negative direction depending on whether *q* is positive or negative. Show that a number and its opposite have a sum of 0 (are additive inverses). Interpret sums of rational numbers by describing real-world contexts.",
+      "parent_statement": "Apply and extend previous understandings of addition and subtraction to add and subtract rational numbers; represent addition and subtraction on a horizontal or vertical number line diagram.",
+      "aliases": [
+        "7.NS.A.1b"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "7.NS.A.1.c",
+      "parent": "7.NS.A.1",
+      "grade": "7",
+      "statement": "Understand subtraction of rational numbers as adding the additive inverse, \\(p - q = p + ( - q)\\). Show that the distance between two rational numbers on the number line is the absolute value of their difference, and apply this principle in real-world contexts.",
+      "parent_statement": "Apply and extend previous understandings of addition and subtraction to add and subtract rational numbers; represent addition and subtraction on a horizontal or vertical number line diagram.",
+      "aliases": [
+        "7.NS.A.1c"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "7.NS.A.1.d",
+      "parent": "7.NS.A.1",
+      "grade": "7",
+      "statement": "Apply properties of operations as strategies to add and subtract rational numbers.",
+      "parent_statement": "Apply and extend previous understandings of addition and subtraction to add and subtract rational numbers; represent addition and subtraction on a horizontal or vertical number line diagram.",
+      "aliases": [
+        "7.NS.A.1d"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "7.NS.A.2.a",
+      "parent": "7.NS.A.2",
+      "grade": "7",
+      "statement": "Understand that multiplication is extended from fractions to rational numbers by requiring that operations continue to satisfy the properties of operations, particularly the distributive property, leading to products such as \\(( - 1)( - 1) = 1\\) and the rules for multiplying signed numbers. Interpret products of rational numbers by describing real-world contexts.",
+      "parent_statement": "Apply and extend previous understandings of multiplication and division and of fractions to multiply and divide rational numbers.",
+      "aliases": [
+        "7.NS.A.2a"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "7.NS.A.2.b",
+      "parent": "7.NS.A.2",
+      "grade": "7",
+      "statement": "Understand that integers can be divided, provided that the divisor is not zero, and every quotient of integers (with non-zero divisor) is a rational number. If \\(q\\) and \\(q\\) are integers, then \\(- \\frac{p}{q} = \\frac{( - p)}{q} = \\frac{p}{( - q)}\\) . Interpret quotients of rational numbers by describing real world contexts.",
+      "parent_statement": "Apply and extend previous understandings of multiplication and division and of fractions to multiply and divide rational numbers.",
+      "aliases": [
+        "7.NS.A.2b"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "7.NS.A.2.c",
+      "parent": "7.NS.A.2",
+      "grade": "7",
+      "statement": "Apply properties of operations as strategies to multiply and divide rational numbers.",
+      "parent_statement": "Apply and extend previous understandings of multiplication and division and of fractions to multiply and divide rational numbers.",
+      "aliases": [
+        "7.NS.A.2c"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "7.NS.A.2.d",
+      "parent": "7.NS.A.2",
+      "grade": "7",
+      "statement": "Convert a rational number to a decimal using long division; know that the decimal form of a rational number terminates in 0s or eventually repeats.",
+      "parent_statement": "Apply and extend previous understandings of multiplication and division and of fractions to multiply and divide rational numbers.",
+      "aliases": [
+        "7.NS.A.2d"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "7.EE.B.4.a",
+      "parent": "7.EE.B.4",
+      "grade": "7",
+      "statement": "Solve word problems leading to equations of the form\\(px + q = r\\)and \\(p(x + q) = r\\), where\\(p\\), \\(q\\), and \\(r\\) are specific rational numbers. Solve equations of these forms with accuracy and efficiency. Compare an algebraic solution to an arithmetic solution, identifying the sequence of the operations used in each approach. For example, the perimeter of a rectangle is 54 cm. Its length is 6 cm. What is its width?",
+      "parent_statement": "Use variables to represent quantities in a real-world or mathematical problem, and construct simple equations and inequalities to solve problems by reasoning about the quantities.",
+      "aliases": [
+        "7.EE.B.4a"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "7.EE.B.4.b",
+      "parent": "7.EE.B.4",
+      "grade": "7",
+      "statement": "Solve word problems leading to inequalities of the form\\(px + q > r\\)or \\(px + q < r\\), where \\(p\\), \\(q\\), and \\(r\\) are specific rational numbers. Graph the solution set of the inequality and interpret it in the context of the problem. For example: As a salesperson, you are paid \\$50 per week plus \\$3 per sale. This week you want your pay to be at least \\$100. Write an inequality for the number of sales you need to make, and describe the solutions.",
+      "parent_statement": "Use variables to represent quantities in a real-world or mathematical problem, and construct simple equations and inequalities to solve problems by reasoning about the quantities.",
+      "aliases": [
+        "7.EE.B.4b"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "7.SP.C.7.a",
+      "parent": "7.SP.C.7",
+      "grade": "7",
+      "statement": "Develop a uniform probability model by assigning equal probability to all outcomes and use the model to determine probabilities of events. For example, if a student is selected at random from a class, find the probability that Jane will be selected and the probability that a girl will be selected.",
+      "parent_statement": "Develop a probability model and use it to find probabilities of events. Compare probabilities from a model to observed frequencies; if the agreement is not good, explain possible sources of the discrepancy.",
+      "aliases": [
+        "7.SP.C.7a"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "7.SP.C.7.b",
+      "parent": "7.SP.C.7",
+      "grade": "7",
+      "statement": "Develop a probability model (which may not be uniform) by observing frequencies in data generated from a chance process. For example, find the approximate probability that a spinning penny will land heads up or that a tossed paper cup will land open-end down. Do the outcomes for the spinning penny appear to be equally likely based on the observed frequencies?",
+      "parent_statement": "Develop a probability model and use it to find probabilities of events. Compare probabilities from a model to observed frequencies; if the agreement is not good, explain possible sources of the discrepancy.",
+      "aliases": [
+        "7.SP.C.7b"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "7.SP.C.8.a",
+      "parent": "7.SP.C.8",
+      "grade": "7",
+      "statement": "Understand that, just as with simple events, the probability of a compound event is the fraction of outcomes in the sample space for which the compound event occurs.",
+      "parent_statement": "Find probabilities of compound events using organized lists, tables, tree diagrams, and simulation.",
+      "aliases": [
+        "7.SP.C.8a"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "7.SP.C.8.b",
+      "parent": "7.SP.C.8",
+      "grade": "7",
+      "statement": "Represent sample spaces for compound events using methods such as organized lists, tables and tree diagrams. For an event described in everyday language (e.g., \"rolling double sixes\"), identify the outcomes in the sample space which compose the event.",
+      "parent_statement": "Find probabilities of compound events using organized lists, tables, tree diagrams, and simulation.",
+      "aliases": [
+        "7.SP.C.8b"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "7.SP.C.8.c",
+      "parent": "7.SP.C.8",
+      "grade": "7",
+      "statement": "Design and use a simulation to generate frequencies for compound events. For example, use random digits as a simulation tool to approximate the answer to the question: If 40% of donors have type A blood, what is the probability that it will take at least 4 donors to find one with type A blood?",
+      "parent_statement": "Find probabilities of compound events using organized lists, tables, tree diagrams, and simulation.",
+      "aliases": [
+        "7.SP.C.8c"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "8.EE.A.2.a",
+      "parent": "8.EE.A.2",
+      "grade": "8",
+      "statement": "Evaluate square roots of small perfect squares and cube roots of small perfect cubes. Know that \\(\\frac{}{2}\\) is irrational.",
+      "parent_statement": "Use square root and cube root symbols to represent solutions to equations of the form \\(x2 = p\\)and \\(x3 = p\\) where \\(p\\) is a positive rational number.",
+      "aliases": [
+        "8.EE.A.2a"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "8.EE.A.2.b",
+      "parent": "8.EE.A.2",
+      "grade": "8",
+      "statement": "Simplify numerical radicals, limiting to square roots (i.e. nonperfect squares). For example, simplify \\(\\frac{}{8}\\) to \\(2\\frac{}{2}\\).",
+      "parent_statement": "Use square root and cube root symbols to represent solutions to equations of the form \\(x2 = p\\)and \\(x3 = p\\) where \\(p\\) is a positive rational number.",
+      "aliases": [
+        "8.EE.A.2b"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "8.EE.C.7.a",
+      "parent": "8.EE.C.7",
+      "grade": "8",
+      "statement": "Give examples of linear equations in one variable with one solution, infinitely many solutions, or no solutions. Show which of these possibilities is the case by successively transforming the given equation into simpler forms, until an equivalent equation of the form \\(x = a\\), \\(a = a\\), or \\(a = b\\)results (where \\(a\\)and \\(b\\)are different numbers).",
+      "parent_statement": "Solve linear equations in one variable.",
+      "aliases": [
+        "8.EE.C.7a"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "8.EE.C.7.b",
+      "parent": "8.EE.C.7",
+      "grade": "8",
+      "statement": "Solve linear equations with rational number coefficients, including equations whose solutions require expanding expressions using the distributive property and collecting like terms.",
+      "parent_statement": "Solve linear equations in one variable.",
+      "aliases": [
+        "8.EE.C.7b"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "8.EE.C.8.a",
+      "parent": "8.EE.C.8",
+      "grade": "8",
+      "statement": "Understand that solutions to a system of two linear equations in two variables correspond to points of intersection of their graphs, because points of intersection satisfy both equations simultaneously.",
+      "parent_statement": "Analyze and solve pairs of simultaneous linear equations.",
+      "aliases": [
+        "8.EE.C.8a"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "8.EE.C.8.b",
+      "parent": "8.EE.C.8",
+      "grade": "8",
+      "statement": "Solve systems of two linear equations in two variables using the substitution method and estimate solutions by graphing the equations. Solve simple cases by inspection. For example: by inspection, conclude that \\(3x + 2y = 5\\) and \\(3x + 2y = 6\\)have no solution because \\(3x + 2y\\) cannot simultaneously be 5 and 6. Solve \\(3x + y = 30\\) and \\(y = 2x\\)using the substitution method; Solve \\(y = 3x + 1\\) and \\(y = - 2x + 7\\)using the substitution method.",
+      "parent_statement": "Analyze and solve pairs of simultaneous linear equations.",
+      "aliases": [
+        "8.EE.C.8b"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "8.EE.C.8.c",
+      "parent": "8.EE.C.8",
+      "grade": "8",
+      "statement": "Solve real-world and mathematical problems leading to two linear equations in two variables. For example, given coordinates for two pairs of points, determine whether the line through the first pair of points intersects the line through the second pair.",
+      "parent_statement": "Analyze and solve pairs of simultaneous linear equations.",
+      "aliases": [
+        "8.EE.C.8c"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "8.G.A.1.a",
+      "parent": "8.G.A.1",
+      "grade": "8",
+      "statement": "Lines are transformed to lines, and line segments to line segments of the same length.",
+      "parent_statement": "Verify experimentally the properties of rotations, reflections, and translations:",
+      "aliases": [
+        "8.G.A.1a"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "8.G.A.1.b",
+      "parent": "8.G.A.1",
+      "grade": "8",
+      "statement": "Angles are transformed to angles of the same measure.",
+      "parent_statement": "Verify experimentally the properties of rotations, reflections, and translations:",
+      "aliases": [
+        "8.G.A.1b"
+      ]
+    },
+    {
+      "subject": "math",
+      "code": "8.G.A.1.c",
+      "parent": "8.G.A.1",
+      "grade": "8",
+      "statement": "Parallel lines are transformed to parallel lines.",
+      "parent_statement": "Verify experimentally the properties of rotations, reflections, and translations:",
+      "aliases": [
+        "8.G.A.1c"
+      ]
     }
   ]
 }

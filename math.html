@@ -247,11 +247,16 @@ main { max-width: 1100px; margin: 0 auto; padding: 48px 48px 80px; }
 }
 .std-subs li {
   font-size: 13.5px; line-height: 1.55; color: var(--muted);
-  list-style: none; padding: 4px 0 4px 18px; position: relative;
+  list-style: none; padding: 4px 4px 4px 26px; position: relative;
+  border-radius: 4px; transition: background 0.15s;
 }
-.std-subs li::before {
-  content: '·'; position: absolute; left: 6px; color: var(--accent);
-  font-weight: 700; font-size: 14px;
+.std-subs li .sub-letter {
+  position: absolute; left: 4px; top: 4px; min-width: 18px;
+  color: var(--accent); font-weight: 700; font-size: 12px; letter-spacing: 0.02em;
+}
+.std-subs li.sub-hit {
+  background: color-mix(in srgb, var(--accent) 13%, transparent);
+  box-shadow: inset 3px 0 0 var(--accent);
 }
 
 .std-main .katex,
@@ -333,7 +338,7 @@ footer {
       <span class="filter-label">Search</span>
       <div class="search-wrap">
         <span class="search-icon">⌕</span>
-        <input id="search-input" type="text" placeholder="Filter by keyword — e.g., fractions, equations, volume" autocomplete="off">
+        <input id="search-input" type="text" placeholder="Filter by keyword or code — e.g., fractions, volume, 6.RP.A.3.c" autocomplete="off">
         <button class="search-clear" id="search-clear" aria-label="Clear search">×</button>
       </div>
       <span class="meta-counter" id="counter"></span>
@@ -413,8 +418,9 @@ function render() {
         html += `</div>`;
         html += `<div class="standards-list">`;
         for (const s of c.standards) {
-          const raw = s.main + ' ' + (s.subs || []).join(' ');
-          const searchText = (s.code + ' ' + raw + ' ' + stripLatex(raw)).toLowerCase();
+          const subs = s.subs || [];
+          const raw = s.main + ' ' + subs.map(x => x.text).join(' ');
+          const searchText = [s.code, ...subs.map(x => x.code), raw, stripLatex(raw)].join(' ').toLowerCase();
           html += `<div class="std-entry" data-code="${esc(s.code)}" data-search="${esc(searchText)}">`;
           html += `<div class="std-header">`;
           html += `<span class="std-code">${esc(s.code)}</span>`;
@@ -423,7 +429,8 @@ function render() {
           if (s.subs && s.subs.length > 0) {
             html += `<ul class="std-subs">`;
             for (const sub of s.subs) {
-              html += `<li>${esc(sub)}</li>`;
+              const letter = sub.code.split('.').pop();
+              html += `<li data-subcode="${esc(sub.code.toLowerCase())}" title="${esc(sub.code)}"><span class="sub-letter">${esc(letter)}</span>${esc(sub.text)}</li>`;
             }
             html += `</ul>`;
           }
@@ -443,8 +450,14 @@ function render() {
 let activeGrade = 'all';
 let activeQuery = '';
 
+// NJDOE's own registry writes lettered sub-standards without the final dot ("6.RP.A.3c");
+// this page (and Common Core) write "6.RP.A.3.c". Accept both.
+function normalizeSubCode(q) {
+  return q.replace(/^(\d+\.[a-z]+\.[a-z]\.\d+)([a-z])$/, '$1.$2');
+}
+
 function applyFilters() {
-  const q = activeQuery.trim().toLowerCase();
+  const q = normalizeSubCode(activeQuery.trim().toLowerCase());
 
   document.querySelectorAll('.std-entry').forEach(s => {
     let visible = true;
@@ -452,6 +465,11 @@ function applyFilters() {
       visible = (s.dataset.search || '').includes(q);
     }
     s.classList.toggle('hidden', !visible);
+  });
+
+  // Highlight a specific lettered sub-standard when its exact code is searched (e.g. 6.RP.A.3.c)
+  document.querySelectorAll('.std-subs li[data-subcode]').forEach(li => {
+    li.classList.toggle('sub-hit', !!q && li.dataset.subcode === q);
   });
 
   document.querySelectorAll('.domain-card').forEach(card => {

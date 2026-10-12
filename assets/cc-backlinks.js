@@ -19,6 +19,10 @@
  *   abbreviations (e.g., "SL.1", "5.MD.A.1") that don't exist in the
  *   current NJSLS corpus. We match by exact code only. Standards that
  *   never get a hit just don't render a "Taught in" section.
+ *   Exception: a tag naming a lettered sub-standard (Math "7.RP.A.2.a"
+ *   or NJDOE's "7.RP.A.2a"; ELA "L.SS.6.1.A") attaches to its parent
+ *   standard's entry, since pages render subs inside that entry. The
+ *   chip notes which sub was tagged.
  */
 (function () {
   const SUPABASE_URL = 'https://vaqdoeckaobmsalikmpx.supabase.co';
@@ -72,6 +76,13 @@
     });
   }
 
+  // "7.RP.A.2.a" | "7.RP.A.2a" (Math) or "L.SS.6.1.A" (ELA) -> { parent, sub }; else null.
+  function parseSubCode(code) {
+    const m = /^(\d+\.[A-Z]+\.[A-Z]\.\d+)\.?([a-z])$/.exec(code)
+           || /^([A-Z]{1,2}\.[A-Z]{2,3}\.\d+\.\d+)\.([A-Z])$/.exec(code);
+    return m ? { parent: m[1], sub: `${m[1]}.${m[2]}` } : null;
+  }
+
   async function loadCohortCalendar() {
     state.status = 'loading';
     try {
@@ -87,14 +98,22 @@
       if (!rows.length || !rows[0].data) throw new Error('Supabase returned no document');
       const blocks = rows[0].data.blocks || [];
       const byCode = new Map();
+      const rawCodes = new Set();
       let totalTagged = 0;
       for (const b of blocks) {
         const codes = b.std || [];
         if (!codes.length) continue;
         totalTagged++;
         for (const code of codes) {
-          if (!byCode.has(code)) byCode.set(code, []);
-          byCode.get(code).push(b);
+          rawCodes.add(code);
+          const sub = parseSubCode(code);
+          const key = sub ? sub.parent : code;
+          if (sub) {
+            b._subTags = b._subTags || {};
+            (b._subTags[key] = b._subTags[key] || []).push(sub.sub);
+          }
+          if (!byCode.has(key)) byCode.set(key, []);
+          if (!byCode.get(key).includes(b)) byCode.get(key).push(b);
         }
       }
       // Sort each list chronologically: by week, then day, then slot
@@ -104,7 +123,7 @@
       state.blocks = blocks;
       state.byCode = byCode;
       state.totalTaggedBlocks = totalTagged;
-      state.uniqueCodesInCC = byCode.size;
+      state.uniqueCodesInCC = rawCodes.size;
       state.status = 'ready';
       return state;
     } catch (err) {
@@ -115,7 +134,7 @@
     }
   }
 
-  function blockChipHtml(block) {
+  function blockChipHtml(block, code) {
     const type = TYPE_LABELS[block.tp] || block.tp || '';
     const week = (typeof block.w === 'number') ? ('W' + (block.w + 1)) : '';
     const day = (typeof block.d === 'number' && DAY_LABELS[block.d]) || '';
@@ -124,7 +143,10 @@
     const title = (block.ttl || block.id || '').trim();
     const truncTitle = title.length > 38 ? title.slice(0, 37) + '…' : title;
     const href = CC_BASE_URL + '#' + encodeURIComponent(block.id);
-    const meta = [week, day, grades, dur].filter(Boolean).join(' · ');
+    // Tagged with a lettered sub of this standard (not the standard itself) -> say which.
+    const subs = (block._subTags && block._subTags[code]) || [];
+    const subNote = subs.length ? 'sub ' + [...new Set(subs)].map(s => s.split('.').pop()).join(', ') : '';
+    const meta = [week, day, grades, dur, subNote].filter(Boolean).join(' · ');
 
     return `<a class="cc-chip" href="${esc(href)}" target="_blank" rel="noopener" title="${esc(title)} (${esc(meta)})">
       <span class="cc-chip-type">${esc(type)}</span>
@@ -133,14 +155,14 @@
     </a>`;
   }
 
-  function backlinksHtml(blocks) {
+  function backlinksHtml(blocks, code) {
     const n = blocks.length;
     const collapsedCount = n > COLLAPSE_THRESHOLD ? n - COLLAPSE_THRESHOLD : 0;
     const visible = collapsedCount > 0 ? blocks.slice(0, COLLAPSE_THRESHOLD) : blocks;
     const hidden = collapsedCount > 0 ? blocks.slice(COLLAPSE_THRESHOLD) : [];
 
-    const visibleChips = visible.map(blockChipHtml).join('');
-    const hiddenChips = hidden.map(blockChipHtml).join('');
+    const visibleChips = visible.map(b => blockChipHtml(b, code)).join('');
+    const hiddenChips = hidden.map(b => blockChipHtml(b, code)).join('');
 
     return `
       <div class="cc-backlinks" data-expanded="false">
@@ -165,7 +187,7 @@
     if (!blocks || !blocks.length) return;
 
     const wrap = document.createElement('div');
-    wrap.innerHTML = backlinksHtml(blocks);
+    wrap.innerHTML = backlinksHtml(blocks, code);
     const node = wrap.firstElementChild;
     entry.appendChild(node);
 
