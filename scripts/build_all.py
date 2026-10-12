@@ -147,6 +147,24 @@ flat.extend(flatten_njdoe_framework("chpe", chpe))
 # Strip None values
 flat = [{k: v for k, v in d.items() if v is not None} for d in flat]
 
+# Lettered sub-standards (ELA "L.SS.6.1.A", Math "6.RP.A.3.c") live nested in their parent's
+# `subs`. Also expose each as its own flat record, so a plain lookup by code resolves the
+# sub-standard itself instead of falling back to quoting the parent. Each carries its parent's
+# statement because many subs are fragments of it ("Comparing the size of a product…").
+# Kept out of `standards` so standard_count and per-standard search results don't change.
+sub_standards = []
+for d in flat:
+    for s in d.get("subs") or []:
+        if not isinstance(s, dict):
+            continue
+        rec = {"subject": d["subject"], "code": s["code"], "parent": d["code"], "grade": d["grade"],
+               "statement": s["text"], "parent_statement": d["statement"]}
+        if d["subject"] == "math":
+            # NJDOE's own registry writes math subs without the final dot: 6.RP.A.3c
+            parent_code, letter = s["code"].rsplit(".", 1)
+            rec["aliases"] = [parent_code + letter]
+        sub_standards.append(rec)
+
 # Controlled vocabularies for the science NGSS dimensions — the set of "lenses" a consumer
 # can filter records by (each value appears in the sep_practices / dci_codes / ccc_concepts
 # keys on individual science records).
@@ -159,10 +177,11 @@ science_dimension_index = {
 }
 
 all_data = {
-    "schema_version": "1.1",
+    "schema_version": "1.2",
     "site": "https://rtusiime.github.io/njsls/",
     "source": "New Jersey Department of Education - NJSLS (2023 ELA + Math, 2020 Science / SS / CSDT / CLKS / CHPE)",
     "standard_count": len(flat),
+    "sub_standard_count": len(sub_standards),
     "subjects": {
         "ela":             {"title": "English Language Arts",                            "grade_range": "5-8",                      "adopted": "2023"},
         "math":            {"title": "Mathematics",                                      "grade_range": "5-8",                      "adopted": "2023"},
@@ -174,6 +193,7 @@ all_data = {
     },
     "science_dimensions": science_dimension_index,
     "standards": flat,
+    "sub_standards": sub_standards,
 }
 
 (DATA / "all.json").write_text(json.dumps(all_data, indent=2, ensure_ascii=False) + "\n")
@@ -183,3 +203,5 @@ counts = Counter(d["subject"] for d in flat)
 print(f"Wrote data/all.json — {len(flat)} standards total")
 for k, v in counts.items():
     print(f"  {k}: {v}")
+sub_counts = Counter(d["subject"] for d in sub_standards)
+print(f"  + {len(sub_standards)} lettered sub-standards ({', '.join(f'{k} {v}' for k, v in sub_counts.items())})")

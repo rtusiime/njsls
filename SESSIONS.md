@@ -6,6 +6,121 @@ Entries are intentionally verbose. The point is full visibility: open the file a
 
 ---
 
+## Session 25 — 2026-10-12 EDT
+*Made every lettered sub-standard individually addressable across all subjects. Math's 61 subs were plain strings: now coded `{code, text}` (`6.RP.A.3.c`) like ELA's. `all.json` gains a flat `sub_standards` index (219 records), the hub's instant and Claude searches resolve sub-codes instead of dropping them, and CohortCalendar tags on a sub roll up to its parent. Verified all Math text against NJDOE's registry and audited every other subject for text corruption; fixed what was found.*
+
+### User request
+
+A lesson doc "quoted the parent standard" because "your NJSLS file is missing the lettered sub-standards (6.RP.A.3.c, 7.RP.A.2.a, 7.NS.A.2.d, 5.NF.B.5 a–b)." Checked: the sub *text* was present, but Math subs were unlabeled strings with no code, so a lookup of `6.RP.A.3.c` found nothing. User: label + individually code them, fix the `6.RP.A.3.c` LaTeX bug I'd spotted — "fix EVERYTHING. across all subjects! plan your work so you can do this efficiently!"
+
+### Plan
+
+Main had moved on (Sessions 19–23, including Session 22's ELA sub-coding convention) while PR #1 sat unmerged, so: rebase first (Session 24), then copy ELA's convention to Math rather than invent a new one. Two background agents ran in parallel with the code work: one verified all 112 Math statements and 61 subs against NJDOE's registry (Learning Commons knowledge graph, `jurisdiction: New Jersey`, code form `6.RP.A.3c`), probing for subs we lack; the other audited the six non-Math subjects for text corruption (ELA against the vendored source docx, Science against NGSS, the rest by heuristics). Survey result: only ELA and Math have lettered sub-standards — no other subject has `subs` or inline lettered lists.
+
+### Changes
+
+- **`data/math.json`** — 61 subs across 21 standards → `{code, text}`, lowercase letters by list position (`6.RP.A.3.c`; matches Common Core and the hub's existing letter rendering).
+- **`math.html`** — letter markers + `data-subcode` (KaTeX still renders inside), sub-codes in the search haystack, `.sub-hit` highlight on an exact sub-code query, and `normalizeSubCode()` so NJDOE's no-dot form (`6.RP.A.3c`) works too. Mirrors `ela.html`'s Session 22 implementation.
+- **`index.html` (hub)** —
+  - Instant search: new exact-sub-code branch → parent card, sub highlighted, labeled "exact code match" (ELA sub-codes previously surfaced only as a keyword hit).
+  - Claude search: `resolveMatches()` maps a cited sub-code to its parent card with the sub highlighted, merges duplicate hits, still drops hallucinations. Before this, **any** lettered sub-code Claude returned — ELA's included — was discarded as hallucinated.
+  - Claude never saw sub-standards: the prompt corpus was `{code, statement, subject, grade}` JSON. Switched to a compact line format with every sub on an indented line — all 219 subs fit and the prompt *shrinks* ≈58.3K → ≈56.6K tokens (no per-record JSON keys), keeping new Tier-1 accounts under their rate cap. Instructions tell Claude to cite a sub's own code when the match is that specific.
+- **`scripts/build_all.py`** — `schema_version` 1.2; Math `subs` now objects; new top-level **`sub_standards`** (219: ELA 158, Math 61), each `{subject, code, parent, grade, statement, parent_statement, aliases?}` so a naive lookup by code resolves the sub itself; `parent_statement` because many subs are fragments of the stem; Math lists NJDOE's no-dot form in `aliases`. `standard_count` stays 903.
+- **`assets/cc-backlinks.js`** — a CohortCalendar block tagged `7.RP.A.2.a`, `7.RP.A.2a`, or `L.SS.6.1.A` now attaches to its parent's entry (deduped against a parent tag; chip says `sub a`). Social Studies PEs that end in `.a` (`6.1.8.CivicsPI.3.a`) are top-level codes and still match exactly.
+- **`CLAUDE.md`** — Math schema, `all.json` 1.2 + `sub_standards`, CC rollup; also corrected stale facts: search model is Haiku 4.5 (not Sonnet), the corpus is a lean serialization (not "the full all.json ~50K"), cost figures, "7 subject cards", file-map rows for CSDT/CLKS/CHPE.
+
+### Verification findings and fixes
+
+**Math vs NJDOE's registry (173 items).** All 61 subs are lettered correctly and **none are missing** — 112 completeness probes (next letter after each parent's last sub; `…a` on every sub-less standard) found nothing, so the "missing sub-standards" premise is definitively ruled out. But 44 items had real text defects; 43 fixed, each re-checked against NJ (or Common Core for "For example…" sentences, which NJ's registry omits):
+- **Content errors in the standard text (8):** 6.EE.B.7 "x + p" → "x + p = q"; 8.EE.A.2 `x2`/`x3` → `x^{2}`/`x^{3}`; 8.F.B.4 dropped "(x, y)"; 5.NBT.A.3.a paren inside the denominator ×3; 6.RP.A.3.c `1\frac{30}{00}` → `\frac{30}{100}`; 7.NS.A.1.b lost `|q|` bars; 7.NS.A.2.b "If q and q" → "If p and q" and `-(\frac{p}{q})`; 8.EE.A.2.a `\frac{}{2}` → `\sqrt{2}`.
+- **Wrong math in examples (10):** 5.NF.B.4.a `ab/bd` → `ac/bd`; 5.NF.B.7.a `1½` → `1/12`; 6.NS.C.7.c `|-30|`; 6.EE.A.2.c `V = 6s3` → `V = s^{3}`; 7.RP.A.1 complex fraction rendered as a product; 8.EE.A.1 / 8.EE.A.3 / 8.F.A.3 flattened exponents; 8.NS.A.2 and 8.EE.A.2.b `\frac{}{n}` → `\sqrt{n}`.
+- **Display artifacts (22):** literal `*x*`, `**,**`, `\$75`, `\>`/`\<`, stray `\ `, math glued to words (`\)of`). Variables rendered as `\(x\)` to match the existing house style (the agent's plain-letter versions read oddly: "as a parts of a partition of q").
+- **Punctuation (3)** + a global tidy of space-before-punctuation after math (8 texts).
+- Skipped 8.G.B.7 ("real-world" → NJ's "real world"): NJ's registry drops hyphens elsewhere too ("realworld", "twodigit"); ours matches Common Core.
+- Result: all 153 math expressions render in KaTeX strict mode with 0 errors.
+
+**Non-Math audit (51 findings; 45 fixed).** ELA's 130 statements and 158 subs match the official docx; Science's 75 statements match NGSS; Social Studies' 209 and CSDT are clean. Fixed:
+- ELA anchors TS and RW — restored dropped parentheticals from the docx.
+- Science MS-ESS1-3, MS-ESS3-1 clarifications — "space- based", "non- renewable" (verified vs ASN).
+- CLKS/CHPE — 22 page-footer fragments stored as core ideas ("2020 New Jersey Student Learni 2.2 Phy") deleted; the 52-entry CHPE glossary spliced into 2.3.12.DSDT.5's core ideas removed; 8 core-idea sentences split line-by-line across PE rows rejoined (fragments replaced in place, then adjacent blocks with now-identical core ideas merged — 7 merges, PE count and order unchanged); 10 stray-character fixes ("express y themselves", "have ir adequate", "rhythmic , activities", spaces inside cross-referenced codes, "self- assessment" etc.).
+
+**Left as-is — need the official PDF** (nj.gov is unreachable from the cloud session by curl and WebFetch alike, and no mirror carries the text): words lost to column truncation in CLKS `9.1.12.RM.1` core idea ("life c goals"), `9.1.12.RM.3` ("have d protections"), `9.2.12.CAP.14` ("career fi interview"); CHPE `2.2.12.MSC.1` core idea ("an participation", "gam sports") and statement ("d sport", "es"), `2.2.5.MSC.1` core idea (words missing before "free movement"). All but the last are grade-12 band, outside `all.json`.
+
+**Left as-is — typos in NJDOE's own source:** ELA W.*.6–8 "metacognition/self- correction" and W 7–8 sub "grade-level- specific" appear exactly so in the official docx; the repo quotes verbatim.
+
+### Verification
+
+Browser end-to-end (Playwright + Chromium, KaTeX served from its npm package — byte-identical to the pinned CDN files' SRI hashes; CohortCalendar and the Anthropic API mocked, outgoing prompt captured):
+- `math.html` — 112 standards, 61 letter markers, 0 KaTeX errors; `6.RP.A.3.c`, `6.rp.a.3c`, `7.NS.A.2.d`, `5.NF.B.5.b` each → exactly one standard with the right sub highlighted; keyword `percent` unaffected.
+- Hub — the same codes (+ `L.SS.6.1.A`) → "1 exact code match" with the sub highlighted. Mocked Claude response `[6.RP.A.3.c, 6.RP.A.3, L.SS.6.1.A, 7.NS.A.2d, FAKE.9.Z.9]` → 3 cards (6.RP.A.3 / c, L.SS.6.1 / A, 7.NS.A.2 / d): duplicate merged, hallucination dropped. Captured request: same model + caching; all 219 subs in the prompt.
+- CC: `7.RP.A.2.a` + `7.RP.A.2b` (+ parent tag) → 2 chips on 7.RP.A.2 marked `sub a` / `sub b`; ELA `L.SS.6.1.A` → L.SS.6.1; SS `6.1.8.CivicsPI.3.a` → itself, nothing on a phantom parent.
+- `ela.html` / `science.html` / `social-studies.html` regressions clean.
+- After the data fixes: corrected Math renders as real math (KaTeX annotations `\frac{30}{100}` on 6.RP.A.3.c, `\sqrt{2}` on 8.EE.A.2.a, `\frac{1}{12}` on 5.NF.B.7.a, "If p and q" on 7.NS.A.2.b) with no literal `*x*` / `**` / `\$` left; `chpe.html` / `clks.html` / `csdt.html` render all 278 / 300 / 163 PEs with no footer text, and 2.2.5.N.1–N.3 share their rejoined core idea.
+- 48 browser checks across all eight pages pass; zero console or page errors.
+
+### Files touched
+
+- `data/math.json`, `data/ela.json`, `data/science.json`, `data/clks.json`, `data/chpe.json`, `data/all.json`, `math.html`, `index.html`, `assets/cc-backlinks.js`, `scripts/build_all.py`, `CLAUDE.md`, `SESSIONS.md`.
+
+### Not in scope / carried forward
+
+- The 6 truncations above need NJDOE's PDFs (`2020NJSLS-CLKS.pdf`, `2020NJSLS-CHPE.pdf`) — a session on a machine that can reach nj.gov.
+- Whether to correct the two NJDOE source typos in ELA is the user's call.
+
+### Commit
+
+(filled in after commit lands)
+
+---
+
+## Session 24 — 2026-06-04 EDT (rebased onto main 2026-10-12)
+*Re-derived the Science three-dimensional foundation (`seps`/`dcis`/`cccs`) for all 75 PEs from machine-readable NGSS data, replacing the garbled `pdftotext` extraction. Completes the re-extraction task Session 19 spawned: intro pollution, bullet bleed, and the 15 empty-dimension PEs are gone. Written on branch `claude/gifted-pasteur-zGqog` as PR #1 before Sessions 19–23 landed; rebased onto them on 2026-10-12 and re-modeled to Session 19's lens conventions.*
+
+### User request
+
+Fix the foundation's extraction artifacts: (1) SEP/CCC `intro` fields with text bled in from adjacent dimensions, (2) `bullets` running into the next practice's text, (3) the 15 PEs with an empty dimension array. Re-extract column-aware from the source PDFs or pull from the NGSS website; rebuild `all.json`; verify the page; spot-check MS-LS2-1, MS-ETS1-1 and three of the 15.
+
+### The blocker
+
+Neither suggested source was usable from the cloud session: the PDFs are gone (see Session 21), and `nextgenscience.org` plus every state-DOE / standards mirror is blocked by the environment's egress allowlist — only GitHub and PyPI are reachable.
+
+### Sources (GitHub — `galacticpolymath/standardX`, pinned commit `cbf6666`)
+
+- `CodesForNGSSelements_TedWillard.xlsx` — the **NSTA Atlas of the Three Dimensions** element coding: each PE → its practice / core-idea / secondary-core-idea / CCC / ETS / NOS element codes, verbatim element text, canonical DCI names (untruncated — fixes `"Human Impacts on Earth"` → `"Human Impacts on Earth Systems"`).
+- `NGSS.xml` — the **ASN RDF export** of NGSS (Achieve, 2013): the 30 SEP grade-band progression intros keyed by (practice, band), the official connection sub-concept names, and the text of `INFLU-M4` (cited by MS-PS4-3, missing from the workbook).
+- Rejected: `Sallvainian/NGSS-MCP` (a PDF extraction with the same artifacts) and `commonstandardsproject/api` (topic labels only).
+
+### Method — `scripts/rebuild_science_foundation.py` (new)
+
+Downloads both sources from the pinned commit and verifies SHA-256 (not vendored: the repo is GPLv3). Replaces only `seps`/`dcis`/`cccs`; `code`/`statement`/`clarification`/`assessment_boundary`/order stay byte-identical. Source repairs: a stray DCI code in MS-ESS1-4's practices cell; `LS3.A-M1. LS3.B-M2` (period for comma, MS-LS3-1); `PS1,A-M5` (comma for period, MS-PS1-1).
+
+### Rebase reconciliation (2026-10-12)
+
+PR #1 originally put the umbrella ("Connections to Engineering, Technology, and Applications of Science") in `concept` and the sub-concept in `intro`. Session 19's `build_all.py` drops `intro`, so that would have erased the sub-concept from `all.json`. Re-modeled to Session 19's convention:
+- `seps` — the 8 practices only (intro = ASN progression).
+- `dcis` — core, then secondary core ideas (`secondary: true`).
+- `cccs` — core CCCs, then connections, each with `concept` = the specific sub-concept, `connection: "engineering" | "nature_of_science"`, and `intro: ""`. NOS connections that NGSS prints in the practices column also go here, matching the existing data and keeping the SEP lens clean. Official names come from ASN (Appendix H/J): MS-ETS1-1 lands on the same "Influence of Engineering, Technology, and Science on Society and the Natural World" Session 19 set by hand.
+- Main's 10 leftover umbrella-label concepts are resolved to specific sub-concepts.
+- `science.html`: connection items show the NGSS umbrella as a small eyebrow derived from `connection`; empty dimensions read "None specified in NGSS" (they're authoritative absences now, not extraction gaps).
+
+### Results
+
+- 75 SEP / 105 DCI / 107 CCC entries. Lenses: 8 practices, 15 CCC concepts (7 + 2 ETS + 6 NOS), 38 DCI codes (was 35).
+- 0 garble artifacts on a scan for the three patterns. Only empty dimensions: `cccs` of `3-5-ETS1-3`, `MS-ETS1-2/3/4` — NGSS lists no crosscutting concept for them.
+- Cross-check vs `NGSS.xml`: ~80% of bullets byte-identical after normalization; the rest are minor edition variance between the two NGSS transcriptions (hyphenation, "and/or", a few condensed NOS notes) — clean text, none garbled.
+- Spot-checked MS-LS2-1, MS-ETS1-1, and previously-empty 5-PS1-1, MS-PS2-2, 5-ESS1-2, MS-ESS1-4; ran the page's `renderDimensions()` in node — all pass.
+
+### Files touched
+
+- `scripts/rebuild_science_foundation.py` — new.
+- `data/science.json`, `data/all.json` (rebuilt), `science.html`, `CLAUDE.md`, `SESSIONS.md`.
+
+### Commit
+
+(filled in after commit lands)
+
+---
+
 ## Session 23 — 2026-06-05, 03:45 PM EDT
 *ELA: added a Common Core (2016) crosswalk. Each grades 5–8 standard now carries `cc_codes` — its CC equivalent — so searching a CC code (`RL.8.2`, `SL.6.1`) returns the NJSLS standard, and every result shows a `CC …` badge. 129/130 mapped.*
 

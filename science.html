@@ -310,6 +310,10 @@ main { max-width: 1100px; margin: 0 auto; padding: 48px 48px 80px; }
   font-size: 12px; color: var(--muted); line-height: 1.5;
   margin: 2px 0 6px;
 }
+.pe-dim-connection {
+  display: block; font-size: 10px; font-weight: 600; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 2px;
+}
 .pe-dim-bullets { margin: 4px 0 0 0; padding-left: 20px; }
 .pe-dim-bullets li { margin-bottom: 4px; color: var(--ink-soft); }
 .pe-dim-empty {
@@ -374,7 +378,7 @@ footer {
   <div class="eyebrow">Reference Document · Forge Prep</div>
   <h1 class="title">New Jersey Student Learning<br>Standards for <em>Science</em></h1>
   <p class="subtitle">Grades 5 through 8. Adopted 2020 by the New Jersey Department of Education. Grade 5 is written per-grade; Grades 6–8 are banded across middle school. Engineering at Grade 5 is the 3–5-banded ETS1 topic.</p>
-  <div class="source-line"><strong>Source:</strong> 2020 New Jersey Student Learning Standards — Science, Office of Standards, Division of Teaching and Learning Services, New Jersey Department of Education. Performance-expectation statements quoted verbatim; the three-dimensional foundation box (practices, core ideas, crosscutting concepts) is in the source PDF. &middot; <a class="json-link" href="data/science.json" target="_blank" rel="noopener">View as JSON<span class="arrow">&#x2197;</span></a></div>
+  <div class="source-line"><strong>Source:</strong> 2020 New Jersey Student Learning Standards — Science, Office of Standards, Division of Teaching and Learning Services, New Jersey Department of Education. Performance-expectation statements quoted verbatim; the three-dimensional foundation (science &amp; engineering practices, disciplinary core ideas, crosscutting concepts) follows the NGSS framework that NJSLS-Science adopts. &middot; <a class="json-link" href="data/science.json" target="_blank" rel="noopener">View as JSON<span class="arrow">&#x2197;</span></a></div>
   <div class="legend">
     <span><span class="legend-swatch clarif"></span>Clarification statement</span>
     <span><span class="legend-swatch assess"></span>Assessment boundary</span>
@@ -467,6 +471,12 @@ function renderBullets(bullets) {
   return `<ul class="pe-dim-bullets">${bullets.map(b => `<li>${esc(b)}</li>`).join('')}</ul>`;
 }
 
+// NGSS groups these under umbrella headers in the foundation box's CCC column.
+const CONNECTION_LABELS = {
+  engineering: 'Connections to Engineering, Technology, and Applications of Science',
+  nature_of_science: 'Connections to Nature of Science',
+};
+
 function renderDimensions(pe) {
   const dims = [
     { key: 'seps', tag: 'SEP', title: 'Science & Engineering Practices',
@@ -485,7 +495,9 @@ function renderDimensions(pe) {
       })) },
     { key: 'cccs', tag: 'CCC', title: 'Crosscutting Concepts',
       items: (pe.cccs || []).map(c => ({
-        head: c.concept ? esc(c.concept) : '',
+        head: c.concept
+          ? `${CONNECTION_LABELS[c.connection] ? `<span class="pe-dim-connection">${CONNECTION_LABELS[c.connection]}</span>` : ''}${esc(c.concept)}`
+          : '',
         intro: c.intro ? `<div class="pe-dim-intro">${esc(c.intro)}</div>` : '',
         bullets: renderBullets(c.bullets),
       })) },
@@ -497,7 +509,7 @@ function renderDimensions(pe) {
     html += '<div class="pe-dim">';
     html += `<div class="pe-dim-head"><span class="pe-dim-tag">${d.tag}</span><span class="pe-dim-title">${d.title}</span></div>`;
     if (!d.items.length) {
-      html += `<div class="pe-dim-empty">Not yet extracted</div>`;
+      html += `<div class="pe-dim-empty">None specified in NGSS</div>`;
     } else {
       for (const it of d.items) {
         html += '<div class="pe-dim-item">';
